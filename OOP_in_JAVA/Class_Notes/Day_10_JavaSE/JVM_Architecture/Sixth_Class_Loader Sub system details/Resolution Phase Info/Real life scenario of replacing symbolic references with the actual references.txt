@@ -1,0 +1,18 @@
+constant pool
+
+#1   mama
+#2   Prisha maam
+#3   Sunil
+#4   Manohar
+#5   canteen person
+
+
+symbolic references
+
+to open the institute  #3
+to get institute cleaned #1
+#2 start promexa test
+send puzzles on whatsapp  #4
+ask #5 to keep the canteen open till 8 pm
+
+   

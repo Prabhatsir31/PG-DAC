@@ -1,0 +1,49 @@
+
+
+
+scenarios where we have seen class loading (implicit)
+
+java MyClass
+
+
+Sample s1=new Sample();
+	or
+Sample.fun();
+
+
+how can we load a class explicitly?
+
+Class.forName("classname");
+
+information of "forName"
+
+class Class
+{
+
+	public static Class forName(String classname)throws ClassNotFoundException
+	{
+		if(class is not present in the classpath)
+		{
+			throw new ClassNotFoundException();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

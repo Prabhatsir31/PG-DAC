@@ -1,0 +1,4 @@
+NON-STATIC BLOCK:is used for - if we have many constructors inside a class and those constructors need to have some common statements.
+instead of repeate those statements in each constructor,we place those statements in non-static block.
+
+e.g counter which is incremented in each constructor , to keep a track of number of objects created.

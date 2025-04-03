@@ -1,0 +1,41 @@
+12.25
+
+how will you find out the binary of above number
+
+12 is integer part and .25 is a fractional part.
+The rule is 
+for integer part , you've to devide integer part ( 12 ) by 2 till you get quotient as 0 and then consider all the remainders in a "reverse order".
+for a fractional part, you've to multiply by 2 till you get result as 0 and then consider "the straight order or same order".
+
+
+       12
+2	6  0
+2       3  0
+2       1  1
+2       0  1
+
+reverse order
+
+0 1 1 0 0 
+
+
+.25
+
+.25 * 2
+
+	0.50
+	
+	
+	1.00 
+
+you have to stop here as after a dot ( . ) , there are zeros
+
+so if you check integer part here (look at the left side of dot), the order is
+	0 1
+
+already we've calculated binary of 12
+	0 1 1 0 0.0 1
+
+you can cross check on "https://www.rapidtables.com/convert/number/decimal-to-binary.html" site.
+
+

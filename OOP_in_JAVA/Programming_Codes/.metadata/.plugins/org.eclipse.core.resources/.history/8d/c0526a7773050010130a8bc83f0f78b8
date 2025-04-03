@@ -1,0 +1,12 @@
+package Practice;
+import java.util.*;
+
+class Electronic implements Serializable
+{
+	void on();
+	void off();
+}
+
+public class Ques3 {
+
+}

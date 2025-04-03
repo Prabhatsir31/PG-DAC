@@ -1,0 +1,5 @@
+why "clone()" method is protected in java.lang.Object?
+
+
+if clone() method were public client code would invoke developer code's clone() method which developer might not agree ( he doesn't want client to invoke clone() method of his class). 
+The advantage of clone() method being protected is that by default ( if developer does not override clone() method of Object class), client code cannot invoke clone() of developer's class. Here if developer would to like to allow client to invoke clone() on his class, he can override it with  "public" accessibility.

@@ -1,0 +1,15 @@
+in collection api there are some classes which are thread safe (synchronized non-static methods) and other classes are non-thread safe.
+
+we can make non-thread safe classes as thread-safe.
+e.g. we can make ArrayList which is non-thread safe as thread safe. 
+
+List<Integer>mylist=new ArrayList<Integer>();
+
+List<Integer>mylist1=Collections.synchronizedList(mylist);
+
+
+how to convert HashMap which is non-thread safe to thread safe
+
+Map<String,Integer>mymap=new HashMap<>();
+Map<String,Integer>mymap1=Collections.synchronizedMap(mymap);
+

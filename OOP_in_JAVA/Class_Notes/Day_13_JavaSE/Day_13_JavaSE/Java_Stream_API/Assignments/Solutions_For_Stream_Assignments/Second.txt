@@ -1,0 +1,107 @@
+Question
+
+define a class Student 
+	rollno
+	name
+	age
+	marks
+
+	parameterized constructor 
+	getter methods
+
+	create 5 objects and store them inside list.
+
+	using java8 stream api:
+
+	1) find out name starts with 's'
+
+		hint:- use "filter" to check names start with "s" and "forEach" method to display all those names.
+
+	
+	2) how many students got more than 70
+
+		hint: use "filter" and "count"
+
+	3) how many students in between age 22 and 25
+
+		hint: use "filter" and "count"
+
+
+		
+		
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+class Student
+{
+		private int rollno;
+		private String name;
+		private int age;
+		private int marks;
+		/**
+		 * @return the rollno
+		 */
+		public int getRollno() {
+			return rollno;
+		}
+		/**
+		 * @return the name
+		 */
+		public String getName() {
+			return name;
+		}
+		/**
+		 * @return the age
+		 */
+		public int getAge() {
+			return age;
+		}
+		/**
+		 * @return the marks
+		 */
+		public int getMarks() {
+			return marks;
+		}
+		public Student(int rollno, String name, int age, int marks) {
+			super();
+			this.rollno = rollno;
+			this.name = name;
+			this.age = age;
+			this.marks = marks;
+		}
+		/* (non-Javadoc)
+		 * @see java.lang.Object#toString()
+		 */
+		@Override
+		public String toString() {
+			return "Student [rollno=" + rollno + ", name=" + name + ", age="
+					+ age + ", marks=" + marks + "]";
+		}
+		
+}
+public class Demo
+{
+	public static void main(String args[])
+	{
+		Student s1=new Student(1,"sunil",24,70);
+		Student s2=new Student(2,"anil",20,80);
+		Student s3=new Student(3,"suresh",25,60);
+		Student s4=new Student(4,"vishal",21,65);
+		Student s5=new Student(5,"pankaj",28,71);
+		List<Student> mylist=new ArrayList<Student>();
+		mylist.add(s1);
+		mylist.add(s2);
+		mylist.add(s3);
+		mylist.add(s4);
+		mylist.add(s5);
+		mylist.stream().filter(s->s.getName().startsWith("s")).forEach(System.out::println);
+		System.out.println(mylist.stream().mapToInt(t->t.getMarks()).average().getAsDouble());
+		System.out.println(mylist.stream().filter(s->s.getMarks()>70).count());
+		System.out.println(mylist.stream().filter(p->p.getAge()>=22 && p.getAge()<=25).count());
+		
+		
+	}
+}

@@ -1,0 +1,1 @@
+ResourceBundle class in java is used to get values for the key/s specified from "properties" file.

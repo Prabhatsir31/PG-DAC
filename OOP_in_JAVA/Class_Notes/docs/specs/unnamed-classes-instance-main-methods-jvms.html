@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc,fixuphtml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Unnamed Classes and Instance main Methods (Preview)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../resources/jdk-default.css" />
+  <link rel="stylesheet" href="../resources/spec-changes.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<header id="title-block-header">
+<div class="navbar"><div><strong>Java SE 21 & JDK 21</strong></div><nav><ul><li><a href="../api/index.html">API</a>
+<li><a href="index.html">OTHER SPECIFICATIONS</a>
+<li><a href="man/index.html">TOOL GUIDES</a></ul></nav></div>
+
+<h1 class="title">Unnamed Classes and Instance <code>main</code> Methods
+(Preview)</h1>
+<p class="subtitle">Changes to the Java® Virtual Machine Specification •
+Version 21.0.6+8-LTS-188</p>
+</header>
+<nav id="TOC" role="doc-toc" title="Table Of Contents">
+<ul>
+<li><a href="#jvms-5" id="toc-jvms-5">Chapter 5: Loading, Linking, and
+Initializing</a>
+<ul>
+<li><a href="#jvms-5.2" id="toc-jvms-5.2">5.2 Java Virtual Machine
+Startup</a></li>
+</ul></li>
+</ul>
+</nav>
+<main><p>This document describes changes to the <a
+href="https://docs.oracle.com/javase/specs/jvms/se20/html">Java Virtual Machine Specification</a>
+to support <em>Unnamed Classes and Instance <code>main</code>
+Methods</em>, which is a preview feature of Java SE 21. See <a
+href="https://openjdk.org/jeps/445">JEP 445</a> for an overview of the
+feature.</p>
+<p>A <a
+href="unnamed-classes-instance-main-methods-jls.html">companion document</a>
+describes the changes needed to the <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html">Java Language Specification</a>
+to support Unnamed Classes and Instance <code>main</code> Methods.</p>
+<p>Changes are described with respect to existing sections of the JLS.
+New text is indicated <strong>like this</strong> and deleted text is
+indicated <del>like this</del>. Explanation and discussion, as needed,
+is set aside in grey boxes.</p>
+<div class="editorial">
+<p>Changelog:</p>
+<p>2023-05-15: First draft released</p>
+</div>
+<h2 id="jvms-5">Chapter 5: Loading, Linking, and Initializing</h2>
+<h3 id="jvms-5.2">5.2 Java Virtual Machine Startup</h3>
+<p>The Java Virtual Machine starts up by creating an initial class or
+interface using the bootstrap class loader (<a
+href="https://docs.oracle.com/javase/specs/jvms/se20/html/jvms-5.html#jvms-5.3.1">5.3.1</a>)
+or a user-defined class loader (<a
+href="https://docs.oracle.com/javase/specs/jvms/se20/html/jvms-5.html#jvms-5.3.2">5.3.2</a>).
+The Java Virtual Machine then links the initial class or interface,
+initializes it, and invokes <del>the <code>public</code>
+<code>static</code> method <code>void main(String[])</code></del>
+<strong>a <code>main</code> method, as described in (JLS <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.1.4">12.1.4</a>).</strong>
+The invocation of this method drives all further execution. Execution of
+the Java Virtual Machine instructions constituting the <code>main</code>
+method may cause linking (and consequently creation) of additional
+classes and interfaces, as well as invocation of additional methods.</p>
+<p>The initial class or interface is specified in an
+implementation-dependent manner. For example, the initial class or
+interface could be provided as a command line argument. Alternatively,
+the implementation of the Java Virtual Machine could itself provide an
+initial class that sets up a class loader which in turn loads an
+application. Other choices of the initial class or interface are
+possible so long as they are consistent with the specification given in
+the previous paragraph.</p>
+<div class="inserted">
+<p>In contrast, the invocation of a <code>main</code> method of the
+initial class or interface is not specified in an
+implementation-dependent manner but, rather, proceeds according to the
+implementation-independent rules given in (JLS <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.1.4">12.1.4</a>).</p>
+</div>
+</main><footer class="legal-footer"><hr/><a href="../legal/copyright.html">Copyright</a> &copy; 1993, 2024, Oracle and/or its affiliates, 500 Oracle Parkway, Redwood Shores, CA 94065 USA.<br>All rights reserved. Use is subject to <a href="https://www.oracle.com/java/javase/terms/license/java21speclicense.html">license terms</a> and the <a href="https://www.oracle.com/technetwork/java/redist-137594.html">documentation redistribution policy</a>. <!-- Version 21.0.6+8-LTS-188 --></footer>
+</body>
+</html>

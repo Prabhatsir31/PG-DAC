@@ -1,0 +1,24 @@
+class base
+{
+	static
+	{
+		System.out.println("in base static");
+	}
+}
+class sub extends base
+{
+	static
+	{
+		System.out.println("in sub static");
+	}
+}
+public class myclass extends sub
+{
+	static
+	{
+		System.out.println("in myclass static");
+	}
+	public static void main(String args[])
+	{
+	}
+}

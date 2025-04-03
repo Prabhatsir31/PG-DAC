@@ -1,0 +1,49 @@
+class person
+{
+	walk()
+	talk()
+	eat()
+	sleep()
+}
+
+class Weapon
+{
+	attack(){}
+}
+class Gun extends Weapon
+{
+	attack(){}
+}
+class Bomb extends Weapon
+{
+	attack(){}
+}
+class Sword extends Weapon
+{
+	attack(){}
+}
+class Soldier extends Person
+{
+	Weapon ref;     // program to interface
+	
+	Soldier(Weapon ref)
+	{
+		this.ref=ref;
+	}
+	void perform()
+	{
+		// white box reuse   //  tightly coupled relationship
+		walk();
+		talk();
+		eat();
+		sleep();
+
+		// black box reuse       // loosely coupled relationship
+		ref.attack();
+	}
+}
+
+		
+
+
+

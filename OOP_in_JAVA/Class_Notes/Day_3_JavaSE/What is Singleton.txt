@@ -1,0 +1,75 @@
+	Singleton class
+
+only one object created , that too inside the class.
+
+clients are not allowed to create object- private constructor.
+
+non-static methods , client can call.
+
+static method which will return the reference of the only object which u have created inside the class.
+
+
+
+
+
+
+
+class Singleton
+{
+	private Singleton()
+	{
+	}
+	private static Singleton s=new Singleton();
+	public static Singleton getSingleton()
+	{
+		return s;
+	}
+	public void disp1()
+	{
+		S.o.p("disp1");
+	}
+	public void disp2()
+	{
+		S.o.p("disp2");
+	}
+	public void disp2()
+	{
+		S.o.p("disp2");
+	}
+}
+// Singleton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

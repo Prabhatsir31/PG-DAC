@@ -1,0 +1,36 @@
+package Generic;
+
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class Ques4 {
+    public static void main(String[] args) {
+        // Initialize the CopyOnWriteArrayList
+        CopyOnWriteArrayList<Integer> numbers = new CopyOnWriteArrayList<>();
+
+        // Add initial numbers to the list
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        // Create an iterator for the list
+        Iterator<Integer> iterator = numbers.iterator();
+
+        // Traverse the list and add a new number
+        while (iterator.hasNext()) {
+            Integer number = iterator.next();
+            System.out.println("Current number: " + number);
+
+            // Adding a new number while traversing
+            if (number == 3) {
+                numbers.add(6);
+                System.out.println("Added number 6 to the list.");
+            }
+        }
+
+        // Display the final contents of the list
+        System.out.println("Final list contents: " + numbers);
+    }
+}

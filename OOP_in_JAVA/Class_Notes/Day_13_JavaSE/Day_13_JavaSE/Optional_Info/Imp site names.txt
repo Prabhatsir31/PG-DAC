@@ -1,0 +1,11 @@
+https://dzone.com/articles/java-optional-objects
+
+
+https://mkyong.com/java8/java-8-optional-in-depth/
+
+https://javarevisited.blogspot.com/2017/04/10-examples-of-optional-in-java-8.html
+
+https://www.callicoder.com/java-8-optional-tutorial/
+
+https://www.oracle.com/technical-resources/articles/java/java8-optional.html
+

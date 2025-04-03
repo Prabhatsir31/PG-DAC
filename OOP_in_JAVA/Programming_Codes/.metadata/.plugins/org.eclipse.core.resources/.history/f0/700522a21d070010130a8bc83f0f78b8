@@ -1,0 +1,114 @@
+/*
+Create a Student class with fields:
+
+id (int)
+name (String)
+age (int)
+marks (double)
+Constructor & toString() method
+
+Use an ArrayList<Student> to store student records.
+
+Implement the following operations in the main function.
+
+Add a student
+Display all students
+Search for a student by ID
+
+*/
+package Generic;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+class Student implements Serializable{
+	private int id;
+	private String name;
+	private int age;
+	private double marks;
+	public Student(int id, String name, int age, double marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.marks = marks;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", marks=" + marks + "]";
+	}
+}
+
+public class Ques6 {
+	public static void main(String args[]) {
+		List<Student>mylist = new ArrayList<Student>();
+		
+		 Student s1 = new Student(101, "Ven Disel", 56, 96.0);
+		 Student s2 = new Student(102, "Paul Walker", 50, 97.0);
+		 Student s3 = new Student(103, "Jordana Brewster", 36, 98.0);
+		 Student s4 = new Student(104, "Roman Pearce", 45, 94.0);
+		 
+		 mylist.add(s1);
+		 mylist.add(s2);
+		 mylist.add(s3);
+		 mylist.add(s4);
+		 
+		 try
+			{
+				FileOutputStream fos=new FileOutputStream("abc.txt");
+				ObjectOutputStream oos=new ObjectOutputStream(fos);
+				oos.writeObject(mylist);
+				FileInputStream fis=new FileInputStream("abc.txt");
+				ObjectInputStream ois=new ObjectInputStream(fis);
+				List<?> ref=(List<?>)ois.readObject();
+				Iterator<?> itr=ref.iterator();
+				System.out.println("Students read from the file");
+				while(itr.hasNext())
+				{
+					System.out.println(itr.next());
+				}
+				
+				Scanner scanner = new Scanner(System.in);
+				System.out.println("Enter the number between 1 to 4 : ");
+				int userInput = scanner.nextInt();
+				
+				Object moduleMap;
+				if (((Object) moduleMap).containsKey(userInput)) {
+					Student moduleName = ((List<Student>) moduleMap).get(userInput);
+					System.out.println("Module name for "+ userInput + ": " + moduleName );
+				} else {
+					System.out.println("Invalid input! Please enter a number between 1 and 4.");
+				}
+				
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

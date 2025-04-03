@@ -1,0 +1,12 @@
+public interface PizzaIngredientFactory
+{
+	public Dough createDough();
+	public Sauce createSauce();
+	public Cheese createCheese();
+	public Pepperoni createPepperoni();
+	public Clams createClams();
+}
+define 2 implementations 
+	USPizzaIngredientFactory and IndianPizzaIngredientFactory
+
+create an array of "PizzaIngredientFactory" , store all the implemenations object inside it, traverse the array and invoke all the methods.

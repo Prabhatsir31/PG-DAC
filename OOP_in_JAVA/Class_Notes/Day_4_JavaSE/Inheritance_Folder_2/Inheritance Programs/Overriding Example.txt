@@ -1,0 +1,34 @@
+
+
+class FourWheeler
+{
+	// members
+	void start()  // overridden
+	{
+		basic logic to start any Fourwheeler
+	}
+}
+
+class Car extends FourWheeler
+{
+	// own members
+	// member functions
+
+// overriding "start" method
+	void start()    // overriding
+	{
+		super.start();
+		specific details in order to start the car
+
+	}
+}
+
+public class CarDemo
+{
+	public static void main(String args[])
+	{
+		Car c=new Car("Honda Car");
+		c.start();
+	}
+}
+

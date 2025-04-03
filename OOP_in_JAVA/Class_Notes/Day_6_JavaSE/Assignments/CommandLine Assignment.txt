@@ -1,0 +1,1 @@
+accept 3 numbers through command line arguments and display their sum.

@@ -1,0 +1,65 @@
+/*
+create checked exception:
+	InvalidLengthException
+
+define a class 
+
+public class Authenticator
+	
+with
+a parameterized constructor which takes String as a password.
+this class also will have "done()" method with "successful authentication" message.
+Parameterized constructor should check the length of the password passed if it is less than 5 or 
+more that 9 , it should raise "InvalidLengthException" 
+	[ constructor shouldn't handle the exception]
+
+create a class "Demo" with main
+	inside main function create the object of "Authenticator" class and invoke "done()" method.
+
+*/
+package Practice;
+import java.util.*;
+
+//Custom Checked Exception
+class InvalidLengthException extends Exception {
+ public InvalidLengthException(String message) {
+     super(message);
+ }
+}
+
+//Authenticator class
+class Authenticator {
+ private final String password; // Making password immutable
+
+ // Constructor that checks password length
+ public Authenticator(String password) throws InvalidLengthException {
+     if (password.length() < 5 || password.length() > 9) {
+         throw new InvalidLengthException("Password length must be between 5 and 9 characters.");
+     }
+     this.password = password;
+ }
+
+ // Method that prints successful authentication
+ public void done() {
+     System.out.println("Successful authentication");
+ }
+}
+
+public class Demo {
+ public static void main(String[] args) {
+     try {
+         Authenticator auth1 = new Authenticator("secure1"); // Valid password
+         auth1.done();
+     } catch (InvalidLengthException e) {
+         System.out.println("Exception: " + e.getMessage());
+     }
+
+     // Another example with invalid password
+     try {
+         Authenticator auth2 = new Authenticator("abc"); // Invalid password
+         auth2.done();
+     } catch (InvalidLengthException e) {
+         System.out.println("Exception: " + e.getMessage());
+     }
+ }
+}

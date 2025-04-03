@@ -1,0 +1,3 @@
+The purpose of the peek() method in Java 8 streams is:
+
+it's useful for debugging and understanding how elements flow through the stream pipeline. It is actually used to debug during intermediate operations.

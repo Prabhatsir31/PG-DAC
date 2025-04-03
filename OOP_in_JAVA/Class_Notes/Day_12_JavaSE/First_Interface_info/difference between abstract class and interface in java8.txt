@@ -1,0 +1,3 @@
+java8 interface can have method implementation (default methods) and abstract methods. So what is the difference bet', interface and abstract class in java8?
+
+abstract class can have state (instance members),constructors which interface of even java8 can not have.

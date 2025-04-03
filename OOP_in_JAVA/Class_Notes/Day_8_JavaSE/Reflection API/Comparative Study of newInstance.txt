@@ -1,0 +1,22 @@
+using Reflection
+
+			Object first=null;
+		
+			first=c.newInstance();
+
+
+without Reflection
+
+			Object first=new MyClass();
+
+			
+using Reflection
+
+			Constructor ctor=null;
+			ctor=c.getDeclaredConstructor(String.class);
+			Object second=null;
+			second=ctor.newInstance("Welcome");
+
+without Reflection
+
+			Object second=new MyClass("welcome");

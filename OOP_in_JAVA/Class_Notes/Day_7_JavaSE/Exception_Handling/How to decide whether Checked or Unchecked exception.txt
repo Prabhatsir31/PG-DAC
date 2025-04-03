@@ -1,0 +1,25 @@
+
+
+how can we create user defined exception class?
+
+if you want to create user defined exception class, you have to decide whether you are going to create checked exception or unchecked exception.
+
+In order to create Unchecked exception you have to derive your class from "RuntimeException" and in order to create Checked exception you have to derive your class from "Exception".
+
+e.g.
+public class MyException extends Exception      // checked exception
+{
+
+}
+
+
+public class MyException extends RuntimeException  // unchecked exception
+{
+
+}
+
+how will you decide whether to create "Checked" or "Unchecked" exceptions?
+
+ans:-  if you want that client code should take some corrective actions based on the exception raised , you will create checked exception. It is because when you create checked exception, client code will have to handle it compulsorily and while doing so, client code can take corrective action/s.
+
+	if you don't want client code to take corrective actions based on the exception , you will create unchecked exception.

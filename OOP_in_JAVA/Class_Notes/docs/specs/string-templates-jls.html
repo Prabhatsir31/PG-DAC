@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc,fixuphtml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>String Templates (Preview)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../resources/jdk-default.css" />
+  <link rel="stylesheet" href="../resources/spec-changes.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<header id="title-block-header">
+<div class="navbar"><div><strong>Java SE 21 & JDK 21</strong></div><nav><ul><li><a href="../api/index.html">API</a>
+<li><a href="index.html">OTHER SPECIFICATIONS</a>
+<li><a href="man/index.html">TOOL GUIDES</a></ul></nav></div>
+
+<h1 class="title">String Templates (Preview)</h1>
+<p class="subtitle">Changes to the Java® Language Specification •
+Version 21.0.6+8-LTS-188</p>
+</header>
+<nav id="TOC" role="doc-toc" title="Table Of Contents">
+<ul>
+<li><a href="#jls-2" id="toc-jls-2">Chapter 2: Grammars</a>
+<ul>
+<li><a href="#jls-2.1" id="toc-jls-2.1">2.1 Context-Free
+Grammars</a></li>
+<li><a href="#jls-2.2" id="toc-jls-2.2">2.2 The Lexical Grammar</a></li>
+<li><a href="#jls-2.3" id="toc-jls-2.3">2.3 The Syntactic
+Grammar</a></li>
+</ul></li>
+<li><a href="#jls-3" id="toc-jls-3">Chapter 3: Lexical Structure</a>
+<ul>
+<li><a href="#jls-3.1" id="toc-jls-3.1">3.1 Unicode</a></li>
+<li><a href="#jls-3.5" id="toc-jls-3.5">3.5 Input Elements and
+Tokens</a></li>
+<li><a href="#jls-3.10" id="toc-jls-3.10">3.10 Literals</a>
+<ul>
+<li><a href="#jls-3.10.7" id="toc-jls-3.10.7">3.10.7 Escape
+Sequences</a></li>
+</ul></li>
+<li><a href="#jls-3.13" id="toc-jls-3.13"><strong>3.13
+Fragments</strong></a></li>
+</ul></li>
+<li><a href="#jls-7" id="toc-jls-7">Chapter 7: Packages and Modules</a>
+<ul>
+<li><a href="#jls-7.3" id="toc-jls-7.3">7.3 Compilation Units</a></li>
+<li><a href="#jls-7.5" id="toc-jls-7.5">7.5 Import Declarations</a>
+<ul>
+<li><a href="#jls-7.5.3" id="toc-jls-7.5.3">7.5.3 Single-Static-Import
+Declarations</a></li>
+<li><a href="#jls-7.5.4" id="toc-jls-7.5.4">7.5.4
+Static-Import-on-Demand Declarations</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#jls-12" id="toc-jls-12">Chapter 12: Execution</a>
+<ul>
+<li><a href="#jls-12.5" id="toc-jls-12.5">12.5 Creation of New Class
+Instances</a></li>
+</ul></li>
+<li><a href="#jls-15" id="toc-jls-15">Chapter 15: Expressions</a>
+<ul>
+<li><a href="#jls-15.8" id="toc-jls-15.8">15.8 Primary Expressions</a>
+<ul>
+<li><a href="#jls-15.8.1" id="toc-jls-15.8.1">15.8.1 Lexical
+Literals</a></li>
+<li><a href="#jls-15.8.6" id="toc-jls-15.8.6"><strong>15.8.6 Template
+Expressions</strong></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<main><p>This document describes changes to the <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html">Java Language
+Specification</a> to support <em>String Templates</em>, a preview
+feature of Java SE 21. See <a href="https://openjdk.org/jeps/430">JEP
+430</a> for an overview of the feature.</p>
+<p>Changes are described with respect to existing sections of the JLS.
+New text is indicated <strong>like this</strong> and deleted text is
+indicated <del>like this</del>. Explanation and discussion, as needed,
+is set aside in grey boxes.</p>
+<div class="editorial">
+<p>Changelog:</p>
+<p>2023-05-26: Minor editorial changes.</p>
+<p>2023-03-29: Remove <code>SimpleProcessor</code> and
+<code>StringProcessor</code> interfaces.</p>
+<p>2023-03-23: Reflect new package organization and renaming.</p>
+<p>2023-03-01: Further minor changes.</p>
+<p>2023-02-22: Small changes following feedback.</p>
+<p>2023-02-09: Third draft. In addition to various editorial changes,
+the other significant changes include:</p>
+<ul>
+<li>Tokenization of templates fully specified in <a
+href="#jls-3.13">3.13</a> (including new ambiguities introduced and how
+they are resolved)</li>
+<li>Improved treatment of text block templates.</li>
+<li>More examples included throughout.</li>
+</ul>
+<p>2022-11-15: Second draft. Main changes surround details of lexical
+and syntactical grammars. New terminology introduced for templates.</p>
+<p>2022-01-20: First draft released.</p>
+</div>
+<h2 id="jls-2">Chapter 2: Grammars</h2>
+<h3 id="jls-2.1">2.1 Context-Free Grammars</h3>
+<p>A <em>context-free grammar</em> consists of a number of
+<em>productions</em>. Each production has an abstract symbol called a
+<em>nonterminal</em> as its <em>left-hand side</em>, and a sequence of
+one or more nonterminal and <em>terminal</em> symbols as its
+<em>right-hand side</em>. For each grammar, the terminal symbols are
+drawn from a specified <em>alphabet</em>.</p>
+<p>Starting from a sentence consisting of a single distinguished
+nonterminal, called the <em>goal symbol</em>, a given context-free
+grammar specifies a language, namely, the set of possible sequences of
+terminal symbols that can result from repeatedly replacing any
+nonterminal in the sequence with a right-hand side of a production for
+which the nonterminal is the left-hand side.</p>
+<div class="inserted">
+<p>Some grammars are <em>ambiguous</em>, in that starting with the goal
+symbol, there may be a number of distinct ways of applying the
+productions to end up with the same sequence of terminal symbols.
+Resolving ambiguities involves either preferring one particular way of
+applying productions over all the alternatives, or taking other
+contextual information into account.</p>
+</div>
+<h3 id="jls-2.2">2.2 The Lexical Grammar</h3>
+<p>A <em>lexical grammar</em> for the Java programming language is given
+in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html">3</a>.
+This grammar has as its terminal symbols the characters of the Unicode
+character set. It defines a set of productions, starting from the goal
+symbol <em>Input</em> (<a href="#jls-3.5">3.5</a>), that describe how
+sequences of Unicode characters (<a href="#jls-3.1">3.1</a>) are
+translated into a sequence of input elements (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.2">3.2</a>).</p>
+<p>These input elements, with white space (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.6">3.6</a>)
+and comments (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.7">3.7</a>)
+discarded, form the terminal symbols for the syntactic grammar for the
+Java programming language and are called <em>tokens</em> (<a
+href="#jls-3.5">3.5</a>). These tokens <del>are</del>
+<strong>include</strong> the identifiers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.8">3.8</a>),
+keywords (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.9">3.9</a>),
+literals (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10">3.10</a>),
+separators (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.11">3.11</a>),
+and operators (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.12">3.12</a>)
+of the Java programming language.</p>
+<div class="inserted">
+<p>The lexical grammar is ambiguous, and a number of rules determine how
+these ambiguities are resolved (<a href="#jls-3.5">3.5</a>).</p>
+</div>
+<h3 id="jls-2.3">2.3 The Syntactic Grammar</h3>
+<p>The <em>syntactic grammar</em> for the Java programming language is
+given in Chapters 4, 6-10, 14, and 15. This grammar has as its terminal
+symbols the tokens defined by the lexical grammar. It defines a set of
+productions, starting from the goal symbol <em>CompilationUnit</em> (<a
+href="#jls-7.3">7.3</a>), that describe how sequences of tokens can form
+syntactically correct programs.</p>
+<div class="inserted">
+<p>In a small number of places the particular production of the
+syntactic grammar being followed provides context to resolve ambiguities
+in the lexical grammar (<a href="#jls-3.5">3.5</a>).</p>
+</div>
+<p>For convenience, the syntactic grammar is presented all together in
+Chapter 19.</p>
+<div class="editorial">
+<p>The rest of Chapter 2 is unchanged.</p>
+</div>
+<h2 id="jls-3">Chapter 3: Lexical Structure</h2>
+<p>This chapter specifies the lexical structure of the Java programming
+language.</p>
+<p>Programs are written in Unicode (<a href="#jls-3.1">3.1</a>), but
+lexical translations are provided (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.2">3.2</a>)
+so that Unicode escapes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.3">3.3</a>)
+can be used to include any Unicode character using only ASCII
+characters. Line terminators are defined (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.4">3.4</a>)
+to support the different conventions of existing host systems while
+maintaining consistent line numbers.</p>
+<p>The Unicode characters resulting from the lexical translations are
+reduced to a sequence of input elements (<a href="#jls-3.5">3.5</a>),
+which are white space (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.6">3.6</a>),
+comments (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.7">3.7</a>),
+and tokens. The tokens are the identifiers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.8">3.8</a>),
+keywords (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.9">3.9</a>),
+literals (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10">3.10</a>),
+separators (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.11">3.11</a>),
+<del>and</del> operators (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.12">3.12</a>)<strong>,
+and fragments (<a href="#jls-3.13">3.13</a>)</strong> of the syntactic
+grammar.</p>
+<h3 id="jls-3.1">3.1 Unicode</h3>
+<p>Programs are written using the Unicode character set (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-1.html#jls-1.7">1.7</a>).
+Information about this character set and its associated character
+encodings may be found at <a
+href="https://www.unicode.org/">&lt;https://www.unicode.org/&gt;</a>.</p>
+<p>The Java SE Platform tracks the Unicode Standard as it evolves. The
+precise version of Unicode used by a given release is specified in the
+documentation of the class <code>Character</code>.</p>
+<p>The Unicode standard was originally designed as a fixed-width 16-bit
+character encoding. It has since been changed to allow for characters
+whose representation requires more than 16 bits. The range of legal code
+points is now U+0000 to U+10FFFF, using the hexadecimal <em>U+n</em>
+notation. Characters whose code points are greater than U+FFFF are
+called <em>supplementary characters</em>. To represent the complete
+range of characters using only 16-bit units, the Unicode standard
+defines an encoding called UTF-16. In this encoding, supplementary
+characters are represented as pairs of 16-bit code units, the first from
+the high-surrogates range (U+D800 to U+DBFF), and the second from the
+low-surrogates range (U+DC00 to U+DFFF). For characters in the range
+U+0000 to U+FFFF, the values of code points and UTF-16 code units are
+the same.</p>
+<p>The Java programming language represents text in sequences of 16-bit
+code units, using the UTF-16 encoding.</p>
+<blockquote>
+<p>Some APIs of the Java SE Platform, primarily in the
+<code>Character</code> class, use 32-bit integers to represent code
+points as individual entities. The Java SE Platform provides methods to
+convert between 16-bit and 32-bit representations.</p>
+</blockquote>
+<p>This specification uses the terms <em>code point</em> and <em>UTF-16
+code unit</em> where the representation is relevant, and the generic
+term <em>character</em> where the representation is irrelevant to the
+discussion.</p>
+<p>Except for comments (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.7">3.7</a>),
+identifiers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.8">3.8</a>),
+and the contents of character literals, string literals, <del>and</del>
+text blocks<strong>, and templates</strong> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.4">3.10.4</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.5">3.10.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a><strong>,
+<a href="#jls-3.13">3.13</a></strong>), all input elements (<a
+href="#jls-3.5">3.5</a>) in a program are formed only from ASCII
+characters (or Unicode escapes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.3">3.3</a>)
+which result in ASCII characters).</p>
+<blockquote>
+<p>ASCII (ANSI X3.4) is the American Standard Code for Information
+Interchange. The first 128 characters of the Unicode UTF-16 encoding are
+the ASCII characters.</p>
+</blockquote>
+<h3 id="jls-3.5">3.5 Input Elements and Tokens</h3>
+<p>The input characters and line terminators that result from Unicode
+escape processing (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.3">3.3</a>)
+and then input line recognition (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.4">3.4</a>)
+are reduced to a sequence of <em>input elements</em>.</p>
+<dl>
+<dt><em>Input:</em></dt>
+<dd>
+{<em>InputElement</em>} [<em>Sub</em>]
+</dd>
+<dt><em>InputElement:</em></dt>
+<dd>
+<em>WhiteSpace</em>
+</dd>
+<dd>
+<em>Comment</em>
+</dd>
+<dd>
+<em>Token</em>
+</dd>
+<dt><em>Token:</em></dt>
+<dd>
+<em>Identifier</em>
+</dd>
+<dd>
+<em>Keyword</em>
+</dd>
+<dd>
+<em>Literal</em>
+</dd>
+<dd>
+<em>Separator</em>
+</dd>
+<dd>
+<em>Operator</em>
+</dd>
+<dd>
+<strong><em>Fragment</em></strong>
+</dd>
+<dt><em>Sub:</em></dt>
+<dd>
+<em>the ASCII SUB character, also known as "control-Z"</em>
+</dd>
+</dl>
+<p>Those input elements that are not white space or comments are
+<em>tokens</em>. The tokens are the terminal symbols of the syntactic
+grammar (<a href="#jls-2.3">2.3</a>).</p>
+<p>White space (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.6">3.6</a>)
+and comments (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.7">3.7</a>)
+can serve to separate tokens that, if adjacent, might be tokenized in
+another manner.</p>
+<blockquote>
+<p>For example, the input characters <code>-</code> and <code>=</code>
+can form the operator token <code>-=</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.12">3.12</a>)
+only if there is no intervening white space or comment. As another
+example, the ten input characters <code>staticvoid</code> form a single
+identifier token while the eleven input characters
+<code>static void</code> (with an ASCII SP character between
+<code>c</code> and <code>v</code>) form a pair of keyword tokens,
+<code>static</code> and <code>void</code>, separated by white space.</p>
+</blockquote>
+<p>As a special concession for compatibility with certain operating
+systems, the ASCII SUB character (<code>\u001a</code>, or control-Z) is
+ignored if it is the last character in the escaped input stream.</p>
+<p>The <em>Input</em> production is ambiguous, meaning that for some
+sequences of input characters, there is more than one way to reduce the
+input characters to input elements (that is, to tokenize the input
+characters). Ambiguities are resolved as follows:</p>
+<ul>
+<li><p>A sequence of input characters that could be reduced to either an
+identifier token or a literal token is always reduced to a literal
+token.</p></li>
+<li><p>A sequence of input characters that could be reduced to either an
+identifier token or a reserved keyword token (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.9">3.9</a>)
+is always reduced to a reserved keyword token.</p></li>
+<li><p>A sequence of input characters that could be reduced to either a
+contextual keyword token or to other (non-keyword) tokens is reduced
+according to context, as specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.9">3.9</a>.</p></li>
+<li><p>If the input character <code>&gt;</code> appears in a type
+context (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.11">4.11</a>),
+that is, as part of a <em>Type</em> or an <em>UnannType</em> in the
+syntactic grammar (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.1">4.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.3">8.3</a>),
+it is always reduced to the numerical comparison operator
+<code>&gt;</code>, even when it could be combined with an adjacent
+<code>&gt;</code> character to form a different operator.</p>
+<blockquote>
+<p>Without this rule for <code>&gt;</code> characters, two consecutive
+<code>&gt;</code> brackets in a type such as
+<code>List&lt;List&lt;String&gt;&gt;</code> would be tokenized as the
+signed right shift operator <code>&gt;&gt;</code>, while three
+consecutive <code>&gt;</code> brackets in a type such as
+<code>List&lt;List&lt;List&lt;String&gt;&gt;&gt;</code> would be
+tokenized as the unsigned right shift operator
+<code>&gt;&gt;&gt;</code>. Worse, the tokenization of four or more
+consecutive <code>&gt;</code> brackets in a type such as
+<code>List&lt;List&lt;List&lt;List&lt;String&gt;&gt;&gt;&gt;</code>
+would be ambiguous, as various combinations of <code>&gt;</code>,
+<code>&gt;&gt;</code>, and <code>&gt;&gt;&gt;</code> tokens could
+represent the <code>&gt;&gt;&gt;&gt;</code> characters.</p>
+</blockquote></li>
+</ul>
+<div class="inserted">
+<ul>
+<li>An input character <code>}</code> that could be reduced to either a
+separator token (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.12">3.12</a>)
+or part of a fragment token is reduced according to context, as
+specified in <a href="#jls-3.13">3.13</a>.</li>
+</ul>
+</div>
+<p>Consider two tokens <code>x</code> and <code>y</code> in the
+resulting input stream. If <code>x</code> precedes <code>y</code>, then
+we say that <code>x</code> is <em>to the left of</em> <code>y</code> and
+that <code>y</code> is <em>to the right of</em> <code>x</code>.</p>
+<blockquote>
+<p>For example, in this simple piece of code:</p>
+<pre><code>class Empty {
+}</code></pre>
+<p>we say that the <code>}</code> token is to the right of the
+<code>{</code> token, even though it appears, in this two-dimensional
+representation, downward and to the left of the <code>{</code> token.
+This convention about the use of the words left and right allows us to
+speak, for example, of the right-hand operand of a binary operator or of
+the left-hand side of an assignment.</p>
+</blockquote>
+<h3 id="jls-3.10">3.10 Literals</h3>
+<h4 id="jls-3.10.7">3.10.7 Escape Sequences</h4>
+<p>In character literals, string literals, <del>and</del> text
+blocks<strong>, and fragments of a template</strong> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.4">3.10.4</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.5">3.10.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a><strong>,
+<a href="#jls-3.13">3.13</a></strong>), the <em>escape sequences</em>
+allow for the representation of some nongraphic characters without using
+Unicode escapes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.3">3.3</a>),
+as well as the single quote, double quote, and backslash characters.</p>
+<dl>
+<dt><em>EscapeSequence:</em></dt>
+<dd>
+<code>\ b</code> * (backspace BS, Unicode <code>\u0008</code>)*
+</dd>
+<dd>
+<code>\ s</code> * (space SP, Unicode <code>\u0020</code>)*
+</dd>
+<dd>
+<code>\ t</code> * (horizontal tab HT, Unicode <code>\u0009</code>)*
+</dd>
+<dd>
+<code>\ n</code> * (linefeed LF, Unicode <code>\u000a</code>)*
+</dd>
+<dd>
+<code>\ f</code> * (form feed FF, Unicode <code>\u000c</code>)*
+</dd>
+<dd>
+<code>\ r</code> * (carriage return CR, Unicode <code>\u000d</code>)*
+</dd>
+<dd>
+<code>\</code> <em>LineTerminator</em> * (line continuation, no Unicode
+representation)*
+</dd>
+<dd>
+<code>\ "</code> * (double quote <code>"</code>, Unicode
+<code>\u0022</code>)*
+</dd>
+<dd>
+<code>\ '</code> * (single quote <code>'</code>, Unicode
+<code>\u0027</code>)*
+</dd>
+<dd>
+<code>\ \</code> * (backslash <code>\</code>, Unicode
+<code>\u005c</code>)*
+</dd>
+<dd>
+<em>OctalEscape</em> * (octal value, Unicode <code>\u0000</code> to
+<code>\u00ff</code>)*
+</dd>
+<dt><em>OctalEscape:</em></dt>
+<dd>
+<code>\</code> <em>OctalDigit</em>
+</dd>
+<dd>
+<code>\</code> <em>OctalDigit</em> <em>OctalDigit</em>
+</dd>
+<dd>
+<code>\</code> <em>ZeroToThree</em> <em>OctalDigit</em>
+<em>OctalDigit</em> #
+</dd>
+<dt><em>OctalDigit:</em></dt>
+<dd>
+(one of)
+</dd>
+<dd>
+<code>0 1 2 3 4 5 6 7</code>
+</dd>
+<dt><em>ZeroToThree:</em></dt>
+<dd>
+(one of)
+</dd>
+<dd>
+<code>0 1 2 3</code>
+</dd>
+</dl>
+<blockquote>
+<p>The <em>OctalDigit</em> production above comes from <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.1">3.10.1</a>.
+Octal escapes are provided for compatibility with C, but can express
+only Unicode values <code>\u0000</code> through <code>\u00FF</code>, so
+Unicode escapes are usually preferred.</p>
+</blockquote>
+<p>It is a compile-time error if the character following a backslash in
+an escape sequence is not a <em>LineTerminator</em> or an ASCII
+<code>b</code>, <code>s</code>, <code>t</code>, <code>n</code>,
+<code>f</code>, <code>r</code>, <code>"</code>, <code>'</code>,
+<code>\</code>, <code>0</code>, <code>1</code>, <code>2</code>,
+<code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, or
+<code>7</code>.</p>
+<p>An escape sequence in the content of a character literal, string
+literal, <del>or</del> text block<strong>, or fragment of a
+template</strong> is <em>interpreted</em> by replacing its
+<code>\</code> and trailing character(s) with the single character
+denoted by the Unicode escape in the <em>EscapeSequence</em> grammar.
+The line continuation escape sequence has no corresponding Unicode
+escape, so is interpreted by replacing it with nothing.</p>
+<p>The line continuation escape sequence can appear in a text block, but
+cannot appear in a character literal or a string literal because each
+disallows a <em>LineTerminator</em>.</p>
+<div class="inserted">
+<p>The character sequence <code>\{</code> is not an escape sequence but
+has special meaning when appearing in a template (<a
+href="#jls-3.13">3.13</a>).</p>
+</div>
+<h3 id="jls-3.13"><strong>3.13 Fragments</strong></h3>
+<div class="inserted">
+<p>A template (<a href="#jls-15.8.6">15.8.6</a>) resembles either a
+string literal or a text block but contains one or more embedded
+expressions, which are expressions prefixed by the character sequence
+<code>\{</code> and postfixed by the character <code>}</code>.</p>
+<p>A <em>fragment</em> represents a non-expression part of a
+template.</p>
+<dl>
+<dt><em>Fragment:</em></dt>
+<dd>
+<em>StringTemplateBegin</em>
+</dd>
+<dd>
+<em>StringTemplateMid</em>
+</dd>
+<dd>
+<em>StringTemplateEnd</em>
+</dd>
+<dd>
+<em>TextBlockTemplateBegin</em>
+</dd>
+<dd>
+<em>TextBlockTemplateMid</em>
+</dd>
+<dd>
+<em>TextBlockTemplateEnd</em>
+</dd>
+<dt><em>StringTemplateBegin:</em></dt>
+<dd>
+<code>"</code> <em>StringFragment</em> <code>\{</code>
+</dd>
+<dt><em>StringTemplateMid:</em></dt>
+<dd>
+<code>}</code> <em>StringFragment</em> <code>\{</code>
+</dd>
+<dt><em>StringTemplateEnd:</em></dt>
+<dd>
+<code>}</code> <em>StringFragment</em> <code>"</code>
+</dd>
+<dt><em>StringFragment:</em></dt>
+<dd>
+{ <em>StringCharacter</em> }
+</dd>
+<dt><em>TextBlockTemplateBegin:</em></dt>
+<dd>
+<code>"""</code> { <em>TextBlockWhiteSpace</em> }
+<em>LineTerminator</em> <em>TextBlockFragment</em> <code>\{</code>
+</dd>
+<dt><em>TextBlockTemplateMid:</em></dt>
+<dd>
+<code>}</code> <em>TextBlockFragment</em> <code>\{</code>
+</dd>
+<dt><em>TextBlockTemplateEnd:</em></dt>
+<dd>
+<code>}</code> <em>TextBlockFragment</em> <code>"""</code>
+</dd>
+<dt><em>TextBlockFragment:</em></dt>
+<dd>
+{ <em>TextBlockCharacter</em> }
+</dd>
+</dl>
+<blockquote>
+<p>The following productions from <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.5">3.10.5</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a>
+are shown here for convenience:</p>
+<dl>
+<dt><em>StringCharacter:</em></dt>
+<dd>
+<em>InputCharacter</em> <em>but not</em> <code>"</code> <em>or</em>
+<code>\</code>
+</dd>
+<dd>
+<em>EscapeSequence</em>
+</dd>
+<dt><em>TextBlockWhiteSpace</em>:</dt>
+<dd>
+<em>WhiteSpace</em> but not <em>LineTerminator</em>
+</dd>
+<dt><em>LineTerminator:</em></dt>
+<dd>
+<em>the ASCII LF character, also known as "newline"</em>
+</dd>
+<dd>
+<em>the ASCII CR character, also known as "return"</em>
+</dd>
+<dd>
+<em>the ASCII CR character followed by the ASCII LF character</em>
+</dd>
+<dt><em>TextBlockCharacter:</em></dt>
+<dd>
+<em>InputCharacter</em> <em>but not</em> <code>\</code>
+</dd>
+<dd>
+<em>EscapeSequence</em>
+</dd>
+<dd>
+<em>LineTerminator</em>
+</dd>
+</dl>
+</blockquote>
+<p>The <em>content</em> of a fragment is defined as follows:</p>
+<ul>
+<li>The content of a <em>StringTemplateBegin</em> is the sequence of
+characters that begins immediately after the opening <code>"</code> and
+ends immediately before the first occurrence of the sequence
+<code>\{</code>. (As the sequence <code>\{</code> is not a valid escape
+sequence, it will prefix the first embedded expression.)</li>
+<li>The content of a <em>StringTemplateMid</em> is the sequence of
+characters that begins immediately after the character <code>}</code>
+and ends immediately before the next occurrence of the sequence
+<code>\{</code>.</li>
+<li>The content of a <em>StringTemplateEnd</em> is the sequence of
+characters that begins immediately after the character <code>}</code>
+and ends immediately before the closing <code>"</code>.</li>
+<li>The content of a <em>TextBlockTemplateBegin</em> is the sequence of
+characters that begins immediately after the opening delimiter (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a>)
+and ends immediately before the first occurrence of the sequence
+<code>\{</code>. (As the sequence <code>\{</code> is not a valid escape
+sequence, it will prefix the first embedded expression.)</li>
+<li>The content of a <em>TextBlockTemplateMid</em> is the sequence of
+characters that begins immediately after the character <code>}</code>
+and ends immediately before the next occurrence of the sequence
+<code>\{</code>.</li>
+<li>The content of a <em>TextBlockTemplateEnd</em> is the sequence of
+characters that begins immediately after the character <code>}</code>
+and ends immediately before the closing delimiter (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a>).</li>
+</ul>
+<p>It is a compile-time error for a line terminator (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.4">3.4</a>)
+to appear in the content of a <em>StringTemplateBegin</em>,
+<em>StringTemplateMid</em>, or <em>StringTemplateEnd</em> token.</p>
+<p>The content of a <em>TextBlockTemplateBegin</em>,
+<em>TextBlockTemplateMid</em>, or <em>TextBlockTemplateEnd</em> token is
+further transformed by applying the following step:</p>
+<ul>
+<li><p>Line terminators are <em>normalized</em> to the ASCII LF
+character, as follows:</p>
+<ul>
+<li><p>An ASCII CR character followed by an ASCII LF character is
+translated to an ASCII LF character.</p></li>
+<li><p>An ASCII CR character is translated to an ASCII LF
+character.</p></li>
+</ul></li>
+</ul>
+<p>Whilst templates resemble string literals (and text blocks), they are
+not ambiguous, in the sense that it is not possible for a sequence of
+input characters to form both a syntactically correct string literal and
+a syntactically correct template. This is because a template must
+contain at least one embedded expression, but the sequence
+<code>\{</code> that prefixes an embedded expression is not a valid
+escape sequence in a string literal (or text block).</p>
+<p>However, the fragment productions do introduce ambiguities with the
+other token productions (<a href="#jls-3.5">3.5</a>). These ambiguities
+are resolved as follows:</p>
+<ul>
+<li><p>During the reduction of input characters to input elements (<a
+href="#jls-3.5">3.5</a>), a sequence of input characters that notionally
+matches a <em>StringTemplateMid</em> (or <em>StringTemplateEnd</em>) is
+reduced to a <em>StringTemplateMid</em> (or <em>StringTemplateEnd</em>)
+if and only if the reduction of the initial input character
+<code>}</code> was not in the context of being recognized as a terminal
+in a <em>ClassBody</em>, <em>ConstructorBody</em>, <em>EnumBody</em>,
+<em>RecordBody</em>, <em>InterfaceBody</em>,
+<em>ElementValueArrayInitializer</em>, <em>ArrayInitializer</em>,
+<em>Block</em>, or <em>SwitchBlock</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.7">8.1.7</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.7">8.8.7</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.1">8.9.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.10.2">8.10.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.1.5">9.1.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.7.1">9.7.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-10.html#jls-10.6">10.6</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.2">14.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.11.1">14.11.1</a>)
+which appears in an embedded expression of a template.</p></li>
+<li><p>During the reduction of input characters to input elements (<a
+href="#jls-3.5">3.5</a>), a sequence of input characters that notionally
+matches a <em>TextBlockTemplateMid</em> (or
+<em>TextBlockTemplateEnd</em>) is reduced to a
+<em>TextBlockTemplateMid</em> (or <em>TextBlockTemplateEnd</em>) if and
+only if the reduction of the initial input character <code>}</code> was
+not in the context of being recognized as a terminal in a
+<em>ClassBody</em>, <em>ConstructorBody</em>, <em>EnumBody</em>,
+<em>RecordBody</em>, <em>InterfaceBody</em>,
+<em>ElementValueArrayInitializer</em>, <em>ArrayInitializer</em>,
+<em>Block</em>, or <em>SwitchBlock</em> which appears in an embedded
+expression of a template.</p></li>
+</ul>
+<blockquote>
+<p>For example, consider the sequence of 18 input characters
+<code>" \ { n e w   i n t [ ] { 4 2 } } "</code>. The first three input
+characters are reduced to a <em>StringTemplateBegin</em>. The next
+twelve input characters are reduced to the tokens <em>Keyword</em>
+(<code>new</code>), <em>Keyword</em> (<code>int</code>),
+<em>Separator</em> (<code>[</code>), <em>Separator</em>
+(<code>]</code>), <em>Separator</em> (<code>{</code>), and
+<em>Literal</em> (<code>42</code>). The next input character in the
+sequence, <code>}</code>, creates an ambiguity. It could be reduced to a
+<em>Separator</em>, or it could be reduced along with the following
+<code>}</code> and <code>"</code> input characters to a
+<em>StringTemplateEnd</em>. As the syntactic grammar would provide the
+context of the <em>ArrayInitializer</em> of an array creation expression
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.10.1">15.10.1</a>),
+the rule above ensures that the input character <code>}</code> is
+reduced to a <em>Separator</em>. The remaining <code>}</code> and
+<code>"</code> input characters will then be reduced to a
+<em>StringTemplateEnd</em>.</p>
+</blockquote>
+</div>
+<h2 id="jls-7">Chapter 7: Packages and Modules</h2>
+<h3 id="jls-7.3">7.3 Compilation Units</h3>
+<p><em>CompilationUnit</em> is the goal symbol (<a
+href="#jls-2.1">2.1</a>) for the syntactic grammar (<a
+href="#jls-2.3">2.3</a>) of Java programs. It is defined by the
+following production:</p>
+<dl>
+<dt><em>CompilationUnit:</em></dt>
+<dd>
+<em>OrdinaryCompilationUnit</em>
+</dd>
+<dd>
+<em>ModularCompilationUnit</em>
+</dd>
+<dt><em>OrdinaryCompilationUnit:</em></dt>
+<dd>
+[<em>PackageDeclaration</em>] {<em>ImportDeclaration</em>}
+{<em>TopLevelClassOrInterfaceDeclaration</em>}
+</dd>
+<dt><em>ModularCompilationUnit:</em></dt>
+<dd>
+{<em>ImportDeclaration</em>} <em>ModuleDeclaration</em>
+</dd>
+</dl>
+<p>An <em>ordinary compilation unit</em> consists of three parts, each
+of which is optional:</p>
+<ul>
+<li><p>A <code>package</code> declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4">7.4</a>),
+giving the fully qualified name (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.7">6.7</a>)
+of the package to which the compilation unit belongs.</p>
+<p>A compilation unit that has no <code>package</code> declaration is
+part of an unnamed package (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4.2">7.4.2</a>).</p></li>
+<li><p><code>import</code> declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.5">7.5</a>)
+that allow classes and interface from other packages, and
+<code>static</code> members of classes and interfaces, to be referred to
+using their simple names.</p></li>
+<li><p>Top level declarations of classes and interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>).</p></li>
+</ul>
+<p>A <em>modular compilation unit</em> consists of a <code>module</code>
+declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7">7.7</a>),
+optionally preceded by <code>import</code> declarations. The
+<code>import</code> declarations allow classes and interfaces from
+packages in this module and other modules, as well as
+<code>static</code> members of classes and interfaces, to be referred to
+using their simple names within the <code>module</code> declaration.</p>
+<p>Every compilation unit implicitly imports <strong>the
+following:</strong></p>
+<ol type="1">
+<li>Every <code>public</code> class or interface declared in the
+predefined package <code>java.lang</code>, as if the declaration
+<code>import java.lang.*;</code> appeared at the beginning of each
+compilation unit immediately after any <code>package</code>
+declaration.</li>
+</ol>
+<div class="inserted">
+<ol start="2" type="1">
+<li>The static member <code>STR</code> declared in the predefined class
+<code>StringTemplate</code>, as if the declaration
+<code>import static java.lang.StringTemplate.STR;</code> appeared at the
+beginning of each compilation unit immediately after any
+<code>package</code> declaration.</li>
+</ol>
+</div>
+<p>As a result, the names of all <del>those</del> <strong>implicitly
+imported</strong> <del>classes and interfaces</del> <strong>classes,
+interfaces and static fields</strong> are available as simple names in
+every compilation unit.</p>
+<p>The host system determines which compilation units are
+<em>observable</em>, except for the compilation units in the predefined
+package <code>java</code> and its subpackages <code>lang</code> and
+<code>io</code>, which are all always observable.</p>
+<div class="editorial">
+<p>The rest of §7.3 is unchanged.</p>
+</div>
+<h3 id="jls-7.5">7.5 Import Declarations</h3>
+<h4 id="jls-7.5.3">7.5.3 Single-Static-Import Declarations</h4>
+<p>A <em>single-static-import declaration</em> imports all accessible
+<code>static</code> members with a given simple name from a class or
+interface. This makes these <code>static</code> members available under
+their simple name in the module, class, and interface declarations of
+the compilation unit in which the single-static-import declaration
+appears.</p>
+<dl>
+<dt><em>SingleStaticImportDeclaration:</em></dt>
+<dd>
+<code>import</code> <code>static</code> <em>TypeName</em> <code>.</code>
+<em>Identifier</em> <code>;</code>
+</dd>
+</dl>
+<p>The <em>TypeName</em> must be the canonical name (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.7">6.7</a>)
+of a class or interface.</p>
+<p>The class or interface must be either a member of a named package, or
+a member of a class or interface whose outermost lexically enclosing
+class or interface declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.3">8.1.3</a>)
+is a member of a named package, or a compile-time error occurs.</p>
+<p>It is a compile-time error if the named class or interface is not
+accessible (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.6">6.6</a>).</p>
+<p>The <em>Identifier</em> must name at least one <code>static</code>
+member of the named class or interface. It is a compile-time error if
+there is no <code>static</code> member of that name, or if all of the
+named members are not accessible.</p>
+<p>It is permissible for one single-static-import declaration to import
+several fields, classes, or interfaces with the same name, or several
+methods with the same name and signature. This occurs when the named
+class or interface inherits multiple fields, member classes, member
+interfaces, or methods, all with the same name, from its own
+supertypes.</p>
+<div class="inserted">
+<p>It is permitted for a single-static-import declaration to redundantly
+import <code>static</code> members that are already implicitly
+imported.</p>
+</div>
+<p>If two single-static-import declarations in the same compilation unit
+attempt to import classes or interface with the same simple name, then a
+compile-time error occurs, unless the two classes or interfaces are the
+same, in which case the duplicate declaration is ignored.</p>
+<p>If a single-static-import declaration imports a class or interface
+whose simple name is <em>x</em>, and the compilation unit also declares
+a top level class or interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>)
+whose simple name is <em>x</em>, a compile-time error occurs.</p>
+<p>If a compilation unit contains both a single-static-import
+declaration that imports a class or interface whose simple name is
+<em>x</em>, and a single-type-import declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.5.1">7.5.1</a>)
+that imports a class or interface whose simple name is <em>x</em>, a
+compile-time error occurs, unless the two classes or interfaces are the
+same, in which case the duplicate declaration is ignored.</p>
+<h4 id="jls-7.5.4">7.5.4 Static-Import-on-Demand Declarations</h4>
+<p>A <em>static-import-on-demand declaration</em> allows all accessible
+<code>static</code> members of a named class or interface to be imported
+as needed.</p>
+<dl>
+<dt><em>StaticImportOnDemandDeclaration:</em></dt>
+<dd>
+<code>import</code> <code>static</code> <em>TypeName</em> <code>.</code>
+<code>*</code> <code>;</code>
+</dd>
+</dl>
+<p>The <em>TypeName</em> must be the canonical name (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.7">6.7</a>)
+of a class or interface.</p>
+<p>The class or interface must be either a member of a named package, or
+a member of a class or interface whose outermost lexically enclosing
+class or interface declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.3">8.1.3</a>)
+is a member of a named package, or a compile-time error occurs.</p>
+<p>It is a compile-time error if the named class or interface is not
+accessible (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.6">6.6</a>).</p>
+<div class="inserted">
+<p>It is permitted for a static-import-on-demand declaration to
+redundantly import <code>static</code> members that are already
+implicitly imported.</p>
+</div>
+<p>Two or more static-import-on-demand declarations in the same
+compilation unit may name the same class or interface; the effect is as
+if there was exactly one such declaration.</p>
+<div class="editorial">
+<p>The rest of §7.5.4 is unchanged.</p>
+</div>
+<h2 id="jls-12">Chapter 12: Execution</h2>
+<h3 id="jls-12.5">12.5 Creation of New Class Instances</h3>
+<p>A new class instance is explicitly created when evaluation of a class
+instance creation expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9">15.9</a>)
+causes a class to be instantiated.</p>
+<p>A new class instance may be implicitly created in the following
+situations:</p>
+<ul>
+<li><p>Loading of a class or interface that contains a string literal
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.5">3.10.5</a>)
+or a text block (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a>)
+may create a new <code>String</code> object to denote the string
+represented by the string literal or text block. (This object creation
+will not occur if an instance of <code>String</code> denoting the same
+sequence of Unicode code points as the string represented by the string
+literal or text block has previously been interned.)</p></li>
+<li><p>Execution of an operation that causes boxing conversion (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-5.html#jls-5.1.7">5.1.7</a>).
+Boxing conversion may create a new object of a wrapper class
+(<code>Boolean</code>, <code>Byte</code>, <code>Short</code>,
+<code>Character</code>, <code>Integer</code>, <code>Long</code>,
+<code>Float</code>, <code>Double</code>) associated with one of the
+primitive types.</p></li>
+<li><p>Execution of a string concatenation operator <code>+</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.18.1">15.18.1</a>)
+that is not part of a constant expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.29">15.29</a>)
+always creates a new <code>String</code> object to represent the result.
+String concatenation operators may also create temporary wrapper objects
+for a value of a primitive type.</p></li>
+<li><p>Evaluation of a method reference expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.13.3">15.13.3</a>)
+or a lambda expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.27.4">15.27.4</a>)
+may require that a new instance be created of a class that implements a
+functional interface type (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.8">9.8</a>).</p></li>
+</ul>
+<div class="inserted">
+<ul>
+<li>Evaluation of a template expression (<a
+href="#jls-15.8.6">15.8.6</a>) may require that a new instance be
+created of a class that implements the functional interface type
+<code>StringTemplate</code>.</li>
+</ul>
+</div>
+<p>Each of these situations identifies a particular constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8">8.8</a>)
+to be called with specified arguments (possibly none) as part of the
+class instance creation process.</p>
+<p>Whenever a new class instance is created, memory space is allocated
+for it with room for all the instance variables declared in the class
+and all the instance variables declared in each superclass of the class,
+including all the instance variables that may be hidden (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.3">8.3</a>).</p>
+<p>If there is not sufficient space available to allocate memory for the
+object, then creation of the class instance completes abruptly with an
+<code>OutOfMemoryError</code>. Otherwise, all the instance variables in
+the new object, including those declared in superclasses, are
+initialized to their default values (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.12.5">4.12.5</a>).</p>
+<p>Just before a reference to the newly created object is returned as
+the result, the indicated constructor is processed to initialize the new
+object using the following procedure:</p>
+<ol type="1">
+<li><p>Assign the arguments for the constructor to newly created
+parameter variables for this constructor invocation.</p></li>
+<li><p>If this constructor begins with an explicit constructor
+invocation (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.7.1">8.8.7.1</a>)
+of another constructor in the same class (using <code>this</code>), then
+evaluate the arguments and process that constructor invocation
+recursively using these same five steps. If that constructor invocation
+completes abruptly, then this procedure completes abruptly for the same
+reason; otherwise, continue with step 5.</p></li>
+<li><p>This constructor does not begin with an explicit constructor
+invocation of another constructor in the same class (using
+<code>this</code>). If this constructor is for a class other than
+<code>Object</code>, then this constructor will begin with an explicit
+or implicit invocation of a superclass constructor (using
+<code>super</code>). Evaluate the arguments and process that superclass
+constructor invocation recursively using these same five steps. If that
+constructor invocation completes abruptly, then this procedure completes
+abruptly for the same reason. Otherwise, continue with step 4.</p></li>
+<li><p>Execute the instance initializers and instance variable
+initializers for this class, assigning the values of instance variable
+initializers to the corresponding instance variables, in the
+left-to-right order in which they appear textually in the source code
+for the class. If execution of any of these initializers results in an
+exception, then no further initializers are processed and this procedure
+completes abruptly with that same exception. Otherwise, continue with
+step 5.</p></li>
+<li><p>Execute the rest of the body of this constructor. If that
+execution completes abruptly, then this procedure completes abruptly for
+the same reason. Otherwise, this procedure completes normally.</p></li>
+</ol>
+<p>Unlike C++, the Java programming language does not specify altered
+rules for method dispatch during the creation of a new class instance.
+If methods are invoked that are overridden in subclasses in the object
+being initialized, then these overriding methods are used, even before
+the new object is completely initialized.</p>
+<div class="example">
+<p>Example 12.5-1. Evaluation of Instance Creation</p>
+<pre><code>class Point {
+    int x, y;
+    Point() { x = 1; y = 1; }
+}
+class ColoredPoint extends Point {
+    int color = 0xFF00FF;
+}
+class Test {
+    public static void main(String[] args) {
+        ColoredPoint cp = new ColoredPoint();
+        System.out.println(cp.color);
+    }
+}</code></pre>
+<p>Here, a new instance of <code>ColoredPoint</code> is created. First,
+space is allocated for the new <code>ColoredPoint</code>, to hold the
+fields <code>x</code>, <code>y</code>, and <code>color</code>. All these
+fields are then initialized to their default values (in this case,
+<code>0</code> for each field). Next, the <code>ColoredPoint</code>
+constructor with no arguments is first invoked. Since
+<code>ColoredPoint</code> declares no constructors, a default
+constructor of the following form is implicitly declared:</p>
+<pre><code>ColoredPoint() { super(); }</code></pre>
+<p>This constructor then invokes the <code>Point</code> constructor with
+no arguments. The <code>Point</code> constructor does not begin with an
+invocation of a constructor, so the Java compiler provides an implicit
+invocation of its superclass constructor of no arguments, as though it
+had been written:</p>
+<pre><code>Point() { super(); x = 1; y = 1; }</code></pre>
+<p>Therefore, the constructor for <code>Object</code> which takes no
+arguments is invoked.</p>
+<p>The class <code>Object</code> has no superclass, so the recursion
+terminates here. Next, any instance initializers and instance variable
+initializers of <code>Object</code> are invoked. Next, the body of the
+constructor of <code>Object</code> that takes no arguments is executed.
+No such constructor is declared in <code>Object</code>, so the Java
+compiler supplies a default one, which in this special case is:</p>
+<pre><code>Object() { }</code></pre>
+<p>This constructor executes without effect and returns.</p>
+<p>Next, all initializers for the instance variables of class
+<code>Point</code> are executed. As it happens, the declarations of
+<code>x</code> and <code>y</code> do not provide any initialization
+expressions, so no action is required for this step of the example. Then
+the body of the <code>Point</code> constructor is executed, setting
+<code>x</code> to <code>1</code> and <code>y</code> to
+<code>1</code>.</p>
+<p>Next, the initializers for the instance variables of class
+<code>ColoredPoint</code> are executed. This step assigns the value
+<code>0xFF00FF</code> to <code>color</code>. Finally, the rest of the
+body of the <code>ColoredPoint</code> constructor is executed (the part
+after the invocation of <code>super</code>); there happen to be no
+statements in the rest of the body, so no further action is required and
+initialization is complete.</p>
+</div>
+<div class="example">
+<p>Example 12.5-2. Dynamic Dispatch During Instance Creation</p>
+<pre><code>class Super {
+    Super() { printThree(); }
+    void printThree() { System.out.println(&quot;three&quot;); }
+}
+class Test extends Super {
+    int three = (int)Math.PI;  // That is, 3
+    void printThree() { System.out.println(three); }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.printThree();
+    }
+}</code></pre>
+<p>This program produces the output:</p>
+<pre><code>0
+3</code></pre>
+<p>This shows that the invocation of <code>printThree</code> in the
+constructor for class <code>Super</code> does not invoke the definition
+of <code>printThree</code> in class <code>Super</code>, but rather
+invokes the overriding definition of <code>printThree</code> in class
+<code>Test</code>. This method therefore runs before the field
+initializers of <code>Test</code> have been executed, which is why the
+first value output is <code>0</code>, the default value to which the
+field <code>three</code> of <code>Test</code> is initialized. The later
+invocation of <code>printThree</code> in method <code>main</code>
+invokes the same definition of <code>printThree</code>, but by that
+point the initializer for instance variable <code>three</code> has been
+executed, and so the value <code>3</code> is printed.</p>
+</div>
+<h2 id="jls-15">Chapter 15: Expressions</h2>
+<h3 id="jls-15.8">15.8 Primary Expressions</h3>
+<p>Primary expressions include most of the simplest kinds of
+expressions, from which all others are constructed: literals, object
+creations, field accesses, method invocations, method references,
+<del>and</del> array accesses<strong>, and template
+expressions</strong>. A parenthesized expression is also treated
+syntactically as a primary expression.</p>
+<dl>
+<dt><em>Primary:</em></dt>
+<dd>
+<em>PrimaryNoNewArray</em>
+</dd>
+<dd>
+<em>ArrayCreationExpression</em>
+</dd>
+<dt><em>PrimaryNoNewArray:</em></dt>
+<dd>
+<em>Literal</em>
+</dd>
+<dd>
+<em>ClassLiteral</em>
+</dd>
+<dd>
+<code>this</code>
+</dd>
+<dd>
+<em>TypeName</em> <code>.</code> <code>this</code>
+</dd>
+<dd>
+<code>(</code> <em>Expression</em> <code>)</code>
+</dd>
+<dd>
+<em>ClassInstanceCreationExpression</em>
+</dd>
+<dd>
+<em>FieldAccess</em>
+</dd>
+<dd>
+<em>ArrayAccess</em>
+</dd>
+<dd>
+<em>MethodInvocation</em>
+</dd>
+<dd>
+<em>MethodReference</em>
+</dd>
+<dd>
+<strong><em>TemplateExpression</em></strong>
+</dd>
+</dl>
+<blockquote>
+<p>This part of the grammar of the Java programming language is unusual,
+in two ways. First, one might expect simple names, such as names of
+local variables and method parameters, to be primary expressions. For
+technical reasons, names are grouped together with primary expressions a
+little later when postfix expressions are introduced (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.14">15.14</a>).</p>
+</blockquote>
+<blockquote>
+<p>The technical reasons have to do with allowing left-to-right parsing
+of Java programs with only one-token lookahead. Consider the expressions
+<code>(z[3])</code> and <code>(z[])</code>. The first is a parenthesized
+array access (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.10.3">15.10.3</a>)
+and the second is the start of a cast (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.16">15.16</a>).
+At the point that the look-ahead symbol is <code>[</code>, a
+left-to-right parse will have reduced the <code>z</code> to the
+nonterminal <em>Name</em>. In the context of a cast we prefer not to
+have to reduce the name to a <em>Primary</em>, but if <em>Name</em> were
+one of the alternatives for <em>Primary</em>, then we could not tell
+whether to do the reduction (that is, we could not determine whether the
+current situation would turn out to be a parenthesized array access or a
+cast) without looking ahead two tokens, to the token following the
+<code>[</code>. The grammar presented here avoids the problem by keeping
+<em>Name</em> and <em>Primary</em> separate and allowing either in
+certain other syntax rules (those for
+<em>ClassInstanceCreationExpression</em>, <em>MethodInvocation</em>,
+<em>ArrayAccess</em>, and <em>PostfixExpression</em>, though not
+<em>FieldAccess</em> because it uses an identifier directly). This
+strategy effectively defers the question of whether a <em>Name</em>
+should be treated as a <em>Primary</em> until more context can be
+examined.</p>
+</blockquote>
+<blockquote>
+<p>The second unusual feature avoids a potential grammatical ambiguity
+in the expression "<code>new int[3][3]</code>" which in Java always
+means a single creation of a multidimensional array, but which, without
+appropriate grammatical finesse, might also be interpreted as meaning
+the same as "<code>(new int[3])[3]</code>".</p>
+</blockquote>
+<blockquote>
+<p>This ambiguity is eliminated by splitting the expected definition of
+<em>Primary</em> into <em>Primary</em> and <em>PrimaryNoNewArray</em>.
+(This may be compared to the splitting of <em>Statement</em> into
+<em>Statement</em> and <em>StatementNoShortIf</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.5">14.5</a>)
+to avoid the "dangling else" problem.)</p>
+</blockquote>
+<h4 id="jls-15.8.1">15.8.1 Lexical Literals</h4>
+<p>A literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10">3.10</a>)
+denotes a fixed, unchanging value.</p>
+<blockquote>
+<p>The following production from <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10">3.10</a>
+is shown here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>Literal:</em></dt>
+<dd>
+<em>IntegerLiteral</em>
+</dd>
+<dd>
+<em>FloatingPointLiteral</em>
+</dd>
+<dd>
+<em>BooleanLiteral</em>
+</dd>
+<dd>
+<em>CharacterLiteral</em>
+</dd>
+<dd>
+<em>StringLiteral</em>
+</dd>
+<dd>
+<em>TextBlock</em>
+</dd>
+<dd>
+<em>NullLiteral</em>
+</dd>
+</dl>
+</blockquote>
+<p>The type of a literal is determined as follows:</p>
+<ul>
+<li><p>The type of an integer literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.1">3.10.1</a>)
+that ends with <code>L</code> or <code>l</code> (ell) is
+<code>long</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.2.1">4.2.1</a>).</p>
+<p>The type of any other integer literal is <code>int</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.2.1">4.2.1</a>).</p></li>
+<li><p>The type of a floating-point literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.2">3.10.2</a>)
+that ends with <code>F</code> or <code>f</code> is <code>float</code>
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.2.3">4.2.3</a>).</p>
+<p>The type of any other floating-point literal is <code>double</code>
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.2.3">4.2.3</a>).</p></li>
+<li><p>The type of a boolean literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.3">3.10.3</a>)
+is <code>boolean</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.2.5">4.2.5</a>).</p></li>
+<li><p>The type of a character literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.4">3.10.4</a>)
+is <code>char</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.2.1">4.2.1</a>).</p></li>
+<li><p>The type of a string literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.5">3.10.5</a>)
+or a text block (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a>)
+is <code>String</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.3.3">4.3.3</a>).</p></li>
+<li><p>The type of the null literal <code>null</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.8">3.10.8</a>)
+is the null type (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.1">4.1</a>);
+its value is the null reference.</p></li>
+</ul>
+<div class="inserted">
+<p>An integer literal, floating point literal, boolean literal, or
+character literal evaluates to the value for which the literal is the
+source code representation. A string literal or text block evaluates to
+an instance of class <code>String</code>, as specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.5">3.10.5</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.6">3.10.6</a>.
+The null literal evaluates to the null reference.</p>
+</div>
+<p>Evaluation of a <del>lexical</del> literal always completes
+normally.</p>
+<h4 id="jls-15.8.6"><strong>15.8.6 Template Expressions</strong></h4>
+<div class="inserted">
+<p>A <em>template expression</em> provides a general means of combining
+literal text with the values of expressions. The text and expressions
+are specified by a <em>template</em>. The task of combining the text
+with the expressions' values is delegated to a <em>template
+processor</em>.</p>
+<blockquote>
+<p>Simple interpolation of text and values into a <code>String</code> is
+available from a predefined template processor, <code>STR</code> (<a
+href="#jls-7.3">7.3</a>). Other template processors may combine text and
+values in arbitrary ways to produce a result of a more sophisticated
+type than <code>String</code>.</p>
+</blockquote>
+<dl>
+<dt><em>TemplateExpression:</em></dt>
+<dd>
+<em>TemplateProcessor</em> <code>.</code> <em>TemplateArgument</em>
+</dd>
+<dt><em>TemplateProcessor:</em></dt>
+<dd>
+<em>Expression</em>
+</dd>
+<dt><em>TemplateArgument</em>:</dt>
+<dd>
+<em>Template</em>
+</dd>
+<dd>
+<em>StringLiteral</em>
+</dd>
+<dd>
+<em>TextBlock</em>
+</dd>
+<dt><em>Template:</em></dt>
+<dd>
+<em>StringTemplate</em>
+</dd>
+<dd>
+<em>TextBlockTemplate</em>
+</dd>
+<dt><em>StringTemplate:</em></dt>
+<dd>
+<em>StringTemplateBegin</em> <em>EmbeddedExpression</em><br />
+  { <em>StringTemplateMid</em> <em>EmbeddedExpression</em> }
+<em>StringTemplateEnd</em>
+</dd>
+<dt><em>TextBlockTemplate:</em></dt>
+<dd>
+<em>TextBlockTemplateBegin</em> <em>EmbeddedExpression</em><br />
+  { <em>TextBlockTemplateMid</em> <em>EmbeddedExpression</em> }
+<em>TextBlockTemplateEnd</em>
+</dd>
+<dt><em>EmbeddedExpression:</em></dt>
+<dd>
+[ <em>Expression</em> ]
+</dd>
+</dl>
+<blockquote>
+<p>The following productions from <a href="#jls-3.13">3.13</a> are shown
+here for convenience:</p>
+<dl>
+<dt><em>StringTemplateBegin:</em></dt>
+<dd>
+<code>"</code> <em>StringFragment</em> <code>\{</code>
+</dd>
+<dt><em>StringTemplateMid:</em></dt>
+<dd>
+<code>}</code> <em>StringFragment</em> <code>\{</code>
+</dd>
+<dt><em>StringTemplateEnd:</em></dt>
+<dd>
+<code>}</code> <em>StringFragment</em> <code>"</code>
+</dd>
+<dt><em>StringFragment:</em></dt>
+<dd>
+{ <em>StringCharacter</em> }
+</dd>
+<dt><em>TextBlockTemplateBegin:</em></dt>
+<dd>
+<code>"""</code> <em>TextBlockFragment</em> <code>\{</code>
+</dd>
+<dt><em>TextBlockTemplateMid:</em></dt>
+<dd>
+<code>}</code> <em>TextBlockFragment</em> <code>\{</code>
+</dd>
+<dt><em>TextBlockTemplateEnd:</em></dt>
+<dd>
+<code>}</code> <em>TextBlockFragment</em> <code>"""</code>
+</dd>
+<dt><em>TextBlockFragment:</em></dt>
+<dd>
+{ <em>TextBlockCharacter</em> }
+</dd>
+</dl>
+</blockquote>
+<p>A template is either a <em>string template</em> or a <em>text block
+template</em>. A string template (respectively, a text block template)
+resembles a string literal (a text block) but contains one or more
+<em>embedded expressions</em>, which are expressions prefixed by the
+character sequence <code>\{</code> and postfixed by the character
+<code>}</code>. If nothing appears between the character sequences
+<code>\{</code> and <code>}</code>, the embedded expression is
+implicitly taken to be the null literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.10.8">3.10.8</a>).</p>
+<p>A string template with <em>n</em> embedded expressions
+(<em>n&gt;0</em>) consists of the alternate interleaving of <em>n+1</em>
+fragments with the <em>n</em> embedded expressions. The first fragment
+is a <code>StringTemplateBegin</code> token (<a
+href="#jls-3.13">3.13</a>); the next <em>n-1</em> fragments are
+<code>StringTemplateMid</code> tokens; the last fragment is a
+<code>StringTemplateEnd</code> token.</p>
+<blockquote>
+<p>Here is the breakdown of some string templates:
+<code>"\{42} is the answer."</code> consists of a
+<em>StringTemplateBegin</em> token (<code>"\{</code>), followed by the
+expression <code>42</code> (an integer literal), followed by the
+<em>StringTemplateEnd</em> token (<code>} is the answer."</code>). The
+string template <code>"The answer is \{x+y}!"</code> consists of a
+<em>StringTemplateBegin</em> token (<code>"The answer is \{</code>),
+followed by the expression <code>x+y</code>, followed by a
+<em>StringTemplateEnd</em> token (<code>}!"</code>). The string template
+<code>"Hello \{name} from \{address.city},"</code> consists of a
+<em>StringTemplateBegin</em> token (<code>"Hello \{</code>), followed by
+the expression <code>name</code>, followed by a
+<em>StringTemplateMid</em> token (<code>} from \{</code>), followed by
+the expression <code>address.city</code>, followed by a
+<em>StringTemplateEnd</em> token (<code>},"</code>). Finally, the string
+template <code>"Customer name: \{}"</code> consists of a
+<em>StringTemplateBegin</em> token (<code>"Customer name: \{</code>),
+followed by the (implicit) expression <code>null</code>, followed by a
+<em>StringTemplateEnd</em> token (<code>}"</code>).</p>
+</blockquote>
+<p>A text block template with <em>n</em> embedded expressions
+(<em>n&gt;0</em>) consists of the alternate interleaving of <em>n+1</em>
+fragments with the <em>n</em> embedded expressions. The first fragment
+is a <code>TextBlockTemplateBegin</code> token (<a
+href="#jls-3.13">3.13</a>); the next <em>n-1</em> fragments are
+<code>TextBlockTemplateMid</code> tokens; the last fragment is a
+<code>TextBlockTemplateEnd</code> token.</p>
+<p>The <em>fragment strings</em> of a template represent the literal
+text that surrounds the embedded expressions. Fragment strings are
+determined as follows:</p>
+<ul>
+<li><p>A string template with <em>n</em> embedded expressions and
+<em>n+1</em> fragments has <em>n+1</em> fragment strings, where each
+fragment string is the content of the corresponding fragment (<a
+href="#jls-3.13">3.13</a>) with every escape sequence interpreted, as if
+by executing <code>String.translateEscapes</code> on the
+content.</p></li>
+<li><p>A text block template with <em>n</em> embedded expressions and
+<em>n+1</em> fragments has <em>n+1</em> fragment strings, determined as
+follows:</p>
+<ol type="1">
+<li><p>The <em>string content</em> of a text block template is the
+sequence of characters given by the following steps, in order:</p>
+<ol type="i">
+<li><p>The content of <em>TextBlockTemplateBegin</em>, followed by the
+character sequence <code>\{</code>.</p></li>
+<li><p>For every <em>TextBlockTemplateMid</em>, the sequence of
+characters that begins with the character <code>}</code>, followed by
+the content of <em>TextBlockTemplateMid</em>, followed by the character
+sequence <code>\{</code>.</p></li>
+<li><p>The sequence of characters that begins with the character
+<code>}</code> and followed by the content of
+<em>TextBlockTemplateEnd</em>.</p></li>
+</ol></li>
+<li><p>The string content is then further transformed by applying the
+following steps, in order:</p>
+<ol type="i">
+<li><p>All incidental white space is removed, as if by execution of
+<code>String.stripIndent</code> on the characters of the string
+content.</p></li>
+<li><p>Every escape sequence is interpreted, as if by execution of
+<code>String.translateEscapes</code> on the characters resulting from
+step 1.</p></li>
+</ol></li>
+<li><p>The fragment strings <em>s<sub>1</sub></em>, ...,
+<em>s<sub>n+1</sub></em> are derived from the string content as
+follows:</p>
+<ul>
+<li><p><em>s<sub>1</sub></em> is the string whose content is the
+sequence of characters starting from the start of the string content
+resulting from step 2 and ending immediately before the first occurrence
+of the character sequence <code>\{}</code>.</p></li>
+<li><p><em>s<sub>i</sub></em> (<em>2 ≤ i ≤ n</em>) is the string whose
+content is the sequence of characters that begins immediately after the
+(<em>i-1</em>)th occurrence of the character sequence <code>\{}</code>
+in the string content resulting from step 2 and ends immediately before
+the <em>i</em>th occurrence of the character sequence
+<code>\{}</code>.</p></li>
+<li><p><em>s<sub>n+1</sub></em> is the string whose content is the
+sequence of characters that begins immediately after the <em>n</em>th
+occurrence of the character sequence <code>\{}</code> in the string
+content resulting from step 2 and ends immediately before the end of the
+string content.</p></li>
+</ul></li>
+</ol></li>
+</ul>
+<blockquote>
+<p>For example, the fragment strings of the string template
+<code>"\{42} is the answer."</code> are first the empty string, followed
+by the string <code>" is the answer."</code>. The fragment strings of
+the string template <code>"The answer is \{x+y}!"</code> are the strings
+<code>"The answer is "</code>, followed by <code>"!"</code>. The
+fragment strings of the string template
+<code>"Hello \{name} from \{address.city},"</code> are the strings
+<code>"Hello "</code>, followed by <code>" from "</code>, followed by
+<code>","</code>. Finally, the fragment strings of the string template
+<code>"Customer name: \{}"</code> are first the string
+<code>"Customer name: "</code>, followed by the empty string.</p>
+<p>The fragment strings of the text block template</p>
+<pre><code>&quot;&quot;&quot;
+                Name:
+                \{customerName}&quot;&quot;&quot;</code></pre>
+<p>are first the string whose content is the six character sequence
+<code>N</code> <code>a</code> <code>m</code> <code>e</code>
+<code>:</code> <code>LF</code> (note that the incidental whitespace has
+been removed), followed by the empty string.</p>
+</blockquote>
+<p>The type, <em>TP</em>, of the <em>TemplateProcessor</em> expression
+must be a subtype of <code>StringTemplate.Processor</code>, or a
+compile-time error occurs. If <em>TP</em> is a subtype of
+<code>StringTemplate.Processor&lt;Result,Exc&gt;</code>, where
+<code>Result</code> and <code>Exc</code> are the type arguments of the
+parameterized type, then the type of the template expression is
+<code>Result</code>. If <em>TP</em> is a subtype of the raw type
+<code>StringTemplate.Processor</code>, then the type of the template
+expression is <code>Object</code>.</p>
+<blockquote>
+<p><code>StringTemplate.Processor&lt;R,E&gt;</code> is a generic
+functional interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.8">9.8</a>),
+whose single <code>abstract</code> method, <code>process</code>, has a
+<code>StringTemplate</code> formal parameter, a return type
+<code>R</code>, and a <code>throws</code> clause with the type
+<code>E</code>.</p>
+</blockquote>
+<p>There is no restriction on the type of any embedded expression
+appearing in a <em>Template</em>.</p>
+<div class="example">
+<p>Example 15.8.6-1. Simple Templates</p>
+<p>The following simple examples make use of the <code>static</code>
+member <code>STR</code> of <code>StringTemplate</code> that is
+implicitly imported in every compilation unit and implements simple
+string interpolation.</p>
+<pre><code>// A string template with simple embedded string variables
+String firstName = &quot;Joan&quot;;
+String lastName  = &quot;Smith&quot;;
+String fullName  = STR.&quot;\{firstName} \{lastName}&quot;;
+
+// A string template with embedded integer expressions
+int x = 10, y = 20;
+String s1 = STR.&quot;\{x} + \{y} = \{x + y}&quot;;
+
+// Embedded expressions can invoke methods and access fields
+String s2 = STR.&quot;You have a \{getOfferType()} waiting for you!&quot;;
+String s3 = STR.&quot;Access at \{req.date} \{req.time} from \{req.ipAddress}&quot;;
+
+// A text block template modeling an HTML element with
+// embedded expressions
+String title = &quot;My Web Page&quot;;
+String text  = &quot;Hello, world&quot;;
+String html = STR.&quot;&quot;&quot;
+        &lt;html&gt;
+          &lt;head&gt;
+            &lt;title&gt;\{title}&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;p&gt;\{text}&lt;/p&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+        &quot;&quot;&quot;;
+
+// A text block template modeling a JSON value with
+// embedded expressions
+String name    = &quot;Joan Smith&quot;;
+String phone   = &quot;555-123-4567&quot;;
+String address = &quot;1 Maple Drive, Anytown&quot;;
+String json = STR.&quot;&quot;&quot;
+    {
+        &quot;name&quot;:    &quot;\{name}&quot;,
+        &quot;phone&quot;:   &quot;\{phone}&quot;,
+        &quot;address&quot;: &quot;\{address}&quot;
+    }
+    &quot;&quot;&quot;;</code></pre>
+</div>
+<p>At run time, a template expression is evaluated as follows:</p>
+<ol type="1">
+<li><p>The <em>TemplateProcessor</em> expression is evaluated. If the
+resulting value is null, then a <code>NullPointerException</code> is
+thrown and the entire template expression completes abruptly for that
+reason. If evaluation of the <em>TemplateProcessor</em> completes
+abruptly, the entire template expression completes abruptly for the same
+reason.</p></li>
+<li><p>If the <em>TemplateArgument</em> is a <em>StringLiteral</em> or a
+<em>TextBlock</em>, then the result of this step is an instance of
+<code>StringTemplate</code>, produced as if by invocation of the
+<code>static</code> method <code>StringTemplate.of</code> with the
+argument <em>TemplateArgument</em>.</p>
+<p>If the <em>TemplateArgument</em> is a <em>Template</em>, then the
+embedded expressions <em>e<sub>1</sub></em>, ..., <em>e<sub>n</sub></em>
+(<em>n &gt; 0</em>) are evaluated to yield <em>embedded values</em>,
+<em>v<sub>1</sub></em>, ..., <em>v<sub>n</sub></em>. The embedded
+expressions are evaluated in the order that they appear in the
+<em>Template</em>, from left to right. If evaluation of any embedded
+expression completes abruptly, then the entire template expression
+completes abruptly for the same reason.</p>
+<p>Otherwise, the result of this step is a reference to an instance of a
+class with the following properties:</p>
+<ul>
+<li><p>The class implements the <code>StringTemplate</code>
+interface.</p></li>
+<li><p>The instance method <code>values</code> returns an instance of
+<code>java.util.List</code> containing the embedded values
+<em>v<sub>1</sub></em>, ..., <em>v<sub>n</sub></em>, in that
+order.</p></li>
+<li><p>The instance method <code>fragments</code> returns an instance of
+<code>java.util.List</code> containing exactly the fragment strings of
+the template, in order.</p></li>
+<li><p>The instance method <code>interpolate</code> of the class
+instance returns the strict alternate interleaved string concatenation
+of (1) exactly the fragment strings of the template, in order, and (2)
+the embedded values <em>v<sub>1</sub></em>, ..., <em>v<sub>n</sub></em>,
+in that order, beginning with the first fragment string.</p></li>
+</ul></li>
+<li><p>The result of evaluating the template expression is determined as
+if by invoking the method <code>process</code> on the result of step 1,
+with the argument given by the result of step 2. If this method
+invocation completes abruptly, the entire template expression completes
+abruptly for the same reason.</p></li>
+</ol>
+<blockquote>
+<p>That is, the meaning of the template expression:</p>
+<pre><code>e.&quot;...&quot; // &quot;...&quot; is a valid string template</code></pre>
+<p>is equivalent to the meaning of the method invocation expression:</p>
+<pre><code>e.process(t)</code></pre>
+<p>where <code>t</code> refers to an instance of
+<code>StringTemplate</code> that encapsulates both the literal text and
+the values of the embedded expressions in the template.</p>
+</blockquote>
+<div class="example">
+<p>Example 15.8.6-2. Simple Template Processors.</p>
+<p>The <code>interpolate</code> method of <code>StringTemplate</code>
+provides a convenient way to concatenate the fragment strings and
+embedded values of a template to produce a string. In the following
+example, <code>UPPER</code> both interpolates a given template and then
+converts all the letters to uppercase.</p>
+<pre><code>StringTemplate.Processor&lt;String, RuntimeException&gt; UPPER = (StringTemplate st) -&gt;
+    st.interpolate().toUpperCase();
+
+String name = &quot;Joan&quot;;
+String result = UPPER.&quot;My name is \{name}&quot;;</code></pre>
+<p>After executing these statements, <code>result</code> will be
+initialized with the string <code>"MY NAME IS JOAN"</code>.</p>
+</div>
+<div class="example">
+<p>Example 15.8.6-3. More Complex Template Processors.</p>
+<p>More complex template processors can use the following simple
+programming pattern. In the following example,
+<code>MY_UPPER_STRINGS</code> first converts the fragment strings
+(returned by the <code>fragments</code> method) to uppercase before
+using the <code>interpolate</code> method (using the embedded values
+returned by the <code>values</code> method) to return a string
+result.</p>
+<pre><code>StringTemplate.Processor&lt;String, RuntimeException&gt; MY_UPPER_STRINGS = (StringTemplate st) -&gt; {
+    List&lt;String&gt; fragments = st.fragments()
+        .stream()
+        .map(String::toUpperCase)
+        .toList();
+    List&lt;Object&gt; values = st.values();
+    return StringTemplate.interpolate(fragments, values);
+};
+
+String name = &quot;Joan&quot;;
+String result = MY_UPPER_STRINGS.&quot;My name is \{name}&quot;;</code></pre>
+<p>After executing these statements, <code>result</code> will be
+initialized with the string "MY NAME IS Joan"`.</p>
+<p>In the following example, <code>MY_UPPER_VALUES</code> converts the
+embedded expressions to upper case strings (taking care to handle any
+null values) before interpolating.</p>
+<pre><code>StringTemplate.Processor&lt;String, RuntimeException&gt; MY_UPPER_VALUES = (StringTemplate st) -&gt; {
+    List&lt;String&gt; values = st.values()
+        .stream()
+        .map((o) -&gt; (o==null)?&quot;&quot;:o.toString().toUpperCase())
+        .toList();
+    return StringTemplate.interpolate(st.fragments(), values);
+};
+
+String title = null;
+String firstName = &quot;Joan&quot;;
+String familyName = &quot;Smith&quot;;
+String result = MY_UPPER_VALUES.&quot;Welcome \{title}\{firstName} \{familyName}&quot;;</code></pre>
+<p>After executing these statements, <code>result</code> will be
+initialized with the string <code>"Welcome JOAN SMITH"</code>.</p>
+</div>
+<div class="example">
+<p>Example 15.8.6-4. Template Processors That Do Not Return Strings</p>
+<p>It is possible to process a template and return a value other than a
+string. In the following example, <code>JSON</code> returns an instance
+of a class <code>JSONObject</code> and not a string.</p>
+<pre><code>StringTemplate.Processor&lt;JSONObject, RuntimeException&gt; JSON =
+    (StringTemplate st) -&gt; new JSONObject(st.interpolate());
+
+String name    = &quot;Joan Smith&quot;;
+String phone   = &quot;555-123-4567&quot;;
+String address = &quot;1 Maple Drive, Anytown&quot;;
+
+JSONObject doc = JSON.&quot;&quot;&quot;
+    {
+        &quot;name&quot;:    &quot;\{name}&quot;,
+        &quot;phone&quot;:   &quot;\{phone}&quot;,
+        &quot;address&quot;: &quot;\{address}&quot;
+    }
+    &quot;&quot;&quot;;</code></pre>
+</div>
+<div class="example">
+<p>Example 15.8.6-6. Template Processors That Can Throw an Exception</p>
+<p>It is sometimes useful to validate a given template and throw an
+exception if the template does not meet the requirements.</p>
+<p>In the following example, <code>JSON_VALIDATE</code> converts a given
+template into an instance of a class <code>JSONObject</code>, but first
+checks that the intermediate interpolated string begins and ends with
+matching braces (ignoring any leading or trailing white space). If
+either of these checks fail then a <code>JSONException</code> is thrown,
+otherwise the corresponding <code>JSONObject</code> instance is
+returned.</p>
+<pre><code>StringTemplate.Processor&lt;JSONObject, JSONException&gt; JSON_VALIDATE = (StringTemplate st) -&gt; {
+    String stripped = st.interpolate().strip();
+    if (!stripped.startsWith(&quot;{&quot;) || !stripped.endsWith(&quot;}&quot;)) {
+        throws new JSONException(&quot;Missing brace&quot;);
+    }
+    return new JSONObject(stripped);
+};
+
+String name    = &quot;Joan Smith&quot;;
+String phone   = &quot;555-123-4567&quot;;
+String address = &quot;1 Maple Drive, Anytown&quot;;
+try {
+    JSONObject doc = JSON_VALIDATE.&quot;&quot;&quot;
+        {
+            &quot;name&quot;:    &quot;\{name}&quot;,
+            &quot;phone&quot;:   &quot;\{phone}&quot;,
+            &quot;address&quot;: &quot;\{address}&quot;
+        }
+        &quot;&quot;&quot;;
+} catch (JSONException ex) {
+    ...
+}</code></pre>
+</div>
+</div>
+</main><footer class="legal-footer"><hr/><a href="../legal/copyright.html">Copyright</a> &copy; 1993, 2024, Oracle and/or its affiliates, 500 Oracle Parkway, Redwood Shores, CA 94065 USA.<br>All rights reserved. Use is subject to <a href="https://www.oracle.com/java/javase/terms/license/java21speclicense.html">license terms</a> and the <a href="https://www.oracle.com/technetwork/java/redist-137594.html">documentation redistribution policy</a>. <!-- Version 21.0.6+8-LTS-188 --></footer>
+</body>
+</html>

@@ -1,0 +1,462 @@
+in 1.4
+	List mylist=new ArrayList();
+
+in 1.5
+	List<Object>mylist=new ArrayList<Object>();
+
+Generics are safe.
+They are at compiler level.
+
+List<String>mylist=new ArrayList<String>();
+mylist.add(30);  // Error
+
+
+List l=new ArrayList(); //old style
+
+List<Object>l=new ArrayList<Object> //new style
+
+
+Mixing Generic and Non-generic Collections
+
+
+import java.util.*;
+public class trial 
+{
+	 void disp(List mylist)
+	{
+		Iterator it=mylist.iterator();
+		while(it.hasNext())
+		{
+			System.out.println(it.next());
+		}
+	}
+	public static void main(String args[])
+	{
+		List<Integer>m=new ArrayList<Integer>();
+		m.add(20);
+		m.add(40);
+		trial t=new trial();
+		t.disp(m);
+
+
+	}
+}
+
+
+The above code works fine, but if u try to add "non-Integer" to the list inside "disp" that can be risky.
+
+e.g.
+
+import java.util.*;
+public class Trial 
+{
+	 void disp(List mylist)
+	{
+		 mylist.add("hello");
+		Iterator it=mylist.iterator();
+		while(it.hasNext())
+		{
+			System.out.println(it.next());
+		}	
+	}
+	public static void main(String args[])
+	{
+		List<Integer>m=new ArrayList<Integer>();
+		m.add(20);
+		m.add(40);
+		Trial t=new Trial();
+		t.disp(m);
+		System.out.println("after returning");
+		Integer ob=m.get(2); // this is risky
+		System.out.println(ob);
+
+
+	}
+}
+
+that is , u can pass a generic collection into a method that takes a non-generic collection,but that is risky. The compiler can't stop the method from inserting the wrong type into the previously type safe collection.
+
+
+Polymorphism and Generics
+
+Polymorphism applies to the "base" type of the collection. e.g.
+List<Integer>mylist=new ArrayList<Integer>()
+
+Following code does not work
+
+class Parent{}
+class Child extends Parent{}
+List<Parent>mylist=new ArrayList<Child>();
+
+	Because the rule is , generic type of reference and generic type of the object to which it refers must be identical. Polymorphism applies to "base" type, and the meaning of "base" is collection class itself.
+e.g.
+List<Integer>mylist=new ArrayList<Integer>();
+	here List and ArrayList are the base type and Integer is the generic type. So an ArrayList can be assigned to List but a collection of <Integer> cannot be assigned to a reference of <Object>, even though Integer is a subclass of Object.
+
+	 u can't do following,
+List<Animal>mylist=new ArrayList<Dog>();
+
+	Reason:-
+
+public void addAnimal(Animal arr[])
+{
+	arr[0]=new Dog();
+}
+Dog d[]={new Dog(),new Dog()};
+addAnimal(d);
+	Above code will not have any problem,but if we do following 
+	arr[1]=new Cat();
+even though it will compile,it can be dangerous at runtime.
+This is the scenario which is bad,regardless of  whether it is an array or an ArrayList. The difference is , the compiler lets u get away with it for arrays, but not for generic collections.
+	The reason the compiler won't let u pass an ArrayList<Dog> into a method that takes an ArrayList<Animal>, is because within the method, that parameter is of type ArrayList<Animal>, and that means u could put any kind of Animal into it. There would be no way for compiler to stop u from putting a Cat into a List that was originally declared as <Dog>, but is now referenced from the <Animal> parameter.
+	Now the question arises , why compiler allows it in case of arrays and not in collection ?
+	The reason u can get away with compiling this for arrays is because there is a runtime exception (ArrayStoreException) that will prevent u from putting the wrong type of object into an array. If u send a Dog array into the method that takes an Animal array, and u add only Dogs (including Dogs subtypes) into the array now referenced by Animal, no problem. But if u do try to add Cat to the object that is actually a Dog array, u will get the exception.
+	But there is no equivalent exception for generics, because of type erasure !
+In other words, at runtime the JVM knows the type of arrays but does not know the type of collection. All the generic type information is removed during compilation,so by the time it gets to the JVM, there is simply no way to recognize the disaster of putting a Cat into an ArrayList<Dog>. that is at runtime the JVM would have no way to stop u from adding a Cat to what was created as a Dog collection.
+
+you can do following
+List<Animal>mylist=new ArrayList<Animal>();
+mylist.add(new Dog());
+mylist.add(new Cat());
+
+e.g.
+ 	void disp(List<Animal> arr)
+	{
+		arr.add(new Dog());
+		arr.add(new Cat());
+	}
+
+	disp(new ArrayList<Animal>());
+
+
+	Now what if those methods that invoke Animal methods on each thing in the collection,which will work regardless of which kind of ArrayList subtype is passed in ?
+	if the "add()" method is the problem, we can tell compiler, "we are using the collection passed in just to invoke methods on the elements and we promise, we'll not add anything to collection". And there is a mechanism to tell the compiler that u can take any generic subtype of the declared argument type because u won't be putting anything in the collection. And that mechanism is the wildcard <?>.
+	The method signature would change from
+public void disp(List<Animal>mylist)
+to
+public void disp(List<? extends Animal>mylist)
+	By saying <? extends Animal>, we're saying," it can be assigned a collection that is a subtype of List and typed for <Animal> or anything that extends Animal. And moreover, I will not add anything to the collection".
+	
+e.g.
+
+import java.util.*;
+class Animal
+{
+	void eat()
+	{
+	}
+}
+class Dog extends Animal
+{
+	void eat()
+	{
+		System.out.println("Dog eat");
+	}
+}
+class Cat extends Animal
+{
+	void eat()
+	{
+		System.out.println("Cat eat");
+	}
+}
+public class trial 
+{
+	 void disp(List<? extends Animal> arr)
+	{
+		for(Animal l:arr)
+		{
+			l.eat();
+		}
+	}
+	public static void main(String args[])
+	{
+		Dog d[]={new Dog(),new Dog()};
+		trial t=new trial();
+		List<Dog>l=new ArrayList<Dog>();
+		l.add(d[0]);
+		l.add(d[1]);
+		t.disp(l);
+
+// now with cat
+	Cat c[]={new Cat(),new Cat()};
+		List<Cat>l1=new ArrayList<Cat>();
+		l1.add(c[0]);
+		l1.add(c[1]);
+		t.disp(l1);
+
+
+	}
+} 
+
+
+
+	Here keyword "extends" works for both class and interface.
+e.g. there is no
+List<? implements Serializable>mylist
+
+there is
+List<? extends Serializable>mylist
+
+	Thre is another scenario where u can use a wildcard and still add to the collection, but in a safe way- the keyword "super".
+
+e.g.
+List<? super Dog>mylist
+tells compiler, please accept any List with a generic type that is of type Dog or a supertype of Dog. Nothing lower in the inheritance tree can come in, but anything higher than Dog is ok. It works fine because if u pass in a list of type Animal,then it's perfectly fine to add a Dog to it. If u pass in a list of type Dog, its perfectly fine to add a Dog to it. And if u pass in a list of type Object, it's still fine to add a Dog to it. When u use the <? super ___> syntax ,u r telling the compiler that u can accept the type on the right-hand side of super or any of its supertypes, since- and this is the key part that makes it work- a collection declared as any supertype of Dog will be able to accept a Dog as an element.
+List<Object> can take Dog. List<Animal> can take Dog. and List<Dog> can take Dog. So passing any of those in will work. So the "super" keyword in wildcard notation lets u have a restricted, but still possible way to add to a collection.
+
+e.g.
+
+import java.util.*;
+class Animal
+{
+	void eat()
+	{
+	}
+}
+class Dog extends Animal
+{
+	void eat()
+	{
+		System.out.println("Dog eat");
+	}
+}
+class Cat extends Animal
+{
+	void eat()
+	{
+		System.out.println("Cat eat");
+	}
+}
+public class trial 
+{
+	 void disp(List<? super Dog> arr)
+	{
+		arr.add(new Dog());
+		arr.add(new Dog());
+		for(Object d:arr)
+		{
+			if(d instanceof Dog)
+			{
+				((Dog)d).eat();
+			}
+			else if(d instanceof Cat)
+			{
+				((Cat)d).eat();
+			}
+		}
+		System.out.println(arr);
+	}
+	public static void main(String args[])
+	{
+		Dog d[]={new Dog(),new Dog()};
+		trial t=new trial();
+		List<Animal>l=new ArrayList<Animal>();
+		l.add(new Cat());
+		t.disp(l);
+	List<Dog>l1=new ArrayList<Dog>();
+		l1.add(new Dog());	
+		t.disp(l1);
+
+	}
+}
+
+Following two are different
+public void disp(List<?>mylist)
+public void disp(List<Object>mylist)
+
+	There is a huge difference. List<?>, which is the wildcard<?> without the keywords extends or super, simply means "any type". So that means any type of List can be assigned to the argument. That could be a List of <Dog>,<Integer> etc. whatever. And using the wildcard alone, without the keyword super(followed by a type),means that u can not add anything to the list referred to as List<?>.
+	List<Object> is completely different from List<?>. List<Object> means that the method can take only a List<Object>. Not a List<Dog> or List<Cat>. It does, however,mean that u can add to the list, since the compiler has already made certain that u r passing only a valid List<Object> into the method.
+
+	example of List<?>
+	
+import java.util.*;
+class Animal
+{
+	void eat()
+	{
+	}
+}
+class Dog extends Animal
+{
+	void eat()
+	{
+		System.out.println("Dog eat");
+	}
+}
+class Cat extends Animal
+{
+	void eat()
+	{
+		System.out.println("Cat eat");
+	}
+}
+public class trial 
+{
+	 void disp(List<?> arr)
+	{
+		System.out.println(arr);
+		//arr.add(new Dog()); can't add
+	}
+	public static void main(String args[])
+	{
+		Dog d[]={new Dog(),new Dog()};
+		trial t=new trial();
+		List<Animal>l=new ArrayList<Animal>();
+		t.disp(l);
+	List<Dog>l1=new ArrayList<Dog>();
+		l1.add(new Dog());	
+		t.disp(l1);
+	List<Integer>ob=new ArrayList<Integer>();
+		ob.add(100);
+		t.disp(ob);
+
+	}
+}
+
+
+	example of List<Object>
+
+import java.util.*;
+class Animal
+{
+	void eat()
+	{
+	}
+}
+class Dog extends Animal
+{
+	void eat()
+	{
+		System.out.println("Dog eat");
+	}
+}
+class Cat extends Animal
+{
+	void eat()
+	{
+		System.out.println("Cat eat");
+	}
+}
+public class trial 
+{
+	 void disp(List<Object> arr)
+	{
+		arr.add(new Dog()); 
+		arr.add(200);
+		System.out.println(arr);
+	}
+	public static void main(String args[])
+	{
+		trial t=new trial();
+	List<Object>ob=new ArrayList<Object>();
+		t.disp(ob);
+
+	}
+}
+
+
+
+	Following are some of the valid/invalid examples:
+
+1) List<?> mylist=new ArrayList<Dog>();
+	valid
+
+2) List<? extends Animal> mylist=new ArrayList<Dog>();
+	valid
+
+3) List<?> mylist=new ArrayList<? extends Animal>();
+	invalid:- u cannot use wildcard notation in the object creation. So the new ArrayList<? extends Animal>() will not compile.
+
+
+4) List<? extends Dog> mylist=new ArrayList<Integer>();
+	invalid:- u can not assign an integer list to a reference that takes only a Dog (including any subtypes of Dog, of course).
+
+
+5) List<? super Dog> mylist=new ArrayList<Animal>();
+	valid
+
+
+6) List<? super Animal> mylist=new ArrayList<Dog>();
+	invalid:- u can not assign a Dog to <? super Animal> . The Dog is too "low" in the class hierarchy. Only <Animal> or <Object> would have been legal.
+
+Generic Declaration
+
+	public interface List<E>
+
+The <E> is a placeholder for the type u pass in. The List interface is behaving as a generic "template" (sort of like C++ templates), and when u write ur code,u change it from a generic List to a List<Dog> or List<Integer>, and so on.
+The E is just a convention. Any java identifier would work here,but E stands for "Element" and it's used when the template is a collection.
+
+	Making ur own Generic class
+
+
+class Gen<A,B>
+{
+	A a;
+	B b;
+	Gen(A a,B b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	A giveA()
+	{
+		return a;
+	}
+	B giveB()
+	{
+		return b;
+	}
+}
+public class trial 
+{
+	public String toString()
+	{
+		return "i am trial";
+	}
+	public static void main(String args[])
+	{
+		Gen<Integer,Float> g=new Gen<Integer,Float>(20,5.6f);
+		System.out.println(g.giveA());
+		System.out.println(g.giveB());
+
+		trial t=new trial();
+		Gen<trial,Boolean> g1=new Gen<trial,Boolean>(t,true);
+		System.out.println(g1.giveA());
+		System.out.println(g1.giveB());
+	}
+}
+
+
+	Creating Generic Method
+
+
+class a{}
+class b extends a{}
+class MyClass
+{
+	<T>void accept(T t)
+	{
+		System.out.println(t);
+	}	
+	public<T extends a>void disp(T t)
+	{
+		System.out.println(t);
+	}
+}
+public class trial 
+{
+	public static void main(String args[])
+	{
+		MyClass m1=new MyClass();
+		m1.accept(20);
+		m1.accept(m1);
+		trial tr=new trial();
+		m1.accept(tr);
+
+		b ob=new b();
+		m1.disp(ob);
+		// m1.disp(tr); Error
+	}
+}
+

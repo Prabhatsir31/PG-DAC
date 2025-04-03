@@ -1,0 +1,50 @@
+suppose we want to find out octal of 35
+
+1) method is:
+
+			Octal of 35
+	
+	8	35	
+	8	4	3
+	8	0	4
+
+
+	0	4	3
+
+	8[2]	8[1]	8[0]
+
+	    32  +	3
+
+2) method is:
+
+go on writing
+
+	
+	8[1]	8[0]  .. till you get power of 8 greater than the given number
+		i.e. 35
+
+so here  8[0]  is 1
+	 8[1]  is 8
+
+but   8[2] is 64 which is larger than 35
+
+so we should take only  8[1] and 8[0]
+
+now think how many times we need to take 8[1] so that the result won't be more than 35 ?
+	it's 8[1]  4 times
+		and that comes to 8*4  i.e.  32
+
+			35-32  is 3
+
+now think how many times we need to take 8[0] so that the result will be 3?
+	it's 8[0]  3 times
+		and that comes to 8[0] * 3  which comes to 3
+
+so if we consider the order
+	8[1]        8[0]
+
+	4	     3
+
+so octal of 35 is       43
+
+ 

@@ -1,0 +1,17 @@
+on developer side:
+
+create interface "Shape" with "void draw();" method.
+
+now define child classes 
+	Triangle,Rect and Circle
+
+
+
+on Client side:
+
+define "ShapeDemo" class with main and perform functions
+
+define perform function in such a way that given any shape it can invoke "draw()" of it.
+
+
+

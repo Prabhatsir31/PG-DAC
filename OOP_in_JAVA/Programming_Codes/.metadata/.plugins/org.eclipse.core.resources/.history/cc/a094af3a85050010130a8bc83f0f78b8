@@ -1,0 +1,93 @@
+/*
+create interface Electronic_Appliance with on and off  methods
+define two implementations Tv and Refrigerator
+create ArrayList for Electronic_Appliance  i.e.  new ArrayList<Electronic_Appliance>
+store Tv and Refrigerator inside ArrayList. Store ArrayList inside the file
+read the list from the file and traverse it using Iterator. Also while iterating invoke on 
+and off  methods.
+*/
+package Practice;
+import java.util.*;
+import java.io.*;
+
+interface Electronic_Appliance extends Serializable {
+    void on();
+    void off();
+}
+
+class Tv implements Electronic_Appliance {
+    private String brand;
+
+    public Tv(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public void on() {
+        System.out.println(brand + " TV is now ON.");
+    }
+
+    @Override
+    public void off() {
+        System.out.println(brand + " TV is now OFF.");
+    }
+
+    @Override
+    public String toString() {
+        return "TV [Brand: " + brand + "]";
+    }
+}
+
+class Refrigerator implements Electronic_Appliance {
+    private String brand;
+
+    public Refrigerator(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public void on() {
+        System.out.println(brand + " Refrigerator is now ON.");
+    }
+
+    @Override
+    public void off() {
+        System.out.println(brand + " Refrigerator is now OFF.");
+    }
+
+    @Override
+    public String toString() {
+        return "Refrigerator [Brand: " + brand + "]";
+    }
+}
+
+public class Ques3 {
+    public static void main(String[] args) {
+        List<Electronic_Appliance> appliances = new ArrayList<>();
+        appliances.add(new Tv("Samsung"));
+        appliances.add(new Refrigerator("LG"));
+
+        // Serialize the list to a file
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ABC.txt"))) {
+            oos.writeObject(appliances);
+            System.out.println("Appliances have been serialized to ABC.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Deserialize the list from the file
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("ABC.txt"))) {
+            List<Electronic_Appliance> deserializedAppliances = (List<Electronic_Appliance>) ois.readObject();
+            System.out.println("Appliances have been deserialized from ABC.txt");
+
+            // Iterate over the list and invoke on and off methods
+            for (Electronic_Appliance appliance : deserializedAppliances) {
+                System.out.println(appliance);
+                appliance.on();
+                appliance.off();
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}

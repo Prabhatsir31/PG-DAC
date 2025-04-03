@@ -1,0 +1,10 @@
+get operation
+
+
+hashcode  -  on the given key inside "get()" method
+	bucket is determined for search
+
+		==  - true - get the value
+		      false
+			 equals - true - get the value
+				false - linked list will be traverse and subsequently == and equals are invoked.

@@ -1,0 +1,63 @@
+interface Animal {
+    void makeSound();  // abstract method
+    void move();       // abstract method
+}
+
+// Dog class implements Animal interface
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Dog runs");
+    }
+}
+
+// Cat class implements Animal interface
+class Cat implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Cat walks");
+    }
+}
+
+public class Main 
+{
+    static void perform(Animal ref) // actual code for abstraction
+    {
+	ref.makeSound();  // Output: Bark or Meow
+        ref.move();       // Output: Dog runs or Cat runs
+        ref.breathe();    // Output: Breathing...
+    }
+    public static void main(String[] args) 
+    {
+        Dog myDog = new Dog();
+        Cat myCat = new Cat();
+	perform(myDog);
+	perform(myCat);
+     
+    }
+}
+
+
+Explanation:
+
+
+In this program, we use an interface called Animal to define some behaviors that all animals share. Every animal must be able to make a sound and move, but we don’t define how they do those things in the interface itself. The implementation details (like whether the sound is a 'bark' or a 'meow', or whether the movement is running or walking) are left for the specific classes, like Dog and Cat, to provide.
+
+The beauty of this design is that you can call the same methods, makeSound() and move(), on any Animal object, and the correct behavior will happen depending on whether you're dealing with a dog or a cat. You don't need to know the details of how a dog barks or how a cat walks; you just know that they will make a sound and move in their own specific ways. This hides the complexity of the implementation and makes your code more flexible and reusable.
+
+For example, the perform method can take any object that implements the Animal interface. Whether it's a Dog or a Cat, the perform method can call makeSound() and move() without needing to know the specific type of animal. This is the key benefit of abstraction: you focus on what the animal does, not how it does it.
+
+
+The perform method abstracts away the details of each animal’s implementation. It doesn’t need to know whether it's a Dog or a Cat; it just calls the methods defined in the Animal interface and lets the implementation handle the specifics.
+
+The complexity of how an animal makes a sound or moves is hidden inside the Dog and Cat classes, allowing you to interact with animals in a simplified, uniform way.

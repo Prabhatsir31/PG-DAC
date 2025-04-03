@@ -1,0 +1,4 @@
+when u implement Serializable, entire object graph is saved inside file.
+
+in this example when u try to save object of "saveme" class , it super class (base) and member (part) class objects are also saved.
+

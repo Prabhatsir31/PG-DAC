@@ -1,0 +1,36 @@
+
+
+filter(i -> i > 10);  // we are invoking
+
+	filter's argument is "Predicate" functional interface with
+			boolean test(T t)  abstract method
+
+
+
+now we need to understand what must be the logic inside "filter()" method ?
+
+
+Predicate's implementation
+
+class PredicateImpl implements Predicate
+{
+	public boolean test(Integer t)
+	{
+		if t>10 
+			return true;
+	}
+}
+
+filter(Predicate ref)
+{
+		traverse the stream
+		pass each and every number to "test" method
+
+		ref.test(number);
+		if true store these numbers in a new Stream
+		finally return that stream
+
+}
+
+
+	

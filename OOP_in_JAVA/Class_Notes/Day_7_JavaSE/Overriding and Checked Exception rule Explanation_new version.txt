@@ -1,0 +1,253 @@
+overriding  method may not declare any checked exception.
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()
+	{
+	}
+}
+
+
+main()
+{
+	base ref=new sub();
+	ref.disp();
+}
+
+	what compiler checks?
+		compiler will search "disp" in base
+		is it there ?
+		is it accessible ?
+			since "disp" of base has declared "IOException" which is a checked exception, main has to either handle or declare.
+	so we need to modify the code inside main.
+
+	try
+	{
+		ref.disp();
+	}
+	catch(IOException ie)
+	{
+		ie.printStackTrace();
+	}
+
+	now there is no problem for the compiler. Compiler will further check:
+		is is final ?   no
+		is it static? no
+
+	so as per compiler's instruction, late binding will take place. That is during runtime "sub" class "disp()" will be invoked. It is not going to give any exception and we are ready with "catch" block. So there is no side effect of the code.
+
+
+
+
+
+
+overriding method can declare same checked exception 
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+
+
+
+main()
+{
+	base ref=new sub();
+	ref.disp();
+}
+
+what compiler checks?
+		compiler will search "disp" in base
+		is it there ?
+		is it accessible ?
+			since "disp" of base has declared "IOException" which is a checked exception, main has to either handle or declare.
+	so we need to modify the code inside main.
+
+	try
+	{
+		ref.disp();
+	}
+	catch(IOException ie)
+	{
+		ie.printStackTrace();
+	}
+
+	now there is no problem for the compiler. Compiler will further check:
+		is is final ?   no
+		is it static? no
+
+	so as per compiler's instruction, late binding will take place. That is during runtime "sub" class "disp()" will be invoked. If it gives "IOException", we are ready with "catch" block. So there is no side effect of the code.
+
+
+
+overriding method can declare same checked exception or its sub-type declared by overriden method.
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws EOFException
+	{
+	}
+}
+
+
+main()
+{
+	base ref=new sub();
+	ref.disp();
+}
+
+
+what compiler checks?
+		compiler will search "disp" in base
+		is it there ?
+		is it accessible ?
+			since "disp" of base has declared "IOException" which is a checked exception, main has to either handle or declare.
+	so we need to modify the code inside main.
+
+	try
+	{
+		ref.disp();
+	}
+	catch(IOException ie)
+	{
+		ie.printStackTrace();
+	}
+
+	now there is no problem for the compiler. Compiler will further check:
+		is is final ?   no
+		is it static? no
+
+	so as per compiler's instruction, late binding will take place. That is during runtime "sub" class "disp()" will be invoked. If it gives "EOFException", we are ready with "catch(IOException)" block where IOException can easily catch "EOFException". So there is no side effect in the code.
+
+
+overriding method can not declare checked exception not declared by overriden method.
+
+// following code will not work
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws Exception
+	{
+	}
+}
+
+
+
+main()
+{
+	base ref=new sub();
+	ref.disp();
+	
+}
+
+let's assume above code for overriding works during compile time.
+
+what compiler checks ?
+		compiler will search "disp" in base
+		is it there ?
+		is it accessible ?
+			since "disp" of base has declared "IOException" which is a checked exception, main has to either handle or declare.
+	so we need to modify the code inside main.
+
+	try
+	{
+		ref.disp();
+	}
+	catch(IOException ie)
+	{
+		ie.printStackTrace();
+	}
+
+	now there is no problem for the compiler. Compiler will further check:
+		is is final ?   no
+		is it static? no
+
+	so as per compiler's instruction, late binding will take place. That is during runtime "sub" class "disp()" will be invoked. If it gives "Exception", it cannot be collected inside IOException because Exception class is the parent of IOException and program will be terminated. This is the side effect of the code. It should not happen that's why compiler will give error at :
+
+
+class sub extends base
+{
+	public void disp()throws Exception    // error here
+	{
+	}
+}
+
+
+
+class base
+{
+	public void disp()
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws Exception  // compilation error
+	{
+	}
+}
+
+
+main()
+{
+	base ref=new sub();
+	ref.disp();
+}
+
+let's assume above code for overriding works during compile time.
+
+what compiler checks ?
+		compiler will search "disp" in base
+		is it there ?
+		is it accessible ?
+		is is final ?   no
+		is it static? no
+
+	so as per compiler's instruction, late binding will take place. That is during runtime "sub" class "disp()" will be invoked. If it gives "Exception", since we do not have catch block for the same, program will get terminated. This is the side effect of the code. It should not happen that's why compiler will give error at :
+
+
+class sub extends base
+{
+	public void disp()throws Exception    // error here
+	{
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

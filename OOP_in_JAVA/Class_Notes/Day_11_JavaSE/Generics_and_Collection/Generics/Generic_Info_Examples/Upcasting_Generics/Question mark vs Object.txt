@@ -1,0 +1,18 @@
+
+
+
+	disp(List<?> mylist) // u can pass list of any type.
+	{
+		add // not allowed
+
+
+	}
+
+		vs
+
+	disp(List<Object> mylist) // u can pass list of Object type only
+	{
+		add // allowed
+
+	}
+

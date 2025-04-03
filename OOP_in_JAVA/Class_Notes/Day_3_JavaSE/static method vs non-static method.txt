@@ -1,0 +1,11 @@
+if you want to invoke 6-7 functions from main, is it advisable to make them static so that we can invoke with the syntax "classname.function" ?
+
+
+non-static method
+	works on the state of the object.
+
+
+static method
+	is used to access private static variable.
+		+
+	it's a utility method. That means whatever data is provided during invocation static method works on it and performs the action.

@@ -1,0 +1,27 @@
+for put
+
+hashCode
+hashCode
+	==
+		equals
+			false
+
+hashCode
+	
+hashCode
+	==
+		equals
+			false
+	==
+		equals
+			false
+
+
+for get
+
+hashCode
+	==
+		equals
+			false
+	==
+

@@ -1,0 +1,8 @@
+
+what are the ways to load a class ?
+
+a)  object creation or static member invocation for the first time
+
+b) java MyClass
+
+c) Class.forName() is used to load a given class.

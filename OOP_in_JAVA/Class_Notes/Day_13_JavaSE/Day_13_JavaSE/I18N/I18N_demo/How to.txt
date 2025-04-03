@@ -1,0 +1,9 @@
+go to eclipse
+
+file
+new java project
+
+package name "core"
+
+inside "core" package copy 
+java file and all the properties files.

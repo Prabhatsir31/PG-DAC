@@ -1,0 +1,1 @@
+Even if we don't make any changes to the .class file after serialization, we cannot guarantee that our deserialization will always succeed as different JVMs may compute serialversionuid differently.

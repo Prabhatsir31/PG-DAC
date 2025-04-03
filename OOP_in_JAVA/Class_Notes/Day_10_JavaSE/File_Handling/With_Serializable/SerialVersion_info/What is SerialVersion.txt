@@ -1,0 +1,22 @@
+As per java docs, during serialization, runtime associates with each serializable class a version number, called a serialVersionUID, which is used during de-serialization to verify that the sender and receiver of a serialized object have loaded classes for that object that are compatible with respect to serialization.
+
+Simply put, the serialVersionUID is a unique identifier for Serializable classes. This is used during the deserialization of an object, to ensure that a loaded class is compatible with the serialized object. If no matching class is found, an InvalidClassException is thrown.
+
+what exactly happens when you serialize an object?
+
+	serialization mechanism generates serialversionuid (if you have not defined it explicitly) for the class , of which object you are trying to serialize. This serialversionuid is then stored inside the file.
+
+
+what exactly happens when you deserialize an object?
+
+	during deserialization the class of which object you want to deserialize , needs to be loaded.
+	Here, deserialization mechanism generates serialversionuid (if you have not defined it explicitly) for the class , of which object you are trying to deserialize. This serialversionuid is then checked with the serialversionuid stored inside file. if they match then deserialization becomes successful else you get an exception "InvalidClassException" and deserialization fails.
+
+
+Since the default serialVersionUID computation differs on different JVM implementations, it is highly recommended for a class which implements Serializable interface to declare serialversionuid explicitly in order to ensure successful deserialization across all the platforms.  
+
+
+
+
+
+

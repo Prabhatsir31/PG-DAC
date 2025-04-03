@@ -1,0 +1,1 @@
+inside Sample class main function we are trying find out serial version uids for Sample and First. If you declare serial version uid in these classes , you can see them in the output. If you don't then generated serial version uid will be displayed.

@@ -1,0 +1,198 @@
+1) create a multi-threaded application by using Thread pool.create 2 threads. each thread should display characters from A to J. [ make sure while one thread executes , other thread should not interfere ]
+
+
+
+package core1;
+
+import java.util.concurrent.*;
+class myapp implements Runnable
+{
+	synchronized public void run()
+	{
+		perform();
+	}
+	void perform()
+	{
+		for(char ch='A';ch<='J';ch++)
+		{
+			System.out.println(ch);
+		}
+		System.out.println("*************************");
+	}
+}
+public class ExecutorDemo2
+{
+	public static void main(String args[])
+	{
+		ExecutorService exec=Executors.newFixedThreadPool(2);
+
+		myapp m=new myapp();
+		for(int i=0;i<2;i++)
+		{
+			exec.execute(m);
+		}
+
+		exec.shutdown();
+	}
+}			
+
+
+
+
+
+
+2) create a multi-threaded application by using Thread pool.create 2 threads. each thread should display numbers from 1 to 10. [ make sure while one thread executes , other thread should not interfere ]
+Also when first thread displays nos. from 1 to 5 it should released the lock and allow other thread to display nos. from 1 to 5 and then previous thread will display nos. from 6 to 10 and so on.
+
+
+
+package core1;
+
+import java.util.concurrent.*;
+class myapp implements Runnable
+{
+	synchronized public void run()
+	{
+		perform();
+	}
+	void perform()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i==6)
+			{
+				try
+				{
+					wait();
+				}
+				catch(InterruptedException ie)
+				{
+					ie.printStackTrace();
+				}
+			}
+			System.out.println(i);
+			notifyAll();
+		}
+	}
+}
+public class ExecutorDemo2
+{
+	public static void main(String args[])
+	{
+		ExecutorService exec=Executors.newFixedThreadPool(2);
+
+		myapp m=new myapp();
+		for(int i=0;i<2;i++)
+		{
+			exec.execute(m);
+		}
+
+		exec.shutdown();
+	}
+}			
+
+
+
+3) create a multi-threaded application by using Thread pool and ReentrantLock (explicit locking) .create 2 threads. each thread should display characters from A to J. [ make sure while one thread executes , other thread should not interfere ]
+
+
+
+
+package core1;
+
+import java.util.concurrent.*;
+import java.util.concurrent.locks.ReentrantLock;
+class myapp implements Runnable
+{
+	ReentrantLock lock=new ReentrantLock();
+	public void run()
+	{
+		lock.lock();
+		perform();
+		lock.unlock();
+	}
+	void perform()
+	{
+		for(char ch='A';ch<='J';ch++)
+		{
+			System.out.println(ch);
+		}
+		System.out.println("*************************");
+	}
+}
+public class ExecutorDemo2
+{
+	public static void main(String args[])
+	{
+		ExecutorService exec=Executors.newFixedThreadPool(2);
+
+		myapp m=new myapp();
+		for(int i=0;i<2;i++)
+		{
+			exec.execute(m);
+		}
+
+		exec.shutdown();
+	}
+}			
+
+
+
+
+
+4) create a multi-threaded application by using Thread pool and ReentrantLock.create 2 threads. each thread should display numbers from 1 to 10. [ make sure while one thread executes , other thread should not interfere ]
+Also when first thread displays nos. from 1 to 5 it should released the lock and allow other thread to display nos. from 1 to 5 and then previous thread will display nos. from 6 to 10 and so on.
+
+
+
+
+package core1;
+
+import java.util.concurrent.*;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+class myapp implements Runnable
+{
+	ReentrantLock lock=new ReentrantLock();
+	Condition c=lock.newCondition();
+	public void run()
+	{
+		lock.lock();
+		perform();
+		lock.unlock();
+	}
+	void perform()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i==6)
+			{
+				System.out.println("*************************");
+				try {
+					c.await();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			System.out.println(i);
+			c.signalAll();
+		}
+		System.out.println("*************************");
+	}
+}
+public class ExecutorDemo2
+{
+	public static void main(String args[])
+	{
+		ExecutorService exec=Executors.newFixedThreadPool(2);
+
+		myapp m=new myapp();
+		for(int i=0;i<2;i++)
+		{
+			exec.execute(m);
+		}
+
+		exec.shutdown();
+	}
+}			

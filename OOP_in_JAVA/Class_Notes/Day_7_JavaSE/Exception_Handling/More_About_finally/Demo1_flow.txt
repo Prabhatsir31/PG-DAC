@@ -1,0 +1,51 @@
+Here the most imp. thing is that since "return" statement is given inside "try" "catch" and "finally" so,compiler removes "return" from both try and catch. So that means we have only one "return" statement inside "finally".
+
+
+let's discuss this application flow considering value 5
+
+Execution starts with main() function.
+
+disp() method is called by passing the value 5
+
+control goes inside "disp()" method
+
+value 5 is passed to the variable "k"
+
+accept() method is called from disp() by passing same value i.e. 5
+
+control goes inside "accept()" method.
+
+since 5 is not less than equal to zero, exception is not raised.
+
+control goes back to disp()
+
+since no exception was raised , no "catch". control goes to "finally" and value 3 is returned to main function.
+
+main displays the value 3.
+
+
+
+
+
+
+let's discuss this application flow considering value -5
+
+Execution starts with main() function.
+
+disp() method is called by passing the value -5
+
+control goes inside "disp()" method
+
+value -5 is passed to the variable "k"
+
+accept() method is called from disp() by passing same value i.e. -5
+
+control goes inside "accept()" method.
+
+since -5 is less than equal to zero, exception is raised.
+
+control goes back to disp()
+
+since exception was raised , control first goes inside "catch" and then "finally" and value 3 is returned to main function.
+
+main displays the value 3.

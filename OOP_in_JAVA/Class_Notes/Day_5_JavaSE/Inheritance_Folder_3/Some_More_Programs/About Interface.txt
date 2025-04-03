@@ -1,0 +1,47 @@
+interface myinterface
+{
+	void disp1();
+	void disp2();
+}
+class sub implements myinterface
+{
+	public void disp1()
+	{
+		System.out.println("disp1");
+	}
+	public void disp2()
+	{
+		System.out.println("disp2");
+	}
+	public void print()
+	{
+		System.out.println("print");
+	}
+}
+public class InterfaceDemo
+{
+	public static void main(String args[])
+	{
+		myinterface ref=new sub();
+		ref.disp1();
+		ref.disp2();
+		// ref.print();   // error
+		System.out.println(ref.toString());  // works
+	}
+}
+	
+
+
+/*
+
+ref.toString()  // works
+
+using interface reference we can invoke any methods of "Object" class. this is because interface reference can point to the object of some or the other class and Every class is derived from "Object" class.
+
+
+*/
+
+
+
+
+

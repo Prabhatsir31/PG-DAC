@@ -1,0 +1,64 @@
+in the constant pool
+			#1 = Methodref   // java/lang/Object."<init>":()V
+
+inside
+	public DemoClass();
+				invokespecial #1
+
+it means invoke the default constructor of Object class as Object class is the parent of DemoClass
+
+
+inside main
+		new           #7
+
+in the constant pool
+		#7 = Class  Student
+
+so "new  #7" means to instantiate Student class.
+
+
+inside main
+		invokespecial #9 
+in the constant pool
+		#9 = Methodref   // Student."<init>":()V
+
+so, invokespecial   #9 means to call the constructor of Student.
+
+
+in the main
+			ldc           #10    
+     invokevirtual #12   
+
+in the constant pool
+		#10 = String   // Rohit          
+   #12 = Methodref   // Student.setName:(Ljava/lang/String;)V  
+
+so "ldc  #10" means retrieve "Rohit" from constant pool table and place it on the operand stack.
+
+"invokevirtual #12" means invoke a method "setName" by passing "Rohit" which is available inside operand stack.
+
+inside main
+		getstatic     #16
+
+inside constant pool
+		#16 = Fieldref // java/lang/System.out:Ljava/io/PrintStream;
+
+so, "getstatic  #16"  means access "out" which is a static member of System and of type "PrintStream"
+
+
+inside main
+		invokevirtual #22
+
+inside constant pool
+		#22 = Methodref  // Student.getName:()Ljava/lang/String;
+
+so, "invokevirtual    #22" means invoke "getName()"
+
+
+inside main
+		invokevirtual       #26 
+inside constant pool
+		#26 = Methodref   // java/io/PrintStream.println:(Ljava/lang/String;)V
+
+so, "invokevirtual   #26" means invoke "println()" method.
+

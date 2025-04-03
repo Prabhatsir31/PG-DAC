@@ -1,0 +1,90 @@
+class CoffeeVendingMachine
+{
+	public void getCoffee()
+	{
+		prepareCoffee();
+	}
+	private void prepareCoffee()  // internal aspect
+	{
+		logic to prepare coffee
+	}
+}
+
+class MyVending extends CoffeeVending
+{
+	public void getCoffee()
+	{
+		super.getCoffee();
+		specific logic
+
+	}
+
+}
+
+
+
+class A
+{
+	void disp()
+	{
+
+	}
+}
+
+class B extends A
+{
+	void disp(int k)
+	{
+
+	}
+}
+	B ob=new B();   ob.disp();    ob.disp(20);
+
+
+
+
+class A
+{
+	void disp()
+	{
+
+	}
+}
+
+class B extends A
+{
+	void disp()
+	{
+
+	}
+}
+	B ob=new B();   ob.disp();    // B's disp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CoffeeVending c=new CoffeVending();
+
+c.getCoffee();  // external aspect 
+

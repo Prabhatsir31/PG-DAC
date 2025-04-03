@@ -1,0 +1,11 @@
+
+
+why in case of Serializable "default constructor" does not get called during deserialization?
+
+ans -  Because if here default constructor gets called then we will get default values and not those values which were there when we stored that object inside filesystem.
+
+
+But then why default constructor gets called in case of Externalizable ?
+
+ans- It is true that default constructor gives us default initial values, But Externalizable gives us one more chance to reinitialize our members with the help of file info ie. using "readExternal()" method.
+

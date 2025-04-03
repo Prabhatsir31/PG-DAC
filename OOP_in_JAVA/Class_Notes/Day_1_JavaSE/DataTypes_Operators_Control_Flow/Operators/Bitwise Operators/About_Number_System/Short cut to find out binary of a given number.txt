@@ -1,0 +1,42 @@
+Suppose we want to find out binary of 35.
+
+One way is 
+
+	2  35
+	2  17  1
+	2   8  1
+	2   4  0	
+	2   2  0
+	    1  0
+
+so, the binary of 35 is
+
+	1 0 0 0 1 1
+
+Another way is
+
+		
+we want to find out binary of 35
+
+so first write following numbers from right side till you get number more than 35
+
+
+32	16	8	4	2	1
+
+now think how will you get 35 from these numbers.
+	answer is if we add  32,2 and 1 we will get 35
+so, below these numbers [32,2 and 1] write 1 and below others write 0
+
+
+32	16	8	4	2	1
+*	*	*	*	*	*
+1	0	0	0	1	1
+
+32 +    0   +   0   +   0  +    2   +   1 	=   35
+
+so, by this method also binary of 35 is
+
+1  0  0  0  1  1
+
+
+

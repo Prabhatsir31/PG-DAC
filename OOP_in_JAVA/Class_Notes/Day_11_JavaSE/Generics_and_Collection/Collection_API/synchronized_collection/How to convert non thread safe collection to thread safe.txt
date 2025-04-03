@@ -1,0 +1,17 @@
+
+
+
+List<String> mylist=new ArrayList<String>();  // non-thread safe list
+
+List<String> mylist1=Collections.synchronizedList(mylist);
+
+	mylist1-  Thread safe list
+
+
+
+Map<String,Integer> mymap=new HashMap<String,Integer>();   // non-thread safe map
+
+Map<String,Integer> mymap1=Collections.synchronizedMap(mymap);
+
+	mymap1 - Thread safe map
+

@@ -1,0 +1,6 @@
+1) accept two numbers and add them.
+2) accept two numbers and subtract them.
+3) accept two numbers and multiply them.
+4) accept two numbers and divide them.
+5) accept two numbers and check whether first number is greater or second number is greater or they are equal.
+6) accept a number and check whether it is divisible by 3 or not.

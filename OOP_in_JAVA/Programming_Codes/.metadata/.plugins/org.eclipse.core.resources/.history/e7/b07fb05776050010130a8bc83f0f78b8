@@ -1,0 +1,15 @@
+package Practice;
+import java.util.*;
+import java.io.*;
+
+class Electronic implements Serializable
+{
+	private void on();
+	private void off();
+}
+
+class TV 
+
+public class Ques3 {
+
+}

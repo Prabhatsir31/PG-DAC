@@ -1,0 +1,37 @@
+/*
+ accept as many as numbers from user till he presses "0"  and write these numbers in a file.
+ Now Open a file and read these numbers. ( Hint :- use Scanner class for input, FileOutputStream, 
+ DataOutputStream, FileInputStream , DataInputStream)
+*/
+package File;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Ques5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String fileName = "numbers.txt";
+
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(fileName))) {
+            System.out.println("Enter numbers (press 0 to stop):");
+            int number;
+            while ((number = scanner.nextInt()) != 0) {
+                dos.writeInt(number);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (DataInputStream dis = new DataInputStream(new FileInputStream(fileName))) {
+            System.out.println("Numbers in the file:");
+            while (dis.available() > 0) {
+                System.out.println(dis.readInt());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        scanner.close();
+    }
+}

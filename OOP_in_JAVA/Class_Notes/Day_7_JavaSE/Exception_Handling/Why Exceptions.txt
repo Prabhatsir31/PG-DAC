@@ -1,0 +1,9 @@
+In traditional programming, error detection, reporting, and handling often lead to confusing  code because programmers would use error code inside the main logic.
+Exceptions are readable e.g. FileNotFoundException,ClassNotFoundException,NullPointerException etc.
+
+A second advantage of exceptions is the ability to propagate error reporting up the call stack of methods. i.e. if a method does not want to handle an exception it can propagate it to the caller and so on. we did not have this advantage in traditional programming.
+
+Thid advantage is, because all exceptions thrown within a program are objects, the grouping or categorizing of exceptions is a natural outcome of the class hierarchy.
+
+
+ 

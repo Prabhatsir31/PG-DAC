@@ -1,0 +1,125 @@
+overriding  method may not declare any checked exception.
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()
+	{
+	}
+}
+
+
+
+overriding method can declare same checked exception or its sub-type declared by overriden method.
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+
+		or
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws EOFException
+	{
+	}
+}
+
+
+
+
+overriding method can not declare checked exception not declared by overriden method.
+
+// following code will not work
+
+class base
+{
+	public void disp()throws IOException
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws Exception
+	{
+	}
+}
+
+		or
+
+class base
+{
+	public void disp()
+	{
+	}
+}
+class sub extends base
+{
+	public void disp()throws Exception
+	{
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

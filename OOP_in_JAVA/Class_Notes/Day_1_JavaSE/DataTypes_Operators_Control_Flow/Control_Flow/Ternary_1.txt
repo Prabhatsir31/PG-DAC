@@ -1,0 +1,14 @@
+package core1;
+
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		int a=0;
+		String result=null;
+		result=a>0 ? "positive":"not positive";
+		System.out.print(result);
+}
+}

@@ -1,0 +1,718 @@
+class Animal
+{
+	void makeSound()
+	{
+	}
+}
+class Tiger extends Animal
+{
+	void makeSound()    // overriding makeSound() of Animal
+	{
+		S.o.p("roar");
+	}
+}
+class Dog extends Animal
+{
+	void makeSound()  // overriding makeSound() of Animal
+	{
+		S.o.p("bark");
+	}
+}
+class Cat extends Animal
+{
+	void makeSound()   // overriding makeSound() of Animal
+	{
+		S.o.p("meow");
+	}
+}
+public class AnimalDemo1
+{
+	p.s.v.main(String args[])
+	{
+		// create objects of Tiger,Dog and Cat
+		// invoke "makeSound()" on these objects
+		Tiger t1=new Tiger();
+		t1.makeSound();
+		Dog d1=new Dog();
+		d1.makeSound();
+		Cat c1=new Cat();
+		c1.makeSound();
+	}
+}
+
+
+so in the above case when we write "makeSound()" in all the child classes , what exactly are we doing ?
+
+we are overriding "makeSound()" method in all these child classes.
+
+When do we do overriding?
+
+	when behaviour is same ( makeSound ) but implementations are different ( roar/bark/meao)
+
+
+
+class Animal
+{
+	void makeSound()
+	{
+	}
+}
+class Tiger extends Animal
+{
+	void makeSound()
+	{
+		S.o.p("roar");
+	}
+}
+class Dog extends Animal
+{
+	void makeSound()
+	{
+		S.o.p("bark");
+	}
+}
+class Cat extends Animal
+{
+	void makeSound()
+	{
+		S.o.p("meow");
+	}
+}
+public class AnimalDemo2
+{
+	static void perform()
+	{
+		accept a choice from user i.e. whether Dog , Cat or Tiger
+		based on that create object and invoke "makeSound()"
+			[ use scanner to accept a string and switch... case to invoke methods ]
+	}
+	p.s.v.main(String args[])
+	{
+		// invoke "perform()" here
+
+	}
+
+}
+
+
+
+
+
+
+
+let's hope that your code is working fine now.
+
+add one more child class of Animal i.e. "Elephant" and override "makeSound()" in it.
+
+now how will you change "perform()" method ?
+
+
+
+	what you need to do here is:
+		define one more child class of Animal i.e. Elephant , override "makeSound()" and add one more case for "Elephant" inside switch block
+
+
+
+
+
+
+
+
+let's hope that your code is working fine now.
+
+remove the class "Tiger" from your hierarchy and think what change do you need to make inside "perform()" so that code will work fine.
+
+
+
+
+
+you must have seen that whenever any changes happen to our class hierarchy, we need to make changes in the "perform()" method. This is called as "Maintenance drawback".
+
+So how will we ensure that our perform() method remains unchanged no matter what way our hierarchy changes.
+
+
+create a new project
+AnimalDemo3 class
+	with main function
+
+copy Animal hierarchy from previous project
+
+
+make following changes in the "perform()" and main() functions
+
+
+
+static void perform(Animal ref)
+{
+	ref.makeSound();
+}
+
+main()
+{
+	invoke perform by passing instances of Animal child classes
+
+}
+
+
+
+in the above code "ref" is of type "Animal". But it can take any child class object as an argument. When we pass any child object to "ref" [ which is of parent class type ] , it is known as "Upcasting".
+
+inside "perform()" , we have written "ref.makeSound()" . So which "makeSound()" does it call ?
+
+answer is whichever child object we pass during runtime, its "makeSound()" method gets called. Since this method invocation happens at "Runtime", it is known as "Dynamic or Runtime Polymorphism".
+
+create a new project
+
+	AnimalDemo4 class with
+		main function
+
+copy entire Animal hierarchy and 
+
+	make following changes to "Tiger"  class:
+
+
+
+class Tiger extends Animal
+{
+	void makeSound()
+	{
+		S.o.p("roar");
+	}
+	void hunting()
+	{
+		S.o.p("hunting");
+	}
+}
+
+copy "perform()" method from the previous code and paste it inside "AnimalDemo4" class.
+
+now think how will you invoke "hunting()" method from "perform()" method ?
+
+
+void perform(Animal ref)
+{
+	ref.makeSound();
+	// we would like to invoke "hunting()" alongwith "makeSound()"
+	
+}
+
+
+
+void perform(Animal ref)
+	{
+		ref.makeSound();
+		// we would like to invoke "hunting()" alongwith "makeSound()"
+		ref.hunting();   // compilation error
+
+		Tiger t1=new Tiger();
+		t1.hunting();
+	
+	}
+	p.s.v.main(String args[])
+	{
+		perform(new Dog());
+		perform(new Cat());
+		perform(new Tiger());
+		perform(new Elephant());
+
+	}
+
+even though above code works it is not logically right because what we are doing is the tiger object which is created inside main function on that we are performing "makeSound" and inside "perform()" we are creating a new tiger on which we are invoking "hunting()".
+
+The solution is we have to invoke "hunting()" method exactly on the same object which is passed from main.
+
+
+.... discussion and solution of the above issue
+
+Solution:
+
+just copy entire code and paste it in a new project.
+
+make following changes in perform and main functions:
+
+
+	void perform(Animal ref)
+	{
+		ref.makeSound();
+		Tiger t=(Tiger)ref;  // convert from parent to child i.e. downcast
+		t.hunting();
+	}
+	p.s.v.main(String args[])
+	{
+		//perform(new Dog());
+		//perform(new Cat());
+		perform(new Tiger());
+		//perform(new Elephant());
+	}
+
+downcasting is used when you want to invoke a method of child class which is not there in the parent class.
+
+just copy entire code and paste it in a new project.
+
+make following changes in main functions:
+
+
+	void perform(Animal ref)
+	{
+		ref.makeSound();
+		Tiger t=(Tiger)ref;  // convert from parent to child i.e. downcast
+		t.hunting();
+	}
+	p.s.v.main(String args[])
+	{
+		perform(new Dog());
+		perform(new Cat());
+		perform(new Tiger());
+		perform(new Elephant());
+	}
+
+save and run the above code.
+
+what happend?
+
+you get "ClassCastException" because when ref contains objects other than "Tiger" we are trying to convert them to "Tiger" which is logically wrong.
+
+what is the solution?
+
+	we need to put a condition. i.e. only when "ref" contains "Tiger" we should downcast.
+How will we do that?
+
+make following changes in the "perform()" method.
+
+	void perform(Animal ref)
+	{
+		ref.makeSound();
+		if(ref instanceof Tiger)   // if ref refers to "Tiger"
+		{
+			Tiger t=(Tiger)ref;  // convert from parent to child i.e. downcast
+			t.hunting();
+		}
+	}
+
+
+
+one more example
+
+create a new project
+	create a class "Electronic_Demo1" with main function.
+
+
+
+class Electronic_Appliance
+{
+	void on()
+	{
+	}
+	void off()
+	{
+	}
+}
+class TV extends Electronic_Appliance
+{
+	void on()
+	{
+		S.o.p("TV on");
+	}
+	void off()
+	{
+		S.o.p("TV off");
+	}
+}
+
+class Refrigerator extends Electronic_Appliance
+{
+	void on()
+	{
+		S.o.p("Refrigerator on");
+	}
+	void off()
+	{
+		S.o.p("Refrigerator off");
+	}
+}
+class Washing_Machine extends Electronic_Appliance
+{
+	void on()
+	{
+		S.o.p("Washing_Machine on");
+	}
+	void off()
+	{
+		S.o.p("Washing_Machine off");
+	}
+}
+
+public class Electronic_Demo1
+{
+	static void perform()
+	{
+		// how will you achieve dynamic polymorphism ?
+		// you need to invoke "on" and "off" on a specific appliance which is passed to "perform" method
+	}
+	p.s.v.main()
+	{
+
+	}
+}
+
+Solution:
+
+
+	static void perform(Electronic_Appliance ref)
+	{
+		ref.on();
+		ref.off();
+	}
+	p.s.v.main()
+	{
+		perform(new TV());
+		perform(new Refrigerator());
+		perform(new Washing_Machine());
+	}
+
+
+if it works, then copy the entire code to new project and add one more method in "Washing_Machine" class 
+
+		void fillWater()
+		{
+			S.o.p("fillwater");
+		}
+
+how will you invoke it in perform() method ?
+
+
+	static void perform(Electronic_Appliance ref)
+	{
+		ref.on();
+		if(ref instanceof Washing_Machine)
+		{
+			Washing_Machine w=(Washing_Machine)ref;
+			w.fillWater();
+		}
+		ref.off();
+	}
+
+
+
+
+
+
+open your persondemo project and let's add some methods inside "Person" class only :
+
+void walk()
+{
+	S.o.p("walk");
+}
+void talk()
+{
+	S.o.p("talk");
+}
+void eat()
+{
+	S.o.p("eat");
+}
+
+
+now invoke these methods with the help of all the child class objects.
+
+hope your code works fine.
+
+
+
+create a new project (personpro1) and copy all these classes over there.
+
+
+
+
+one more function which we can think about "Person" but we cannot write implementation inside "Person" class i.e.   "performDuties()" .  Its implementation must be given inside child classes. 
+But how will you make it compulsory for child classes to define "performDuties()" ?
+
+
+you will have to make it "abstract" and for that class also must be "abstract".
+
+e.g.
+
+
+abstract class Person
+{
+	abstract void performDuties();  // it's a contract
+	// other stuff as it is
+
+}
+
+in Student and Employee classes provide an implementation of "performDuties()"
+
+e.g.
+
+void performDuties()
+{
+	S.o.p("duties of Student");
+}
+
+void performDuties()
+{
+	S.o.p("duties of Employee");
+}
+
+
+in the main function invoke "performDuties()" on Student and Employee objects.
+
+
+so your class "Person" has contract ( abstract method "performDuties()" ) and concrete behaviour (non-abstract methods such as getters , setters, walk,talk and eat)
+
+What is abstract class in java ?
+
+	abstract class is the one which can contain contract plus concrete behaviour.
+
+	abstract class cannot be instantiated.
+
+
+
+
+
+now that "performDuties()" is an abstract method inside Person class, which every single child class has to define, it is also called as a "contract".
+
+so abstract method is called as "contract" and other non-abstract methods are called as "concrete behaviour"
+
+Thus we can say that abstract class is a combination of "contract" and a "concrete behaviour".
+
+
+let's have one more example
+
+create new project
+
+	 "UIComponentDemo" class with main function
+
+abstract class UIComponentCreator
+{
+	abstract void createComponent();    // contract
+	void showComponent()  // concrete behaviour
+	{
+		S.o.p("let's show component inside the given window");
+	}
+}
+class WindowsUIComponentCreator extends UIComponentCreator
+{
+	void createComponent()
+	{
+		S.o.p("create component as per Windows platform");
+	}
+}
+
+class MacUIComponentCreator extends UIComponentCreator
+{
+	void createComponent()
+	{
+		S.o.p("create component as per Mac platform");
+	}
+}
+
+
+in the main function create objects of "WindowsUIComponentCreator" and "MacUIComponentCreator"
+invoke both the methods i.e. "createComponent" and "showComponent".
+
+
+What is abstraction?
+
+	abstraction means showing relavent details of an object and hiding unnecessary details.
+
+with the help of abstract class you can achieve 0 to 100% abstraction. What does that mean?
+
+if abstract class does not have any abstract method, that means there is no abstraction.
+
+if abstract class has got some abstract methods ( at least one ), there is a partial abstraction.
+
+if abstract class has got all the abstract methods, in that case we can achieve 100% abstraction.
+
+
+
+create a new project
+	EventDemo1 class with main function
+
+abstract class MouseEvent
+{
+	abstract void mouseClicked();
+	abstract void mouseEntered();
+	abstract void mouseExited();
+}
+
+abstract class WindowEvent
+{
+	abstract void windowClosing();
+	abstract void windowOpening();
+}
+
+class GuiApp1
+{
+	// how can we extend MouseEvent and WindowEvent both in this class?
+}
+
+is is possible to say 
+
+class GuiApp1 extends MouseEvent,WindowEvent
+{
+}
+
+No. because multiple inheritance is not allowed in java.
+
+There are two ways we can solve the problem.
+
+one way is
+
+	class GuiApp1 extends MouseEvent
+	{
+		void mouseClicked()
+		{
+			S.o.p("mouse clicked");
+		}
+	
+		void mouseEntered()
+		{
+			S.o.p("mouse entered");
+		}
+		void mouseExited()
+		{
+			S.o.p("mouse exited");
+		}
+	}
+
+	class GuiApp2 extends WindowEvent
+	{
+		void windowClosing()
+		{
+			S.o.p("window closing");
+		}
+		void windowOpening()
+		{
+			S.o.p("window opening");
+		}
+	}
+
+	now create objects of these two classes and invoke their methods from main function.
+
+
+the other way is:
+
+since our MouseEvent and WindowEvent classes have got only abstract methods ( contracts ) we can have them as "interfaces" instead of "abstract classes".
+What is the advantage if they are interfaces?
+	GuiApp class can implement more than one interfaces.
+
+
+create another project
+	with  InterfaceDemo1 class with main function
+
+inteface MouseEvent
+{
+	void mouseClicked();
+	void mouseEntered();
+	void mouseExited();
+}
+
+interface WindowEvent
+{
+	void windowClosing();
+	void windowOpening();
+}
+class GuiApp implements MouseEvent,WindowEvent
+{
+		// define all abstract methods and write some message in all these methods
+}
+
+inside main function create object of "GuiApp" class and invoke all the methods ( 5 methods )
+
+
+what are intefaces ?
+
+intefaces are abstract in nature. i.e. they have all abstract methods (100% abstraction )
+
+interface methods are by default "public" and "abstract".
+
+a class can implement one or more intefaces.
+
+a class which implement/s interface/s , has to define all the methods of that/those interface/s.
+
+
+let's see one more example.
+
+create a new project
+
+	StorageDemo class with main function.
+
+inteface Storage
+{
+	void store();
+	void load();
+	void display();
+}
+
+class FileStorage implements Storage
+{
+	public void store()
+	{
+		S.o.p("store inside filesystem");
+	}
+	public void load()
+	{
+		S.o.p("load from filesystem");
+	}
+	public void display()
+	{	
+		S.o.p("display from filesystem");
+	}
+}
+class DatabaseStorage implements Storage
+{
+	public void store()
+	{
+		S.o.p("store inside Database");
+	}
+	public void load()
+	{
+		S.o.p("load from Database");
+	}
+	public void display()
+	{	
+		S.o.p("display from Database");
+	}
+}
+
+inside main function create objects of "FileStorage" and "DatabaseStorage" and invoke "store()" ,"load()" and "display()" functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+what if we have only "contract" at the parent level ?
+
+e.g. 
+abstract class Shape
+{
+	abstract void draw();  // every child must define draw
+}
+
+
+if you have only a contract at the parent level, instead of abstract class you can define interfaces. this is because a class can implement more than one interfaces.
+
+interface example.......
+
+
+
+abstraction means showing relevant attributes of an object and hiding unnecessary details. 
+
+how do you achieve abstraction in java using interfaces?
+
+	The user who want to use the methods of the interface, he only knows the classes that implement this interface and their methods, information about the implementation is completely hidden from the user, thus achieving 100% abstraction.

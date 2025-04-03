@@ -1,0 +1,52 @@
+here for the first time there is no "return" inside finally. so compiler will not remove "return" from try and catch. But the imp. point here is that disp() function will return the value 1 or 2 only after "finally".
+
+
+
+let's discuss this application flow considering value 5
+
+Execution starts with main() function.
+
+disp() method is called by passing the value 5
+
+control goes inside "disp()" method
+
+value 5 is passed to the variable "k"
+
+accept() method is called from disp() by passing same value i.e. 5
+
+control goes inside "accept()" method.
+
+since 5 is not less than equal to zero, exception is not raised.
+
+control goes back to disp()
+
+since no exception was raised , "return 1" of "try" block is going to execute but not before "finally" block.
+
+value 1 goes to main which displays it.
+
+
+
+
+
+
+let's discuss this application flow considering value -5
+
+Execution starts with main() function.
+
+disp() method is called by passing the value -5
+
+control goes inside "disp()" method
+
+value -5 is passed to the variable "k"
+
+accept() method is called from disp() by passing same value i.e. -5
+
+control goes inside "accept()" method.
+
+since -5 is less than equal to zero, exception is raised.
+
+control goes back to disp()
+
+since exception was raised , "return 1" of "try" block gets skipped and control goes to "catch" where statement "return 2" is going to execute but not before "finally" block.
+
+value 2 goes to main which displays it.

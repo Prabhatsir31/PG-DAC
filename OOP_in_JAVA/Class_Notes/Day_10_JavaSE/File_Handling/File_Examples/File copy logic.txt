@@ -1,0 +1,27 @@
+
+
+		File copy logic
+
+
+File f1=new File("new.txt");
+
+File f2=new File("old.txt");
+
+if(f2.exists())
+{
+FileOutputStream fos=new FileOutputStream(f1);
+
+
+FileInputStream fis=new FileInputStream(f2);
+
+
+byte b1[]=new byte[(int)f2.length()];
+
+fis.read(b1);  // reading from existing file inside "b1" array
+
+fos.write(b1);  // write b1 to the new file
+}
+
+
+
+

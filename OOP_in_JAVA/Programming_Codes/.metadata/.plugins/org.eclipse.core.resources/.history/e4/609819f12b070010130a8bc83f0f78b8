@@ -1,0 +1,9 @@
+/*
+accept 10 numbers from user and add them inside the ArrayList.
+using ListIterator display all the numbers bidirectionally.
+*/
+package Generic;
+
+public class Ques1 {
+	
+}

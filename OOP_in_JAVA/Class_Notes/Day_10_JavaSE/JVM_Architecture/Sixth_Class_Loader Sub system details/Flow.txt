@@ -1,0 +1,21 @@
+What happens when you execute Java Application
+
+Types of class loaders in Java
+
+Delegation-Hierarchy principle of class loading
+
+Class Loader Subsystem.bmp
+
+Class Loader Subsystem
+
+Information stored in the Method area or Metaspace
+
+Example 1
+Example 2
+About Magic Number
+
+Major versions for JVM
+
+Minor version error in Java
+
+Resolution Phase Info

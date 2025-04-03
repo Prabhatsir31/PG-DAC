@@ -1,0 +1,5 @@
+Does Object class implement Cloneable interface ?
+
+No. Why ?
+
+Java founders did not make Object class implements Cloneable. Had they made Object class implement Cloneable , each and every class in Java would have become Cloneable ( eligible for cloning). This is what they ( java founders) did not want. They wanted to give a choice to the programmer. If programmer would like to clone the object , then he can implement the class with Cloneable otherwise not.

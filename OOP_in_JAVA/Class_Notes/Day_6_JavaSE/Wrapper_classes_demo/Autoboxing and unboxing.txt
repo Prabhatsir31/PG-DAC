@@ -1,0 +1,60 @@
+Before JDK1.5
+
+	converting primitive to Wrapper
+
+
+	int num=10;
+
+	Integer ob=new Integer(num);
+
+
+JDK1.5 onwards
+
+	
+	int num=10;
+	Integer ob=num; // Autoboxing
+
+i.e. Autoboxing means assigning primitive to wrapper
+
+here when we do autoboxing i.e.
+	Integer ob=num;
+what compiler does is, compiler converts above statement into the statement which we used to write before jdk5
+	i.e.
+	Integer ob=new Integer(num);
+why compiler does this?
+	it's because JVM doesn't understand autoboxing.
+So we can say that autoboxing is only at compiler level. It is just a syntactical sugar for a developer.
+
+
+
+Before JDK1.5
+
+	converting Wrapper to primitive 
+
+
+	int num=10;
+
+	Integer ob=new Integer(num);
+
+	int temp=ob.intValue();
+
+
+JDK1.5 onwards
+
+
+	int num=10;
+	Integer ob=num; // Autoboxing
+	int temp=ob; // unboxing
+
+i.e. unboxing means assigning wrapper to primitive
+
+
+here when we do unboxing i.e.
+	int temp=ob
+what compiler does is, compiler converts above statement into the statement which we used to write before jdk5
+	i.e.
+	int temp=ob.intValue();
+why compiler does this?
+	it's because JVM doesn't understand unboxing.
+So we can say that unboxing is only at compiler level. It is just a syntactical sugar for a developer.
+

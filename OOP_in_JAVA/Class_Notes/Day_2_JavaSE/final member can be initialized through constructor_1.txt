@@ -1,0 +1,28 @@
+class Sample
+{
+	final int id;
+	Sample(int id)
+	{
+		this.id=id;
+	}
+	Sample()
+	{
+		id=0;
+	}
+	int getId()
+	{
+		return id;
+	}
+}
+public class FinalDemo
+{
+	public static void main(String args[])
+	{
+		Sample s1=new Sample(1);
+		Sample s2=new Sample(2);
+		System.out.println(s1.getId()+"\t"+s2.getId());
+		// s1.id=4;   it will not compile
+		Sample s3=new Sample();
+		System.out.println(s3.getId());
+ 	}
+}

@@ -1,0 +1,72 @@
+
+
+			ARM
+
+		Automatic Resource Management
+
+what is Resource Management?
+
+	it means releasing the resources once you used them.
+
+Before java7  programmer had to do Explicit Resource Management.
+
+	e.g
+
+try
+{
+	FileInputStream fis=new FileInputStream("abc.txt");
+		// code to read the file
+}
+catch(FileNotFoundException e)
+{
+	e.printStackTrace();
+}
+finally
+{
+	fis.close();
+}
+
+
+what is exactly Automatic Resource Management (ARM) ?
+
+	it means now (java7 onwards) programmer can write the code as follows:
+
+	// ARM block
+
+	try(FileInputStream fis=new FileInputStream("abc.txt"))
+	{
+		// code to read the file
+	}
+	catch(FileNotFoundException e)
+	{
+		e.printStackTrace();
+	}
+
+That's it. it means you don't have to define "finally" block.
+
+when you compile above code , compiler will convert this code into:
+
+try
+{
+	FileInputStream fis=new FileInputStream("abc.txt");
+		// code to read the file
+}
+catch(FileNotFoundException e)
+{
+	e.printStackTrace();
+}
+finally
+{
+	fis.close();
+}	
+
+That is compiler provides "finally" block which has "fis.close()" statement. So since compiler takes care of releasing resource/s , It is known as "Automatic Resource Management"
+
+can we write any class inside ARM block?
+
+	No. inside ARM block you can write only those classes which implement "AutoCloseable" or "Closeable" interface.
+
+
+
+
+

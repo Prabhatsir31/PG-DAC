@@ -1,0 +1,47 @@
+earlier versions of java:
+
+public class Demo
+{
+	static void show(Object ref)
+	{
+		S.o.p(ref);
+	}
+	main()
+	{
+		show(new String("hello")); // alld
+		show(new ArrayList());  // alld
+		show(new LinkedList()); // alld
+			int num=10;
+		show(num); // was not possible
+
+	}
+}
+
+Solution: Wrapper classes were introduced
+
+
+above program can be written as:
+
+
+public class Demo
+{
+	static void show(Object ref)
+	{
+		S.o.p(ref);
+	}
+	main()
+	{
+		show(new String("hello")); // alld
+		show(new ArrayList());  // alld
+		show(new LinkedList()); // alld
+			int num=10;
+		// show(num); // was not possible
+		
+		Integer ob=new Integer(num);
+
+		show(ob); // this is possible
+
+
+	}
+}
+

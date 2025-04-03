@@ -1,0 +1,112 @@
+package datatypes_pro;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+class Employee implements Serializable
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String empid;
+	private int deptcode;
+	private int citycode;
+
+	public Employee(String empid,int deptcode,int citycode)
+	{
+		this.empid=empid;
+		this.deptcode=deptcode;
+		this.citycode=citycode;
+	}
+	@Override
+	public String toString()
+	{
+		return empid+"\t"+deptcode+"\t"+citycode;
+	}
+}
+public class ArrayListDemo1
+{
+	public static void main(String args[])
+	{
+		Employee e1=new Employee("e001",1,10);
+		Employee e2=new Employee("e002",1,12);
+		Employee e3=new Employee("e003",2,10);
+		Employee e4=new Employee("e004",1,13);
+		List<Employee> mylist=new ArrayList<Employee>();
+		mylist.add(e1);
+		mylist.add(e2);
+		mylist.add(e3);
+		mylist.add(e4);
+		FileOutputStream  fos=null;
+		try {
+			fos=new FileOutputStream("d:\\xy.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectOutputStream oos=null;
+		try {
+			oos=new ObjectOutputStream(fos);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			oos.writeObject(mylist);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			oos.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		FileInputStream fis=null;
+		ObjectInputStream ois=null;
+		try {
+			fis=new FileInputStream("d:\\xy.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ois=new ObjectInputStream(fis);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<?>ref=null;
+		try {
+			ref=(List<?>)ois.readObject();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ois.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Iterator<?> itr=ref.iterator();
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+	}
+}

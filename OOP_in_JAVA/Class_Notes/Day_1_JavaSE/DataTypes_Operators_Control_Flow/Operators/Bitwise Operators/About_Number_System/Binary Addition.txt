@@ -1,0 +1,25 @@
+
+0+0  = 0
+
+1+0  = 1
+
+	it's 1 because 
+		1+0   is 1
+	and binary of 1 is 1
+		i.e.  2[0] * 1    is 1
+
+0+1  = 1
+
+	it's 1 because 
+		0+1   is 1
+	and binary of 1 is 1
+		i.e.  2[0] * 1    is 1
+
+1+1  = 10 
+
+	it's 10 because
+		actually   1+1 is  2  but binary of 2  is  10
+			i.e.
+			2[1]* 1  is  2  and  2[0] * 0  is 0
+			
+

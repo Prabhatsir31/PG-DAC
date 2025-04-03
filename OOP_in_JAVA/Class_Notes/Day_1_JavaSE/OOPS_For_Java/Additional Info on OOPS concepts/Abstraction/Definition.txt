@@ -1,0 +1,7 @@
+Abstraction is one of the fundamental concepts in object-oriented programming (OOP) that hides the complexity of a system and exposes only the essential features to the user. In simple terms, abstraction is the process of simplifying complex systems by only showing the necessary parts and hiding the unnecessary details.
+
+In Java, abstraction can be achieved using two mechanisms:
+
+a) Abstract Classes
+b) Interfaces
+c) non-abstract classes

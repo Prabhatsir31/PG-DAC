@@ -1,0 +1,4 @@
+Sometimes lambda does nothing but invokes existing method. In that case we can use "Method Reference" which is more compact than lambda expression. That also means that "Method Reference" can work with "functional interface" only.
+
+Here there is an imp. rule.
+	abstract method's argument and the method which you invoke from the interface method must match with the arguments.

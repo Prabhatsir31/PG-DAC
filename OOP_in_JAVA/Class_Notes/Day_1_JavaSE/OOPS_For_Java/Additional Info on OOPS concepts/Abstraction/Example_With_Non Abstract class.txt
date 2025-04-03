@@ -1,0 +1,74 @@
+public class BankAccount {
+    private double balance;  // Encapsulated field (hidden from the user)
+    private String accountHolder;
+
+    // Constructor
+    public BankAccount(String accountHolder, double initialBalance) {
+        this.accountHolder = accountHolder;
+        this.balance = initialBalance;
+    }
+
+    // Public methods (abstraction: hide complexity of balance management)
+    
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("$" + amount + " deposited successfully.");
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("$" + amount + " withdrawn successfully.");
+        } else {
+            System.out.println("Insufficient funds or invalid amount.");
+        }
+    }
+
+    // Method to check balance
+    public void checkBalance() {
+        System.out.println("Current balance: $" + balance);
+    }
+
+    // No setter for balance (we're hiding the internal representation)
+    // This is an example of **encapsulation**, where we abstract the complexity
+    // of how balance is managed (stored) in the class.
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a new bank account
+        BankAccount account = new BankAccount("John Doe", 1000.0);
+
+        // Interact with the account using the provided methods
+        account.checkBalance();  // Output: Current balance: $1000.0
+        account.deposit(500.0);  // Output: $500.0 deposited successfully.
+        account.withdraw(300.0); // Output: $300.0 withdrawn successfully.
+        account.checkBalance();  // Output: Current balance: $1200.0
+
+        // Trying to withdraw more than the available balance
+        account.withdraw(2000.0); // Output: Insufficient funds or invalid amount.
+    }
+}
+
+
+Explanation:
+
+Here, the BankAccount class uses abstraction by hiding the complexity of balance management and exposing simple methods that a user can call to interact with the account.
+
+The balance is private and can’t be accessed directly from outside the class. Instead, the user interacts with the balance through the public methods deposit(), withdraw(), and checkBalance().
+The complexity of checking whether a withdrawal is possible or ensuring the deposit amount is valid is hidden inside the methods. The user doesn't need to understand how these checks are done; they just call the methods to deposit or withdraw money, and the class handles the internal logic.
+By not providing direct access to the balance (through getter/setter methods), the class ensures that the balance can only be changed in specific, controlled ways. This is an example of data abstraction and behavioral abstraction."
+
+
+Abstraction is achieved through encapsulation: the user interacts with a simple interface (deposit(), withdraw(), checkBalance()), while the internal details of how the balance is stored and managed are hidden.
+
+
+The complexity of balance validation and the internal logic of depositing or withdrawing money is abstracted away in the methods, so the user doesn't need to know how these checks are implemented.
+
+

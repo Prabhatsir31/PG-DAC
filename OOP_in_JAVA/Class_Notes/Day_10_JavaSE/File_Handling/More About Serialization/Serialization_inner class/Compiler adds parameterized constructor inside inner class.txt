@@ -1,0 +1,22 @@
+
+
+class Outer
+{
+	class Inner
+	{
+		int num=10;
+	}
+}
+
+
+when you compile above code, what compiler does with your "Inner" class?
+
+class Inner
+{
+	int num=10;
+	Outer ref;
+	Inner(Outer ref)
+	{
+		this.ref=ref;
+	}
+}

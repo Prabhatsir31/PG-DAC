@@ -1,0 +1,101 @@
+package Practice;
+import java.util.*;
+import java.io.*;
+
+interface Electronic extends Serializable
+{
+	Electronic s1 = null;
+	void on();
+	void off();
+}
+
+class TV implements Electronic {
+	private String brand;
+	
+	public TV(String brand) {
+		this.brand = brand;
+	}
+	
+	public void on() {
+		System.out.println(brand + " TV is now on");
+	}
+	
+	public void off() {
+		System.out.println(brand + " TV is now off");
+	}
+	
+	public String toString() {
+		return "TV [Brand : " + brand + "]";
+	}
+}
+
+class Fridge implements Electronic {
+	private String brand;
+	
+	public Fridge(String brand) {
+		this.brand = brand;
+	}
+	
+	public void on() {
+		System.out.println(brand + " Fridge is now on");
+	}
+	
+	public void off() {
+		System.out.println(brand + " Fridge is now off");
+	}
+	
+	public String toString() {
+		return "Fridge [Brand : " + brand + "]";
+	}
+}
+
+public class Ques3 {
+	public static void main(String args[]) {
+		List<Electronic>mylist = new ArrayList<>();
+		Electronic s1 = new TV("Samsung");
+		Electronic s2 = new TV("LG");
+		Electronic s3 = new Fridge("MI");
+		Electronic S4 = new Fridge("LG");
+		mylist.add(s1);
+		mylist.add(s2);
+		mylist.add(s3);
+		mylist.add(s4);
+		
+		try {
+			FileOutputStream fos = new FileOutputStream("Test.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(mylist);
+			
+			FileInputStream fis = new FileInputStream("Test.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			List<?> ref = (List<?>) ois.readObject();
+			
+			System.out.println("Appliance are");
+			
+			Iterator<?> itr = ref.iterator();
+			
+			while(itr.hasNext()) {
+				System.out.println(itr.next());
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

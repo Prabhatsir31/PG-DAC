@@ -1,0 +1,59 @@
+package Practice;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.*;
+
+class Student implements Serializable
+{
+	private String name;
+	private int age;
+	
+	public Student(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	public String toString() {
+		return name + " " + age; 
+	}
+}
+
+class test1{
+	public static void main(String args[]) {
+		List<Student> mylist = new ArrayList<>();
+		
+		Student s1 = new Student("Alice" , 45);
+		Student s2 = new Student("Bob" , 45);
+		mylist.add(s1);
+		mylist.add(s2);
+		
+		try {
+			FileOutputStream fos = new FileOutputStream("tt.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(mylist);
+			
+			FileInputStream fis = new FileInputStream("tt.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			System.out.println("This is the data ");
+			List<?> ref = (List<?>) ois.readObject();
+			
+			Iterator<?> itr = ref.iterator();
+			while(itr.hasNext()) {
+				System.out.println(itr.next());
+				
+			}
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,18 @@
+
+
+
+
+			Exception
+
+[ unchecked exceptions ]		[ checked exceptions ]
+RuntimeException				IOException
+[ due to programmer's logical			[ these can be raised in 
+mistake ]					a logically correct 						                							 program ]
+[ they can be avoided using simple
+"if....else"  , so java does not enforce	[ java enforces 								programmer to handle these]
+				                programmer to handle these ]
+
+NullPointerException				FileNotFoundException
+NumberFormatException				EOFFileException
+ArrayIndexOutOfBoundsException			SQLException
+ClassCastException

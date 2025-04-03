@@ -1,0 +1,94 @@
+package core1;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
+ 
+public class Demo1
+{
+	public static void main(String ...arg)
+	{
+		Map<Integer, String> map = new HashMap<>();
+
+		for (int i = 0; i < 10; i++) 
+		{
+		    map.put(i, "val" + i);
+		}
+		map.put(9, "myval");
+
+		map.forEach((id, val) -> System.out.println(val));
+
+	}
+}
+
+/*
+
+output
+
+
+val0
+val1
+val2
+val3
+val4
+val5
+val6
+val7
+val8
+myval
+
+
+*/
+
+
+		vs
+
+
+package core1;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
+ 
+public class Demo1
+{
+	public static void main(String ...arg)
+	{
+		Map<Integer, String> map = new HashMap<>();
+
+		for (int i = 0; i < 10; i++) 
+		{
+		    map.put(i, "val" + i);
+		}
+		map.putIfAbsent(9, "myval");
+
+		map.forEach((id, val) -> System.out.println(val));
+
+	}
+}
+
+
+/*
+
+output
+
+val0
+val1
+val2
+val3
+val4
+val5
+val6
+val7
+val8
+val9
+
+*/

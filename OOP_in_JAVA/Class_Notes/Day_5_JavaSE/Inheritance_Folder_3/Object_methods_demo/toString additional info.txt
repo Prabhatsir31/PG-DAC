@@ -1,0 +1,21 @@
+/*
+In the Object class "toString()" method is defined as follows:
+
+public String toString() 
+{
+        return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+
+*/
+
+public class Sample
+{
+	public static void main(String args[])
+	{
+		Sample s1=new Sample();
+		System.out.println(s1.hashCode());
+		System.out.println(s1.toString());
+		System.out.println(s1);
+		System.out.println("Hexadecimal representation of s1's hashcode is\t"+Integer.toHexString(s1.hashCode()));
+	}
+}

@@ -1,0 +1,10 @@
+compile given
+	MyClass.java
+
+now go to
+https://hexed.it/
+
+and open
+	MyClass.class from the folder
+and notice
+CA FE BA BE magic number

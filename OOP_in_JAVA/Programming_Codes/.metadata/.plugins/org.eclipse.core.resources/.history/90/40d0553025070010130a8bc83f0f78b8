@@ -1,0 +1,39 @@
+/*
+Create an interface Product with a method displayDetails().
+Create two classes:
+Electronics and Groceries 
+Both should implement Product.
+Store objects of both the classes in a ArrayList<Product>.
+store ArrayList in the file , then read ArrayList from the file and display.
+*/
+package Generic;
+import java.io.Serializable;
+import java.util.*;
+
+
+interface Product{
+	void displayDetail();
+}
+
+class Electronics implements Product, Serializable {
+	private String name;
+    private double price;
+    public Electronics(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+	@Override
+	public void displayDetail() {
+		// TODO Auto-generated method stub
+		System.out.println("Electronics [Name: " + name + ", Price: " + price + "]");
+	}
+
+}
+
+class  Groceries implements Product {
+	
+}
+
+public class Ques7 {
+
+}

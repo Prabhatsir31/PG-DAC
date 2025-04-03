@@ -1,0 +1,70 @@
+package core;
+import java.util.*;
+import java.io.*;
+public class Demo {
+
+	public static void main(String[] args) 
+	{
+		Map<Integer,String>mymap=new HashMap<>();
+		mymap.put(1,"aaa");
+		mymap.put(2,"bbb");
+		mymap.put(3,"ccc");
+		mymap.put(4,"ddd");
+		mymap.put(5,"eee");
+		
+		FileOutputStream fos=null;
+		ObjectOutputStream oos=null;
+		FileInputStream fis=null;
+		ObjectInputStream ois=null;
+		
+		try {
+			fos=new FileOutputStream("d:\\roughwork\\my.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			oos=new ObjectOutputStream(fos);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			oos.writeObject(mymap);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			fis=new FileInputStream("d:\\roughwork\\my.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ois=new ObjectInputStream(fis);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Map<?,?>ref=null;
+		try {
+			ref=(Map)ois.readObject();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Set<?> set=ref.entrySet();
+		Iterator<?> itr=set.iterator();
+		while(itr.hasNext())
+		{
+			Map.Entry<?,?> me=(Map.Entry<?,?>)itr.next();
+			System.out.println(me.getKey()+"\t"+me.getValue());
+		}
+		System.out.println("Are ref and mymap same?    "+(ref==mymap));
+	}
+}

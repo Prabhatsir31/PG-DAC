@@ -1,0 +1,12 @@
+/*
+define interface "First" with "static void disp1()" method.
+class "Base" with "static void disp2()" method.
+derive a class "Sub" from "Base" and "First"
+now define a class Demo in which define "main" method.
+inside main show how many ways you can invoke "disp1" and "disp2" methods.
+*/
+package DefaultInterface;
+
+public class Demo {
+
+}

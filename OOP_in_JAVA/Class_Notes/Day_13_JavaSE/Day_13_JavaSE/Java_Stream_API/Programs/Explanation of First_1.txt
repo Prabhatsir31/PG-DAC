@@ -1,0 +1,56 @@
+
+
+
+
+list.stream().filter(i -> i > 10).mapToInt(i -> i).sum();
+
+	stream() is a method inside Collection
+
+	it returns Stream
+	filter is a method inside Stream    [ intermediate operation ]
+		it accepts "Predicate" as functional interface
+
+		it returns "Stream"
+
+	mapToInt() is a method inside "Stream"     [ intermediate operation ]
+
+		it accepts "ToIntFunction" as functional interface
+
+		it returns "IntStream"
+
+	sum() is a method of "IntStream"		 [ Terminal operation ]
+		it returns int
+
+
+
+
+what happens internally when we invoke "filter(i -> i > 10)" ?
+	
+	filter method has got argument "Predicate" functional interface.
+		inside "filter" method , "test" method of Predicate is called which returns boolean.
+
+
+
+what happens internally when we invoke "mapToInt(i -> i)" ?
+	
+	mapToInt method has got argument "ToIntFunction" functional interface.
+		inside "mapToInt" method , "applyAsInt" method of ToIntFunction is called which returns int on which we perform Terminal operation "sum()" which gives us final result ( int ).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

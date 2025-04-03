@@ -1,0 +1,5 @@
+Here the most imp. thing is that since "return" statement is given inside "try" "catch" and "finally" so,compiler removes "return" from both try and catch. So that means we have two "return" statements,  one inside "finally" and other outside it.
+Since as per the concept , finally block always executes compiler gives error for "return 4" statement which is written outside finally block.
+
+
+

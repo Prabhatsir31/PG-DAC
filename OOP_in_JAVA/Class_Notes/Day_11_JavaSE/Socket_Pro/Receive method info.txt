@@ -1,0 +1,4 @@
+what does DatagramSocket's receive() method do?
+
+	receive() method makes server application to wait for client application to send the packet.
+

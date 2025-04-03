@@ -1,0 +1,12 @@
+What all things get written in case of serialization?
+
+1) metadata (only information including "SerialVersionUID")
+	from sub class to base class recursively till "Object" is not encountered
+2) actual data (instance members) 
+	from base class to sub class
+
+3) metadata of "has a" till u don't get "reference type" as "has a" member
+	actual data of "has a"
+
+
+

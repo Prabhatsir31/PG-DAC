@@ -1,0 +1,12 @@
+Outer.inner i=o1.new inner();
+
+	here when inner class gets instantiated, compiler puts a reference of "Outer" class inside inner class object. That reference refers to the object where "o1" refers to.
+
+Why compiler does that?
+
+	because even though they are "outer" and "inner" classes for a developer, for JVM these two are different classes altogether.
+
+How compiler does that?
+
+	compiler adds a parameterized constructor accepting "outer" class reference inside "inner" class and discards all the other available constructors.
+	

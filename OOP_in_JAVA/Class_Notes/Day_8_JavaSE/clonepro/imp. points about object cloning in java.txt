@@ -1,0 +1,15 @@
+
+imp. points about object cloning in java
+
+
+java.lang.Object class has 
+
+	protected Object clone()throws CloneNotSupportedException
+
+method
+
+if you need to clone object of a particular class, that class has to
+
+a) implement "Cloneable" interface
+	[ Cloneable interface does not have any abstract method. It's a marker interface ]
+b) override "clone()" method of Object class.

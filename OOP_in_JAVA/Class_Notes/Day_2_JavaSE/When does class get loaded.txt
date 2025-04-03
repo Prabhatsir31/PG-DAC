@@ -1,0 +1,27 @@
+
+When a class gets loaded ?
+
+	a) implicitly
+
+			java MyClass8
+
+
+				or
+
+			emp e=new emp(); when u create first object of that class
+
+				or
+
+
+			emp.staticmemberfun();
+
+
+				or
+
+			before deserialization if the class is not loaded it gets loaded implicitly during deserialization
+
+
+
+	b) explicitly
+
+				Class.forName("classname");

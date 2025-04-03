@@ -1,0 +1,64 @@
+core
+	package "pack1"
+
+	Student implements Serializable
+		click on "default serial version uid"
+
+		private int rollno;
+		public String name;
+
+	Demo.java
+		Serialization
+
+
+run "Demo.java"
+
+	right click on "pack1"
+		create "jar" file
+
+core1
+	MyApp
+		main
+			deserialization
+
+	build path
+		add above jar file.
+
+	run "MyApp" and make sure deserialization happens.
+
+
+
+now go to "Student.java"
+	change the type of "rollno" from "int" to "String"
+		obviously change its "setter and getter" methods.
+		
+	save and compile "Student.java"
+		do not run "Demo.java"
+
+	create jar file again (with "Person" and "Student")and distribute it to "MyApp.java"
+
+
+go to "core1"
+	build path again new jar file
+
+run "MyApp.java"
+	make sure it fails:
+it gives following exception:
+
+
+java.io.InvalidClassException: core.Student; incompatible types for field rollno
+null
+	at java.io.ObjectStreamClass.matchFields(ObjectStreamClass.java:2399)
+	at java.io.ObjectStreamClass.getReflector(ObjectStreamClass.java:2293)
+	at java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:741)
+	at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1883)
+	at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1749)
+	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2040)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1571)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:431)
+	at core1.MyApp.main(MyApp.java:27)
+
+
+
+
+

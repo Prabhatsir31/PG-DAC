@@ -1,0 +1,30 @@
+String getName()
+
+Optional<String> op1=op.map(Employee::getName);
+	since "getName()" return type is "String", return type of "op.map(Employee::getName)" is "Optional<String>"
+
+
+
+
+Optional<String> getDesig()
+
+Optional<String> op2=op.map(Employee::getDesig);  // error
+
+	since "getDesig()" return type is "Optional<String>", return type of "op.map(Employee::getDesig)" is "Optional<Optional<String>>"
+
+so above statement has to be written as:
+
+
+Optional<Optional<String>> op1=op.map(Employee::getDesig);
+
+here if you want to avoid nested Optional, solution is use "flatMap()" instead of "map".
+
+e.g.
+
+Optional<String>op2=op.flatMap(Employee::getDesig);
+
+
+
+
+
+

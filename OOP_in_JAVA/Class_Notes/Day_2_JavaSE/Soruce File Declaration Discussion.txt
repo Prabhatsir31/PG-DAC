@@ -1,0 +1,205 @@
+public class A
+{
+	main()
+	{
+	}
+}
+
+	save by "A.java"
+
+	compile by "javac A.java"
+		you will get "A.class"
+
+	run by  "java A"
+
+
+
+
+class B
+{
+	main()
+	{
+
+	}
+}
+
+	save by "B.java"
+	compile by "javac B.java"
+	
+		you will get "B.class"
+
+	run by  "java B"
+
+
+
+
+class B
+{
+	main()
+	{
+
+	}
+}
+
+	save by "Sample.java"
+
+	compile by "javac Sample.java"
+
+		you will get "B.class"
+
+	run by "java B"
+
+
+
+public class B
+{
+	main()
+	{
+	}
+}
+
+	if you save above code by "Sample.java"
+
+	when you compile it by saying
+
+		javac Sample.java
+
+	compiler will give you an error saying:
+		class B is public and it should be there inside "B.java"
+
+
+
+class C
+{
+
+}
+class D
+{
+	main()
+	{
+	}
+}
+
+		if I save this code by "C.java"
+
+			javac C.java
+				I will get 
+					C.class and D.class
+			run by
+				java D
+
+
+
+		if I save this code by "D.java"
+			
+			javac D.java
+
+				I will get 
+					C.class and D.class
+			run by
+				java D
+
+		if I save this code by "Sample.java"
+
+			javac Sample.java
+				I will get
+					C.class and D.class
+			run by
+				java D
+
+
+
+
+public class E
+{
+
+}
+class F
+{
+	main()
+	{
+	}
+}
+
+		save by "E.java"
+			javac E.java
+
+		you will get
+			E.class and F.class
+		java F
+
+
+
+
+public class E
+{	
+	main()
+	{
+	}
+}
+class F
+{
+	
+}
+
+		save by "E.java"
+			javac E.java
+
+		you will get
+			E.class and F.class
+		java E
+
+
+
+public class G
+{
+	main
+	{
+	}
+}
+public class H
+{
+}
+
+	save by "G.java"
+		javac G.java
+		compiler will say
+			H is a public class and it has to be inside "H.java"
+
+
+
+public class G
+{
+	main
+	{
+	}
+}
+public class H
+{
+}
+
+	save by "H.java"
+		javac H.java
+		compiler will say
+			G is a public class and it has to be inside "G.java"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

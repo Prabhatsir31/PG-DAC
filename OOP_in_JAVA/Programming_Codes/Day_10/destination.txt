@@ -1,0 +1,51 @@
+		stream
+
+stream is a communication path bet'n source and destination.
+
+There are two types of streams
+a) input stream :- for reading
+b) output stream :- for writing
+
+if u want to read, u need to open input stream on the source ( e.g. file, array, network )
+
+if u want to write ,u need to open output stream on destination ( e.g. file, array, network )
+
+Java has two categories of streams
+
+Byte streams and Unicode character streams
+
+Byte Streams
+
+Purpose: Byte streams are used for handling raw binary data like images, audio files, videos, and other non-text data. They read and write data byte by byte.
+
+Classes:
+
+InputStream (for reading) → e.g., FileInputStream
+OutputStream (for writing) → e.g., FileOutputStream
+
+
+Unicode (Character) Streams
+
+Purpose: Unicode streams (character streams) are used for handling text data, ensuring proper encoding and decoding (e.g., UTF-8, UTF-16). They read and write data character by character, making them suitable for processing text files.
+
+Classes:
+
+Reader (for reading) → e.g., FileReader
+Writer (for writing) → e.g., FileWriter
+
+File class in Java:
+	File class in java is used to get information about file or folder such as whether file exists or not, its length, date of last modification etc.
+
+Entire io support is available from "java.io" package.
+
+
+
+
+
+
+
+
+
+
+
+

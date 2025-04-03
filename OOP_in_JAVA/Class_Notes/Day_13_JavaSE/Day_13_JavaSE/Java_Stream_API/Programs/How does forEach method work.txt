@@ -1,0 +1,33 @@
+forEach(System.out::println);     we are invoking
+
+
+forEach() method's argument is "Consumer" functional interface with
+	
+		void	accept(T t)   // abstract method
+			Performs this operation on the given argument.
+
+
+implementation of Consumer
+
+class ConsumerImpl implements Consumer
+{
+	void accept(T t)
+	{
+	   System.out.println(t);
+		this is because u have asked accept to print an element provided
+			System.out::println
+	}
+}
+
+how forEach() method must have been designed
+
+forEach(Consumer ref)
+{
+	traverse through the stream
+	pass each and every element to "accept()" method like this:
+		
+		ref.accept(element);
+	
+}
+
+

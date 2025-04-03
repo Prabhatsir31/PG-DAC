@@ -1,0 +1,82 @@
+
+		constructor
+
+is a special member function.
+
+It is special because
+
+a) it is used to initialize instance members.
+b) it has no return type
+c) it is called as soon as object is created.
+
+
+There are 2 types of constructors in java.
+
+a) default or no-arg constructor
+b) parameterized constructor
+
+a) default or no-arg constructor
+	it is a constructor with no arguments.
+e.g.
+
+	MyClass()
+	{
+	}
+
+when u don't define any constructor in the class, compiler provides default or no-arg constructor.
+
+b) parameterized constructor
+	constructor with at least one argument.
+e.g.
+	MyClass(int k)
+	{
+	}
+this has to be explicitly provided by the programmer.
+
+
+public class MyClass11
+{
+	int num;
+	MyClass11(int num)
+	{
+		this.num=num;
+	}
+	MyClass11()
+	{
+	}
+	p.s.vm
+	{
+		MyClass11 m2=new MyClass11(200); // you need parameterized constructor
+		MyClass11 m1=new MyClass11(); // you need default or no-arg constructor
+	}
+}
+
+java does not have destructor.
+just before object gets garbage collected, following method gets called. Programmer can override(define) this finalize method in order to release resources such as file, database connection or sockets.
+
+protected void finalize()
+{
+}
+
+Since there is no guarantee as to when exactly object will get garbage collected, u can not rely upon "finalize" method to release the resources such as Connection , Socket etc.
+
+Garbage collection can not be forced in java. U can just make a request for Garbage Collection , by invoking a method "System.gc()". or "Runtime.getRuntime().gc()".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

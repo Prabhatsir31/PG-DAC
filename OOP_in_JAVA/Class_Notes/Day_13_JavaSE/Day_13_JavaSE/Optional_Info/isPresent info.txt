@@ -1,0 +1,8 @@
+Optional<MyClass> op=Optional.ofNullable(getMyClass());
+
+
+boolean	isPresent()
+
+Return true if there is a value present, otherwise false.
+
+so if getMyClass() returns instance of MyClass, then "op.isPresent()" will return true and if getMyClass() returns null then "op.isPresent()" will return false.

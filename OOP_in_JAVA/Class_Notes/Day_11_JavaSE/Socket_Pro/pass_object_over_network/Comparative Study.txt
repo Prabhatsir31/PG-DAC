@@ -1,0 +1,30 @@
+when we write an object inside file system  [ destination is file ]
+
+	FileOutputStream fos=new FileOutputStream("abc.txt");
+	ObjectOutputStream oos=new ObjectOutputStream(fos);
+	oos.writeObject(m);
+
+
+when we write (send) an object over the network   [ destination is network ]
+
+
+Socket ss=new Socket("LAPTOP-DM7E4AA9",10000);  or Socket ss=sc.accept()
+OutputStream o=ss.getOutputStream();
+ObjectOutputStream oos=new ObjectOutputStream(o);
+oos.writeObject(m);   
+
+
+
+when we read an object from the file  [ source is file ]
+
+	FileInputStream fis=new FileInputStream("abc.txt");
+	ObjectInputStream ois=new ObjectInputStream(fis);
+	MyClass ref=(MyClass)ois.readObject();
+
+
+when we read an object from the network   [ source is network ]
+
+	Socket ss=new Socket("LAPTOP-DM7E4AA9",10000);  or Socket ss=sc.accept()
+	InputStream i=ss.getInputStream();
+	ObjectInputStream ois=new ObjectInputStream(i);
+	MyClass ref=(MyClass) ois.readObject();

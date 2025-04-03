@@ -1,0 +1,44 @@
+/*
+create a HashMap.
+store  prn no. and students name of 10 students inside the HashMap.
+now write this HashMap inside the file and read also. After reading display it using iterator.
+*/
+package Generic;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Ques9 {
+    public static void main(String[] args) {
+        HashMap<String, String> studentMap = new HashMap<>();
+        studentMap.put("101", "Alice");
+        studentMap.put("102", "Bob");
+        studentMap.put("103", "Charlie");
+        studentMap.put("104", "David");
+        studentMap.put("105", "Eve");
+        studentMap.put("106", "Frank");
+        studentMap.put("107", "Grace");
+        studentMap.put("108", "Hannah");
+        studentMap.put("109", "Ivy");
+        studentMap.put("110", "Jack");
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("students.dat"))) {
+            oos.writeObject(studentMap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("students.dat"))) {
+            HashMap<String, String> deserializedMap = (HashMap<String, String>) ois.readObject();
+            Iterator<Map.Entry<String, String>> iterator = deserializedMap.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, String> entry = iterator.next();
+                System.out.println("PRN: " + entry.getKey() + ", Name: " + entry.getValue());
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}

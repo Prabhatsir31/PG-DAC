@@ -1,0 +1,20 @@
+
+			
+
+	first thread				second thread
+
+	production				consumption
+
+	
+Both threads will share same object where production and consumption logic has been written.
+
+Conditions:-
+
+	if a thread tries to produce the product, other thread should not try to consume it. Only after first thread produce the product, other thread can consume it.  [ synchronization ]
+
+	if a product is produced , it should be immediately consumed.
+	it it's not consumed , thread should not be allowed to produce a new product.
+	
+	if the product is not produced , thread should not try to consume it. [ communication between threads ]
+
+

@@ -1,0 +1,10 @@
+List<? extends Animal> arr
+	it means
+		a) you can pass list of Animal or its sub types and not super types
+		b) you cannot add using "arr"
+
+
+List<? super Dog> arr
+	it means
+		a) you can pass list of Dog or its super types but not sub types
+		b) you can add only "Dog" using "arr"

@@ -1,0 +1,214 @@
+//package Practice;
+//
+//import java.io.FileInputStream;
+//import java.io.FileOutputStream;
+//import java.io.IOException;
+//import java.io.ObjectInputStream;
+//import java.io.ObjectOutputStream;
+//import java.io.Serializable;
+//import java.util.*;
+//
+//class Student implements Serializable
+//{
+//	private String name;
+//	private int age;
+//	
+//	public Student(String name, int age) {
+//		this.name = name;
+//		this.age = age;
+//	}
+//	
+//	public String toString() {
+//		return name + " " + age; 
+//	}
+//}
+//
+//class test1{
+//	public static void main(String args[]) {
+//		List<Student> mylist = new ArrayList<>();
+//		
+//		Student s1 = new Student("Alice" , 45);
+//		Student s2 = new Student("Bob" , 45);
+//		mylist.add(s1);
+//		mylist.add(s2);
+//		
+//		try {
+//			FileOutputStream fos = new FileOutputStream("tt.txt");
+//			ObjectOutputStream oos = new ObjectOutputStream(fos);
+//			oos.writeObject(mylist);
+//			
+//			FileInputStream fis = new FileInputStream("tt.txt");
+//			ObjectInputStream ois = new ObjectInputStream(fis);
+//			System.out.println("This is the data ");
+//			List<?> ref = (List<?>) ois.readObject();
+//			
+//			Iterator<?> itr = ref.iterator();
+//			while(itr.hasNext()) {
+//				System.out.println(itr.next());
+//				
+//			}
+//			
+//		} catch (IOException e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//}
+
+
+
+//
+//
+//package Practice;
+//import java.util.*;
+//
+//class InvalidLengthException extends Exception{
+//	public InvalidLengthException(String message) {
+//		super(message);
+//	}
+//}
+//
+//
+//class Auth {
+//	private String password = "";
+//	
+//	public Auth(String password) throws InvalidLengthException {
+//		if(password.length() < 5 || password.length() > 9 ) {
+//			throw new InvalidLengthException ("Password will be not less than 5 nor greater than 9.");
+//		}
+//		this.password = password;
+//	}
+//	public void done() {
+//		System.out.println("Successfull Authenticator");
+//	}
+//}
+//
+//
+//class test1{
+//	public static void main(String args[]) {
+//		try {
+//			Auth auth1 = new Auth("Secure");
+//			auth1.done();
+//		} catch (InvalidLengthException e) {
+//			// TODO: handle exception
+//			System.out.println("Exception " + e.getMessage());
+//		}
+//		
+//		try {
+//			Auth auth2 = new Auth("add");
+//			auth2.done();
+//		} catch (InvalidLengthException e) {
+//			// TODO: handle exception
+//			System.out.println("Exception " + e.getMessage());
+//		}
+//		
+//	}
+//}
+//
+//
+
+
+
+
+//package Practice;
+//
+//import java.util.*;
+//import java.util.Map.Entry;
+//import java.io.*;
+//
+//class Employee implements Serializable {
+//    private int empid;
+//    private String name;
+//    private double salary;
+//
+////    public Employee(int empid, String name, double salary) {
+////        this.empid = empid;
+////        this.name = name;
+////        this.salary = salary;
+////    }
+//
+//    public int getEmpid() {
+//        return empid;
+//    }
+//
+//    public void setEmpid(int empid) {
+//        this.empid = empid;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public double getSalary() {
+//        return salary;
+//    }
+//
+//    public void setSalary(double salary) {
+//        this.salary = salary;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Employee [ID: " + empid + ", Name: " + name + ", Salary: " + salary + "]";
+//    }
+//}
+//
+//class test1 {
+//    public static void main(String[] args) { // Corrected method name
+//        Employee emp1 = new Employee();
+//        emp1.setName("Alice");
+//        emp1.setEmpid(101);
+//        emp1.setSalary(5000);
+//        Employee emp2 = new Employee();
+//        emp2.setName("Alicee");
+//        emp2.setEmpid(102);
+//        emp2.setSalary(4000);
+//        Employee emp3 = new Employee();
+//        emp3.setName("Ali");
+//        emp3.setEmpid(103);
+//        emp3.setSalary(6000);
+//        
+//        HashMap<Integer, Employee> employeeMap = new HashMap<>();
+//
+//        employeeMap.put(emp1.getEmpid(), emp1);
+//        employeeMap.put(emp2.getEmpid(), emp2);
+//        employeeMap.put(emp3.getEmpid(), emp3);
+//
+//        // Serialize the HashMap to a file
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("xyz.txt"))) {
+//            oos.writeObject(employeeMap);
+//            System.out.println("Employee map has been serialized to xyz.txt");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        // Deserialize the HashMap from the file
+//        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("xyz.txt"))) {
+//            HashMap<Integer, Employee> deserializedMap = (HashMap<Integer, Employee>) ois.readObject();
+//            System.out.println("Employee map has been deserialized from xyz.txt");
+//
+//            // Iterate over the deserialized map using an iterator
+//            Iterator<Entry<Integer, Employee>> itr = deserializedMap.entrySet().iterator();
+//            while (itr.hasNext()) {
+//                Entry<Integer, Employee> entry = itr.next();
+//                System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+//            }
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//}
+
+
+
+

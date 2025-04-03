@@ -1,0 +1,37 @@
+//package core;
+
+/*
+HashMap and HashTable are both key-value 
+storage classes in Java. 
+HashMap is non-synchronized, making it faster 
+for single-threaded tasks, 
+while HashTable is inherently synchronized,
+providing thread safety. HashTable doesn't 
+allow any null keys or values, but HashMap 
+lets you have one null key and several null 
+values.
+*/
+import java.util.*;
+import java.util.concurrent.*;
+
+public class HashMapvsHashtablevsConcurrentHashMapDemo {
+
+	public static void main(String[] args)
+	{
+		Map<String,Integer>m1=new HashMap<>();
+		m1.put(null,100);
+		m1.put(null,200); // will replace above value
+		System.out.println("HashMap is\t"+m1);
+		
+		Map<String,Integer>m2=new Hashtable<>();
+		//m2.put(null,100);  // Hashtable cannot have null as a key
+		
+		System.out.println("Hashtable is\t"+m2);
+		
+		Map<String,Integer>m3=new ConcurrentHashMap<>();
+		//m3.put(null,100);  // not allowed
+		System.out.println("HashMap is\t"+m3);
+	
+	}
+
+}

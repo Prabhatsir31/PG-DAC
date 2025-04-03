@@ -1,0 +1,6 @@
+Why do we need string pool?
+
+ans:- 
+a) Object creation in general is a time-consuming process.
+b) Object creation costs memory.
+c) to increase performance and to reduce overhead

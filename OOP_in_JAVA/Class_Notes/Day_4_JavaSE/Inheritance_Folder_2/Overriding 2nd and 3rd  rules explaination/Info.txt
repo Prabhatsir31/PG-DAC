@@ -1,0 +1,129 @@
+overriding method must have same or more accessibility as compare to overridden method.
+
+class base
+{
+	void disp()
+	{
+		S.o.p("base disp");
+	}
+}
+class sub extends base
+{
+	private void disp()
+	{
+		S.o.p("sub disp");
+	}
+}
+
+
+above code will not compile, but for the time being let's assume that it will compile successfully. What can be the side effect of this code?
+
+	some where in the same package if we say
+
+public class Demo
+{
+	p.s.v.main()
+	{
+		base ref=new sub();
+		ref.disp();
+	}
+}
+
+
+here for the compiler "ref" is of type "base", so compiler will search "disp" in base 
+is it there ?    yes
+is it accessible ?   yes
+is it final ?	no
+is is static ? no
+
+so as per compiler's instruction (which you know) dynamic binding will take place i.e. "sub" class "disp" which is "private" will get invoked. This will violate accessibility concept. It should not happen that's why compiler stops you at:
+
+
+
+class base
+{
+	void disp()
+	{
+		S.o.p("base disp");
+	}
+}
+class sub extends base
+{
+	private void disp()     //  compilation error
+	{
+		S.o.p("sub disp");
+	}
+}
+
+
+
+
+
+
+
+overriding method can have covariant return type.
+
+class base
+{
+	String disp()
+	{
+		S.o.p("base disp");
+		return null;
+	}
+}
+class sub extends base
+{
+	Object  disp()
+	{
+		S.o.p("sub disp");
+		return null;
+	}
+}
+
+
+
+above code will not compile, but for the time being let's assume that it will compile successfully. What can be the side effect of this code?
+
+	some where in the code if we say
+
+public class Demo
+{
+	p.s.v.main()
+	{
+		base ref=new sub();
+		String s=ref.disp();
+	}
+}
+
+
+here for the compiler "ref" is of type "base", so compiler will search "disp" in base 
+is it there ?    yes
+is it accessible ?   yes
+is it final ?	no
+is is static ? no
+
+your statement inside "main"
+
+	String s=ref.disp();
+
+is correct as per compiler because "disp" of base has "String" as a return type.
+
+so as per compiler's instruction (which you know) dynamic binding will take place i.e. "sub" class "disp" which will return "Object" which "String s" cannot catch. It should not happen that's why compiler stops you at:
+
+
+class base
+{
+	String disp()
+	{
+		S.o.p("base disp");
+		return null;
+	}
+}
+class sub extends base
+{
+	Object void disp()     // Compilation error
+	{
+		S.o.p("sub disp");
+		return null;
+	}
+}

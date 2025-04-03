@@ -1,0 +1,3 @@
+accept book names from client till he presses "quit" and store them in ArrayList.
+now send this ArrayList over network to the server.
+server will read the ArrayList and display .

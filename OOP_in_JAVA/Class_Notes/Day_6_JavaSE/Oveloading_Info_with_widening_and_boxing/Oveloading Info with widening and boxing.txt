@@ -1,0 +1,181 @@
+Overloading- considering 
+a)Widening (upcasting ) b)Autoboxing  c)Var-args
+
+Widening beats boxing
+Widening beats var-args
+
+boxing beats var-args
+
+
+	void disp(int x)
+	{
+		System.out.println("in int");
+	}
+	void disp(short y)
+	{
+		System.out.println("in short");
+	}
+
+	byte b=30;
+	disp(b);
+
+	Ans:- in short
+	Primitive widening uses the "smallest" method argument possible.
+
+
+
+class A
+{
+	void disp(Integer x)
+	{
+		S.o.p("in Integer");
+	}
+	void disp(int x)
+	{
+		S.o.p("in int");
+	}
+
+.......
+	int num=5;
+	disp(num);
+}
+
+	Ans:- in int
+	Boxing has taken a back seat
+
+
+
+class A
+{
+	void disp(Integer x)
+	{
+		S.o.p("in Integer");
+	}
+	void disp(long x)
+	{
+		S.o.p("in long");
+	}
+
+.......
+	int num=5;
+	disp(num);
+}
+	Ans:- in long
+	widening beats boxing
+
+
+
+class A
+{
+	void disp(int x,int y)
+	{
+		System.out.println("in two ints");
+	}
+	void disp(byte ...x)
+	{
+		System.out.println("in byte var arg");
+	}
+
+.....
+	byte a=3,b=6;
+	disp(a,b);
+}
+	Ans:- in two ints
+	Compiler chooses old style
+
+
+
+class A
+{
+	void disp(Byte x,Byte y)
+	{
+		System.out.println("in two Bytes");
+	}
+	void disp(byte ...x)
+	{
+		System.out.println("in byte var arg");
+	}
+
+.......
+	byte a=3,b=6;
+	disp(a,b);
+}
+	Ans:- in two Bytes
+	boxing beats var-args
+
+
+Imp:- Reference widening depends upon inheritance.
+Wrapper classes are peers to each other.
+
+e.g following code will not work
+
+	void disp(Long x)
+	{
+		System.out.println("in Long");
+	}
+
+	disp(new Integer(4));
+
+
+
+
+
+Overloading When combining Widening and Boxing.
+
+	void disp(Long x)
+	{
+		System.out.println("in Long");
+	}
+
+	byte b=4;
+	disp(b);
+
+	Above code will not work
+
+
+compiler can do boxing followed by widening operation
+e.g Following code will work.
+
+	void disp(Object o)
+	{
+	System.out.println("in Object");
+	}
+
+	byte b=4;
+	disp(b);   first autoboxing i.e. byte will be converted to Byte and then Byte will be passed to Object [ upcasting ]
+
+
+
+Overloading in combination with Var-args
+You can combine var-args either with widening or boxing , not both.
+
+e.g. Following code will not work because of "ambiguity"
+
+	void disp(long...x)
+	{
+		System.out.println("in long var args");
+	}
+	void disp(Integer...y)
+	{
+		System.out.println("in Integer var args");
+	}
+
+
+		int p=20,q=30;
+		disp(p,q);
+
+
+
+Rules For Oveloading methods using Widening, boxing, and var-args.
+
+1) Primitive widening uses the "smallest" method argument possible.
+2) Used individually, boxing and var-args are compatible with overloading.
+3) You cannot widen from one wrapper type to another (IS-A fails).
+4) You cannot widen and then box (An int can't become Long).
+5) You can box and then widen.(An int can become an Object, via Integer).
+6) You can combine var-args with either widening or boxing.
+
+
+
+
+	

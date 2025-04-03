@@ -1,0 +1,22 @@
+what is "this"?
+
+"this" is a reference which refers to the current or invoking object.
+
+What is the importance of "this"?
+	when u create multiple objects, u have those many copies of instance members however , u have only one copy of member function/s. In that case how will member function keep a track of invoking object ? 
+	member function/s will come to know about invoking or current object through "this" reference.
+
+can we use "this" with static members?
+	no because this refers to object and static are not associated with objects.
+
+
+How can we use "this" keyword in program?
+	
+	private String name;
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+
+here "this.name" is an instance member and "name" is a local member.
+

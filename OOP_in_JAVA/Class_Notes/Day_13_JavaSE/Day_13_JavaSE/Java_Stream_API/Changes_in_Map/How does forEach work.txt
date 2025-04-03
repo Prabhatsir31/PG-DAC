@@ -1,0 +1,25 @@
+map.forEach((id, val) -> System.out.println(val));   // we are invoking
+
+forEach() method's argument is 
+
+	BiConsumer functional interface with
+
+		void	accept(T t, U u)
+			Performs this operation on the given arguments.
+
+implementation of "BiConsumer"
+
+
+class BiConsumerImpl implements BiConsumer
+{
+	void accept(Integer t, String u)
+	{
+		System.out.println(u);
+	}
+}
+
+forEach(BiConsumer ref)
+{
+	// traverse through the map and pass each and every "Entry" to "accept()" method.
+		ref.accept(key,value);
+}

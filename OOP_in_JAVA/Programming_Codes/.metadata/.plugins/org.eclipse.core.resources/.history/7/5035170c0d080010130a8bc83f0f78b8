@@ -1,0 +1,22 @@
+/*
+
+*/
+package MethodPackage;
+
+@FunctionalInterface
+interface Seventh {
+    void fun(int k);
+}
+
+class Sample1 {
+    Sample1(int k) {
+        System.out.println("Inside parameterized constructor of Sample: " + k);
+    }
+}
+
+public class Ques6 {
+    public static void main(String[] args) {
+        Seventh seven = Sample1::new;
+        seven.fun(200);
+    }
+}

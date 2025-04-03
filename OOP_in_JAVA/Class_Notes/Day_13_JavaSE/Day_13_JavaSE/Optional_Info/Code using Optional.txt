@@ -1,0 +1,32 @@
+//package optional_pro;
+
+import java.util.Optional;
+
+class MyClass
+{
+	public String disp()
+	{
+		return "in disp of MyClass";
+		//return null;
+	}
+}
+public class Demo {
+	private static MyClass ref=new MyClass();
+	 //private static MyClass ref;
+	
+	public static MyClass getMyClass()
+	{
+		return ref;
+	}
+	public static void main(String[] args)
+	{
+
+		Optional<MyClass> op=Optional.ofNullable(getMyClass());
+		System.out.println(op);
+		System.out.println(op.map(MyClass::disp));
+		System.out.println(op.map(MyClass::disp).orElse("could not get either MyClass instance or String instance"));
+		//System.out.println(op.map(MyClass::disp));
+
+	}
+
+}

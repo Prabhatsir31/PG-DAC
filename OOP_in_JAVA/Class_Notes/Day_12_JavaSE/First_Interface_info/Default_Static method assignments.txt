@@ -1,0 +1,25 @@
+1) define interface "First" with "default void fun()" and interface "Second" with "default void fun()". 
+Now derive a class Child from both these interfaces. 
+Inside main function instantiate Child class instance and invoke "fun" method.
+
+2) define interface "Third" with "default void disp1()" and "static void disp2()" methods.
+derive a class "Sub" from "Third" ( do not override "disp1")
+inside main function invoke "disp1" and "disp2" methods.
+
+3)define interface "Fourth" with "default void disp3()" method.
+define a class "Base1" with "public void disp3()" method,
+now derive a class Sub1 from "Base1" and "Fourth". Sub1 class should have only "public void myfun()" method.
+inside main create an object of "Sub1" and invoke "disp3".
+once you get the result, also try to invoke "disp3" of "Fourth"
+
+4) define interface "Base1" with "default void fun1()".
+derive an interface "Sub1" from "Base1" with "default void fun2()"
+derive a class "Sub2" from "Sub1". It should have only "public void fun3()" method.
+
+inside main function, create an object of "Sub2" and make sure when u invoke "fun3", it should call "Sub1's fun2" which should call "Base1's fun1" method.
+
+5) define interface "First" with "static void disp1()" method.
+class "Base" with "static void disp2()" method.
+derive a class "Sub" from "Base" and "First"
+now define a class Demo in which define "main" method.
+inside main show how many ways you can invoke "disp1" and "disp2" methods.

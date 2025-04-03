@@ -1,0 +1,5 @@
+
+
+Magic numbers are a common technique to make things, such as files, identifiable.
+
+The idea is that you just have to read the first few bytes of the file to know if this is most likely a Java class file or not. If the first bytes are not equal to the magic number, then you know for sure that it is not a valid Java class file.

@@ -1,0 +1,10 @@
+What happens when we say 
+			java Sample
+
+
+a) JVM searches "Sample.class" inside current working directory
+	if found, "Sample.class" will be loaded by JVM.
+b) JVM will invoke "main()" function.
+
+		since main() function is static, JVM invokes it with
+					Sample.main

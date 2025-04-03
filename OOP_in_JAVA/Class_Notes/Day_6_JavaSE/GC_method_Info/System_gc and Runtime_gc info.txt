@@ -1,0 +1,8 @@
+gc() method is used to request for garbage collection.
+
+inside System class we have following method:
+
+ public static void gc()
+ {
+        Runtime.getRuntime().gc();
+ }

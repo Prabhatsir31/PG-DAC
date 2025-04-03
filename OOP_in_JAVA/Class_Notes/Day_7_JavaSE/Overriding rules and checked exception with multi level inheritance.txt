@@ -1,0 +1,82 @@
+class Base
+{
+	public void disp()throws FileNotFoundException
+	{
+		
+	}
+}
+class Sub1 extends Base
+{
+	public void disp()
+	{
+		
+	}
+}
+class Sub2 extends Sub1
+{
+	// Error: Exception FileNotFoundException is not compatible 
+	// with throws clause in Sub1.disp()
+	public void disp()throws FileNotFoundException
+	{
+		
+	}
+}
+
+
+
+
+
+class Base
+{
+	public void disp()throws Exception
+	{
+		
+	}
+}
+class Sub1 extends Base
+{
+	// no problem
+	public void disp()throws FileNotFoundException
+	{
+		
+	}
+}
+class Sub2 extends Sub1
+{
+	// no problem
+	public void disp()throws FileNotFoundException
+	{
+		
+	}
+}
+
+
+
+
+
+class Base
+{
+	public void disp()throws Exception
+	{
+		
+	}
+}
+class Sub1 extends Base
+{
+	// no problem
+	public void disp()throws FileNotFoundException
+	{
+		
+	}
+}
+class Sub2 extends Sub1
+{
+	// Exception Exception is not compatible with throws 
+	// clause in Sub1.disp()
+	public void disp()throws Exception    // Error
+	{
+		
+	}
+}
+
+

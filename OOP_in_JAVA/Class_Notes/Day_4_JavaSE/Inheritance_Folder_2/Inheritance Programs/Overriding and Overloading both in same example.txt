@@ -1,0 +1,15 @@
+class MyClass
+{
+	void disp(int k)   // overridden
+	{
+	}
+	void disp(String s)
+	{
+	}
+}
+class A extends MyClass
+{
+	void disp(int k)   // overriding
+	{
+	}
+}

@@ -1,0 +1,67 @@
+how to check whether java is installed on your system
+a)	Download jdk17 for either 32 bit or 64 bit architecture
+b)	Install it.
+c)	go to
+			C:\Program Files 
+				u will get a folder "Java"
+					inside "java"
+					u will get "jdk17" folder
+
+how to set path   [ file is given, kindly refer it]
+
+Sample program- how to compile and run on notepad+cmd
+
+
+Types of comment
+
+DataTypes_Operators_Control_Flow
+Java Data Types and their range
+
+	DataTypes_Demo.java 
+	Automatic_Explicit_Conversion
+
+Java Data Types and their range.txt
+
+	DataTypes_Operators_Control_Flow\Operators\Bitwise Operators\About_Number_System
+		Flow.txt
+
+
+
+
+About Java
+
+
+OOPS for Java
+	Drawbacks of POP
+	what is OOP
+	
+
+class and object
+member variables , member functions
+
+	explain above concepts with examples
+
+abstraction
+encapsulation
+	 above concepts with examples
+
+function overloading
+	meaning
+	explain with example
+
+static member and member functions
+
+local member must be initialized before use
+
+What is java
+Where java is used
+java version codenames
+about java8 platform
+difference between jdk jre and jvm
+features of Java
+types of java applications
+
+how java is platform independent?
+
+unicode character info
+

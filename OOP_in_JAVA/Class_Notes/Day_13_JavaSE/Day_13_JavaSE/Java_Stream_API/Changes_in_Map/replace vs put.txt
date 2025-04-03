@@ -1,0 +1,4 @@
+There is absolutely no difference in put and replace when there is a current mapping for the wanted key. From replace:
+
+Replaces the entry for the specified key only if it is currently mapped to some value.
+This means that if there is already a mapping for the given key, both put and replace will update the map in the same way. Both will also return the previous value associated with the key. However, if there is no mapping for that key, then replace will be a no-op (will do nothing) whereas put will still update the map.

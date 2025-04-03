@@ -1,0 +1,28 @@
+
+
+
+	Client						Server
+
+						1) should be ready
+
+
+    2) client must know name(IP address)
+	of the server and port no. on which 
+	required application is running.
+
+What is port no?
+	
+	on Server we have different applications running e.g. tomcat server, oracle server,weblogic server etc. 
+	These applications are differentiated from each other with the help of port no.
+	So when we say Client would like to connect to the server, it is for a particular application (tomcat server , oracle server etc). And that client can specify with the help of port no.
+	
+
+
+3) how the data travels from Client to Server and vice-versa ?
+	
+	a) Data gets converted into Packets [ marshalling ]
+
+	b) Packets are delivered on the other side of network.
+
+	c) Packets get converted into Data. [ unmarshalling ]
+ 

@@ -1,0 +1,23 @@
+/*
+
+*/
+package MethodPackage;
+
+@FunctionalInterface
+interface Third {
+    void show(int num);
+}
+
+class Sample {
+    void disp(int num) {
+        System.out.println("Value: " + num);
+    }
+}
+
+public class Ques2 {
+    public static void main(String[] args) {
+        Sample sample = new Sample();
+        Third third = sample::disp;
+        third.show(500);
+    }
+}

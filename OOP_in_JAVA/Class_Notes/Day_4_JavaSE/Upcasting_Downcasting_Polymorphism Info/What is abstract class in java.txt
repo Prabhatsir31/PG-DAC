@@ -1,0 +1,24 @@
+in java as soon as u define a class with "abstract" keyword, class becomes abstract.
+
+abstract class can not be instantiated. It is because abstract class is incomplete class ( it has got atleast one contract i.e. abstract method )
+
+abstract class can contain abstract as well as non-abstract methods.
+
+abstract method is a method which is declared with "abstract" keyword. ( it can not be private)
+
+a child class of an abstract class has to provide implementation to the method which is declared "abstract" in parent class or else make child class also "abstract".
+
+a class can not be "abstract" and "final" both. It is because "abstract" encourages inheritance and "final" stops inheritance.
+
+can abstract class have a constructor?
+	yes.
+but we cannot instantiate abstract class , so what's the use of that constructor?
+	yes we cannot instantiate abstract class but when we instantiate child class of that abstract class, child class constructor needs to invoke parent class constructor. 
+
+
+
+
+
+
+
+

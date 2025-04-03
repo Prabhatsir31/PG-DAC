@@ -1,0 +1,101 @@
+Coupling
+	Loose Coupling and Tight Coupling
+
+Tight Coupling - is when u instantiate a concrete class.
+
+if the requirement is changed ur code will break.
+
+e.g
+
+class Application
+{
+	void perform()
+	{
+
+		// program to implementation
+
+		Triangle t=new Triangle;
+		t->draw();
+	}
+}
+
+in the above case Application class is Tightly Coupled with Triangle class.
+here if we decide to change the implementation, e.g. Circle class , we need to make changes in "perform" function. ie. we will be having maintenance drawback.
+
+
+Loose Coupling- instead of instantiating concrete class u have a pointer to base class and polymorphically method/s can be invoked.
+
+even if the requirement is changed in future we don't have to make any changes in the code.
+
+e.g.
+
+class Application
+{
+	// program to interface
+	void perform(Shape *ptr)
+	{
+		ptr->draw();
+	}
+}
+
+in the above case "Application" class and a particular implementation of "Shape" are loosely coupled.
+
+
+
+another example:
+
+tight coupling
+
+				FourWheeler
+					drive
+
+Bus			Car			Truck
+  drive			  drive			   drive
+
+
+class Driver
+{
+	void perform()
+	{
+		Car c=new Car(); program to implementation/tight coupling
+		c.drive();
+	}
+}
+
+
+loose coupling:
+
+class Driver
+{
+	void perform(FourWheeler f)  // program to interface/loose coupling
+	{
+		f.drive(); 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

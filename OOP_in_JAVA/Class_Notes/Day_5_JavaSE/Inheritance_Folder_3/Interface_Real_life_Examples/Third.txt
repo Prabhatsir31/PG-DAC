@@ -1,0 +1,41 @@
+interface PersistenceMechanism
+{
+	void writeData(Data ref);
+	Data readData();
+}
+
+class FileSystem implements PersistenceMechanism
+{
+	public void writeData(Data ref)
+	{
+		// how to write data inside FileSystem
+	}
+	public Data readData()
+	{
+		// how to read data from FileSystem
+	}
+}
+
+class DatabaseSystem implements PersistenceMechanism
+{
+	public void writeData(Data ref)
+	{
+		// how to write data inside DatabaseSystem
+	}
+	public Data readData()
+	{
+		// how to read data from DatabaseSystem
+	}
+}
+
+class BigdataSystem implements PersistenceMechanism
+{
+	public void writeData(Data ref)
+	{
+		// how to write data inside BigdataSystem
+	}
+	public Data readData()
+	{
+		// how to read data from BigdataSystem
+	}
+}

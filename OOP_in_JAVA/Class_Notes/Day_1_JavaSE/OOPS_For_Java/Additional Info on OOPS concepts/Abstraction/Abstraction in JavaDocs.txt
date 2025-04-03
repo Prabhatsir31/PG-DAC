@@ -1,0 +1,31 @@
+The abstraction you see in Javadocs falls under behavioral abstraction. Javadocs focus on providing a high-level description of what a class, method, or constructor is supposed to do, while hiding the internal code or the implementation details of how it performs its task.
+
+This allows developers to interact with the code at a higher level of abstraction, focusing on functionality rather than the complexity of its internal workings.
+
+Why Is Javadoc Considered a Form of Abstraction?
+
+Hides Implementation Details: Javadocs focus on what the code is doing, but they hide the internal logic or how it performs those tasks. This is essentially abstracting away the complexity of the code.
+
+Provides High-Level View: Javadocs give a high-level overview of the code's functionality, making it easier for developers to understand how to use a class or method without needing to read through the implementation code.
+
+Encourages Use of Interfaces: Javadocs are often associated with documenting APIs or interfaces, where the user interacts with the methods and the behavior rather than dealing with implementation specifics.
+
+Javadoc abstraction is related to documentation-level abstraction and can be classified as a type of behavioral abstraction.
+
+Javadocs are documentation comments in Java that describe the functionality of classes, methods, and fields, providing a high-level overview of the system's API. These documents focus on what the class or method does rather than how it does it.
+
+What is shown in Javadocs?
+
+Class names
+Constructors and their parameters
+Method names, return types, and parameters
+Descriptions of what the methods and classes are intended to do
+Expected behavior of methods (such as preconditions and postconditions)
+
+
+What is not shown in Javadocs?
+
+Implementation details of methods and fields.
+Internal code that performs the tasks described in the method signatures.
+
+Thus, Javadocs abstract away the internal implementation and provide only the interface or behavioral description of the classes and methods.

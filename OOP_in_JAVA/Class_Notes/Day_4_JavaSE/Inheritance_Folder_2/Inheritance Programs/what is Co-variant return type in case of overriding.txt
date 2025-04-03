@@ -1,0 +1,5 @@
+
+
+what is Co-variant return type in case of overriding?
+
+if overridden method has "parent" as a return type then overriding method can have "child" as a return type.

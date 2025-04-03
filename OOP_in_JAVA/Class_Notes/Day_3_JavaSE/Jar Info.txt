@@ -1,0 +1,35 @@
+jar is a compression utility in java.
+it can compress any type of files upto 50%.
+
+syntax
+
+jar <options> <name of jar file> <file/s or folder/s to be compressed>
+
+jar file has to be saved with an extension ".jar"
+
+options are
+
+c - create
+f - file
+u - update. i.e. to add more file/s to an existing jar file
+x - extract the file/s
+t - test the jar file
+m - manifest. i.e. serving some imp information.
+
+
+jar cf first.jar Demo.class User.class
+
+jar tf first.jar
+
+remove "Demo.class" and "User.class"
+
+jar xf first.jar
+
+
+
+
+
+
+
+
+

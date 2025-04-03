@@ -1,0 +1,32 @@
+The ability for a new class to be created from an existing class by extending it is known as inheritance. It provides reusability. Basically you go for inheritance when u realize that "new type is same as existing type". 
+
+e.g.
+
+class Person
+{
+	private String name,address;
+	private int age;
+
+	// setters and getters
+}
+
+now we can derive "Student" class from Person.
+
+class Student extends Person
+{
+	private String qualification;
+	private int rollno,ccppid;
+
+	//setters and getters
+}
+
+	Here Student can inherit "name","address" and "age" from "Person" class.
+
+
+Java allows only 3 types of inheritance
+a) single level  b) multi-level  c) Hierarchical
+
+Inheritance is inbuilt in java i.e. if your class is not derived from any base class, "java.lang.Object" is the base class of it.
+
+
+

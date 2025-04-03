@@ -1,0 +1,1 @@
+reflection does not show parent class methods if parent class is in different package.

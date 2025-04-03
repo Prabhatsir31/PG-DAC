@@ -1,0 +1,53 @@
+package datatypes_pro;
+
+import java.io.IOException;
+
+public class Demo
+{
+	void disp1()throws Exception  // works
+	{
+		
+	}
+	void disp2()throws RuntimeException // works
+	{
+		
+	}
+	void disp3()
+	{
+		throw new Exception();  // error either handle or declare
+	}
+	void disp4()
+	{
+		throw new RuntimeException(); //works
+	}
+	public static void main(String ...arg)
+	{
+		System.out.println("in main");
+
+		/* following try and catch block will give compilation error:
+		 * Unreachable catch block for IOException. 
+		 * This exception is never thrown from the try statement body
+		 */
+		try
+		{
+			
+		}
+		catch(IOException ii)
+		{
+			ii.printStackTrace();
+		}
+		
+		/*
+		 * No problem about following try and catch block
+		 */
+		try
+		{
+		}
+		catch(RuntimeException re)
+		{
+			re.printStackTrace();
+		}
+	}
+}
+
+

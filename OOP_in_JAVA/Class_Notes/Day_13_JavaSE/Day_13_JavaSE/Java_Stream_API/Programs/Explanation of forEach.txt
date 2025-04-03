@@ -1,0 +1,14 @@
+
+
+
+forEach(System.out::println)
+
+	forEach has "Consumer" functional interface as an argument.
+
+	so what happens when we invoke "forEach" method.
+
+		it calls "accept" method of "Consumer".
+
+	what task "accept" must be performing?
+
+		ans:- System.out.println( given argument )

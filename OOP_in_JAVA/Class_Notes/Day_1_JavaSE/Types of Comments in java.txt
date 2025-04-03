@@ -1,0 +1,12 @@
+in java we have 3 types of comments
+
+a) single line 
+	//
+
+b) multiline
+
+	/*  		*/
+
+c) document comment ( in order to create documentation )
+
+	/**		**/

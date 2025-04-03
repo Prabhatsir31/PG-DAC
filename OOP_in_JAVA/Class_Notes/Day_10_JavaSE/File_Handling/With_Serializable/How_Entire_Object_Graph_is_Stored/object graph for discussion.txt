@@ -1,0 +1,23 @@
+public class Vehicle implements Serializable
+{
+}
+public class FourWheeler extends Vehicle
+{
+}
+public class Model implements Serializable
+{
+}
+public class Engine implements Serializable
+{
+	private Model model=new Model();
+}
+public class Car extends FourWheeler
+{
+	Engine ref=new Engine();
+}
+
+
+Car c=new Car();
+
+Lets talk about object graph related to "c".
+

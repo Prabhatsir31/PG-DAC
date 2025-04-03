@@ -1,0 +1,67 @@
+inheritance
+
+class MyApp extends Thread
+{
+	run()
+	{
+	}
+
+}
+
+
+	vs
+
+class MyClass1 implements Runnable
+{
+	run()
+	{
+		logic 1
+	}
+}
+class MyClass2 implements Runnable
+{
+	run()
+	{
+		logic 2
+	}
+} 
+
+class MyApp 
+{
+	private Runnable ref; // prog to interface, loose coupling, any implementation of Runnable can be passed here
+
+	MyApp(Runnable ref)
+	{
+		this.ref=ref;
+	}
+	void perform()
+	{
+		Thread t1=new Thread(ref);
+		t1.start();
+	}
+}
+
+
+difference between applying "synchronized" keyword and "synchronized block":
+
+synchronized public void run()
+{
+	10 statements e.g
+
+}
+
+in above case, we have all 10 statements are blocked for a particular thread. i.e. unless a particular thread executes all 10 staements , second thread will not execute. It should be avoided if all 10 statements are not critical.
+
+
+
+public void run()
+{
+	synchronized(this)
+	{
+		4 statements e.g
+	}
+	other 6 statements [ not so critical ]
+}
+
+above code will give u performance advantage as compare to previous code because only first 4 statements are blocked. once a thread completes first 4 statements , other thread can execute.
+	

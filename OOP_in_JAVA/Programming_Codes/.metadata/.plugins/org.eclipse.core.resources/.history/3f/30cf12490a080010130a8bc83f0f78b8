@@ -1,0 +1,16 @@
+package Lambda;
+
+@FunctionalInterface
+interface Second {
+    void disp4();
+}
+
+public class Ques2 {
+    public static void main(String[] args) {
+        Second implementation1 = () -> System.out.println("Implementation 1 of disp4");
+        Second implementation2 = () -> System.out.println("Implementation 2 of disp4");
+
+        implementation1.disp4(); // Display name of implementation 1
+        implementation2.disp4(); // Display name of implementation 2
+    }
+}

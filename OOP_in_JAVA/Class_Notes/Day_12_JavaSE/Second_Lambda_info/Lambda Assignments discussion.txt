@@ -1,0 +1,128 @@
+define a functional interface "First" with an abstract method "void disp1()" , default method "void disp2()" and a static method "void disp3()"
+
+inside main function using lambda expression invoke "disp1()" and "disp2()" methods.
+also invoke "disp3()" method inside main.
+
+
+
+interface First
+{
+	void disp1();
+	default void disp2()
+	{
+		code
+	}
+	static void disp3()
+	{
+		code
+	}
+}
+
+First ref=()->{S.o.p("in disp1");};
+ref.disp1();
+ref.disp2();
+First.disp3();
+
+
+
+2) define a functional interface "Second" with an abstract method "void disp4()".
+
+define a class Demo with main function.
+inside main function create two implementations of "Second" using lambda expression and display their names.
+
+
+
+interface Second
+{
+	void disp4();
+}
+
+Demo
+	main
+		Second ref1=()->{S.o.p("inside disp4 of first impl");};
+		ref1.disp4();
+		S.o.p(ref1.getClass().getName());
+
+		Second ref2=()->{S.o.p("inside disp4 of second impl");};
+		ref2.disp4();
+		S.o.p(ref2.getClass().getName());
+
+
+
+
+
+
+3) define a functional interface "MyInterface" with an abstract method "void fun()"
+
+define a class Demo with two functions "static void perform" and main.
+
+from main function pass lambda expression, collect it in "perform" method and invoke "fun()" function.
+
+
+interface MyInterface
+{
+	void fun();
+}
+
+Demo
+
+	static void perform(MyInterface ref)
+	{
+			ref.fun();	
+	}
+	main()
+	{
+		perform(()->{S.o.p("inside fun");});
+	}
+
+
+4) define a functional interface "Calculator" with an abstract method "int multiply(int a,int b)"
+define a class "CalcDemo" with main method.
+inside main using lambda create an implementation of "Calculator" , invoke "multiply()" method and display its result.
+
+
+interface Calculator
+{
+	int multiply(int a,int b);
+}
+
+CalcDemo
+	main
+		Calculator ref1=(a,b)->{return a*b;};
+		S.o.p(ref1.multiply(10,30));
+
+
+
+
+5) define a class "Display" with "void disp" method. inside this method display values from 1 to 10.
+
+create an implementation of "Runnable" using lambda expression which will invoke "disp()" method of "Display" class.
+
+create 2 threads and pass above created "Runnable" implementation to these threads.
+make sure while one thread is executing other thread will not interfere.
+
+
+
+
+class Display
+{
+	synchronized void disp()
+	{
+		for loop
+			
+			1 to 10
+	}
+}
+
+Demo
+	main
+		Display d=new Display();
+		
+		Runnable ref1=()->{ d.disp(); };
+
+		Thread t1=new Thread(ref1);
+		Thread t2=new Thread(ref1);
+
+		t1.start();
+		t2.start();
+

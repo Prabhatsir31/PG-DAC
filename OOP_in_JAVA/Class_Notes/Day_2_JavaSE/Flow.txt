@@ -1,0 +1,79 @@
+
+What is automatic garbage collection
+
+Default value of each datatype
+
+constructor info
+	ConstructorDemo1
+	ConstructorDemo2
+	ConstructorDemo3
+
+
+constructor and finalized info
+
+System_gc and Runtime_gc info
+
+static info
+	MyClass8.java
+
+static and non-static relationship
+
+
+What happens when you execute java Application?
+
+e.g.
+
+class MyClass
+{
+	public static void main(String args[])
+	{
+		System.out.println("Welcome to java");
+	}
+}
+
+java MyClass
+	a) MyClass gets loaded.
+	b) JVM invokes "main" function.
+
+
+What are Class Loaders ?
+
+
+refer "Diagrams\Class_Loading\what is class Class"
+
+	Diagrams\Class_Loading\
+				First
+				Second
+				Third
+				Fourth
+				Fifth
+
+
+
+static block or initializer
+
+	MyClass9.java
+	MyClass10.java
+	MyClass11.java
+	MyClass12.java
+
+
+What is the use of non-static block
+
+	MyClass13.java
+	MyClass14.java
+
+S.o.p info
+
+final info
+final member can be initialized through constructor
+
+Singleton
+
+Basic Assignments
+
+
+
+
+
+

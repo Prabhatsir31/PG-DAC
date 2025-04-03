@@ -1,0 +1,30 @@
+Suppose number given is -5
+
+How will you calculate its binary number?
+
+first forget the sign i.e. - (minus)
+
+second find out the binary of 5 
+	that comes to
+
+			0000000000000101
+
+
+now find out 1's complement of the above binary number ( you just have to flip the digits)
+
+so, 1's complement of the above binary number is :
+
+1111111111111010   [ u just have to flip 1 to 0 and vice-versa ]
+
+
+now find out 2's complement of above number ( you just have to add 1 to it). This 2's complement is nothing but binary of -5
+
+
+1111111111111010
++	       1
+
+1111111111111011		2's complement of binary of 5 which is nothing but binary of -5
+
+
+
+Note: when we add 1 and 0 , result is 1

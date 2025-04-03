@@ -1,0 +1,27 @@
+/*
+create checked exception:
+	InvalidLengthException
+
+define a class 
+
+public class Authenticator
+	
+with
+a parameterized constructor which takes String as a password.
+this class also will have "done()" method with "successful authentication" message.
+Parameterized constructor should check the length of the password passed if it is less than 5 or 
+more that 9 , it should raise "InvalidLengthException" 
+	[ constructor shouldn't handle the exception]
+
+create a class "Demo" with main
+	inside main function create the object of "Authenticator" class and invoke "done()" method.
+
+*/
+package Practice;
+import java.util.*;
+
+
+
+public class Ques4 {
+
+}

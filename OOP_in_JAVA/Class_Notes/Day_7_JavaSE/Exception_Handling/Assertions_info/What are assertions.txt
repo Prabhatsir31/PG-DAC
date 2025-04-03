@@ -1,0 +1,8 @@
+	Assertions
+
+Assertions are used to test the program. The advantage is assertions are by default disable, u need to enable them.
+
+Assertions vs System.out.println statements while testing the code:
+	if u write S.o.p statements while testing the code, u need to remove or comment them while the code goes to client.
+
+	if u write assert statements u need not do anything as assertions are by default disable.

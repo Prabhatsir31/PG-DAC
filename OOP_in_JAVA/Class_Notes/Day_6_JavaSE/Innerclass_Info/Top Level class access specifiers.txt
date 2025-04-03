@@ -1,0 +1,1 @@
+Top level classes (which are not nested classes) can either be "public" or "<default>". They can't be "private" or "protected".

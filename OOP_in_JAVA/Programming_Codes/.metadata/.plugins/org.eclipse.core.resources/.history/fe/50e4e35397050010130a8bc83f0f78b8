@@ -1,0 +1,19 @@
+/*
+create HashMap<Integer,String>
+store 4 entries
+	key	value
+
+	1    	Java
+	2    	C++
+	3    	Python
+	4    	Database
+
+now accept a number from user between 1 to 4
+and retrive modulename for that number from the HashMap
+e.g. if user enters 3, Python should be retrieved from the HashMap
+*/
+package Practice;
+
+public class Ques7 {
+
+}

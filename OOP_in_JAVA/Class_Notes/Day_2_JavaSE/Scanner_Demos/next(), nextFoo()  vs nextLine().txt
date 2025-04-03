@@ -1,0 +1,5 @@
+the difference between "next()"  or "nextFoo()  and "nextLine()" methods is:
+
+next() or nextFoo() methods do not read the newline entered by user in the previous input.
+
+nextLine() method reads the newline entered by user in the previous input.

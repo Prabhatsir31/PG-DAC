@@ -1,0 +1,12 @@
+/*
+create interface "Game" , have an abstract method "play()". from this interface implements classes like "Cricket" , "FootBall" and "Tennis".
+Now Define one more class 
+public class Demo with main function.
+In this class have a static method "perform" which will take interface reference as parameter.inside "perform()" see to 
+it that if Cricket is passed ,its "play()" method should be invoked only. Call "perform()" method from main function.
+*/
+package Practice;
+
+public class Ques5 {
+
+}

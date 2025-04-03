@@ -1,0 +1,95 @@
+			Button
+WindowsButton		MotifButton	MacButton
+
+			TextField
+WindowsTextField	MotifTextField	MacTextField
+
+			Window
+WindowsWindow		MotifWindow	MacWindow
+
+
+			Font
+WindowsFont		MotifFont	MacFont
+
+public interface GUIFactory {
+    UIComponent createComponent(String type);
+    Window createWindow();
+    Font createFont();
+}
+
+// implementation of GUIFactory interface
+public class WindowsGUIFactory implements GUIFactory
+{
+	public UIComponent createComponent(String type)
+	{
+		create 
+			WindowsButton
+			WindowsTextField
+			......
+	}
+	public Window createWindow()
+	{
+		create 
+			Window for Windows
+	}
+	public Font createFont()
+	{
+		create
+			Font for Windows
+	}
+}
+
+
+public class MotifGUIFactory implements GUIFactory
+{
+	public UIComponent createComponent(String type)
+	{
+		create 
+			MotifButton
+			MotifTextField
+			......
+	}
+	public Window createWindow()
+	{
+		create 
+			Window for Motif
+	}
+	public Font createFont()
+	{
+		create
+			Font for Motif
+	}
+}
+
+
+public class GUIApp
+{
+	private GUIFactory factory;
+	public GUIApp(GUIFactory factory)
+	{
+		this.factory=factory;
+	}
+	void show()
+	{
+		factory.createWindow();
+		user input for uicomponent i.e. button or textfield or both
+		
+		factory.createUIComponent(type);
+		factory.createFont();
+	}
+}
+
+public class ClientApp
+{
+	public static void main(String args[])
+	{
+		GUIApp g=new GUIApp(new WindowsGUIFactory());
+		g.show();
+			or
+
+		GUIApp g1=new GUIApp(new MotifGUIFactory());
+		g1.show();
+	}
+}
+		
+	

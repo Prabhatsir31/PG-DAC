@@ -1,0 +1,30 @@
+		Developer and Client
+
+Developer - James Gosling and his team
+	who defines class or classes [ as a part of package/s ]
+
+	what have they done?
+
+		1) They have defined all the classes as a part of some or other package.
+		2) They have compiled those classes.
+
+		3) They have stored all those .class files inside "jar" file. [ JRE/lib ]
+
+		4) They have created documentation of all the classes which have been developed [  javadocs ]
+
+		5) They have shared "jar" files and "javadocs" with us.
+
+
+Client  - we all 
+	who use those classes developed by developer.
+
+
+	How do we use the class/s developed by James Gosling and his team?
+		
+		1) we go through javadocs to get information about class/s
+		2) since jar files are associated with JDK , we can easily use them.
+
+
+
+
+

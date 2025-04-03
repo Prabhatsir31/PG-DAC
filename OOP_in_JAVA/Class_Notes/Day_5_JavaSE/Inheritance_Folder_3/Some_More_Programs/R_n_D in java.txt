@@ -1,0 +1,27 @@
+public class Demo2
+{
+	void disp(Object o)
+	{
+		System.out.println("in Object disp");
+	}
+	void disp(String o)
+	{
+		System.out.println("in String disp");
+	}
+
+	public static void main(String args[])
+	{
+		Demo2 d=new Demo2();
+		d.disp("hello");
+		d.disp(null);
+		d.disp(10);
+	}
+}
+
+/*
+output:
+	in string disp
+	in string disp
+	in object disp
+
+*/

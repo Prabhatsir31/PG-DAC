@@ -1,0 +1,40 @@
+public class MyClass
+{
+	public static void main(String args[])
+	{
+		System.out.println("Welcome to Java world");
+		
+		int i=2;
+		/*while(i<30)
+		{
+			i++;
+			if(i==24)
+			{
+				continue;
+			}
+			System.out.println(i);
+		}*/
+
+		do
+		{
+			
+			i++;
+			if(i==24)
+			{
+				continue;
+			}
+			System.out.println(i);
+			
+		}while(i<30);
+
+
+		/*for(i=3;i<32;i++)
+		{
+			if(i==24)
+			{
+				continue;
+			}
+			System.out.println(i);
+		}*/
+	}
+}

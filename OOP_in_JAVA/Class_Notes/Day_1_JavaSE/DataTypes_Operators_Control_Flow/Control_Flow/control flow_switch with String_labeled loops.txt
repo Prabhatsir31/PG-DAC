@@ -1,0 +1,84 @@
+conditional
+	if(condition)
+	{
+		statement 1
+	}
+	else
+	{
+		statement 2
+	}
+
+
+
+or
+
+	if(condition 1)
+	{
+		statement 1
+	}
+	else if(condition 2)
+	{
+		statement 2
+	}
+	else
+	{
+		statement 3
+	}
+
+
+
+
+switch(byte/short/int/char/String)
+{
+	case
+		break
+	case
+		break
+
+	default
+}
+
+
+
+
+
+loops
+
+	while(condition)     // Pre-Test loop
+	{
+		statement 1
+		statement n
+	}
+
+	do
+	{
+		statement 1
+		statement n
+	}while(condition);   // Post-Test loop
+
+	for(initialization;condition;increment/decrement)
+	{
+		statement 1
+		statement 2
+	}
+
+	 "labelled loops" in java
+
+	e.g.
+
+	A:for(i=0;i<3;i++)
+		B:for(j=0;j<3;j++)
+		{
+			if(i>1)
+			{
+				break A;
+			}
+		}
+
+
+
+
+
+
+
+

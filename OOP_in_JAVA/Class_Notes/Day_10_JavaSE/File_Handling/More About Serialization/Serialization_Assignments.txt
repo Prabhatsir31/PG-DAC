@@ -1,0 +1,63 @@
+1)create a customer class with following attributes
+	custid
+	custname
+	address
+	age
+create one instance of it and store it in a file. (Serialization).
+now open a file, read the object and read its contents . (Deserialization)
+
+
+
+
+2) Person class implements Serializable with
+	private String name
+	private int age
+
+		getters and setters
+		parameterized constructor
+
+Student extends Person
+	private int rollno
+		getter and setters
+		parameterized constructor accepting name,age and rollno
+			pass name and age to the super constructor
+
+
+Demo class with main
+	create one object of Student, write it inside file and then read.
+
+3) Define a class "Student" with
+	private int rollno and private String name and private int age;
+	setters and getters
+	toString method
+
+	create 2 objects of Student and write them inside filesystem and thereafter read both the objects and display.
+
+4) create two classes
+	Engine
+		private int speed
+		private String type
+			setters and getters
+
+	Car
+		private Engine engine;
+		private String modelname;
+			setters and getters
+
+define class "Demo" with main
+	inside main create object of Car and then pass Engine to its setEngine method.
+	now serialize this object of Car and deserialize it.
+
+5) create a class "Student" with
+	int rollno, String name, String qualification,String hobbies,String bloodgroup,String emailid
+		setters,getters
+
+define a class "Demo" with main.
+inside main function create one object of student and then while serializing and deserializing make sure u store and retrieve only rollno,name and qualification of student. [ use Externalizable ]
+		
+
+
+
+
+
+

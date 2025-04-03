@@ -1,0 +1,47 @@
+suppose the binary no. is
+
+100010
+
+First way:
+
+in order to find out 1's complement, you have to flip 1 to 0 and 0 to 1
+
+011101   [ 1's complement of above binary ]
+
+in order to find out 2's complement, you have to add 1 to the above 1's complement representation
+
+011101
++    1
+
+here 1+1 is 2 
+	how 2 is represented in the binary?
+		1 0
+
+so on right side you have   1  0
+
+write  1  0 on the right side and then remaining digits as it is.
+
+011110  [ 2's complement of above binary i.e. 100010]
+
+
+Second way:
+
+
+the target binary is
+
+100010
+
+now start from right side and write the digits as it is till you get first  1  and there after flip [ 1 to 0 and vice-versa ]
+
+so, start from the extreme right we have 0
+	write 0
+	then we have first 1 
+	write 1  [ as it is]
+now since first 1 is encountered , remaining digits need to be flipped.
+
+so  
+
+011110  [ 2's complement of above binary]
+
+
+

@@ -1,0 +1,29 @@
+/*All member functions are polymorphic in Java by default.
+That means when you call this.toString() Java uses 
+dynamic binding to resolve the call, calling the 
+child version. When you access the member "num", 
+you access the member of your current scope 
+(the father) because members are not polymorphic.*/
+
+
+class Base
+{
+		int num=100;
+		Base()
+		{
+			System.out.println(this);
+			System.out.println(this.num);
+		}
+}
+public class Demo extends Base
+{
+	int num=200;
+	public static void main(String[] args) 
+	{
+		new Base();
+		System.out.println("***************");
+		new Demo();
+
+	}
+
+}

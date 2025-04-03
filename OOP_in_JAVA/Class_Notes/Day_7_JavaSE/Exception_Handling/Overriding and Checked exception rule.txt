@@ -1,0 +1,5 @@
+ overriding and checked-exception rule :
+
+a) overriding  method may not declare any checked exception.
+b) overriding method can declare same checked exception or its sub-type declared by overriden method.
+c) overriding method can not declare checked exception not declared by overriden method.

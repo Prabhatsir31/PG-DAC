@@ -1,0 +1,4 @@
+int a = 3;
+int b = 5;
+String s = (a < b) ? "Less than b" : (a > b) ? "More than b" : "Equal as b";
+System.out.println(s);

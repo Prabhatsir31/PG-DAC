@@ -1,0 +1,16 @@
+package Lambda;
+
+@FunctionalInterface
+interface MyInterface {
+    void fun();
+}
+
+public class Ques3 {
+    static void perform(MyInterface myInterface) {
+        myInterface.fun(); // Invoke fun method
+    }
+
+    public static void main(String[] args) {
+        perform(() -> System.out.println("Lambda expression for fun() in MyInterface"));
+    }
+}

@@ -1,0 +1,115 @@
+Question:
+
+	define a class "Order" with:
+
+	enum Type
+	{
+		BUY,SELL;
+	}
+	private int quantity;
+	private double price;
+	private Type type;
+
+	
+	define setter and getter methods for all the fields.
+
+	create 5 objects of this class and stored them inside list.
+
+	using stream api:
+
+	1) count how many orders are for "SELL"
+
+		hint:- use "filter" method of stream to check whether type is SELL and "count" method to count.
+
+	2) calculate sum of all the prices
+
+		hint:- use "mapToDouble" method of stream to convert price of each and every object and "sum" method to calculate total of all the prices.
+
+	3) calculate sum of all the quantities.
+
+		hint:- use "mapToInt" method of stream to convert qty of each and every object and "sum" method to calculate total of all the quantities.
+
+
+	
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+class Order
+{
+	enum Type
+	{
+		BUY,SELL;
+	}
+	private int quantity;
+	private double price;
+	private Type type;
+	/**
+	 * @return the quantity
+	 */
+	public int getQuantity() {
+		return quantity;
+	}
+	/**
+	 * @param quantity the quantity to set
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	/**
+	 * @return the Type
+	 */
+	public Type getType() {
+		return type;
+	}
+	/**
+	 * @param Type the Type to set
+	 */
+	public void setType(Type type) {
+		this.type = type;
+	}
+}
+public class Demo
+{
+	public static void main(String args[])
+	{
+		Order o1=new Order();
+		o1.setQuantity(70);
+		o1.setPrice(100);
+		o1.setType(Type.BUY);
+		
+		Order o2=new Order();
+		o2.setQuantity(80);
+		o2.setPrice(120);
+		o2.setType(Type.SELL);
+		
+		Order o3=new Order();
+		o3.setQuantity(90);
+		o3.setPrice(150);
+		o3.setType(Type.SELL);
+		
+		List<Order>mylist=new ArrayList<Order>();
+		mylist.add(o1);
+		mylist.add(o2);
+		mylist.add(o3);
+		System.out.println(mylist.stream().filter(x->x.getType().equals(Type.SELL)).count());
+		System.out.println(mylist.stream().mapToDouble(o ->o.getPrice()).sum());
+		System.out.println(mylist.stream().mapToInt(o ->o.getQuantity()).sum());
+	}
+}
+		
+		

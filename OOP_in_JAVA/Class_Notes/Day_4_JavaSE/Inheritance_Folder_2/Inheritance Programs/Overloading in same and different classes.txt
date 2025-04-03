@@ -1,0 +1,30 @@
+
+overloading inside same class
+
+class MyClass
+{
+	void disp(int k)
+	{
+	}
+	void disp(String s)
+	{
+	}
+}
+
+
+// overloading in different ( parent and child ) classes
+class base
+{
+	void disp(int k)
+	{
+	}
+}
+
+class sub extends base
+{
+	void disp(String s)
+	{
+	}
+}
+
+

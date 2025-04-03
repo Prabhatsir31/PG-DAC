@@ -1,0 +1,111 @@
+/*
+create interface Electronic_Appliance with on and off  methods
+define two implementations Tv and Refrigerator
+create ArrayList for Electronic_Appliance  i.e.  new ArrayList<Electronic_Appliance>
+store Tv and Refrigerator inside ArrayList. Store ArrayList inside the file
+read the list from the file and traverse it using Iterator. Also while iterating invoke on 
+and off  methods.
+*/
+package Practice;
+import java.util.*;
+import java.io.*;
+
+interface Electronic_Appliance extends Serializable
+{
+	//Electronic s1 = null;
+	void on();
+	void off();
+}
+
+class Tv implements Electronic_Appliance {
+	private String brand;
+	
+	public Tv(String brand) {
+		this.brand = brand;
+	}
+	
+	public void on() {
+		System.out.println(brand + " TV is now on");
+	}
+	
+	public void off() {
+		System.out.println(brand + " TV is now off");
+	}
+	
+	public String toString() {
+		return "TV [Brand : " + brand + "]";
+	}
+}
+
+class Refrigerator implements Electronic_Appliance {
+	private String brand;
+	
+	public Refrigerator(String brand) {
+		this.brand = brand;
+	}
+	
+	public void on() {
+		System.out.println(brand + " Fridge is now on");
+	}
+	
+	public void off() {
+		System.out.println(brand + " Fridge is now off");
+	}
+	
+	public String toString() {
+		return "Fridge [Brand : " + brand + "]";
+	}
+}
+
+public class Ques3 {
+	public static void main(String args[]) {
+		List<Electronic_Appliance> appliances = new ArrayList<>();
+		appliances.add(new Tv("Samsung"));
+		appliances.add(new Refrigerator("LG"));
+		//Electronic s3 = new Fridge("MI");
+		//Electronic s4 = new Fridge("LG");
+		//appliances.add(s1);
+		//appliances.add(s2);
+		//mylist.add(s3);
+		//mylist.add(s4);
+		
+		try {
+			FileOutputStream fos = new FileOutputStream("Test.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(appliances);
+			
+			FileInputStream fis = new FileInputStream("Test.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			List<?> ref = (List<?>) ois.readObject();
+			
+			System.out.println("Appliance are");
+			
+			Iterator<?> itr = ref.iterator();
+			
+			while(itr.hasNext()) {
+				System.out.println(itr.next());
+				((Electronic_Appliance) appliances).on();
+				((Electronic_Appliance) appliances).off();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

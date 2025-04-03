@@ -1,0 +1,36 @@
+
+class MyFont
+{
+	public static final int PLAIN=0;
+	public static final int BOLD=1;
+	public static final int ITALIC=2;
+}
+
+class MyComponent
+{
+	public 	void setStyle(int style)
+	{
+		switch(style)
+		{
+			case 0: System.out.println("plain");
+					break;
+			case 1: System.out.println("bold");
+					break;
+			case 2: System.out.println("italic");
+					break;
+			default: System.out.println("unpredictable font");
+		}			
+	}
+}
+public class Demo1
+{
+	public static void main(String args[])
+	{
+		MyComponent mc=new MyComponent();
+		mc.setStyle(MyFont.BOLD);
+		mc.setStyle(MyFont.ITALIC);
+//		mc.setStyle(MyFont.plain); //Error
+		mc.setStyle(1); // saves typing
+		mc.setStyle(6); // can be risky
+	}
+}

@@ -1,0 +1,38 @@
+List
+	index based, duplicates allowed
+
+
+Set
+	unique, sometimes sorted
+
+Map
+	key - value pair
+	put using key and value
+	get using only key
+
+	key must be unique and sometimes sorted.
+
+
+ArrayList 
+	good for traversal,random access
+Vector
+	slow, thread-safe, legacy class
+LinkedList
+	doubly linked list, good for insertion and deletion from middle.
+
+HashSet
+	fast, order not guaranteed
+TreeSet
+	slow, sorted
+HashMap
+	fastest map implementation
+TreeMap
+	slow, sorted keys
+Hashtable
+	slow,thread-safe,legacy class
+
+
+
+
+
+

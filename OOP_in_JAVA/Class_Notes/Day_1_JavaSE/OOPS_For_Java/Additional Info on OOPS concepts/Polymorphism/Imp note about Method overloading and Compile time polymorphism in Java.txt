@@ -1,0 +1,30 @@
+e.g.
+in java when we say:
+
+class Printer {
+    // Method to print a string
+    void print(String message) {
+        System.out.println("Printing string: " + message);
+    }
+
+    // Method to print an integer
+    void print(int number) {
+        System.out.println("Printing integer: " + number);
+    }
+
+    // Method to print a double
+    void print(double value) {
+        System.out.println("Printing double: " + value);
+    }
+}
+
+	Printer printer=new Printer();
+	printer.print(10);     // here
+
+
+At "here" compiler writes the instruction to check during runtime to which object printer refers to and accordingly invoke print(int)". The method signature [ void print(int) ] is resolved at compile time and this is "Compile time polymorphism" , but the actual method execution is determined at runtime based on the actual object type that the reference printer points to i.e. whether printer points to Printer class itself or its sub type. [ this is runtime polymorphism ].
+
+This combination of compile-time method signature resolution and runtime method execution is the essence of polymorphism in Java.
+
+
+

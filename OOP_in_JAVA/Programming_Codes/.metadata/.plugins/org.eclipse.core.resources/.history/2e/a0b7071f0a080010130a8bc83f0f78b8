@@ -1,0 +1,23 @@
+package Lambda;
+
+@FunctionalInterface
+interface First {
+    void disp1();
+    
+    default void disp2() {
+        System.out.println("Default method disp2 from First interface");
+    }
+    
+    static void disp3() {
+        System.out.println("Static method disp3 from First interface");
+    }
+}
+
+public class Ques1 {
+    public static void main(String[] args) {
+        First first = () -> System.out.println("Lambda expression for disp1");
+        first.disp1(); // Invoke disp1 using lambda
+        first.disp2(); // Invoke default method disp2
+        First.disp3(); // Invoke static method disp3
+    }
+}

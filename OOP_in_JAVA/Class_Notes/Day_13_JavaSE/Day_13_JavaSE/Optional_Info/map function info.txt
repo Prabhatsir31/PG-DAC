@@ -1,0 +1,8 @@
+System.out.println(op.map(MyClass::disp).orElse("could not get MyClass instance"));
+
+
+public <U> Optional<U> map(Function<? super T,? extends U> mapper)
+
+If a value is present( ref not null ), apply the provided mapping function to it, and if the result is non-null, return an Optional describing the result. 
+Otherwise if a value is not present, returns an empty Optional i.e.
+Optional.empty

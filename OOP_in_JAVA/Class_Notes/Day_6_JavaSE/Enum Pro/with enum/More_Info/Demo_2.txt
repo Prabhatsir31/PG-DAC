@@ -1,0 +1,26 @@
+package core1;
+
+enum Sample
+{
+	member1;
+	public void disp1()
+	{
+		System.out.println("inside disp1");
+	}
+	public void disp2()
+	{
+		System.out.println("inside disp2");
+	}
+}
+public class Demo3
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Main function started");
+		/*
+		 * enum constructor is private by default , you cannot instantiate this way
+		 */
+		//Sample s=new Sample();
+	//	Sample.member1=new Sample();
+	}
+}

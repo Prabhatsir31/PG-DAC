@@ -1,0 +1,6 @@
+default V getOrDefault(Object key, V defaultValue) {
+        V v;
+        return (((v = get(key)) != null) || containsKey(key))
+            ? v
+            : defaultValue;
+    }

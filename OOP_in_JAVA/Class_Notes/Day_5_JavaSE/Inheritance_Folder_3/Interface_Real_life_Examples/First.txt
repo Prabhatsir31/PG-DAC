@@ -1,0 +1,40 @@
+interface Vehicle { 
+      
+    // all are the abstract methods. 
+    void changeGear(int a); 
+    void speedUp(int a); 
+    void applyBrakes(int a); 
+} 
+
+class FourWheeler implements Vehicle
+{
+	public void changeGear(int a)
+	{
+		// how to change gear in FourWheeler
+	}
+	public void speedUp(int a)
+	{
+		// how to speed up FourWheeler
+	}
+	public void applyBrakes(int a)
+	{
+		// how to apply brakes of FourWheeler
+	}
+}
+
+
+class TwoWheeler implements Vehicle
+{
+	public void changeGear(int a)
+	{
+		// how to change gear in TwoWheeler
+	}
+	public void speedUp(int a)
+	{
+		// how to speed up TwoWheeler
+	}
+	public void applyBrakes(int a)
+	{
+		// how to apply brakes of TwoWheeler
+	}
+}

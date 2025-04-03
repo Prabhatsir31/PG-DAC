@@ -1,0 +1,25 @@
+Question:
+
+define a class Player
+ 	with
+		int playerid
+		String name
+		int runs
+		String countryname
+
+		define
+			parameterized constructor and getter methods
+
+create 10 players and store them inside a list.
+
+using java8 stream api:
+
+1) display all the players representing "India".
+
+	hint:- use "filter" to check players representing "India" and "forEach" method in order to print them.
+
+
+2) find out how many players have scored more than 5000 runs.
+
+	hint:- use "filter" to check players scored more than 5000 runs and "count" method to count them.
+

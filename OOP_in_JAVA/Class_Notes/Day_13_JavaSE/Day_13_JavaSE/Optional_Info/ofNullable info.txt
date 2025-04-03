@@ -1,0 +1,9 @@
+Optional<MyClass> op=Optional.ofNullable(getMyClass());
+
+static <T> Optional<T>	ofNullable(T value)
+
+Returns an Optional describing the specified value (in the above example ,object returned by "getMyClass" method), if non-null, otherwise returns an empty Optional.
+
+That means in our example, if "getMyClass()" returns an instance of "MyClass", ofNullable will return "Optional<MyClass>".
+
+and if "getMyClass()" returns null, ofNullable will return "Optional.empty" i.e. empty Optional.

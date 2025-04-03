@@ -1,0 +1,24 @@
+File f=new File("d:\\FileDemo.java");
+	here we just create a File class object just to check wheather file exists or not, since we r reading from file ,if file doesn't exist we would like to exit.
+			if(!f.exists())
+			{
+				System.out.println("file does not exists");
+				System.exit(0);
+			}
+
+	FileInputStream fis=new FileInputStream(f)
+		here we open a file "FileDemo.java" in read mode.
+
+	byte b[]=new byte[((int)f.length())];
+		file contents can be read inside byte array , that's why we create byte array equivalent to the length of file.
+	
+	fis.read(b);
+		here we read the contents of file inside byte array.
+	
+	String ss=new String(b);
+		since byte array can not be readable we convert into String.
+	
+	System.out.println(ss);
+		here we display the contents of file.
+
+

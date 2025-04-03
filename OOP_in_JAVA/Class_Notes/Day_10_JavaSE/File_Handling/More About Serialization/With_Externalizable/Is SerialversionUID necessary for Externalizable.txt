@@ -1,0 +1,5 @@
+The serialVersionUID is not necessary for classes that implement the Externalizable interface in Java.
+
+When a class implements Externalizable, it's responsible for providing its own custom serialization and deserialization logic by implementing the writeExternal() and readExternal() methods. Unlike classes that implement Serializable, where the serialVersionUID is automatically generated, classes implementing Externalizable must manually handle serialization, including versioning if necessary.
+
+However, if versioning is desired for Externalizable classes, developers can still manually define and manage a serialVersionUID field within the class. This can be useful for maintaining compatibility between different versions of the class, just as it is with classes implementing Serializable.

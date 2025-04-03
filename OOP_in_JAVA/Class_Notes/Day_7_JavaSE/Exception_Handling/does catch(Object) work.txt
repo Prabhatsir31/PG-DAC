@@ -1,0 +1,32 @@
+
+will following code work?
+
+	try
+	{
+
+		some code
+	}
+	catch(Object e)
+	{
+
+	}
+
+no above code wont compile.
+
+why?
+
+because if "catch(Object)" is allowed , then people can write
+
+throw new String("hello");
+
+throw new Integer(20);
+
+throw new Sample();
+
+etc.
+
+and the rule is along with "throw" you can have class of type "Throwable" only.
+
+
+
+

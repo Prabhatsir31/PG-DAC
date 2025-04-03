@@ -1,0 +1,17 @@
+Interpreter and JIT compiler both are responsible for converting byte code into native code.
+
+interpreter is slow because it interprets one by one instructions inside the bytecode.
+
+JIT compiler is faster because it converts a block of code from your bytecode into native code.
+
+JIT compiler requires cache memory in order to store converted code and for the first time at least JIT compiler takes some time to convert the bytecode.
+
+interpreter does not require any cache memory to store the converted code.
+
+Therefore, if the code is to be executed just once, it is better to interpret it instead of compiling.  JVMs that use the JIT compiler internally check how frequently the method is executed ( using “HotSpot Profiler” ) and compile the method only when the frequency is higher than a certain level.
+
+HotSpotProfiler which is the part of JIT compiler is responsible to identify Hotspot  (Repeated Used Methods).
+
+Summary:
+
+The JVM employs a strategy that starts with interpreting bytecode and then selectively JIT compiles hot methods ( Methods that are invoked many times during the execution of the application are considered hot. For instance, methods in tight loops or frequently called utility methods are often identified as hot.) based on runtime profiling data. This approach allows the JVM to balance the quick start-up time of interpretation with the performance benefits of JIT compilation for frequently executed code. 

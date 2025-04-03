@@ -1,0 +1,34 @@
+//package core1;
+
+enum MyEnum
+{
+	instance;
+
+	static
+	{
+		System.out.println("inside MyEnum static block");
+	}
+	MyEnum()
+	{
+		System.out.println("in the MyEnum constructor");
+	}
+
+	public void disp1()
+	{
+		System.out.println("inside disp1");
+	}
+	public void disp2()
+	{
+		System.out.println("inside disp2");
+	}
+}
+public class Demo1
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Main function started");
+		MyEnum ref1=MyEnum.instance;
+		ref1.disp1();
+		ref1.disp2();
+	}
+}

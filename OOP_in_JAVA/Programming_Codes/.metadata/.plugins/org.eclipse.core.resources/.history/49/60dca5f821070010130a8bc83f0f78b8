@@ -1,0 +1,15 @@
+/*
+Create an interface Product with a method displayDetails().
+Create two classes:
+Electronics and Groceries 
+Both should implement Product.
+Store objects of both the classes in a ArrayList<Product>.
+store ArrayList in the file , then read ArrayList from the file and display.
+
+
+*/
+package Generic;
+
+public class Ques7 {
+
+}

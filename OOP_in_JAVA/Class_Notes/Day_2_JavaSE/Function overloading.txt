@@ -1,0 +1,40 @@
+
+
+same task and multiple datatypes
+
+e.g.
+	addition of 2 ints, or doubles or strings
+
+if you are using C prog. as as language
+
+void addInt(int a,int b)
+{
+	a+b;
+}
+void addDouble(double a,double b)
+{
+	a+b;
+}
+void addString(char a[],char b[])
+{
+	concatenation of a and b
+}
+
+
+Object oriented programming languages
+	C++/Java/C#
+
+function overloading
+
+void add(int a,int b)
+{
+	S.o.p(a+b);
+}
+void add(double a,double b)
+{
+	a+b;
+}
+void add(String a,String b)
+{
+	a+b
+}

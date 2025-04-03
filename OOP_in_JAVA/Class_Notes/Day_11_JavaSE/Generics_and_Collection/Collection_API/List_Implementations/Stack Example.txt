@@ -1,0 +1,19 @@
+//package core1;
+import java.util.*;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		Stack<String> s1=new Stack<>();
+		s1.push("hello");
+		s1.push("welcome");
+		s1.push("bye");
+		
+		System.out.println("Stack is\t"+s1);
+		System.out.println("Top element is\t"+s1.peek());
+		System.out.println("Stack is\t"+s1);
+		s1.pop();
+		System.out.println("After pop stack\t"+s1);
+	}
+}

@@ -1,0 +1,31 @@
+public class StringBuilderDemo1
+{
+	public static void main(String args[])
+	{
+		int num1=10,num2=20;
+		System.out.println(num1+"\t"+num2);
+	}
+}
+
+when compiler encounters 
+	System.out.println(num1+"\t"+num2);
+
+it does following:
+
+	System.out.println(new StringBuilder().append(num1).append("\t").append(num2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

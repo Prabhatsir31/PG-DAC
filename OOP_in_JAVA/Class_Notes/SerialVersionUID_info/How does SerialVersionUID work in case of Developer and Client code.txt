@@ -1,0 +1,25 @@
+Developer code
+			class Student implements Serializable 
+			{
+			}
+
+			writeObject(s);           // serialization
+				a) class Student will be given a unique id called as SerialVersionUID
+				b) This id will be then stored inside the file.
+
+
+
+
+Client code
+
+			readObject();            // deserialization
+
+			1) class Student gets loaded
+			2) class Student will be given a unique id called as SerialVersionUID
+			3) This generated id will be checked with the id which is there inside the file.
+			4) if they match then deserialization happens successfully otherwise we get "InvalidClassException"
+		[ This is to verify that the sender and receiver of a serialized object have loaded classes for that object that are compatible with respect to serialization.]
+
+
+
+		

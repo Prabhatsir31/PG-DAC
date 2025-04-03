@@ -1,0 +1,25 @@
+/*
+define a functional interface "Sixth" with an abstract method "void disp5()".
+define a class "Sample" with a static method "void fun1()"
+inside main function create a method reference for "Sixth" and invoke "fun1" of "Sample"
+
+*/
+package MethodPackage;
+
+@FunctionalInterface
+interface Sixth {
+    void disp5();
+}
+
+class sample {
+    static void fun1() {
+        System.out.println("Static method fun1 from Sample class");
+    }
+}
+
+public class Ques4 {
+    public static void main(String[] args) {
+        Sixth sixth = sample::fun1;
+        sixth.disp5();
+    }
+}

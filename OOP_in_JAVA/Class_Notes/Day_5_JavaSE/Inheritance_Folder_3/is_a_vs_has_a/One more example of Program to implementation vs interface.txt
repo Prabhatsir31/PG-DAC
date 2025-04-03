@@ -1,0 +1,56 @@
+class FourWheeler
+{
+	void start()
+	{
+		
+	}
+}
+class Car extends FourWheeler
+{
+	void start()
+	{
+		Car start
+	}
+}
+class Bus extends FourWheeler
+{
+	void start()
+	{
+		Bus start
+	}
+}
+class Truck extends FourWheeler
+{
+	void start()
+	{
+		Truck start
+	}
+}
+class Driver
+{
+	Car c=new Car();     //  program to implementation
+
+	FourWheeler ref;    // program to interface
+	Driver(FourWheeler ref)
+	{
+		this.ref=ref;
+	}
+	
+	void work()
+	{
+		c.start();   // tight coupling
+
+		ref.start();   //  loose coupling    // black box reuse
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

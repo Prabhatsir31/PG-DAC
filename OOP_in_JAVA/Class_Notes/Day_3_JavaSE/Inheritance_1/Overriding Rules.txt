@@ -1,0 +1,8 @@
+1) arguments must be same otherwise it becomes "overloading".
+2) returntype of overriding can be co-variant.
+3) overriding method must be having same or more accessibility as compare to overridden method.
+4) overriding and checked-exception rule :
+
+a) overriding  method may not declare any checked exception.
+b) overriding method can declare same checked exception or its sub-type declared by overriden method.
+c) overriding method can not declare checked exception not declared by overriden method.

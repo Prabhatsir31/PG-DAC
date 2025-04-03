@@ -1,0 +1,7 @@
+there are two ways to create copy of an object in java
+
+a) clone() method
+	which by default creates shallow copy
+
+b) serialization [ to store an object inside file system]
+	which always does deep copy
