@@ -1,0 +1,2308 @@
+DAY-1
+-------------------------------------------
+
+NULL ==> value not yet defined
+
+order of the rows is not matter for end user
+
+what ever you written with --(two hiphen) it give comment
+
+
+mysql> show database
+    -> ^C
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use sakila;
+Database changed
+mysql> use sakila
+Database changed
+mysql> show world
+    -> ^C
+mysql> use mysql
+Database changed
+mysql> show tables;
++------------------------------------------------------+
+| Tables_in_mysql                                      |
++------------------------------------------------------+
+| columns_priv                                         |
+| component                                            |
+| db                                                   |
+| default_roles                                        |
+| engine_cost                                          |
+| func                                                 |
+| general_log                                          |
+| global_grants                                        |
+| gtid_executed                                        |
+| help_category                                        |
+| help_keyword                                         |
+| help_relation                                        |
+| help_topic                                           |
+| innodb_index_stats                                   |
+| innodb_table_stats                                   |
+| ndb_binlog_index                                     |
+| password_history                                     |
+| plugin                                               |
+| procs_priv                                           |
+| proxies_priv                                         |
+| replication_asynchronous_connection_failover         |
+| replication_asynchronous_connection_failover_managed |
+| replication_group_configuration_version              |
+| replication_group_member_actions                     |
+| role_edges                                           |
+| server_cost                                          |
+| servers                                              |
+| slave_master_info                                    |
+| slave_relay_log_info                                 |
+| slave_worker_info                                    |
+| slow_log                                             |
+| tables_priv                                          |
+| time_zone                                            |
+| time_zone_leap_second                                |
+| time_zone_name                                       |
+| time_zone_transition                                 |
+| time_zone_transition_type                            |
+| user                                                 |
++------------------------------------------------------+
+38 rows in set (0.02 sec)
+
+mysql> show world;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'world' at line 1
+mysql> show world
+    -> ^X^C
+mysql> select world;
+ERROR 1054 (42S22): Unknown column 'world' in 'field list'
+mysql> select world();
+ERROR 1305 (42000): FUNCTION mysql.world does not exist
+mysql> select world;
+ERROR 1054 (42S22): Unknown column 'world' in 'field list'
+mysql> select world
+    -> ^C
+mysql> use world
+Database changed
+mysql> show world
+    -> show world^C
+mysql> use world
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> create dataase vita_2025;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dataase vita_2025' at line 1
+mysql> create database vita_2025;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> use vita_2025;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table test(id int, name varchar(10));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| test                |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> select * from test;
+Empty set (0.00 sec)
+
+mysql> insert into test (id, name) values(1, "Prabhat");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| test                |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> show test;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'test' at line 1
+mysql> show test();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'test()' at line 1
+mysql> insert into test (id, name) values(2, "Prabhu");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into test (id, name) values(3, "Prabha");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| test                |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| test                |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> use database();
+ERROR 1049 (42000): Unknown database 'database()'
+mysql> use test;
+ERROR 1049 (42000): Unknown database 'test'
+mysql> use vita_2025;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| test                |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
++------+---------+
+3 rows in set (0.00 sec)
+
+mysql> insert into test (id, name) values(4, "Honey"), (5, "Raj"), (6, "Dom");
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Dom     |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> insert into test (name) values("Domnik");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Dom     |
+| NULL | Domnik  |
++------+---------+
+7 rows in set (0.00 sec)
+
+mysql> select id from test;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
+| NULL |
++------+
+7 rows in set (0.00 sec)
+
+mysql> select * from where id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id=1' at line 1
+mysql> select * from test where id=1;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
++------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from test where id=(1-3);
+Empty set (0.00 sec)
+
+mysql> select * from test where id=(1,3);
+ERROR 1241 (21000): Operand should contain 1 column(s)
+mysql> select * from test where id in (1,3);
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    3 | Prabha  |
++------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from test where id!=1;
++------+--------+
+| id   | name   |
++------+--------+
+|    2 | Prabhu |
+|    3 | Prabha |
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Dom    |
++------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from test where id in (1-3);
+Empty set (0.00 sec)
+
+mysql> select * from test where id<>1;
++------+--------+
+| id   | name   |
++------+--------+
+|    2 | Prabhu |
+|    3 | Prabha |
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Dom    |
++------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from test where id not in (1,3);
++------+--------+
+| id   | name   |
++------+--------+
+|    2 | Prabhu |
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Dom    |
++------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from test where id is NULL;
++------+--------+
+| id   | name   |
++------+--------+
+| NULL | Domnik |
++------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from test where id is not NULL;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Dom     |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from test where id<=3;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
++------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test where id>=3;
++------+--------+
+| id   | name   |
++------+--------+
+|    3 | Prabha |
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Dom    |
++------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from test where id>=3;
++------+--------+
+| id   | name   |
++------+--------+
+|    3 | Prabha |
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Dom    |
++------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from test where id<3
+    -> select * from test where id<3^C
+mysql> select * from test where id>3;
++------+-------+
+| id   | name  |
++------+-------+
+|    4 | Honey |
+|    5 | Raj   |
+|    6 | Dom   |
++------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test where id<3;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
++------+---------+
+2 rows in set (0.00 sec)
+
+mysql> delete from test where id=NULL;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Dom     |
+| NULL | Domnik  |
++------+---------+
+7 rows in set (0.00 sec)
+
+mysql> delete from test where id=6;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Prabhu  |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+| NULL | Domnik  |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> delete from test where id=NULL;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delete from test where id is NULL;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> update test set id=6 where id is null and name=Bhajman
+    -> ^C
+mysql> update test set id=6 where id is null and name=Bhajman;
+ERROR 1054 (42S22): Unknown column 'Bhajman' in 'where clause'
+mysql> update test set id=6 where id is null;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> update test set id=6 name=Bhaj where id=2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name=Bhaj where id=2' at line 1
+mysql> update test set id=6 name="Bhaj" where id=2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name="Bhaj" where id=2' at line 1
+mysql> update test set id=6, name="Bhaj" where id=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    6 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
++------+---------+
+5 rows in set (0.00 sec)
+
+mysql> update test set id=6 where id=2;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> update test set id=2,name="Bhaj" where id=6;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
++------+---------+
+5 rows in set (0.00 sec)
+
+mysql> insert into test (name) values("Alien");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+| NULL | Alien   |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> update test set name="Bhajji" where id is null;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+| NULL | Bhajji  |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> update set id=6 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set id=6 where id is null' at line 1
+mysql> update test set id=6 where id is null;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from test;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Bhajji  |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from where id between 1 and 6;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id between 1 and 6' at line 1
+mysql> select * from test where id between 1 and 6;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Bhajji  |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from test where id not between 1 and 6;
+Empty set (0.00 sec)
+
+mysql> select * from test where id not between 1 and 3;
++------+--------+
+| id   | name   |
++------+--------+
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Bhajji |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test where id between 1 and 5;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
++------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select * from where id is even;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where id is even' at line 1
+mysql> select * from test where id is even;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'even' at line 1
+mysql> select * from test where id between 4 and 7;
++------+--------+
+| id   | name   |
++------+--------+
+|    4 | Honey  |
+|    5 | Raj    |
+|    6 | Bhajji |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test where mod(id,2)=0;
++------+--------+
+| id   | name   |
++------+--------+
+|    2 | Bhaj   |
+|    4 | Honey  |
+|    6 | Bhajji |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test where mod(id,2)=1;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    3 | Prabha  |
+|    5 | Raj     |
++------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test where id between A and F;
+ERROR 1054 (42S22): Unknown column 'A' in 'where clause'
+mysql> select * from test where id between "A" and "F";
+Empty set, 12 warnings (0.00 sec)
+
+mysql> select * from test where name between "A" and "F";
++------+--------+
+| id   | name   |
++------+--------+
+|    2 | Bhaj   |
+|    6 | Bhajji |
++------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from test where name between "A" and "Z";
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | Prabhat |
+|    2 | Bhaj    |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    5 | Raj     |
+|    6 | Bhajji  |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select ascii('a');
++------------+
+| ascii('a') |
++------------+
+|         97 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select * from test order by name;
++------+---------+
+| id   | name    |
++------+---------+
+|    2 | Bhaj    |
+|    6 | Bhajji  |
+|    4 | Honey   |
+|    3 | Prabha  |
+|    1 | Prabhat |
+|    5 | Raj     |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from test order by name desc;
++------+---------+
+| id   | name    |
++------+---------+
+|    5 | Raj     |
+|    1 | Prabhat |
+|    3 | Prabha  |
+|    4 | Honey   |
+|    6 | Bhajji  |
+|    2 | Bhaj    |
++------+---------+
+6 rows in set (0.00 sec)
+
+mysql> alter table test add c1 int;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table test drop column c1;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table test add c1 int default 10;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table test drop column c1;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table test add c1 varchar(10);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table test modify c1 int default 10;
+Query OK, 6 rows affected (0.19 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table test modify id int not null;
+Query OK, 0 rows affected (0.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table test modify id int null;
+Query OK, 0 rows affected (0.16 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into test(name) values("Brain");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test;
++------+---------+------+
+| id   | name    | c1   |
++------+---------+------+
+|    1 | Prabhat | NULL |
+|    2 | Bhaj    | NULL |
+|    3 | Prabha  | NULL |
+|    4 | Honey   | NULL |
+|    5 | Raj     | NULL |
+|    6 | Bhajji  | NULL |
+| NULL | Brain   |   10 |
++------+---------+------+
+7 rows in set (0.00 sec)
+
+mysql> alter table test id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id=7 where id is null' at line 1
+mysql> update table test id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table test id=7 where id is null' at line 1
+mysql> update test id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=7 where id is null' at line 1
+mysql> update * from test id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from test id=7 where id is null' at line 1
+mysql> update * from test modify id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from test modify id=7 where id is null' at line 1
+mysql> update table test modify id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table test modify id=7 where id is null' at line 1
+mysql> update test modify id=7 where id is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id=7 where id is null' at line 1
+mysql> alter table test modify id int not null;
+ERROR 1138 (22004): Invalid use of NULL value
+mysql> alter table test modify id int not null;
+ERROR 1138 (22004): Invalid use of NULL value
+mysql> alter table test modify id int null;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from test;
++------+---------+------+
+| id   | name    | c1   |
++------+---------+------+
+|    1 | Prabhat | NULL |
+|    2 | Bhaj    | NULL |
+|    3 | Prabha  | NULL |
+|    4 | Honey   | NULL |
+|    5 | Raj     | NULL |
+|    6 | Bhajji  | NULL |
+| NULL | Brain   |   10 |
++------+---------+------+
+7 rows in set (0.00 sec)
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> update test set id=7 where id is null;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from test;
++------+---------+------+
+| id   | name    | c1   |
++------+---------+------+
+|    1 | Prabhat | NULL |
+|    2 | Bhaj    | NULL |
+|    3 | Prabha  | NULL |
+|    4 | Honey   | NULL |
+|    5 | Raj     | NULL |
+|    6 | Bhajji  | NULL |
+|    7 | Brain   |   10 |
++------+---------+------+
+7 rows in set (0.00 sec)
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table test modify c1 int default not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'not null' at line 1
+mysql> alter table test modify c1 int default null;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc test;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| c1    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table t_uk(id int unique, name varchar(10));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc t_uk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  | UNI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into t_uk(id,name) values(1, 'a'), (2,'b'), (3,'c');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> desc t_uk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  | UNI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t_uk;
++------+------+
+| id   | name |
++------+------+
+|    1 | a    |
+|    2 | b    |
+|    3 | c    |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> create table test-comp_uk (c1 int not null, c2 int unique, c3 varchar(10), unique(c3));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-comp_uk (c1 int not null, c2 int unique, c3 varchar(10), unique(c3))' at line 1
+mysql> create table test_comp_uk (c1 int not null, c2 int unique, c3 varchar(10), unique(c3));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc test_comp_uk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c1    | int         | NO   |     | NULL    |       |
+| c2    | int         | YES  | UNI | NULL    |       |
+| c3    | varchar(10) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into test_comp_uk values(1,1, 'a'), (1,2,'b'), (2,2,'a'),(2,2,'b');
+ERROR 1062 (23000): Duplicate entry '2' for key 'test_comp_uk.c2'
+mysql> insert into test_comp_uk values(1,1,'a'),(1,2,'b'),(2,2,'a'),(2,3,'b');
+ERROR 1062 (23000): Duplicate entry '2' for key 'test_comp_uk.c2'
+mysql> insert into test_comp_uk values(1,1,'a'),(1,2,'b'),(2,4,'a'),(2,3,'b');
+ERROR 1062 (23000): Duplicate entry 'a' for key 'test_comp_uk.c3'
+mysql> insert into test_comp_uk values(1,1,'a'),(1,2,'b'),(2,4,'d'),(2,3,'b');
+ERROR 1062 (23000): Duplicate entry 'b' for key 'test_comp_uk.c3'
+mysql> insert into test_comp_uk values(1,1,'a'),(2,2,'b'),(1,3,'c'),(2,4,'d');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> desc test_comp_uk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c1    | int         | NO   |     | NULL    |       |
+| c2    | int         | YES  | UNI | NULL    |       |
+| c3    | varchar(10) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from test_comp_uk;
++----+------+------+
+| c1 | c2   | c3   |
++----+------+------+
+|  1 |    1 | a    |
+|  2 |    2 | b    |
+|  1 |    3 | c    |
+|  2 |    4 | d    |
++----+------+------+
+4 rows in set (0.00 sec)
+
+mysql> alter table test_comp_uk set c1=1, c2=2, c3='b' where c1=2,c2=2,c3='b';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set c1=1, c2=2, c3='b' where c1=2,c2=2,c3='b'' at line 1
+mysql> alter table test_comp_uk set c1=1, c2=2, c3='b' where c1=2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set c1=1, c2=2, c3='b' where c1=2' at line 1
+mysql> alter table test_comp_uk set c1=2, c2=2, c3='b' where c1=2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set c1=2, c2=2, c3='b' where c1=2' at line 1
+mysql> alter table test_comp_uk set c1=2, where c1=2,c2=2,c3='b';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set c1=2, where c1=2,c2=2,c3='b'' at line 1
+mysql> create table t_1 (id int, name varchar(10));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into t_1(id,name) values(1, 'a'), (2,'b'), (3,'c');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> alter table t_1 add constraint t_1_unique unique(id);
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t_1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  | UNI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table test_comp_uk set c1=6, c2=5, c3='f' where c1=2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set c1=6, c2=5, c3='f' where c1=2' at line 1
+mysql> alter table test_comp_uk set c1=6, c2=5, c3='f' where c1=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set c1=6, c2=5, c3='f' where c1=1' at line 1
+mysql> show databases();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '()' at line 1
+mysql> uses information_scheme;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'uses information_scheme' at line 1
+mysql> use information_scheme;
+ERROR 1049 (42000): Unknown database 'information_scheme'
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| t_1                 |
+| t_uk                |
+| test                |
+| test_comp_uk        |
++---------------------+
+4 rows in set (0.00 sec)
+
+mysql> drop t_1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 't_1' at line 1
+mysql> drop table t_1;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| t_uk                |
+| test                |
+| test_comp_uk        |
++---------------------+
+3 rows in set (0.00 sec)
+
+mysql> desc vita_2025;
+ERROR 1146 (42S02): Table 'vita_2025.vita_2025' doesn't exist
+mysql> desc Tables_in_vita_2025;
+ERROR 1146 (42S02): Table 'vita_2025.tables_in_vita_2025' doesn't exist
+mysql> desc      TABLE_CONTRAINTS;
+ERROR 1146 (42S02): Table 'vita_2025.table_contraints' doesn't exist
+mysql> desC TABLE_CONTRAINTS;
+ERROR 1146 (42S02): Table 'vita_2025.table_contraints' doesn't exist
+mysql> use vita_2025;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| t_uk                |
+| test                |
+| test_comp_uk        |
++---------------------+
+3 rows in set (0.00 sec)
+
+mysql> desc t_uk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  | UNI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> use information_schema;
+Database changed
+mysql> show tables;
++---------------------------------------+
+| Tables_in_information_schema          |
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLLATIONS                            |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEY_COLUMN_USAGE                      |
+| KEYWORDS                              |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMA_PRIVILEGES                     |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| STATISTICS                            |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TABLES                                |
+| TABLES_EXTENSIONS                     |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| VIEWS                                 |
++---------------------------------------+
+79 rows in set (0.00 sec)
+
+mysql> select test from tables where table_schema="vita_2025";
+ERROR 1054 (42S22): Unknown column 'test' in 'field list'
+mysql> select test unique from where CONTRAINTS_schema="vita_2025";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'unique from where CONTRAINTS_schema="vita_2025"' at line 1
+mysql> select table_name, CONSTRAINTS_NAME from TABLE_CONSTRAINTS where CONSTRAINTS_schema='vita_2025';
+ERROR 1054 (42S22): Unknown column 'CONSTRAINTS_NAME' in 'field list'
+mysql> select table_name, CONSTRAINT_NAME from TABLE_CONSTRAINTs where CONSTRAINTS_schema='vita_2025';
+ERROR 1054 (42S22): Unknown column 'CONSTRAINTS_schema' in 'where clause'
+mysql> select table_name, CONSTRAINT_NAME from TABLE_CONSTRAINTs where CONSTRAINTS_schema='vita_2025';
+ERROR 1054 (42S22): Unknown column 'CONSTRAINTS_schema' in 'where clause'
+mysql> select table_name, CONSTRAINT_NAME from TABLE_CONSTRAINTS where CONSTRAINTS_schema='vita_2025';
+ERROR 1054 (42S22): Unknown column 'CONSTRAINTS_schema' in 'where clause'
+mysql> show tables;
++---------------------------------------+
+| Tables_in_information_schema          |
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLLATIONS                            |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEY_COLUMN_USAGE                      |
+| KEYWORDS                              |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMA_PRIVILEGES                     |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| STATISTICS                            |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TABLES                                |
+| TABLES_EXTENSIONS                     |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| VIEWS                                 |
++---------------------------------------+
+79 rows in set (0.00 sec)
+
+mysql> use vita_2025;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| t_uk                |
+| test                |
+| test_comp_uk        |
++---------------------+
+3 rows in set (0.00 sec)
+
+mysql> select table_name, CONSTRAINT_NAME from TABLE_CONSTRAINTS where CONSTRAINTS_SCHEMA='vita_2025';
+ERROR 1146 (42S02): Table 'vita_2025.table_constraints' doesn't exist
+mysql> select table_name, CONSTRAINT_NAME from TABLE_CONSTRAINTS where CONSTRAINTS_schema='vita_2025';
+ERROR 1146 (42S02): Table 'vita_2025.table_constraints' doesn't exist
+mysql> SELECT TABLE_NAME, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_SCHEMA = 'vita_2025';
++--------------+-----------------+
+| TABLE_NAME   | CONSTRAINT_NAME |
++--------------+-----------------+
+| t_uk         | id              |
+| test_comp_uk | c2              |
+| test_comp_uk | c3              |
++--------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> create table t_pk(id int primary key, name varchar(10));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into t_pk values(1,'a');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table t_multi_pk(c1 int primary key, c2 int, primary key(c1,c2));
+ERROR 1068 (42000): Multiple primary key defined
+mysql> create table t_multi_pk(c1 int, c2 int, primary key(c1,c2));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc t_multi_pk;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc t_pk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t_pk;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
++----+------+
+1 row in set (0.00 sec)
+
+mysql> select * from t_multi_pk;
+Empty set (0.00 sec)
+
+mysql> select * from t_multi_pk, t_pk;
+Empty set (0.00 sec)
+
+mysql> select * from t_multi_pk | t_pk;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '| t_pk' at line 1
+mysql> select * from t_multi_pk,t_pk;
+Empty set (0.00 sec)
+
+mysql> select * from t_pk, t_multi_pk;
+Empty set (0.00 sec)
+
+mysql> desc t_multi_pk;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table t_comp_pk drop primary key;
+ERROR 1146 (42S02): Table 'vita_2025.t_comp_pk' doesn't exist
+mysql> alter table t_multi_pk drop primary key;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t_multi_pk;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   |     | NULL    |       |
+| c2    | int  | NO   |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table t_nn(id int not null, name varchar(10));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into t_nn values(null, 'a');
+ERROR 1048 (23000): Column 'id' cannot be null
+mysql> desc t_nn;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> use vita_2025;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| t_multi_pk          |
+| t_nn                |
+| t_pk                |
+| t_uk                |
+| test                |
+| test_comp_uk        |
++---------------------+
+6 rows in set (0.00 sec)
+
+mysql> desc test_comp_uk;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c1    | int         | NO   |     | NULL    |       |
+| c2    | int         | YES  | UNI | NULL    |       |
+| c3    | varchar(10) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| vita_2025          |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> create table t_check(id int, salary int check(salary>100));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create table values(1,1);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values(1,1)' at line 1
+mysql> create table values(1,null);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values(1,null)' at line 1
+mysql> create table t_check values(1,null);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1,null)' at line 1
+mysql> insert into t_check values(1,null);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc t_check;
++--------+------+------+-----+---------+-------+
+| Field  | Type | Null | Key | Default | Extra |
++--------+------+------+-----+---------+-------+
+| id     | int  | YES  |     | NULL    |       |
+| salary | int  | YES  |     | NULL    |       |
++--------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t_check;
++------+--------+
+| id   | salary |
++------+--------+
+|    1 |   NULL |
++------+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into t_check values(1,1);
+ERROR 3819 (HY000): Check constraint 't_check_chk_1' is violated.
+mysql> select version();;
++-----------+
+| version() |
++-----------+
+| 8.0.41    |
++-----------+
+1 row in set (0.03 sec)
+
+ERROR:
+No query specified
+
+mysql> create table parent(deptid int primary key, deptname varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table child(eid int primary key, ename varchar(10), deptid int, foreign key fk1 (deptid) refrences parent(deptid));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'refrences parent(deptid))' at line 1
+mysql> create table child(eid int, ename varchar(10), deptid int, foreign key fk1 (deptid) refrences parent(deptid));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'refrences parent(deptid))' at line 1
+mysql> create table child(eid int, ename varchar(10), deptid int, foreign key fk1 (deptid) references parent(deptid));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into child values(1,'a',1);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`vita_2025`.`child`, CONSTRAINT `child_ibfk_1` FOREIGN KEY (`deptid`) REFERENCES `parent` (`deptid`))
+mysql> insert into child values(1,'a',null);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into parent values(1,'HR');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc parent;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| deptid   | int         | NO   | PRI | NULL    |       |
+| deptname | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from parent;
++--------+----------+
+| deptid | deptname |
++--------+----------+
+|      1 | HR       |
++--------+----------+
+1 row in set (0.00 sec)
+
+mysql> desc child;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| eid    | int         | YES  |     | NULL    |       |
+| ename  | varchar(10) | YES  |     | NULL    |       |
+| deptid | int         | YES  | MUL | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from child;
++------+-------+--------+
+| eid  | ename | deptid |
++------+-------+--------+
+|    1 | a     |   NULL |
++------+-------+--------+
+1 row in set (0.00 sec)
+
+mysql> create table t_def(id int default 1, name varchar(10));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into t_def values(1, "Ranji");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc t_def;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | 1       |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t_def;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | Ranji |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into t_def values(null, "Kaju");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc t_def;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | 1       |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from child;
++------+-------+--------+
+| eid  | ename | deptid |
++------+-------+--------+
+|    1 | a     |   NULL |
++------+-------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from t_def;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | Ranji |
+| NULL | Kaju  |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> delete from t_def;
+Query OK, 2 rows affected (0.03 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from t_def;
+Empty set (0.00 sec)
+
+mysql> select * from t_def;
+Empty set (0.00 sec)
+
+mysql> desc t_def;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | 1       |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t_def;
+Empty set (0.00 sec)
+
+mysql> insert into t_def values(1, "Kaju");
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into t_def values(2, "Kajal");
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from t_def;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | Kaju  |
+|    2 | Kajal |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delete from t_def;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> select * from t_def;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | Kaju  |
+|    2 | Kajal |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> trankcate --help
+    -> ^C
+mysql> turncate --help
+    -> ^C
+mysql> help turncate
+
+Nothing found
+Please try to run 'help contents' for a list of all accessible topics
+
+mysql> -help turncate
+    -> ^C
+mysql> create table t1(c1 int, c2 varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table t2(c int, c3 varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into t1 values(1, 'A');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into t1 values(2, 'B');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into t1 values(3, 'C');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into t2 values(1, 'X'), (2,'Y'), (3, ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> insert into t2 values(1, 'X'), (2,'Y'), (3,'Z');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c1    | int         | YES  |     | NULL    |       |
+| c2    | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t1;
++------+------+
+| c1   | c2   |
++------+------+
+|    1 | A    |
+|    2 | B    |
+|    3 | C    |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> desc t2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c     | int         | YES  |     | NULL    |       |
+| c3    | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t2;
++------+------+
+| c    | c3   |
++------+------+
+|    1 | X    |
+|    2 | Y    |
+|    3 | Z    |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> drop table t2;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> select * from t2;
+ERROR 1146 (42S02): Table 'vita_2025.t2' doesn't exist
+mysql> insert into t2 values(1, 'X'), (2,'Y'), (3, 'Z');
+ERROR 1146 (42S02): Table 'vita_2025.t2' doesn't exist
+mysql> create table t2(c1 int, c3 varchar(10));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into t2 values(1, 'X'), (2,'Y'), (3, 'Z');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from t2;
++------+------+
+| c1   | c3   |
++------+------+
+|    1 | X    |
+|    2 | Y    |
+|    3 | Z    |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> drop table t2;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> create table t2(c1 int, c3 varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into t2 values(3, 'X'), (4,'Y'), (5, 'Z');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from t2;
++------+------+
+| c1   | c3   |
++------+------+
+|    3 | X    |
+|    4 | Y    |
+|    5 | Z    |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from t1,t2;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    3 | C    |    3 | X    |
+|    2 | B    |    3 | X    |
+|    1 | A    |    3 | X    |
+|    3 | C    |    4 | Y    |
+|    2 | B    |    4 | Y    |
+|    1 | A    |    4 | Y    |
+|    3 | C    |    5 | Z    |
+|    2 | B    |    5 | Z    |
+|    1 | A    |    5 | Z    |
++------+------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> select t1.c1, c2,c3 from t1,t2;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    3 | C    | X    |
+|    2 | B    | X    |
+|    1 | A    | X    |
+|    3 | C    | Y    |
+|    2 | B    | Y    |
+|    1 | A    | Y    |
+|    3 | C    | Z    |
+|    2 | B    | Z    |
+|    1 | A    | Z    |
++------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> select
+    -> * t1 cross join t2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 't1 cross join t2' at line 2
+mysql> * from t1 cross join t2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from t1 cross join t2' at line 1
+mysql> select * from t1 cross join t2;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    3 | C    |    3 | X    |
+|    2 | B    |    3 | X    |
+|    1 | A    |    3 | X    |
+|    3 | C    |    4 | Y    |
+|    2 | B    |    4 | Y    |
+|    1 | A    |    4 | Y    |
+|    3 | C    |    5 | Z    |
+|    2 | B    |    5 | Z    |
+|    1 | A    |    5 | Z    |
++------+------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> select t1.c1, c2,c3 from t1 cross join t2;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    3 | C    | X    |
+|    2 | B    | X    |
+|    1 | A    | X    |
+|    3 | C    | Y    |
+|    2 | B    | Y    |
+|    1 | A    | Y    |
+|    3 | C    | Z    |
+|    2 | B    | Z    |
+|    1 | A    | Z    |
++------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> select t1.c1, c2,c3 from t1,t2 order by;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> select t1.c1, c2,c3 from t1,t2 order by c1=1;
+ERROR 1052 (23000): Column 'c1' in order clause is ambiguous
+mysql> select t1.c1, c2,c3 from t1 cross join t2;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    3 | C    | X    |
+|    2 | B    | X    |
+|    1 | A    | X    |
+|    3 | C    | Y    |
+|    2 | B    | Y    |
+|    1 | A    | Y    |
+|    3 | C    | Z    |
+|    2 | B    | Z    |
+|    1 | A    | Z    |
++------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> select * from t1.c1 inner join t2.c1;
+ERROR 1049 (42000): Unknown database 't1'
+mysql> select * from t1 inner join t1.c1=t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=t2.c1' at line 1
+mysql> select * from t1 join t1.c1=t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=t2.c1' at line 1
+mysql> select * from t1 inner join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    3 | C    |    3 | X    |
++------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from t1, t2 where t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    3 | C    |    3 | X    |
++------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from t1 join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    3 | C    |    3 | X    |
++------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from t1 outer join t2 on t1.c1=t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'outer join t2 on t1.c1=t2.c1' at line 1
+mysql> select * from t1 left join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
++------+------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from t1 right join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from t1 full join t2 on t1.c1=t2.c1;
+ERROR 1054 (42S22): Unknown column 't1.c1' in 'on clause'
+mysql> create table a(id int);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table b(id int);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into a values (1), (2), (3);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into b values (3), (4), (5);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from a union select * from b;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
++------+
+5 rows in set (0.00 sec)
+
+mysql> select * from a unionall select * from b;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from b' at line 1
+mysql> select * from a union all select * from b;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    3 |
+|    4 |
+|    5 |
++------+
+6 rows in set (0.00 sec)
+
+mysql> select * from b union select * from a;
++------+
+| id   |
++------+
+|    3 |
+|    4 |
+|    5 |
+|    1 |
+|    2 |
++------+
+5 rows in set (0.00 sec)
+
+mysql> select * from b union all select * from a;
++------+
+| id   |
++------+
+|    3 |
+|    4 |
+|    5 |
+|    1 |
+|    2 |
+|    3 |
++------+
+6 rows in set (0.00 sec)
+
+mysql> select * from b interset select * from a;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from a' at line 1
+mysql> select * from b intersect select * from a;
++------+
+| id   |
++------+
+|    3 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select * from a intersect select * from b;
++------+
+| id   |
++------+
+|    3 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select * from a intersect all select * from b;
++------+
+| id   |
++------+
+|    3 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select * from a except select * from b;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
++------+
+2 rows in set (0.00 sec)
+
+mysql> select * from b except select * from a;
++------+
+| id   |
++------+
+|    4 |
+|    5 |
++------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t1 left join t2 on t1.c1=t2.c1 union select * from t1 right join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from t1 left join t2 on t1.c1=t2.c1 union select * from t1 right join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from t1 left join t2 on t1.c1=t2.c1 union select * from t1 right join t2 on t1.c1=t2.c1
+    -> ;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from t1
+    -> left join t2
+    -> on t1.c1=t2.c2
+    -> union
+    -> select * from t1
+    -> right join t2
+    -> on t1.c1=t2.c2;
+ERROR 1054 (42S22): Unknown column 't2.c2' in 'on clause'
+mysql> on t1.c1=t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on t1.c1=t2.c1' at line 1
+mysql> select * from t1
+    -> left join t2
+    -> union
+    -> select * from t1
+    -> right join t2
+    -> on t1.c1=t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'union
+select * from t1
+right join t2
+on t1.c1=t2.c1' at line 3
+mysql> select * from t1
+    -> left join t2
+    -> union
+    -> select * from t1
+    -> right join t2
+    -> t1.c1=t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'union
+select * from t1
+right join t2
+t1.c1=t2.c1' at line 3
+mysql> select * from t1 left join t2 on t1.c1=t2.c1 union select * from t1 right join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from t1 left join t2 on t1.c1=t2.c1
+    -> union
+    -> select * from t1 right join t2 on t1.c1.t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.c1' at line 3
+mysql> select * from t1 left join t2 on t1.c1=t2.c1 b
+    -> ^C
+mysql> select * from t1 left join t2 on t1.c1=t2.c1
+    -> union
+    -> select * from t1 right join t2 on t1.c1.t2.c1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.c1' at line 3
+mysql> select * from t1 left join t2 on t1.c1=t2.c1 union select * from t1 right join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from t1 left join t2 on t1.c1=t2.c1
+    -> union
+    -> select * from t1 right join t2 on t1.c1=t2.c1;
++------+------+------+------+
+| c1   | c2   | c1   | c3   |
++------+------+------+------+
+|    1 | A    | NULL | NULL |
+|    2 | B    | NULL | NULL |
+|    3 | C    |    3 | X    |
+| NULL | NULL |    4 | Y    |
+| NULL | NULL |    5 | Z    |
++------+------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> select count(*) from t_def;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select count(1) from t_def;
++----------+
+| count(1) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count('a') from t_def;
++------------+
+| count('a') |
++------------+
+|          2 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select count(2) from t_def;
++----------+
+| count(2) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(id) from t_def;
++-----------+
+| count(id) |
++-----------+
+|         2 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select count(name) from t_def;
++-------------+
+| count(name) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(null) from t_def;
++-------------+
+| count(null) |
++-------------+
+|           0 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(distinct name) from t_def;
++----------------------+
+| count(distinct name) |
++----------------------+
+|                    2 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from t_def;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | Kaju  |
+|    2 | Kajal |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from test
+    -> ;
++------+---------+------+
+| id   | name    | c1   |
++------+---------+------+
+|    1 | Prabhat | NULL |
+|    2 | Bhaj    | NULL |
+|    3 | Prabha  | NULL |
+|    4 | Honey   | NULL |
+|    5 | Raj     | NULL |
+|    6 | Bhajji  | NULL |
+|    7 | Brain   |   10 |
++------+---------+------+
+7 rows in set (0.00 sec)
+
+mysql> select sum(id) from t_def;
++---------+
+| sum(id) |
++---------+
+|       3 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select sum(id) from test;
++---------+
+| sum(id) |
++---------+
+|      28 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select avg(id) from test;
++---------+
+| avg(id) |
++---------+
+|  4.0000 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select avg(id) from test;
++---------+
+| avg(id) |
++---------+
+|  4.0000 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select min(id) from test;
++---------+
+| min(id) |
++---------+
+|       1 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select max(id) from test;
++---------+
+| max(id) |
++---------+
+|       7 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select max(name) from test;
++-----------+
+| max(name) |
++-----------+
+| Raj       |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select min(name) from test;
++-----------+
+| min(name) |
++-----------+
+| Bhaj      |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from t1 where c1 in (select c1 from c2);
+ERROR 1146 (42S02): Table 'vita_2025.c2' doesn't exist
+mysql> select * from t1 where c1 in (select c1 from t2);
++------+------+
+| c1   | c2   |
++------+------+
+|    3 | C    |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> create tabel emp(eid int, ename varchar(10), salary int, deptid int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabel emp(eid int, ename varchar(10), salary int, deptid int)' at line 1
+mysql> create tabel emp(eid int, ename varchar(10), salary int, deptid int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabel emp(eid int, ename varchar(10), salary int, deptid int)' at line 1
+mysql> create table emp(eid int, ename varchar(10), salary int, deptid int);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> create table dept(deptid int, deptname varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| eid    | int         | YES  |     | NULL    |       |
+| ename  | varchar(10) | YES  |     | NULL    |       |
+| salary | int         | YES  |     | NULL    |       |
+| deptid | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc dept;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| deptid   | int         | YES  |     | NULL    |       |
+| deptname | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+DAY--2
+-------------------------------------------------------
+
+see the example of 	===>
+row_number	===>	row_number() over(order by salary desc)
+rank		===>	rank() over(order by salary desc)
+dense_rank	===>	dense_number() over(order by salary desc)
+
+
