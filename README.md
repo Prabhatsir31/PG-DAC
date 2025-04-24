@@ -1,3 +1,2 @@
 # PG-DAC
-### Module-1:-
-  #### OOPS in JAVA
+### Module-1: OOPS in JAVA
