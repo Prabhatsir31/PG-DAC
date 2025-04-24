@@ -4,7 +4,7 @@
 
 ### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/OOP_in_JAVA">Module-1: OOPS in JAVA</a>
 
-### <a href="https:"https://github.com/Prabhatsir31/PG-DAC/tree/main/OperatingSystem">Module-2: Operating System</a>
+### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/Operating%20System">Module-2: Operating System</a>
 
 ### Module-3: <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/">Database Technologies</a>
 
