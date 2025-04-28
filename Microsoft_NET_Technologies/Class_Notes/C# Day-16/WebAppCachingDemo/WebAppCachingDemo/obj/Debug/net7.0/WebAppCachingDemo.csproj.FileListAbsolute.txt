@@ -1,0 +1,64 @@
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\appsettings.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.staticwebassets.runtime.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.exe
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.deps.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.runtimeconfig.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.dll
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.pdb
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.AssemblyInfo.cs
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.RazorAssemblyInfo.cache
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.RazorAssemblyInfo.cs
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.WebAppCachingDemo.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.build.WebAppCachingDemo.props
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebAppCachingDemo.props
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebAppCachingDemo.props
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\scopedcss\bundle\WebAppCachingDemo.styles.css
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\scopedcss\projectbundle\WebAppCachingDemo.bundle.scp.css
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.dll
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\refint\WebAppCachingDemo.dll
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.pdb
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.genruntimeconfig.cache
+C:\Users\HP\source\repos\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\ref\WebAppCachingDemo.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\appsettings.Development.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\appsettings.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.staticwebassets.runtime.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.staticwebassets.endpoints.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.runtimeconfig.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\bin\Debug\net7.0\WebAppCachingDemo.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.MvcApplicationPartsAssemblyInfo.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.RazorAssemblyInfo.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.RazorAssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\scopedcss\bundle\WebAppCachingDemo.styles.css
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\scopedcss\projectbundle\WebAppCachingDemo.bundle.scp.css
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.build.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.development.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.WebAppCachingDemo.Microsoft.AspNetCore.StaticWebAssets.props
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.WebAppCachingDemo.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.build.WebAppCachingDemo.props
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebAppCachingDemo.props
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebAppCachingDemo.props
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.pack.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\refint\WebAppCachingDemo.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\WebAppCachingDemo.genruntimeconfig.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Class_Notes\C# Day-16\WebAppCachingDemo\WebAppCachingDemo\obj\Debug\net7.0\ref\WebAppCachingDemo.dll

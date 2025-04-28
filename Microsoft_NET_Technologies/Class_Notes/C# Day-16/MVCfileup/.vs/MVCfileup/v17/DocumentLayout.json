@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvcfileup\\mvcfileup\\controllers\\fileuploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|solutionrelative:mvcfileup\\controllers\\fileuploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvcfileup\\mvcfileup\\views\\fileupload\\uploadsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|solutionrelative:mvcfileup\\views\\fileupload\\uploadsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvcfileup\\mvcfileup\\models\\filemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|solutionrelative:mvcfileup\\models\\filemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvcfileup\\mvcfileup\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|solutionrelative:mvcfileup\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvcfileup\\mvcfileup\\views\\fileupload\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|solutionrelative:mvcfileup\\views\\fileupload\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvcfileup\\mvcfileup\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB6FD73B-125C-454A-8827-4B739D308B4C}|MVCfileup\\MVCfileup.csproj|solutionrelative:mvcfileup\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\appsettings.json",
+              "RelativeDocumentMoniker": "MVCfileup\\appsettings.json",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\appsettings.json",
+              "RelativeToolTip": "MVCfileup\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-27T10:07:53.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UploadSuccess.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Views\\Fileupload\\UploadSuccess.cshtml",
+              "RelativeDocumentMoniker": "MVCfileup\\Views\\Fileupload\\UploadSuccess.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Views\\Fileupload\\UploadSuccess.cshtml",
+              "RelativeToolTip": "MVCfileup\\Views\\Fileupload\\UploadSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T10:05:53.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Views\\Fileupload\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVCfileup\\Views\\Fileupload\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Views\\Fileupload\\Index.cshtml",
+              "RelativeToolTip": "MVCfileup\\Views\\Fileupload\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T10:05:51.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MVCfileup\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MVCfileup\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T10:05:48.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileModel.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Models\\FileModel.cs",
+              "RelativeDocumentMoniker": "MVCfileup\\Models\\FileModel.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Models\\FileModel.cs",
+              "RelativeToolTip": "MVCfileup\\Models\\FileModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T10:05:36.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileuploadController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Controllers\\FileuploadController.cs",
+              "RelativeDocumentMoniker": "MVCfileup\\Controllers\\FileuploadController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVCfileup\\MVCfileup\\Controllers\\FileuploadController.cs",
+              "RelativeToolTip": "MVCfileup\\Controllers\\FileuploadController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T20:06:39.297Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

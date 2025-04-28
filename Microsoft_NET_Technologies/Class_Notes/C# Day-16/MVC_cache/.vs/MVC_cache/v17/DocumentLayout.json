@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\controllers\\cachedemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\controllers\\cachedemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\controllers\\responsecachedemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\controllers\\responsecachedemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\views\\responsecachedemo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\views\\responsecachedemo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\views\\responsecachedemo\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\views\\responsecachedemo\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\views\\responsecachedemo\\display.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\views\\responsecachedemo\\display.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\views\\cachedemo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\views\\cachedemo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\mvc_cache\\mvc_cache\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CAECA87-39F0-4955-9641-C312E1F37E92}|MVC_cache\\MVC_cache.csproj|solutionrelative:mvc_cache\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\Cachedemo\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC_cache\\Views\\Cachedemo\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\Cachedemo\\Index.cshtml",
+              "RelativeToolTip": "MVC_cache\\Views\\Cachedemo\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-09T05:53:27.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "MVC_cache\\Views\\_ViewStart.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "MVC_cache\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T04:18:01.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVC_cache\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVC_cache\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T06:00:18.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Program.cs",
+              "RelativeDocumentMoniker": "MVC_cache\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Program.cs",
+              "RelativeToolTip": "MVC_cache\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T05:26:23.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CachedemoController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Controllers\\CachedemoController.cs",
+              "RelativeDocumentMoniker": "MVC_cache\\Controllers\\CachedemoController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Controllers\\CachedemoController.cs",
+              "RelativeToolTip": "MVC_cache\\Controllers\\CachedemoController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA/wAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T05:32:17.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\REsponsecachedemo\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC_cache\\Views\\REsponsecachedemo\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\REsponsecachedemo\\Index.cshtml",
+              "RelativeToolTip": "MVC_cache\\Views\\REsponsecachedemo\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T04:09:47.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "REsponsecachedemoController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Controllers\\REsponsecachedemoController.cs",
+              "RelativeDocumentMoniker": "MVC_cache\\Controllers\\REsponsecachedemoController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Controllers\\REsponsecachedemoController.cs",
+              "RelativeToolTip": "MVC_cache\\Controllers\\REsponsecachedemoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T03:51:47.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "MVC_cache\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "MVC_cache\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T04:17:52.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\REsponsecachedemo\\Details.cshtml",
+              "RelativeDocumentMoniker": "MVC_cache\\Views\\REsponsecachedemo\\Details.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\REsponsecachedemo\\Details.cshtml",
+              "RelativeToolTip": "MVC_cache\\Views\\REsponsecachedemo\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T04:07:57.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Display.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\REsponsecachedemo\\Display.cshtml",
+              "RelativeDocumentMoniker": "MVC_cache\\Views\\REsponsecachedemo\\Display.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\MVC_cache\\MVC_cache\\Views\\REsponsecachedemo\\Display.cshtml",
+              "RelativeToolTip": "MVC_cache\\Views\\REsponsecachedemo\\Display.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T04:17:40.977Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

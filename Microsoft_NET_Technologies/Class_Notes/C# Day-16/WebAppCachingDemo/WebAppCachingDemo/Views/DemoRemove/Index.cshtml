@@ -1,0 +1,16 @@
+﻿
+@model DateTime? 
+<form asp-controller="DemoRemove" asp-action="RemoveCache">
+    <input type="submit" class="btn btn-danger" value="Remove" />
+</form>
+    <div class ="row">
+        <div class ="col-md-3">
+            <h3> Current Time: @DateTime.Now.ToString()</h3>
+            </div>  
+            <div class ="col-md-3">
+                <h3> Cache Time: @(Model != null ? @Model.ToString() : "Cache is not available")</h3>
+                </div>  
+                <div class ="col-md-3">                
+                    </div>                   
+                
+                </div> 

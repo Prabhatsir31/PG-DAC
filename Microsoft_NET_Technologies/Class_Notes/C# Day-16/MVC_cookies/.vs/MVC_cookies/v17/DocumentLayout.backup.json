@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\controllers\\democookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\controllers\\democookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\views\\democook\\remove.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\views\\democook\\remove.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\views\\democook\\read.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\views\\democook\\read.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\views\\democook\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\views\\democook\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\views\\login\\readcookie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\views\\login\\readcookie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|d:\\dotnet all\\dotnet\\dotnet all\\dotnet_core\\coreasp_mvc\\examples\\livetech\\mvc_cookies\\mvc_cookies\\views\\login\\loginform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{826EE429-4139-4083-8BC1-BE21B33B5919}|MVC_cookies\\MVC_cookies.csproj|solutionrelative:mvc_cookies\\views\\login\\loginform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Remove.cshtml",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\democook\\Remove.cshtml",
+              "RelativeDocumentMoniker": "MVC_cookies\\Views\\democook\\Remove.cshtml",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\democook\\Remove.cshtml",
+              "RelativeToolTip": "MVC_cookies\\Views\\democook\\Remove.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T08:20:52.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Read.cshtml",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\democook\\Read.cshtml",
+              "RelativeDocumentMoniker": "MVC_cookies\\Views\\democook\\Read.cshtml",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\democook\\Read.cshtml",
+              "RelativeToolTip": "MVC_cookies\\Views\\democook\\Read.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T07:54:16.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\democook\\Create.cshtml",
+              "RelativeDocumentMoniker": "MVC_cookies\\Views\\democook\\Create.cshtml",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\democook\\Create.cshtml",
+              "RelativeToolTip": "MVC_cookies\\Views\\democook\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-25T10:22:10.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "democookController.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Controllers\\democookController.cs",
+              "RelativeDocumentMoniker": "MVC_cookies\\Controllers\\democookController.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Controllers\\democookController.cs*",
+              "RelativeToolTip": "MVC_cookies\\Controllers\\democookController.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:21:39.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVC_cookies\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVC_cookies\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T09:11:35.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Readcookie.cshtml",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\Login\\Readcookie.cshtml",
+              "RelativeDocumentMoniker": "MVC_cookies\\Views\\Login\\Readcookie.cshtml",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\Login\\Readcookie.cshtml",
+              "RelativeToolTip": "MVC_cookies\\Views\\Login\\Readcookie.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T12:30:00.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Loginform.cshtml",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\Login\\Loginform.cshtml",
+              "RelativeDocumentMoniker": "MVC_cookies\\Views\\Login\\Loginform.cshtml",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Views\\Login\\Loginform.cshtml",
+              "RelativeToolTip": "MVC_cookies\\Views\\Login\\Loginform.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T12:12:45.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "MVC_cookies\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "MVC_cookies\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAC8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T12:11:05.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Models\\User.cs",
+              "RelativeDocumentMoniker": "MVC_cookies\\Models\\User.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\Dotnet_core\\coreASP_MVC\\Examples\\Livetech\\MVC_cookies\\MVC_cookies\\Models\\User.cs",
+              "RelativeToolTip": "MVC_cookies\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T12:07:58.275Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+   <h1>Index</h1>
+    <div>
+        <h1>
+            this going to cache
+        </h1>
+        <cache>
+            <p>cached time: @DateTime.Now</p>
+        </cache>
+       
+        <p>fresh time: @DateTime.Now</p>
+        <cache expires-on="@new DateTime(2025,10,29,17,02,0)">
+        <span> @DateTime.Now<</span>
+            </cache>
+    <cache expires-after="@TimeSpan.FromSeconds(20)">
+        fresh after 20sec<br/>
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+
+    <cache expires-sliding="@TimeSpan.FromSeconds(30)">
+        fresh after 30sec
+        <br/>
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+    </div>

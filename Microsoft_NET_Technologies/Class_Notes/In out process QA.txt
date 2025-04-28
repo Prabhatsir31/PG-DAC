@@ -1,0 +1,97 @@
+Q1. What is InprocessHosting?
+When we create a new ASP.NET Core Web application by using any template, by default the project file is created with InProcess hosting which is used for hosting the application in IIS or IIS Express scenarios.
+
+Q2. In case of InProcess hosting (i.e. when the CreateBuilder() sees the value as InProcess for the AspNetCoreHostingModel element in the project file), behind the scene the CreateBuilder() method internally calls the ________ method. Then host the application inside the IIS worker process (i.e. ________for IIS and________for IISExpress). 
+In case of InProcess hosting (i.e. when the CreateBuilder() sees the value as InProcess for the AspNetCoreHostingModel element in the project file), behind the scene the CreateBuilder() method internally calls the UseIIS() method. Then host the application inside the IIS worker process (i.e. w3wp.exe for IIS and iisexpress.exe for IISExpress). 
+
+Q3. what is IISExpress
+The IIS Express is a lightweight, self-contained version of IIS. It is optimized for web application development. The most important point that you need to remember is we use IIS Express only in development, not on production. In production we generally use IIS
+
+Q4. Why InProcess Hosting Gives Better Performance that the OutOfProcess Hosting Model?
+In the case of OutOfProcess hosting, there are 2 web servers
+
+An internal web server and
+One external web server.
+
+The internal web server is called Kestrel and the external web server can be IIS, Nginx, or Apache. With the InProcess hosting model, there is only one web server i.e. IIS. So, in the case of the InProcess hosting model, we do not have the performance penalty for navigating the requests between the internal and external web servers. This is the reason why the InProcess hosting model delivers significantly higher request throughput than the OutOfProcess hosting model.
+
+Q5. In the case of OutOfProcess hosting, there are   _____(option: 1,2,3)of  web servers
+ IIS, Nginx, or Apache
+Q6. The internal web server is called __ Kestrel __and the external web server can be _IIS______ ,____Nginx_________ or ______ Apache______
+
+
+
+Q1. WebApplication.CreateBuilder(args);
+In above code CreatrBuilder method will return reference of ___WebApplicationBuilder________ class
+
+
+Q2. What is the return type of Build method
+WebApplication
+
+Q3. ____WebApplication_______ class is used to configure HTTP pipe line
+Q4. what is the return type of Services getter method.
+A collection of services for the application to compose. This is useful for adding
+        //     user provided or framework provided services.
+
+Q5. Run method is available in which class?
+WebApplication
+
+Q6. What is InprocessHosting?
+When we create a new ASP.NET Core Web application by using any template, by default the project file is created with InProcess hosting which is used for hosting the application in IIS or IIS Express scenarios.
+
+Q7. In case of InProcess hosting (i.e. when the CreateBuilder() sees the value as InProcess for the AspNetCoreHostingModel element in the project file), behind the scene the CreateBuilder() method internally calls the ________ method. Then host the application inside the IIS worker process (i.e. ________for IIS and________for IISExpress). 
+In case of InProcess hosting (i.e. when the CreateBuilder() sees the value as InProcess for the AspNetCoreHostingModel element in the project file), behind the scene the CreateBuilder() method internally calls the UseIIS() method. Then host the application inside the IIS worker process (i.e. w3wp.exe for IIS and iisexpress.exe for IISExpress). 
+
+
+Q8. what is IISExpress
+The IIS Express is a lightweight, self-contained version of IIS. It is optimized for web application development. The most important point that you need to remember is we use IIS Express only in development, not on production. In production we generally use IIS
+
+Q9. Why InProcess Hosting Gives Better Performance that the OutOfProcess Hosting Model?
+In the case of OutOfProcess hosting, there are 2 web servers
+
+An internal web server and
+One external web server.
+
+The internal web server is called Kestrel and the external web server can be IIS, Nginx, or Apache. With the InProcess hosting model, there is only one web server i.e. IIS. So, in the case of the InProcess hosting model, we do not have the performance penalty for navigating the requests between the internal and external web servers. This is the reason why the InProcess hosting model delivers significantly higher request throughput than the OutOfProcess hosting model.
+
+Q10. In the case of OutOfProcess hosting, there are   _____(option: 1,2,3)of  web servers
+ IIS, Nginx, or Apache
+
+Q11. The internal web server is called ____and the external web server can be _______ ,_____________ or ____________
+The internal web server is called __ Kestrel __and the external web server can be _IIS______ ,____Nginx_________ or ______ Apache______
+
+
+
+Q12. launchSettings.json file which is present inside the ____________folder of your application
+Properties folder
+
+
+
+Q13. How to change  the Port number for Kestrel Server
+
+you want then you can also change the Port number for Kestrel Server. To do so open the launchSettings.json file and give any available Port number as shown below. Here, I am changing the Port number to 60222.
+Now, save the changes and run the application using Kestrel Server and you should see the changed port number in the URL.
+
+Q14. What happens when we run the ASP.NET Core application using .NET Core CLI?
+
+We can also run the ASP.NET Core application from the command line using the .NET Core CLI. The CLI stands for Command Line Interface.
+When we run an ASP.NET Core application using the .NET Core CLI, then the .NET Core runtime uses Kestrel as the webserver
+
+
+Q15. Can we run an asp.net core application without using the built-in kestrel web server?
+Yes,by doing inProcess Hosting
+To configure the InProcess hosting for ASP.NET Core Web application there is only one simple setting, just add the <AspNetCoreHostingModel> element to the application project file with a value of InProcess. To do so, just right-click on your application from the solution explorer and then click on the “Edit Project File” option from the context menu as shown in the below code.
+Once you open the Application Project file then modify it as shown below. As you can see, here we add <AspNetCoreHostingModel> element and set its value to InProcess. The other possible value for this element is OutOfProcess.
+
+
+Q16. Complete the table
+commandName	AspNetCoreHostingModel	Internal Web Server	External Web Server
+Project	Hosting Setting Ignored	          Only one web server is used Krestel
+IISExpress	InProcess		  Only one web server is used IISExpress	
+IISExpress	OutOfProcess		Krestel			IISExpress	
+IIS		InProcess		  Only one web server is used IIS		
+IIS		OutOfProcess		Krestel			IIS	
+
+
+
+

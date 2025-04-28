@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model WebAppCachingDemo.Models.CacheViewModel 
+<div class ="row">
+    <div class ="col-md-3">
+        <h3> Current Time: @DateTime.Now.ToString()</h3>
+        </div>  
+        <div class ="col-md-3">
+            <h3> First Time: @(Model.FirstTime.HasValue ? Model.FirstTime.ToString() : "Cache is not available")</h3>
+            </div>  
+            <div class ="col-md-3">
+                <h3>Second Time: @Model.SecondTime.ToString()</h3>
+                </div>         
+                </div>  

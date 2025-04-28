@@ -1,0 +1,197 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\controllers\\profilecachecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\controllers\\profilecachecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\controllers\\demotrygetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\controllers\\demotrygetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\controllers\\demoremovecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\controllers\\demoremovecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\controllers\\democachcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\controllers\\democachcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\views\\profilecache\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\views\\profilecache\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\views\\demotryget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\views\\demotryget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\views\\demoremove\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\views\\demoremove\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\views\\democach\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\views\\democach\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\class_notes\\c# day-16\\webappcachingdemo\\webappcachingdemo\\models\\cacheviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82062007-A721-447F-B195-DF7804ABC0C8}|WebAppCachingDemo\\WebAppCachingDemo.csproj|solutionrelative:webappcachingdemo\\models\\cacheviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T12:52:52.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Program.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Program.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAhwBcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:16:33.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\DemoRemove\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Views\\DemoRemove\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\DemoRemove\\Index.cshtml",
+              "RelativeToolTip": "WebAppCachingDemo\\Views\\DemoRemove\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-16T08:16:33.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DemoRemoveController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\DemoRemoveController.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Controllers\\DemoRemoveController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\DemoRemoveController.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Controllers\\DemoRemoveController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:16:33.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\Democach\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Views\\Democach\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\Democach\\Index.cshtml",
+              "RelativeToolTip": "WebAppCachingDemo\\Views\\Democach\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-16T08:16:33.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DemotrygetController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\DemotrygetController.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Controllers\\DemotrygetController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\DemotrygetController.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Controllers\\DemotrygetController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAWwAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:16:33.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProfilecacheController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\ProfilecacheController.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Controllers\\ProfilecacheController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\ProfilecacheController.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Controllers\\ProfilecacheController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:16:33.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\DemoTryGet\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Views\\DemoTryGet\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\DemoTryGet\\Index.cshtml",
+              "RelativeToolTip": "WebAppCachingDemo\\Views\\DemoTryGet\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-16T08:16:33.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\Profilecache\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Views\\Profilecache\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Views\\Profilecache\\Index.cshtml",
+              "RelativeToolTip": "WebAppCachingDemo\\Views\\Profilecache\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-16T08:16:33.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DemocachController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\DemocachController.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Controllers\\DemocachController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Controllers\\DemocachController.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Controllers\\DemocachController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:16:33.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CacheViewModel.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Models\\CacheViewModel.cs",
+              "RelativeDocumentMoniker": "WebAppCachingDemo\\Models\\CacheViewModel.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Class_Notes\\C# Day-16\\WebAppCachingDemo\\WebAppCachingDemo\\Models\\CacheViewModel.cs",
+              "RelativeToolTip": "WebAppCachingDemo\\Models\\CacheViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:16:33.374Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

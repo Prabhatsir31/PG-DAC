@@ -1,0 +1,50 @@
+﻿@model MVCfileup.ViewModels.ProgrammingLanguagesViewModel
+@{
+    ViewData["Title"] = "SelectLanguages";
+}
+<h1>SelectLanguages</h1>
+<h4>ProgrammingLanguagesViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SubmitLanguages" asp-controller="Language" method="post">
+            @*
+            This begins an HTML form element.
+            The 'asp-action' attribute specifies that the form will submit data to the 'SubmitLanguages' action method in the 'Language' controller.
+            The 'method="post"' specifies that the form will use the HTTP POST method to send data to the server.
+            *@
+            @for (int i = 0; i < Model.LanguageOptions.Count; i++)
+            {
+                // A for-loop that iterates over the 'LanguageOptions' list in the bound model (ProgrammingLanguagesViewModel).
+                // 'LanguageOptions' is a collection of LanguageOption objects, each representing a programming language.
+                <div class="form-group">
+                    @Html.CheckBoxFor(m => m.LanguageOptions[i].IsSelected)
+                    @* This generates a checkbox input element for the 'IsSelected' property of the current LanguageOption object.
+                CheckBoxFor is a strongly-typed helper method that binds the checkbox to the 'IsSelected' property.
+                When the form is submitted, the checkbox state (checked or unchecked) will be sent as part of the form data.*@
+
+                    <label>@Model.LanguageOptions[i].LanguageName</label>
+                    @* This creates an HTML label element next to the checkbox.
+                It displays the name of the programming language by accessing the 'LanguageName' property of the current LanguageOption object. *@
+
+                    @Html.HiddenFor(m => m.LanguageOptions[i].LanguageName)
+                    @*
+                This generates a hidden input element for the 'LanguageName' property of the current LanguageOption object.
+                HiddenFor is a strongly-typed helper method that binds the hidden input to the 'LanguageName' property.
+                This ensures that the programming language's name is also submitted with the form data, even though it is not visible on the form.
+                *@
+                </div>
+            }
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

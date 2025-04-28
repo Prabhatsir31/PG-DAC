@@ -1,0 +1,765 @@
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.AssemblyReference.cache
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.AssemblyInfoInputs.cache
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.AssemblyInfo.cs
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.CoreCompileInputs.cache
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.MvcApplicationPartsAssemblyInfo.cs
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.MvcApplicationPartsAssemblyInfo.cache
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\appsettings.Development.json
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\appsettings.json
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.exe
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.deps.json
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.runtimeconfig.json
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.pdb
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Azure.Core.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Azure.Identity.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Humanizer.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.CodeDom.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Memory.Data.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.WebAppJWTService.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.build.WebAppJWTService.props
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebAppJWTService.props
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebAppJWTService.props
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.build.json
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.development.json
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\scopedcss\bundle\WebAppJWTService.styles.css
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.CopyComplete
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\refint\WebAppJWTService.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.pdb
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.genruntimeconfig.cache
+D:\Practice\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\ref\WebAppJWTService.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Build.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Build.Framework.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Features.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.DiaSymReader.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.NET.StringTools.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\dotnet-aspnet-codegenerator-design.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Common.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Configuration.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.DependencyResolver.Core.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Frameworks.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.LibraryModel.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Packaging.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.ProjectModel.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Protocol.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Versioning.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.AttributedModel.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Convention.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Hosting.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Runtime.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.TypedParts.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Reflection.MetadataLoadContext.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\af\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ar\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\az\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\bg\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\bn-BD\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\da\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\el\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fa\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fi-FI\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr-BE\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\he\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hr\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hu\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hy\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\id\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\is\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko-KR\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ku\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\lv\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ms-MY\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\mt\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nb\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nb-NO\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nl\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ro\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sk\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sl\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sr\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sr-Latn\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sv\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\th-TH\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uk\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\vi\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-CN\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Humanizer.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Practice\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\appsettings.Development.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\appsettings.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.exe
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.deps.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.runtimeconfig.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.pdb
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Azure.Core.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Azure.Identity.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Humanizer.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Build.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Build.Framework.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Features.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.DiaSymReader.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.NET.StringTools.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\dotnet-aspnet-codegenerator-design.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Common.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Configuration.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.DependencyResolver.Core.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Frameworks.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.LibraryModel.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Packaging.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.ProjectModel.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Protocol.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Versioning.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.CodeDom.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.AttributedModel.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Convention.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Hosting.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Runtime.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.TypedParts.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Memory.Data.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Reflection.MetadataLoadContext.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\af\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ar\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\az\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\bg\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\bn-BD\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\da\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\el\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fa\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fi-FI\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr-BE\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\he\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hr\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hu\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hy\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\id\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\is\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko-KR\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ku\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\lv\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ms-MY\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\mt\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nb\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nb-NO\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nl\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ro\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sk\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sl\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sr\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sr-Latn\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sv\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\th-TH\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uk\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\vi\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-CN\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Humanizer.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.AssemblyReference.cache
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.GeneratedMSBuildEditorConfig.editorconfig
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.AssemblyInfoInputs.cache
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.AssemblyInfo.cs
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.CoreCompileInputs.cache
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.MvcApplicationPartsAssemblyInfo.cs
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.MvcApplicationPartsAssemblyInfo.cache
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.WebAppJWTService.Microsoft.AspNetCore.StaticWebAssets.props
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.build.WebAppJWTService.props
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebAppJWTService.props
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebAppJWTService.props
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.pack.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.build.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.development.json
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\scopedcss\bundle\WebAppJWTService.styles.css
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\refint\WebAppJWTService.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.pdb
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.genruntimeconfig.cache
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\ref\WebAppJWTService.dll
+D:\DOT NET\50DotNetCore\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJW.5D29ECAA.Up2Date
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\appsettings.Development.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\appsettings.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.exe
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.deps.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.runtimeconfig.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\WebAppJWTService.pdb
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Azure.Core.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Azure.Identity.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Humanizer.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Build.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Build.Framework.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Features.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.DiaSymReader.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.NET.StringTools.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\dotnet-aspnet-codegenerator-design.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Common.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Configuration.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.DependencyResolver.Core.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Frameworks.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.LibraryModel.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Packaging.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.ProjectModel.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Protocol.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\NuGet.Versioning.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.CodeDom.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.AttributedModel.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Convention.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Hosting.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.Runtime.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Composition.TypedParts.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Memory.Data.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Reflection.MetadataLoadContext.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\af\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ar\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\az\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\bg\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\bn-BD\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\da\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\el\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fa\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fi-FI\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr-BE\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\he\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hr\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hu\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\hy\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\id\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\is\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko-KR\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ku\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\lv\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ms-MY\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\mt\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nb\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nb-NO\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\nl\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ro\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sk\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sl\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sr\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sr-Latn\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\sv\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\th-TH\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uk\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\vi\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-CN\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Humanizer.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.AssemblyReference.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.AssemblyInfoInputs.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.AssemblyInfo.cs
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.csproj.CoreCompileInputs.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.MvcApplicationPartsAssemblyInfo.cs
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.MvcApplicationPartsAssemblyInfo.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.build.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.development.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.WebAppJWTService.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.build.WebAppJWTService.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebAppJWTService.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebAppJWTService.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\scopedcss\bundle\WebAppJWTService.styles.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJW.5D29ECAA.Up2Date
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\refint\WebAppJWTService.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.pdb
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\WebAppJWTService.genruntimeconfig.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreWebAPI\Examples\WebAppJWTService\WebAppJWTService\obj\Debug\net7.0\ref\WebAppJWTService.dll
