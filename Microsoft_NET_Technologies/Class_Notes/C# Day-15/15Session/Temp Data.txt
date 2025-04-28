@@ -1,0 +1,5 @@
+TempData is used to transfer data from view to controller, controller to view, or from one action method to another action method of the same or a different controller.
+
+TempData stores the data temporarily and automatically removes it after retrieving a value.
+
+TempData is a property in the ControllerBase class. So, it is available in any controller or view in the ASP.NET MVC application.

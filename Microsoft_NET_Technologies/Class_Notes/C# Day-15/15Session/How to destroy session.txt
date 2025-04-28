@@ -1,0 +1,16 @@
+Session.Clear(), or Session.Abandon(). But now we need to understand when to use what. 
+
+1. Session.Clear()
+
+It clears a session simple! OK that means it clears all the key value pairs stored in the session state collection but thats it. Nothing more. You will get rid of all key value pairs but the sessionid is still there and you can still identify the session state by comparing sessionid. The Session state collection still exist with the same session id. Use this in situation, say you have a shopping site the the user is still not logged in. Now say you want to clear a shopping cart. That means you will clear all session dependencies for anonymous user.
+
+3. Session.Remove(“key”)
+
+It removes the specific session’s specific key value pair. Use this if you do not want to get rid of all key value pairs in session state collection but only a specific one. A typical usage is in scenario where you use a session variable to store state information across a section of a website, say you customer is using a coupon in there shopping cart checkout process. You decide that you want to store this information in session rather in database till the transaction is confirmed. So this session variable makes sense only inside the checkout process and you would wish to remove this variable when the process is complete or terminated.
+
+4. Session.Abandon()
+
+This is the absolute winner - destroy everything in terms of session. It even destroys the session state collection and that particular sessionid. 
+
+How to disable session
+<sessionState mode="Off" />

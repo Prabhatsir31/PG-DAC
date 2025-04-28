@@ -1,0 +1,16 @@
+var departments = DepartmentName
+    .Select(d => new SelectListItem
+    {
+        Value = d.Id.ToString(),
+        Text = d.Name
+    }).ToList();
+
+// Add placeholder at the top
+departments.Insert(0, new SelectListItem
+{
+    Value = "",
+    Text = "Select Data",
+    Selected = true
+});
+
+ViewData["xyz"] = departments;

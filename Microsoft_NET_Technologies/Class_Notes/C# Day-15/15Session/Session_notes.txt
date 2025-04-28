@@ -1,0 +1,39 @@
+Points to remember about session state variables:
+1. Session state variables are stored on the web server by default, and are kept for the life time of a session.
+
+2. The default session state mode is InProc. 
+ 
+3. The life time of a session is determined by the timeout value in web.config file. The default is 20 minutes. The time-out value can be adjusted according, to your application requirements.
+
+<sessionState mode="InProc" timeout="30"></sessionState>
+
+4. Session state variables are available across all pages, but only for a given single session. Session variables are like single-user global data.
+
+5. It is always a good practice to check, if a session state variable is null before calling any of its methods, such as ToString(). Otherwise, we may run into runtime NullReferenceExceptions.
+
+if (Session["Name"] != null)
+
+    
+6. Application performance can be improved by disabling session state, if it's not required. Session state can be turned off at the page or application level.
+
+<sessionState mode="Off" />
+
+
+
+cookiesless
+
+
+<sessionState mode="InProc" cookieless="true"></sessionState>
+
+
+
+
+
+
+
+
+
+
+
+
+

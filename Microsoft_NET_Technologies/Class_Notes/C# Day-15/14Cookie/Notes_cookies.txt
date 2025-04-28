@@ -1,0 +1,12 @@
+Cookies can also be used to send data from one view to another. In general, web sites use cookies to store user preferences or other information that is client-specific. Cookies store small amounts of information on the client’s machine.
+
+
+
+
+
+
+Cookies can be broadly classified into 2 types
+1. Persistent cookies - Remain on the client computer, even after the browser is closed. You can configure how long the cookies remain using the expires property of the HttpCookie object.
+
+2. Non-Persistent cookies - If you don't set the Expires property, then the cookie is called as a Non-Persistent cookie. Non-Persistent cookies only remain in memory until the browser is closed. 
+
