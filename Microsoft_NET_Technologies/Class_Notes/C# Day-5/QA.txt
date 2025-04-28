@@ -1,0 +1,95 @@
+Q1. Default access modifier for struct and top level class
+Q2 Default ACcess modifier for member of class/struct 
+Q3 Write all signature of Main() method
+Q4. Sbyte is ___
+Q5. short a,b 
+ a=32767; b=2; write output for addtion of this number ans= -32768
+
+what is CLR
+CTS
+CLS
+
+MSIL
+BCL
+FCL
+JIT
+what is int.Parse() ==>string to number ==>null exception invalid data
+Convert.ToInt32 / ====> null=>0
+int.TryParse("", out f)
+
+Q6.all primitive datatypes derived from?- V
+Q8. String is _______ - immutable
+
+Q9 Reference type occupy _byte ==4 byte
+
+Q10. Every object has same copy of instance variable __ 
+Q11. All datatype are internaly____ structure
+Q12. Cross Language inter operability is possble becauseof
+____________ 
+Q13. int32 is same as _____ datatype = 
+Q14. which keyword is used , which will throw exception if it is overflow. 
+
+Q15. List all user define datatype =
+Q16 list all sealed class =
+Q17 List all abstract class 
+
+Q18. can you create object of valueType. nass
+
+Q20 What is return type of GetType()? ==TYPE
+Q21 String is _Immutable
+
+Q22 StringBuilder is in _____ 
+
+Q23______ method is used to push string in string pool ==
+Q24.Equals method is overridden in ___________ class =
+
+Q25.which is best method to convert string to int ==
+Q1 static constructor can have parameter??? 
+Q2Access modifer for static constructor is by default ==public
+
+
+Q3. is readonly variable can be access by classname.variable. ==
+Q4.Everey object will have own copy of static variable? ==NO
+
+
+Q3.Static data loaded in memory before instance data?
+
+Q4.can I declare static const int a=50? 
+
+Q5.static constructor are called when you create object of that a class in which static constructor is created? true
+
+Q6.Can i declare static variable inside method? ==no
+
+Q7.const variable resolves when you use that variable =No is resolves at compile time
+
+Q8. For faster loading of data we should use static data.=yes
+
+Q9.can you use static and readonly key word together?=yes
+
+Q10. can you use static and instance noargs  constructor in one class=yes
+
+Q11.can I declare const variable in method?=yes
+
+Q12.why you need constructor overloading?
+
+
+Q13.readonly variable must initialised when you declare or in a constructor t/f =true
+
+Q14.can you subclass static class?=no. because it is a sealed class
+
+Q15. can I create object of static class?=no.
+
+Q16 how many static constructor can i declare in a class=one
+
+Q17 static class can have only static data t/f=true
+
+Q18.in a static method can i create a object of class and access a variable?=yes
+What is .NET Framework?
+Q2. What is an IL?
+Q3. What is Common Type System (CTS)?
+
+Q5. Which is the root namespace for fundamental types in .NET Framework?
+Q6. What is Microsoft Intermediate Language (MSIL)?
+Q7.What is Common Language Specification (CLS)?
+Q8.What is difference between System.String and System.StringBuilder classes?
+Q9. What is the difference between constants and read-only variables that are used in programs?
