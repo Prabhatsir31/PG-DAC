@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-20\\apidemo1\\apidemo1\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|solutionrelative:apidemo1\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-20\\apidemo1\\apidemo1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|solutionrelative:apidemo1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-20\\apidemo1\\apidemo1\\service\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|solutionrelative:apidemo1\\service\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-20\\apidemo1\\apidemo1\\service\\sqlemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|solutionrelative:apidemo1\\service\\sqlemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-20\\apidemo1\\apidemo1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8B00571E-F104-4404-922B-E3DA7E4E6669}|APIDEMO1\\APIDEMO1.csproj|solutionrelative:apidemo1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Program.cs",
+              "RelativeDocumentMoniker": "APIDEMO1\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Program.cs",
+              "RelativeToolTip": "APIDEMO1\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T04:26:41.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmployeeService.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Service\\IEmployeeService.cs",
+              "RelativeDocumentMoniker": "APIDEMO1\\Service\\IEmployeeService.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Service\\IEmployeeService.cs",
+              "RelativeToolTip": "APIDEMO1\\Service\\IEmployeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T04:11:05.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SqlEmployeeService.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Service\\SqlEmployeeService.cs",
+              "RelativeDocumentMoniker": "APIDEMO1\\Service\\SqlEmployeeService.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Service\\SqlEmployeeService.cs",
+              "RelativeToolTip": "APIDEMO1\\Service\\SqlEmployeeService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA4wHgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T04:12:38.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "APIDEMO1\\Controllers\\EmployeeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "APIDEMO1\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAwwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T04:00:44.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\appsettings.json",
+              "RelativeDocumentMoniker": "APIDEMO1\\appsettings.json",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-20\\APIDEMO1\\APIDEMO1\\appsettings.json",
+              "RelativeToolTip": "APIDEMO1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-26T04:05:32.781Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

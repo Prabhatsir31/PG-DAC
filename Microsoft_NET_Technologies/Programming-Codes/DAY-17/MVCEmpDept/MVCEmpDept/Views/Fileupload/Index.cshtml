@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "File Upload Page";
+}
+<h2>Single File Upload</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" asp-controller="FileUpload" asp-action="SingleFileUpload"
+              enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="file" name="SingleFile" class="form-control" />
+            <button type="submit" name="Upload" class="btn btn-primary">Upload</button>
+        </form>
+    </div>

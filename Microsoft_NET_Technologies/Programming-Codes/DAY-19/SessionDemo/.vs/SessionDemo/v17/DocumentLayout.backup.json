@@ -1,0 +1,223 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\session\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\session\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\session\\readsession.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\session\\readsession.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\session\\setsession.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\session\\setsession.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\session\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\session\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\controllers\\sessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\controllers\\sessioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\session\\impdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\session\\impdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-19\\sessiondemo\\sessiondemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FB9ABF9-F1F2-468F-9A3D-998E3BCD65B0}|SessionDemo\\SessionDemo.csproj|solutionrelative:sessiondemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Readsession.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Readsession.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Session\\Readsession.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Readsession.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Session\\Readsession.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T04:13:57.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Logout.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Session\\Logout.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Logout.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Session\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T05:02:20.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserLogin.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Models\\UserLogin.cs",
+              "RelativeDocumentMoniker": "SessionDemo\\Models\\UserLogin.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Models\\UserLogin.cs",
+              "RelativeToolTip": "SessionDemo\\Models\\UserLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T06:13:22.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Setsession.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Setsession.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Session\\Setsession.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Setsession.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Session\\Setsession.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T04:13:37.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T04:48:10.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Login.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Session\\Login.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Login.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Session\\Login.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwCQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T05:01:59.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SessionController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Controllers\\SessionController.cs",
+              "RelativeDocumentMoniker": "SessionDemo\\Controllers\\SessionController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Controllers\\SessionController.cs",
+              "RelativeToolTip": "SessionDemo\\Controllers\\SessionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T04:03:33.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Impdata.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Impdata.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Session\\Impdata.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Session\\Impdata.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Session\\Impdata.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T06:33:40.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "SessionDemo\\Models\\ErrorViewModel.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "SessionDemo\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T17:23:22.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:23:20.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "SessionDemo\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "SessionDemo\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:23:18.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Program.cs",
+              "RelativeDocumentMoniker": "SessionDemo\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-19\\SessionDemo\\SessionDemo\\Program.cs",
+              "RelativeToolTip": "SessionDemo\\Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwA0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T04:19:40.57Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

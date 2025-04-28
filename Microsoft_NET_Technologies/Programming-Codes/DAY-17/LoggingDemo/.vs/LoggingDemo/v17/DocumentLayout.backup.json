@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F481D112-B653-4A40-8C3E-6C0C7F456F38}|LoggingDemo\\LoggingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-17\\loggingdemo\\loggingdemo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F481D112-B653-4A40-8C3E-6C0C7F456F38}|LoggingDemo\\LoggingDemo.csproj|solutionrelative:loggingdemo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F481D112-B653-4A40-8C3E-6C0C7F456F38}|LoggingDemo\\LoggingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-17\\loggingdemo\\loggingdemo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F481D112-B653-4A40-8C3E-6C0C7F456F38}|LoggingDemo\\LoggingDemo.csproj|solutionrelative:loggingdemo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F481D112-B653-4A40-8C3E-6C0C7F456F38}|LoggingDemo\\LoggingDemo.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-17\\loggingdemo\\loggingdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F481D112-B653-4A40-8C3E-6C0C7F456F38}|LoggingDemo\\LoggingDemo.csproj|solutionrelative:loggingdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\LoggingDemo\\Program.cs",
+              "RelativeDocumentMoniker": "LoggingDemo\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\LoggingDemo\\Program.cs",
+              "RelativeToolTip": "LoggingDemo\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T07:25:01.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\LoggingDemo\\appsettings.json",
+              "RelativeDocumentMoniker": "LoggingDemo\\appsettings.json",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\LoggingDemo\\appsettings.json",
+              "RelativeToolTip": "LoggingDemo\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T07:24:12.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\LoggingDemo\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LoggingDemo\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-17\\LoggingDemo\\LoggingDemo\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LoggingDemo\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA7wBcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T07:10:01.978Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

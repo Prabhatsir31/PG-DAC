@@ -1,0 +1,309 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\logoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\logoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\loginsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\loginsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\readcookie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\readcookie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\impdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\impdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\cookie\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\cookie\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\login\\setsession.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\login\\setsession.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-18\\mvccookieform\\mvccookieform\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91DAA715-4528-4EA0-B109-B7D2CA48301A}|MVCCookieForm\\MVCCookieForm.csproj|solutionrelative:mvccookieform\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SessionService.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Services\\SessionService.cs",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Services\\SessionService.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Services\\SessionService.cs",
+              "RelativeToolTip": "MVCCookieForm\\Services\\SessionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T17:47:40.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Models\\User.cs",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Models\\User.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Models\\User.cs",
+              "RelativeToolTip": "MVCCookieForm\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T03:56:29.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwC0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:02:53.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Controllers\\LoginController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "MVCCookieForm\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwEoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T02:36:14.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogoutSuccess.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\LogoutSuccess.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\LogoutSuccess.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\LogoutSuccess.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\LogoutSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T18:27:22.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginSuccess.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\LoginSuccess.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\LoginSuccess.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\LoginSuccess.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\LoginSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T18:26:04.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Models\\ErrorViewModel.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "MVCCookieForm\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T18:19:32.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Impdata.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Impdata.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\Impdata.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Impdata.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\Impdata.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:39:29.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Logout.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\Logout.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Logout.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:58:00.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\Login.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:35:03.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Program.cs",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Program.cs",
+              "RelativeToolTip": "MVCCookieForm\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T17:41:36.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Readcookie.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Readcookie.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\Readcookie.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Readcookie.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\Readcookie.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:05:54.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Cookie\\Create.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Cookie\\Create.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Cookie\\Create.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Cookie\\Create.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T03:45:48.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:43:29.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Setsession.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Setsession.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Login\\Setsession.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Login\\Setsession.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Login\\Setsession.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:06:06.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MVCCookieForm\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:18:53.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVCCookieForm\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-18\\MVCCookieForm\\MVCCookieForm\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVCCookieForm\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T17:18:37.79Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

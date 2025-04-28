@@ -1,0 +1,27 @@
+SQL Server Repository
+
+EXAMPLE : Student 
+
+1) In "Models" folder create, 
+	1. Poco class e.x. Student class
+
+2) In "Repository" folder create class,
+	1. StudentDbContext ( child of DbContext )   
+
+3) In "Services" folder create, 
+	1. IStudentRepository (interface) - method declarations
+	2. SQlStudentRepository (class) - method implementations
+		( here Inject child of DbContext )
+
+4) In "appsettings.json" file Add Connection String & configure in "program.cs"
+
+5) Add Migration & Update-Database & Add data in database
+
+6) In "Controllers" folder create , 
+	1. StudentController (class) - method calling of Services
+
+7) Under "Views" folder create "Student"(Poco class name) Folder and in it create Empty Razor file (i.e. .cshtml file )
+
+
+BUILD and RUN ...........
+

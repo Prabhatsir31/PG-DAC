@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@inject IHttpContextAccessor HCA;
+
+<h1>Welcome </h1>
+
+@HCA.HttpContext.Session.GetString("_Name")
+<h2>---------------------</h2>
+@HCA.HttpContext.Session.Id 
+

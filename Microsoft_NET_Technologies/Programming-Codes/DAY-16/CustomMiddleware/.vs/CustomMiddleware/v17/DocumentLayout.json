@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1BAB915-0402-46E3-B2DA-6AD474428A26}|CustomMiddleware\\CustomMiddleware.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-16\\custommiddleware\\custommiddleware\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1BAB915-0402-46E3-B2DA-6AD474428A26}|CustomMiddleware\\CustomMiddleware.csproj|solutionrelative:custommiddleware\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1BAB915-0402-46E3-B2DA-6AD474428A26}|CustomMiddleware\\CustomMiddleware.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-16\\custommiddleware\\custommiddleware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1BAB915-0402-46E3-B2DA-6AD474428A26}|CustomMiddleware\\CustomMiddleware.csproj|solutionrelative:custommiddleware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1BAB915-0402-46E3-B2DA-6AD474428A26}|CustomMiddleware\\CustomMiddleware.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-16\\custommiddleware\\custommiddleware\\models\\customermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1BAB915-0402-46E3-B2DA-6AD474428A26}|CustomMiddleware\\CustomMiddleware.csproj|solutionrelative:custommiddleware\\models\\customermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\CustomMiddleware\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CustomMiddleware\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\CustomMiddleware\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CustomMiddleware\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T03:47:07.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\CustomMiddleware\\Program.cs",
+              "RelativeDocumentMoniker": "CustomMiddleware\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\CustomMiddleware\\Program.cs",
+              "RelativeToolTip": "CustomMiddleware\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCAAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T04:38:51.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerMiddleware.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\CustomMiddleware\\Models\\CustomerMiddleware.cs",
+              "RelativeDocumentMoniker": "CustomMiddleware\\Models\\CustomerMiddleware.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-16\\CustomMiddleware\\CustomMiddleware\\Models\\CustomerMiddleware.cs",
+              "RelativeToolTip": "CustomMiddleware\\Models\\CustomerMiddleware.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwBgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T04:25:43.768Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

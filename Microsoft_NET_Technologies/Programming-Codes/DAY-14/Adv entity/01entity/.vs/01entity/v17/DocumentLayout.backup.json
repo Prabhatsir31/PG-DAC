@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\controllers\\bookcontrollerdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\controllers\\bookcontrollerdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\samplecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\samplecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\sqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\sqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\isqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\isqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookControllerdemo.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Controllers\\BookControllerdemo.cs",
+              "RelativeDocumentMoniker": "01entity\\Controllers\\BookControllerdemo.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Controllers\\BookControllerdemo.cs",
+              "RelativeToolTip": "01entity\\Controllers\\BookControllerdemo.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:19:33.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SqlService.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SqlService.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\SqlService.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SqlService.cs",
+              "RelativeToolTip": "01entity\\Models\\SqlService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:19:09.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ISqlrepository.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\ISqlrepository.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\ISqlrepository.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\ISqlrepository.cs",
+              "RelativeToolTip": "01entity\\Models\\ISqlrepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:19:07.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SampleContext.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SampleContext.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\SampleContext.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SampleContext.cs",
+              "RelativeToolTip": "01entity\\Models\\SampleContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:19:03.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Program.cs",
+              "RelativeDocumentMoniker": "01entity\\Program.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Program.cs",
+              "RelativeToolTip": "01entity\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:15:14.102Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

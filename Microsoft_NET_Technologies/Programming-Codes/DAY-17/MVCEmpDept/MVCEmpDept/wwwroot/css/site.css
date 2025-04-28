@@ -1,0 +1,142 @@
+/* === Layout and Page Structure Fix === */
+/*html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1;
+}*/
+
+/* === Navbar === */
+/*.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}*/
+
+/* === Footer === */
+/*footer.footer {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+}*/
+
+/* === Buttons === */
+/*a.create,
+.btn-create {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff !important;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+    a.create:hover,
+    .btn-create:hover {
+        background-color: #218838;
+        text-decoration: none;
+    }
+
+a.btn,
+input[type="submit"].btn {
+    margin-right: 5px;
+}*/
+
+/* === Table Styling === */
+/*.table {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+    .table th, .table td {
+        vertical-align: middle !important;
+        padding: 12px;
+    }
+
+    .table thead th {
+        background-color: #007bff;
+        color: white;
+    }*/
+
+/* === Form Controls === */
+/*form label {
+    font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+    input[type="submit"]:hover,
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }*/
+
+/* === Links in Table === */
+/*a.action-link {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a.btn-primary {
+    background-color: #007bff;
+}
+
+a.btn-info {
+    background-color: #17a2b8;
+}
+
+a.btn-danger {
+    background-color: #dc3545;
+}*/
+
+/* === Misc === */
+/*h1, h2 {
+    margin-top: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .back-link:hover {
+        text-decoration: underline;
+    }*/

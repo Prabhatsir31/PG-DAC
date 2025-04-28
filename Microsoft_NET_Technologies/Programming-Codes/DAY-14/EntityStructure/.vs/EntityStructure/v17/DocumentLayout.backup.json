@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-14\\entitystructure\\entitystructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|solutionrelative:entitystructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-14\\entitystructure\\entitystructure\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|solutionrelative:entitystructure\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-14\\entitystructure\\entitystructure\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|solutionrelative:entitystructure\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-14\\entitystructure\\entitystructure\\repository\\samplecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17EE91AC-6488-49C0-8960-3D08F4A3B251}|EntityStructure\\EntityStructure.csproj|solutionrelative:entitystructure\\repository\\samplecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Author.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "EntityStructure\\Models\\Author.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Models\\Author.cs",
+              "RelativeToolTip": "EntityStructure\\Models\\Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:38:41.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SampleContext.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Repository\\SampleContext.cs",
+              "RelativeDocumentMoniker": "EntityStructure\\Repository\\SampleContext.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Repository\\SampleContext.cs",
+              "RelativeToolTip": "EntityStructure\\Repository\\SampleContext.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:37:38.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Book.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "EntityStructure\\Models\\Book.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Models\\Book.cs",
+              "RelativeToolTip": "EntityStructure\\Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:33:26.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Program.cs",
+              "RelativeDocumentMoniker": "EntityStructure\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-14\\EntityStructure\\EntityStructure\\Program.cs",
+              "RelativeToolTip": "EntityStructure\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:28:31.93Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{200F793A-13CB-4CE6-B5E6-D57C6E818345}|EntityORM\\EntityORM.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-12\\entityorm\\entityorm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200F793A-13CB-4CE6-B5E6-D57C6E818345}|EntityORM\\EntityORM.csproj|solutionrelative:entityorm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200F793A-13CB-4CE6-B5E6-D57C6E818345}|EntityORM\\EntityORM.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-12\\entityorm\\entityorm\\service\\servicebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200F793A-13CB-4CE6-B5E6-D57C6E818345}|EntityORM\\EntityORM.csproj|solutionrelative:entityorm\\service\\servicebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{200F793A-13CB-4CE6-B5E6-D57C6E818345}|EntityORM\\EntityORM.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-12\\entityorm\\entityorm\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{200F793A-13CB-4CE6-B5E6-D57C6E818345}|EntityORM\\EntityORM.csproj|solutionrelative:entityorm\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServiceBook.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\EntityORM\\Service\\ServiceBook.cs",
+              "RelativeDocumentMoniker": "EntityORM\\Service\\ServiceBook.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\EntityORM\\Service\\ServiceBook.cs",
+              "RelativeToolTip": "EntityORM\\Service\\ServiceBook.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T05:15:28.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\EntityORM\\Program.cs",
+              "RelativeDocumentMoniker": "EntityORM\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\EntityORM\\Program.cs",
+              "RelativeToolTip": "EntityORM\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T04:29:25.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Author.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\EntityORM\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "EntityORM\\Models\\Author.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-12\\EntityORM\\EntityORM\\Models\\Author.cs",
+              "RelativeToolTip": "EntityORM\\Models\\Author.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T04:38:03.103Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

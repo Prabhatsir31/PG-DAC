@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\sqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\sqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\isqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\isqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\samplecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\samplecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\migrations\\20230923051159_demodatacreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\migrations\\20230923051159_demodatacreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\controllers\\bookcontrollerdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\controllers\\bookcontrollerdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|d:\\dotnet all\\dotnet\\dotnet all\\52entity_core\\adv entity\\01entity\\01entity\\migrations\\samplecontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1EDE733-5B1E-4ACD-90A3-AE467CE51A24}|01entity\\01entity.csproj|solutionrelative:01entity\\migrations\\samplecontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__ProjectModels/DemoData/True/SqlTable/dbo.Books.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__ProjectModels/DemoData/True/SqlTable/dbo.Authors.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\Book.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\Book.cs",
+              "RelativeToolTip": "01entity\\Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ISqlrepository.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\ISqlrepository.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\ISqlrepository.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\ISqlrepository.cs",
+              "RelativeToolTip": "01entity\\Models\\ISqlrepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20230923051159_Demodatacreate.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Migrations\\20230923051159_Demodatacreate.cs",
+              "RelativeDocumentMoniker": "01entity\\Migrations\\20230923051159_Demodatacreate.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Migrations\\20230923051159_Demodatacreate.cs",
+              "RelativeToolTip": "01entity\\Migrations\\20230923051159_Demodatacreate.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Program.cs",
+              "RelativeDocumentMoniker": "01entity\\Program.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Program.cs*",
+              "RelativeToolTip": "01entity\\Program.cs*",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwB4AAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:22.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SampleContext.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SampleContext.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\SampleContext.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SampleContext.cs",
+              "RelativeToolTip": "01entity\\Models\\SampleContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SqlService.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SqlService.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\SqlService.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\SqlService.cs",
+              "RelativeToolTip": "01entity\\Models\\SqlService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Author.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "01entity\\Models\\Author.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Models\\Author.cs",
+              "RelativeToolTip": "01entity\\Models\\Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookControllerdemo.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Controllers\\BookControllerdemo.cs",
+              "RelativeDocumentMoniker": "01entity\\Controllers\\BookControllerdemo.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Controllers\\BookControllerdemo.cs",
+              "RelativeToolTip": "01entity\\Controllers\\BookControllerdemo.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwA0AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SampleContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Migrations\\SampleContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "01entity\\Migrations\\SampleContextModelSnapshot.cs",
+              "ToolTip": "D:\\Dotnet All\\Dotnet\\Dotnet All\\52Entity_core\\Adv entity\\01entity\\01entity\\Migrations\\SampleContextModelSnapshot.cs",
+              "RelativeToolTip": "01entity\\Migrations\\SampleContextModelSnapshot.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAQwA8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-06T09:58:23.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "dbo.Books.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__ProjectModels/DemoData/True/SqlTable/dbo.Books.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__ProjectModels/DemoData/True/SqlTable/dbo.Books.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2023-09-25T05:18:39.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "dbo.Authors.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__ProjectModels/DemoData/True/SqlTable/dbo.Authors.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__ProjectModels/DemoData/True/SqlTable/dbo.Authors.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2023-09-25T05:14:35.35Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
