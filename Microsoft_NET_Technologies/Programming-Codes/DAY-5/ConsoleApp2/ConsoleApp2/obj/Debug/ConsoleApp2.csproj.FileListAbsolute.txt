@@ -1,0 +1,7 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.AssemblyReference.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-5\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

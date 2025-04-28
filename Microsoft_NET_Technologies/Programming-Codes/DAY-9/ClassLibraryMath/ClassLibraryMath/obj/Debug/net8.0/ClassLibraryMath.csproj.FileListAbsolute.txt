@@ -1,0 +1,11 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\bin\Debug\net8.0\ClassLibraryMath.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\bin\Debug\net8.0\ClassLibraryMath.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\bin\Debug\net8.0\ClassLibraryMath.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ClassLibraryMath.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ClassLibraryMath.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ClassLibraryMath.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ClassLibraryMath.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ClassLibraryMath.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\refint\ClassLibraryMath.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ClassLibraryMath.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\ClassLibraryMath\ClassLibraryMath\obj\Debug\net8.0\ref\ClassLibraryMath.dll

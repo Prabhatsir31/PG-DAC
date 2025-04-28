@@ -1,0 +1,14 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\bin\Debug\net8.0\ConsoleApp2.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\bin\Debug\net8.0\ConsoleApp2.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\bin\Debug\net8.0\ConsoleApp2.runtimeconfig.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\bin\Debug\net8.0\ConsoleApp2.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\bin\Debug\net8.0\ConsoleApp2.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\refint\ConsoleApp2.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ConsoleApp2.genruntimeconfig.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp2\ConsoleApp2\obj\Debug\net8.0\ref\ConsoleApp2.dll

@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-7\\consoleapp3\\consoleapp3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|solutionrelative:consoleapp3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-7\\consoleapp3\\consoleapp3\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|solutionrelative:consoleapp3\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-7\\consoleapp3\\consoleapp3\\service\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|solutionrelative:consoleapp3\\service\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-7\\consoleapp3\\consoleapp3\\service\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4270C420-2128-4582-8AD8-2EE103F3D58B}|ConsoleApp3\\ConsoleApp3.csproj|solutionrelative:consoleapp3\\service\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Service\\IRepository.cs",
+              "RelativeDocumentMoniker": "ConsoleApp3\\Service\\IRepository.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Service\\IRepository.cs",
+              "RelativeToolTip": "ConsoleApp3\\Service\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T03:34:55.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "ConsoleApp3\\Models\\Employee.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Models\\Employee.cs",
+              "RelativeToolTip": "ConsoleApp3\\Models\\Employee.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T03:34:06.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp3\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Program.cs",
+              "RelativeToolTip": "ConsoleApp3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:22:12.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Service\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "ConsoleApp3\\Service\\EmployeeService.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-7\\ConsoleApp3\\ConsoleApp3\\Service\\EmployeeService.cs",
+              "RelativeToolTip": "ConsoleApp3\\Service\\EmployeeService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T03:35:23.121Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

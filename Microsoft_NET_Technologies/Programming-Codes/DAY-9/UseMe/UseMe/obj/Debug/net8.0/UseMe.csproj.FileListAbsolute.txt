@@ -1,0 +1,17 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\bin\Debug\net8.0\UseMe.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\bin\Debug\net8.0\UseMe.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\bin\Debug\net8.0\UseMe.runtimeconfig.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\bin\Debug\net8.0\UseMe.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\bin\Debug\net8.0\UseMe.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.csproj.AssemblyReference.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\refint\UseMe.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.genruntimeconfig.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\ref\UseMe.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\bin\Debug\net8.0\ClassLibraryMath.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-9\UseMe\UseMe\obj\Debug\net8.0\UseMe.csproj.Up2Date

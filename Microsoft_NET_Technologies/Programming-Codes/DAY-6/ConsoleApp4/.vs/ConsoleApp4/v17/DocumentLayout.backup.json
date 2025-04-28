@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-6\\ConsoleApp4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57842E0F-C4FC-4426-B7D7-2196CEAF675D}|ConsoleApp4\\ConsoleApp4.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-6\\consoleapp4\\consoleapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57842E0F-C4FC-4426-B7D7-2196CEAF675D}|ConsoleApp4\\ConsoleApp4.csproj|solutionrelative:consoleapp4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-6\\ConsoleApp4\\ConsoleApp4\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp4\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-6\\ConsoleApp4\\ConsoleApp4\\Program.cs",
+              "RelativeToolTip": "ConsoleApp4\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:12:20.471Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

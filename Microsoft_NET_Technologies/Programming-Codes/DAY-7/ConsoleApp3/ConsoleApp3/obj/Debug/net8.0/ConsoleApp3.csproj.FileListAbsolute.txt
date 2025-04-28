@@ -1,0 +1,14 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\bin\Debug\net8.0\ConsoleApp3.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\bin\Debug\net8.0\ConsoleApp3.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\bin\Debug\net8.0\ConsoleApp3.runtimeconfig.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\bin\Debug\net8.0\ConsoleApp3.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\bin\Debug\net8.0\ConsoleApp3.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\refint\ConsoleApp3.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ConsoleApp3.genruntimeconfig.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\DAY-7\ConsoleApp3\ConsoleApp3\obj\Debug\net8.0\ref\ConsoleApp3.dll

@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ClassLibraryMath\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB58BFB8-CBD2-439A-B1B8-1B2BDE4184D7}|ClassLibraryMath\\ClassLibraryMath.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-9\\classlibrarymath\\classlibrarymath\\classlibrarymath.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{FB58BFB8-CBD2-439A-B1B8-1B2BDE4184D7}|ClassLibraryMath\\ClassLibraryMath.csproj|solutionrelative:classlibrarymath\\classlibrarymath.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB58BFB8-CBD2-439A-B1B8-1B2BDE4184D7}|ClassLibraryMath\\ClassLibraryMath.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-9\\classlibrarymath\\classlibrarymath\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB58BFB8-CBD2-439A-B1B8-1B2BDE4184D7}|ClassLibraryMath\\ClassLibraryMath.csproj|solutionrelative:classlibrarymath\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClassLibraryMath",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ClassLibraryMath\\ClassLibraryMath\\ClassLibraryMath.csproj",
+              "RelativeDocumentMoniker": "ClassLibraryMath\\ClassLibraryMath.csproj",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ClassLibraryMath\\ClassLibraryMath\\ClassLibraryMath.csproj",
+              "RelativeToolTip": "ClassLibraryMath\\ClassLibraryMath.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-12T08:05:59.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ClassLibraryMath\\ClassLibraryMath\\Class1.cs",
+              "RelativeDocumentMoniker": "ClassLibraryMath\\Class1.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ClassLibraryMath\\ClassLibraryMath\\Class1.cs",
+              "RelativeToolTip": "ClassLibraryMath\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T07:39:00.011Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

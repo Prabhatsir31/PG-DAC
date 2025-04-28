@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-9\\adodemo\\adodemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|solutionrelative:adodemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-9\\adodemo\\adodemo\\productlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|solutionrelative:adodemo\\productlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-9\\adodemo\\adodemo\\models-\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|solutionrelative:adodemo\\models-\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\day-9\\adodemo\\adodemo\\service\\myservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1AB0427-55E6-4E25-9989-65106305DB87}|ADODEMO\\ADODEMO.csproj|solutionrelative:adodemo\\service\\myservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Myservice.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Service\\Myservice.cs",
+              "RelativeDocumentMoniker": "ADODEMO\\Service\\Myservice.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Service\\Myservice.cs",
+              "RelativeToolTip": "ADODEMO\\Service\\Myservice.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAswDQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T06:39:06.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Models-\\Product.cs",
+              "RelativeDocumentMoniker": "ADODEMO\\Models-\\Product.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Models-\\Product.cs",
+              "RelativeToolTip": "ADODEMO\\Models-\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T06:28:31.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Productlayer.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Productlayer.cs",
+              "RelativeDocumentMoniker": "ADODEMO\\Productlayer.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Productlayer.cs",
+              "RelativeToolTip": "ADODEMO\\Productlayer.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwDIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T06:04:46.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Program.cs",
+              "RelativeDocumentMoniker": "ADODEMO\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\DAY-9\\ADODEMO\\ADODEMO\\Program.cs",
+              "RelativeToolTip": "ADODEMO\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T04:21:08.059Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

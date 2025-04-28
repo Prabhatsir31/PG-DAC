@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ClassLibraryMath">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\ClassLibraryMath\v4.0_1.0.0.0__b0e9c8b30e2bf332\ClassLibraryMath.dll</HintPath>
+      <Private></Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
