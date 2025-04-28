@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCAllValidation", "MVCAllValidation\MVCAllValidation.csproj", "{F64CB6C7-CC15-4A4B-AC6C-A91C0C5DCC68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F64CB6C7-CC15-4A4B-AC6C-A91C0C5DCC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64CB6C7-CC15-4A4B-AC6C-A91C0C5DCC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64CB6C7-CC15-4A4B-AC6C-A91C0C5DCC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64CB6C7-CC15-4A4B-AC6C-A91C0C5DCC68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7CAD61B-D886-4B43-A917-DFCFA0F3283D}
+	EndGlobalSection
+EndGlobal
