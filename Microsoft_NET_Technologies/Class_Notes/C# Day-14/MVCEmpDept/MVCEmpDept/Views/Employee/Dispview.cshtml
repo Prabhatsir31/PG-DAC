@@ -1,0 +1,14 @@
+﻿@using MVCEmpDept.Service
+@using System.Collections
+
+@model MVCEmpDept.Service.SqlEmployeeService 
+
+@inject IEmployeeService context
+
+<ol>
+    @foreach(var empobj in context.GetAllEmployee())
+    {        
+        <li>@empobj.Name </li>
+        <li>@empobj.Email </li>
+    }
+</ol>
