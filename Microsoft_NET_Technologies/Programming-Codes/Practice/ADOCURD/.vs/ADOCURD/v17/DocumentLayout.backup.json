@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\adocurd\\adocurd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|solutionrelative:adocurd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\adocurd\\adocurd\\productlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|solutionrelative:adocurd\\productlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\adocurd\\adocurd\\service\\myservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|solutionrelative:adocurd\\service\\myservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\adocurd\\adocurd\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7102D732-C6A8-4B99-B278-4F276190788F}|ADOCURD\\ADOCURD.csproj|solutionrelative:adocurd\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ADOCURD\\Models\\Product.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Models\\Product.cs",
+              "RelativeToolTip": "ADOCURD\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T03:01:25.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Productlayer.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Productlayer.cs",
+              "RelativeDocumentMoniker": "ADOCURD\\Productlayer.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Productlayer.cs",
+              "RelativeToolTip": "ADOCURD\\Productlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T10:15:13.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyService.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Service\\MyService.cs",
+              "RelativeDocumentMoniker": "ADOCURD\\Service\\MyService.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Service\\MyService.cs",
+              "RelativeToolTip": "ADOCURD\\Service\\MyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T06:29:40.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Program.cs",
+              "RelativeDocumentMoniker": "ADOCURD\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\ADOCURD\\ADOCURD\\Program.cs",
+              "RelativeToolTip": "ADOCURD\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T06:03:30.999Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

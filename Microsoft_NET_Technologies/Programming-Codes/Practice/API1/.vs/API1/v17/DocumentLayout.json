@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\service\\sqlapiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\service\\sqlapiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\service\\iapiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\service\\iapiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\api1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\api1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\api1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\api1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\practice\\api1\\api1\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22CFD91E-1090-4FFB-A86C-2FB0E3ACE1C4}|API1\\API1.csproj|solutionrelative:api1\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "API1\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Properties\\launchSettings.json",
+              "RelativeToolTip": "API1\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-27T09:58:06.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "API1\\Controllers\\EmployeeController.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "API1\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:56:09.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "API1",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\API1.csproj",
+              "RelativeDocumentMoniker": "API1\\API1.csproj",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\API1.csproj",
+              "RelativeToolTip": "API1\\API1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-27T09:48:09.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "API1",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\API1.csproj",
+              "RelativeDocumentMoniker": "API1\\API1.csproj",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\API1.csproj",
+              "RelativeToolTip": "API1\\API1.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-27T09:48:12.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\appsettings.json",
+              "RelativeDocumentMoniker": "API1\\appsettings.json",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\appsettings.json",
+              "RelativeToolTip": "API1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-27T09:40:01.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SqlAPIServices.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Service\\SqlAPIServices.cs",
+              "RelativeDocumentMoniker": "API1\\Service\\SqlAPIServices.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Service\\SqlAPIServices.cs",
+              "RelativeToolTip": "API1\\Service\\SqlAPIServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T07:22:38.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "API1\\WeatherForecast.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\WeatherForecast.cs",
+              "RelativeToolTip": "API1\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:40:14.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAPIServices.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Service\\IAPIServices.cs",
+              "RelativeDocumentMoniker": "API1\\Service\\IAPIServices.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Service\\IAPIServices.cs",
+              "RelativeToolTip": "API1\\Service\\IAPIServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T07:22:23.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Program.cs",
+              "RelativeDocumentMoniker": "API1\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Practice\\API1\\API1\\Program.cs",
+              "RelativeToolTip": "API1\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T07:37:12.965Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

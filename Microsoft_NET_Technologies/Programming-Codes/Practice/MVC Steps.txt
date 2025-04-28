@@ -1,0 +1,565 @@
+.NET
+----------
+
+DAY-14
+-----------
+
+For Two Table
+----------------
+
+Project Structure of One Tables 
+-------------------------------------
+
+Here's a complete step-by-step guide to build an ASP.NET Core MVC application with Student Table CRUD operations using Entity Framework Core, including folder structure, models, services, views, and controllers.
+✅ Step 1: Create ASP.NET Core MVC Project
+
+In Visual Studio:
+
+File → New → Project → ASP.NET Core Web App (Model-View-Controller)
+
+Name it: MVCStudent
+✅ Step 2: Install NuGet Dependencies
+    Use the Package Manager Console:
+
+    Install-Package Microsoft.EntityFrameworkCore
+    Install-Package Microsoft.EntityFrameworkCore.SqlServer
+    Install-Package Microsoft.EntityFrameworkCore.Tools
+    Install-Package Microsoft.EntityFrameworkCore.Design
+    Install-Package Microsoft.Extensions.Configuration.Json
+
+✅ Step 3: Create Folder Structure
+
+📁 Models
+📁 Repository
+📁 Services
+📁 Controllers
+📁 Views/Student (automatically created when adding controller with views)
+
+✅ Step 4: Create POCO Class in Models
+
+Models/Student.cs
+
+    using System.ComponentModel.DataAnnotations;
+
+    namespace MVCStudent.Models
+    {
+        public class Student
+        {
+            public int Id { get; set; }
+
+            [Required]
+            public string? Name { get; set; }
+
+            [Required]
+            public string? Email { get; set; }
+
+            [Required]
+            public string? Course { get; set; }
+        }
+    }
+
+✅ Step 5: Create DbContext
+
+Repository/AppDbContext.cs
+
+    using Microsoft.EntityFrameworkCore;
+    using MVCStudent.Models;
+
+    namespace MVCStudent.Repository
+    {
+        public class AppDbContext : DbContext
+        {
+            public AppDbContext(DbContextOptions options) : base(options) {}
+
+            public DbSet<Student> Students { get; set; }
+        }
+    }
+
+✅ Step 6: Create Interface
+
+Services/IStudentService.cs
+
+    using MVCStudent.Models;
+    using System.Collections.Generic;
+
+    namespace MVCStudent.Services
+    {
+        public interface IStudentService
+        {
+            List<Student> GetAll();
+            Student GetById(int id);
+            void Add(Student s);
+            void Update(Student s);
+            void Delete(int id);
+        }
+    }
+
+✅ Step 7: Implement Interface
+
+Services/SQLStudentService.cs
+
+    using MVCStudent.Models;
+    using MVCStudent.Repository;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    namespace MVCStudent.Services
+    {
+        public class SQLStudentService : IStudentService
+        {
+            private readonly AppDbContext _context;
+            public SQLStudentService(AppDbContext context) => _context = context;
+
+            public void Add(Student s)
+            {
+                _context.Students.Add(s);
+                _context.SaveChanges();
+            }
+
+            public void Delete(int id)
+            {
+                var s = _context.Students.Find(id);
+                if (s != null)
+                {
+                    _context.Students.Remove(s);
+                    _context.SaveChanges();
+                }
+            }
+
+            public List<Student> GetAll() => _context.Students.ToList();
+
+            public Student GetById(int id) => _context.Students.Find(id);
+
+            public void Update(Student s)
+            {
+                _context.Students.Update(s);
+                _context.SaveChanges();
+            }
+        }
+    }
+
+✅ Step 8: Register Services in Program.cs
+
+Program.cs
+
+    using Microsoft.EntityFrameworkCore;
+    using MVCStudent.Repository;
+    using MVCStudent.Services;
+
+    var builder = WebApplication.CreateBuilder(args);
+
+    // Add services
+    builder.Services.AddControllersWithViews();
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+    builder.Services.AddScoped<IStudentService, SQLStudentService>();
+
+    var app = builder.Build();
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+    }
+    app.UseStaticFiles();
+    app.UseRouting();
+    app.UseAuthorization();
+    app.MapControllerRoute(name: "default", pattern: "{controller=Student}/{action=Index}/{id?}");
+    app.Run();
+
+✅ Step 9: Connection String in appsettings.json
+
+    "ConnectionStrings": {
+      "Default": "Server=.;Database=StudentDB;Trusted_Connection=True;TrustServerCertificate=True"
+    }
+
+✅ Step 10: Add Migrations & Update Database
+
+In Package Manager Console:
+
+    Add-Migration Init
+    Update-Database
+
+✅ Step 11: Create Controller with Views
+
+Right click Controllers → Add → Controller → MVC Controller with views, using Entity Framework
+
+    Model class: Student
+
+    Data Context: AppDbContext
+
+This auto-generates:
+
+    StudentController.cs
+
+    Views inside Views/Student: Create.cshtml, Edit.cshtml, Delete.cshtml, Details.cshtml, Index.cshtml
+
+✅ Optional: Customize Razor Views
+
+Example snippet for Index.cshtml:
+
+    @model IEnumerable<MVCStudent.Models.Student>
+
+    <h2>Student List</h2>
+    <a asp-action="Create" class="btn btn-primary">Add New</a>
+    <table class="table">
+        <thead>
+            <tr><th>Name</th><th>Email</th><th>Course</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.Name</td>
+                    <td>@s.Email</td>
+                    <td>@s.Course</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@s.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+Project Structure of Two Table (Employee and Department)
+--------------------------------------------------------------    
+
+Here’s a complete overview of how to build an ASP.NET Core MVC Application with two tables (Employee and Department) using Entity Framework Core, including full CRUD operations, project structure, and basic styling.
+✅ Step 1: Install Dependencies via NuGet
+    Use the Package Manager Console or NuGet GUI:
+
+    Install-Package Microsoft.EntityFrameworkCore
+    Install-Package Microsoft.EntityFrameworkCore.SqlServer
+    Install-Package Microsoft.EntityFrameworkCore.Tools
+    Install-Package Microsoft.EntityFrameworkCore.Design
+    Install-Package Microsoft.Extensions.Configuration.Json
+    Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+✅ Step 2: Folder Structure
+
+MVCApp/
+│
+├── Controllers/
+│   └── EmployeeController.cs
+│   └── DepartmentController.cs
+│
+├── Models/
+│   └── Employee.cs
+│   └── Department.cs
+│
+├── Repository/
+│   └── AppDbContext.cs
+│
+├── Services/
+│   └── IEmployeeService.cs
+│   └── EmployeeService.cs
+│   └── IDepartmentService.cs
+│   └── DepartmentService.cs
+│
+├── Views/
+│   └── Employee/ (Index.cshtml, Create.cshtml, Edit.cshtml, Details.cshtml, Delete.cshtml)
+│   └── Department/ (same as above)
+│
+├── appsettings.json
+└── program.cs       
+
+✅ Step 3: appsettings.json
+
+    {
+      "ConnectionStrings": {
+        "Default": "Server=.;Database=MVCDB;Trusted_Connection=True;TrustServerCertificate=True;"
+      },
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*"
+    }
+
+✅ Step 4: POCO Classes (Models)
+
+Employee.cs
+
+    public class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Salary { get; set; }
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
+    }
+
+Department.cs
+
+    public class Department
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+    }
+
+✅ Step 5: AppDbContext
+
+Repository/AppDbContext.cs
+
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+    }
+
+✅ Step 6: Services
+
+IEmployeeService.cs
+
+    public interface IEmployeeService
+    {
+        IEnumerable<Employee> GetAll();
+        Employee GetById(int id);
+        void Add(Employee employee);
+        void Update(Employee employee);
+        void Delete(int id);
+    }
+
+EmployeeService.cs
+
+    public class EmployeeService : IEmployeeService
+    {
+        private readonly AppDbContext _context;
+
+        public EmployeeService(AppDbContext context) => _context = context;
+
+        public IEnumerable<Employee> GetAll() => _context.Employees.Include(e => e.Department).ToList();
+
+        public Employee GetById(int id) => _context.Employees.Find(id);
+
+        public void Add(Employee employee) { _context.Employees.Add(employee); _context.SaveChanges(); }
+
+        public void Update(Employee employee) { _context.Employees.Update(employee); _context.SaveChanges(); }
+
+        public void Delete(int id)
+        {
+            var emp = _context.Employees.Find(id);
+            if (emp != null)
+            {
+                _context.Employees.Remove(emp);
+                _context.SaveChanges();
+            }
+        }
+    }
+
+(Similar for Department)
+✅ Step 7: Controller Example
+
+EmployeeController.cs
+
+    public class EmployeeController : Controller
+    {
+        private readonly IEmployeeService _service;
+
+        public EmployeeController(IEmployeeService service) => _service = service;
+
+        public IActionResult Index() => View(_service.GetAll());
+
+        public IActionResult Details(int id) => View(_service.GetById(id));
+
+        public IActionResult Create() => View();
+
+        [HttpPost]
+        public IActionResult Create(Employee emp)
+        {
+            if (ModelState.IsValid) { _service.Add(emp); return RedirectToAction("Index"); }
+            return View(emp);
+        }
+
+        public IActionResult Edit(int id) => View(_service.GetById(id));
+
+        [HttpPost]
+        public IActionResult Edit(Employee emp)
+        {
+            if (ModelState.IsValid) { _service.Update(emp); return RedirectToAction("Index"); }
+            return View(emp);
+        }
+
+        public IActionResult Delete(int id) => View(_service.GetById(id));
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            _service.Delete(id);
+            return RedirectToAction("Index");
+        }
+    }
+
+✅ Step 8: Program.cs Configuration
+
+    builder.Services.AddControllersWithViews();
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+    builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+    builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+
+    var app = builder.Build();
+    app.UseStaticFiles();
+    app.UseRouting();
+    app.MapControllerRoute(name: "default", pattern: "{controller=Employee}/{action=Index}/{id?}");
+    app.Run();
+
+✅ Step 9: Migrations
+    Run this in Package Manager Console:
+
+    Add-Migration InitialCreate
+    Update-Database
+
+✅ Step 10: Razor Views
+
+1. Create.cshtml for Employee:
+
+    @model MVC.Models.Employee
+
+    @{
+        ViewData["Title"] = "Create";
+    }
+
+    <h1 class="heading">Create New Employee</h1>
+
+    <form asp-action="Create" class="form-container">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Department"></label>
+            <input asp-for="Department" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">← Back to List</a>
+    </div>
+
+2. Edit.cshtml for Employee:
+
+    @model MVC.Models.Employee
+
+    @{
+        ViewData["Title"] = "Edit";
+    }
+
+    <h1 class="heading">Edit Employee</h1>
+
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Department"></label>
+            <input asp-for="Department" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">← Back to List</a>
+    </div>
+
+3. Delete.cshtml for Employee:
+
+    @model MVC.Models.Employee
+
+    @{
+        ViewData["Title"] = "Delete";
+    }
+
+    <h1 class="heading">Delete Employee</h1>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <p><strong>Name:</strong> @Model.Name</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Department:</strong> @Model.Department</p>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button> |
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+
+4. Details.cshtml for Employee:
+
+    @model MVC.Models.Employee
+
+    @{
+        ViewData["Title"] = "Details";
+    }
+
+    <h1 class="heading">Employee Details</h1>
+
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Department:</strong> @Model.Department</p>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a> |
+        <a asp-action="Index" class="btn btn-secondary">← Back to List</a>
+    </div>
+
+5. Index.cshtml for Employee:
+
+    @model IEnumerable<MVC.Models.Employee>
+
+        @{
+            ViewData["Title"] = "Index";
+        }
+        
+        <h1 class="heading">Employee List</h1>
+        
+        <p>
+            <a asp-action="Create" class="btn btn-success">Create New</a>
+        </p>
+        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.First().Name)</th>
+                    <th>@Html.DisplayNameFor(m => m.First().Email)</th>
+                    <th>@Html.DisplayNameFor(m => m.First().Department)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var emp in Model)
+                {
+                    <tr>
+                        <td>@emp.Name</td>
+                        <td>@emp.Email</td>
+                        <td>@emp.Department</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@emp.Id" class="btn btn-sm btn-primary">Edit</a>
+                            <a asp-action="Details" asp-route-id="@emp.Id" class="btn btn-sm btn-info">Details</a>
+                            <a asp-action="Delete" asp-route-id="@emp.Id" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        
