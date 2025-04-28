@@ -1,0 +1,90 @@
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\appsettings.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.staticwebassets.runtime.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.exe
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.deps.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.runtimeconfig.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.dll
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.pdb
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.AssemblyInfoInputs.cache
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.AssemblyInfo.cs
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.csproj.CoreCompileInputs.cache
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.RazorAssemblyInfo.cache
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.RazorAssemblyInfo.cs
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.MVCLog.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.build.MVCLog.props
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVCLog.props
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVCLog.props
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\bundle\MVCLog.styles.css
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\projectbundle\MVCLog.bundle.scp.css
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.dll
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\refint\MVCLog.dll
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.pdb
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.genruntimeconfig.cache
+C:\Users\Ketki\source\repos\MVCLog\MVCLog\obj\Debug\net8.0\ref\MVCLog.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\appsettings.Development.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\appsettings.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.staticwebassets.runtime.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.exe
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.deps.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.runtimeconfig.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.pdb
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.AssemblyInfoInputs.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.AssemblyInfo.cs
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.csproj.CoreCompileInputs.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.MvcApplicationPartsAssemblyInfo.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.RazorAssemblyInfo.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.RazorAssemblyInfo.cs
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.build.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.development.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.MVCLog.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.build.MVCLog.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVCLog.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVCLog.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\bundle\MVCLog.styles.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\projectbundle\MVCLog.bundle.scp.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\refint\MVCLog.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.pdb
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.genruntimeconfig.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCLog\MVCLog\obj\Debug\net8.0\ref\MVCLog.dll
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\appsettings.Development.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\appsettings.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.staticwebassets.runtime.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.exe
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.deps.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.runtimeconfig.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.dll
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\bin\Debug\net8.0\MVCLog.pdb
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.GeneratedMSBuildEditorConfig.editorconfig
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.AssemblyInfoInputs.cache
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.AssemblyInfo.cs
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.csproj.CoreCompileInputs.cache
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.MvcApplicationPartsAssemblyInfo.cache
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.RazorAssemblyInfo.cache
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.RazorAssemblyInfo.cs
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.build.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.development.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.MVCLog.Microsoft.AspNetCore.StaticWebAssets.props
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.build.MVCLog.props
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVCLog.props
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVCLog.props
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\staticwebassets.pack.json
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\bundle\MVCLog.styles.css
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\scopedcss\projectbundle\MVCLog.bundle.scp.css
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.dll
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\refint\MVCLog.dll
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.pdb
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\MVCLog.genruntimeconfig.cache
+D:\codeblooded\dot net\14 Day\MVCLog\MVCLog\obj\Debug\net8.0\ref\MVCLog.dll

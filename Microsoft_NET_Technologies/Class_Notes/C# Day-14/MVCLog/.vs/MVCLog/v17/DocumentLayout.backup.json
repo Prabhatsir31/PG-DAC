@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|d:\\codeblooded\\dot net\\14 day\\mvclog\\mvclog\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|solutionrelative:mvclog\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|d:\\codeblooded\\dot net\\14 day\\mvclog\\mvclog\\textfile.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|solutionrelative:mvclog\\textfile.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|d:\\codeblooded\\dot net\\14 day\\mvclog\\mvclog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|solutionrelative:mvclog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|d:\\codeblooded\\dot net\\14 day\\mvclog\\mvclog\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|solutionrelative:mvclog\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|d:\\codeblooded\\dot net\\14 day\\mvclog\\mvclog\\textfile.json||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8720B53C-FCCB-4268-BB23-0BDDAF6F83A3}|MVCLog\\MVCLog.csproj|solutionrelative:mvclog\\textfile.json||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TextFile.json",
+              "DocumentMoniker": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\TextFile.json",
+              "RelativeDocumentMoniker": "MVCLog\\TextFile.json",
+              "ToolTip": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\TextFile.json",
+              "RelativeToolTip": "MVCLog\\TextFile.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T07:24:11.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TextFile.json",
+              "DocumentMoniker": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\TextFile.json",
+              "RelativeDocumentMoniker": "MVCLog\\TextFile.json",
+              "ToolTip": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\TextFile.json",
+              "RelativeToolTip": "MVCLog\\TextFile.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-22T11:14:39.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\appsettings.json",
+              "RelativeDocumentMoniker": "MVCLog\\appsettings.json",
+              "ToolTip": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\appsettings.json",
+              "RelativeToolTip": "MVCLog\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-18T13:19:48.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVCLog\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVCLog\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T13:18:07.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\Program.cs",
+              "RelativeDocumentMoniker": "MVCLog\\Program.cs",
+              "ToolTip": "D:\\codeblooded\\dot net\\14 Day\\MVCLog\\MVCLog\\Program.cs",
+              "RelativeToolTip": "MVCLog\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T13:17:11.216Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

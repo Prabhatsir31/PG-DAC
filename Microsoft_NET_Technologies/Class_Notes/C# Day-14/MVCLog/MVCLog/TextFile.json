@@ -1,0 +1,16 @@
+﻿{
+    "Logging": {
+        "LogLevel": { // No provider, LogLevel applies to all the enabled providers.
+            "Default": "Error",
+            "Microsoft": "Warning"
+        },
+
+        "Console": {
+            "LogLevel": {
+
+                "Default": "Information"
+            }
+        }
+
+    }
+}

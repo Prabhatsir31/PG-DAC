@@ -1,0 +1,90 @@
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\appsettings.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.staticwebassets.runtime.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.exe
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.deps.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.runtimeconfig.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.dll
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.pdb
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.AssemblyInfoInputs.cache
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.AssemblyInfo.cs
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.csproj.CoreCompileInputs.cache
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.RazorAssemblyInfo.cache
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.RazorAssemblyInfo.cs
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.MVCerrpage.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.build.MVCerrpage.props
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVCerrpage.props
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVCerrpage.props
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\bundle\MVCerrpage.styles.css
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\projectbundle\MVCerrpage.bundle.scp.css
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.dll
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\refint\MVCerrpage.dll
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.pdb
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.genruntimeconfig.cache
+C:\Users\Ketki\source\repos\MVCerrpage\MVCerrpage\obj\Debug\net8.0\ref\MVCerrpage.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\appsettings.Development.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\appsettings.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.staticwebassets.runtime.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.exe
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.deps.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.runtimeconfig.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.pdb
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.AssemblyInfoInputs.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.AssemblyInfo.cs
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.csproj.CoreCompileInputs.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.MvcApplicationPartsAssemblyInfo.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.RazorAssemblyInfo.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.RazorAssemblyInfo.cs
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.build.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.development.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.MVCerrpage.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.build.MVCerrpage.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVCerrpage.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVCerrpage.props
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\bundle\MVCerrpage.styles.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\projectbundle\MVCerrpage.bundle.scp.css
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\refint\MVCerrpage.dll
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.pdb
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.genruntimeconfig.cache
+D:\Dotnet All\Dotnet\Dotnet All\Dotnet_core\coreASP_MVC\Examples\Livetech\MVCerrpage\MVCerrpage\obj\Debug\net8.0\ref\MVCerrpage.dll
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\appsettings.Development.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\appsettings.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.staticwebassets.runtime.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.exe
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.deps.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.runtimeconfig.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.dll
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\bin\Debug\net8.0\MVCerrpage.pdb
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.GeneratedMSBuildEditorConfig.editorconfig
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.AssemblyInfoInputs.cache
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.AssemblyInfo.cs
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.csproj.CoreCompileInputs.cache
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.MvcApplicationPartsAssemblyInfo.cache
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.RazorAssemblyInfo.cache
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.RazorAssemblyInfo.cs
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.build.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.development.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.MVCerrpage.Microsoft.AspNetCore.StaticWebAssets.props
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.build.MVCerrpage.props
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVCerrpage.props
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVCerrpage.props
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\staticwebassets.pack.json
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\bundle\MVCerrpage.styles.css
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\scopedcss\projectbundle\MVCerrpage.bundle.scp.css
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.dll
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\refint\MVCerrpage.dll
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.pdb
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\MVCerrpage.genruntimeconfig.cache
+D:\codeblooded\dot net\14 Day\MVCerrpage\MVCerrpage\obj\Debug\net8.0\ref\MVCerrpage.dll
