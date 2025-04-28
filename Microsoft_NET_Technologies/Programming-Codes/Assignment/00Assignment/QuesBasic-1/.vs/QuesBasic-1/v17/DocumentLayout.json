@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Assignment\\00Assignment\\QuesBasic-1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8492773E-D084-4B7C-8FF4-DECC265749F5}|QuesBasic-1\\QuesBasic-1.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\assignment\\00assignment\\quesbasic-1\\quesbasic-1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8492773E-D084-4B7C-8FF4-DECC265749F5}|QuesBasic-1\\QuesBasic-1.csproj|solutionrelative:quesbasic-1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Assignment\\00Assignment\\QuesBasic-1\\QuesBasic-1\\Program.cs",
+              "RelativeDocumentMoniker": "QuesBasic-1\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Assignment\\00Assignment\\QuesBasic-1\\QuesBasic-1\\Program.cs",
+              "RelativeToolTip": "QuesBasic-1\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T10:01:08.635Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

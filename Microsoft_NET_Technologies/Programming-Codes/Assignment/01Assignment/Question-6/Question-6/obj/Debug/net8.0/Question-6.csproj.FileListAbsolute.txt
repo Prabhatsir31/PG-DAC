@@ -1,0 +1,14 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\bin\Debug\net8.0\Question-6.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\bin\Debug\net8.0\Question-6.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\bin\Debug\net8.0\Question-6.runtimeconfig.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\bin\Debug\net8.0\Question-6.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\bin\Debug\net8.0\Question-6.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\refint\Question-6.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\Question-6.genruntimeconfig.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\01Assignment\Question-6\Question-6\obj\Debug\net8.0\ref\Question-6.dll

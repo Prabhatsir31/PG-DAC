@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Assignment\\01Assignment\\Question-12\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29B5D16D-871B-43B5-85CE-96C62089BDD9}|Question-12\\Question-12.csproj|e:\\sm_vita-dac\\main_course\\microsoft_net_technologies\\programming_codes\\assignment\\01assignment\\question-12\\question-12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29B5D16D-871B-43B5-85CE-96C62089BDD9}|Question-12\\Question-12.csproj|solutionrelative:question-12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Assignment\\01Assignment\\Question-12\\Question-12\\Program.cs",
+              "RelativeDocumentMoniker": "Question-12\\Program.cs",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\Microsoft_NET_Technologies\\Programming_Codes\\Assignment\\01Assignment\\Question-12\\Question-12\\Program.cs",
+              "RelativeToolTip": "Question-12\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T13:40:44.795Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

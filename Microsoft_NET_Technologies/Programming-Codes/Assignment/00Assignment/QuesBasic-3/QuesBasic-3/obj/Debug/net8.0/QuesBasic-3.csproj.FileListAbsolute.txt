@@ -1,0 +1,14 @@
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\bin\Debug\net8.0\QuesBasic-3.exe
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\bin\Debug\net8.0\QuesBasic-3.deps.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\bin\Debug\net8.0\QuesBasic-3.runtimeconfig.json
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\bin\Debug\net8.0\QuesBasic-3.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\bin\Debug\net8.0\QuesBasic-3.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.GeneratedMSBuildEditorConfig.editorconfig
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.AssemblyInfoInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.AssemblyInfo.cs
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.csproj.CoreCompileInputs.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\refint\QuesBasic-3.dll
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.pdb
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\QuesBasic-3.genruntimeconfig.cache
+E:\SM_VITA-DAC\MAIN_COURSE\Microsoft_NET_Technologies\Programming_Codes\Assignment\00Assignment\QuesBasic-3\QuesBasic-3\obj\Debug\net8.0\ref\QuesBasic-3.dll
