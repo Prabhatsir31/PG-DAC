@@ -1,0 +1,10 @@
+body {
+    background-color: aqua;
+    font-family: Arial,sans-serif;
+}
+
+h1 {
+    padding: 20px;
+    background-color: pink;
+    text-align: center;
+}
