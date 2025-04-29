@@ -9,9 +9,9 @@
 </head>
 <body>
     <h1>JAVASCRIPT</h1>
-
+<!-- 
     <script>
-        "use strict";
+        "use strict"; 
 
 
         // function go()
@@ -179,12 +179,22 @@
 // document.write(add());
 // document.write(add());
 
-
-
-
 </script> 
 
-<!-- </script> -->
+ </script> -->
+
+ <p>Counting with a local variable.</p>
+ <button type="button" onclick="myFunction()">Count!</button>//3
+ <p id="demo">0</p>
+ <script>
+ var add = (function () { 
+ var counter = 0;
+ return function (){return counter += 1;}
+ })(); //1
+ function myFunction(){//4
+ document.getElementById("demo").innerHTML = add();//5
+ }
+ </script>
 
 
 
