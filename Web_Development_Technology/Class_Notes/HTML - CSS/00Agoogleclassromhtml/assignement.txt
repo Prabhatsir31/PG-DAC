@@ -1,0 +1,34 @@
+1. click on image  it should open bigger image in new window 
+2. Write data  in list.html
+HTML
+HTTP
+TCP
+
+When you click on this text it should take you to another file at that location where you have given explanation of it.
+
+
+
+4.
+
+ 1.section I
+	1 data1
+	2 data2
+	3 data3
+ 2. section II
+	1.data1
+	2.data2
+	3.data3
+
+5. section III
+	1. name of friends
+		a. raj
+		b.mona
+	2. name of fruits
+		a.apple
+		b.banana
+
+	
+6.display your photo and write 10 line next to image
+7. create a hyperlink which will take you to the google site
+8. create a hyperlink having list of assignement when you click respective assignement should get open in new tab
+9. rewise inline tag
