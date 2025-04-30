@@ -1,0 +1,615 @@
+DAY-1 
+--------------
+
+HTML-5
+---------
+Key Features of HTML5:
+   Doctype Simplified
+   <!DOCTYPE html>
+   New Semantic Elements
+   Helps describe the meaning of content:
+       <header>, <footer>, <article>, <section>, <nav>, <main>, etc.
+   Multimedia Support (No Plugins Needed)
+   Native tags for audio and video:
+       <audio>, <video>
+   Form Enhancements
+   New input types and attributes:
+       <input type="email">, <input type="date">, <input type="range">, required, placeholder, etc.
+   Canvas and SVG
+   For drawing graphics and animations:
+       <canvas> tag for rendering graphics
+       SVG (Scalable Vector Graphics) support
+   Better APIs
+   For dynamic content:
+       Geolocation API
+       Local Storage & Session Storage
+       Drag-and-Drop API
+Example HTML5 Page
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <title>Page Title</title>
+     </head>
+     <body>
+       <header>
+         <!-- Logo, Site Title, Navigation -->
+       </header>
+       <nav>
+         <!-- Main Navigation Links -->
+       </nav>
+       <main>
+         <section>
+           <article>
+             <!-- Main Content -->
+           </article>
+         </section>
+         <aside>
+           <!-- Sidebar Content -->
+         </aside>
+       </main>
+       <footer>
+         <!-- Footer Information -->
+       </footer>
+     </body>
+   </html>
+
+All Tags used in HTML-5
+----------------------------
+
+Singleton Tags (Self-closing):
+
+<!DOCTYPE html> - Declares the document type and version of HTML.
+<html> - Root element of an HTML document.
+<meta> - Provides metadata about the document such as character encoding and viewport settings.
+<link> - Defines the relationship between a document and an external resource (typically for linking CSS).
+<br> - Represents a line break in the text.
+<hr> - Defines a thematic break or horizontal rule, often used to separate content.
+<img> - Embeds an image in the document.
+<input> - Represents an input control, such as a text field or button.
+<area> - Defines an area inside an image map.
+<base> - Specifies a base URL for relative URLs in a document.
+<col> - Specifies column properties for <colgroup>.
+<embed> - Embeds external content, such as multimedia or interactive elements.
+<source> - Specifies multiple media resources for <audio> and <video> elements.
+<track> - Provides text tracks for <video> or <audio> elements, such as subtitles.
+<wbr> - Suggests a possible line break in long text.
+<command> - Represents a command or action the user can invoke (deprecated in HTML5).
+<keygen> - Defines a key-pair generator control for security purposes (deprecated in HTML5).
+<menuitem> - Represents a command in a <menu> element (deprecated in HTML5).
+<basefont> - Sets the default font size, face, and color for an entire document (deprecated in HTML5).
+<spacer> - Adds spacing in layouts (deprecated in HTML5).
+<font> - Defines font attributes for text (deprecated in HTML5).
+<center> - Centers content (deprecated in HTML5).
+<acronym> - Represents an acronym (deprecated in HTML5, replaced by <abbr>).
+
+Pair Tags:
+----------
+
+<html> - Root element that contains all HTML content of the document.
+<head> - Contains metadata for the document like the title, character set, and links to CSS files.
+<title> - Sets the title of the HTML document, displayed in the browser's title bar or tab.
+<body> - Contains the main content of the HTML document, visible to users.
+<header> - Represents introductory content or navigational links.
+<nav> - Contains navigation links.
+<article> - Represents an independent, self-contained piece of content.
+<section> - Represents a section of related content in the document.
+<aside> - Represents content indirectly related to the main content.
+<footer> - Represents footer content such as copyright or contact information.
+<main> - Represents the main content of the document.
+<h1> to <h6> - Defines HTML headings, <h1> being the highest level and <h6> the lowest.
+<p> - Represents a paragraph of text.
+<a> - Defines a hyperlink to another webpage or location.
+<em> - Defines emphasized text, usually rendered in italics.
+<strong> - Represents strong emphasis, typically rendered in bold.
+<small> - Defines smaller text, typically used for fine print or disclaimers.
+<abbr> - Represents an abbreviation or acronym.
+<blockquote> - Represents a block of quoted text from an external source.
+<cite> - Represents the title of a creative work.
+<code> - Represents a fragment of computer code.
+<pre> - Represents preformatted text, preserving spaces and line breaks.
+<q> - Represents a short inline quotation.
+<del> - Represents deleted text, typically rendered with a strikethrough.
+<ins> - Represents inserted text, typically underlined.
+<var> - Represents a variable in programming or mathematical expressions.
+<dfn> - Represents the defining instance of a term.
+<kbd> - Represents user input from a keyboard.
+<sub> - Renders text as subscript.
+<sup> - Renders text as superscript.
+<iframe> - Embeds another HTML document within the current document.
+<embed> - Embeds external content, such as multimedia or interactive content.
+<object> - Embeds an external resource like multimedia or interactive content.
+<audio> - Embeds audio content, such as music or sound files.
+<video> - Embeds video content.
+<svg> - Defines scalable vector graphics for images and animations.
+<canvas> - Defines a 2D drawing surface for graphics and images.
+<math> - Embeds mathematical content and formulas.
+<noscript> - Provides alternative content for users with JavaScript disabled.
+<datalist> - Contains predefined options for a <input> element.
+<output> - Represents the result of a calculation or user action.
+<progress> - Represents the progress of a task.
+<meter> - Represents a scalar measurement within a known range.
+<details> - Represents a disclosure widget for additional information.
+<summary> - Represents a summary or heading for a <details> element.
+<figure> - Represents media content (images, videos, etc.) with an optional caption.
+<figcaption> - Defines a caption for a <figure> element.
+<mark> - Highlights parts of text.
+<time> - Represents a specific time or date.
+<ruby> - Represents text annotations or ruby annotations for East Asian typography.
+<rt> - Represents the pronunciation of characters in a <ruby> element.
+<rp> - Provides parentheses for browsers that do not support <ruby> annotations.
+<bdi> - Isolates text to prevent unwanted text direction changes.
+<bdo> - Overrides the current text direction.
+<wbr> - Represents a possible line break opportunity in a long string of text.
+
+Difference between HTML and HTML5 
+----------------------------------------
+
+Difference Between HTML and HTML5
+
+1. Doctype Declaration:
+   - HTML: The doctype declaration was <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> in older versions (HTML4).
+   - HTML5: The doctype declaration is simplified to <!DOCTYPE html>, making it cleaner and more straightforward.
+
+2. Elements and Attributes:
+   - HTML: HTML4 had several attributes that were often used to define specific document types, like <font>, <center>, and <b>.
+   - HTML5: These elements and attributes were deprecated. HTML5 introduced new semantic elements such as <header>, <footer>, <article>, <section>, and <nav> to enhance readability and structure.
+
+3. Multimedia Support:
+   - HTML: No built-in support for audio or video elements. Developers had to rely on third-party plugins like Flash or QuickTime for embedding media.
+   - HTML5: HTML5 introduced native support for audio and video through the <audio> and <video> elements, making it easier to embed multimedia content without external plugins.
+
+4. Form Enhancements:
+   - HTML: HTML4 had limited input types and form controls, such as <input type="text">, <input type="checkbox">, etc.
+   - HTML5: HTML5 introduced new input types like email, date, number, url, range, search, and more, making form validation and user input easier. It also introduced the <datalist> and <progress> elements for better data handling and display.
+
+5. New APIs and Features:
+   - HTML: HTML lacked many advanced features for modern web applications.
+   - HTML5: HTML5 introduced many new APIs and features to support richer web applications. Examples include:
+     - Geolocation API: Allows websites to determine the user’s location.
+     - Local Storage: A persistent client-side storage for web applications.
+     - Canvas API: Allows drawing graphics and creating animations.
+     - Web Workers: Allows background scripts to run without blocking the main UI thread.
+     - WebSockets: Enables real-time communication between the client and server.
+
+6. Deprecated Tags:
+   - HTML: Older versions of HTML used tags like <font>, <center>, and <marquee>, which were commonly used for styling.
+   - HTML5: These tags are deprecated in HTML5. Styling is now handled with CSS, and HTML5 focuses on semantic elements rather than presentation elements.
+
+7. Character Encoding:
+   - HTML: Older versions of HTML did not define a default character encoding, which led to potential issues with displaying special characters.
+   - HTML5: It specifies UTF-8 encoding as the default and recommends adding <meta charset="UTF-8"> in the <head> for character encoding support.
+
+8. Offline Support:
+   - HTML: HTML did not provide native support for offline applications.
+   - HTML5: HTML5 introduced the AppCache (Application Cache) API to allow websites to function offline by caching web assets.
+
+9. Compatibility:
+   - HTML: HTML4 was widely used for many years, and web browsers were built to render websites based on the HTML4 standard.
+   - HTML5: HTML5 is backward compatible with previous versions of HTML, meaning older websites will continue to work in browsers that support HTML5. However, to fully leverage HTML5 features, modern browsers are recommended.
+
+10. JavaScript Enhancements:
+   - HTML: HTML4 had limited support for JavaScript interactions with the page.
+   - HTML5: HTML5 introduced better support for JavaScript through new events and APIs, allowing for enhanced interactivity and manipulation of page elements.
+
+Summary of Differences:
+
+| Aspect           | HTML (HTML4)                                      | HTML5                                                          |
+|------------------|---------------------------------------------------|----------------------------------------------------------------|
+| Doctype          | <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">| <!DOCTYPE html>                                                |
+| Multimedia       | No native support, plugins required               | Native <audio> and <video> tags                                |
+| Input Types      | Basic types like text, password, checkbox         | New types like date, email, number, range, etc.                |
+| New Elements     | Limited semantic elements                         | New elements like <header>, <footer>, <article>, <section>, etc.|
+| Form Enhancements| Limited form input capabilities                   | New input types, form validation, <datalist>, etc.             |
+| Offline Support  | Not available                                     | AppCache API for offline functionality                         |
+| Graphics         | No built-in graphics API                          | <canvas> for 2D graphics and animations                        |
+| JavaScript       | Limited API support                               | New APIs for interaction (Geolocation, WebSockets, etc.)       |
+| Compatibility    | Works in older browsers                           | Backward compatible with older HTML versions                   |
+
+In short, HTML5 improves on HTML by making it more semantic, multimedia-friendly, and interactive, providing modern web applications with more robust capabilities.
+
+
+
+CSS 
+-------
+
+What is CSS?
+
+CSS stands for Cascading Style Sheets.
+
+It is used to describe the look and formatting of a document written in HTML.
+
+CSS allows you to apply styles such as:
+- Colors
+- Fonts
+- Margins
+- Padding
+- Borders
+- Positions
+- Animations
+- Layout (grid, flexbox, etc.)
+
+CSS separates content from design, making HTML cleaner and more maintainable.
+
+Example:
+HTML (content):
+<p>Hello World!</p>
+
+CSS (style):
+p {
+  color: blue;
+  font-size: 20px;
+}
+
+Types of CSS:
+1. Inline CSS – Applied directly within an HTML tag.
+   Example: <p style="color: red;">Hello</p>
+
+2. Internal CSS – Written inside a <style> tag in the <head> section.
+   Example:
+   <style>
+     p { color: green; }
+   </style>
+
+3. External CSS – Written in a separate .css file and linked to the HTML.
+   Example: 
+   <link rel="stylesheet" href="style.css">
+
+Benefits of CSS:
+- Saves time – Apply the same style across multiple pages.
+- Better control – Precise control over design elements.
+- Improved accessibility and performance.
+- Easier maintenance – Update one file to change the entire look.
+
+
+All properties in CSS 
+---------------------------
+
+===============================
+      CSS PROPERTIES LIST
+===============================
+
+--- Box Model ---
+margin              : Outer space around elements
+padding             : Inner space inside the border
+border              : Border around elements
+width               : Width of the element
+height              : Height of the element
+box-sizing          : How total size of element is calculated
+
+--- Text & Font ---
+color               : Text color
+font-family         : Font style of the text
+font-size           : Size of the font
+font-weight         : Thickness of the font (e.g., bold)
+font-style          : Normal, italic, oblique
+text-align          : Alignment of text (left, center, right)
+text-decoration     : Underline, overline, line-through
+line-height         : Space between lines
+letter-spacing      : Space between letters
+word-spacing        : Space between words
+text-transform      : Capitalize, uppercase, lowercase
+
+--- Background ---
+background-color    : Background color of element
+background-image    : Image set as background
+background-repeat   : Repeat image (repeat, no-repeat)
+background-position : Position of background image
+background-size     : Cover, contain, or specific size
+background-attachment: Scroll or fixed background
+
+--- Position & Layout ---
+position            : static, relative, absolute, fixed, sticky
+top / right / bottom / left : Offset position
+z-index             : Stack order
+display             : block, inline, flex, grid, none
+float               : Align left or right
+clear               : Stop floating elements
+overflow            : hidden, scroll, auto
+visibility          : visible, hidden
+opacity             : Transparency (0 to 1)
+
+--- Flexbox ---
+display: flex
+flex-direction      : row, column
+justify-content     : space-between, center, flex-start
+align-items         : flex-start, center
+flex-wrap           : wrap or nowrap
+align-content       : space-around, stretch
+
+--- Grid ---
+display: grid
+grid-template-columns : Define number of columns
+grid-template-rows    : Define number of rows
+grid-gap             : Gap between rows/columns
+grid-column / row    : Placement of items
+
+--- Animation & Transition ---
+transition           : Shorthand for animation
+transition-duration  : Time of transition
+transition-delay     : Delay before animation starts
+transition-timing-function : ease, linear, ease-in
+animation-name       : Name of keyframes
+animation-duration   : Duration of animation
+animation-iteration-count : Infinite or number of times
+animation-direction  : Normal or reverse animation
+
+--- Border & Outline ---
+border               : Width, style, color
+border-radius        : Rounded corners
+outline              : Line outside the border
+box-shadow           : Shadow around element
+
+--- List & Table ---
+list-style           : Type, position, or image marker
+border-collapse      : Collapse or separate borders
+border-spacing       : Space between table cells
+empty-cells          : Show/hide empty table cells
+caption-side         : Table caption position
+
+--- User Interface ---
+cursor               : Pointer, text, wait, etc.
+resize               : Make element resizable
+pointer-events       : Enable/disable mouse events
+
+--- Miscellaneous ---
+content              : Used with ::before and ::after
+filter               : blur, brightness, grayscale, etc.
+backdrop-filter      : Filters background behind elements
+clip-path            : Clip the shape of the element
+visibility           : Control visibility without layout change
+
+
+Difference between CSS and CSS3 
+----------------------------------
+
+==================================================
+      DIFFERENCE BETWEEN CSS AND CSS3 WITH EXAMPLES
+==================================================
+
+1. VERSION:
+- CSS  : Traditional stylesheet used for styling HTML.
+- CSS3 : Latest standard, modular and more powerful.
+
+--------------------------------------------------
+2. SELECTORS:
+CSS Example:
+  div { color: blue; }
+
+CSS3 Example:
+  div:nth-child(2) { color: red; }
+
+--------------------------------------------------
+3. ANIMATION:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  div {
+    width: 100px;
+    transition: width 2s;
+  }
+  div:hover {
+    width: 200px;
+  }
+
+--------------------------------------------------
+4. BOX SHADOW:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  box-shadow: 10px 10px 5px grey;
+
+--------------------------------------------------
+5. BORDER RADIUS:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  border-radius: 10px;
+
+--------------------------------------------------
+6. MULTIPLE BACKGROUNDS:
+CSS Example:
+  background-image: url("bg1.jpg");
+
+CSS3 Example:
+  background-image: url("bg1.jpg"), url("bg2.jpg");
+
+--------------------------------------------------
+7. MEDIA QUERIES:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  @media (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+
+--------------------------------------------------
+8. FLEXBOX:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  display: flex;
+  justify-content: center;
+
+--------------------------------------------------
+9. TEXT SHADOW:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  text-shadow: 2px 2px 4px gray;
+
+--------------------------------------------------
+10. TRANSFORMS:
+CSS Example:
+  Not supported.
+
+CSS3 Example:
+  transform: rotate(45deg);
+
+
+JavaScript
+----------------
+=======================================
+           WHAT IS JAVASCRIPT?
+=======================================
+
+1. JavaScript is a lightweight, interpreted programming language used to create dynamic and interactive content on websites.
+
+2. It runs in the web browser and is commonly used to:
+   - Validate form inputs
+   - Create interactive UI elements
+   - Respond to user actions (like clicks or typing)
+   - Communicate with servers (AJAX)
+   - Manipulate HTML and CSS (DOM manipulation)
+
+3. JavaScript is a **client-side scripting language**, but with environments like **Node.js**, it can also be used on the **server-side**.
+
+4. JavaScript is **object-based**, **event-driven**, and **loosely typed**.
+
+=======================================
+        SIMPLE JAVASCRIPT EXAMPLE
+=======================================
+
+<script>
+  function greet() {
+    alert("Hello, welcome to JavaScript!");
+  }
+</script>
+
+<button onclick="greet()">Click Me</button>
+
+=======================================
+       KEY FEATURES OF JAVASCRIPT
+=======================================
+
+1. **Lightweight and Interpreted**  
+   - JavaScript is executed line-by-line in the browser without prior compilation.
+
+2. **Dynamic Typing**  
+   - Variables are not bound to a specific type and can hold any data type at runtime.
+
+3. **Object-Based**  
+   - JavaScript supports the use of objects for real-world modeling and structuring code.
+
+4. **First-Class Functions**  
+   - Functions are treated like variables. They can be assigned, passed, and returned.
+
+5. **Event-Driven**  
+   - JavaScript can respond to user actions (like clicks, keypresses, etc.) via events.
+
+6. **Platform-Independent**  
+   - Runs on any OS or browser with a JavaScript engine (cross-platform).
+
+7. **Prototype-Based Inheritance**  
+   - Uses prototypes instead of classical inheritance to extend objects.
+
+8. **Asynchronous Programming**  
+   - Supports non-blocking operations using callbacks, promises, and async/await.
+
+9. **Client-Side Scripting**  
+   - Runs in the browser, enhancing interactivity without reloading the page.
+
+10. **Server-Side Capability**  
+    - With environments like Node.js, JavaScript can also run on servers.
+
+11. **DOM Manipulation**  
+    - JavaScript can interact with and modify HTML/CSS using the DOM API.
+
+12. **Highly Versatile**  
+    - Can be used for frontend, backend, game development, mobile apps, etc.
+
+=======================================
+
+
+
+Basic of Javascript 
+------------------------
+
+=======================================
+          BASICS OF JAVASCRIPT
+=======================================
+
+1. What is JavaScript?
+- JavaScript is a scripting language used to create dynamic and interactive content on websites.
+
+2. How to Include JavaScript in HTML?
+- Using the <script> tag
+Example:
+<script>
+  alert("Hello, JavaScript!");
+</script>
+
+3. Variables
+- Used to store data values.
+- Declared using var, let, or const.
+Example:
+let name = "John";
+const age = 25;
+
+4. Data Types
+- String, Number, Boolean, Object, Array, Null, Undefined
+Example:
+let city = "New York"; // String
+let score = 90;        // Number
+
+5. Operators
+- +, -, *, /, %, ==, ===, !=, &&, ||, etc.
+Example:
+let result = 10 + 5;
+
+6. Conditional Statements
+- if, else if, else, switch
+Example:
+if (score > 50) {
+  alert("Pass");
+} else {
+  alert("Fail");
+}
+
+7. Loops
+- for, while, do...while
+Example:
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+8. Functions
+- Block of code that performs a task.
+Example:
+function greet() {
+  alert("Welcome!");
+}
+greet();
+
+9. Events
+- Handle user interactions like click, hover.
+Example:
+<button onclick="greet()">Click Me</button>
+
+10. Arrays
+- Store multiple values in one variable.
+Example:
+let fruits = ["Apple", "Banana", "Cherry"];
+
+11. Objects
+- Collection of properties (key-value pairs).
+Example:
+let person = {
+  name: "Alice",
+  age: 30
+};
+
+12. DOM Manipulation
+- Changing content and styles of HTML using JavaScript.
+Example:
+document.getElementById("demo").innerHTML = "Changed!";
+
+Everything ued in JavaScript
+-----------------------------------
