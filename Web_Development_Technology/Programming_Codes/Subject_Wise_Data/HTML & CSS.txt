@@ -1,6 +1,3 @@
-DAY-1 
---------------
-
 HTML-5
 ---------
 Key Features of HTML5:
