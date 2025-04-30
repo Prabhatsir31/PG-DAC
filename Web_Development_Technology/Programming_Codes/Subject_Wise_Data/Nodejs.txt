@@ -1,0 +1,165 @@
+NODE.JS OVERVIEW
+----------------
+
+1. What is Node.js?
+--------------------
+- Node.js is an open-source, cross-platform JavaScript runtime environment.
+- It runs JavaScript code outside of a browser (on the server).
+- Built on Google Chrome's V8 JavaScript engine.
+
+2. Features of Node.js
+-----------------------
+- Asynchronous and Event-Driven
+- Fast Execution with V8 Engine
+- Single-threaded but highly scalable
+- No Buffering – Streams data
+- Cross-platform
+- NPM (Node Package Manager) support
+
+3. Architecture
+----------------
+- Single-threaded Event Loop
+- Non-blocking I/O
+- Callback functions & event-driven architecture
+
+4. Node.js vs Traditional Server
+--------------------------------
+Traditional Server:
+    - Multithreaded
+    - Each request creates a new thread
+
+Node.js:
+    - Single-threaded
+    - Handles multiple requests using event loop
+
+5. Use Cases
+------------
+- Web Servers (Express.js)
+- Real-time apps (chat apps, live updates)
+- RESTful APIs
+- Command-line tools
+- Microservices
+
+6. Installing Node.js
+----------------------
+- Download from https://nodejs.org/
+- Verify using:
+    > node -v
+    > npm -v
+
+7. Running Node.js Program
+---------------------------
+Example:
+// hello.js
+console.log("Hello, Node.js!");
+Run:
+> node hello.js
+
+8. Modules in Node.js
+----------------------
+- Built-in Modules: fs, http, path, os, url
+- Custom Modules: You can create your own and export functions
+- Third-party Modules: Installed via npm (e.g., express)
+
+Example:
+const fs = require('fs');
+fs.writeFileSync('demo.txt', 'Hello File System');
+
+9. Exporting and Importing Modules
+-----------------------------------
+myModule.js
+exports.greet = function(name) {
+  return `Hello, ${name}`;
+};
+
+main.js
+const m = require('./myModule');
+console.log(m.greet('Node'));
+
+10. NPM - Node Package Manager
+-------------------------------
+- Install package:
+  > npm install package-name
+- Global Install:
+  > npm install -g nodemon
+- package.json:
+  > npm init
+- To install all:
+  > npm install
+
+11. Creating HTTP Server
+--------------------------
+const http = require('http');
+const server = http.createServer((req, res) => {
+  res.write('Hello from Node.js Server!');
+  res.end();
+});
+server.listen(3000);
+
+12. Express.js (Web Framework)
+-------------------------------
+- Install: npm install express
+Example:
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+  res.send('Welcome to Express!');
+});
+app.listen(3000);
+
+13. File System (fs module)
+----------------------------
+- Read/Write Files
+- Create/Delete files
+- Create directories
+
+14. Events and EventEmitter
+----------------------------
+const events = require('events');
+const emitter = new events.EventEmitter();
+
+emitter.on('start', () => {
+  console.log('Started!');
+});
+emitter.emit('start');
+
+15. Streams
+------------
+- Used to read/write large data
+- Types: Readable, Writable, Duplex, Transform
+
+16. Buffer
+----------
+- Temporary memory for stream processing
+const buf = Buffer.from('Hello');
+console.log(buf);
+
+17. Middleware in Express
+--------------------------
+- Functions that execute during request-response cycle
+app.use((req, res, next) => {
+  console.log('Middleware Called');
+  next();
+});
+
+18. Error Handling
+-------------------
+- Try-catch blocks
+- Custom error middleware in Express
+
+19. Environment Variables
+--------------------------
+Use .env file with dotenv package
+require('dotenv').config();
+console.log(process.env.PORT);
+
+20. Debugging Node.js
+----------------------
+- Use `console.log`
+- Or: node inspect app.js
+- Or use VS Code debugger
+
+21. Conclusion
+---------------
+- Node.js enables building fast, scalable server-side applications using JavaScript.
+- Excellent for microservices, APIs, real-time apps, and command-line tools.
