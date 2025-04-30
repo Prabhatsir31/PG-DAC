@@ -1,0 +1,291 @@
+==============================
+      TYPESCRIPT NOTES
+==============================
+
+1. What is TypeScript?
+   - TypeScript is a superset of JavaScript that adds static typing.
+   - It is compiled to JavaScript using the TypeScript compiler (tsc).
+   - Helps catch errors during development (compile-time).
+   - File extension: .ts
+
+   Example:
+   let name: string = "John";
+
+-------------------------------
+
+2. Type Annotations
+   - Explicitly define types of variables, function parameters, and return types.
+
+   Example:
+   let age: number = 25;
+   let isAdmin: boolean = true;
+   let names: string[] = ["John", "Jane"];
+
+-------------------------------
+
+3. Functions
+   - TypeScript allows specifying parameter and return types.
+
+   Example:
+   function greet(name: string): string {
+     return "Hello " + name;
+   }
+
+-------------------------------
+
+4. Optional and Default Parameters
+   - Use `?` for optional and `=` for default parameters.
+
+   Example:
+   function greet(name: string = "Guest") {
+     console.log("Hello " + name);
+   }
+
+-------------------------------
+
+5. Interfaces
+   - Used to define object structure.
+
+   Example:
+   interface Person {
+     name: string;
+     age: number;
+   }
+
+   let user: Person = {
+     name: "Alice",
+     age: 30
+   };
+
+-------------------------------
+
+6. Classes
+   - TypeScript supports classes, constructors, inheritance, and access modifiers.
+
+   Example:
+   class Animal {
+     constructor(public name: string) {}
+     speak() {
+       console.log(this.name + " makes a sound.");
+     }
+   }
+
+   class Dog extends Animal {
+     speak() {
+       console.log(this.name + " barks.");
+     }
+   }
+
+   const dog = new Dog("Tommy");
+   dog.speak();
+
+-------------------------------
+
+7. Access Modifiers
+   - public: Accessible anywhere (default)
+   - private: Accessible only inside the class
+   - protected: Accessible inside the class and its subclasses
+
+   Example:
+   class Test {
+     private value: number;
+     constructor() {
+       this.value = 10;
+     }
+   }
+
+-------------------------------
+
+8. Enums
+   - Define named constants.
+
+   Example:
+   enum Direction {
+     Up,
+     Down,
+     Left,
+     Right
+   }
+
+   let dir: Direction = Direction.Up;
+
+-------------------------------
+
+9. Type Aliases
+   - Create a new name for a type.
+
+   Example:
+   type ID = number | string;
+
+   let userId: ID = 101;
+   userId = "ABC123";
+
+-------------------------------
+
+10. Union and Intersection Types
+    - Union (`|`) allows multiple types.
+    - Intersection (`&`) combines types.
+
+    Example:
+    function printId(id: number | string) {
+      console.log("ID: " + id);
+    }
+
+-------------------------------
+
+11. Generics
+    - Used to create reusable components.
+
+    Example:
+    function identity<T>(value: T): T {
+      return value;
+    }
+
+    let result = identity<number>(10);
+
+-------------------------------
+
+12. Tuples
+    - Fixed-length array with known types.
+
+    Example:
+    let tuple: [string, number] = ["Age", 25];
+
+-------------------------------
+
+13. Type Assertions
+    - Tells the compiler to treat a variable as a specific type.
+
+    Example:
+    let someValue: any = "hello";
+    let strLength: number = (someValue as string).length;
+
+-------------------------------
+
+14. Never Type
+    - Represents a value that never occurs (e.g., error or infinite loop).
+
+    Example:
+    function throwError(): never {
+      throw new Error("Something went wrong!");
+    }
+
+-------------------------------
+
+15. Void Type
+    - Used when a function does not return a value.
+
+    Example:
+    function logMessage(): void {
+      console.log("Logging...");
+    }
+
+-------------------------------
+
+16. Nullable Types
+    - You can allow `null` or `undefined` in types using `|`.
+
+    Example:
+    let input: string | null = null;
+
+-------------------------------
+
+17. Readonly Modifier
+    - Prevents reassignment to properties.
+
+    Example:
+    interface User {
+      readonly id: number;
+      name: string;
+    }
+
+    let u: User = { id: 1, name: "Alex" };
+    // u.id = 2; // Error
+
+-------------------------------
+
+18. Modules
+    - TypeScript uses ES Modules for modular programming.
+    - Use `export` and `import`.
+
+    Example:
+// math.ts
+export function add(x: number, y: number): number {
+  return x + y;
+}
+
+// app.ts
+import { add } from './math';
+
+-------------------------------
+
+19. Namespace (old-style modules)
+    - Encapsulate code inside a namespace.
+
+    Example:
+    namespace Utility {
+      export function log(msg: string) {
+        console.log(msg);
+      }
+    }
+
+    Utility.log("Hello");
+
+-------------------------------
+
+20. Decorators (Advanced)
+    - Functions that add metadata or behavior to classes/properties.
+    - Requires `"experimentalDecorators": true` in tsconfig.json
+
+    Example:
+    function Log(target: any) {
+      console.log("Class decorated");
+    }
+
+    @Log
+    class Test {}
+
+-------------------------------
+
+21. TypeScript Config (tsconfig.json)
+    - Used to configure the TypeScript compiler.
+
+    Example:
+    {
+      "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "strict": true,
+        "outDir": "./dist"
+      }
+    }
+
+-------------------------------
+
+22. Type Inference
+    - TypeScript infers the type if not explicitly mentioned.
+
+    Example:
+    let x = 5; // inferred as number
+
+-------------------------------
+
+23. Difference between TypeScript and JavaScript
+    - TypeScript adds types, classes, interfaces, etc.
+    - JavaScript is loosely typed.
+    - TypeScript is compiled; JS is interpreted by browser.
+
+-------------------------------
+
+24. Benefits of TypeScript
+    - Type safety
+    - Better tooling (IntelliSense, code navigation)
+    - Easier to refactor
+    - Fewer runtime errors
+
+-------------------------------
+
+25. Install and Compile
+    - Install: npm install -g typescript
+    - Compile: tsc filename.ts
+
