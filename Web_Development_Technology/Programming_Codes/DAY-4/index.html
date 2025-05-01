@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function callme() {
+            let s = document.getElementById("pr");
+            alert(s);                              // Alerts [object HTMLParagraphElement]
+            alert(s.nodeName);                     // Alerts "P"
+            alert(s.childNodes[0].nodeValue);      // Alerts "Welcome"
+            alert(s.childNodes[0].nodeName);       // Alerts "#text"
+            alert(s.childNodes[0].nodeType);       // Alerts "3"
+            alert(s.innerHTML);                    // Alerts "Welcome<b> to world of</b> Dom"
+            alert(s.childNodes[1].childNodes[0].nodeValue);
+        }
+    </script>
+</head>
+<body>
+
+    <p onmouseover="callme()" id="pr">Welcome<b> to world of</b> Dom</p>
+
+</body>
+</html>

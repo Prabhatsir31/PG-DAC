@@ -1,0 +1,16 @@
+<html>
+  <head></head>
+  <body>
+    <p id="cp">PrabhatS</p>
+    <input type="button" value="copy" onclick="call()" />
+    <p id="pr"></p>
+    <script>
+      function call() {
+        var x = document.getElementById("cp");
+        var y = document.getElementById("pr");
+        y.innerHTML = x.innerHTML;
+      }
+    </script>
+  </body>
+</html>
+
