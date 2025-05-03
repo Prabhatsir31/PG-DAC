@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Cart with Submit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Book Store</h2>
+  <form name="bookForm" onsubmit="return false;">
+    <label>
+      <input type="checkbox" id="b1" onclick="updateCart()">
+      The Alchemist - ₹300
+    </label><br>
+    <label>
+      <input type="checkbox" id="b2" onclick="updateCart()">
+      Clean Code - ₹500
+    </label><br>
+    <label>
+      <input type="checkbox" id="b3" onclick="updateCart()">
+      JavaScript: The Good Parts - ₹450
+    </label><br><br>
+
+    <input type="button" value="Submit Cart" onclick="finalizeCart()">
+  </form>
+
+  <div>
+    <h3>Cart Preview</h3>
+    <div id="cart"></div>
+    <div id="total"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
