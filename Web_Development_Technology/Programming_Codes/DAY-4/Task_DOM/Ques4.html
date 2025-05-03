@@ -1,0 +1,38 @@
+<!-- Q4. Create a div tag with background pink and text colour blue on click remove all css effect -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackgroundRemove</title>
+
+    <style>
+        .css {
+            background-color: pink;
+            color: blue;
+            padding: 25px;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="css">
+       <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, accusamus velit sit, facere quae officiis cupiditate praesentium est architecto iusto ut rem, nesciunt enim debitis quod quibusdam nisi ab quam quisquam cum quia aspernatur suscipit eum tenetur? Debitis iste et, corporis aut, eius asperiores nam, ullam facilis assumenda doloremque necessitatibus.
+       </p>
+    </div>
+
+    <script>
+        const div = document.querySelector('.css');
+        div.addEventListener('click', function() {
+            this.classList.remove('css');
+        });
+    </script>    
+</body>
+</html>
