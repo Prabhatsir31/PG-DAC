@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+
+<p id="demo"></p>
+<form>
+<label>Name</label><input name="fnm"/>
+<label>Age</label><input name="ag"/>
+
+<button type="button" onclick="loadDoc()">Send Form data</button>
+</form>
+<script>
+var paramsString = "q=hellohi&topic=api";
+var searchParams = new URLSearchParams(paramsString);
+
+//Iterate the search parameters.
+for (let p of searchParams) {
+  console.log(p);
+}
+function loadDoc() {
+ var form = document.querySelector('form');
+
+var data=new URLSearchParams(new FormData(form)).toString()
+
+console.log(data);
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	let headerdata=this.getAllResponseHeaders();
+	
+	  document.getElementById("demo").innerHTML = xhttp.responseText+"<br/>Data inserted<br/>"+headerdata
+    }
+  };
+ 
+
+  xhttp.open("POST","ejson.php" , true);
+  xhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+  xhttp.send(data);
+}
+</script>
+ 
+</body>
+</html>
