@@ -1,0 +1,18 @@
+<!-- Q1. Create two text box and button. Onclick copy data from 1Text box to another -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copy Text</title>
+</head>
+<body>
+  <input type="text" id="txt1" placeholder="Enter text here">
+  <button onclick="copyText()">Copy</button>
+  <input type="text" id="txt2">
+</body>
+<script>
+function copyText() {
+    document.getElementById('txt2').value = document.getElementById('txt1').value;
+  }
+</script>
+</html>
