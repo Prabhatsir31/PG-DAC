@@ -1,0 +1,21 @@
+<!-- Q2. Create Textbox on change it should print length of string in a div tag-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Textbox</title>
+</head>
+<body>
+  <input type="text" id="inputText" onchange="showLength()">
+  <div id="result"></div>
+</body>
+
+<script>
+    function showLength() {
+        const text = document.getElementById('inputText').value;
+        document.getElementById('result').innerText = "Length: " + text.length;
+    }
+</script>
+
+</html>
+
