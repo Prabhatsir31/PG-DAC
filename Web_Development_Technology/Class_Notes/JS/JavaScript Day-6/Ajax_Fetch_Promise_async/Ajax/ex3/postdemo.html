@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>       
+    <meta charset="UTF-8">       
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>   
+    <script>
+        function Storedata() {
+            const userData = {
+                job: "Programmer",
+                skills: [
+                    { id: 4200, name: "Angular" },
+                    { id: 3000, name: "React" },
+                    { id: 8080, name: "Vue" },
+                ],
+            };
+            // Store the object into storage
+            localStorage.setItem("userData", JSON.stringify(userData));
+        }
+        function Getdata() {
+            const data = localStorage.getItem("userData");
+            console.log(data.job);
+            let ta = document.getElementById("ta");
+            let obj = JSON.parse(data);
+            console.log(obj.job);
+            ta.innerHTML =JSON.stringify(obj);
+            console.log(JSON)
+        }
+    
+    </script>
+    <input type="button" value="Store object" onclick="Storedata()" />
+    <input type="button" value="Get object" onclick="Getdata()" />
+    <textarea  id="ta"></textarea>
+</body>
+
+</html>

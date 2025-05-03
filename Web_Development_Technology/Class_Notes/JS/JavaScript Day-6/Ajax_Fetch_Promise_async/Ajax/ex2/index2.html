@@ -1,0 +1,43 @@
+<html> 
+  <head> 
+    <title>An Ajax and PHP demo</title> 
+
+    <script language = "javascript">
+     
+
+      function getData(dataSource, divID) 
+      { 
+	   var  xhr = new XMLHttpRequest();
+        if(xhr) {
+          var obj = document.getElementById(divID); 
+          xhr.open("GET", dataSource,true); 
+			xhr.send(null); 
+          xhr.onreadystatechange = function() 
+          { alert(xhr.readyState)
+            if (xhr.readyState == 4 && 
+              xhr.status == 200) { 
+                obj.innerHTML += xhr.responseText; 
+            } 
+          } 
+          
+        }
+		call();
+		  
+      }
+	  function call()
+	  {
+	  var obj = document.getElementById('targetDiv');
+	  obj.innerHTML +="hello from call"
+	  }
+	                
+    </script>
+  </head> 
+  <body>
+    <H1>An Ajax and PHP demo</H1>
+    <form>
+      <input type = "button" value = "Fetch the message" 
+        onclick = "getData('data.html', 'targetDiv')"> 
+    </form>
+    <div id="targetDiv">      hello     </div> 
+  </body> 
+</html>

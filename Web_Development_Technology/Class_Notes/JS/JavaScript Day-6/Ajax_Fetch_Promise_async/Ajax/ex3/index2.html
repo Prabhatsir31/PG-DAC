@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>An Ajax and JSON demo</title>
+    <script>
+      function getData(dataSource, divID) {
+        var xhr = new XMLHttpRequest();
+        var obj = document.getElementById(divID);
+        obj.innerHTML = "Async.............";
+
+        xhr.open("GET", dataSource, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            let Ad = "";
+            let ao = JSON.parse(xhr.responseText);
+
+            // Use ao.value if the data is inside value property
+            let dataArray = Array.isArray(ao) ? ao : ao.value;
+
+            if (Array.isArray(dataArray)) {
+              for (let a1 of dataArray) {
+                for (let key in a1) {
+                  Ad += `<b>${key}</b>: ${a1[key]}<br>`;
+                }
+                Ad += "<hr/>";
+              }
+              obj.innerHTML = Ad;
+            } else {
+              obj.innerHTML = "No valid data array found in response.";
+            }
+          }
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <h1>An Ajax and JSON Demo</h1>
+    <form>
+      <input
+        type="button"
+        value="Fetch the message"
+        onclick="getData('https://localhost:7106/api/Employee', 'targetDiv')"
+        onclick="getData('ejson.json', 'targetDiv')"
+      />
+    </form>
+    <div id="targetDiv">
+      <p>The fetched message will appear here.</p>
+    </div>
+  </body>
+</html>
