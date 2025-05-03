@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<body>
+<h2>JavaScript SetTimeout()</h2>
+<p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+<h1 id="demo"></h1><script>
+setTimeout( function(){ myFunction("I love JS !!!"); 
+           }, 
+		   3000    
+		   );
+function myFunction(value){
+  document.getElementById("demo").innerHTML = value;
+}
+</script>
+</body>
+
+</html>

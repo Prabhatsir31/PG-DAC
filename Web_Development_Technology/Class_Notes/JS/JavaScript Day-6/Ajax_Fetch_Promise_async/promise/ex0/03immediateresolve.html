@@ -1,0 +1,11 @@
+<script>
+    let promise = new Promise(function (resolve, reject) {
+        //resolve("done!");
+        setTimeout(() => resolve("done----!"));
+        setTimeout(() => reject(new Error("Whoops!")));
+
+    });
+    promise.then((r) => alert(r),(err)=>alert(err))
+  //  promise.then(alert)
+  document.write("Happy to go ahead...")
+</script>

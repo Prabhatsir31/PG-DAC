@@ -1,0 +1,23 @@
+<script>
+   /* let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("RESULT"), 1000);
+    });
+
+   // promise.then((dd) => alert(dd));
+    //promise.finally(() =>alert("Result ready")); 
+
+    promise.finally(() => alert("Result ready")).then((dd) => alert(dd));
+    //......
+    */
+    new Promise((resolve, reject) => {
+      throw new Error("error");
+    }) 
+    .finally(() => alert("Promise ready"))
+	  . then(r => alert(r),err=>{ 
+        // throw new Error("dd")
+        return alert(err);
+        })
+    .then(r => alert("next then"))  
+	  .catch(err => alert(err+"...."))
+    .then((data)=>alert("mydata"));
+</script>
