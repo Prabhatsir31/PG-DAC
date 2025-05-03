@@ -1,0 +1,19 @@
+<!-- a.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result Page</title>
+</head>
+<body>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get("t1");
+    const copiedName = urlParams.get("t2");
+
+    document.write("<h2>Submitted Data</h2>");
+    document.write("Original Name: " + name + "<br>");
+    document.write("Copied Name: " + copiedName);
+  </script>
+</body>
+</html>
