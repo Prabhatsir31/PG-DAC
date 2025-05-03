@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radio Button Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <p id="pp"></p>
+
+  <form name="frm">
+    <input type="number" name="t1" id="t1" required />
+    <span id="e1" style="color:red;"></span><br><br>
+
+    <input name="t2" type="number" id="t2" required />
+    <span id="e2" style="color:red;"></span><br><br>
+
+    <input type="radio" name="rd" value="+" onchange="readradio()" /> +
+    <input type="radio" name="rd" value="-" checked onchange="readradio()" /> - <br><br>
+
+    <input name="t3" id="t3" disabled /><br><br>
+
+    <input type="button" value="Read" onclick="readradio()" />
+    <input type="button" value="Chk" onclick="cc()" />
+    <input type="submit" value="Submit" onclick="submit()" />
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
