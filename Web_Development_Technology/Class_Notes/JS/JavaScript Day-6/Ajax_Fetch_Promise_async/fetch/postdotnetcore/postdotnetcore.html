@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html> <body>    <h2>The XMLHttpRequest Object</h2>
+         <p id="demo"></p>
+      <form>
+          <label>Name</label><input name="name" />
+          <label>email</label><input name="email" />          
+          <label>Department</label><input name="department" />
+          <button type="button" onclick="fetchdata();">Send Form data </button>
+     </form>
+          <p id="p"></p>
+    <script>
+        fetchdata= async function(){
+                  var  form  =  document.querySelector('form');
+                  var object = {};
+                  form=new FormData(form);
+                  console.log(form)
+                form.forEach(function(value, key){
+                object[key] = value;//  name="vita", email="vita@gmail.com", dept="HR"
+                });
+var json = JSON.stringify(object); 
+ console.log(json);
+    let  response  =  await  fetch("https://localhost:7106/api/Employee",
+        {  method:"post",
+           headers:   {
+                  'Content-Type':   'application/json;charset=utf-8'
+            },
+        body:json
+        }
+    );
+    if  (response.ok)  {  //  if  HTTP-status  is  200-299
+    let x  =  response;           
+    document.getElementById('p').innerHTML=x   
+        }       
+        
+        else  
+           alert("HTTP-Error:  "  +  response.status);
+                     
+            }
+    
+    </script>
+ </body>

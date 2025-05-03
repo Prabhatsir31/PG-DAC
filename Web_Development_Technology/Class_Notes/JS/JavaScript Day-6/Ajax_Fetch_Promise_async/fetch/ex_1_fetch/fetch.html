@@ -1,0 +1,43 @@
+<script>
+function getdata()
+{
+fetch('ejson.json')
+.then(response=> response.json())
+.then(data=> {
+	let fd="";
+ alert(data)
+ 	console.log(data)
+	  for(let x of data)
+	  {console.log(x)
+	      for(let b in x)
+		  {console.log(x[b])
+		fd+=x[b]+"<br/>"
+	  }
+	  fd+="<hr/>";
+	  }
+document.getElementById('p').innerHTML=fd;
+});
+}
+getdata();
+/*
+function fetchData() {
+     return new Promise(function(resolve,reject){
+	reject();
+     });
+}
+let promise=fetchData();
+promise.then(function(){
+      console.log("data fetched");
+},(err)=>alert(err)).then(function(){
+
+        console.log("data formatted");
+}).catch(function(){
+       console.log("Fetch Error");
+}).then(function(){
+        console.log("data");
+});
+
+*/
+</script>
+<p id="p"></p>
+ 

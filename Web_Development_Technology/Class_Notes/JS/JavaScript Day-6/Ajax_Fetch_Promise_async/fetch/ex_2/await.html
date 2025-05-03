@@ -1,0 +1,31 @@
+<script>
+fetchdata= async function(){
+let  response  =  await  fetch("https://localhost:7106/api/Employee");
+if  (response.ok)  {  //  if  HTTP-status  is  200-299
+let  json  =  await  response.json();
+let fd="";
+	console.log(json)
+	  for(let x of json)
+	  {console.log(x)
+	      for(let b in x)
+		  {console.log(x[b])
+		fd+=x[b]+"<br/>"
+	  }
+	  fd+="<hr/>";
+	  }
+document.getElementById('p').innerHTML=fd;
+console.log(response.headers);
+    }  
+	
+	else  {
+        alert("HTTP-Error:  "  +  response.status);
+		
+		}
+		}
+fetchdata();
+</script>
+<h1> Getting data from server</h1>
+<p id="p"></p>
+<p id="p">hello this page</p>
+<hr/>
+
