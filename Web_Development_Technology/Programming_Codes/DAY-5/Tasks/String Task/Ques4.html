@@ -1,0 +1,118 @@
+<!-- Create a text box and on change validate entered data is a valid a valid password or not
+A valid password  must be minimum 8 character long maximum 16 character it must contain 1 capital letter ,
+1 small case letter , 1 digit and a special symbol. -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #password {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      #error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      #submit-button {
+        margin-top: 20px;
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #submit-button:hover {
+        background-color: #45a049;
+      }
+
+      #submit-button:disabled {
+        background-color: #cccccc;
+
+        cursor: not-allowed;
+      }
+
+      #submit-button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <label for="password">Password:</label>
+    <input type="password" id="password" oninput="validatePassword()" />
+    <p id="error-message"></p>
+
+    <button id="submit-button" onclick="submitPassword()" disabled>
+      Submit
+    </button>
+
+    <script>
+      function validatePassword() {
+        var password = document.getElementById("password").value;
+        var uppercaseRegex = /[A-Z]/;
+        var lowercaseRegex = /[a-z]/;
+        var digitRegex = /[0-9]/;
+        var specialRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+        var passwordLengthRegex = /^.{8,16}$/;
+        var errorMessage = document.getElementById("error-message");
+        var submitButton = document.getElementById("submit-button");
+        errorMessage.innerHTML = "";
+
+        let isValid = true;
+        if (!passwordLengthRegex.test(password)) {
+          errorMessage.innerHTML +=
+            "Password must be between 8 and 16 characters long. ";
+          isValid = false;
+        }
+
+        if (!uppercaseRegex.test(password)) {
+          errorMessage.innerHTML +=
+            "Password must contain at least one uppercase letter. ";
+          isValid = false;
+        }
+
+        if (!lowercaseRegex.test(password)) {
+          errorMessage.innerHTML +=
+            "Password must contain at least one lowercase letter. ";
+          isValid = false;
+        }
+
+        if (!digitRegex.test(password)) {
+          errorMessage.innerHTML +=
+            "Password must contain at least one digit. ";
+          isValid = false;
+        }
+
+        if (!specialRegex.test(password)) {
+          errorMessage.innerHTML +=
+            'Password must contain at least one special character (!@#$%^&*()_+\-=\[\]{};":\\|,.<>\/?).';
+          isValid = false;
+        }
+
+        // Enable or disable the submit button based on validity
+        submitButton.disabled = !isValid;
+      }
+
+      function submitPassword() {
+        alert("Password is valid and submitted!");
+      }
+    </script>
+  </body>
+</html>

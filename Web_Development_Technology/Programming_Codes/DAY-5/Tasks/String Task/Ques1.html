@@ -1,0 +1,42 @@
+<!-- Create a textbox and as you type each letter in textbox should appear in capital letters -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppercase</title>
+    <style>
+        #myTextbox {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        #displayText {
+            font-size: 20px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="myTextbox" oninput="convertToUpperCase()">
+    <p id="displayText"></p>
+
+
+    <script>
+        function convertToUpperCase() {
+            let inputText = document.getElementById("myTextbox").value;
+            let displayText = document.getElementById("displayText");
+            displayText.textContent = inputText.toUpperCase();
+            // displayText.innerText = inputText.toUpperCase(); // This also works
+            // displayText.innerHTML = inputText.toUpperCase(); // This also works
+        }
+
+    </script>
+</body>
+</html>

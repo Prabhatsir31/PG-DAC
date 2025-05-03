@@ -1,0 +1,103 @@
+<!-- Create a text box and on change validate entered data is a valid email id or not -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onChange_Validate</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffffdd;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #333;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        #errorMsg {
+            margin-top: 12px;
+            color: red;
+            font-size: 16px;
+            min-height: 24px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+            }
+
+            label {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Email Validation</h2>
+        <label for="email">Email:</label>
+        <input type="text" id="email" oninput="validateEmail()">
+        <p id="errorMsg"></p>
+    </div>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value.trim();
+            var emailRegex  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var errorMsg = document.getElementById("errorMsg");
+
+            if (email === "") {
+                errorMsg.innerHTML = "Email is required";
+            } else if (!emailRegex.test(email)) {
+                errorMsg.innerHTML = "Invalid email format";
+            } else {
+                errorMsg.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

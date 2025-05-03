@@ -1,0 +1,94 @@
+<!-- Create two text box email and confirm email. On change of confirm email validate both text box has same email id or not. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate_Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            margin: 30px auto;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            width: 250px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 18px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #error_message {
+            color: red;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="return false;">
+        <table border="0">
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" name="email" id="email" /></td>
+            </tr>
+            <tr>
+                <td><label for="confirm_email">Confirm Email:</label></td>
+                <td><input type="text" name="confirm_email" id="confirm_email" oninput="validateEmail()" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button onclick="validateEmail()">Submit</button>
+                </td>
+            </tr>
+        </table>
+        <p id="error_message"></p>
+    </form>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById('email').value.trim();
+            var confirm_email = document.getElementById('confirm_email').value.trim();
+            var error_message = document.getElementById('error_message');
+            error_message.innerHTML = '';
+
+            if (email === '' || confirm_email === '') {
+                error_message.innerHTML = 'Both fields are required.';
+                return false;
+            }
+
+            if (email === confirm_email) {
+                error_message.style.color = 'green';
+                error_message.innerHTML = 'Both email and confirm_email are same';
+            } else {
+                error_message.style.color = 'red';
+                error_message.innerHTML = 'Email and confirm_email are not same';
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

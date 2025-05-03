@@ -1,0 +1,102 @@
+<!-- . Create a text box on change check enetered data is a 6 digit pin code r or not.  -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pincode Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #result {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #city {
+            margin-top: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #change {
+            margin-bottom: 20px;
+        }
+        #change:focus {
+            outline: none;
+            border: 2px solid #4CAF50;
+        }
+        #change:invalid {
+            border: 2px solid red;
+        }
+        ::-webkit-input-placeholder {
+            color: #ccc;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <label for="">Type the Pincode: </label>
+    <input type="text" name="change" id="change" oninput="checkPincode()">
+    <p id="result"></p>
+    <p id="city"></p>
+
+    <script>
+        async function checkPincode() {
+            var pincode = document.getElementById('change').value;
+            var regex = /^\d{6}$/;
+            var resultElement = document.getElementById('result');
+            var cityElement = document.getElementById('city');
+
+            // Clear previous results
+            resultElement.innerHTML = '';
+            cityElement.innerHTML = '';
+
+            if (regex.test(pincode)) {
+                resultElement.innerHTML = 'Valid Pincode';
+                resultElement.style.color = 'green';
+
+                // Fetch city data from an API
+                try {
+                    const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
+                    const data = await response.json();
+
+                    if (data[0].Status === "Success") {
+                        const city = data[0].PostOffice[0].District; // Get the district name
+                        cityElement.innerHTML = 'City: ' + city;
+                    } else {
+                        cityElement.innerHTML = 'City: Not found in the database.';
+                    }
+
+                } catch (error) {
+                    cityElement.innerHTML = 'Error fetching city data.';
+                }
+
+            } else {
+                resultElement.innerHTML = 'Invalid Pincode';
+                resultElement.style.color = 'red';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
