@@ -1,0 +1,2 @@
+this is Ajax Demo
+loading from server
