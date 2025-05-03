@@ -1,0 +1,16 @@
+<h1 id="hh"></h1>
+<div id="inner"></div>
+<script>
+    async function f() {
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("done!"), 2000)
+        });
+        document.write("........")
+        let result = await promise;// wait until the promise resolves (*)
+       console.log(result);// "done!"
+        alert("where is this line?.....")
+    }
+    f();
+    document.write("go-----")
+     document.write("inner div  done");
+</script>
