@@ -1,0 +1,31 @@
+<!-- Q9. Let user type date in textbox, you have to read that and put it in p tag in correct date format. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Format Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="date"] {
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="date" id="dateInput">
+    <p id="formattedDate"></p>
+    <script>
+        document.getElementById("dateInput").onchange = function () {
+            const date = new Date(this.value);
+            const formatted = date.toLocaleDateString("en-GB");
+            document.getElementById("formattedDate").textContent = formatted;
+        };
+    </script>
+</body>
+</html>
