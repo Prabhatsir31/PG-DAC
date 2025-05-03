@@ -1,0 +1,36 @@
+<!-- Q6. Create a link with value “Login” on click change value to “Logout” -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login/Logout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            color: red;
+        }
+        #loginLink {
+            font-size: 18px;
+        }
+        #logoutLink {
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="loginLink">Login</a>
+
+    <script>
+        document.getElementById("loginLink").onclick = function () {
+            this.textContent = this.textContent === "Login" ? "Logout" : "Login";
+        };
+    </script>
+</body>
+</html>
