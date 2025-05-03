@@ -1,0 +1,49 @@
+<html> 
+  <head> 
+    <title>An Ajax and json demo</title> 
+
+    <script language = "javascript">
+     function getData(dataSource, divID) 
+      { 
+	   var  xhr = new XMLHttpRequest();
+        if(xhr) {
+          var obj = document.getElementById(divID); 
+          xhr.open("GET", dataSource); 
+          xhr.send(); 
+          xhr.onreadystatechange = function() 
+          { 
+            if (xhr.readyState == 4 && 
+              xhr.status == 200) { 
+                obj.innerHTML = xhr.responseText; 
+				obj.innerHTML +=xhr.getAllResponseHeaders()
+
+            } 
+          } 
+
+       
+        }
+      }
+    </script>
+  </head> 
+
+  <body>
+
+    <H1>An Ajax and PHP demo</H1>
+
+    <form>
+      <input type = "button" value = "Fetch the message" 
+        onclick = "getData('ejson.json', 'targetDiv')"> 
+    </form>
+
+    <div id="targetDiv">
+      <p>The fetched message will appear here.</p> 
+    </div> 
+<h1>current page</h1>
+<h1>current page</h1>
+<h1>current page</h1>
+<h1>current page</h1>
+<h1>current page</h1>
+<h1>current page</h1>
+<h1>current page</h1>
+  </body> 
+</html>
