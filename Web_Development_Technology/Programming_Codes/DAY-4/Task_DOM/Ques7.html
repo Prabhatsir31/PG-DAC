@@ -1,0 +1,28 @@
+<!-- Q7. Create a css class myclass with property background color and text color on mouse over remove css class and on mouser over it should get back css class -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Class Toggle</title>
+    <style>
+        .myclass {
+            background-color: lightblue;
+            color: darkblue;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            border: 1px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box" class="myclass">Hover me!</div>
+    <script>
+        const box = document.getElementById("box");
+        box.addEventListener("mouseover", () => box.classList.remove("myclass"));
+        box.addEventListener("mouseout", () => box.classList.add("myclass"));
+
+    </script>
+</body>
+</html>
