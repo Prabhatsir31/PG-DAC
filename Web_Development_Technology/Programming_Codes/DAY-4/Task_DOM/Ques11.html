@@ -1,0 +1,26 @@
+<!-- Q11. Type name in a text box onchange display that text in a span tag -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Name on Change</title>
+    <style>
+        span {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nameInput">
+    <span id="nameSpan"></span>
+    <script>
+        document.getElementById("nameInput").onchange = function () {
+            document.getElementById("nameSpan").textContent = this.value;
+        };
+
+    </script>
+</body>
+</html>
