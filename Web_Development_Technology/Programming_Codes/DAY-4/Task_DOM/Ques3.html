@@ -1,0 +1,27 @@
+<!-- Q3. Create OL tag  displaying name of your friend on click copy all this data in a text area -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea</title>
+</head>
+<body>
+    <ol>
+        <li onclick="copyToClipboard('Abhishek')">Abhishek</li>
+        <li onclick="copyToClipboard('Kartikey')">Kartikey</li>
+        <li onclick="copyToClipboard('Abhijeet')">Abhijeet</li>
+    </ol>
+    <textarea id="copyArea" readonly></textarea>
+
+</body>
+<script>
+    function copyToClipboard(text) {
+        var textArea = document.getElementById("copyArea");
+        textArea.value = text;
+        textArea.select();
+        document.execCommand("copy");
+    }
+</script>
+</html>
