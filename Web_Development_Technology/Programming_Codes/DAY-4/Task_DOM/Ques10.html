@@ -1,0 +1,56 @@
+<!-- Q10. Accept 5 name from user and print it  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Print 5 Names</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #inputs {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #inputs input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #output {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputs">
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <button onclick="printNames()">Submit</button>
+    </div>
+    <div id="output"></div>
+    <script>
+        function printNames() {
+            const inputs = document.querySelectorAll("#inputs input");
+            const output = document.getElementById("output");
+            output.innerHTML = "";
+            inputs.forEach(input => {
+                const name = input.value.trim();
+                if (name) output.innerHTML += `<p>${name}</p>`;
+            });
+        }
+    </script>
+</body>
+</html>
