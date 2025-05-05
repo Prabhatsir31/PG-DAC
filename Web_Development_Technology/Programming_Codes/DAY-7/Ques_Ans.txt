@@ -1,0 +1,359 @@
+1. Difference Between let and var:
+- var is function-scoped; let is block-scoped.
+- var allows redeclaration; let does not.
+Example:
+    var x = 5;
+    var x = 10; // No error
+    let y = 5;
+    let y = 10; // Error: y has already been declared
+
+2. Difference and similarities Between let and const:
+- Both are block-scoped.
+- let allows reassignment; const does not.
+Example:
+    let a = 10;
+    a = 20; // OK
+    const b = 30;
+    b = 40; // Error: Assignment to constant variable
+
+3. Why use 'use strict':
+- Enables strict mode, which catches common coding mistakes.
+Example:
+    "use strict";
+    x = 5; // Error: x is not defined
+
+4. Use of typeof:
+- Returns the type of a variable.
+Example:
+    typeof 42;           // "number"
+    typeof "Hello";      // "string"
+    typeof undefined;    // "undefined"
+
+5. Which operator is overloaded:
+- + is overloaded (addition and string concatenation).
+Example:
+    5 + 5 = 10
+    "5" + 5 = "55"
+
+6. Default value if variable is not assigned:
+- undefined
+Example:
+    let a;
+    console.log(a); // undefined
+
+7. Calculation between number and undefined:
+- Results in NaN (Not a Number)
+Example:
+    let a = 5 + undefined;
+    console.log(a); // NaN
+
+8. Default return value of a function:
+- undefined, if no return is specified.
+Example:
+    function test() {}
+    console.log(test()); // undefined
+
+9. Explain window.document.write():
+- Writes directly to the HTML document.
+Example:
+    window.document.write("Hello World");
+
+10. Is JavaScript object-oriented?
+- Yes, it's prototype-based and supports OOP concepts.
+
+11. Predefined [Object] references in JS:
+- Object, Array, Function, Date, RegExp, Error, etc.
+
+12. Version learned:
+- Typically ES6 and later (ES2015+)
+
+13. Why is JS called client-side?
+- Runs in browser on the user's machine.
+
+14. Is JavaScript dynamic?
+- Yes, variable types can change.
+Example:
+    let x = 5;
+    x = "hello";
+
+15. Do parameters need to be the same in function call and definition?
+- No, missing parameters become undefined.
+Example:
+    function greet(name) { console.log(name); }
+    greet(); // undefined
+
+16. Do we need semicolons?
+- Optional but recommended to avoid ambiguity.
+
+17. Use of JavaScript:
+- Dynamic behavior, interactivity, DOM manipulation, etc.
+
+18. JS frameworks/libraries:
+- React, Angular, Vue, jQuery, Node.js, Express, etc.
+
+19. Count of characters in string:
+Example:
+    let str = "hello";
+    console.log(str.length); // 5
+
+20. valueOf():
+- Returns primitive value. Defined in Object, Date, Number, etc.
+
+21. Rest vs Spread:
+- Rest collects: function(...args)
+- Spread expands: [...array]
+Example:
+    function add(...nums) {}
+    let arr = [1, 2];
+    let newArr = [...arr];
+
+22. Clone object:
+    let clone = { ...original };
+
+23. == vs ===:
+    var a = 5;
+    let b = "5";
+    a == b; // true
+    a === b; // false
+
+24. What is NaN:
+- Not a Number
+    parseInt("abc"); // NaN
+
+25. Falsy values:
+- false, 0, "", null, undefined, NaN
+
+26. Ways to create object:
+    let obj = {};
+    let obj2 = new Object();
+
+27. Call class function without new?
+- Yes, but will not behave as expected unless designed.
+
+28. What is constructor:
+- Special function for initializing objects.
+
+29. Override toString:
+Example:
+    obj.toString = function() { return "custom"; }
+
+30. Method overloading?
+- Not supported natively.
+
+31. Inherit in ES5:
+    function Parent() {}
+    function Child() {}
+    Child.prototype = Object.create(Parent.prototype);
+
+32. Everything is derived from:
+- Object
+
+33. Top-level class in browser:
+- window
+
+34. Iterate class properties:
+- for (let key in obj)
+
+35. Iterate array:
+- for (let i of arr)
+
+36. What is closure:
+- Function + its lexical scope
+
+37. => Arrow function:
+Example:
+    let add = (a, b) => a + b;
+
+38. IIFE:
+Example:
+    (function() { console.log("IIFE"); })();
+
+39. Default argument:
+Example:
+    function greet(name = "Guest") {}
+
+40. Variable length args:
+    function sum(...args) {}
+
+41. Prototype inheritance:
+    Child.prototype = Object.create(Parent.prototype);
+
+42. parent.call(this):
+    Parent.call(this, a, b);
+
+43. # indicates private fields.
+
+44. _ indicates protected (by convention).
+
+45. Static method:
+    class A { static greet() {} }
+
+46. Static variable:
+    class A { static x = 5; }
+
+47. Class vs Function class:
+- Class is syntactic sugar over function prototypes.
+
+48. Method not enumerable in class.
+
+49. import/export:
+    export default A;
+    import A from './module.js';
+
+50. Node.js:
+- JS runtime outside browser.
+
+51. .mjs: ES6 module support in Node.
+
+52. this in static method:
+- Refers to class, not instance.
+
+53. Best array declaration:
+    let arr = [];
+
+54. Avoid new Array, String, Number due to unexpected results.
+
+55. Array toString method:
+    arr.toString()
+
+56. new Array(2): creates empty array with length 2.
+
+57. Array length and name:
+    arr.length
+
+58. Concat arrays:
+    let c = a.concat(b);
+
+59. Array to string:
+    arr.join(",")
+
+60. Array methods:
+    slice, splice, push, pop, shift, unshift, sort, reverse
+
+61. find vs filter:
+    find: first match
+    filter: all matches
+
+62. arr[i] vs arr.at(i):
+    arr.at() supports negative indices
+
+63. map:
+    arr.map(x => x * 2);
+
+64. includes():
+    Returns boolean if element exists
+
+65. getElementById vs getElementsByTagName:
+    - One vs many
+    - ID vs tag
+
+66. classList:
+    element.classList.add("cls");
+
+67. set/get attribute:
+    el.setAttribute("id", "x");
+    el.getAttribute("id");
+
+68. querySelector vs querySelectorAll:
+    - First match vs all matches
+    - CSS selectors
+
+69. String to Date:
+    new Date("2024-01-01");
+
+70. Generate random number:
+    Math.random();
+
+71. Range of Math.random:
+    >=0 and <1
+
+72. String to number:
+    parseInt("55");
+    +"55";
+    parseFloat("55.5");
+
+73. Form elements:
+    document.forms[0].elements
+
+74. Radio/checkbox:
+    element.checked
+
+75. Selected option:
+    element.selectedIndex
+
+76. value/text:
+    input.value or select.options[x].text
+
+77. onsubmit:
+    Triggered on form submission
+
+78. submit():
+    form.submit();
+
+79. focus on element:
+    input.focus();
+
+80. Events:
+    onchange, onblur, oninput, onkeypress, onkeydown, onkeyup, onclick, etc.
+
+81. addEventListener:
+    el.addEventListener("click", fn);
+
+82. removeEventListener:
+    el.removeEventListener("click", fn);
+
+83. Event object:
+    e.target, e.currentTarget, e.type
+
+84. History:
+    history.back(), forward(), go()
+
+85. navigator:
+    Info about browser
+
+86. Event firing:
+    btn.onclick = fn;
+    btn.addEventListener("click", fn);
+
+87. try-catch-finally:
+    try {} catch(e) {} finally {}
+
+88. Optional chaining:
+    obj?.prop
+    obj?.[key]
+
+89. Nullish coalescing:
+    null ?? "default"
+
+90. Ajax:
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.send();
+
+91. XMLHttpRequest events:
+    onreadystatechange, onload
+
+92. Response:
+    xhr.responseText
+
+93. Promise:
+    new Promise((res, rej) => {})
+
+94. Promise states:
+    pending, fulfilled, rejected
+
+95. then() parameters:
+    .then(success, failure)
+
+96. finally in promise:
+    .finally(() => {})
+
+97. catch in promise:
+    .catch(error => {})
+
+98. async/await:
+    async function fetchData() {
+        let res = await fetch(url);
+    }
+
+
