@@ -1,0 +1,174 @@
+Difference Between Let, and Var
+Difference and similarities Between Let, and  Const
+Why to use 'use strict'
+what is the use of typeof
+Which operator is overloaded
+What is the default value if variable is not assign any value.
+Calculation between number and Undefined results into
+What is the default value returned by function.
+Explain following line  window.document.write()
+Is java script object oriented?
+List down predefined references [Object] in JS
+Which version you have learned?
+Why Js is called client side?
+is java script Dynamic? explain with examples.
+In java script parameter in function call and parameter in definition need to be same?
+Do we need to terminate statement using semicolon ; in JS
+Use of javascript?
+Tell me the frame works or libraries  build using JS
+How to get count of the given string.
+what is valueOf() in which class it is defined.
+difference between rest and spred
+how to clone object
+use of == and ===// var a=5 let b=7
+what is NaN
+What is false in JS// 0  ,null, false, undefined,NaN
+Different way to  create object on java script
+can you call function which was represented as class without new key word?
+if yes what will happen if no use strict written
+what is constructor key word
+how to override toString method
+does JS support method overloading
+how to inherit in ES5
+every thing is derived from ---
+top level class in browser
+will you able to iterate property of a class //in
+iterate over aray of 
+what is calusar
+what is => function
+what is IIFE
+what is default argument
+what is variable length of argument==> ... arguments
+child.prototype=Object.Create(parent.prototype)===     extends
+parent.call(this(child)a,b)=== super
+#==> private
+_ indicate==> protected
+static method==>
+static variable 
+class and function as class difference==>
+method is not enumerable in class
+import 
+export and export default
+node ==>
+mjs on server side java script
+can I use this with static method yes but avoid 
+best way to declare array []
+new Array, new Number, new String, new Image==> avoid
+which method is overridden in array class toString
+new Array(2)==>size
+length/Name/
+concat two array==>  arr  ==> let coyarr=arr.concat()
+how to convert array to string==>join
+slice/
+
+splice/push/pop/shift/unshift/sort/reverse
+
+difference between find and filter
+difference between arr[i] and arr.at()
+what is map function of array class
+what is return type of includes() method of array class
+difference between geElementById and geElementsByTagName
+ClassList.  add/ remove/replace/toggle   Contains
+How to set and get attribute
+
+difference between querySelectorAll and  querySelector   [#,.,[],tags, > ~  *]
+
+How to convert string to Date
+How to generate Random number
+what is the range of Math.random() ==>  0>0 and <1
+
+string to number==> parseInt,  +,  parseFloat,   new Number("55");
+
+map, at, find,filter
+
+forms/elements/options
+
+document.frm.t1=>
+checked==> radio, checkbox ===> 
+selected   ==> selectedIndex
+value/text
+
+onsubmit event is _______   form
+if onsubmit return false
+
+submit()==>   
+how to set cursor on form element focus
+
+onchange/ onbblur, onerror, oninput onkeypress   onkeydown onkeyup  onmouseover/out    move => onmouseenter/leave onclick
+
+addEventlistner    removeEventlistener
+
+event==>  target   //currentTarget , type
+
+History ==> back / forward/go
+navigator==>
+
+different way to fire event   onclick=go()     ==> addEventlistener("click",go)
+object.click=go
+
+try catch finally  ==> TypeError , Reference Error, UriError, SyntaxError, Eval Error, RangeError , Error
+
+obj?.prop
+
+obj.address?.street
+
+obj.mehtod?.()
+
+array?.[1]
+
+obj?.[key]
+
+null??"hello"
+
+what is Ajax==>
+ XmlHttpRequest  =>open  Get/POST   URI   true
+which method hit server send
+onreadyStatechanged   / onload  
+responseText/responseXml
+response
+
+
+what promise ==>resolve and reject ==>
+what are state of promise   pending fulfilled   ==> reject / resolve
+
+then has how many parameter ==>2  
+what is the use of finally in promise
+what is the  use of catch in promise 
+
+
+Async  and await  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
