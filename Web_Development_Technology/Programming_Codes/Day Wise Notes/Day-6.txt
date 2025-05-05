@@ -1,0 +1,70 @@
+DAY-6
+-----------
+
+JavaScript (AJAX)
+----------------
+
+What is AJAX?
+-------------------
+AJAX stands for Asynchronous JavaScript and XML.
+It is a technique used to send and receive data from a server asynchronously without refreshing the web page.
+
+Key Concepts:
+- XMLHttpRequest or fetch() is used to send requests.
+- Can request data in formats like JSON, XML, HTML, or plain text.
+- Improves user experience by updating parts of a page dynamically.
+
+Example using fetch():
+--------------------------
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>AJAX Example</h2>
+    <button onclick="loadData()">Load Data</button>
+    <div id="output"></div>
+
+    <script>
+    function loadData() {
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('output').innerHTML = 
+                "<h3>" + data.title + "</h3><p>" + data.body + "</p>";
+        });
+    }
+    </script>
+</body>
+</html>
+
+What is REST API?
+--------------------------
+REST stands for Representational State Transfer.
+
+REST API is a web service architecture style that uses HTTP methods to access and manipulate resources.
+
+Key Concepts:
+- Stateless: Each request from client to server must contain all the information.
+- Uses standard HTTP methods: GET, POST, PUT, DELETE
+- Data is typically exchanged in JSON or XML format.
+
+HTTP Methods in REST:
+- GET: Read data
+- POST: Create new data
+- PUT: Update existing data
+- DELETE: Remove data
+
+Example using Fetch with POST:
+------------------------------------
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-type': 'application/json'
+    },
+    body: JSON.stringify({
+        title: 'foo',
+        body: 'bar',
+        userId: 1
+    })
+})
+.then(response => response.json())
+.then(json => console.log(json));
