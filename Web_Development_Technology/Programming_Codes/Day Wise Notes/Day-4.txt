@@ -1,0 +1,296 @@
+DAY-4 
+-----------
+
+JavaScript
+----------------
+
+DOM MANIPULATION IN JAVASCRIPT
+=================================
+
+1. What is the DOM?
+--------------------
+DOM (Document Object Model) represents the HTML structure as a tree of objects.
+JavaScript can access and manipulate these objects (elements, attributes, etc.)
+
+2. Selecting Elements
+----------------------
+
+- document.getElementById("id")
+  Example:
+  const title = document.getElementById("heading");
+
+- document.getElementsByClassName("class")
+  Example:
+  const items = document.getElementsByClassName("list-item");
+
+- document.getElementsByTagName("tag")
+  Example:
+  const paragraphs = document.getElementsByTagName("p");
+
+- document.querySelector("selector")
+  Example:
+  const firstItem = document.querySelector(".list-item");
+
+- document.querySelectorAll("selector")
+  Example:
+  const allItems = document.querySelectorAll(".list-item");
+
+
+3. Modifying Content
+---------------------
+
+- element.textContent
+  Example:
+  title.textContent = "New Title";
+
+- element.innerHTML
+  Example:
+  content.innerHTML = "<b>Bold Text</b>";
+
+- element.innerText
+  Example:
+  element.innerText = "Hello World";
+
+
+4. Modifying Attributes
+------------------------
+
+- element.setAttribute("attr", "value")
+  Example:
+  img.setAttribute("src", "image.jpg");
+
+- element.getAttribute("attr")
+  Example:
+  let value = img.getAttribute("src");
+
+- element.removeAttribute("attr")
+  Example:
+  input.removeAttribute("disabled");
+
+
+5. Modifying Styles
+---------------------
+
+- element.style.property = "value"
+  Example:
+  title.style.color = "blue";
+
+6. Working with Classes
+-------------------------
+
+- element.classList.add("class")
+- element.classList.remove("class")
+- element.classList.toggle("class")
+- element.classList.contains("class")
+
+Example:
+button.classList.add("active");
+
+
+7. Creating and Appending Elements
+-----------------------------------
+
+- document.createElement("tag")
+- parent.appendChild(child)
+- parent.insertBefore(newNode, existingNode)
+
+Example:
+const newDiv = document.createElement("div");
+newDiv.textContent = "New Element";
+document.body.appendChild(newDiv);
+
+
+8. Removing Elements
+----------------------
+
+- parent.removeChild(child)
+Example:
+let element = document.getElementById("item");
+element.parentNode.removeChild(element);
+
+
+9. Traversing the DOM
+-----------------------
+
+- parentElement
+- children
+- firstChild / lastChild
+- nextSibling / previousSibling
+
+Example:
+let list = document.getElementById("list");
+let firstItem = list.firstChild;
+
+
+10. Event Handling (basic)
+----------------------------
+- element.addEventListener("event", function)
+
+Example:
+button.addEventListener("click", function() {
+  alert("Button clicked");
+});
+
+
+Sample HTML:
+-------------
+<!DOCTYPE html>
+<html>
+<head><title>DOM Demo</title></head>
+<body>
+  <h1 id="heading">Original Heading</h1>
+  <p class="text">Paragraph 1</p>
+  <button id="btn">Click Me</button>
+
+  <script>
+    const heading = document.getElementById("heading");
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+      heading.textContent = "Heading Changed!";
+      heading.style.color = "red";
+    });
+  </script>
+</body>
+</html>
+
+
+JavaScript Date Object - Complete Reference
+==================================================
+
+1. Create Date Objects
+----------------------
+
+let d1 = new Date();                   // Current date and time
+let d2 = new Date("2025-05-02");       // Specific date
+let d3 = new Date(2025, 4, 2);         // Year, Month(0-11), Day
+let d4 = new Date(2025, 4, 2, 10, 30); // Year, Month, Day, Hour, Min
+
+2. Date Formats
+---------------
+
+- ISO Date       : "2025-05-02" (YYYY-MM-DD)
+- Short Date     : "05/02/2025" or "5/2/2025"
+- Long Date      : "May 2 2025" or "2 May 2025"
+- Full DateTime  : new Date("2025-05-02T14:30:00")
+
+3. Get Date Components
+----------------------
+
+let now = new Date();
+
+now.getFullYear();      // 2025
+now.getMonth();         // 0-11 (Jan=0)
+now.getDate();          // 1-31
+now.getDay();           // 0-6 (Sun=0)
+now.getHours();         // 0-23
+now.getMinutes();       // 0-59
+now.getSeconds();       // 0-59
+now.getMilliseconds();  // 0-999
+now.getTime();          // ms since 1970-01-01
+now.getTimezoneOffset();// in minutes
+
+4. Set Date Components
+----------------------
+
+let date = new Date();
+
+date.setFullYear(2024);
+date.setMonth(11);          // December
+date.setDate(25);
+date.setHours(10);
+date.setMinutes(30);
+date.setSeconds(15);
+
+5. Convert to Strings
+---------------------
+
+let dt = new Date();
+
+dt.toString();        // "Fri May 02 2025 12:00:00 GMT+0530"
+dt.toDateString();    // "Fri May 02 2025"
+dt.toTimeString();    // "12:00:00 GMT+0530"
+dt.toISOString();     // "2025-05-02T06:30:00.000Z"
+dt.toUTCString();     // "Fri, 02 May 2025 06:30:00 GMT"
+dt.toLocaleDateString();  // "5/2/2025"
+dt.toLocaleTimeString();  // "12:00:00 PM"
+
+6. Date Calculations
+--------------------
+
+let start = new Date("2025-05-01");
+let end = new Date("2025-05-02");
+let diff = end - start;      // milliseconds
+let days = diff / (1000 * 60 * 60 * 24); // 1 day
+
+7. Useful Tips
+--------------
+
+- Always use `new Date()` for creation.
+- Month is 0-based (Jan = 0).
+- Dates are stored as timestamps (ms since 1970 UTC).
+- Use toISOString() for backend compatibility.
+- Use Date.now() for current timestamp in ms.
+
+8. Examples
+-----------
+
+Example 1: Add 5 days
+---------------------
+let d = new Date();
+d.setDate(d.getDate() + 5);
+console.log(d);
+
+Example 2: Compare two dates
+----------------------------
+let d1 = new Date("2025-05-01");
+let d2 = new Date("2025-05-10");
+
+if (d2 > d1) {
+    console.log("d2 is after d1");
+}
+
+Example 3: Format as DD-MM-YYYY
+-------------------------------
+let date = new Date();
+let day = date.getDate().toString().padStart(2, '0');
+let month = (date.getMonth() + 1).toString().padStart(2, '0');
+let year = date.getFullYear();
+let formatted = `${day}-${month}-${year}`;
+console.log(formatted); // "02-05-2025"
+
+
+Find keyword
+=================
+Used to find the first element in an array that satisfies a given condition.
+
+Example:
+---------
+let numbers = [10, 25, 30, 40];
+let result = numbers.find(num => num > 20);
+console.log(result); // Output: 25 (first number > 20)
+
+includes()
+=============
+Checks whether an array (or string) includes a certain value.
+Returns true or false.
+
+Example:
+---------
+let fruits = ["apple", "banana", "mango"];
+console.log(fruits.includes("banana")); // true
+console.log(fruits.includes("grape"));  // false
+
+let sentence = "JavaScript is fun";
+console.log(sentence.includes("fun"));  // true
+
+at
+====
+Returns the element at a specific index. Supports negative indexing (from the end).
+
+Example:
+---------
+let letters = ['a', 'b', 'c', 'd'];
+console.log(letters.at(2));   // 'c'
+console.log(letters.at(-1));  // 'd' (last element)
+
