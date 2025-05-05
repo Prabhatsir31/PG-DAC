@@ -1,38 +1,42 @@
 body {
     font-family: Arial, sans-serif;
-}
-label {
-    margin-left: 10px;
-}
-input[type=text], input[type=password], input[type=email], select, textarea {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  input, select, button {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+    padding: 8px;
+    margin: 5px 0 15px;
     box-sizing: border-box;
-}
-input[type=submit] {
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  button {
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
-}
-input[type=submit]:hover {
+  }
+  
+  button:hover {
     background-color: #45a049;
-}
-input[type=reset] {
-    background-color: #FF0000;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-input[type=submit]:hover {
-    background-color: #ff0000f1;
-}
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
