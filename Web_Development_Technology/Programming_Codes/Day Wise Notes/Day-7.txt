@@ -1,0 +1,520 @@
+DAY-7
+-----------
+
+JavaScript (AJAX, REST)
+-------------------------
+
+Why We Use REST API Instead of AJAX
+------------------------------------
+
+First, it's important to understand that REST API and AJAX are not the same thing:
+
+1. What is REST API?
+---------------------
+- REST API (Representational State Transfer) is a standardized way of building web services.
+- It defines how clients and servers communicate using HTTP methods:
+  - GET     -> Retrieve data
+  - POST    -> Create data
+  - PUT/PATCH -> Update data
+  - DELETE  -> Delete data
+- REST APIs are built on the server (backend) and expose data for consumption.
+
+2. What is AJAX?
+-----------------
+- AJAX (Asynchronous JavaScript and XML) is a client-side technique.
+- It is used in web browsers to send/receive data from a server without reloading the page.
+- AJAX uses tools like fetch(), XMLHttpRequest, or libraries (like Axios).
+
+3. Why Use REST API Instead of Just AJAX?
+------------------------------------------
+
+| Feature         | REST API                      | AJAX                          |
+|-----------------|-------------------------------|-------------------------------|
+| What it is      | Backend service pattern       | Frontend technique            |
+| Purpose         | Provides data/logic to apps   | Calls REST APIs               |
+| Used in         | Backend (ASP.NET, Node.js)    | Frontend (HTML, JS)           |
+| Reusability     | Can be used in web/mobile     | Used only in web browsers     |
+| Security        | Enforces auth/security        | Depends on REST API handling  |
+| Architecture    | Stateless, scalable, modular  | Just a method for request     |
+
+4. Summary:
+-----------
+- REST API is *what* you call — a backend service.
+- AJAX is *how* you call it — a frontend method.
+
+We use REST API to build reusable and secure backend services.
+We use AJAX to communicate with these services from the frontend without refreshing the page.
+
+Three Methods of POST in JavaScript
+=====================================
+
+1. XMLHttpRequest (XHR)
+------------------------
+Example:
+const xhr = new XMLHttpRequest();
+xhr.open("POST", "https://example.com/api", true);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.send(JSON.stringify({ name: "Prabhat" }));
+
+2. Fetch API
+------------
+Example:
+fetch("https://example.com/api", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ name: "Prabhat" })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+
+3. jQuery Ajax (if jQuery is included)
+--------------------------------------
+Example:
+$.ajax({
+    url: "https://example.com/api",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({ name: "Prabhat" }),
+    success: function(response) {
+        console.log(response);
+    }
+});
+
+
+URL Encode
+=============
+Used to encode a string for use in a URL.
+Example:
+let param = "Prabhat Srivastava @123";
+let encoded = encodeURIComponent(param); // "Prabhat%20Srivastava%20%40123"
+
+URL Decode
+============
+Used to decode a URL-encoded string.
+Example:
+let decoded = decodeURIComponent(encoded); // "Prabhat Srivastava @123"
+
+Escape (Deprecated)
+====================
+Encodes a string but not all characters. Not recommended.
+Example:
+let str = "Hello World!";
+let escaped = escape(str); // "Hello%20World%21"
+
+Unescape (Deprecated)
+=======================
+Decodes a string encoded with escape(). Not recommended.
+Example:
+let unescaped = unescape(escaped); // "Hello World!"
+
+
+HTTP Request Headers - Overview
+-------------------------------
+
+What are Request Headers?
+--------------------------
+Request headers are key-value pairs sent by the client (browser or other HTTP client) to the server as part of an HTTP request. They provide important information about the client, request context, and instructions for the server.
+
+Commonly Used Request Headers:
+------------------------------
+
+1. Host:
+   - Specifies the domain name of the server (used for virtual hosting).
+   Example: Host: www.example.com
+
+2. User-Agent:
+   - Identifies the client software making the request (browser, bot, etc.).
+   Example: User-Agent: Mozilla/5.0...
+
+3. Accept:
+   - Specifies the media types (MIME types) the client can handle.
+   Example: Accept: text/html, application/json
+
+4. Accept-Language:
+   - Indicates preferred languages for the response.
+   Example: Accept-Language: en-US,en;q=0.9
+
+5. Accept-Encoding:
+   - Specifies acceptable content encoding (compression).
+   Example: Accept-Encoding: gzip, deflate, br
+
+6. Authorization:
+   - Used to send credentials (tokens, basic auth) for authentication.
+   Example: Authorization: Bearer <token>
+
+7. Content-Type:
+   - Indicates the media type of the request body (used in POST/PUT).
+   Example: Content-Type: application/json
+
+8. Content-Length:
+   - Indicates the size of the request body in bytes.
+   Example: Content-Length: 123
+
+9. Referer:
+   - Indicates the address of the previous web page (for analytics/security).
+   Example: Referer: https://example.com/page
+
+10. Cookie:
+    - Sends stored cookies to the server.
+    Example: Cookie: sessionId=xyz123; userId=456
+
+11. Connection:
+    - Controls whether the connection stays open or closes after the response.
+    Example: Connection: keep-alive
+
+12. Origin:
+    - Indicates the origin of the request (used in CORS).
+    Example: Origin: https://example.com
+
+13. X-Requested-With:
+    - Often used to identify AJAX requests.
+    Example: X-Requested-With: XMLHttpRequest
+
+14. If-Modified-Since / If-None-Match:
+    - Used for caching. Requests conditional on server-side resource changes.
+
+Custom Headers:
+---------------
+You can define your own headers prefixed with 'X-' or without, for internal use.
+Example: X-Custom-Header: value123
+
+Use in JavaScript (Fetch API Example):
+--------------------------------------
+fetch('https://api.example.com/data', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer your_token_here',
+    'Accept': 'application/json'
+  }
+})
+
+Security Tips:
+--------------
+- Never expose sensitive headers in client-side code.
+- Use HTTPS to encrypt headers.
+- Set proper CORS policies on the server.
+
+
+JavaScript Collections
+-----------------------
+
+In JavaScript, collections are data structures used to store and manage groups of data. The most common collections are:
+
+1. Arrays
+----------
+- An ordered list of values (elements).
+- Elements can be of any type: numbers, strings, objects, etc.
+
+Example:
+let fruits = ["apple", "banana", "cherry"];
+
+Common Methods:
+- push(), pop()
+- shift(), unshift()
+- splice(), slice()
+- forEach(), map(), filter(), reduce()
+
+2. Objects
+-----------
+- A collection of key-value pairs.
+- Keys are strings (or symbols), and values can be any type.
+
+Example:
+let person = {
+  name: "John",
+  age: 30
+};
+
+Accessing:
+- person.name or person["name"]
+
+3. Set
+-------
+- A collection of unique values.
+- No duplicate elements allowed.
+
+Example:
+let numbers = new Set([1, 2, 3, 3]); // Set {1, 2, 3}
+
+Methods:
+- add(), delete(), has(), clear()
+
+4. Map
+-------
+- A collection of key-value pairs like objects, but keys can be any type (not just strings).
+
+Example:
+let capitals = new Map();
+capitals.set("France", "Paris");
+capitals.set("India", "Delhi");
+
+Methods:
+- set(), get(), has(), delete(), clear()
+
+5. WeakSet
+-----------
+- Like Set, but only holds objects and does not prevent garbage collection.
+- Cannot iterate or check size.
+
+Example:
+let ws = new WeakSet();
+ws.add({name: "A"});
+
+6. WeakMap
+-----------
+- Like Map, but keys must be objects.
+- Keys are weakly held (used for caching or private data).
+
+Example:
+let wm = new WeakMap();
+let obj = {};
+wm.set(obj, "private data");
+
+Summary Table:
+---------------
+| Collection | Key Type     | Value Type  | Unique Keys | Iterable |
+|------------|--------------|-------------|-------------|----------|
+| Array      | Index (int)  | Any         | No          | Yes      |
+| Object     | String/Symbol| Any         | No          | Yes      |
+| Set        | N/A          | Unique only | Yes         | Yes      |
+| Map        | Any          | Any         | Yes         | Yes      |
+| WeakSet    | N/A          | Objects only| Yes         | No       |
+| WeakMap    | Objects only | Any         | Yes         | No       |
+
+
+Regular Expressions - Detailed Reference with Examples
+=======================================================
+
+1. Basic Symbols and Their Usage
+--------------------------------
+
+.       - Matches any character except newline
+        Example: /a.b/ matches 'acb', 'a_b', but not 'ab'
+
+^       - Matches the beginning of the string
+        Example: /^a/ matches 'apple', but not 'banana'
+
+$       - Matches the end of the string
+        Example: /t$/ matches 'cat', but not 'table'
+
+*       - Matches 0 or more repetitions of the preceding character
+        Example: /bo*/ matches 'b', 'bo', 'boo', etc.
+
++       - Matches 1 or more repetitions of the preceding character
+        Example: /go+gle/ matches 'gogle', 'google', etc.
+
+?       - Matches 0 or 1 occurrence (makes it optional)
+        Example: /colou?r/ matches 'color' and 'colour'
+
+|       - Acts like a logical OR
+        Example: /cat|dog/ matches 'cat' or 'dog'
+
+()      - Groups expressions
+        Example: /(ha)+/ matches 'ha', 'haha', 'hahaha'
+
+[]      - Matches any one character inside the brackets
+        Example: /[aeiou]/ matches any vowel
+
+[^]     - Matches any character NOT in the brackets
+        Example: /[^0-9]/ matches any non-digit character
+
+{}      - Quantifier for number of occurrences
+        Example: /a{2,4}/ matches 'aa', 'aaa', or 'aaaa'
+
+2. Character Classes
+--------------------
+
+\\d      - Digit (same as [0-9])
+         Example: /\\d+/ matches '123', '4567'
+
+\\D      - Non-digit
+         Example: /\\D+/ matches 'abc', 'a1b2' -> 'a', 'b'
+
+\\w      - Word character (a-z, A-Z, 0-9, _)
+         Example: /\\w+/ matches 'hello123'
+
+\\W      - Non-word character
+         Example: /\\W+/ matches '@!', ' '
+
+\\s      - Whitespace character
+         Example: /\\s/ matches space, tab, newline
+
+\\S      - Non-whitespace character
+         Example: /\\S+/ matches 'hello'
+
+.        - Any character (except newline)
+         Example: /./ matches 'a', '1', '@'
+
+3. Anchors
+----------
+
+^        - Start of string
+$        - End of string
+
+Examples:
+    /^\\d/    -> matches a string starting with a digit
+    /end$/    -> matches a string ending with 'end'
+
+4. Special Sequences and Boundaries
+-----------------------------------
+
+\\b      - Word boundary
+         Example: /\\bis/ matches 'is' in 'This is'
+
+\\B      - Non-word boundary
+         Example: /\\Bis/ matches 'is' in 'Thisis'
+
+5. Greedy vs Non-Greedy Matching
+--------------------------------
+
+Greedy (default): matches as much as possible
+    Example: /".+"/ matches everything between first and last quote
+Non-greedy: use ?
+    Example: /".+?"/ matches shortest possible match
+
+6. Flags
+--------
+
+g    - Global match (do not stop after first match)
+i    - Case-insensitive match
+m    - Multiline match
+
+Example:
+    let pattern = /hello/gi;
+
+7. JavaScript RegEx Methods
+----------------------------
+
+.test()      => Returns true/false
+    /\\d+/.test("123")   => true
+
+.match()     => Returns matched values
+    "abc123".match(/\\d+/) => ['123']
+
+.replace()   => Replaces match
+    "abc123".replace(/\\d+/, "456") => "abc456"
+
+.search()    => Returns index of match
+    "abc123".search(/\\d+/) => 3
+
+.split()     => Splits string by pattern
+    "a,b;c".split(/[;,]/) => ['a', 'b', 'c']
+
+8. Real-World Examples
+----------------------
+
+1. Email validation:
+    /^[\\w.-]+@[\\w.-]+\\.\\w{2,3}$/
+
+2. Phone number (India format):
+    /^\\+91[-\\s]?[6-9]\\d{9}$/
+
+3. PAN card validation:
+    /^[A-Z]{5}[0-9]{4}[A-Z]$/
+
+4. Strong password:
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/
+
+Useful Tips:
+------------
+- Test regex on https://regex101.com
+- Always use escape characters when working with special symbols
+- Prefer meaningful grouping and comments for complex patterns
+
+===============================
+Easy to Medium Regex Questions
+===============================
+
+1. ✅ Match a valid email address
+---------------------------------
+Regex: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$
+Example: "user.name@example.com"
+
+Explanation:
+- ^ → start of string
+- [a-zA-Z0-9._%+-]+ → matches the email username
+- @ → at symbol
+- [a-zA-Z0-9.-]+ → domain name
+- \\. → dot
+- [a-zA-Z]{2,} → domain extension (e.g., .com, .in)
+
+---------------------------------------
+
+2. ✅ Match a phone number (Indian format)
+------------------------------------------
+Regex: ^[6-9]\\d{9}$
+Example: "9876543210"
+
+Explanation:
+- ^[6-9] → starts with digit 6 to 9
+- \\d{9} → followed by 9 digits
+
+---------------------------------------
+
+3. ✅ Match a date in DD-MM-YYYY format
+---------------------------------------
+Regex: ^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\\d{2}$
+Example: "05-08-1999"
+
+Explanation:
+- Day: 01–31
+- Month: 01–12
+- Year: 1900–2099
+
+---------------------------------------
+
+4. ✅ Match a 6-digit PIN code
+------------------------------
+Regex: ^\\d{6}$
+Example: "110034"
+
+Explanation:
+- \\d{6} → exactly 6 digits
+
+---------------------------------------
+
+5. ✅ Match a string that starts with "Hello"
+---------------------------------------------
+Regex: ^Hello
+Example: "Hello World"
+
+Explanation:
+- ^Hello → string must start with "Hello"
+
+---------------------------------------
+
+6. ✅ Match a string that ends with "Bye"
+-----------------------------------------
+Regex: Bye$
+Example: "Good Bye"
+
+Explanation:
+- Bye$ → string must end with "Bye"
+
+---------------------------------------
+
+7. ✅ Match a strong password (min 8 chars, at least 1 digit, 1 uppercase, 1 lowercase)
+-------------------------------------------------------------------------------------
+Regex: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$
+Example: "Hello123"
+
+Explanation:
+- (?=.*[a-z]) → at least one lowercase
+- (?=.*[A-Z]) → at least one uppercase
+- (?=.*\\d) → at least one digit
+- .{8,} → minimum 8 characters
+
+---------------------------------------
+
+8. ✅ Match all words in a sentence
+-----------------------------------
+Regex: \\b\\w+\\b
+Example: "This is a test." → ["This", "is", "a", "test"]
+
+Explanation:
+- \\b → word boundary
+- \\w+ → one or more word characters
+
+---------------------------------------
