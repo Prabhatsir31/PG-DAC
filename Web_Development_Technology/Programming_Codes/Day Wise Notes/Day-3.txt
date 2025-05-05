@@ -1,0 +1,351 @@
+DAY-3
+-----------
+
+JavaScript
+----------------
+Q) Create a/c class having name and bal which will increase the bal write display method which will display name and bal 
+
+
+1. Difference Between let and var:
+   - let is block-scoped, while var is function-scoped. Variables declared with let are confined to the block (if, for loop, etc.), whereas var can be accessed throughout the function.
+   
+   Example:
+   let x = 10;
+   if (true) {
+     let x = 20;  // block-scoped
+     console.log(x); // 20
+   }
+   console.log(x); // 10
+
+2. Difference and Similarities Between let and const:
+   - Similarities: Both are block-scoped.
+   - Differences: let allows reassignment, whereas const doesn't allow reassignment.
+
+   Example:
+   let a = 5;
+   a = 10; // valid
+
+   const b = 20;
+   // b = 30; // Error: Assignment to constant variable
+
+3. Why use 'use strict':
+   - 'use strict' helps catch common programming errors and prevents unsafe actions such as defining global variables unintentionally.
+
+   Example:
+   'use strict';
+   x = 10;  // Error: x is not defined
+
+4. Use of typeof:
+   - typeof is used to check the type of a variable or expression.
+   
+   Example:
+   console.log(typeof 10); // number
+   console.log(typeof "Hello"); // string
+
+5. Which operator is overloaded:
+   - The + operator is overloaded in JavaScript. It can be used for both addition and string concatenation.
+   
+   Example:
+   console.log(5 + 5); // 10
+   console.log('Hello' + ' ' + 'World'); // Hello World
+
+6. Default value if a variable is not assigned any value:
+   - The default value of a variable that is not assigned any value is undefined.
+   
+   Example:
+   let x;
+   console.log(x); // undefined
+
+7. Calculation between number and Undefined:
+   - If you perform any arithmetic operation between a number and undefined, the result will be NaN (Not a Number).
+   
+   Example:
+   let result = 5 + undefined;
+   console.log(result); // NaN
+
+8. Default value returned by function:
+   - If no value is explicitly returned from a function, it returns undefined.
+   
+   Example:
+   function foo() {}
+   console.log(foo()); // undefined
+
+9. Explain window.document.write():
+   - window.document.write() is a method that writes content directly to the HTML document.
+   
+   Example:
+   window.document.write("<h1>Hello World</h1>");
+
+10. Is JavaScript object-oriented?
+   - Yes, JavaScript supports object-oriented programming principles like objects, classes, inheritance, and polymorphism.
+
+11. List predefined references in JavaScript:
+   - Common predefined references are window, document, console, Math, Date.
+   
+   Example:
+   console.log(Math.PI); // 3.14159
+
+12. Which version of JavaScript you learned?
+   - JavaScript versions include ES5, ES6, and later versions. ES6 introduced features like let, const, arrow functions, and promises.
+
+13. Why JavaScript is called client-side?
+   - JavaScript is considered client-side because it runs in the user's browser, not on the server.
+
+14. Is JavaScript dynamic? Explain:
+   - Yes, JavaScript is dynamic because it allows runtime modifications of types and values.
+   
+   Example:
+   let x = 10;  // number
+   x = "Hello";  // string
+
+15. Do parameters in function call and definition need to be the same?
+   - No, JavaScript allows flexibility in the number of parameters passed in a function call.
+
+   Example:
+   function greet(name, age) {
+     console.log(`Hello ${name}, you are ${age} years old.`);
+   }
+   greet("John");  // Will ignore the missing second parameter
+
+16. Do we need to terminate statements using semicolon in JavaScript?
+   - While semicolons are optional due to Automatic Semicolon Insertion (ASI), it is a good practice to use them to avoid unexpected behavior.
+
+17. Use of JavaScript:
+   - JavaScript is used to make web pages interactive, handle events, validate forms, animate elements, and more.
+
+18. Frameworks or Libraries built using JavaScript:
+   - Examples include React, Angular, Vue.js, Node.js, Express.js, jQuery.
+
+19. How to get the count of a given string:
+   - Use the `.length` property to get the length (count) of a string.
+   
+   Example:
+   let str = "Hello World";
+   console.log(str.length); // 11
+
+20. What is valueOf() and in which class it is defined?
+   - valueOf() is a method defined in the Object class. It returns the primitive value of an object.
+
+   Example:
+   let num = new Number(5);
+   console.log(num.valueOf()); // 5
+
+21. Difference between rest and spread:
+   - Rest (`...args`) is used to collect all remaining function arguments into an array.
+   - Spread (`...`) is used to unpack elements from an array or object.
+
+   Example:
+   // Rest
+   function sum(...numbers) {
+     return numbers.reduce((acc, num) => acc + num, 0);
+   }
+   console.log(sum(1, 2, 3)); // 6
+
+   // Spread
+   let arr1 = [1, 2, 3];
+   let arr2 = [...arr1, 4, 5];
+   console.log(arr2); // [1, 2, 3, 4, 5]
+
+22. How to clone an object:
+   - Use `Object.assign()` or the spread syntax to clone an object.
+
+   Example:
+   let obj = { name: "John" };
+   let clonedObj = { ...obj };
+   console.log(clonedObj); // { name: "John" }
+
+23. Use of == and ===:
+   - `==` checks for equality with type conversion (loose equality).
+   - `===` checks for strict equality (no type conversion).
+   
+   Example:
+   console.log(5 == '5'); // true
+   console.log(5 === '5'); // false
+
+24. What is NaN?
+   - NaN stands for "Not a Number". It is returned when an invalid arithmetic operation occurs.
+
+   Example:
+   let result = 'hello' / 5;
+   console.log(result); // NaN
+
+25. What is false in JavaScript?
+   - Falsy values in JavaScript are: 0, null, undefined, NaN, "", and false.
+
+26. Different ways to create an object in JavaScript:
+   - You can create an object using object literals, constructor functions, or `Object.create()`.
+   
+   Example:
+   let obj1 = { name: "John" };  // Object literal
+   let obj2 = new Object();  // Constructor function
+   obj2.name = "Jane";
+
+27. Can you call a function represented as a class without the new keyword?
+   - No, if a function is created as a class, you must use the `new` keyword to create an instance.
+
+28. What happens if no use strict is written?
+   - Without "use strict", JavaScript allows unsafe practices like creating global variables unintentionally.
+
+29. What is the constructor keyword?
+   - The `constructor` keyword is used to initialize the properties of an object when it is created using the `new` keyword.
+
+   Example:
+   class Person {
+     constructor(name, age) {
+       this.name = name;
+       this.age = age;
+     }
+   }
+   let person = new Person("John", 30);
+
+30. How to override the toString method?
+   - Override the `toString()` method in a class to customize the string representation of an object.
+
+   Example:
+   class Person {
+     constructor(name) {
+       this.name = name;
+     }
+     toString() {
+       return `Person: ${this.name}`;
+     }
+   }
+
+31. Does JS support method overloading?
+   - JavaScript does not support traditional method overloading. However, you can use default parameters or check the types of arguments to simulate overloading.
+
+32. How to inherit in ES5?
+   - In ES5, inheritance is done using constructor functions and prototypes.
+
+   Example:
+   function Animal(name) {
+     this.name = name;
+   }
+   Animal.prototype.speak = function() {
+     console.log(`${this.name} makes a noise.`);
+   };
+
+33. Everything is derived from:
+   - Everything is derived from `Object` in JavaScript.
+
+34. Top-level class in the browser:
+   - The top-level class in the browser is `window`.
+
+35. Will you be able to iterate over properties of a class?
+   - Yes, you can iterate over class properties using `for...in`.
+
+36. How to iterate over an array in JavaScript?
+   - You can iterate over an array using `for`, `forEach()`, or `map()`.
+
+   Example:
+   let arr = [1, 2, 3];
+   arr.forEach(item => console.log(item));
+
+37. What is a closure?
+   - A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.
+
+   Example:
+   function outer() {
+     let x = 10;
+     return function inner() {
+       console.log(x); // Closure, x is accessible
+     };
+   }
+   const closureFunc = outer();
+   closureFunc(); // 10
+
+38. What is an arrow function (=>)?
+   - Arrow functions provide a concise syntax for writing functions. They also inherit `this` from the surrounding scope.
+
+   Example:
+   const add = (a, b) => a + b;
+   console.log(add(2, 3)); // 5
+
+39. What is IIFE (Immediately Invoked Function Expression)?
+   - An IIFE is a function that is defined and immediately invoked.
+
+   Example:
+   (function() {
+     console.log("I am an IIFE");
+   })();
+
+40. What is a default argument?
+   - A default argument is a value assigned to a function parameter when no value is provided.
+
+41. What is variable-length of arguments (`...arguments`)?
+   - `...arguments` (rest parameters) allows a function to accept an arbitrary number of arguments.
+   Example:
+   function sum(...numbers) { return numbers.reduce((a, b) => a + b); }
+   console.log(sum(1, 2, 3, 4)); // 10
+
+
+ES5, ES6, ES7, ES8 in JavaScript - Explanation with Examples
+==============================================================
+
+📘 ES5 (ECMAScript 2009)
+Key Features:
+- Introduced 'strict mode'
+- Added Array methods: forEach, map, filter, reduce
+- JSON support
+- Object.create(), Object.defineProperty()
+
+Example:
+"use strict";
+var arr = [1, 2, 3];
+arr.forEach(function(n) {
+    console.log(n);
+});
+
+------------------------------------------------------------
+
+📘 ES6 (ECMAScript 2015)
+Key Features:
+- let, const for block scoping
+- Arrow functions () => {}
+- Template literals: `Hello ${name}`
+- Destructuring
+- Classes and class syntax
+- Promises
+- Modules (import/export)
+- Spread and Rest (...)
+
+Example:
+const name = "John";
+const greet = () => `Hello, ${name}`;
+console.log(greet());
+
+const nums = [1, 2, 3];
+const newNums = [...nums, 4];
+console.log(newNums);
+
+------------------------------------------------------------
+
+📘 ES7 (ECMAScript 2016)
+Key Features:
+- Array.prototype.includes
+- Exponentiation operator **
+
+Example:
+let nums = [1, 2, 3];
+console.log(nums.includes(2)); // true
+
+console.log(2 ** 3); // 8
+
+------------------------------------------------------------
+
+📘 ES8 (ECMAScript 2017)
+Key Features:
+- async/await for asynchronous code
+- Object.entries(), Object.values()
+- String.padStart() and padEnd()
+
+Example:
+async function fetchData() {
+    return "Data loaded";
+}
+fetchData().then(console.log);
+
+let obj = { a: 1, b: 2 };
+console.log(Object.entries(obj)); // [['a', 1], ['b', 2]]
+
+console.log("5".padStart(3, "0")); // 005
