@@ -1,0 +1,273 @@
+DAY-5
+-----------
+
+JavaScript
+----------------
+
+1. Function Parameter Destructuring:
+   - Allows unpacking values from arrays or properties from objects directly into variables in function parameters.
+   Example:
+   function greet({name, age}) { console.log(name, age); }
+
+2. Difference Between let and var:
+   - let: block-scoped, no hoisting like var.
+   - var: function-scoped, hoisted to the top of its scope.
+
+3. Difference and similarities Between let and const:
+   - Similar: both are block-scoped.
+   - Difference: const cannot be reassigned, but the object it points to can still be modified.
+
+4. Why to use 'use strict':
+   - Enforces stricter parsing and error handling in your JS code (e.g., no undeclared variables).
+
+5. Use of typeof:
+   - Returns a string indicating the type of the unevaluated operand.
+   Example: typeof 123 // "number"
+
+6. Which operator is overloaded:
+   - '+' operator is overloaded for both numeric addition and string concatenation.
+
+7. Default value of uninitialized variable:
+   - undefined
+
+8. Calculation between number and undefined:
+   - Results in NaN (Not a Number)
+
+9. Default value returned by function:
+   - undefined (if no return statement)
+
+10. Explain window.document.write():
+   - Writes directly to the HTML output stream; often used for debugging or testing.
+
+11. Is JavaScript Object Oriented?
+   - Yes, prototype-based OOP.
+
+12. Predefined JS objects:
+   - Object, Array, Date, Math, String, Number, Boolean, RegExp, Function
+
+13. Which version you learned?
+   - ES6+ (ECMAScript 2015 and beyond)
+
+14. Why is JS called client-side?
+   - Executes in browser, not server.
+
+15. Is JS dynamic?
+   - Yes, variables can hold any type of value.
+   Example: let x = 10; x = "ten";
+
+16. Do parameters in call and definition need to be same?
+   - No, JavaScript allows extra or missing parameters.
+
+17. Is semicolon necessary?
+   - Optional but recommended to avoid ASI (Automatic Semicolon Insertion) issues.
+
+18. Use of JavaScript:
+   - DOM manipulation, event handling, form validation, APIs, games, etc.
+
+19. Frameworks/Libraries:
+   - React, Angular, Vue, Node.js, jQuery, Express
+
+20. Get character count:
+   - str.length
+
+21. valueOf():
+   - Returns the primitive value of an object; defined in Object class.
+
+22. Rest vs Spread:
+   - Rest (...) collects items into an array.
+   - Spread (...) expands an array or object.
+
+23. Clone Object:
+   - let clone = {...original};
+
+24. == vs ===:
+   - == checks value (type coercion), === checks value and type.
+
+25. NaN:
+   - "Not a Number", result of invalid numeric operations.
+
+26. False in JS:
+   - false, 0, "", null, undefined, NaN
+
+27. Create JS object:
+   - {}, new Object(), Object.create()
+
+28. Call class function without new:
+   - Yes, but behaves differently; in strict mode, throws error.
+
+29. constructor keyword:
+   - Special method for initializing new objects in classes.
+
+30. Override toString:
+   - obj.toString = function() { return "custom"; }
+
+31. Method overloading:
+   - Not supported directly; can simulate via arguments.length.
+
+32. Inherit in ES5:
+   - Child.prototype = Object.create(Parent.prototype)
+
+33. Everything derived from:
+   - Object
+
+34. Top-level browser object:
+   - window
+
+35. Iterate class properties:
+   - for...in (enumerable properties)
+
+36. Iterate array:
+   - for, for...of, forEach
+
+37. Closure:
+   - Function with preserved data scope.
+   Example:
+   function outer() {
+       let count = 0;
+       return function() { count++; return count; };
+   }
+
+38. Arrow function:
+   - Short syntax, no own 'this'.
+   Example: const add = (a, b) => a + b;
+
+39. IIFE:
+   - Immediately Invoked Function Expression
+   Example: (function(){})();
+
+40. Default argument:
+   - function greet(name="Guest") {}
+
+41. Variable-length arguments:
+   - function fn(...args) {}
+
+42. child.prototype = Object.create(parent.prototype):
+   - Creates inheritance chain.
+
+43. parent.call(this):
+   - Calls parent constructor with child's context.
+
+44. '#' => private, '_' => protected (by convention)
+
+45. static method:
+   - Called on class, not instance.
+
+46. static variable:
+   - Not directly supported; use class fields or closures.
+
+47. class vs function:
+   - Class is syntactic sugar; class methods are non-enumerable.
+
+48. import/export:
+   - ES6 modules for code reusability.
+   Example: export default, import from
+
+49. Node.js:
+   - JS runtime for server-side
+
+50. .mjs:
+   - Module JavaScript file for ES modules
+
+51. this in static method:
+   - Refers to class, not instance
+
+52. Best way to declare array:
+   - []
+
+53. Avoid:
+   - new Array, new String, new Number
+
+54. Array toString overridden:
+   - Returns comma-separated string
+
+55. new Array(2):
+   - Creates empty array of length 2
+
+56. Array methods:
+   - concat, join, slice, splice, push, pop, shift, unshift, sort, reverse
+
+57. find vs filter:
+   - find: returns first match
+   - filter: returns all matches
+
+58. arr[i] vs arr.at(i):
+   - arr.at supports negative indexing
+
+59. map():
+   - Transforms array elements
+
+60. includes():
+   - Returns boolean if value exists in array
+
+61. getElementById vs getElementsByTagName:
+   - ID: single element, Tag: collection
+
+62. classList methods:
+   - add, remove, replace, toggle, contains
+
+63. set/get attribute:
+   - setAttribute, getAttribute
+
+64. querySelector vs querySelectorAll:
+   - Single vs multiple matches (CSS selectors)
+
+65. String to Date:
+   - new Date("YYYY-MM-DD")
+
+66. Random number:
+   - Math.random()
+
+67. Range of Math.random():
+   - >=0 and <1
+
+68. Convert string to number:
+   - parseInt, +, parseFloat, Number()
+
+69. Array functions:
+   - map, at, find, filter
+
+70. Forms/elements/options:
+   - Access via document.forms, .elements, .options
+
+71. document.frm.t1:
+   - Refers to input element t1 in form frm
+
+72. checked/selected/value/text:
+   - checkbox.checked, select.selectedIndex, input.value
+
+73. onsubmit:
+   - Form submission event; return false prevents submit
+
+74. submit():
+   - Programmatically submits form
+
+75. focus():
+   - Sets cursor focus on element
+
+76. Events:
+   - onchange, onblur, onerror, oninput, onkeypress, onkeydown, onkeyup, onmouseover, onmouseout, onmouseenter, onmouseleave, onclick
+
+77. addEventListener/removeEventListener:
+   - Add/remove event handlers
+
+78. Event properties:
+   - event.target, currentTarget, type
+
+79. History:
+   - history.back(), forward(), go()
+
+80. navigator:
+   - Info about browser (userAgent, language, etc.)
+
+81. Fire events:
+   - onclick=go(), addEventListener("click", go)
+
+82. Errors:
+   - try, catch, finally
+   - TypeError, ReferenceError, URIError, SyntaxError, EvalError, RangeError, Error
+
+83. Optional chaining:
+   - obj?.prop, obj?.[key], arr?.[1], obj?.method?.()
+
+84. Nullish coalescing:
+   - null ?? "hello"
