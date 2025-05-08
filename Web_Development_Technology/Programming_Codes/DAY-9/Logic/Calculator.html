@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        const Add = () => {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 + num2;
+            document.getElementById("Addition").value = result;
+        }
+        const Sub = () => {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 - num2;
+            document.getElementById("Substraction").value = result;
+        }
+        const Mul = () => {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 * num2;
+            document.getElementById("Multiplication").value = result;
+        }
+        const Div = () => {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = num1 / num2;
+            document.getElementById("Division").value = result;
+        }
+    </script>
+</head>
+<body>
+    
+    Number1: <input type="text" name="" id="num1"><br><br>
+    Number2: <input type="text" name="" id="num2"><br><br>
+    
+    <p>Addition: <input type="text" id="Addition"></p>
+    <p>Substraction: <input type="text" id="Substraction"></p>
+    <p>Multiplication: <input type="text" id="Multiplication"></p>
+    <p>Division: <input type="text" id="Division"></p>
+    <button onclick="Add()">Add</button>
+    <button onclick="Sub()">Sub</button>
+    <button onclick="Mul()">Mul</button>
+    <button onclick="Div()">Div</button>
+
+</body>
+</html>
