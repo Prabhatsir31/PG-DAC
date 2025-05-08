@@ -1,0 +1,178 @@
+<!-- Practice Exam Question -->
+<!-- // arrow function with logical program 
+(factorial , prime , reverse string, palindrome, count number of digit ) 
+-->
+<html>
+    <head>
+        <title>Exam Qestions</title>
+        <script>
+            const Fact = ()=>{
+                var InputNumber = document.getElementById("Input_Factorial").value;
+                var factorial = 1;
+                if(InputNumber == 1 || 0 ){
+                    document.getElementById("Output_Factorial").value = factorial;
+                    document.getElementById("Output_Factorial").innerHTML= factorial; // not working why?
+                }
+                for(var i =1;i<=InputNumber;i++){
+                    factorial = factorial * i;
+                }
+                document.getElementById("Output_Factorial").value = factorial;
+                document.getElementById("Output_Factorial").innerHTML= factorial; // not working why?
+                // when to use  .innertext.html ? innerHtml ? when to use .value 
+            }
+
+
+            const Prime = ()=>{
+                var num = document.getElementById("Input_Prime").value;
+                var counter = 0;
+                for(var i = 1;i<=num ;i++){
+                    if(num%i == 0){
+                        counter++;
+                    }
+                }
+                if(counter == 2){
+                    document.getElementById("Output_Prime").value = "yes";
+                }else{
+                    document.getElementById("Output_Prime").value = "No";
+                }
+            }
+
+
+            const CountDigit = ()=>{
+                var num = parseInt(document.getElementById("Get_Digit").value);
+                // var length = num.length;                               // one liner
+                // document.getElementById("Digits_Are").value = length; // one liner 
+                var count = 0;
+                if(num === 0){
+                    count = 1;
+                    document.getElementById("Digits_Are").value = count;
+                }
+                else{
+                    num = Math.abs(num);
+                    while(num>0){
+                        num = Math.floor(num/10);
+                        ++count;
+                    }
+                    document.getElementById("Digits_Are").value = count;
+                } 
+            }
+
+
+            const Add = ()=>{
+                var num1 = parseInt(document.getElementById("Num1").value);
+                var num2 = parseInt(document.getElementById("Num2").value);
+                var num3 = (num1) + (num2); 
+                document.getElementById("Addition").value = num3;
+            }
+            const Sub = ()=>{
+                var num1 = parseInt(document.getElementById("Num1").value);
+                var num2 = parseInt(document.getElementById("Num2").value);
+                var num3 = (num1) - (num2); 
+                document.getElementById("Subtraction").value = num3;
+            }
+            const Mul = ()=>{
+                var num1 = parseInt(document.getElementById("Num1").value);
+                var num2 = parseInt(document.getElementById("Num2").value);
+                var num3 = (num1) * (num2); 
+                document.getElementById("Multiplication").value = num3;
+            }
+            const Div = ()=>{
+                var num1 = parseInt(document.getElementById("Num1").value);
+                var num2 = parseInt(document.getElementById("Num2").value);
+                var num3 = (num1) / (num2); 
+                document.getElementById("Division").value = num3;
+            }
+            // const yash = (a,b)=> console.log("addition is "+(a+b));
+            // yash(4,5);
+
+            const Reverse = ()=>{
+                var InputString = document.getElementById("Get_String").value;
+                var length = InputString.length;
+                var ReverseString = "";
+                for(var i=length-1;i>=0;i--){
+                    ReverseString = ReverseString + InputString.charAt(i);
+                }
+                document.getElementById("Reverse_String").value = ReverseString;
+            }
+            // var name = "NayaN"
+            // console.log("ogString: "+name);
+            const abdul = (name)=>{
+                var nName = name;
+                var length = nName.length;
+                var ReverseString = "";
+                for(var i=length-1;i>=0;i--){
+                    ReverseString = ReverseString + nName.charAt(i);
+                }
+                console.log("Reversed String is : "+ReverseString);
+            }
+            // abdul("yash");
+            const Palindrome = () => {
+                var str = document.getElementById("Get_Palindrome").value.toLowerCase().replace(/\s/g, '');
+                var reversed = str.split('').reverse().join('');
+                if (str === reversed) {
+                    document.getElementById("Is_Palindrome").value = "Yes, Palindrome";
+                }   
+                else {
+                    document.getElementById("Is_Palindrome").value = "No, Not a Palindrome";
+                }
+            }
+    </script>
+    </head>
+    <body>
+        <h4>Factorial</h4>
+        <input type="text" id="Input_Factorial" placeholder="Enter Number">
+        <button onclick="Fact()">Get Factorial</button><br><br>
+        <label for="Output">Factorial is : </label>
+        <input type="text" id="Output_Factorial" readonly>
+         <br><br><hr> 
+         
+        <h4>Prime Number is a number that is divisible by 1 and Itself</h4>
+        <input type="text" id="Input_Prime" placeholder="Enter Number">
+        <button onclick="Prime()">Check Prime</button><br><br>
+        <label for="Output">is Number Prime</label>
+        <input type="text" id="Output_Prime" readonly>
+        <br><br><hr>
+
+        <h4>Digit Calculator</h4>
+        <input type="text" id="Get_Digit" placeholder="EnterTheNumber">
+        <button onclick="CountDigit()">Count Digit</button><br><br>
+        <label for="Output">Digits are : </label>
+        <input type="text" id="Digits_Are" readonly>
+        <br><br><hr>
+        
+        <h4>Reverse String</h4>
+        <input type="text" id="Get_String" placeholder="EnterTheString">
+        <button onclick="Reverse()">Reverse: </button><br><br>
+        <label for="Output">ReverseString is: </label>
+        <input type="text" id="Reverse_String" readonly>
+        <br><br><hr>
+        
+        <h4>Palindrome</h4>
+        <input type="text" id="Get_Palindrome" placeholder="Enter The String">
+        <button onclick="Palindrome()">Check Palindrome</button><br><br>
+        <label>Palindrome: </label>
+        <input type="text" id="Is_Palindrome" readonly>
+        <br><br><hr>         
+        
+        <h3>Calculator</h3>
+        <label for="">Enter First Number</label>
+        <input type="text" id="Num1"><br><br>
+        <label for="">Enter Second Number</label>
+        <input type="text" id="Num2"><br><br>
+
+
+        <label for="">Addition is</label>
+        <input type="text" id="Addition"><br><br>
+        <label for="">Subtraction is</label>
+        <input type="text" id="Subtraction"><br><br>
+        <label for="">Multiplication is</label>
+        <input type="text" id="Multiplication"><br><br>
+        <label for="">Division is</label>
+        <input type="text" id="Division"><br><br>
+
+        <button onclick="Add()">Add</button>
+        <button onclick="Sub()">Sub</button>
+        <button onclick="Mul()">Mul</button>
+        <button onclick="Div()">Div</button> 
+    </body>
+</html>
