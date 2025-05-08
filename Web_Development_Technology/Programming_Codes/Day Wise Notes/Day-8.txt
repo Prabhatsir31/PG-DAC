@@ -1,0 +1,515 @@
+REACT DAY-1
+==============
+
+===============================
+REACT JS ROADMAP UI GUIDE
+===============================
+
+1. Prerequisites
+
+---
+
+* Show as a checklist on a welcome dashboard.
+* Include progress indicators (✔️ for completed).
+
+2. Environment Setup
+
+---
+
+* Show as a step-by-step wizard interface.
+* Use cards or modals to guide each installation step.
+
+3. React Basics
+
+---
+
+* Create a left-sidebar layout with navigation for:
+
+  * Components
+  * Props & State
+  * Events
+* Use live code editor panels (CodePen-style).
+
+4. Styling in React
+
+---
+
+* Tabs for different styling techniques.
+* Preview pane to show real-time CSS changes.
+
+5. React Hooks
+
+---
+
+* Accordion or expandable panels per hook.
+* Include live examples and diagrams.
+
+6. Routing
+
+---
+
+* Navigation bar with route simulation.
+* Highlight active routes in NavLink style.
+
+7. State Management
+
+---
+
+* Use diagrammatic flowcharts for data flow.
+* Side-by-side comparison of Context vs Redux.
+
+8. HTTP Requests
+
+---
+
+* Create a Fetch Simulator with success/fail scenarios.
+* Include spinner animation for loading.
+
+9. Project Structure & Best Practices
+
+---
+
+* Tree view layout showing folders and files.
+* Hover tips showing purpose of each directory.
+
+10. Testing
+
+---
+
+* Tab-based layout for Jest and Testing Library.
+* Display pass/fail badges.
+
+11. Deployment
+
+---
+
+* Show deployment methods as cards.
+* Include buttons for build & deploy simulation.
+
+12. Advanced Concepts
+
+---
+
+* Flowcharts for Suspense, Lazy, Memo, etc.
+* Tabs with code walkthroughs.
+
+13. TypeScript with React
+
+---
+
+* Show code in two panels: JS vs TS.
+* Tooltip hints for type usage.
+
+14. Popular Libraries
+
+---
+
+* Show library cards with logos.
+* Clicking card shows usage demo.
+
+15. Build Projects
+
+---
+
+* Project cards with title, image, and tech used.
+* Include GitHub preview and deployment link slots.
+
+16. Keep Learning
+
+---
+
+* Checklist with links to external resources.
+* Progress bar showing modules completed.
+
+
+What is React JS
+===================
+
+* React is a JavaScript library developed by Facebook.
+* Used to build user interfaces, especially single-page applications.
+* Uses a component-based architecture.
+* Virtual DOM ensures high performance.
+
+Minification
+================
+
+* The process of removing unnecessary characters (spaces, comments) from code.
+* Reduces file size for faster loading.
+* Commonly done during build using tools like Webpack or Vite.
+
+Why React JS
+===============
+
+* Component-based structure promotes reusability.
+* Faster rendering with Virtual DOM.
+* Strong community and ecosystem.
+* Easy integration with other libraries or frameworks.
+* Supports modern JavaScript (ES6+).
+
+How to create a REACT project
+====================================
+
+## Option 1: Using Create React App
+
+1. Open terminal
+2. Run:
+
+   ```bash
+   npx create-react-app my-app
+   cd my-app
+   npm start
+   ```
+
+## Option 2: Using Vite (Faster Setup)
+
+1. Open terminal
+2. Run:
+
+    ```bash
+    npm create vite@latest
+
+    Type the Project Nmae: _________
+    Type the Package Name: __________   
+
+    Select the varient of REACT:- JAVASCRIPT + SWC
+
+       cd project_name
+       npm install
+       npm run dev
+
+Shortcut
+===========
+
+press r + enter to restart the server
+press u + enter to show server url
+press o + enter to open in browser
+press c + enter to clear console
+press q + enter to quit
+
+
+If this Error comes in vs code
+---------------------------------
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about\_Execution\_Policies
+at https\:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
+
+* npm run dev
+* ```
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+  ```
+
+How to Fix 
+-------------
+
+==================================
+FIX: PowerShell Script Block Error
+==================================
+
+## Issue:
+
+You may see an error like this when using npm in PowerShell:
+
+## Reason:
+
+PowerShell restricts script execution due to security policies.
+
+## Fix 1: Set a Permanent Execution Policy (Requires Admin Access)
+
+1. Open **PowerShell as Administrator**
+2. Run this command:
+
+   Set-ExecutionPolicy RemoteSigned
+
+3. Type `Y` when prompted and press Enter.
+
+## Fix 2: Use a Temporary Bypass (No Admin Needed)
+
+Run this in your PowerShell terminal:
+
+powershell -ExecutionPolicy Bypass -Command "npm run dev"
+
+## Fix 3: Use Command Prompt or Git Bash (Recommended)
+
+These environments skip PowerShell's script policy:
+
+* Open **Command Prompt (cmd)** or **Git Bash**
+* Run:
+
+  ```bash
+  npm run dev
+  ```
+
+==============================
+  REACT HOOKS 
+==============================
+
+1. useState (State Management)
+-------------------------------
+- Used to store local component state.
+- Re-renders the component on state change.
+
+Example:
+const [count, setCount] = useState(0);
+
+UI: Show a counter with + / - buttons.
+
+-------------------------------
+
+2. useEffect (Side Effects)
+-------------------------------
+- Runs side effects like data fetching or timers.
+- Accepts dependency array.
+
+Example:
+useEffect(() => {
+  // do something
+}, [dependency]);
+
+UI: Useful for API fetch or setInterval.
+
+-------------------------------
+
+3. useRef (Mutable Reference)
+-------------------------------
+- Stores a mutable value that doesn’t cause re-render.
+- Also used for DOM access.
+
+Example:
+const inputRef = useRef(null);
+
+UI: Focus on input field when component loads.
+
+-------------------------------
+
+4. useContext (Global State)
+-------------------------------
+- Access shared data (like theme, user info) without prop drilling.
+
+Example:
+const value = useContext(MyContext);
+
+UI: Toggle dark/light theme from anywhere.
+
+-------------------------------
+
+5. useReducer (Complex State)
+-------------------------------
+- Alternative to useState for complex logic.
+
+Example:
+const [state, dispatch] = useReducer(reducerFn, initialState);
+
+UI: Manage complex forms or counters.
+
+-------------------------------
+
+6. useMemo (Memoization)
+-------------------------------
+- Optimizes performance by memoizing values.
+
+Example:
+const memoValue = useMemo(() => compute(), [dependencies]);
+
+UI: Avoid slow calculations on every render.
+
+-------------------------------
+
+7. useCallback (Memoize Functions)
+-------------------------------
+- Memoizes function references between renders.
+
+Example:
+const handleClick = useCallback(() => doSomething(), [dependencies]);
+
+UI: Avoid unnecessary child re-renders.
+
+-------------------------------
+
+8. useImperativeHandle + forwardRef
+-------------------------------
+- Customize ref behavior for child components.
+
+UI: Expose specific methods to parent via ref.
+
+-------------------------------
+
+9. useLayoutEffect
+-------------------------------
+- Similar to useEffect, but runs synchronously **after all DOM mutations**.
+
+Use when: Measuring DOM elements before painting.
+
+-------------------------------
+
+10. useDebugValue
+-------------------------------
+- Helps debug custom hooks in React DevTools.
+
+
+
+React Render Phase
+===========================
+
+The Render Phase is the first phase in React's reconciliation process.
+It is **pure**, meaning no side effects (like API calls or subscriptions) should happen here.
+
+What happens in the Render Phase?
+------------------------------------------
+1. React **calls your components** to build a Virtual DOM tree.
+2. It **compares** the newly returned Virtual DOM with the previous one (diffing).
+3. It **calculates the minimal changes** needed to update the actual DOM.
+
+Important Points:
+--------------------------
+- It can be **called multiple times**, especially in development mode.
+- It must remain **pure and predictable**.
+- It’s where React decides “**what to render**”.
+
+Common Triggers of Render Phase:
+------------------------------------------
+- State updates (useState, useReducer)
+- Props change from parent
+- Context value change
+- Force update (not common)
+
+Don’ts in Render Phase:
+--------------------------
+- No direct DOM manipulation
+- No API calls or subscriptions
+- No setTimeout or setInterval
+
+React Internals:
+--------------------------
+React performs this phase in memory using the Virtual DOM.
+No changes are made to the real DOM until the Commit Phase.
+
+After Render Phase:
+--------------------------
+- React enters the **Commit Phase**
+- This is where DOM is updated and side effects run (like useEffect).
+
+Summary:
+--------------------------
+Render Phase = “What the UI should look like”
+Commit Phase = “Apply the changes and run effects”
+
+
+Virtual DOM in React
+===========================
+
+What is Virtual DOM?
+---------------------------
+The Virtual DOM (VDOM) is a lightweight JavaScript object
+which is a copy of the Real DOM (Document Object Model).
+
+It is a concept used by React to improve performance and rendering speed.
+
+Why Virtual DOM?
+---------------------------
+- Real DOM manipulations are slow.
+- Frequent updates to UI can cause performance issues.
+- Virtual DOM makes updates efficient and faster.
+
+How it works?
+---------------------------
+1. React creates a Virtual DOM when a component is rendered.
+2. On state/prop change, a new Virtual DOM is created.
+3. React compares it with the previous Virtual DOM (diffing).
+4. React calculates the minimum number of operations required.
+5. Then it updates the Real DOM in the most efficient way.
+
+Steps in Virtual DOM Workflow:
+---------------------------
+1. **Render Phase**: A new Virtual DOM is created.
+2. **Diffing Phase**: New VDOM is compared with the old one.
+3. **Reconciliation Phase**: Determines what has changed.
+4. **Commit Phase**: Applies changes to the Real DOM.
+
+Benefits:
+---------------------------
+- Faster UI updates
+- Improves performance
+- Efficient memory usage
+- Better user experience
+
+Example:
+---------------------------
+- You update a counter state in React.
+- React builds a new Virtual DOM.
+- Compares it with the previous one.
+- Finds only the count value changed.
+- Updates only that specific part in the Real DOM.
+
+Note:
+---------------------------
+- Virtual DOM is an internal implementation detail.
+- React handles it automatically, developers don’t manage it directly.
+
+Summary:
+---------------------------
+Virtual DOM = Lightweight copy of Real DOM
+React uses it to:
+- Detect changes
+- Update efficiently
+- Improve performance
+
+===============================
+Component Snippets
+===============================
+
+rafce     → React Arrow Function Component with Export
+rafc      → React Arrow Function Component
+rce       → React Class Component with Export
+rcc       → React Class Component
+rfc       → React Functional Component
+rconst    → Constructor inside Class Component
+
+===============================
+React Hooks Snippets
+===============================
+
+usestate     → useState Hook
+useeffect    → useEffect Hook
+useref       → useRef Hook
+usecontext   → useContext Hook
+usereducer   → useReducer Hook
+usecallback  → useCallback Hook
+usememo      → useMemo Hook
+
+===============================
+Import Snippets
+===============================
+
+imr       → Import React
+imrc      → Import React, Component
+impt      → Import PropTypes
+redux     → Import Redux
+reactn    → Import React Native
+
+===============================
+Console Snippet
+===============================
+
+clg       → console.log()
+
+===============================
+PropTypes Snippets
+===============================
+
+ptc       → PropTypes for Class Component
+ptfc      → PropTypes for Functional Component
+
+===============================
+Redux Snippets
+===============================
+
+reduxmap     → mapStateToProps and mapDispatchToProps
+creducer     → Create a Redux reducer
+caction      → Create a Redux action
+
+===============================
+Other Snippets
+===============================
+
+hoc       → Higher Order Component
