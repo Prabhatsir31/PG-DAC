@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <script>
+        const Fact = () => {
+            var num = document.getElementById("fact").value;
+            var factorial= 1;
+            if(num == 1 || 0){
+                document.getElementById("result").value = factorial;
+                document.getElementById("result").innerHTML = factorial;    
+            }
+            for(var i = 1; i<=num; i++ ){
+                factorial = factorial * i;
+            }
+            document.getElementById("result").value = factorial;
+            document.getElementById("result").innerHTML = factorial;
+
+        }
+
+    </script>
+</head>
+<body>
+    <h4>Factorial </h4>
+    <input type="number" name="" id="fact" ><br><br>
+    <button onclick="Fact()">Factorial</button><br><br>
+    <input type="text" name="" id="result">
+
+</body>
+</html>
