@@ -1,0 +1,25 @@
+
+why React ==> reusable component and fast
+
+it is - of MVC
+
+what is virtual dom
+command to create project   npm create vite@latest      ==> cd to project ==>npm install
+how to run   nom fun dev==>
+what is package .json
+what is component
+what is JSX
+what is export and export default
+how to pass data from one component to another component
+have you used object de structuring and default value in it
+what is swc
+what does swc do
+what is arrow function
+what is sort cut to create a function as component  rfce   rafce
+what is diff algorithm
+which is the 1st file get loaded in browser  and in server 
+what is pattern of passing data and flux
+
+
+
+
