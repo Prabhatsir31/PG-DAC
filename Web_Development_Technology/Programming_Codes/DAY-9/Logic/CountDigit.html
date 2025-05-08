@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Digit</title>
+    <script>
+        const countDigit = () => {
+            var num = parseInt(document.getElementById("countdigit").value);
+            var count = 0;
+            if(num == 0) {
+                count = 1;
+                document.getElementById("result").value = count;
+            }
+            else {
+                num = Math.abs(num);
+                while(num > 0) {
+                    num = Math.floor(num / 10);
+                    ++count;
+                }
+                document.getElementById("result").value = count;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    Enter the number: <input type="text" name="" id="countdigit">
+    <button onclick="countDigit()">Count Digits</button>
+    Result: <input type="text" name="" id="result">
+</body>
+</html>
