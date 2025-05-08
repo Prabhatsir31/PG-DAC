@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+
+    <form onsubmit="return validateForm()">
+        <h2><u><i>Learning registration form</i></u></h2>
+        Name:
+        <input type="text" name="firstname" id="fname"><br>
+        <span id="nameErr" style="color:red"></span><br>
+
+        Email:
+        <input type="email" name="email" id="e-mail"><br>
+        <span id="emailErr" style="color:red"></span><br>
+
+        Password:
+        <input type="password" name="password" id="passw" ><br>
+        <span id="pwdErr" style="color:red"></span><br>
+
+        Confirm password:
+        <input type="password" name="confirm_password" id="confirmpwd"><br>
+        <span id="confirmPwdErr" style="color:red"></span><br>
+
+        Address
+        <input type="text" name="address" id="address"><br>
+        <span id="addrErr" style="color:red"></span><br>
+
+       Date of birth:
+       <input type="date" id="dob" name="dob" ><br>
+       <span id="dobMsg" style="color:red;"></span><br>
+
+        Mobile Number: 
+        <input type="text" name="mobile" id="mobile"><br>
+        <span id="mobErr" style="color:red"></span><br>
+
+        Education: 
+        <select name="education" id="education"><br>
+            <option value="high school">High school</option>
+            <option value="bachelor">Bachelor</option>
+            <option value="masters">Masters</option>
+        </select><br><br>
+
+        Gender: 
+        <input type="radio" name="gender" value="Male" checked> Male 
+        <input type="radio" name="gender" value="Female"> Female <br><br>
+
+        <input type="submit" value="Submit form">
+    </form>
+</body>
+</html>
