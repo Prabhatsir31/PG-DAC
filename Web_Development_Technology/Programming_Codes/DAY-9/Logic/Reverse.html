@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse</title>
+    <script>
+        const reverse = () => {
+            var str = document.getElementById("string").value;
+            var length = str.length;
+            var ReverseStr = "";
+            for(var i = length-1; i >= 0; i--) {
+                ReverseStr = ReverseStr + str.charAt(i);
+            }
+            document.getElementById("result").value = ReverseStr;
+        } 
+    </script>
+</head>
+<body>
+    <h2>Reverse</h2>
+    Enter the String: <input type="text" name="" id="string"><br><br>
+    <button onclick="reverse()">Reverse String</button><br><br>
+    Result: <input type="text" name="" id="result">
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <script>
+        const Prime = ()=>{
+                var num = document.getElementById("Input_Prime").value;
+                var counter = 0;
+                for(var i = 1;i<=num ;i++){
+                    if(num%i == 0){
+                        counter++;
+                    }
+                }
+                if(counter == 2){
+                    document.getElementById("Output_Prime").value = "yes";
+                }else{
+                    document.getElementById("Output_Prime").value = "No";
+                }
+            }
+
+    </script>
+</head>
+<body>
+   
+    <h4>Prime Number is a number that is divisible by 1 and Itself</h4>
+    <input type="text" id="Input_Prime" placeholder="Enter Number">
+    <button onclick="Prime()">Check Prime</button><br><br>
+    <label for="Output">is Number Prime</label>
+    <input type="text" id="Output_Prime" readonly>
+    
+
+</body>
+</html>
