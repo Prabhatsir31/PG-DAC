@@ -1,0 +1,99 @@
+REACT DAY-3
+================
+
+useState (React Hook)
+-------------------------------
+Purpose: 
+- Allows you to add state in functional components.
+
+Syntax:
+import { useState } from 'react';
+
+Example:
+const [count, setCount] = useState(0);
+
+function increment() {
+  setCount(count + 1);
+}
+
+Return:
+- count = current value
+- setCount = function to update the value
+
+useEffect (React Hook)
+-------------------------------
+Purpose:
+- Used for side-effects: API calls, timers, subscriptions.
+- Runs after the component renders.
+
+Syntax:
+import { useEffect } from 'react';
+
+Example:
+useEffect(() => {
+  console.log("Component mounted");
+}, []);
+
+useEffect(() => {
+  console.log("Count changed");
+}, [count]); // runs when 'count' changes
+
+Routing in React (react-router-dom)
+-------------------------------------
+Install:
+npm install react-router-dom
+
+Used for:
+- Navigation between pages/components
+
+BrowserRouter
+-------------------------------
+- Wraps the entire app to enable routing.
+
+Example:
+import { BrowserRouter } from 'react-router-dom';
+
+<BrowserRouter>
+  <App />
+</BrowserRouter>
+
+Routes & Route
+-------------------------------
+- Define different routes (paths) and their components.
+
+Example:
+import { Routes, Route } from 'react-router-dom';
+
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+</Routes>
+
+Outlet
+-------------------------------
+- Used in Layout components to render child route components.
+
+Example:
+
+<Layout>
+  <Outlet />
+</Layout>
+
+Use case:
+<Route path="/" element={<Layout />}>
+   <Route index element={<Home />} />
+   <Route path="about" element={<About />} />
+</Route>
+
+Link
+-------------------------------
+- Used to navigate between routes without reloading the page.
+
+Syntax:
+import { Link } from 'react-router-dom';
+
+Example:
+<Link to="/">Home</Link>
+<Link to="/about">About</Link>
+
+

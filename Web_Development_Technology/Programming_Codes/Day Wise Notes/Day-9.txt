@@ -1,0 +1,16 @@
+REACT DAY-2 
+================
+
+Make a new Project 
+
+    Calculator 
+    Input type:text 
+    Input type:button
+    Input type:checkbox
+
+    Make a file in which you 
+        Upload the image 
+        Play the video 
+
+
+
