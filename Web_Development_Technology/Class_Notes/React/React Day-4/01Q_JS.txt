@@ -1,0 +1,252 @@
+Difference Between Let, and Var
+Difference and similarities Between Let, and  Const
+Why to use 'use strict'
+what is the use of typeof
+Which operator is overloaded
+What is the default value if variable is not assign any value.
+Calculation between number and Undefined results into
+What is the default value returned by function.
+Explain following line  window.document.write()
+Is java script object oriented?
+List down predefined references [Object] in JS
+Which version you have learned?
+Why Js is called client side?
+is java script Dynamic? explain with examples.
+In java script parameter in function call and parameter in definition need to be same?
+Do we need to terminate statement using semicolon ; in JS
+Use of javascript?
+Tell me the frame works or libraries  build using JS
+How to get count of the given string.
+what is valueOf() in which class it is defined.
+difference between rest and spred
+how to clone object
+use of == and ===// var a=5 let b=7
+what is NaN
+What is false in JS// 0  ,null, false, undefined,NaN
+Different way to  create object on java script
+can you call function which was represented as class without new key word?
+if yes what will happen if no use strict written
+what is constructor key word
+how to override toString method
+does JS support method overloading
+how to inherit in ES5
+every thing is derived from ---
+top level class in browser
+will you able to iterate property of a class //in
+iterate over aray of 
+what is calusar
+what is => function
+what is IIFE
+what is default argument
+what is variable length of argument==> ... arguments
+child.prototype=Object.Create(parent.prototype)===     extends
+parent.call(this(child)a,b)=== super
+#==> private
+_ indicate==> protected
+static method==>
+static variable 
+class and function as class difference==>
+method is not enumerable in class
+import 
+export and export default
+node ==>
+mjs on server side java script
+can I use this with static method yes but avoid 
+best way to declare array []
+new Array, new Number, new String, new Image==> avoid
+which method is overridden in array class toString
+new Array(2)==>size
+length/Name/
+concat two array==>  arr  ==> let coyarr=arr.concat()
+how to convert array to string==>join
+slice/
+
+splice/push/pop/shift/unshift/sort/reverse
+
+difference between find and filter
+difference between arr[i] and arr.at()
+what is map function of array class
+what is return type of includes() method of array class
+difference between geElementById and geElementsByTagName
+ClassList.  add/ remove/replace/toggle   Contains
+How to set and get attribute
+
+difference between querySelectorAll and  querySelector   [#,.,[],tags, > ~  *]
+
+How to convert string to Date
+How to generate Random number
+what is the range of Math.random() ==>  0>0 and <1
+
+string to number==> parseInt,  +,  parseFloat,   new Number("55");
+
+map, at, find,filter
+
+forms/elements/options
+
+document.frm.t1=>
+checked==> radio, checkbox ===> 
+selected   ==> selectedIndex
+value/text
+
+onsubmit event is _______   form
+if onsubmit return false
+
+submit()==>   
+how to set cursor on form element focus
+
+onchange/ onbblur, onerror, oninput onkeypress   onkeydown onkeyup  onmouseover/out    move => onmouseenter/leave onclick
+
+addEventlistner    removeEventlistener
+
+event==>  target   //currentTarget , type
+
+History ==> back / forward/go
+navigator==>
+
+different way to fire event   onclick=go()     ==> addEventlistener("click",go)
+object.click=go
+
+try catch finally  ==> TypeError , Reference Error, UriError, SyntaxError, Eval Error, RangeError , Error
+
+obj?.prop
+
+obj.address?.street
+
+obj.mehtod?.()
+
+array?.[1]
+
+obj?.[key]
+
+null??"hello"
+
+what is Ajax==>
+ XmlHttpRequest  =>open  Get/POST   URI   true
+which method hit server send
+onreadyStatechanged   / onload  
+responseText/responseXml
+response
+
+
+what promise ==>resolve and reject ==>
+what are state of promise   pending fulfilled   ==> reject / resolve
+
+then has how many parameter ==>2  
+what is the use of finally in promise
+what is the  use of catch in promise 
+
+
+use of Async  and await  
+can I have await key word in a function which is not async
+what is return type of fetch
+how many parameter we pass in fetch what are they  [url,{method:    header:     body: }]
+how to serialise JS object ie. convert to string JSON.Stringfy
+How to convert json string to js object ==>
+in how many stage finalyyou received data
+when fetch resolve what you get response
+when response resolve you get either    data -  or error
+what is response.ok==>   it return Boolean true/false
+how to read data from response ==> response.json()
+what other data type you can red text(), Blob(), formdata(), ArrayBuffer()
+
+let res=await fetch()==> default method get   
+can we replace then with await
+
+FormData().entries()==> array
+use of FormData==> read form data as key value
+what should be property name of form field   same as POCO
+
+UrlSearchParams(FormData(frm))==> reading and serialising form data  age=25&name=vita+nidhi
+when should I use   to transfer form data
+
+ Collection classes Map==>  set and get  it is key Value pare key has to be unique else it will over wright key
+
+Set==> add/ has holds unique data
+
+regular expression    //ig ==? pattern      Regex()
+* 0 or more
++ 1 or more
+? o or 1   ==> https://
+. any one character
+[0-9]==>\d    
+[a-zA-z]    \D  non digit
+
+{10}
+{min, max}
+^
+$
+\w [a-zA-Z0-9_]
+
+\W
+
+
+match-array/search index /replace/
+
+why React ==> reusable component and fast
+
+it is - of MVC
+
+what is virtual dom
+command to create project   npm create vite@latest      ==> cd to project ==>npm install
+how to run   nom fun dev==>
+what is package .json
+what is component
+what is JSX
+what is export and export default
+how to pass data from one component to another component
+have you used object de structuring and default value in it
+what is swc
+what does swc do
+what is arrow function
+what is sort cut to create a function as component  rfce   rafce
+what is diff algorithm
+which is the 1st file get loaded in browser  and in server 
+what is pattern of passing data and flux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
