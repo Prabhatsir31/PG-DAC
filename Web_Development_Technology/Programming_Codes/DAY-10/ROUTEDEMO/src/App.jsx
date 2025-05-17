@@ -1,19 +1,24 @@
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import './index.css';
-import Footer from './Footer';
+import Footer from './Components/Footer';
 import logo from './assets/react.svg';
-import Createemp from './Createemp';
-import Listemployee from './Listemployee';
-import Home from './Home';
-import Login from './Login';
-import Signup from './Signup';
-import ContactUs from './ContactUs';
-import Nopage from './Nopage';
-import Example from './Example';
-import Employee from './Employee';
-import Employeeup from './Employeeup';
-import Employeedel from './Employeedel';
-import About from "./About";
+import Createemp from './Components/Createemp';
+import Listemployee from './Components/Listemployee';
+import Home from './Components/Home';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
+import ContactUs from './Components/ContactUs';
+import Nopage from './Components/Nopage';
+import Example from './Components/Example';
+import Employee from './Components/Employee';
+import Employeeup from './Components/Employeeup';
+import Employeedel from './Components/Employeedel';
+import About from "./Components/About";
+import Formyup from "./Components/Formyup";
+import FormFinal from "./Components/FormFinal";
+import FormReducer from "./Components/FormReducer";
+import Dropdownemp from "./Components/Dropdownemp";
+import StateCityDropdown from "./Components/StateCityDropdown";
 
 
 function App() {
@@ -47,6 +52,11 @@ function App() {
           <li><Link to="/Home">Home</Link></li>
           <li><Link to="/About">About</Link></li>
           <li><Link to="/ContactUs">Contact Us</Link></li>
+          <li><Link to="/Dropdownemp">Emp_Dropdown</Link></li>
+          <li><Link to="/StateCityDropdown">State_Dropdown</Link></li>
+          <li><Link to="/Formyup">Form</Link></li>
+          <li><Link to="/FormyFinal">FormFinal</Link></li>
+          <li><Link to="/FormReducer">FormReducer</Link></li>
           <li>
             {isLoggedIn ? (
               <Link to="/Listemployee">List Employee</Link>
@@ -71,6 +81,11 @@ function App() {
           <Route path="/Createemp" element={<Createemp />} />
           <Route path="/Listemployee" element={<ProtectedRoute><Listemployee /></ProtectedRoute>} />
           <Route path="/Example" element={<Example />} />
+          <Route path="/Formyup" element={<Formyup />} />
+          <Route path="/Dropdownemp" element={<Dropdownemp />} />
+          <Route path="/StateCityDropdown" element={<StateCityDropdown />} />
+          <Route path="/FormyFinal" element={<FormFinal />} />
+          <Route path="/FormReducer" element={<FormReducer />} />
           <Route path="/Employee/:id" element={<Employee />} />
           <Route path="/Employeeup/:id" element={<Employeeup />} />
           <Route path="/Employeedel/:id" element={<Employeedel />} />
@@ -86,3 +101,6 @@ function App() {
 }
 
 export default App;
+
+
+

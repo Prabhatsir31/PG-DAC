@@ -126,6 +126,45 @@ body {
 }
 
 /* Table Styles for Listemployee */
+.filter-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.filter-section label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 10px;
+  color: #333;
+}
+
+.dept-filter {
+  padding: 8px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.dept-filter:hover {
+  border-color: #007bff;
+}
+
+.dept-filter:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -790,4 +829,242 @@ footer a:hover {
 .employee-updation {
   line-height: 2px;
   width: 30%;
+}
+
+/* Outer container */
+.form-container {
+  padding: 30px;
+  max-width: 420px;
+  margin: 50px auto;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Input styling */
+.form-container input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 80%;
+  outline: none;
+  margin-bottom: 16px;
+  transition: 0.3s border ease;
+}
+
+.form-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+/* Buttons */
+.button-group button {
+  padding: 10px 18px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 50px;
+  transition: 0.3s background-color ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Age display between buttons */
+.age {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+/* Dropdownemp */
+
+.dropdown-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dropdown-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.dropdown-container select#dropdown {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: #f7f7f7;
+    transition: border 0.3s ease;
+}
+
+.dropdown-container select#dropdown:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+.dropdown-container .loader {
+    font-size: 18px;
+    color: #6c63ff;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+.dropdown-container .error {
+    color: #e74c3c;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dropdown-container .email-box {
+    background: #f0f4ff;
+    border-left: 6px solid #6c63ff;
+    padding: 16px;
+    margin-top: 25px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.dropdown-container .email-box h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #6c63ff;
+}
+
+.dropdown-container .email-box p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+hr {
+    margin: 40px 0;
+    border: none;
+    height: 2px;
+    background-color: #eee;
+}
+
+/* StateDropDown */
+.listdown-container {
+  width: 280px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.listdown {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.dropbtn {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #2563eb;
+}
+
+.nested-dropdown {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 8px;
+}
+
+.state-name {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.state-name::after {
+  content: "▶";
+  color: #888;
+  font-size: 12px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.state-name.expanded::after {
+  content: "▼";
+  transform: rotate(0deg);
+  color: #1d4ed8;
+}
+
+.nested-dropdown-content {
+  margin-top: 8px;
+  padding-left: 16px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.city-name {
+  display: block;
+  padding: 6px 10px;
+  color: #555;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.city-name:hover {
+  color: #1e40af;
+  background-color: #e0e7ff;
 }
