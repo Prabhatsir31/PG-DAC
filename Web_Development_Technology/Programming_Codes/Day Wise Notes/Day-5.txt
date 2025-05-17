@@ -12,7 +12,7 @@ JavaScript
 2. Difference Between let and var:
    - let: block-scoped, no hoisting like var.
    - var: function-scoped, hoisted to the top of its scope.
-
+-+
 3. Difference and similarities Between let and const:
    - Similar: both are block-scoped.
    - Difference: const cannot be reassigned, but the object it points to can still be modified.

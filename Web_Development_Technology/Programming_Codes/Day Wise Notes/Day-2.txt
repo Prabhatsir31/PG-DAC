@@ -23,7 +23,7 @@ JavaScript
 =======================================
         SIMPLE JAVASCRIPT EXAMPLE
 =======================================
-
+   
 <script>
   function greet() {
     alert("Hello, welcome to JavaScript!");

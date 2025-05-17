@@ -1,0 +1,156 @@
+REACT DAY-4
+================
+
+===========================
+1. useRef Hook
+===========================
+
+=> Purpose:
+- To persist values between renders without causing re-renders.
+- Also used to access DOM elements directly.
+
+=> Syntax:
+const refVariable = useRef(initialValue);
+
+=> Example: Focus Input on Button Click
+
+import React, { useRef } from 'react';
+
+function FocusInput() {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Focus Input</button>
+    </div>
+  );
+}
+
+export default FocusInput;
+
+---------------------------
+
+
+===========================
+2. React.memo (HOC)
+===========================
+
+=> Purpose:
+- Prevents unnecessary re-renders of functional components.
+- Works like PureComponent for functional components.
+
+=> Syntax:
+const MemoizedComponent = React.memo(Component);
+
+=> Example:
+
+import React from 'react';
+
+function Child({ name }) {
+  console.log('Child rendered');
+  return <h2>Hello {name}</h2>;
+}
+
+export default React.memo(Child);
+
+---------------------------
+
+
+===========================
+3. useMemo Hook
+===========================
+
+=> Purpose:
+- Memoizes the result of a computation.
+- Prevents expensive calculations on every render.
+
+=> Syntax:
+const memoizedValue = useMemo(() => computeValue(a, b), [a, b]);
+
+=> Example:
+
+import React, { useMemo, useState } from 'react';
+
+function ExpensiveComponent() {
+  const [count, setCount] = useState(0);
+  const [toggle, setToggle] = useState(true);
+
+  const expensiveCalculation = useMemo(() => {
+    console.log('Calculating...');
+    return count * 10;
+  }, [count]);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <h3>Calculation: {expensiveCalculation}</h3>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setToggle(!toggle)}>Toggle</button>
+    </div>
+  );
+}
+
+export default ExpensiveComponent;
+
+---------------------------
+
+
+===========================
+4. useCallback Hook
+===========================
+
+=> Purpose:
+- Returns a memoized version of the callback function.
+- Useful when passing callbacks to memoized child components.
+
+=> Syntax:
+const memoizedCallback = useCallback(() => {...}, [dependencies]);
+
+=> Example:
+
+import React, { useState, useCallback } from 'react';
+import Child from './Child';
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log('Child clicked');
+  }, []);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <Child onClick={handleClick} />
+    </div>
+  );
+}
+
+export default Parent;
+
+Child.jsx:
+
+import React from 'react';
+
+function Child({ onClick }) {
+  console.log('Child Rendered');
+  return <button onClick={onClick}>Click Me</button>;
+}
+
+export default React.memo(Child);
+
+===========================
+SUMMARY
+===========================
+
+- useRef: For DOM reference and persistent variables.
+- React.memo: To skip unnecessary renders of components.
+- useMemo: To memoize expensive calculation results.
+- useCallback: To memoize functions and avoid re-creation.
+

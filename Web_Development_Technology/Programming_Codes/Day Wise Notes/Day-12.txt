@@ -1,0 +1,9 @@
+REACT DAY-5
+=============
+
+Ques 1) Create a table state with member id, statename 
+         Create a table city with  column id, cityname, stateid 
+         In REact make a drop down it will display all state in the drop down show all the cities 
+
+
+Ques 2) create a three checkbox as per author name on click of the checkbox it should display all the book of the author in a table
