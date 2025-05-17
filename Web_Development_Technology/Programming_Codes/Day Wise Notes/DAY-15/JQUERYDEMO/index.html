@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        // $.noConflict();
+            $(document).ready(function(){
+                $("#btn").click(function(){
+                    $("#content").toggle(1000);
+                });
+            });
+    </script>
+    <script>
+         $(document).ready(function(){
+                let p =$("#dd")
+                p.click(function(){
+                    var a=p.text();
+                    alert(a);
+                })
+                });
+            
+    </script>
+    <script>
+        $(document).ready(function() {
+            let p = $("#dd");
+            p.mouseover(function() {
+                // p.text("<b>I have set value</b>");
+                $("#dd").html("<b>I have set value</b>");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="content">
+        <h2>Hello jQuery</h2>
+    </div>
+    <button id="btn">Click</button>
+
+    <p id="dd">para 1</p>
+    <p>div para 1</p>
+    <p>div para 2</p>
+
+</body>
+</html>

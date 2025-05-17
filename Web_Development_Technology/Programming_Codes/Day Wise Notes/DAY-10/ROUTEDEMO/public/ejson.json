@@ -1,0 +1,184 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "Andaman and Nicobar Islands",
+      "cities": ["Port Blair"]
+    },
+    {
+      "id": 2,
+      "name": "Andhra Pradesh",
+      "cities": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Tirupati"]
+    },
+    {
+      "id": 3,
+      "name": "Arunachal Pradesh",
+      "cities": ["Itanagar", "Naharlagun", "Pasighat", "Tawang"]
+    },
+    {
+      "id": 4,
+      "name": "Assam",
+      "cities": ["Guwahati", "Dibrugarh", "Silchar", "Jorhat"]
+    },
+    {
+      "id": 5,
+      "name": "Bihar",
+      "cities": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur"]
+    },
+    {
+      "id": 6,
+      "name": "Chandigarh",
+      "cities": ["Chandigarh"]
+    },
+    {
+      "id": 7,
+      "name": "Chhattisgarh",
+      "cities": ["Raipur", "Bilaspur", "Durg", "Korba"]
+    },
+    {
+      "id": 8,
+      "name": "Dadra and Nagar Haveli and Daman and Diu",
+      "cities": ["Silvassa", "Daman"]
+    },
+    {
+      "id": 9,
+      "name": "Delhi",
+      "cities": ["New Delhi", "Dwarka", "Rohini"]
+    },
+    {
+      "id": 10,
+      "name": "Goa",
+      "cities": ["Panaji", "Margao", "Vasco da Gama"]
+    },
+    {
+      "id": 11,
+      "name": "Gujarat",
+      "cities": ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar"]
+    },
+    {
+      "id": 12,
+      "name": "Haryana",
+      "cities": ["Chandigarh", "Gurgaon", "Faridabad", "Panipat"]
+    },
+    {
+      "id": 13,
+      "name": "Himachal Pradesh",
+      "cities": ["Shimla", "Dharamshala", "Mandi", "Solan"]
+    },
+    {
+      "id": 14,
+      "name": "Jammu and Kashmir",
+      "cities": ["Srinagar", "Jammu", "Anantnag"]
+    },
+    {
+      "id": 15,
+      "name": "Jharkhand",
+      "cities": ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro Steel City"]
+    },
+    {
+      "id": 16,
+      "name": "Karnataka",
+      "cities": ["Bengaluru", "Mysuru", "Mangalore", "Hubli", "Belgaum"]
+    },
+    {
+      "id": 17,
+      "name": "Kerala",
+      "cities": ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur"]
+    },
+    {
+      "id": 18,
+      "name": "Ladakh",
+      "cities": ["Leh", "Kargil"]
+    },
+    {
+      "id": 19,
+      "name": "Lakshadweep",
+      "cities": ["Kavaratti"]
+    },
+    {
+      "id": 20,
+      "name": "Madhya Pradesh",
+      "cities": ["Bhopal", "Indore", "Gwalior", "Jabalpur"]
+    },
+    {
+      "id": 21,
+      "name": "Maharashtra",
+      "cities": ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane"]
+    },
+    {
+      "id": 22,
+      "name": "Manipur",
+      "cities": ["Imphal", "Thoubal", "Churachandpur"]
+    },
+    {
+      "id": 23,
+      "name": "Meghalaya",
+      "cities": ["Shillong", "Tura"]
+    },
+    {
+      "id": 24,
+      "name": "Mizoram",
+      "cities": ["Aizawl", "Lunglei"]
+    },
+    {
+      "id": 25,
+      "name": "Nagaland",
+      "cities": ["Kohima", "Dimapur"]
+    },
+    {
+      "id": 26,
+      "name": "Odisha",
+      "cities": ["Bhubaneswar", "Cuttack", "Rourkela", "Sambalpur"]
+    },
+    {
+      "id": 27,
+      "name": "Puducherry",
+      "cities": ["Puducherry", "Karaikal"]
+    },
+    {
+      "id": 28,
+      "name": "Punjab",
+      "cities": ["Chandigarh", "Ludhiana", "Amritsar", "Jalandhar"]
+    },
+    {
+      "id": 29,
+      "name": "Rajasthan",
+      "cities": ["Jaipur", "Jodhpur", "Udaipur", "Kota"]
+    },
+    {
+      "id": 30,
+      "name": "Sikkim",
+      "cities": ["Gangtok", "Namchi"]
+    },
+    {
+      "id": 31,
+      "name": "Tamil Nadu",
+      "cities": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli"]
+    },
+    {
+      "id": 32,
+      "name": "Telangana",
+      "cities": ["Hyderabad", "Warangal", "Nizamabad"]
+    },
+    {
+      "id": 33,
+      "name": "Tripura",
+      "cities": ["Agartala", "Udaipur"]
+    },
+    {
+      "id": 34,
+      "name": "Uttar Pradesh",
+      "cities": ["Lucknow", "Kanpur", "Varanasi", "Agra", "Ghaziabad"]
+    },
+    {
+      "id": 35,
+      "name": "Uttarakhand",
+      "cities": ["Dehradun", "Haridwar", "Nainital"]
+    },
+    {
+      "id": 36,
+      "name": "West Bengal",
+      "cities": ["Kolkata", "Howrah", "Durgapur", "Siliguri"]
+    }
+  ]
+}
