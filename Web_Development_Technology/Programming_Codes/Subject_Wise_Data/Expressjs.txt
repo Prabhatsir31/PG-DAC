@@ -1,0 +1,500 @@
+======================================================
+                      EXPRESS.JS
+======================================================
+
+1. WHAT IS EXPRESS.JS?
+-----------------------
+Express.js is a minimal and flexible Node.js web framework used to build web applications and APIs.  
+It simplifies routing, middleware, and handling HTTP requests/responses.
+
+✅ Built on top of Node.js  
+✅ Helps create RESTful APIs  
+✅ Supports middleware, routing, templates
+
+======================================================
+
+2. INSTALLATION
+----------------
+Install Node.js first from https://nodejs.org
+
+Then install Express in your project:
+
+    npm init -y
+    npm install express
+
+======================================================
+
+3. BASIC SERVER SETUP
+----------------------
+Example (app.js):
+
+    const express = require('express');
+    const app = express();
+
+    app.get('/', (req, res) => {
+        res.send('Hello, Express!');
+    });
+
+    app.listen(3000, () => {
+        console.log('Server running at http://localhost:3000');
+    });
+
+Run using:
+    node app.js
+
+======================================================
+
+4. ROUTING IN EXPRESS
+----------------------
+Used to handle different HTTP methods and paths.
+
+Example:
+
+    app.get('/about', (req, res) => {
+        res.send('About Page');
+    });
+
+    app.post('/submit', (req, res) => {
+        res.send('Form Submitted');
+    });
+
+    app.put('/edit', (req, res) => {
+        res.send('Data Updated');
+    });
+
+    app.delete('/delete', (req, res) => {
+        res.send('Deleted');
+    });
+
+======================================================
+
+5. ROUTE PARAMETERS
+--------------------
+Used to pass dynamic values via URL.
+
+Example:
+
+    app.get('/user/:id', (req, res) => {
+        res.send(`User ID: ${req.params.id}`);
+    });
+
+URL:
+    http://localhost:3000/user/101
+Output:
+    User ID: 101
+
+======================================================
+
+6. MIDDLEWARE
+--------------
+Middleware functions have access to request, response and next()
+
+Example:
+
+    app.use((req, res, next) => {
+        console.log(`${req.method} ${req.url}`);
+        next();
+    });
+
+Built-in middleware:
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+
+======================================================
+
+7. STATIC FILE SERVING
+------------------------
+Used to serve HTML, CSS, JS files.
+
+Example:
+    app.use(express.static('public'));
+
+If public contains logo.png:
+    http://localhost:3000/logo.png
+
+======================================================
+
+8. REQUEST AND RESPONSE OBJECTS
+-------------------------------
+**req** – contains info about the client request  
+**res** – used to send the response
+
+Example:
+
+    app.post('/login', (req, res) => {
+        const { username, password } = req.body;
+        res.send(`Logged in as ${username}`);
+    });
+
+======================================================
+
+9. FORM DATA HANDLING
+-----------------------
+Use express.json() and express.urlencoded()
+
+Example:
+
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
+
+    app.post('/form', (req, res) => {
+        res.send(`Hello ${req.body.name}`);
+    });
+
+HTML Form:
+
+    <form action="/form" method="post">
+        <input type="text" name="name" />
+        <button type="submit">Submit</button>
+    </form>
+
+======================================================
+
+10. TEMPLATE ENGINE (EJS)
+--------------------------
+Install EJS:
+    npm install ejs
+
+Set in Express:
+    app.set('view engine', 'ejs');
+
+Example:
+
+    app.get('/home', (req, res) => {
+        res.render('home', { user: 'Prabhat' });
+    });
+
+home.ejs:
+    <h1>Welcome <%= user %></h1>
+
+======================================================
+
+11. REST API (CRUD) EXAMPLE
+-----------------------------
+Sample user API:
+
+    const users = [
+        { id: 1, name: 'John' },
+        { id: 2, name: 'Jane' }
+    ];
+
+    app.get('/users', (req, res) => {
+        res.json(users);
+    });
+
+    app.get('/users/:id', (req, res) => {
+        const user = users.find(u => u.id == req.params.id);
+        res.json(user);
+    });
+
+    app.post('/users', (req, res) => {
+        const newUser = req.body;
+        users.push(newUser);
+        res.send('User added');
+    });
+
+    app.put('/users/:id', (req, res) => {
+        const id = req.params.id;
+        res.send(`Update user with ID ${id}`);
+    });
+
+    app.delete('/users/:id', (req, res) => {
+        const id = req.params.id;
+        res.send(`Delete user with ID ${id}`);
+    });
+
+======================================================
+
+12. ERROR HANDLING MIDDLEWARE
+------------------------------
+Placed at the end of the routes.
+
+    app.use((err, req, res, next) => {
+        console.error(err.stack);
+        res.status(500).send('Something broke!');
+    });
+
+======================================================
+
+13. ENVIRONMENT VARIABLES WITH DOTENV
+--------------------------------------
+Install dotenv:
+    npm install dotenv
+
+.env file:
+    PORT=4000
+
+app.js:
+
+    require('dotenv').config();
+    const port = process.env.PORT;
+
+    app.listen(port, () => {
+        console.log(`Server on ${port}`);
+    });
+
+======================================================
+
+14. EXPRESS GENERATOR
+-----------------------
+Used to scaffold boilerplate project.
+
+Install:
+    npm install -g express-generator
+
+Create project:
+    express myapp
+
+Then:
+    cd myapp
+    npm install
+    npm start
+
+======================================================
+
+15. COMPARISON: NODE.JS VS EXPRESS.JS
+--------------------------------------
+Node.js:
+    - JavaScript runtime
+    - Requires manual creation of HTTP server
+
+Express.js:
+    - Framework built on Node
+    - Simplifies route handling, middleware, templates, etc.
+
+======================================================
+
+16. USEFUL MIDDLEWARE PACKAGES
+-------------------------------
+- morgan → logging
+- cors → CORS handling
+- helmet → security
+- cookie-parser → parse cookies
+- express-session → manage sessions
+
+======================================================
+
+17. DEPLOYMENT OPTIONS
+-----------------------
+- Host on: Render, Vercel, Railway, Heroku
+- Use `process.env.PORT` for dynamic port
+- Use PM2 for production:
+    npm install pm2 -g
+    pm2 start app.js
+
+
+======================================================
+               EXPRESS.JS-POINTS
+======================================================
+
+1. CHAINING ROUTES
+--------------------
+You can chain HTTP methods for a single path using `route()`.
+
+Example:
+    app.route('/book')
+      .get((req, res) => res.send('Get book'))
+      .post((req, res) => res.send('Add book'))
+      .put((req, res) => res.send('Update book'));
+
+======================================================
+
+2. GROUPING ROUTES WITH EXPRESS ROUTER
+----------------------------------------
+Useful for modular route organization.
+
+Example:
+    const express = require('express');
+    const router = express.Router();
+
+    router.get('/', (req, res) => res.send('Home Page'));
+    router.get('/about', (req, res) => res.send('About Page'));
+
+    app.use('/api', router);  // Route prefix
+
+======================================================
+
+3. BODY PARSING (BODY-PARSER)
+-------------------------------
+Express now includes body parsing, but you can still use `body-parser`:
+
+    const bodyParser = require('body-parser');
+    app.use(bodyParser.json());
+
+Also:
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+
+======================================================
+
+4. COOKIE MANAGEMENT
+----------------------
+To read/write cookies:
+
+    npm install cookie-parser
+
+    const cookieParser = require('cookie-parser');
+    app.use(cookieParser());
+
+    app.get('/setcookie', (req, res) => {
+        res.cookie('user', 'JohnDoe');
+        res.send('Cookie set');
+    });
+
+    app.get('/getcookie', (req, res) => {
+        res.send(req.cookies);
+    });
+
+======================================================
+
+5. EXPRESS SESSION MANAGEMENT
+-------------------------------
+For login systems, use:
+
+    npm install express-session
+
+    const session = require('express-session');
+    app.use(session({
+      secret: 'mysecret',
+      resave: false,
+      saveUninitialized: true
+    }));
+
+    app.get('/', (req, res) => {
+      req.session.username = 'admin';
+      res.send('Session set');
+    });
+
+======================================================
+
+6. CORS (Cross-Origin Resource Sharing)
+----------------------------------------
+To allow frontend-backend communication across domains:
+
+    npm install cors
+    const cors = require('cors');
+    app.use(cors());
+
+======================================================
+
+7. CUSTOM 404 PAGE
+-------------------
+Catch all unknown routes:
+
+    app.use((req, res) => {
+      res.status(404).send('404 - Page Not Found');
+    });
+
+======================================================
+
+8. ORGANIZING FILE STRUCTURE
+------------------------------
+Project layout:
+
+    /project-folder
+    |-- /routes
+    |    |-- userRoutes.js
+    |-- /controllers
+    |    |-- userController.js
+    |-- app.js
+    |-- package.json
+
+Encouraged for large apps (MVC pattern).
+
+======================================================
+
+9. PERFORMANCE & SCALABILITY
+------------------------------
+- Use compression middleware for faster load:
+    npm install compression
+    const compression = require('compression');
+    app.use(compression());
+
+- Use helmet for security headers:
+    npm install helmet
+    app.use(helmet());
+
+- Use cluster module or PM2 for multiple instances
+
+======================================================
+
+10. CONNECTING WITH DATABASES
+-------------------------------
+Popular choices:
+- MongoDB → mongoose
+- MySQL → mysql2
+- PostgreSQL → pg
+
+Example (MongoDB):
+    const mongoose = require('mongoose');
+    mongoose.connect('mongodb://localhost:27017/dbname');
+
+======================================================
+
+11. TEMPLATE ENGINES OTHER THAN EJS
+-------------------------------------
+Supported by Express:
+- EJS
+- Pug (formerly Jade)
+- Handlebars
+- Mustache
+
+Set template engine:
+    app.set('view engine', 'pug');
+
+======================================================
+
+12. DEBUGGING EXPRESS APPS
+----------------------------
+Use Node's debug utility:
+
+Run with:
+    DEBUG=express:* node app.js
+
+Or log headers and errors using middleware:
+    app.use((req, res, next) => {
+      console.log(`${req.method} ${req.path}`);
+      next();
+    });
+
+======================================================
+
+13. VERSIONED API ROUTES
+--------------------------
+Useful for maintaining multiple versions:
+
+    app.use('/api/v1', v1Routes);
+    app.use('/api/v2', v2Routes);
+
+======================================================
+
+14. CREATING CUSTOM MIDDLEWARE
+-------------------------------
+Middleware signature:
+    function(req, res, next) {}
+
+Example:
+    const logger = (req, res, next) => {
+        console.log(`Visited: ${req.path}`);
+        next();
+    };
+    app.use(logger);
+
+======================================================
+
+15. CLEAN EXIT ON ERROR (PROCESS)
+----------------------------------
+Handle uncaught exceptions:
+
+    process.on('uncaughtException', err => {
+        console.error(err);
+        process.exit(1);
+    });
+
+Handle termination signal:
+    process.on('SIGTERM', () => {
+        console.log('Server shutting down...');
+        server.close();
+    });
+
+
