@@ -1,0 +1,31 @@
+typedef
+	keyword is used to create alias name for a datatype.
+
+syntax
+	typedef <datatype> <aliasname>;
+
+e.g.
+	typedef long unsigned int  ul;
+
+	instead of saying
+	long unsigned int   num=10;
+	now you can say
+	ul num=10;
+
+
+struct EmployeeDetails
+{
+	char ecode[20];
+};
+
+struct EmployeeDetails e1;
+
+
+or
+
+typedef struct EmployeeDetails
+{
+	char ecode[20];
+}emp;
+
+emp e1;
