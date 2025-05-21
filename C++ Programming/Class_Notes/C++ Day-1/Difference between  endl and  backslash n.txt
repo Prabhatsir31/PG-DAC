@@ -1,0 +1,26 @@
+"\n"  and "endl"  both cause a new line to be printed.
+
+	The difference between two is
+	"endl" inserts a newline character and flushes the output buffer. Hence "endl" is more reliable than "\n".
+
+
+e.g.
+
+cout<<"hello"<<endl;
+
+When you execute cout << "hello" << endl;:
+
+"hello" is inserted into the output buffer first.
+
+endl inserts a newline character (\n)  and flushes the output buffer.
+
+The flush operation ensures that the string "hello" and the newline '\n' are immediately written to the console.
+
+
+if we say
+	cout<<"hello\n";
+
+
+Without endl, the buffered data (like "hello") could remain in the output buffer (depends upon platform to platform)  for a while, and the data may not be immediately displayed. It might be flushed when the program ends, when the buffer is full, or during other output operations. This is why output buffering can sometimes cause delays in displaying text.
+
+
