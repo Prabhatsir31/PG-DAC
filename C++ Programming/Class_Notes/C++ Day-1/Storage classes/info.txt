@@ -1,0 +1,236 @@
+scope of a variable
+
+By default scope of a variable is limited to a block or function in which it is defined. The variable is not available outside that block.
+
+e.g.
+
+void main()
+{
+	void disp();
+	disp();
+}
+void disp()
+{
+	int k=10;
+	printf("%d\n",k);
+}
+
+In the above code, k has scope limited to "disp".
+outside "disp" it can not be accessed.
+
+	The default scope of a variable can be changed by defining it outside the function block. In that case , the variable is called as "external" variable.
+e.g.
+
+void main()
+{
+	void disp();
+	disp();
+}
+int var=20;  // external variable definition
+void disp()
+{
+	int k=10; // local variable
+	printf("%d\t%d\n",k,var);
+}
+
+the scope of external variable is , everywhere after its definition.
+
+external variable can be sometimes defined even before main() function. In that case the variable is "global" for that file. That is it can be use in all the functions of that file.
+
+e.g.
+int var=20;  //global variable
+void main()
+{
+	void disp();
+	printf("var in main is %d\t",var);
+	var=400;
+	disp();
+}
+void disp()
+{
+	int k=10; // local variable
+	printf("%d\t%d\n",k,var);
+}
+
+	if global variable and local variable are having the same name, local variable takes the precedence over global variable.
+
+int val=10;  // global variable
+void main()
+{
+	
+	int val=20; // local variable
+	int retVal();
+	printf("%d\n",retVal());
+}
+int retVal()
+{
+	return val;
+}
+
+storage classes
+
+storage classes define 4 attributes of a variable
+a) default initial value
+b) memory location
+c) scope
+d) lifetime
+
+There are 4 storage classes
+
+1) automatic
+2) static
+3) register
+4) extern
+
+
+1) automatic :- 
+syntax
+
+auto datatype variable;
+or
+datatype variable;
+
+by default a variable has automatic storage class.
+e.g.
+
+void disp()
+{
+	int num;
+}
+
+
+default initial value - garbage
+memory location -  stack
+scope - limited to the block in which it is defined
+
+lifetime - as long as control remains in that block.
+
+
+static:-
+syntax
+
+static datatype variable;
+
+static variables persists their values between different function calls.
+
+
+#include<stdio.h>
+void main()
+{
+	int i;
+	void disp();
+	for(i=0;i<3;i++)
+	{
+		disp();
+	}
+}
+void disp()
+{
+	int a=0;
+	static int b;
+	printf("%d\t%d\n",a++,b++);
+}
+
+
+
+default initial value -  zero
+memory location - data area or BSS
+scope - limited to the block in which it is defined.
+lifetime - till the program execution continues.
+
+
+
+
+register :-
+syntax
+register datatype variable;
+
+a variable declared with "register" keyword, most likely to be stored in CPU register. The advantage is that it allows faster access. Hence the variables which are frequently needed in the program, can be stored in a register for faster access.
+	Since there are limited no. of registers available with CPU, there is no guarantee that a variable declared with "register" keyword will be stored in CPU register. If the register is not available, compiler will simply treat the variable as "automatic" variable.
+
+
+default initial value - garbage
+memory location -  CPU register
+scope - limited to the block in which it is defined
+
+lifetime - as long as control remains in that block.
+
+
+
+extern :-
+
+if u want to access external variable before its definition, u need to declare it using "extern" keyword.
+
+e.g.
+
+#include<stdio.h>
+void main()
+{
+	void disp();
+	extern int var; // external variable declaration
+	disp();
+	printf("%d\n",var);
+}
+int var=200; // external variable definition
+void disp()
+{
+	printf("%d\n",var);
+}
+
+
+
+first.c
+
+#include<stdio.h>
+void fun()
+{
+	extern int cnt;
+	puts("in fun");
+	printf("%d\n",cnt);
+}
+
+
+second.c
+#include "first.c"
+int cnt=100; // global var
+void main()
+{
+	printf("in main %d\n",cnt);
+	fun();
+}
+
+
+
+
+#include<stdio.h>
+void main()
+{
+	extern int num;
+	printf("%d\n",num);
+}
+
+
+
+
+
+
+
+
+
+
+
+default initial value -  zero
+memory location - data area or BSS
+scope - global
+lifetime - till the program execution continues
+
+
+
+void disp()
+{
+	puts("in disp");
+}
+void main()
+{
+	disp();
+}

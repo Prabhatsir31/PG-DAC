@@ -1,0 +1,13 @@
+Uninitialized static and global variables are stored inside BSS, but if we initialize them during runtime , do they move to Data segment?
+
+
+When you initialize static and global variables during runtime, they typically remain in the same segment where they were originally allocated. 
+
+BSS (Block Started by Symbol): This segment is used for uninitialized static and global variables. These variables are not stored in the executable file but are allocated memory space during program execution. When the program starts, the BSS segment is zero-initialized. If you initialize a variable during runtime that was originally in the BSS segment, it remains there; only the value changes.
+
+Data segment: This segment holds initialized static and global variables. When you initialize a variable during runtime that was originally in the BSS segment, it does not necessarily move to the data segment. Instead, it retains its location in the BSS segment, but now with a non-zero value.
+
+In summary, initializing static and global variables during runtime doesn't generally cause them to move between segments. They stay in their original segment but with a value assigned.
+
+
+

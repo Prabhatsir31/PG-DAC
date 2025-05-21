@@ -1,0 +1,14 @@
+right click on "project"
+	properties
+		configuration properties
+
+			debugging
+			command Arguments
+
+				edit
+
+	type ur arguments ( separate them by space)
+
+		apply
+
+			ok
