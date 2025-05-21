@@ -1,0 +1,59 @@
+1) store value 20 inside "num" variable.
+create a pointer to this variable. print the value of "num" using pointer.
+increment the pointer by 2 and show with the diagram what happens.
+
+2) accept two numbers from the user and with the help of pointers perform following arithmetic operations:
+	+   -    *   /
+	[ diagram compulsory ]
+
+3) accept two numbers and swap them without using third variable.
+
+4) write "Call By Address" program [ using pointer ]
+
+5) Given
+	void disp(int,int*);
+write a program to define above function and invoke it.
+
+6) given
+	        int num = 100;
+		int* ptr = &num;
+		++(*ptr);
+		cout << num << endl;
+		(*ptr)++;
+		cout << num << endl;
+		*(ptr++);
+		cout << num << endl;
+	
+show with the help of diagram what happens in the above code
+
+
+7) Given following functions:
+	void disp1(int k);
+	int disp2(char *);
+	void disp3();
+	double* disp4(char ch);
+
+	declare "pointer to functions" for the above functions.
+
+
+8) ask user how many numbers he would like to store and using DMA allocate the memory for the same [ diagram compulsory ]
+
+ 
+	
+
+9) given
+	int arr[]={10,20,30,40,50}
+
+write a function which can accept above array inside the pointer and using for loop traverse it.
+
+10) given
+	char name[20]="Computer"
+	
+	now declare a pointer to the above string and increment the pointer in such a way that when you display the string using pointer, it should display "puter"
+
+11) accept a name ,display it. Now change first and the last characters of the name with their next characters and again print it.
+e.g
+	name is "sachin"
+		output should be "tachio"
+
+12) accept a name and print its length without using in built (strlen) function.
