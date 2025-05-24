@@ -1,0 +1,20 @@
+Abstraction is to simplify a problem by omitting unnecessary details
+	Focus attention on only one aspect of the problem and ignore irrelevant details
+
+Also called : Model Building
+
+Example: Car Brakes
+	pressing the pedals will stop the vehicle but you do not need to know how it works.
+
+
+For an abstraction, Encapsulation separates
+	contractual interface (push,pop,top,empty) and
+	implementation (array, list , deque) etc.
+
+Data encapsulation -> data hiding
+
+Encapsulation binds together the data and functions that manipulate the data and that keeps both safe from out-side interference and misuse.
+
+Encapsulation example of PC
+	It exihibits few details like power input points,LEDs to show whether machine is on or not,USB Ports etc but other than that everything else (graphic,sound and network cards , back USB connectors,mother board etc) are encapsulated inside the CPU.
+

@@ -1,0 +1,15 @@
+
+Conversion operator function 
+
+syntax
+
+operator <datatype of what you need to return>()
+{
+
+}
+
+it is used for converting user defined datatype to primitive.
+it must be a member function.
+it must be written inside "source".
+it should not have a return type but it must return a value.
+it cannot have an argument.

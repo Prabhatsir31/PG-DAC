@@ -1,0 +1,8 @@
+You can overload the new and delete operators from within the scope of a class declaration. This feature allows a class to have its own custom new and delete operators. You typically use this feature to gain a performance benefit.
+
+ Global heap operations often rely on operating system functions to allocate and free memory. These operations can be inefficient, particularly in a program that frequently allocates and frees many small blocks of memory in tight iterations.
+
+
+	Overloaded new and delete functions within a class definition always are static and have no this pointer associated with the object being created or deleted. This is because the compiler calls the new function before it calls the class's constructor function and it calls the delete function after it calls the destructor.
+	
+The new function executes before the class's constructor function. The new function cannot access any of the class's members, because no memory exists for them untill new allocates it and because  the constructor function has not performed any other class-specific initializations yet. The delete operator executes after the destructor function. Consequently, the delete operator cannot have access to the class members.

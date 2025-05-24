@@ -1,0 +1,10 @@
+	Operator Overloading
+using existing operators with user defined datatypes e.g. class or structure.
+
+in order to overload any operator u need to write either member function or global function (friend function).
+following should be the signature of operator overloading function:
+
+returntype operator<op>(Arg/s)
+{
+}
+

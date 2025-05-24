@@ -1,0 +1,39 @@
+1) create a class with constructors and destructors.
+create array of instances and observe how program behaves.
+
+
+2) create a class with constructors and destructor.
+create 2 instances on stack and 1 instance on heap. observe the invocation of constructors and destructors.
+
+3)create a class "MyClass1"
+with members and member function "disp1().
+create another class "MyClass2"
+with members and member function "disp2().
+now try to invoke disp1() from disp2()
+in the main() function, create instances of both the classes and invoke their member functions.
+
+4) create a class.
+accept from user, how many instances are required.
+Accordingly create array of instances dynamically.
+Now make sure that u call destructor for each and every instances.
+
+5) create a class, define different types of constructors. in main create n number of objects. At the end display how many objects are created for a class.
+
+6) 
+Developer Side
+	create a class "book" with
+		int bookid
+		char *bookname
+		int price
+
+	define parameterized constructor only for this class.
+	define 3 getter functions.
+
+create necessary header and lib file and distribute it to the client.
+
+Client Side
+
+	 create 2 instances
+	1 on stack and 1 on heap.
+	pass the necessary values while creating instances.
+	call the getter functions.

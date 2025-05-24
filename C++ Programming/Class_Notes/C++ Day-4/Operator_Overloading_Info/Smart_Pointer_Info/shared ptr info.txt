@@ -1,0 +1,33 @@
+/*
+shared_ptr allows multiple pointers to share 
+ownership of a dynamically allocated object. 
+The object is destroyed only when the last 
+shared_ptr pointing to it is destroyed or reset.
+
+when to use:
+std::shared_ptr: Use when you need multiple owners for a resource. 
+It keeps track of how many shared_ptrs point to the same object.
+*/
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    MyClass() { cout << "MyClass created\n"; }
+    ~MyClass() { cout << "MyClass destroyed\n"; }
+};
+
+int main() {
+    {
+        shared_ptr<MyClass> ptr1 = make_shared<MyClass>();
+        {
+            shared_ptr<MyClass> ptr2 = ptr1; // ptr2 shares ownership with ptr1
+            cout << "ptr1 use count: " << ptr1.use_count() << "\n"; // 2
+        } // ptr2 goes out of scope here, but MyClass is not destroyed
+
+        cout << "ptr1 use count: " << ptr1.use_count() << "\n"; // 1
+    } // ptr1 goes out of scope here, and MyClass is destroyed
+
+    return 0;
+}

@@ -1,0 +1,38 @@
+conversion
+
+
+L=R
+destination=source
+
+R to L  conversion always
+
+if  L and R both are equal e.g. int=int
+	or
+L is larger than R e.g.    double=float
+
+In these cases we have implicit conversion.
+
+
+But if we have
+L is smaller than R
+	we have to go for explicit conversion with the help of typecasting.
+
+
+conversion in case of User defined data types like class or structure.
+
+
+There are 3 types of conversions:
+1) primitive to User Defined
+2) User defined to primitive
+3) User defined to User defined
+
+Primitive to UD can be done using
+	a) parameterized constructor inside destination
+	b) operator= overload inside destination
+
+UD to primitive can be done using
+	conversion operator function inside source.
+
+UD to UD can be done using
+	a) operator= inside destination
+	b) conversion operator function inside source

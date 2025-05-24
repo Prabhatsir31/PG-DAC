@@ -1,0 +1,27 @@
+Object-oriented programming (OOP) is a programming based on the concept of "objects", which are data structures that contain data, in the form of fields, often known as attributes and code in the form of procedures, often known as methods. 
+
+The first step in OOP is to identify all the objects the programmer wants to manipulate and how they relate to each other, an exercise often known as data modeling. Once an object has been identified,  it is generalized as a class, which defines the kind of data it contains and any logic sequences that can manipulate it. Each distinct logic sequence is known as a method. 
+
+Examples of objects range from human beings (described by name, address, and so forth) to buildings and floors (whose properties can be described and managed) down to the little widgets on a computer desktop (such as buttons and scroll bars).
+
+
+
+What is Pure Object Oriented Langauage ?
+
+
+Five rules [Source: Alan Kay]:
+
+• Everything is an object.
+• A program is a set of objects telling each other what to do by sending messages.
+• Each object has its own memory (made up by other objects).
+• Every object has a type.
+• All objects of a specific type can receive the same messages.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+class Second; // forward decl
+class First
+{
+	int num1;
+	public:
+		First(int num1)
+		{
+			this->num1=num1;
+		}
+		int getNum1()
+		{
+			return num1;
+		}
+	friend int compare(First&,Second&);
+};
+class Second
+{
+	int num2;
+	public:
+		Second(int num2)
+		{
+			this->num2=num2;
+		}
+		int getNum2()
+		{
+			return num2;
+		}
+	friend int compare(First&,Second&);
+};
+		
+
+/* define a global function "compare" which will compare data of both the classes.
+if num1 > num2 return 1
+
+num2 > num1 return -1
+
+else 0 if both r equal
+
+*/
+
+int compare(First &f,Second &s)
+{
+	if(f.num1 > s.num2)
+	{
+		return 1;
+	}
+	else if(f.num1 < s.num2)
+	{
+		return -1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int main()
+{
+	First f(100); Second s(200);
+	cout<<compare(f,s)<<endl;
+	return 0;
+}

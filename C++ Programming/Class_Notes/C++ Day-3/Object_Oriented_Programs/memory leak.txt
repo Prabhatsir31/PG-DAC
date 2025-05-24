@@ -1,0 +1,22 @@
+When we allocate memory dynamically but somehow lose the way to reach that memory then it is called as memory leak.
+
+For example,suppose there is a function wherein we allocate memory dynamically and store its address in a pointer that is local to that function.When the control returns from the function,the local pointer dies losing the address of the memory it was pointing to.The dynamically allocated memory would continue to remain allocated,yet inaccessible. This allocated memory is leaked memory since we have lost the way to access it.
+
+e.g.
+
+void disp()
+{
+	int *ptr=new int[3];
+	//do some stuff
+}
+void main()
+{
+	disp();
+}
+
+In the above program,when the control returns from the disp,the memory gets leaked.
+
+
+
+
+

@@ -1,0 +1,9 @@
+when destructor is provided implicitly, what is the need to provide it explicitly?
+
+ans:-
+
+when pointer is a member of class
+
+memory is allocated dynamically for that pointer
+
+in order to release this memory we need to provide destructor explicitly as implicitly provided destructor doesn't do that job.

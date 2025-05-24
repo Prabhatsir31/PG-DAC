@@ -1,0 +1,16 @@
+Suppose we allocate a chunk of memory and store its address in a pointer. If this chunk of memory is freed and if the pointer continues to point to that location,the pointer is said to be a dangling pointer.
+e.g.
+
+void main()
+{
+	int *ptr=new int[3];
+	// make use of ptr
+	delete ptr;
+	// still some more statements to execute
+	........
+	......
+}
+
+
+
+In the above example," delete ptr", would free the allocated memory making "ptr" a dangling pointer.

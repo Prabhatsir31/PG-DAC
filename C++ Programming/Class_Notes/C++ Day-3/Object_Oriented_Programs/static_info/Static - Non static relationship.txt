@@ -1,0 +1,21 @@
+can non-static member function access static data?
+		yes
+because in order to call non-static member function you have to create object (at least one object) and by that time static member/s are already allocated memory.
+	
+
+
+can static member function access non-static data?
+	no
+because in order to call static member function we need not create object , that means when we are inside static member function non-static member/s are not existing.
+
+
+non-static member function
+	access - non-static data   -  yes
+	access - static data   - yes
+
+
+static member function
+	access - static data - yes
+	access - non-static data - no
+
+	

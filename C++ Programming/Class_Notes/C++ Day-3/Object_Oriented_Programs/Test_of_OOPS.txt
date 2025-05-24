@@ -1,0 +1,142 @@
+class MyClass
+{
+	
+};
+
+MyClass m1;
+
+cout<<sizeof(m1);  //  1
+
+
+class MyClass
+{
+	private:
+		int num;
+	public:
+		void disp()
+		{
+			cout<<num;
+		}
+};
+
+how many ways we can instantiate the above class?
+
+MyClass m1;
+
+MyClass m2=m1;
+
+
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass()
+		{
+			num=0;
+		}
+		void disp()
+		{
+			cout<<num;
+		}
+};
+
+how many ways we can instantiate the above class?
+
+MyClass m1;
+
+MyClass m2=m1;
+
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass(int num)
+		{
+			this->num=num;
+		}
+		void disp()
+		{
+			cout<<num;
+		}
+};
+
+how many ways we can instantiate the above class?
+
+MyClass m1(100);
+
+MyClass m2=m1;
+
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass()
+		{
+			num=0;
+		}
+		MyClass(int num)
+		{
+			this->num=num;
+		}
+		void disp()
+		{
+			cout<<num;
+		}
+};
+
+how many ways we can instantiate the above class?
+
+MyClass m1;
+MyClass m2(200);
+MyClass m3(m2);
+
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass(int num)
+		{
+			this->num=num;
+		}
+		MyClass()
+		{
+			num=0;
+		}
+		MyClass(MyClass &ref)
+		{
+			num=ref.num;
+		}
+		void disp()
+		{
+			cout<<num;
+		}
+};
+
+how many ways we can instantiate the above class?
+
+MyClass m1;
+MyClass m2(200);
+MyClass m3(m2);
+
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass(MyClass &ref)
+		{
+			num=ref.num;
+		}
+		void disp()
+		{
+			cout<<num;
+		}
+};
+
+how many ways we can instantiate the above class?
+
+0

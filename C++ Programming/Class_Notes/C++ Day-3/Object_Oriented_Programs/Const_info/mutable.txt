@@ -1,0 +1,31 @@
+Sometimes there is requirement to modify one or more data members of class / struct through const function even though you don’t want the function to update other members of class / struct. This task can be easily performed by using mutable keyword.
+
+
+#include <iostream>
+
+using namespace std;
+
+class MyClass
+{
+    private:
+        const int a;
+        int b;
+        mutable int c;
+    public:
+        MyClass():a(22)
+        {
+            
+        }
+        void disp1()const
+        {
+            // a=10;   error
+           //  b=20;   error
+            c=30;
+            cout<<c<<endl;
+        }
+};
+int main()
+{
+    MyClass m;
+    m.disp1();
+}

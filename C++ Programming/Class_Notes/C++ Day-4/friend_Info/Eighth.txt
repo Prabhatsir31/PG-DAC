@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+class Second;
+class First
+{
+private:
+    int num1;
+public:
+    First(int num1)
+    {
+        this->num1 = num1;
+    }
+    int getNum1()
+    {
+        return num1;
+    }
+    void disp1(Second& ref);
+    void disp2(Second& ref);
+    void disp3(Second& ref);
+   
+};
+class Second
+{
+private:
+    int num2;
+public:
+    Second(int num2)
+    {
+        this->num2 = num2;
+    }
+    int getNum2()
+    {
+        return num2;
+    }
+    friend class First;
+};
+void First::disp1(Second& ref)
+{
+    cout << "in disp1\t" << ref.num2 << endl;
+}
+void First::disp2(Second& ref)
+{
+    cout << "in disp2\t" << ref.num2 << endl;
+}
+void First::disp3(Second& ref)
+{
+    cout << "in disp3\t" << ref.num2 << endl;
+}
+
+int main()
+{
+    First f1(100);
+    Second s1(200);
+    cout << f1.getNum1() << endl;
+    cout << s1.getNum2() << endl;
+    f1.disp1(s1);
+    f1.disp2(s1);
+    f1.disp3(s1);
+}
