@@ -1,1 +1,0 @@
-D:\MyCpp\<project_name>\x64\Debug

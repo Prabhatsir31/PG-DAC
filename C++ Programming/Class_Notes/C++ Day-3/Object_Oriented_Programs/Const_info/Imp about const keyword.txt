@@ -1,2 +1,0 @@
-Constructors and destructors cannot be const.
-const instance members must be either initialized while creating or inside all the constructors.
