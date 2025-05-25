@@ -1,0 +1,38 @@
+/*
+unique_ptr is a smart pointer which represents sole ownership of a
+dynamically allocated object.
+When a unique_ptr goes out of scope,
+it automatically deletes the associated object.
+
+when to use:
+std::unique_ptr: Use when you want a single owner for a resource. 
+It cannot be copied but can be moved.
+*/
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    MyClass() { cout << "MyClass created\n"; }
+    ~MyClass() { cout << "MyClass destroyed\n"; }
+};
+
+int main() {
+    {
+        unique_ptr<MyClass> ptr1 = make_unique<MyClass>();
+
+        // unique_ptr<MyClass> ptr2 = ptr1; // not possible
+
+        /*
+        * not possible
+        unique_ptr<MyClass> ptr2;
+        ptr2 = ptr1;
+        */
+
+        cout << "done" << endl;
+        // Use ptr1 to access MyClass instance
+    } // ptr1 goes out of scope here, and MyClass is automatically destroyed
+
+    return 0;
+}

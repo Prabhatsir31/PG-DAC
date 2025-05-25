@@ -1,0 +1,25 @@
+static member
+
+static members are allocated memory as soon as class gets loaded in the memory. They are not associated with the instance.
+Since they are not associated with instance, they are having only one copy in the memory, irrespective of no.of instances created.
+They can be accessed by class name. They are also called as "class variables".
+
+static member function is used to access private static member.
+
+e.g.
+
+Account object
+	non-static members - accid, name, balance etc.
+	static member - roi
+
+
+we can't use "this" pointer with static member because static member is not associated with object and "this" is the pointer points to the current object. Hence they both are contradictory.
+
+
+
+
+
+
+
+
+

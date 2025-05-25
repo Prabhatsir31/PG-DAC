@@ -1,0 +1,531 @@
+		Pointer
+
+Pointer is a variable which holds address of another variable.
+
+syntax.
+
+datatype *pointervariable;
+
+e.g.
+
+int *ptr1;
+	ptr1 is a pointer variable which can point to int.
+
+char *ptr2;
+	ptr2 is a pointer variable which can point to char.
+
+float *ptr3;
+	ptr3 is a pointer variable which can point to float.
+
+
+any type of pointer will occupy 8 bytes inside 64-bit memory address space.
+
+
+
+There are two operators which are used in pointers.
+& -  address of
+* -  value at address contained by
+
+
+e.g.
+
+int num1=20;
+int *ptr1;
+ptr1=&num1;
+
+printf("%d\n",num1);
+
+printf("%d\n",*ptr1);
+
+
+accept 2 numbers and print them using pointer notation.
+
+void main()
+{
+	int num1,num2,*ptr1,*ptr2;
+	puts("Enter two numbers");
+	scanf("%d%d",&num1,&num2);
+	ptr1=&num1;
+	ptr2=&num2;
+	printf("%d\t%d\n",*ptr1,*ptr2);
+	printf("%d\n",*ptr1+*ptr2);
+	printf("%d\n",*ptr1-*ptr2);
+	printf("%d\n",*ptr1**ptr2);
+	printf("%d\n",*ptr1/ *ptr2);
+	printf("%d\n",*ptr1%*ptr2);
+}
+
+
+accept 2 numbers and swap them using pointer notation.
+
+
+
+void main()
+{
+	int num1,num2,temp,*ptr1,*ptr2;
+	puts("Enter 2 numbers");
+	scanf("%d%d",&num1,&num2);
+	ptr1=&num1;
+	ptr2=&num2;
+	printf("Before Swapping %d\t%d\n",*ptr1,*ptr2);
+	
+	temp=*ptr1;
+	*ptr1=*ptr2;
+	*ptr2=temp;
+
+printf("After Swapping %d\t%d\n",*ptr1,*ptr2);
+}
+
+
+pointer arithmetic
+
+pointer can be incremented or decremented only.
+
+The formula is 
+
+pointervariable + or - specified number * scale factor.
+
+[ scale factor means how many bytes datatype of pointer occupies ]
+
+e.g.
+
+int num1=50;
+int *ptr1=&num1; // initialization of a pointer
+
+printf("%d\n",*ptr1);
+
+ptr1++;  // pointer arithmetic
+
+
+pointer arithmetic is useful in case of arrays only.
+
+
+two pointers can be subtracted only, provided they should be of same type.
+
+
+e.g.
+
+int *ptr1,*ptr2;
+
+it is possible to say
+
+ptr1-ptr2;
+
+the formula is 
+
+(first pointer-second pointer)/scale factor
+
+this is useful in case of arrays.
+
+
+pointer and function
+
+// call by value
+
+void main()
+{
+	int num1=5,num2=8;
+	void swap(int,int);
+	printf("Before %d\t%d\n",num1,num2);
+	swap(num1,num2);
+	printf("After %d\t%d\n",num1,num2);
+}
+void swap(int x,int y)
+{
+	int temp=x;
+	x=y;
+	y=temp;
+}
+
+
+// call by address
+void main()
+{
+	int num1=5,num2=8;
+	void swap(int*,int*);
+	printf("Before %d\t%d\n",num1,num2);
+	swap(&num1,&num2);
+	printf("After %d\t%d\n",num1,num2);
+}
+void swap(int *x,int *y)
+{
+	int temp=*x;
+	*x=*y;
+	*y=temp;
+}
+
+
+// call by address and call by value
+void main()
+{
+	int num1=-5,num2=-8;
+	void change(int,int*);
+	printf("Before %d\t%d\n",num1,num2);
+	change(num1,&num2);
+	printf("After %d\t%d\n",num1,num2);
+}
+void change(int x,int *y)
+{
+	x*=-1;
+	*y*=-1;
+}
+
+
+pointer to function
+
+	it means pointer pointing to function
+
+syntax
+
+returntype (*pointervariable)(arg/s);
+
+e.g.
+int (*ptr)(int);
+
+	ptr is a pointer variable to a function, accepting int and returning int.
+
+int sqr(int);
+
+ptr=sqr;
+
+
+void (*ptr)(int ,char);
+
+	ptr is a pointer variable to a function, accepting int,char  and returns nothing.
+
+int (*ptr)();
+	ptr is a pointer variable to a function, accepting nothing and returning int.
+
+void (*ptr)(int ,int ,float);
+	ptr is a pointer variable to a function, accepting int,int,float and returns nothing.
+
+void (*ptr)();
+	ptr is a pointer variable to a function, which neither accepts anything nor returns anything.
+
+
+void main()
+{
+	int sqr(int);
+	int num=5,res;
+	int (*ptr)(int);
+	ptr=sqr;
+
+	res=sqr(num);
+	or
+	res=ptr(num);
+	or
+	res=(*ptr)(num);
+
+	printf("%d\n",res);
+}
+int sqr(int k)
+{
+	return k*k;
+}
+
+
+
+pointer and arrays
+
+
+void main()
+{
+	int arr[4];
+	int i;
+	for(i=0;i<4;i++)
+	{
+		scanf_s("%d",&arr[i]);
+		or
+		scanf_s("%d",arr+i);
+	}
+	for(i=0;i<4;i++)
+	{
+		printf("%d\n",arr[i]);
+		or
+		printf("%d\n",*(arr+i));
+	}
+}
+
+arrayname is also a kind of pointer.
+
+int arr[4]={10,20,30,40},*ptr,i;
+
+ptr=arr;
+
+or
+
+ptr=&arr[0];
+
+for(i=0;i<4;i++)
+{
+	printf("%d\n",arr[i]);
+			*(arr+i)
+			ptr[i]
+			*(ptr+i)
+
+}
+
+arrayname is constant pointer.
+
+while(ptr<arr+4)
+{
+	printf("%d\n",*ptr++);
+}
+ptr=arr;
+
+
+
+
+int i;
+char str[]="hello";
+char *ptr=str;
+or
+char *ptr=&str[0];
+
+for(i=0;str[i]!='\0';i++)
+{
+	printf("%c\n",str[i]);
+}
+
+for(i=0;ptr[i]!='\0';i++)
+{
+	printf("%c\n",ptr[i]);
+}
+
+puts(str);
+puts(ptr);
+
+str++;   // not possible
+ptr++;
+
+puts(ptr);
+puts(str);
+ptr--;
+
+while(*ptr)
+{
+	printf("%c\n",*ptr++);
+}
+
+ptr=str;
+
+printf("%c\n",*ptr);
+
+printf("%c\n",*ptr++);
+
+printf("%c\n",*ptr);
+
+printf("%c\n",++*ptr);
+
+printf("%c\n",*ptr);
+
+printf("%c\n",(*ptr)--);
+
+puts(str);
+
+puts(ptr);
+
+
+a function which accepts entire array and display its elements.
+
+void main()
+{
+	int arr[4]={10,20,30,40};
+	void disp(int*);
+
+	disp(arr);
+	or
+	disp(&arr[0]);
+}
+void disp(int *ptr)
+{
+	int i=0;
+	for(i=0;i<4;i++)
+	{
+		printf("%d\n",ptr[i]);
+	}
+	i=0;
+	or
+	while(i<4)
+	{
+		printf("%d\n",*ptr++);
+		i++;
+	}
+}
+
+
+
+
+
+write a function which returns int array.
+
+int main()
+{
+	int* fun();
+	int* ptr, i;
+	ptr = fun();
+	for (i = 0; i < 4; i++)
+	{
+		printf("%d\n", ptr[i]);
+	}
+}
+int* fun()
+{
+	int arr[4] = { 10,20,30,40 };
+	return arr;
+}
+
+	what will be the output of above code?
+
+
+void main()
+{
+	int* fun();
+	int *ptr,i;
+	ptr=fun();
+	for(i=0;i<4;i++)
+	{
+		printf("%d\n",ptr[i]);
+	}
+}
+int* fun()
+{
+	static int arr[4]={10,20,30,40};
+	return arr;
+}
+
+
+write a function which will accept a name and toggle it.
+
+void toggle(char*);
+
+void main()
+{
+	char str[30];
+	void toggle(char*);
+	puts("Enter ur name");
+	gets_s(str);
+	printf("Before  %s\n",str);
+	toggle(str);
+	or
+	toggle(&str[0]);
+	printf("After %s\n",str);
+}
+void toggle(char *ptr)
+{
+	int i;
+	for(i=0;ptr[i]!='\0';i++)
+	{
+		if(ptr[i]>=65 && ptr[i]<=90)
+		{
+			ptr[i]+=32;
+		}
+		else if(ptr[i]>=97 && ptr[i]<=122)
+		{
+			ptr[i]-=32;
+		}	
+	}
+}		
+
+
+array of pointer
+	array which contains the addresses.
+
+
+	int a = 10, b = 20, c = 30;
+	int* arr[] = { &a,&b,&c };
+	for (int i = 0; i < 3; i++)
+	{
+		cout << *arr[i] << endl;
+	}
+
+
+
+double pointer - pointer which points to another pointer
+
+	int num1 = 300;
+	int *ptr1 = &num1;
+	int** ptr2 = &ptr1;   // double pointer
+	cout << num1 << "\t" << *ptr1 << "\t" << **ptr2 << endl;
+
+
+
+		DMA
+
+Dynamic Memory Allocation
+
+Memory allocated during runtime.
+
+how do u go for DMA
+
+malloc.h header file has 4  functions
+
+malloc
+
+calloc
+
+realloc
+
+free
+
+malloc and calloc are used to allocate new memory.
+
+realloc is used to reallocate already allocated memory.
+
+free is used to deallocate memory.
+
+
+#include<iostream> 
+using namespace std;
+
+void main()
+{
+	int* ptr, i, rec;
+	char ans=' ';
+	puts("How many nos");
+	scanf_s("%d", &rec);
+	ptr = (int*)malloc(rec * sizeof(int));
+	printf("Enter %d values\n", rec);
+	for (i = 0; i < rec; i++)
+	{
+		scanf_s("%d", &ptr[i]);
+	}
+	puts("Displaying");
+	for (i = 0; i < rec; i++)
+	{
+		printf("%d\n", ptr[i]);
+	}
+	free(ptr);
+	puts("Done");
+}
+
+
+// one more example
+
+
+accept a name from user and display it.
+do not create array.
+ask user how many characters are there in his/her name and allocate memory.
+
+
+#include<iostream> 
+using namespace std;
+
+void main()
+{
+	char* ptr;
+	int rec, i;
+	cout << "How many characters" <<endl;
+	cin>>rec;
+	ptr = (char*)malloc((rec + 1) * sizeof(char));
+	for (i = 0; i < rec; i++)
+	{
+		cin>>ptr[i];
+	}
+	ptr[i] = '\0';
+	cout << ptr<<endl;
+	free(ptr);
+	cout<<"Done"<<endl;
+}
+
+

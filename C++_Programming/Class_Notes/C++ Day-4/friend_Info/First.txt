@@ -1,0 +1,28 @@
+// at "here" try to access num directly
+#include<iostream>
+using namespace std;
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass(int num)
+		{
+			this->num=num;
+		}
+		int getNum()
+		{
+			return num;
+		}
+
+};
+void disp(MyClass &ref)
+{
+	//here  access num directly
+	// can you access directly ? no
+}
+int main()
+{
+	MyClass m(7);
+	disp(m);
+}

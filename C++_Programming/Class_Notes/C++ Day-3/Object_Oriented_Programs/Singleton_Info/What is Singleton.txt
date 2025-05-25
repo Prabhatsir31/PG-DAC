@@ -1,0 +1,3 @@
+What is Singleton?
+
+There are many objects we only need one of: thread pools, caches, objects that handle registry settings, objects used for logging and objects that act as device drivers to devices like printers and graphics cards. In fact, for many of these types of objects, if we were to instantiate more than one we’d run into all sorts of problems like incorrect program behavior, overuse of resources, or inconsistent results.

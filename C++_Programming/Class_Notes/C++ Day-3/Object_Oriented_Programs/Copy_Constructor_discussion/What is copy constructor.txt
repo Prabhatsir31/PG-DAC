@@ -1,0 +1,13 @@
+copy constructor is called when object is initialized using another object.
+
+e.g.
+
+
+MyClass m1;  // default or no-arg constru
+
+MyClass m2=m1;   // copy constructor 
+    or
+MyClass m2(m1);
+
+m2 is initialized with the help of m1
+copy constructor will be invoked for m2 object.

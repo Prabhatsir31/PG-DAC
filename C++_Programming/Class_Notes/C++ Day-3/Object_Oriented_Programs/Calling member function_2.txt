@@ -1,0 +1,30 @@
+// in the following code, invoke "disp2" from  "disp1" 
+
+class MyClass2; // forward declaration
+class MyClass1
+{
+	public:
+		void disp1(MyClass2 &);		
+};
+class MyClass2
+{
+	public:
+		void disp2()
+		{
+			cout<<"disp2"<<endl;
+			
+		}
+		
+};
+void MyClass1::disp1(MyClass2 &ref)
+{
+	cout<<"disp1"<<endl;
+	ref.disp2();
+}
+int main()
+{
+	MyClass1 m1;
+	MyClass2 m2;
+	m1.disp1(m2);
+}
+		

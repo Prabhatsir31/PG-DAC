@@ -1,0 +1,26 @@
+// in the following code, invoke "disp1" from  "disp2" 
+class MyClass1
+{
+	public:
+		void disp1()
+		{
+			cout<<"disp1"<<endl;
+		}
+		
+};
+class MyClass2
+{
+	public:
+		void disp2(MyClass1 &ref)
+		{
+			cout<<"disp2"<<endl;   
+			ref.disp1();
+		}
+		
+};
+int main()
+{
+	MyClass2 m2;
+	MyClass1 m1;
+	m2.disp2(m1);	
+}

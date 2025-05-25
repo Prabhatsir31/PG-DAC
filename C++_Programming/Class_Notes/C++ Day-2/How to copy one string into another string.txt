@@ -1,0 +1,7 @@
+int main()
+{
+	char src[] = "computer";
+	char dest[20];
+	strcpy_s(dest, strlen(src)+1, src);
+	cout << dest << endl;
+}

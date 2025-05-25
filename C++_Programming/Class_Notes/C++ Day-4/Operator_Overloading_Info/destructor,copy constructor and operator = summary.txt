@@ -1,0 +1,17 @@
+what is the need to define copy constructor explicitly when it is provided by default  by compiler?
+
+a) when pointer is a member of class
+b) u have allocated memory dynamically for that pointer
+c) u have applied "delete" on that pointer inside the destructor
+
+
+what is the need to define operator=  explicitly when it is provided by default  by compiler?
+
+a) when pointer is a member of class
+b) u have allocated memory dynamically for that pointer
+c) u have applied "delete" on that pointer inside the destructor
+
+what is the need to define destructor explicitly when it is provided by default by compiler?
+a) when pointer is a member of class
+b) u have allocated memory dynamically for that pointer
+	in order to solve the problem of "memory leak" we have to define destructor and apply "delete" on that pointer.

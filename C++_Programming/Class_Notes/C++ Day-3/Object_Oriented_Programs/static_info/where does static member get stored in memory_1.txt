@@ -1,0 +1,23 @@
+class MyClass
+{
+	private:
+		int num;
+		static int val;
+	public:
+		void setNum(int);
+		int getNum();
+		static int getVal()
+		{
+			return val;
+		}
+};
+int MyClass::val;
+
+	look at assembly output:
+
+
+
+
+_BSS	SEGMENT
+?val@MyClass@@0HA DD 01H DUP (?)			; MyClass::val
+_BSS	ENDS

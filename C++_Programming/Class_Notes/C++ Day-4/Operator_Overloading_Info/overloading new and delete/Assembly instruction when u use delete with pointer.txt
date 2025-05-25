@@ -1,0 +1,62 @@
+: 	delete m;
+
+	mov	eax, DWORD PTR _m$[ebp]
+	mov	DWORD PTR $T5[ebp], eax
+	mov	ecx, DWORD PTR $T5[ebp]
+	mov	DWORD PTR $T4[ebp], ecx
+	cmp	DWORD PTR $T4[ebp], 0
+	je	SHORT $LN5@main
+	push	1
+	mov	ecx, DWORD PTR $T4[ebp]
+	call	??_Gmyclass@@QAEPAXI@Z
+	mov	DWORD PTR tv77[ebp], eax
+	jmp	SHORT $LN6@main
+$LN5@main:
+	mov	DWORD PTR tv77[ebp], 0
+
+
+
+
+??_Gmyclass@@QAEPAXI@Z PROC				; myclass::`scalar deleting destructor', COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1myclass@@QAE@XZ			; myclass::~myclass
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN1@scalar
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$LN1@scalar:
+	mov	eax, DWORD PTR _this$[ebp]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

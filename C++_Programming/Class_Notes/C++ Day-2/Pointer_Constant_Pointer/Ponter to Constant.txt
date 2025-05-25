@@ -1,0 +1,61 @@
+pointer to constant
+
+syntax:
+
+datatype const *ptr
+
+or
+
+const datatype *ptr
+
+can point to const as well as non-const member. pointer can be changed but using pointer u can not modify the member to which it points to.
+
+
+e.g.
+
+int num=100;
+const int *ptr;
+	or
+int const *ptr;
+ptr=&num;
+
+cout<<num<<"\t"<<*ptr<<endl;
+
+num=200;
+
+cout<<num<<"\t"<<*ptr<<endl;
+
+// *ptr=400;  // not allowed
+
+ptr++;  // allowed 
+
+
+with const member
+
+
+const int var=500;
+const int *ptr1;
+	or
+int const *ptr1;
+
+ptr1=&var;
+
+cout<<var<<"\t"<<*ptr1<<endl;
+
+var=600; // not allowed
+
+*ptr1=600; //not allowed
+
+ptr1--;  // allowed
+
+
+
+
+
+
+
+
+
+
+
+

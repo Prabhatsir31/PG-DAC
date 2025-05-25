@@ -1,0 +1,12 @@
+What happens if u r writing a program in C++ and u want to use a C library ?
+If u make the C function declaration,
+
+float fun1(int,char);
+
+the C++ compiler will decorate this name to something like "fun1_int_char" to support function overloading ( and type-safe linkage). However, the C compiler that compiled ur C library has most definitely not decorated the name, so its internal name will be "fun1". Thus, the linker will not be able to resolve ur C++ calls to "fun1()".
+
+The escape mechanism provided in C++ is the "alternate linkage specification " , which was produced in the language by overloading the "extern" keyword. The "extern" is followed by a string that specifies the linkages u want for the declaration, followed by the declaration:
+
+extern "C" float fun1(int,char);
+
+This tells the compiler to give C linkage to fun1() so that the compiler doesn't decorate the name. 

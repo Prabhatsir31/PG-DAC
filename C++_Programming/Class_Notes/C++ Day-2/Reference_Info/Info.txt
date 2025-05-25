@@ -1,0 +1,8 @@
+reference
+
+
+reference is just another name to a variable.
+reference is not allocated any memory.
+reference must be initialized.
+once initialized it cannot refer to another referent.
+reference gets dereferenced automatically ( in comparison with pointer which has be dereferenced explicitly using *)

@@ -1,0 +1,50 @@
+e.g. suppose u want to maintain a software for educational institute.
+first find out how many objects are involved inside it.
+Student
+Course
+Module
+Employee
+
+Student
+	id
+	name
+	age
+	qualification
+
+		getName()
+		setName()
+		getAge()
+		setAge()
+		getQualification()
+		setQualification()
+
+
+
+
+Course
+	id
+	name
+	fees
+	duration
+
+		getName()
+		setName()
+		getFees()
+		setFees()
+		getDuration()
+		setDuration()
+
+
+.... and so on
+
+
+
+
+
+
+
+
+
+
+
+

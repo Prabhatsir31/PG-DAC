@@ -1,0 +1,3 @@
+pch.h stands for "precompiled header." It's commonly used in C++ projects to improve compilation times by precompiling common header files.
+
+When you create a static library in C++, you might have multiple source files that include the same set of header files. Instead of re-parsing these headers for each source file during compilation, you can include them once in a pch.h file and precompile it. This way, the compiler only needs to parse the headers once, reducing compilation time for your project.

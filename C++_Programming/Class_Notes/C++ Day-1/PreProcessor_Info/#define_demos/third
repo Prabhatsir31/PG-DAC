@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+#define ADD_TWO(x,y) x += 2; y +=2;
+
+int main()
+{
+	int var=10;
+	int j = 5, k = 7;
+	
+	// drawback of macro
+
+/*	if(!var)
+	ADD_TWO(j,k); */
+	
+	
+	if(!var)
+	{
+	ADD_TWO(j,k);
+	}
+
+
+	cout<<j<<"\t"<<k<<endl;
+	return 0;
+}

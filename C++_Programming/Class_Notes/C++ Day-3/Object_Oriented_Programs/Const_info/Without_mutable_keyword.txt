@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class MyClass
+{
+private:
+	int num;
+public:
+	MyClass(int num)
+	{
+		this->num=num;
+	}
+	int getNum()const
+	{
+		return num;
+	}
+	void change()const
+	{
+		// num=300; non-const member cannot be modified inside const
+			// member function
+	}
+};
+void main()
+{
+	const MyClass m1(100);
+	cout<<m1.getNum()<<endl;
+	m1.change();
+	cout<<m1.getNum()<<endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+Constant Pointer to a Constant
+
+	syntax:
+
+		const datatype *const pointervar=address
+
+			or
+		datatype const *const pointervar=address
+
+
+can point to const as well as non-const members. neither u can modify pointer nor can modify the member to which it points to.
+
+e.g.
+
+int num=100;
+const int *const ptr1=&num;
+
+cout<<num<<"\t"<<*ptr1<<endl;
+
+ptr1++;   // not allowed
+
+*ptr1=400; // not allowed
+
+num=300;
+
+cout<<num<<"\t"<<*ptr1<<endl;
+
+
+with const member 
+
+
+const int num1=100;
+const int *const ptr2=&num1;
+
+cout<<num1<<"\t"<<*ptr2<<endl;
+
+ptr2++;   // not allowed
+
+*ptr2=400; // not allowed
+
+num1=300;  // not allowed
+
+
+
+
+
+
+
+
+
+
+
+
+
+

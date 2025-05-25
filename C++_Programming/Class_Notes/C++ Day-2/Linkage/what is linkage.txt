@@ -1,0 +1,10 @@
+In programming languages, particularly C++, linkage describes how names can or can not refer to the same variable name or function name throughout the whole program or one single translation unit (one cpp file).
+
+Automatic (local) variables exist only temporarily, on the stack, while a function is being called. The linker doesn't know about automatic variables, and so these have "no linkage".
+
+There are 4 types of linkages:
+
+external linkage
+internal linkage
+typesafe linkage
+alternate linkage

@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class base
+{
+	int num1;
+public:
+	void accept(int k)
+	{
+		num1=k;
+	}
+	void disp()
+	{
+		cout<<num1<<endl;
+	}
+	~base()
+	{
+		cout<<"In destr\t"<<num1<<endl;
+	}
+};
+int main()
+{
+	base *b=new base[3];
+	b[0].accept(10);
+	b[1].accept(20);
+	b[2].accept(30);
+	for(int i=0;i<3;i++)
+	{
+		b[i].disp();
+	}
+	delete []b;
+}

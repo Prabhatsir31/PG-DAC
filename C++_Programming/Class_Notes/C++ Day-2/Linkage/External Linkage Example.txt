@@ -1,0 +1,84 @@
+External linkage:- it means that a single piece of storage is created to represent the identifier for all files being compiled. The storage is created once, and the linker must resolve all other references to that storage. Global variables and function names have external linkage. These are accessed from other files by declaring them with the keyword "extern". Variables defined outside all functions (with the exception of "const" in C++) and function definitions default to external linkage. You can specifically force them to have internal linkage using the "static" keyword. You can explicitly state that an identifier has external linkage by defining it with the "extern" keyword.
+
+in simple words, global variables can be accessed outside the file. This is known as "External Linkage".
+
+close the existing solution
+
+
+create 	new project
+			empty project
+	next
+
+project name :-  External_1
+location :-  <your regular folder> c:\MyCpp
+
+select: - place solution and project in the same directory
+
+right click on the project name
+	add
+		new item
+
+			First.cpp
+		
+		First.cpp
+
+#include<iostream>
+using namespace std;
+void disp()
+{
+	extern int num;
+	cout<<"in disp\t"<<num<<endl;
+	void fun(); // no need to use "extern" keyword as it is by default extern
+	cout<<"from disp calling fun\t";
+	fun();
+}
+
+
+compile above file. ( ctrl + f7 )  [ only compile , don't build ]
+
+
+close the solution
+
+create 	new project
+			empty project
+				next
+
+project name :-  External_2
+location :-  <your regular folder> c:\MyCpp
+
+select: - place solution and project in the same directory
+
+right click on the project name
+	add
+		new item
+
+			Second.cpp
+
+
+		
+		Second.cpp
+
+
+#include<iostream>
+using namespace std;
+#include "C:\MyCpp\External_1\First.cpp"
+
+int num = 100;
+void fun()
+{
+	cout << "in fun" << endl;
+}
+int main()
+{
+	cout << "in main\t" << num << endl;
+	disp();
+	cout << "from main calling fun\t";
+	fun();
+}
+
+compile "Second.cpp", ( ctrl + f7 )
+
+	build it ( ctrl+shift+B ) . it will create "External_2.exe" . 
+execute it. ( ctrl+f5)
+
+make sure you get the output

@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+#pragma pack(1)
+struct mystruct
+{
+	char ch='A';
+	double d=6.7;
+}m;
+int main()
+{
+	cout << m.ch << "\t" <<m.d << endl;
+	cout << sizeof(m) << endl;
+}
+
+
+
+
+In C and C++, #pragma pack is a preprocessor directive that controls the alignment of structure members in memory. When you use #pragma pack(1), you're telling the compiler to pack structure members tightly, with no padding between them.
+
+Here's what #pragma pack(1) does:
+
+Tightly Packed Structures: Normally, compilers align structure members according to certain rules for efficiency and performance. This can result in padding between structure members to ensure that each member is aligned on an appropriate memory boundary, which can waste memory space.
+
+Disabling Padding: #pragma pack(1) instructs the compiler to disable padding between structure members, packing them as tightly as possible. This can reduce memory usage but may lead to slower memory access on architectures that require aligned memory access.

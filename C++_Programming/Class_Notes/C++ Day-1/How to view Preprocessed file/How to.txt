@@ -1,0 +1,15 @@
+right click on the project
+	properties
+
+Configuration properties
+	C/C++
+		preprocessor
+			preprocessed to a file  -  yes
+
+compile again
+
+go to 
+
+D:\MyCpp\ConsoleApplication1\x64\Debug
+
+	you will get "ConsoleApplication1.i" file as a preprocessed file.

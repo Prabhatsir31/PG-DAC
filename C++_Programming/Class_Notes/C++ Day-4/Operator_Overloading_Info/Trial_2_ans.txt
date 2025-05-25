@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+class MyClass
+{
+private:
+	int num;
+
+public:
+	MyClass(int num)
+	{
+		this->num = num;
+	}
+	int getNum()
+	{
+		return num;
+	}
+	MyClass add(MyClass& b)
+	{
+		//object won't be created here
+		// object will be created inside the main function
+		return MyClass(num + b.num);
+	}
+	MyClass(const MyClass& ref)
+	{
+		this->num = ref.num;
+		cout << "inside copy constructor" << endl;
+	}
+	~MyClass()
+	{
+		cout << "inside MyClass destructor\t" << num << endl;
+	}
+};
+int main()
+{
+	MyClass m1(100), m2(200);
+	cout << m1.getNum() << endl;
+	cout << m2.getNum() << endl;
+
+	MyClass m3 = m1.add(m2);
+	cout << m3.getNum()<<endl;
+	cout << "Done" << endl;
+}

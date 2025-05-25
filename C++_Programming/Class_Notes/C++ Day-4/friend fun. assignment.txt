@@ -1,0 +1,39 @@
+1) class First
+   {
+      char str1[20];
+   };
+   class Second
+   {
+      char str2[20];
+   };
+write a friend function,which will create a  new string containing str1,str2 and also display it.
+
+2) 
+class First
+{
+	int a;
+};
+class Second
+{
+	public:
+		void fun1(){}
+		void fun2(){}
+		void fun3(){}
+};
+
+Above code is incomplete.
+Make sure that all the member functions of "Second" will access "a".
+
+
+
+
+
+
+
+
+
+
+
+
+
+

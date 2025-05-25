@@ -1,0 +1,6 @@
+1) new operator
+2) constructor
+
+
+1)destructor
+2)delete operator

@@ -1,0 +1,26 @@
+How to use Visual Studio 2022
+
+Difference between  endl and  backslash n (\n)
+
+Location of exe file
+	[ C:\MyCPP\Project1\x64\Debug ]
+
+The Build Process of C C++ Programs
+
+typedef Info
+
+Pointer_info
+
+Imp pointer discussion
+
+PreProcessor_Info
+
+How to view Preprocessed file
+
+Commandline_Arguments
+
+Storage classes
+
+How to create static library and access it
+
+How to create dynamic library and access it

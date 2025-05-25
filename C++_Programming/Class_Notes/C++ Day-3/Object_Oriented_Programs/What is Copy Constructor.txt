@@ -1,0 +1,7 @@
+copy constructor is called in 2 situations
+a) when object is initialized with another object
+b) when object is passed as an argument ,and collected in 
+another temporary object
+
+when we don't provide copy constructor in the class, compiler implicitly provides it.
+

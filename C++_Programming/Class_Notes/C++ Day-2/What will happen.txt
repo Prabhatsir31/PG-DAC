@@ -1,0 +1,28 @@
+int* ptr = new int;
+	delete ptr;
+	delete ptr; 
+
+runtime error
+
+
+
+
+int* ptr = new int;
+	delete[]ptr;
+	cout << "done" << endl;
+
+		no problem , successful execution
+
+
+
+
+int* ptr = new int;
+	delete ptr;
+	ptr = 0;  or ptr=NULL
+	delete ptr;
+	cout << "done" << endl;
+
+no problem , successful execution
+
+
+

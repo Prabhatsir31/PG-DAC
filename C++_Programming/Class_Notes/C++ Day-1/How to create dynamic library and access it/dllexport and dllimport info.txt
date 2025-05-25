@@ -1,0 +1,19 @@
+You are defining a class implementation or function definition within a dll. You want another program to use the class or function. Here you use "dllexport" as you are creating a class or a function that you (developer) wish the dll to expose.
+
+	e.g.
+
+__declspec(dllexport)void disp2()
+{
+    cout << "inside disp2 of dll file" << endl;
+}
+
+
+
+You are using a function provided by a dll. You include a header supplied with the dll. Here the header uses "dllimport" to bring in the implementation to be used by the current program (client program)
+	e.g.
+
+inside header file created by developer ,which will be included by client later.
+
+	__declspec(dllimport)void disp2();
+
+ 

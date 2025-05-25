@@ -1,0 +1,11 @@
+
+what is "this"?
+
+"this" is a pointer pointing to a current object or invoking object.
+"this" pointer can not be worked with static members because "this" is a pointer to an object and static members are not related to object.
+
+
+what is the importance of "this" pointer?
+
+in object oriented programming , when u create no. of objects u have so many copies of instance members, but only one copy of member function/s. In that scenario how member function/s will come to know for which object they have to work? 
+answer is "this" pointer. it is with the help of "this" pointer , member function/s come to know for which object they have to work.

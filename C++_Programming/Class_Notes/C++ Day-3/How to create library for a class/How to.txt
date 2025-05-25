@@ -1,0 +1,3 @@
+Follow the same "How to create static library" , the difference is in the header file class definition with only declarations of constructors and methods.
+
+in cpp  only definitions of class constructors and member functions.

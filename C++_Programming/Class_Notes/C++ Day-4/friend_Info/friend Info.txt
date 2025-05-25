@@ -1,0 +1,7 @@
+friend keyword
+
+friend keyword can be applied to function as well as class.
+
+friend function is a function which can access private members of a class in which it is declared as "friend".
+
+Application of friend function:- In case of operator overloading there are some cases where without friend function u can not overload some operators.

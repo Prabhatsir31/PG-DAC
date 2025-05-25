@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class MyClass
+{
+private:
+	int num; // instance member
+public:
+	void setNum(int k)
+	{
+		num = k;
+	}
+	int getNum()
+	{
+		return num;
+	}
+	MyClass()
+	{
+		cout << "no-arg constructor" << endl;
+	}
+	~MyClass()
+	{
+		cout << "in destructor" << endl;
+	}
+	MyClass(MyClass& ref)
+	{
+		cout << "in copy constr" << endl;
+		this->num = ref.num;
+	}
+};
+int main()
+{
+	MyClass m;  // object of MyClass
+	m.setNum(100);
+	cout << endl << m.getNum() << endl;
+	//	MyClass m1=m; // initializing m1 with m
+
+	MyClass m1(m); // initializing m1 with m
+
+
+	cout << m1.getNum() << endl;
+}

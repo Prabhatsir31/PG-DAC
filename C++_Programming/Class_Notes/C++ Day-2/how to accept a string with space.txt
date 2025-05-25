@@ -1,0 +1,20 @@
+char str3[20];
+cin>>str3
+	cin by default terminates when you enter space from the keyboard , hence in the above statement if you accept any string with space the value after space will be discarded.
+
+
+
+
+	cout << "enter string with space" << endl;
+	char str3[20];
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	cin.getline(str3, 19);
+	cout << str3 << endl;
+
+
+
+
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+ discards any characters in the input buffer up to the next newline character, effectively clearing the buffer.
+Then you can safely use cin.getline() without any interference from previous input.

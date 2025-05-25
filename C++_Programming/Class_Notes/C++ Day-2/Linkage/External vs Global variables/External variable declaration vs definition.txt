@@ -1,0 +1,1 @@
+External variable definition allocates the memory whereas External variable declaration does not allocate the memory , it just informs compiler that there is an external variable defined somewhere in the program.

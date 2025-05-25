@@ -1,0 +1,6 @@
+int main()
+{
+	int num;
+	cout << num << endl;   //  error
+	cout << "done" << endl;
+}

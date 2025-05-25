@@ -1,0 +1,70 @@
+1) class Number
+   {
+       int num;
+   }
+In the main function,
+Number n1(8),n2(4),n3(20),n4(6),n5;
+n5=n1-n2
+n5=n3/n4;
+n5=n1*n3
+
+
+
+
+2) class sample
+   {
+	private:
+		char ch;
+	public:
+		sample(char ch)
+		{
+			this->ch=ch;
+		}
+  };
+
+given above class.
+
+write a global function "display" which will access "ch" directly and display it.
+call this function from main function.
+
+
+
+3) Given
+
+class Module1
+{
+	int duration;
+	public:
+		Module1(int k)
+		{
+			duration=k;
+		}
+};
+
+class Module2
+{
+	int duration;
+	public:
+		Module2(int k)
+		{
+			duration=k;
+		}
+};		
+	
+write a global function "check" which will take 2 modules (i.e. Module1 and Module2 ) and check whether Modules are same or not.
+call this "check" function from main function.	
+
+
+
+
+
+4) Define a class , write two member functions 
+	void disp1(){ //some code }
+	void disp2(){ // some code }
+
+	Try to call disp1   from    disp2.
+
+5) Define a class with constructor and  member function
+
+	create object, call member function
+	now create a reference to that object, and using that reference try to call member function

@@ -1,0 +1,80 @@
+There is an added benefit to a name decoration.
+There is a possibility in C , when the client programmer misdeclares a function, or worse, a function is called without declaring it first, and the compiler assumes the function declaration from the way it is called. Sometimes this function declaration is correct, but when it is not, it can be a difficult bug to find.
+e.g.
+
+create a library in c 
+
+
+#include<stdio.h>
+void disp(char *ptr)
+{
+	printf("%c\n",*ptr);
+}
+
+now write a c program to access it
+
+
+#include<stdio.h>
+void disp(double);
+void main()
+{
+	puts("before");
+	disp(23.7);
+	puts("After");
+}
+
+notice that we are giving a wrong declaration.
+even then it will compile (of course) , not only that after including the name of "lib" file in the link option, linker will link it also. [ it's because linker only checks the name of the function i.e. "disp" and not the argument or parameter ]
+
+but guess what is the result ?
+	runtime error
+
+
+Because all functions must be declared before they are used in C++, the possibility for this problem to pop up is greatly diminished. The C++ compiler refuses to declare a function automatically for you, so it's likely that u will include the appropriate header file. However, if for some reason u still manage to misdeclare a function, either by declaring by hand or including the wrong header file, the name decoration provides a safety net that is often referred to as "type-safe linkage".
+
+e.g
+
+let us talk about above scenario in c++
+create a library
+
+#include<iostream>
+using namespace std;
+void disp(char *ptr)
+{
+	cout<<*ptr<<endl;
+}
+
+now write a c++ file to access this library
+
+
+#include<iostream>
+#include<conio.h>
+void disp(double);     // void disp_double(double);
+using namespace std;
+void main()
+{
+	cout<<"before"<<endl;
+	disp(4.5);   // disp_double(4.5);
+	cout<<"after"<<endl;
+}
+
+compile.
+add reference of "lib" file in the link option
+it will not link.
+reason is name decoration or name mangling done by c++ compiler.
+function definition,call and declaration everything is mangled.
+i.e.
+ 
+void disp(char *ptr)
+{
+....
+}
+ the above function must be decorated or mangled as "void disp_char*(char*)" for example .
+
+when you declare "void disp(double d)" , it is mangled as "void disp_double(double)"
+
+when you call by saying "disp(4.5) ",
+it is mangled as "disp_double(4.5) ".
+
+it means that compiler has no problem but during linking time, linker searches the definition as "disp_double(double) ". Since it is not getting it (what is available in "lib" file is "disp_char*(char*)", it gives linking error.
+	This is called as type-safe linkage.

@@ -1,0 +1,9 @@
+		static members and member functions
+
+static member is allocated memory as soon as class is loaded inside memory,i.e. even before any object is created.
+Since static members are not associated with any object, they are having only one copy in the memory irrespective of number of objects are created. in order to access static member no need to use object.
+
+static member functions are used to access private static members.
+
+when will you create static members inside class?
+in an object oriented programming if u realize that a particular member/s need not be different for different objects rather they can be shared between multiple object, u can go for static member/s.

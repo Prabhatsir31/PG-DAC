@@ -1,0 +1,25 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    
+    int x =49;
+    cout << "sqrt(" << x << ") = " << sqrt(x) << endl;
+
+    // Rounding functions
+    double num = 3.6;
+    cout << "ceil(" << num << ") = " << ceil(num) <<endl;
+    cout << "floor(" << num << ") = " << floor(num) <<endl;
+    cout << "round(" << num << ") = " << round(num) <<endl;
+    cout << "trunc(" << num << ") = " << trunc(num) <<endl;
+    cout << "abs(" << num << ") = " << abs(num) << endl;
+    
+    double base = 3.0;
+    double exponent = 2.0;
+    cout << "pow(" << base << ", " << exponent << ") = " << pow(base, exponent) <<endl;
+    cout << "fmod(" << base << ", " << exponent << ") = " << fmod(base, exponent) <<endl;
+
+    return 0;
+}

@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+struct Student
+{
+	char name[30] = "noname";
+	int age = 0;
+};
+int main()
+{
+	struct Student* ptr;
+	cout << "How many records?" << endl;
+	int rec;
+	cin >> rec;
+	ptr = new Student[rec];
+	for (int i = 0; i < rec; i++)
+	{
+		cin >> ptr[i].name >> ptr[i].age;
+	}
+	for (int i = 0; i < rec; i++)
+	{
+		cout << ptr[i].name << "\t" << ptr[i].age << endl;
+	}
+	//delete ptr; // warning "destructors won't be called"
+	delete[]ptr;  // the perfect way to use "delete"
+}
+
+
+

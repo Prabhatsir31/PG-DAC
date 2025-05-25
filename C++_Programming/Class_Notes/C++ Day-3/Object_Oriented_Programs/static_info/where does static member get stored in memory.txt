@@ -1,0 +1,23 @@
+class MyClass
+{
+	private:
+		int num;
+		static int val;
+	public:
+		void setNum(int);
+		int getNum();
+		static int getVal()
+		{
+			return val;
+		}
+};
+int MyClass::val=5;
+
+	look at assembly output:
+
+
+
+
+_DATA	SEGMENT
+?val@MyClass@@0HA DD 05H				; MyClass::val
+_DATA	ENDS

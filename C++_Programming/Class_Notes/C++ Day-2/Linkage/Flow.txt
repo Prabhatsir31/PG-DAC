@@ -1,0 +1,8 @@
+External vs Global variables
+what is linkage
+External Linkage Example
+Internal Linkage Example
+Type Safe Linkage
+Alternate linkage specification
+
+how to call C library function from C++

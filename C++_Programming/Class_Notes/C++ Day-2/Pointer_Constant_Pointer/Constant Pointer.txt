@@ -1,0 +1,36 @@
+Constant Pointer
+
+	syntax:
+
+	datatype * const pointervar=address;
+
+
+can point to non-const member only (cannot point to const member). pointer cannot be changed but using pointer u can modify the member to which it points to.
+
+
+e.g
+
+	int num=200;
+
+	int *const ptr1=&num;
+
+
+	cout<<num<<"\t"<<*ptr1<<endl;
+
+	num=400;  // allowed
+
+
+	cout<<num<<"\t"<<*ptr1<<endl;
+
+
+	ptr1++ ;  // not allowed
+
+
+	*ptr1=600;  // allowed
+
+	cout<<num<<"\t"<<*ptr1<<endl;
+
+
+
+	const int num1=250;
+	int *const ptr2=&num1;   // not allowed

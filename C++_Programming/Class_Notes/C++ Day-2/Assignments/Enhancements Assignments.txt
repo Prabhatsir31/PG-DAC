@@ -1,0 +1,55 @@
+1) using cin and cout, accept name,address,age of a person and print it.
+
+2) create following structure
+struct book
+{
+	char bid[5];
+	char name[30];
+	int price;
+};
+ask user how many records he wants to create and accordingly allocate memory.
+accept values from user and display.
+( Hint :-  use  "new" operator)
+
+
+
+3) create a structure "Employee" 
+with members 
+	int id
+	char name[20];
+	char desig[20];
+now access it using
+a) array 
+b) DMA
+
+4) create a static library in C++ in which,
+write a function which will accept 2 numbers and return the difference between 2 numbers
+write appropriate header file.
+
+write a client code to access this library.
+
+
+5) given
+	void disp(int); function.
+
+now create a function pointer and call this function using function pointer.
+
+6) write a function to swap 2 given numbers using pointers.
+
+
+
+
+7) accept from user how many chracters he has in his name, now allocate a memory accordingly and accept his name. [use new operator]
+
+
+8) write a function which can accept minimum 3 characters and maximum 5 characters and display them. ( use "default arguments")
+
+9)write a function which takes 3 arguments
+variable, pointer and a reference.(any datatype)
+invoke this function and show how "call by value","call by address" and "call by reference" will work.
+
+10)define 3 different structures and initialize their members.
+now write 3 different functions,but with the same name.
+these functions will accept each structure respectively and display their members.
+
+

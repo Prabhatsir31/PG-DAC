@@ -1,0 +1,78 @@
+Internal linkage:- it means storage is created to represent the identifier only for the file being compiled. Other files may use the same identifier name with internal linkage, or for a global variable, and no conflicts will be found by the linker - separate storage is created for each identifier. Internal linkage is specified by the keyword "static" in C and C++.
+
+in simple words, static global variables cannot be accessed outside the file. This is known as "Internal Linkage".
+
+
+close the existing solution
+
+
+create 	new project
+			Empty project
+	next
+
+project name :-  Internal_1
+location :-  <your regular folder> C:\MyCpp
+
+select: - place solution and project in the same directory
+
+
+		
+		First.cpp
+
+#include<iostream>
+using namespace std;
+void disp()
+{
+	extern int num;
+	cout<<"in disp\t"<<num<<endl;
+	void fun(); // no need to use "extern" keyword as it is by default extern
+	cout<<"from disp calling fun\t";
+	fun();
+}
+
+
+compile above file. ( ctrl + f7 )  [ only compile , don't build ]
+
+
+close the solution
+
+create 	new project
+			Empty project
+
+				next
+
+project name :-  Internal_2
+location :-  <your regular folder> C:\MyCpp
+
+select: - place solution and project in the same directory
+
+		
+		Second.cpp
+
+
+#include<iostream>
+using namespace std;
+#include "C:\MyCpp\Internal_1\First.cpp"
+
+static int num = 100;
+static void fun()
+{
+	cout << "in fun" << endl;
+}
+int main()
+{
+	cout << "in main\t" << num << endl;
+	disp();
+	cout << "from main calling fun\t";
+	fun();
+}
+
+compile "Second.cpp", ( ctrl + f7 )
+
+	build it ( ctrl+shift+B ) . 
+	it will give "linker error", i.e. "unresolved symbols num and fun".
+
+since num and fun are static they can not be accessed from other translation unit.
+
+
+

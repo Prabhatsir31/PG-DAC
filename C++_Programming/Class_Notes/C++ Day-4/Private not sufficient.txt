@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class myclass
+{
+private:
+	int num;
+	const int cnt;
+public:
+	myclass(int num) :cnt(10)
+	{
+		this->num = num;
+	}
+	void disp()
+	{
+		cout << num << "\t" << cnt << endl;
+	}
+};
+
+
+int main()
+{
+	myclass m1(200);
+	m1.disp();
+	//	m1.num;  // Error
+	//	m1.cnt;  // Error
+	int* ptr = (int*)&m1; // address of m1 and num
+	*ptr = 500;
+	ptr++;  // address of cnt
+	*ptr = 600;
+	m1.disp();
+
+}
+
+
+
+
+
+

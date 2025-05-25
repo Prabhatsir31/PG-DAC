@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int age;
+    char name[20];
+
+    cin >> age;         // Suppose user types: 25 and presses enter
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.getline(name,19); // This will immediately take the leftover '\n'
+    cout <<name<<"\t"<<age<<endl;
+}

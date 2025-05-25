@@ -1,0 +1,48 @@
+	Memory leak
+
+when pointer is pointing to some heap memory.once the scope of that pointer variable is over, it is removed. but the memory to which it was pointing remains ......... (till the program execution comes to an end)
+
+e.g
+
+void disp()
+{
+	int *ptr=new int(5);
+}
+int main()
+{
+	disp();
+	// lots of other stuff
+}
+
+how to solve the above problem?
+	make sure before the end of "disp" method, you apply "delete" on the "ptr".
+
+
+
+	Dangling Pointer
+
+when pointer is pointing to some heap memory.After using that memory, we apply "delete" on that pointer in order to release memory. Now heap memory is released but the pointer pointing to that memory remains ......... (till the scope of that pointer variable is not over)
+
+
+int main()
+{
+	int *ptr=new int(5);
+	// use that ptr pointer
+	delete ptr;
+	// other stuff
+
+}
+
+
+how to solve the above problem?
+	after applying "delete" on the "ptr", assign "NULL" to it.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	//char str[20];
+	// str = "hello";  not possible
+
+	char str[20] = "hello";
+	cout << str << endl;
+	char str1[] = "welcome";
+	cout << str1 << endl;
+
+	cout << "enter string without space" << endl;
+	char str2[20];
+	cin >> str2;
+	cout << str2 << endl;
+
+	cout << "enter string with space" << endl;
+	char str3[20];
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	cin.getline(str3, 19);
+	cout << str3 << endl;
+
+	char str4[20];
+	strcpy_s(str4, strlen("computer") + 1, "computer");
+	cout << str4 << endl;
+
+	//char str5[3] = { 'a','b','c'}; // not correct
+	char str5[4] = { 'a','b','c' };
+	cout << str5 << endl;
+}
+

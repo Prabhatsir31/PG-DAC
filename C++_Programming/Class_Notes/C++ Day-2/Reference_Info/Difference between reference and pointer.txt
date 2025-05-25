@@ -1,0 +1,4 @@
+1) pointers are allocated memory whereas reference is just another name to a variable. It is not allocated memory.
+2) Pointer can be incremented decremented (unless it is constant pointer) whereas reference once initialized cannot be changed.
+3) array of pointer is possible but array of reference is not possible.
+

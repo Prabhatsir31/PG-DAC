@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class myclass
+{
+public:
+void disp()
+{
+	cout<<"myclass disp"<<endl;
+}
+myclass* operator->()
+{
+	return this;
+}
+myclass& operator*()
+{
+	return *this;
+}
+};
+int main()
+{
+	myclass m;
+	m.disp();
+	m->disp();
+	(*m).disp();
+	return 0;
+}

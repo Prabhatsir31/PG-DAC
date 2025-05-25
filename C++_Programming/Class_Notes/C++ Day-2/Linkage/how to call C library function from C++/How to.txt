@@ -1,0 +1,133 @@
+close the existing solution
+
+create new project
+	static library
+		next
+
+
+project name :-  devpro
+location :- C:\MyCpp\developer
+
+place solution and project in the same directory
+
+create
+
+
+remove the generated "pch.h" file and create a new file with the same name i.e. "pch.h".
+your "pch.h" should look like:
+
+#ifndef PCH_H
+#define PCH_H
+
+// add headers that you want to pre-compile here
+#include "framework.h"
+#include<stdio.h>
+#endif //PCH_H
+
+
+right click on "devpro"
+
+	new item
+		header
+			Header.h
+
+			void  disp(int);
+
+save it.
+
+rename the generated "pch.cpp" to "pch.c" and "devpro.cpp" to "devpro.c"
+
+Following changes are required to be done inside "devpro.c"
+
+			
+			devpro.c
+
+		#include "pch.h"
+
+		void disp(int k)
+		{
+			printf("Inside disp\t%d\n", k);
+		}
+
+
+compile (ctrl + f7 )
+
+build (ctrl+shift+B)
+
+make sure it creates  "C:\MyCpp\developer\devpro\x64\Debug\devpro.lib"
+
+copy "devpro.lib" and "Header.h"  inside "C:\forclient" folder.
+
+
+open new visual studio 2022
+
+create new project
+
+	empty project
+
+next
+
+project name :- clientpro
+
+location :-  C:\MyCpp\client
+
+select :- place solution and project in the same directory
+
+	create
+
+inside "ClientApp.cpp"
+
+
+#include <iostream>
+#include "C:\forclient\Header.h"
+using namespace std;
+int main()
+{
+    cout << "Before calling"<<endl;
+    disp(100);
+    cout << "After calling" << endl;
+
+}
+
+
+compile  ( ctrl + f7)
+	make sure it compiles successfully.
+
+build (ctrl+shift+B)
+	it will not build as linker does not get the definition of "disp" function.
+
+right click on "clientpro" project name
+	properties
+		configurations properties 
+			linker
+				input
+
+					C:\forclient\devpro.lib
+
+	apply
+		ok
+
+build again (ctrl+shift+B)
+	it will not build as client compiler will mangle "void disp(int)" as 
+void disp_int(int)
+	and inside "devpro.lib" , the name of function is "void disp(int)"
+
+in order to solve this issue , open "Header.h" on the developer side and change it as follows:
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+void  disp(int);
+#ifdef __cplusplus
+}
+#endif
+
+save on developer side and also copy to "C:\\forclient" folder.
+
+come inside "clientpro"
+	compile and build. Make sure compilation and linking will be successfull. 
+execute it.
+
+
+
+			

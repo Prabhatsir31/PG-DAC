@@ -1,0 +1,25 @@
+Enhancements of c
+
+
+cin and cout    iostream header
+>> extraction operator
+<< insertion operator
+
+variable declaration anywhere
+
+scope resolution operator
+
+new and delete operators
+
+default arguments
+
+function overloading
+
+inline functions 
+
+reference
+
+const keyword
+
+
+

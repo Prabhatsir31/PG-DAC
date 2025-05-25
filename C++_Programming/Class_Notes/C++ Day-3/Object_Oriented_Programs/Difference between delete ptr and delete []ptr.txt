@@ -1,0 +1,38 @@
+/*
+delete []ptr ensures that destructor will be invoked for all the objects which are allocated on heap.
+*/
+
+#include<iostream>
+using namespace std;
+class MyClass
+{
+	int num;
+
+public:
+	void setNum(int num)
+	{
+		this->num = num;
+	}
+	int getNum()
+	{
+		return num;
+	}
+	~MyClass()
+	{
+		cout << "in destr\t" << num << endl;
+	}
+};
+int main()
+{
+	MyClass* ptr = new MyClass[3];
+	for (int i = 0; i < 3; i++)
+	{
+		ptr[i].setNum(i);
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		cout << ptr[i].getNum() << endl;
+	}
+	// delete ptr;  // bad practice , won't call all the destructors
+	//delete[]ptr;   // perfect
+}

@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int a = 10;  // global variable
+int main()
+{
+	extern int b; // external variable declaration
+	cout << a << endl;
+	cout << b << endl; // no problem
+	return 0;
+}
+int b = 20;  // external variable definition

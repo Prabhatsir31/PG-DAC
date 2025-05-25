@@ -1,0 +1,36 @@
+// stack-based objects destructor is called automatically
+// heap-based objects destructor u have to call explicitly.
+
+#include<iostream>
+using namespace std;
+class MyClass
+{
+	private:
+		int num;
+	public:
+		MyClass(int num)
+		{
+			this->num=num;
+		}
+		~MyClass()
+		{
+			cout<<"in destr"<<endl;
+		}
+		int getNum()
+		{
+			return num;
+		}
+};
+int main()
+{
+	MyClass m1(100);
+	cout<<endl<<m1.getNum()<<endl;
+	MyClass m2(200);
+	cout<<endl<<m2.getNum()<<endl;
+	MyClass *m3=new MyClass(300);
+	cout<<endl<<m3->getNum()<<endl;
+	//delete m3; observe what happens
+}
+
+
+

@@ -1,0 +1,15 @@
+: 	myclass *m=new myclass(10);
+
+	push	4
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T3[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	cmp	DWORD PTR $T3[ebp], 0
+	je	SHORT $LN3@main
+	push	10					; 0000000aH
+	mov	ecx, DWORD PTR $T3[ebp]
+	call	??0myclass@@QAE@H@Z			; myclass::myclass
+	mov	DWORD PTR tv72[ebp], eax
+	jmp	SHORT $LN4@main
+$LN3@main:

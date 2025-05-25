@@ -1,0 +1,3 @@
+We are first creating Java file, declaring native method, generating .h file 
+then creating dll
+finally using dll inside Java

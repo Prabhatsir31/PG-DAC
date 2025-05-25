@@ -1,0 +1,52 @@
+create a class "MyClass" with 
+instance member "int num".
+
+default constructor
+parameterized constructor
+
+in main create n number of instances and at the end show how many instances are created for a class.
+
+class MyClass
+{
+	private:
+		int num;
+		static int cnt;
+	public:
+		MyClass()
+		{
+			num=0;
+			cnt++;
+		}
+		MyClass(int num)
+		{
+			this->num=num;
+			cnt++;
+		}
+		static int getCnt()
+		{
+			return cnt;
+		}
+		MyClass(MyClass &ref)
+		{
+			num=ref.num;
+			cnt++;
+		}
+		~MyClass()
+		{
+			cnt--;
+		}
+};
+int MyClass::cnt=0;
+void main()
+{
+	MyClass m1,m2(300),m3(400),m4;
+	MyClass *m5=new MyClass;
+	MyClass *m6=new MyClass(800);
+	cout<<MyClass::getCnt();
+	MyClass m7=m2;
+	cout<<MyClass::getCnt();
+	delete m5;
+	cout<<MyClass::getCnt();
+	delete m6;
+	cout<<MyClass::getCnt();
+}

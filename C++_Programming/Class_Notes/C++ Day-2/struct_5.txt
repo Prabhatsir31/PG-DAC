@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+struct Student
+{
+	char name[30] = "noname";
+	int age = 0;
+};
+int main()
+{
+	Student s1 = { "Abc",25 };
+	Student *ptr1 = &s1;
+	cout << s1.name << "\t" << s1.age << endl;
+	cout << ptr1->name << "\t" << ptr1->age << endl;
+	cout << (*ptr1).name << "\t" << (*ptr1).age << endl;
+
+	Student arr[3] = { {"xyz,35"},{"aac",23},{"jkl",31} };
+	for (int i = 0; i < 3; i++)
+	{
+		cout << arr[i].name << "\t" << arr[i].age << endl;
+	}
+	
+	struct Student* ptr;
+	cout << "How many records?" << endl;
+	int rec;
+	cin >> rec;
+	ptr = new Student[rec];
+	for (int i = 0; i < rec; i++)
+	{
+		cin >> ptr[i].name >> ptr[i].age;
+	}
+	for (int i = 0; i < rec; i++)
+	{
+		cout << ptr[i].name << "\t" << ptr[i].age << endl;
+	}
+	
+	delete[]ptr;  
+}

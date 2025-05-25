@@ -1,0 +1,35 @@
+void disp(char* ptr)
+{
+	cout << *ptr << endl;
+}
+int main()
+{
+	disp("hello");  // error
+}
+
+	will not compile as "hello" is of type "pointer to const". In order to collect it , you have to have "pointer to const" as an argument. So the above code has to be written as
+
+
+void disp(const char* ptr)
+{
+	cout << *ptr << endl;
+}
+int main()
+{
+	disp("hello");  
+}
+
+what if we don't want to give "pointer to constant" as a member in "disp"?
+
+Following code will work :
+
+
+
+void disp(char* ptr)
+{
+	cout << *ptr << endl;
+}
+int main()
+{
+	disp((char*)"hello");
+}
