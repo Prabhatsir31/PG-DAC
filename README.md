@@ -12,5 +12,5 @@
 
 ### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/Web_Development_Technology">Module-5: Web Developmet Technology</a>
 
-### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/">Module-6: C++ </a>
+### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/">Module-6: C++</a>
 
