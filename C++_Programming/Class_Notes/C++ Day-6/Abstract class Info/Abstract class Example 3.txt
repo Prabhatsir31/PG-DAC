@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+class Person
+{
+	public:
+		virtual void performDuties()=0;
+		void walk()
+		{
+			cout<<"walk"<<endl;
+		}
+		void talk()
+		{
+			cout<<"talk"<<endl;
+		}
+		void eat()
+		{
+			cout<<"eat"<<endl;
+		}
+		void sleep()
+		{
+			cout<<"sleep"<<endl;
+		}
+};
+class Soldier:public Person
+{
+	public:
+		void performDuties()
+		{
+			cout<<"fight"<<endl;
+		}
+
+};
+
+class Teacher:public Person
+{
+	public:
+		void performDuties()
+		{
+			cout<<"teach"<<endl;
+		}
+
+};
+
+class HouseWife:public Person
+{
+	public:
+		void performDuties()
+		{
+			cout<<"cook"<<endl;
+		}		
+};
+
+int main()
+{
+	Person *arr[3]={new Teacher,new Soldier,new HouseWife};
+	for(int i=0;i<3;i++)
+	{
+		arr[i]->performDuties();
+	}
+
+}

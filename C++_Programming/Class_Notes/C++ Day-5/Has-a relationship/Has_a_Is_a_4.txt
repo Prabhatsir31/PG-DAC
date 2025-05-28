@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class Animal
+{
+public:
+	Animal(int k)
+	{
+		cout << "Animal param constr" << endl;
+	}
+	~Animal()
+	{
+		cout << "inside Animal destructor" << endl;
+	}
+};
+class Tail
+{
+public:
+	Tail(char ch)
+	{
+		cout << "in Tail param constr" << endl;
+	}
+	~Tail()
+	{
+		cout << "in Tail destructor" << endl;
+	}
+};
+class Dog :public Animal
+{
+private:
+	Tail w;
+public:
+	Dog() :w('A'), Animal(10)
+	{
+		cout << "Dog def constr" << endl;
+	}
+	~Dog()
+	{
+		cout << "inside Dog destructor" << endl;
+	}
+};
+int main()
+{
+	Dog d;
+	return 0;
+}

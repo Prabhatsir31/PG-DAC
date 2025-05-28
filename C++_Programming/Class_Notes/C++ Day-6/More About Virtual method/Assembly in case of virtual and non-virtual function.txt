@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class base
+{
+public:
+	base()
+	{
+		cout << "in base no-arg constr" << endl;
+	}
+	void disp()
+	{
+		cout << "in base disp" << endl;
+	}
+	virtual void disp1()
+	{
+		cout << "in disp1 of base" << endl;
+	}
+};
+class sub : public base
+{
+public:
+	sub()
+	{
+		cout << "in sub no-arg costructor" << endl;
+	}
+	void disp()
+	{
+		cout << "in sub disp" << endl;
+	}
+};
+int main()
+{
+	base* b = new sub;
+	cout << "let's invoke disp" << endl;
+	b->disp(); // early binding
+	/*
+	; Line 31
+	mov	rcx, QWORD PTR b$[rbp]
+	call	?disp@base@@QEAAXXZ			; base::disp
+	compiler known which disp
+	*/
+
+	b->disp1();
+	/*
+	; Line 42
+	mov	rax, QWORD PTR b$[rbp]
+	mov	rax, QWORD PTR [rax]
+	mov	rcx, QWORD PTR b$[rbp]
+	call	QWORD PTR [rax]
+
+	compiler doesn't know which disp
+	*/
+}

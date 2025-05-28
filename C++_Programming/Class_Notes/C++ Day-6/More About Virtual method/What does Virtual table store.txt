@@ -1,0 +1,7 @@
+Virtual table stores
+
+	address of virtual function
+	address of virtual destructor
+	information of pure virtual function
+	RTTI [ Runtime Type Information] i.e. hierarchy of an object
+			is-a info

@@ -1,0 +1,43 @@
+Redefinition:- re-writing the function(non-virtual) of base class inside sub class is called as "Redefinition".
+
+e.g.
+
+class Base
+{
+	public:
+		void disp()
+		{
+			cout<<"Base disp"<<endl;
+		}
+};
+class Sub:public Base
+{
+	public:
+		void disp()
+		{
+			cout<<"Sub disp"<<endl;
+		}
+};
+
+
+Overriding:- re-writing virtual function of base class inside the sub class is called as "Overriding". In case of overriding base class function is called as "overridden" and sub class function is called as "overriding".
+
+e.g.
+
+
+class Base
+{
+	public:
+		virtual void disp()  // overridden
+		{
+			cout<<"Base disp"<<endl;
+		}
+};
+class Sub:public Base
+{
+	public:
+		void disp()   // overriding  // by default it is virtual
+		{
+			cout<<"Sub disp"<<endl;
+		}
+};

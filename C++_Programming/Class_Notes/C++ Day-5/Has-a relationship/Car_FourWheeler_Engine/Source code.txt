@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+class FourWheeler
+{
+public:
+	FourWheeler()
+	{
+		cout<<"FourWheeler constr"<<endl;
+	}
+	~FourWheeler()
+	{
+		cout<<"Fourwheeler destr"<<endl;
+	}
+};
+class Engine
+{
+public:
+	Engine()
+	{
+		cout<<"Engine constr"<<endl;
+	}
+	~Engine()
+	{
+		cout<<"Engine destr"<<endl;
+	}
+};
+class Car:public FourWheeler
+{
+	Engine ob;
+public:
+	Car() 
+	{
+		cout<<"Car constr"<<endl;
+	}
+	~Car()
+	{
+		cout<<"Car destr"<<endl;
+	}
+};
+int main()
+{
+	Car s;
+}
+

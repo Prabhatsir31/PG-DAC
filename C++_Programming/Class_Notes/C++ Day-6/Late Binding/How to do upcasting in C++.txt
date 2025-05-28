@@ -1,0 +1,7 @@
+upcasting can be done by
+
+a) making parent class pointer pointing to child class object.
+
+or
+
+b) making parent class reference referring to child class object.

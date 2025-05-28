@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+class base1
+{
+public:
+	virtual void disp1()
+	{
+		cout << "in disp1 of base1" << endl;
+	}
+};
+class base2
+{
+public:
+	virtual void disp2()
+	{
+		cout << "in disp2 of base2" << endl;
+	}
+};
+class child :public base1, public base2
+{
+public:
+	virtual void disp3()
+	{
+		cout << "disp3 of child" << endl;
+	}
+	void trial()
+	{
+		cout << "let's call disp1 of base1" << endl;
+		__int64* ptr1;
+		ptr1=(__int64 *)this; // address of object
+		ptr1=(__int64 *)*ptr1; // address of first vtable
+		ptr1=(__int64 *)*ptr1; // address of base1 disp1 function
+		void (*fun1)()=(void (*)())ptr1;
+		fun1();
+		
+		cout << "let's call disp3 of child" << endl;
+		
+		__int64 *ptr2;
+		ptr2=(__int64 *)this; // address of object
+		ptr2=(__int64 *)*ptr2; // address of first vtable
+		ptr2++;
+		ptr2=(__int64 *)*ptr2; // address of sub disp3 function
+		void (*fun2)()=(void (*)())ptr2;
+		fun2();
+		
+		cout << "let's call disp2 of base2" << endl;
+		__int64 *ptr3;
+		ptr3=(__int64 *)this; // address of object
+		ptr3++;
+		ptr3=(__int64 *)*ptr3; // address of second vtable
+		ptr3=(__int64 *)*ptr3; // address of base2 disp2 function
+		void (*fun3)()=(void (*)())ptr3;
+		fun3();
+	}
+};
+int main()
+{
+	child c;
+	cout << sizeof(c) << endl;
+	c.trial();
+
+}
+

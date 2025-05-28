@@ -1,0 +1,14 @@
+/* Program to implementation, Tight Coupling.
+In case of following example, Soldier class is tightly coupled with Gun. In future suppose we want to replace Gun with Sword, we will have to make changes in Soldier class, ie it gives us maintenance drawback.
+*/
+
+class Soldier
+{
+	private:
+		Gun g1;  // Soldier is tightly coupled with Gun
+	public:
+		void action()
+		{
+			g1.attack();
+		}
+};

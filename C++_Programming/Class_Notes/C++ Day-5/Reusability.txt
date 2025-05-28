@@ -1,0 +1,14 @@
+ 		Reusability
+
+means using existing type while defining a new type. It can be achieved in two ways:
+a) composition [has-a relationship]
+b) inheritance [is-a relationship]
+
+you go for composition when you want to use some of the functionalities of existing type inside new type.
+	e.g.
+	while designing "Car" you would reuse "Engine" by composition, because "Car" is not an "Engine" it just needs some functionalities of Engine.
+
+you go for inheritance when you realize that new type is "same as" existing type.
+	e.g.
+	while designing "Car" you would reuse "FourWheeler" because Car is same as FourWheeler.
+

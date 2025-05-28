@@ -1,0 +1,8 @@
+why do you upcast?
+	
+	- in order to perform late binding. It is basically a "program to interface" concept which always gives us maintenance advantage even if there is a change in the inheritance hierarchy.
+
+
+why do you downcast?
+
+	- suppose we have written a function which has an argument of "base type" so that we can pass any child object i.e. we follow "program to interface" concept. At a given time if u want to check the existence of a particular child in parent class pointer and invoke its method [which is not available in parent class] we need to downcast.

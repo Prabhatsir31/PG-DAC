@@ -1,0 +1,129 @@
+class Animal
+{
+	public:
+	virtual void makeSound()
+	{
+	}
+};
+class Tiger:public Animal
+{
+	public:
+	void makeSound()    // overriding makeSound() of Animal
+	{
+		cout<<"roar"<<endl;
+	}
+};
+class Dog:public Animal
+{
+	public:
+	void makeSound()  // overriding makeSound() of Animal
+	{
+		cout<<"bark"<<endl;
+	}
+};
+class Cat:public Animal
+{
+	public:
+	void makeSound()   // overriding makeSound() of Animal
+	{
+		cout<<"meaw"<<endl;
+	}
+};
+        void perform()
+	{
+		accept a choice from user i.e. whether Dog , Cat or Tiger
+		based on that create object and invoke "makeSound()"
+
+	}
+
+let's write the code for perform:
+
+
+ void perform()
+	{
+		accept a choice from user i.e. whether Dog , Cat or Tiger
+		based on that create object and invoke "makeSound()"
+
+		1 ) Dog  2) Cat  3) Tiger
+		switch(choice)
+		{
+			case 1: Dog d;
+				d.makeSound();
+				break;
+			case 2: Cat c;
+				c.makeSound();
+				break;
+			case 3: Tiger t;
+				t.makeSound();
+				break;
+			default: cout<<"invalid choice"<<endl;
+		}
+
+	}
+
+
+	int main
+	{
+		// invoke "perform()" here
+
+	}
+
+
+let's hope that your code is working fine now.
+
+add one more child class of Animal i.e. "Elephant" and override "makeSound()" in it.
+
+now how will you change "perform()" method ?
+
+
+	what you need to do here is:
+		define one more child class of Animal i.e. Elephant , override "makeSound()" and add one more case for "Elephant" inside switch block
+
+let's hope that your code is working fine now.
+
+remove the class "Tiger" from your hierarchy and think what change do you need to make inside "perform()" so that code will work fine.
+
+you must have seen that whenever any changes happen to our class hierarchy, we need to make changes in the "perform()" method. This is called as "Maintenance drawback".
+
+So how will we ensure that our perform() method remains unchanged no matter what way our hierarchy changes.
+
+
+make following changes in the "perform()" 
+
+
+void perform(Animal *ptr)
+{
+	ptr->makeSound();
+}
+
+main()
+{
+	perform(new Cat);
+	// or
+	perform(new Dog);
+}
+
+		or
+
+void perform(Animal &ref)
+{
+	ref.makeSound();
+}
+
+main()
+{
+	Cat c1;
+	Dog d1;
+	perform(c1);
+	// or
+	perform(d1);
+}
+
+
+
+in the above codes "ptr" or "ref" is of type "Animal". But it can take any child class object address/child class object as an argument. When we pass any child object to "ptr" or "ref" [ which is of parent class type ] , it is known as "Upcasting".
+
+inside "perform()" , we have written "ptr->makeSound()" or "ref.makeSound()" . So which "makeSound()" does it call ?
+
+answer is whichever child object we pass during runtime, its "makeSound()" method gets called. Since this method invocation happens at "Runtime", it is known as "Dynamic or Runtime Polymorphism". 
+Also we can see here what is the exact use of "Upcasting". Upcasting allows us to write the code which is maintenance free. i.e. let any change happen in the Animal hierarchy , we need not change "perform()" function.

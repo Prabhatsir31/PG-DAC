@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+class Teacher
+{
+private:
+	char* name;
+	int age;
+public:
+	Teacher(char* name, int age)
+	{
+		this->name = new char[strlen(name) + 1];
+		strcpy_s(this->name, strlen(name) + 1, name);
+		this->age = age;
+	}
+	char* getName()
+	{
+		return name;
+	}
+	int getAge()
+	{
+		return age;
+	}
+	~Teacher()
+	{
+		cout << "Teacher is removed" << endl;
+		delete name;
+	}
+	void work()
+	{
+		cout << "Teacher is working" << endl;
+	}
+};
+
+class Department
+{
+private:
+	Teacher* teacher;
+	char* dname;
+public:
+	Department(char* dname)
+	{
+		teacher = NULL;
+		this->dname = new char[strlen(dname) + 1];
+		strcpy_s(this->dname, strlen(dname) + 1, dname);
+	}
+	char* getDname()
+	{
+		return dname;
+	}
+	void addTeacher(Teacher& ref)
+	{
+		this->teacher = &ref;
+	}
+	void perform()
+	{
+		cout << "inside " << dname << " ";
+		teacher->work();
+	}
+	~Department()
+	{
+		cout << endl << "Department is getting close" << endl;
+		delete dname;
+	}
+};
+int main()
+{
+	char ch[] = "Abc";
+	char ch1[] = "Science Department";
+	char ch2[] = "Maths Department";
+	Department* scienceDepartment = new Department(ch1);
+	Department* mathsDepartment = new Department(ch2);
+	cout << scienceDepartment->getDname() << endl;
+	cout << mathsDepartment->getDname() << endl;
+	Teacher t1(ch, 35);
+	cout << t1.getName() << "\t" << t1.getAge() << endl;
+	mathsDepartment->addTeacher(t1);
+	mathsDepartment->perform();
+	cout << "Lets close the maths department" << endl;
+	delete mathsDepartment;
+	cout << t1.getName() << " still exists and can join some other department" << endl;
+	scienceDepartment->addTeacher(t1);
+	scienceDepartment->perform();
+	// ..... after some time ......
+	delete scienceDepartment;
+	cout << t1.getName() << " still exists and can join some other department" << endl;
+}

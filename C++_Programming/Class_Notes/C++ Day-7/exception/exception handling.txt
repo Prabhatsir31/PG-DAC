@@ -1,0 +1,32 @@
+exception
+exception is an event which interrupts the normal programming flow.i.e when a particular exception gets raised in the program,program aborts.
+
+here if you don't want your program to get aborted you need to handle the exception.
+
+i.e if exception is handled properly,the program will not abort.
+
+there are three terms used in exception
+try,catch and throw
+
+try- program statements that you want to monitor for exceptions are contained in a try block.
+
+catch- the exception is caught using catch and processed.
+catch block will execute only when the exception is raised.
+
+throw- to raise the exception
+
+
+syntax for handling exception:
+
+try
+{
+// possible statements
+}
+catch(type)
+{
+//statements to be processed in case of exception
+}
+
+here type can be any type i.e. built in types or user defined types.
+
+

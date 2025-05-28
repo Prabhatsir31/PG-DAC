@@ -1,0 +1,41 @@
+class Animal
+{
+	public:
+	virtual void makeSound()
+	{
+	}
+}
+class Tiger:public Animal
+{
+	public:
+	void makeSound()    // overriding makeSound() of Animal
+	{
+		cout<<"roar"<<endl;
+	}
+}
+class Dog:public Animal
+{
+	public:
+	void makeSound()  // overriding makeSound() of Animal
+	{
+		cout<<"bark"<<endl;
+	}
+}
+class Cat:public Animal
+{
+	public:
+	void makeSound()   // overriding makeSound() of Animal
+	{
+		cout<<"meaw"<<endl;
+	}
+}
+
+
+
+so in the above case when we write "makeSound()" in all the child classes , what exactly are we doing ?
+
+we are overriding "makeSound()" method in all these child classes.
+
+When do we do overriding?
+
+	when behaviour is same ( makeSound ) but implementations are different ( roar/bark/meao)

@@ -1,0 +1,31 @@
+/* istream and ostream classes , their constructor is protected. It means u can not instantiate them , but u can instantiate their child classes  e.g. ifstream and ofstream.
+*/
+#include<fstream>
+using namespace std;
+class base
+{
+	int num1;
+//protected:
+	base()
+	{
+		cout<<"in base const"<<endl;
+	}
+};
+class sub:public base
+{
+	int num2;
+public:
+	sub()
+	{
+		cout<<"in sub const"<<endl;
+	}
+};
+void main()
+{
+	sub s; // no error if parent constr is protected
+
+//	base b; Error
+	// istream ist;   //Error
+//	ostream ost; // Error
+	fstream om; // no error
+}

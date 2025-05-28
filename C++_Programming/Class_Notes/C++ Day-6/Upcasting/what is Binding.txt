@@ -1,0 +1,16 @@
+what is Binding?
+
+resolving function call with the function body is called as Binding.
+
+how many types of Binding are there?
+
+2 types: Early binding and Late binding
+
+	Early binding means resolving function call with function body at the compilation time.
+	
+	Late binding means resolving function call with function body at the runtime.
+	
+C++ by default supports "Early Binding". In order to achieve "Late Binding" , we need to use "virtual function" or "pure virtual function".
+
+
+

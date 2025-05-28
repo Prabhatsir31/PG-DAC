@@ -1,0 +1,7 @@
+exception
+RTTI
+Why can't child class reference refer to parent class object
+dynamic_cast and array of base pointer
+dynamic_cast and array of base pointer_1
+dynamic_cast and array of base pointer_2
+dynamic_cast and array of base pointer_3

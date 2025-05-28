@@ -1,0 +1,24 @@
+Connecting a function call to a function body is called binding. 
+	When binding is performed before the program is run (by the compiler and linker), it is called by early binding.
+	When binding is performed during program execution (runtime) , it is called a Late Binding.
+	To cause a late binding to occur for a particular function, C++ requires that u use the "virtual" keyword when defining the function in the base class.
+
+Late binding occurs only with virtual functions and only when u r using pointer to base class or reference to base class.
+If a function is defined as "virtual" in the base class, it is "virtual" in all the derived class. The redefinition of a "virtual" function in a derived class is called as "overriding".
+	The keyword "virtual" tells the compiler it should not perform early binding. Instead, it should automatically install all the mechanisms necessary to perform late binding. This means that if u call "draw()" function for a "Triangle" instance through "pointer of Shape" or "reference of shape", u will get proper function invocation.
+	To accomplish this, the compiler creates a single table (called VTABLE) for each class that contains "virtual" functions. The compiler places the addresses of the virtual functions for that particular class in the VTABLE. In each class with virtual functions, it secretly places a pointer, called the vptr (virtual pointer i.e. VPTR), which points to the VTABLE for that object. 
+When u make a virtual function call through a base class pointer or reference ( that is when u make polymorphic call ), the compiler quietly inserts code to fetch the VPTR and look up the function address in the VTABLE, thus calling correct function and causing late binding to take place.
+	All of this - setting up the VTABLE for each class, initializing the VPTR, inserting the code for the virtual function call - happens automatically, so u don't have to worry about it. With virtual functions, the proper function gets called for an object, even if the compiler cannot know the specific type of the object.
+
+compiler's instrctions:-
+	when compiler encounters any polymorphic call, it generates code like
+a) see the content of the pointer
+b) access the object
+c) get the vptr
+d) call vptr+index function
+
+( if there are 2 virtual functions defined in the order "disp1" and "disp2" respectively , then disp1 will be at index 0 and disp2 will be at index 1)
+
+so if u call disp2, instruction (d) will be, call vptr+1 function.
+
+

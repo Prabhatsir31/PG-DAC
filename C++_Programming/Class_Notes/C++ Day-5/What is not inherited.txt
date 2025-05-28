@@ -1,0 +1,5 @@
+Following members are not inherited
+
+a) constructors
+b) destructor
+c) operator=

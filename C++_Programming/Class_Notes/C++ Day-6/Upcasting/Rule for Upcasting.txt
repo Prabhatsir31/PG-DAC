@@ -1,0 +1,1 @@
+Inheritance mode must be public. In private or protected inheritance mode, upcasting is not allowed.

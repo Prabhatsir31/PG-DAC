@@ -1,0 +1,1 @@
+The ability for a new class to be created from an existing class by extending it is known as inheritance.

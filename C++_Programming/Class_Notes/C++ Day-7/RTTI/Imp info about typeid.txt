@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class base { void disp() {} };
+class sub :public base {};
+
+int main()
+{
+	base* ptr = new sub;
+
+	cout << typeid(*ptr).name() << endl;   // base   type
+}
+	vs
+
+#include<iostream>
+using namespace std;
+class base { virtual void disp() {} };
+class sub :public base {};
+
+int main()
+{
+	base* ptr = new sub;
+
+	cout << typeid(*ptr).name() << endl;   // sub    content
+}
+

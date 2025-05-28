@@ -1,0 +1,43 @@
+class Base
+{
+	public:
+		virtual FourWheeler* disp()
+		{
+			return new FourWheeler();
+		}
+};
+class Sub:public Base
+{
+	public:
+		Car* disp()
+		{
+			return new Car();
+		}
+	
+		/*  
+			this is also correct then why we need co-variant
+		FourWheeler* disp()
+		{
+			return new Car();
+		}
+		*/
+};
+
+
+Ans:-
+		FourWheeler* disp()
+		{
+			return new Car();
+		}
+
+this is perfectly right. But when client sees the documentation ( only prototype) of this method , he can just see "FourWheeler* disp()" and not the code of the method. So he can just guess what will be returned whether "FourWheeler" or any of its sub classes like "Car","Bus" or "Truck".
+
+
+		Car* disp()
+		{
+			return new Car();
+		}
+
+this gives client correct idea ( even by seeing just a prototype "Car* disp()") what exactly he is going to get i.e. Car.  So this is the actual advantage of "Co-variant Return type".
+
+	

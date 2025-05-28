@@ -1,0 +1,213 @@
+#include<iostream>
+#include<malloc.h>
+using namespace std;
+class engine
+{
+private:
+//status denotes whether engine is ON or OFF
+//width specifies one dimension of the engine
+    int status;
+    int width;
+public:
+engine(int wd=5)
+{
+        status=0;
+        width=wd;
+        cout<<endl<<"Engine created with width:\t"<<width<<endl;
+}
+~engine( )
+{
+        cout<<endl<<"Engine destroyed"<<endl;
+}
+void start( )
+{
+        cout<<endl<<"Starting the engine"<<endl;
+        status=1;
+}
+};
+class car
+{
+private:
+    engine honda;
+    int speed;
+
+public:
+car( ):honda(20)
+{
+	cout<<"Car created "<<endl;
+}
+~car( )
+{
+        cout<<endl<<"Car destroyed"<<endl;
+}
+void start( )
+{
+        cout<<endl<<"Starting the car"<<endl;
+        honda.start( );
+}
+}; 
+int main( )
+{
+car mycar;
+mycar.start( );
+return 0;
+}
+
+
+
+/*
+
+code inside car destructor
+
+
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??1car@@QAE@XZ PROC					; car::~car, COMDAT
+; _this$ = ecx
+
+; 40   : {
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??1car@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+
+; 41   :         cout<<endl<<"Car destroyed"<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	push	OFFSET ??_C@_0O@HOCGMBPH@Car?5destroyed?$AA@
+	mov	edi, esp
+	mov	ecx, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	ecx
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	push	eax
+	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+	add	esp, 8
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 42   : }
+
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1engine@@QAE@XZ			; engine::~engine
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TEXT	ENDS
+
+
+*/
+
+
+/*
+
+
+code inside car constructor
+
+
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0car@@QAE@XZ PROC					; car::car, COMDAT
+; _this$ = ecx
+
+; 36   : {
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0car@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	push	20					; 00000014H
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0engine@@QAE@H@Z			; engine::engine
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+
+; 37   : 	cout<<"Car created "<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	push	OFFSET ??_C@_0N@OBGFBOMM@Car?5created?5?$AA@
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	push	ecx
+	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+	add	esp, 8
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 38   : }
+
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TEXT	ENDS
+
+*/

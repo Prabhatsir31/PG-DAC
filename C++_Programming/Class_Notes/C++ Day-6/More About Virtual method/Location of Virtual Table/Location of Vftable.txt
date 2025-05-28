@@ -1,0 +1,27 @@
+CONST	SEGMENT
+??_7Dac@@6B@ DD	FLAT:??_R4Dac@@6B@			; Dac::`vftable'
+	DD	FLAT:?start@Dac@@UAEXXZ
+CONST	ENDS
+;	COMDAT ??_C@_0M@HOMJDMMM@Mscit?5start?$AA@
+CONST	SEGMENT
+??_C@_0M@HOMJDMMM@Mscit?5start?$AA@ DB 'Mscit start', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_7Mscit@@6B@
+CONST	SEGMENT
+??_7Mscit@@6B@ DD FLAT:??_R4Mscit@@6B@			; Mscit::`vftable'
+	DD	FLAT:?start@Mscit@@UAEXXZ
+CONST	ENDS
+;	COMDAT ??_C@_0N@LPBIOGAL@predac?5start?$AA@
+CONST	SEGMENT
+??_C@_0N@LPBIOGAL@predac?5start?$AA@ DB 'predac start', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_7Predac@@6B@
+CONST	SEGMENT
+??_7Predac@@6B@ DD FLAT:??_R4Predac@@6B@		; Predac::`vftable'
+	DD	FLAT:?start@Predac@@UAEXXZ
+CONST	ENDS
+;	COMDAT ??_7Course@@6B@
+CONST	SEGMENT
+??_7Course@@6B@ DD FLAT:??_R4Course@@6B@		; Course::`vftable'
+	DD	FLAT:?start@Course@@UAEXXZ
+CONST	ENDS

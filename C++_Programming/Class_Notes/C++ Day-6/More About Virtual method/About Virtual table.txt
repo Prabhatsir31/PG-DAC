@@ -1,0 +1,5 @@
+The virtual table is typically stored in the memory as a static data structure associated with each class that has at least one virtual function. The exact location of the virtual table in memory is compiler-dependent, but it's commonly stored in the text (code) segment of the program's memory.
+
+When an object of a class with virtual functions is created, a pointer to its corresponding virtual table (often referred to as a vptr) is added as a hidden member of the object. This pointer points to the virtual table associated with the class.
+
+During runtime, when a virtual function is called on an object through a pointer or reference, the function to be executed is determined by following this pointer to the virtual table and then looking up the appropriate function pointer.

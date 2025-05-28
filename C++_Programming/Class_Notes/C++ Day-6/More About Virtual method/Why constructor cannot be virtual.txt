@@ -1,0 +1,3 @@
+A constructor cannot be virtual because the purpose of a constructor is to initialize an object of a particular class, and the concept of polymorphism (which virtual functions enable) doesn't apply until after the object is fully constructed.
+
+Polymorphism requires that the object is fully constructed and the virtual function table (vtable) is set up. In the constructor object is in the process of construction , not yet fully constructed.

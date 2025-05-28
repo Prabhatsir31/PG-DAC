@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Animal
+{
+public:
+	Animal()
+	{
+		cout << "Animal def constr" << endl;
+	}
+};
+class Tail
+{
+public:
+	Tail()
+	{
+		cout << "in Tail def constr" << endl;
+	}
+};
+class Dog :public Animal
+{
+private:
+	Tail w;
+public:
+	Dog()  
+	{
+		cout << "Dog def constr" << endl;
+	}
+};
+int main()
+{
+	Dog d;
+	return 0;
+}

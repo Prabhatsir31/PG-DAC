@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+class base
+{
+public:
+	virtual void disp()
+	{
+		cout<<"in base disp"<<endl;
+	}
+};
+class sub1:public base
+{
+public:
+	void disp()
+	{
+		cout<<"in sub1 disp"<<endl;
+	}
+};
+class sub2:public base
+{
+public:
+	void disp()
+	{
+		cout<<"in sub2 disp"<<endl;
+	}
+};
+int main()
+{
+	base *arr[2];
+	arr[0]=new sub1;
+	arr[1]=new sub2;
+
+	for(int i=0;i<2;i++)
+	{
+		if(dynamic_cast<sub2*>(arr[i]))
+		{
+			arr[i]->disp();
+		}
+	}
+}

@@ -1,0 +1,35 @@
+class Course
+{
+public:
+	virtual void start()
+	{
+	}
+};
+class Predac:public Course
+{
+public:
+	void start()
+	{
+		cout<<"predac start"<<endl;
+	}
+};
+class Mscit:public Course
+{
+public:
+	void start()
+	{
+		cout<<"Mscit start"<<endl;
+	}
+};
+class Dac:public Course
+{
+public:
+	void start()
+	{
+		cout<<"Dac start"<<endl;
+	}
+	void orientation()
+	{
+		cout<<"Dac orientation"<<endl;
+	}
+};

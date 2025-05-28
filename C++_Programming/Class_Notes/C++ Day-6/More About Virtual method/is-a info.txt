@@ -1,0 +1,17 @@
+child is child
+child is parent
+child is grandparent
+     and so on .......
+
+parent is parent
+parent is not child
+
+
+
+e.g.
+
+Car is Car
+Car is FourWheeler
+
+FourWheeler is FourWheeler
+FourWheeler is not Car

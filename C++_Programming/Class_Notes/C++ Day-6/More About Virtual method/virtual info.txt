@@ -1,0 +1,36 @@
+A VTABLE contains addresses of virtual functions.The compiler creates a VTABLE for each class that contains virtual functions and for classes that are derived from it.The VTABLE contains the addresses in the order in which virtual functions are defined within the class.
+
+The address of the VTABLE stored in the object is known as VPTR.
+
+The VTABLE belongs to a class.All objects of the class share the same VTABLE. The objects contain the address of the VTABLE in their first 2 bytes(under DOS) or in first 4 bytes(under Windows).
+That is there is only one VTABLE per class and There is one VPTR per object.
+
+
+Virtual function vs. Normal function
+
+The call to virtual function is resolved at runtime.Moreover the call is resolved after retrieving the address of the function from the VTABLE.This consumes time.
+
+The call to normal function is resolved at compile time. Also there is no mechanism of VTABLE involved in calling the normal function.
+
+
+static functions can not be virtual because they are not related to objects.
+
+
+Why member functions are not virtual by default?
+	The mechanism of virtual functions is not very efficient.As compared to a simple call to an absolute address,there are more sophisticated assembly instructions required to set up the virtual function call.This requires both code space and execution time.All non-virtual function calls are implemented through early binding and all virtual function calls are implemented through late binding.Thus,had all function calls in C++ been implemented through late binding,the efficiency would have suffered heavily. 
+Hence the virtual function is an option,and by default the language uses the non-virtual mechanism which is of course faster.
+
+
+
+why destructors are not virtual by default?
+
+base *b;
+b=new sub;
+Here,the base class constructor would be called followed by a call to sub class constructor.
+If we say "delete b" then destruction should be proceed from sub to base.This can be ensured by declaring the base class destructor as "virtual".
+When we declare virtual destructor,time spent in building the VTABLE. If we do not intend to create objects through new then there is no need for base class destructor to be virtual.Hence there is no need to create VTABLE.
+Had destructors been virtual by default then unnecessarily time would have been spent for building VTABLE even if you don't need it.Hence destructors are not made virtual by default.
+
+
+
+

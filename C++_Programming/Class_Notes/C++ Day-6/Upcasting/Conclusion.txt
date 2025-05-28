@@ -1,0 +1,3 @@
+In case of Example_1 , Example_2 and Example_3 we saw that even if we store address of sub class object inside base class pointer or making base reference refering to sub class object, base "disp()" method gets invoked. This is because compiler considers "type of the pointer" or "type of the reference" (which is "base" every time) and not the content of pointer or referent of reference (which is "sub" in our examples) in order to bind function call with the function body. This is called as "Early Binding" which is by default in C++.
+
+If you want the "content of pointer" or "referent of reference" to be considered ( i.e. Late binding as it will be checked during runtime), "virtual" keyword needs to be applied to the base class method.

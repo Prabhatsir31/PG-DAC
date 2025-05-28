@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class base1
+{
+private:
+	int num = 50;
+public:
+	virtual void disp1()
+	{
+		cout << "in disp1 of base1" << endl;
+	}
+};
+class child :public base1
+{
+private:
+	int data = 30;
+public:
+	void disp1()
+	{
+		cout << "in disp1 of child" << endl;
+	}
+	void trial()
+	{
+		cout << "let's call disp1 of child" << endl;
+		__int64* ptr1;
+		ptr1=(__int64 *)this; // address of object
+		ptr1=(__int64 *)*ptr1; // address of first vtable
+		ptr1=(__int64 *)*ptr1; // address of base1 disp1 function
+		void (*fun1)()=(void (*)())ptr1;
+		fun1();
+
+		cout << "let's print num of base1" << endl;
+		__int64* ptr2;
+		ptr2 = (__int64*)this; // address of object
+		ptr2++;
+		int val = (int)*ptr2;
+		cout << "num of base1 is\t" << val << endl;
+		
+		cout << "let's print data of child" << endl;
+		__int64* ptr3;
+		ptr3 = (__int64*)this; // address of object
+		ptr3+=2;
+		int val1 = (int)*ptr3;
+		cout << "data of child is\t" << val1 << endl;
+	}
+};
+int main()
+{
+	child c;
+	cout << sizeof(c) << endl;
+	c.trial();
+}
+

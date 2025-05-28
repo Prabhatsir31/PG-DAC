@@ -1,0 +1,22 @@
+Java
+
+making parent class reference refering to child object.
+
+Base ref=new Sub(); // upcasting
+
+
+
+
+C++
+
+upcasting can be done using pointer and reference both.
+
+making parent class pointer pointing to child class object
+Base *ptr=new Sub;   // upcasting in c++ using pointer
+
+	or
+
+Sub s;
+making parent class reference refering to child class object
+Base &ref=s;    // upcasting in c++ using reference
+

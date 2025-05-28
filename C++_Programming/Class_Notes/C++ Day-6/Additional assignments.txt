@@ -1,0 +1,208 @@
+1) Define a class "myclass" with following constructor
+	myclass(int k=0)
+	{
+		num=k;
+	}
+
+
+	in main function,
+
+	myclass m1;
+	myclass m2(100);
+
+	observe what happens 
+
+2)
+	class A
+	{
+		void fun1()
+		{
+			// invoke "fun2" from here
+		}
+	}
+
+	class B
+	{
+		void fun2()
+		{
+		}
+	};
+
+3) create a library for the following class
+	MyClass2
+With 
+Int num
+Create necessary header file and lib file.
+	client should be able to say
+	MyClass2 m1(10),m2(20),m3;
+	m1.show();
+	m3=m1+m2;
+	m3.show();
+	m2=m1+40;
+	m2.show();
+
+4) Define a class "Player" with following members
+	int id;
+	char *name;
+	char *country
+	int score
+
+
+	in the main function, u should be able to say
+
+	
+	Player p1(1,"sachin","india",200);
+
+	p1.disp();
+
+	Player p2=p1;
+
+	Player p3;
+
+	p3=p1;
+
+make sure there is neither dangling pointer nor memory leak issue in the code.
+
+5)  create a library ( mathematics.lib ) 
+in this library create a class "Math"
+In this class define three functions
+a) to accept number and return double of it.
+b) to accept a number and return square of it.
+c) to accept a number ,if it is negative, return positive of it.
+
+make sure that while calling all these functions, client need not create an instance of "Math" class.
+	write application to access "Math" class and all its functions.
+
+6) Define a class "StaticDemo"
+with
+private -static variable
+public - static function
+ In the main() function, prove that in order to display the value of static variable, no need to create an instance.
+
+7) Define a class as "MyString"
+
+	members
+	char *str;
+	int len;
+
+	member functions
+		void disp()
+		int length()
+
+	in main functions u should be able to do following things
+
+	a) MyString m1("Sachin");
+		m1.disp();
+
+	b) cout<<m1.length();
+
+	c) MyString m2=m1;
+		m2.disp();
+
+	d) MyString m3("Rahul");
+		m3.disp();
+
+	e) m2=m3;
+		m2.disp();
+
+	f) cout<< m2[1];
+
+	g) m3[0]='K'
+		m3.disp();
+
+	h) m3=m1+m2;
+		m3.disp();
+
+Solution:
+
+
+
+
+#include<iostream>
+using namespace std;
+class MyString
+{
+private:
+	char* str;
+	size_t len;
+public:
+	MyString(const char* ptr)
+	{
+		str = new char[strlen(ptr) + 1];
+		strcpy_s(str, strlen(ptr) + 1, ptr);
+		len = strlen(str);
+	}
+	MyString(const MyString& ref)
+	{
+		str = new char[strlen(ref.str) + 1];
+		strcpy_s(str, strlen(ref.str) + 1, ref.str);
+		len = strlen(ref.str);
+	}
+	MyString& operator=(const MyString& ref)
+	{
+		if (str != NULL)
+		{
+			delete[]str;
+		}
+		str = new char[strlen(ref.str) + 1];
+		strcpy_s(str, strlen(ref.str) + 1, ref.str);
+		len = strlen(ref.str);
+		return *this;
+	}
+	char& operator[](unsigned int k)
+	{
+		char ch = ' ';
+		if (k >= 0 && k < strlen(str))
+		{
+			return str[k];
+		}
+		else
+		{
+			return str[strlen(str)];
+		}
+	}
+	void disp()
+	{
+		cout << str << endl;
+	}
+	size_t length()
+	{
+		return strlen(str);
+	}
+	~MyString()
+	{
+		cout << "inside destructor" << endl;
+		delete[]str;
+	}
+	MyString operator+(MyString& ref)
+	{
+		char* ptr = new char[strlen(str) + strlen(ref.str) + 1];
+		strcpy_s(ptr, strlen(str) + 1, str);
+		strcat_s(ptr, strlen(str)+strlen(ref.str) + 1, ref.str);
+		cout << "ptr is\t" << ptr << endl;
+		//return MyString(ptr);  // memory leak can happen here
+		MyString mm(ptr);
+		delete[]ptr;  // release ptr
+		return mm;
+	}
+};
+int main()
+{
+	MyString m1("sachin");
+	m1.disp();
+	cout << m1.length()<<endl;
+	MyString m2 = m1;
+	m2.disp();
+	MyString m3("Rahul");
+	m2 = m3;
+	m2.disp();
+	cout << m2[1]<<endl;
+	m3[0] = 'K';
+	m3.disp();
+	m3 = m1 + m2;
+	m3.disp();
+}
+
+
+
+

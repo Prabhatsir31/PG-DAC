@@ -1,0 +1,21 @@
+is-a info
+virtual Dest1
+virtual Dest2
+
+virtual info
+Why constructor cannot be virtual
+Virtual constructor info
+
+
+virtual fun from const
+virtual fun from destr
+virtual fun from member fun
+Assembly in case of virtual and non-virtual function
+How to check assembly instructions  in case of virtual and non-virtual methods
+
+
+About Virtual table
+callvirtual.cpp
+callvirtual.png
+
+Location of Virtual Table

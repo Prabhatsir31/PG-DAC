@@ -1,0 +1,20 @@
+ 
+
+when we create object of child class 
+	control goes to child class constructor
+	from there it will invoke parent class default/no-arg constructor by default.
+	and then it comes back inside child class constructor.
+
+
+what if parent class does not have "default/no-arg" constructor?
+
+	By default we get an error.
+
+How do we solve this problem?
+
+	a) we can provide "default/no-arg" constructor inside parent class
+		or
+	b) invoke parameterized constructor of parent class from child class 
+
+
+

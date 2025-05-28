@@ -1,0 +1,2 @@
+1) virtual keyword applied to the parent class method/s.
+2) pointer or reference to base class or parent class.

@@ -1,0 +1,58 @@
+1)
+class base
+{
+	public:
+		base(char *ptr)
+		{
+		}
+};
+class sub:public base
+{
+};
+
+Following statements should be possible
+sub s;
+
+sub *s1=new sub(40);
+
+sub *s2=new sub('a',4.5);
+
+2) 
+class parent
+{
+	public:
+		disp1()
+		disp2()
+		disp3()
+		disp4()
+};
+class sub:private parent
+{
+	public:
+		disp5()
+};
+
+make sure u can do the following
+
+sub s(30);
+s.disp5();
+s.disp3();
+s.disp1();
+
+3) create a class Person with "void walk()" method and "walks normally" statement inside it. Now derive a class "Athelite" from Person and redefine "void walk()" with a statement "walks faster". In the main function create an instance of "Athelite" and invoke "walk()" method. Observe what happens.
+
+4)Define three classes A, B, C carrying one integer member in each of them. Let C be derived from A and B. Write constructors and destructors in each of these classes that prompt some message from each class. Also the constructor of C should accept three values, one for its own member and other two for A and B. The C constructor should see that the two values goes to respective constructors of A and B. What is the order in which constructors and destructors get called upon? How can you change this order?
+
+5) create a class Base with "int num1" ,parameterized constructor and destructor. Derive class Sub1 from Base with "int num2" ,parameterized constructor and destructor. Now derive class Sub2 from Sub1 with "int num3" ,parameterized constructor and destructor.
+in the main function create the object of Sub1 and notice constructor and destructor invocation.
+
+6) create a Base1 and Base2 classes in the library.
+constructors, member variables and functions you can have in the above classes of your choice.
+
+now create a client application where you have to create a child class by the name "Sub" of above classes.
+in the main function create an instance of child class and try to access methods of Base1 and Base2.
+
+
+
+
+

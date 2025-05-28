@@ -1,0 +1,78 @@
+Let's say we have a base class "Person"
+
+class Person
+{
+	public:
+		virtual void walk()
+		{
+			cout<<"walk"<<endl;
+		}
+		virtual void talk()
+		{
+			cout<<"talk"<<endl;
+		}
+		virtual void eat()
+		{
+			cout<<"eat"<<endl;
+		}
+};
+
+all the above functions can be either overridden by child classes or they will simply inherit the functions.
+
+one more function which we can think about "Person" but we cannot write implementation inside "Person" class i.e.   "performDuties()" .  Its implementation must be given inside child classes. 
+But how will you make it compulsory for child classes to define "performDuties()" ?
+
+
+you will have to make it "pure virtual function" in the person class. By doing so, Person class will become abstract and it becomes compulsory for the child classes to provide an implementation of "pure virtual function" declared in the parent class.
+
+e.g.
+
+class Person  // the class becomes abstract
+{
+	virtual void performDuties()=0;  // it's a contract
+	// other stuff as it is
+
+}
+
+in child classes provide an implementation of "performDuties()"
+
+e.g.
+
+class HouseWife:public Person
+{
+	public:
+		void performDuties()
+		{
+			cout<<"duties of HouseWife"<<endl;
+		}
+	// other functions of Person class are simply inherited here
+};
+
+
+class Teacher:public Person
+{
+	public:
+		void performDuties()
+		{
+			cout<<"duties of Teacher"<<endl;
+		}
+	// other functions of Person class are simply inherited here
+};
+
+so your class "Person" has contract ( pure virtual function "performDuties()" ) and concrete behaviour (virtual functions or non-virtual functions such as getters , setters, walk,talk and eat)
+
+What is Abstract class in C++ ?
+
+	Abstract class in C++ is the one which contains at least one contract i.e. pure virtual function.
+
+why Abstract class cannot be instantiated?
+	because abstract class is incomplete i.e. it contains at least one pure virtual function.
+	
+
+Can abstract class have a constructor?
+	yes
+
+But if abstract class cannot be instantiated , what's the point in having constructor inside abstract class?
+	abstract class cannot be instantiated but its constructor will be invoked when you instantiate child class of an abstract class.
+
+

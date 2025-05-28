@@ -1,0 +1,47 @@
+1) 
+class course
+{
+	//here
+};
+class DacCourse:public course
+{
+	// here
+};
+
+you should be able to say following
+
+course *c=new course;
+c->fees(); // course version should be called
+c=new DacCourse;
+c->fees();  // DacCourse version should be called
+
+
+2) 
+Create a base class FourWheeler. Declare pure virtual function “void start()” in it. 			
+Define following sub classes for this class. 
+A) Qualis b) Sumo c) Volvo 					
+Define “start” function in these classes.			In main function , create array of pointer to FourWheeler which will contain objects of these three sub classes. 
+Now traverse the array and call all the child class methods.
+
+3)
+Create a base class “Subject”.Declare pure virtual function “void maxmarks()” in it.  Define following sub classes for this class. A) Maths b) History c) English.	Define “maxmarks” in these classes.
+
+now write a global function "show" which will accept "subject class pointer" as an argument. this function should be able to call "maxmarks()" of any child class which is passed.
+From main function try to call this function by passing various child classes.
+
+
+4) same as above except it has to be done using reference of parent class.
+
+5) create an abstract class Shape with
+	virtual void display()
+	{
+		cout<<"display on the canvas"<<endl;
+	}
+	and
+	pure virtual function (contract) void draw() 
+functions.
+
+now derive 3 classes from Shape
+	Circle,Triangle and Rectangle
+in the main function create array of pointer to Shape class and store all the child class objects addresses inside it. Traverse the array and invoke "display()" and "draw()" functions.
+

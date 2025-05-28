@@ -1,0 +1,22 @@
+abstract class
+
+abstract class is a class which has at least one pure virtual function.
+
+
+pure virtual function is the one which is declared (using virtual keyword) and not defined.
+	e.g
+	class A   // abstract class
+	{
+		public:
+			virtual void disp()=0; // pure virtual function[contract]
+	};
+
+abstract class can not be instantiated but pointer or reference to abstract class can be created.
+
+Along with pure virtual function, abstract class may contain virtual as well as non-virtual functions.
+
+child class of an abstract class has to define pure virtual function declared in parent class.
+
+can abstract class have a constructor [ it's because we cannot instantiate the abstract class ]
+	ans: yes, that constructor can be invoked when we instantiate the child class.
+

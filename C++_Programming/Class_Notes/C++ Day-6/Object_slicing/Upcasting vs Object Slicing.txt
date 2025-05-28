@@ -1,0 +1,13 @@
+
+	upcasting
+
+base *b=new sub;
+
+	or
+
+base &ref=s;
+
+
+	object slicing
+
+	b=s; [ assuming b and s are objects of base and sub respectively ]

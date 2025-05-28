@@ -1,0 +1,25 @@
+protected accessibility demo
+Reusability
+What is inheritance
+Inheritance Types
+What is not inherited
+Inheritance Table
+Examples
+	Single_1
+	Single_2
+	Single_3
+		What happens when you instantiate Child class
+		3rd example sub constructor assembly
+		3rd example sub destructor assembly
+	Single_4 to Single_12
+	making parent class inherited member as public
+	Parent class constructor  private vs protected
+	Friend and Inheritance
+	Redefinition_demos
+	Multi-Level_1
+	Hierarchical_1
+	Multiple_1    to Multiple_5
+	hybrid
+	Has-a relationship
+		Aggregation and Composition
+	

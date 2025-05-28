@@ -1,0 +1,91 @@
+#include<iostream>
+using namespace std;
+class Room
+{
+private:
+	char* name;
+public:
+	Room(char* name)
+	{
+		this->name = new char[strlen(name) + 1];
+		strcpy_s(this->name, strlen(name) + 1, name);
+	}
+	Room()
+	{
+		name = NULL;
+	}
+	void setName(char* name)
+	{
+		this->name = new char[strlen(name) + 1];
+		strcpy_s(this->name, strlen(name) + 1, name);
+	}
+	char* getName()
+	{
+		return name;
+	}
+	~Room()
+	{
+		cout << name << " is destroyed" << endl;
+		delete name;
+	}
+};
+
+class House
+{
+private:
+	Room* rooms;
+	char* name;
+	char* address;
+	int no_rooms;
+public:
+	House(char* name, char* address, int no_rooms)
+	{
+		this->name = new char[strlen(name) + 1];
+		strcpy_s(this->name, strlen(name) + 1, name);
+		this->address = new char[strlen(address) + 1];
+		strcpy_s(this->address, strlen(address) + 1, address);
+		this->no_rooms = no_rooms;
+		this->rooms = new Room[no_rooms];
+		char rname[30];
+		for (int i = 0; i < no_rooms; i++)
+		{
+			cout << "enter room name" << endl;
+			cin.getline(rname, 30);
+			this->rooms[i].setName(rname);
+		}
+	}
+	char* getName()
+	{
+		return name;
+	}
+	char* getAddress()
+	{
+		return address;
+	}
+	void showRooms()
+	{
+		for (int i = 0; i < no_rooms; i++)
+		{
+			cout << rooms[i].getName() << endl;
+		}
+	}
+	~House()
+	{
+		cout << endl << "House destroyed" << endl;
+		delete name;
+		delete address;
+		delete[]rooms;
+	}
+};
+int main()
+{
+	char name[] = "Samrat Mansion";
+	char address[] = "Juhu,Mumbai";
+	House* house = new House(name,address , 4);
+	cout << house->getName();
+	cout << house->getAddress();
+	cout << "house has following rooms" << endl;
+	house->showRooms();
+	cout << "Lets renovate the house" << endl;
+	delete house;
+}

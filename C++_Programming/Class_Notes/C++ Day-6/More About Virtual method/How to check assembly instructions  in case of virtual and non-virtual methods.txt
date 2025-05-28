@@ -1,0 +1,5 @@
+open  .asm file
+
+and search for  "Line <linenumber>" inside .asm file
+
+here line number is the number at which you've invoked virtual or non-virtual method inside .cpp file.

@@ -1,0 +1,54 @@
+// what will happen in case of following code
+
+class Base
+{
+	public:
+		virtual void disp1()
+		{
+		}
+};
+class Sub:public Base
+{
+	public:
+		void disp1()
+		{
+		}
+		void print()
+		{
+		}
+};
+
+int main()
+{
+	Base *b=new Sub;
+	b->disp1();
+	b->print();  // error
+}
+
+
+
+
+// what will happen in case of following code
+
+class Base
+{
+	public:
+		virtual void disp1()
+		{
+			cout<<"Base disp1"<<endl;
+		}
+};
+class Sub:public Base
+{
+	private:
+		void disp1()
+		{
+			cout<<"Sub disp1"<<endl;
+		}
+};
+
+int main()
+{
+	Base *b=new Sub;
+	b->disp1();
+}

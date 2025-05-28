@@ -1,0 +1,44 @@
+/* Program to interface, Loose Coupling.
+In case of following example, Soldier class is loosely coupled with an implementation of Weapon. In future suppose we want to replace any specific weapon, we don't have to make any changes in Soldier class,we just have to pass that specific implemenation to the Soldier class "addWeapon" method ie it gives us maintenance advantage.
+
+Since Soldier class has "Weapon" (base class) argument inside "addWeapon()" method, it is known as "Program to interface".
+
+*/
+
+			Weapon
+			  virtual attack()
+
+Gun				sword			Rocket
+  attack()			   attack()		   attack()
+
+
+
+class Soldier
+{
+	private:
+		Weapon *weapon;  // program to interface
+	public:
+		void addWeapon(Weapon *weapon)
+		{
+			this->weapon=weapon;
+		}
+		void action()
+		{
+			weapon->attack();
+		}
+};
+void main()
+{
+	Gun gun;
+	Soldier s;
+	s.addWeapon(&gun);
+	s.action();
+	// lets replace gun with sword
+	Sword sword;
+	s.addWeapon(&sword);
+	s.action();
+}
+
+
+
+

@@ -1,0 +1,94 @@
+scenariao 1
+
+class Base
+{
+	public:
+		virtual void disp1()
+		{
+		}
+		virtual void disp2()
+		{
+		}
+};
+class Sub:public Base
+{
+	public:
+		void disp2()
+		{
+		}
+		void disp1()
+		{
+		}
+}
+
+
+scenariao 2:
+
+
+class Base
+{
+	public:
+		virtual void disp1()
+		{
+		}
+		virtual void disp2()
+		{
+		}
+};
+class Sub:public Base
+{
+	public:
+		void disp2()
+		{
+		}
+	
+}
+
+
+scenariao 3:
+
+
+class Base
+{
+	public:
+		virtual void disp1()
+		{
+		}
+		virtual void disp2()
+		{
+		}
+};
+class Sub:public Base
+{
+		
+}
+
+
+
+scenariao 2:
+
+
+class Base
+{
+	public:
+		virtual void disp1()
+		{
+		}
+		virtual void disp2()
+		{
+		}
+};
+class Sub:public Base
+{
+	public:
+		virtual void print()
+		{
+		}
+		void disp1()
+		{
+		}
+		void disp2()
+		{
+		}
+		
+}
