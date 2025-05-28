@@ -1,4 +1,3 @@
-
 //7) Given following functions :
 //void disp1(int k);
 //int disp2(char*);
