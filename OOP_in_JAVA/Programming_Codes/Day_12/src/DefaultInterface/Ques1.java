@@ -1,0 +1,33 @@
+/*
+define interface "First1" with "default void fun()" and interface "Second" with "default void fun()". 
+Now derive a class Child from both these interfaces. 
+Inside main function instantiate Child class instance and invoke "fun" method.
+*/
+package DefaultInterface;
+
+interface First1 {
+	default void fun() {
+		System.out.println("Fun method from First interface");
+	}
+}
+
+interface Second{
+	default void fun() {
+		System.out.println("Fun method from Second interface");
+	}
+}
+
+class Child implements First1, Second {
+	public void fun() {
+		First1.super.fun();
+		Second.super.fun();
+	}
+}
+
+
+public class Ques1 {
+	public static void main(String args[]) {
+		Child child = new Child();
+		child.fun();
+	}
+}

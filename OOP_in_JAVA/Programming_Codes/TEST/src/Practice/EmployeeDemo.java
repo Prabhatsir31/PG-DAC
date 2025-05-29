@@ -1,0 +1,108 @@
+/*
+
+create a class Employee with empid,name,salary as fields , setters , getters and toString methods
+
+create 3 objects
+create HashMap with Integer as key and Employee as value
+new HashMap<Integer,Employee>
+
+store above created 3 objects inside the map.
+
+write Map inside the file system.
+read Map from the file and iterate it using iterator.
+*/
+package Practice;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.io.*;
+
+class Employee implements Serializable {
+    private int empid;
+    private String name;
+    private double salary;
+
+//    public Employee(int empid, String name, double salary) {
+//        this.empid = empid;
+//        this.name = name;
+//        this.salary = salary;
+//    }
+
+    public int getEmpid() {
+        return empid;
+    }
+
+    public void setEmpid(int empid) {
+        this.empid = empid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee [ID: " + empid + ", Name: " + name + ", Salary: " + salary + "]";
+    }
+}
+
+class EmployeeDemo {
+    public static void main(String[] args) { // Corrected method name
+        Employee emp1 = new Employee();
+        emp1.setName("Alice");
+        emp1.setEmpid(101);
+        emp1.setSalary(5000);
+        Employee emp2 = new Employee();
+        emp2.setName("Alicee");
+        emp2.setEmpid(102);
+        emp2.setSalary(4000);
+        Employee emp3 = new Employee();
+        emp3.setName("Ali");
+        emp3.setEmpid(103);
+        emp3.setSalary(6000);
+        
+        HashMap<Integer, Employee> employeeMap = new HashMap<>();
+
+        employeeMap.put(emp1.getEmpid(), emp1);
+        employeeMap.put(emp2.getEmpid(), emp2);
+        employeeMap.put(emp3.getEmpid(), emp3);
+
+        // Serialize the HashMap to a file
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("xyz.txt"))) {
+            oos.writeObject(employeeMap);
+            System.out.println("Employee map has been serialized to xyz.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Deserialize the HashMap from the file
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("xyz.txt"))) {
+            HashMap<Integer, Employee> deserializedMap = (HashMap<Integer, Employee>) ois.readObject();
+            System.out.println("Employee map has been deserialized from xyz.txt");
+
+            // Iterate over the deserialized map using an iterator
+            Iterator<Entry<Integer, Employee>> itr = deserializedMap.entrySet().iterator();
+            while (itr.hasNext()) {
+                Entry<Integer, Employee> entry = itr.next();
+                System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}

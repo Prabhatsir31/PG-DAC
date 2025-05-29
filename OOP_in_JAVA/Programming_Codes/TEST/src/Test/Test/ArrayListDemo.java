@@ -1,0 +1,53 @@
+import java.util.*;
+import java.io.*;
+
+class Student implements Serializable
+{
+	private String name;
+	private int age;
+
+	public Student(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+	public String toString()
+	{
+		return name+"\t"+age;
+	}
+}
+
+public class ArrayListDemo
+{
+	public static void main(String args[])
+	{
+		List<Student>mylist=new ArrayList<>();
+		Student s1=new Student("Rohit",38);
+		Student s2=new Student("Virat",38);
+		Student s3=new Student("Rahul",50);
+		Student s4=new Student("Sachin",50);
+		mylist.add(s1);
+		mylist.add(s2);
+		mylist.add(s3);
+		mylist.add(s4);
+		try
+		{
+			FileOutputStream fos=new FileOutputStream("abc.txt");
+			ObjectOutputStream oos=new ObjectOutputStream(fos);
+			oos.writeObject(mylist);
+			FileInputStream fis=new FileInputStream("abc.txt");
+			ObjectInputStream ois=new ObjectInputStream(fis);
+			List<?> ref=(List<?>)ois.readObject();
+			Iterator<?> itr=ref.iterator();
+			System.out.println("Students read from the file");
+			while(itr.hasNext())
+			{
+				System.out.println(itr.next());
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}

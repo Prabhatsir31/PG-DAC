@@ -1,0 +1,21 @@
+/*
+define a functional interface "MyInterface" with an abstract method "void fun()"
+define a class Demo with two functions "static void perform" and main.
+from main function pass lambda expression, collect it in "perform" method and invoke "fun()" function.
+*/
+package Lambda;
+
+@FunctionalInterface
+interface MyInterface {
+    void fun();
+}
+
+public class Ques3 {
+    static void perform(MyInterface myInterface) {
+        myInterface.fun(); // Invoke fun method
+    }
+
+    public static void main(String[] args) {
+        perform(() -> System.out.println("Lambda expression for fun() in MyInterface"));
+    }
+}
