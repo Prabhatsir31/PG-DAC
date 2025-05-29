@@ -1,0 +1,3 @@
+Serialization means persisting object inside file system.
+
+Deserialization means retrieving object from file system.

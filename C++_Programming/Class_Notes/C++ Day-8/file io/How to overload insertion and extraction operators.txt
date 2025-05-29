@@ -1,0 +1,86 @@
+#include<fstream>
+#include<iostream>
+using namespace std;
+class MyClass
+{
+	private:
+		char name[20];
+		int age;
+	public:
+		MyClass(char *ptr,int k)
+		{
+			strcpy(name,ptr);
+			age=k;
+		}
+		MyClass()
+		{
+		}
+		char* getName()
+		{
+			return name;
+		}
+		int getAge()
+		{
+			return age;
+		}
+friend ostream& operator<<(ostream&,MyClass&);
+friend istream& operator>>(istream&,MyClass&);
+};
+
+istream& operator>>(istream &i,MyClass &ref)
+{
+	i>>ref.name>>ref.age;
+	return i;
+}
+
+ostream& operator<<(ostream &o,MyClass &ref)
+{
+	o<<ref.name<<"\t"<<ref.age<<endl;
+	return o;
+}
+
+int main()
+{
+	MyClass m1("Abc",20);
+	cout<<m1<<endl;
+
+	MyClass m2;
+	cin>>m2;
+	cout<<m2<<endl;
+}
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

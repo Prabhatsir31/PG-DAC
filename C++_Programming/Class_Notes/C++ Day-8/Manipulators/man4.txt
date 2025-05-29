@@ -1,0 +1,23 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	cout << setbase(16) << 100 << endl;
+	float A = 1.34255f;
+	cout << "Value of A is\t" << A << endl;
+
+	cout << fixed << setprecision(3) << A << endl;
+	int number = 100;
+
+	cout << "Hex Value =" << " " << hex << number << endl;
+
+	cout << "Octal Value=" << " " << oct << number << endl;
+
+	cout << "decimal Value=" << " " << dec << number << endl;
+	
+	cout << "Setbase Value=" << " " << setbase(8) << number << endl;
+
+	cout << "Setbase Value=" << " " << setbase(16) << number << endl;
+
+}

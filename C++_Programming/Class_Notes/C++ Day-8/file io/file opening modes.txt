@@ -1,0 +1,20 @@
+modes can be
+ios::in  - for reading
+ios::out - for writing
+ios::app - for appending.can be used with files capable of output
+
+ios::ate - causes seek to the end of the file,when file is opened.Still i/o operations can occur anywhere within the file
+
+
+ios::ate mode allows us to add data or change data anywhere in the file But In ios::app mode allows us to add data only to the end of file.
+The difference between the two is that with "ate" if you change the file position you can write to the middle or beginning of the file.  With "app" even if you change the file position you will write to the end of the file.  If you aren't planning on changing the file position at all, just use "app".
+
+
+ios::trunc  - destroy existing file and create new if it does not exist.
+
+ios::binary - open in binary mode.by def.it is text mode.
+
+Default modes
+ifstream   - ios::in
+ofstream   - ios::out | ios::trunc
+fstream    - ios::in | ios::out

@@ -1,0 +1,13 @@
+Difference Between ios::out and ios::trunc:
+
+ios::out (Output Mode):
+Opens the file for writing. If the file doesn’t exist, it’s created. If it exists, contents may be truncated depending on the implementation—most compilers do truncate by default.
+
+ios::trunc (Truncate Mode):
+Ensures that the file is always cleared (truncated) when opened, even if it exists.
+
+
+ios::trunc tells the file stream to erase (truncate) the file contents when opening it — but it only makes sense in combination with a writing mode like ios::out.
+
+
+Use ios::out | ios::trunc when you want to overwrite the file content every time it's opened.

@@ -1,0 +1,51 @@
+
+
+		File Handling
+
+	Required to store the data permanently, so that it can be used in future.
+
+
+
+		C Programming File Handling
+
+C being a procedure oriented programming, has got various library functions to deal with file. e.g. fopen, fclose, fgetc,fputc etc.
+
+
+		C++ - File Handling
+
+C++ uses object oriented approach for File Handling. i.e. there are various classes. e.g. class to read from file, class to write to the file etc.
+
+
+			Stream
+
+Stream is a communication path between source and destination.
+
+	e.g. if ur program reads from file, u need to open input stream on file.
+
+	if ur program writes to the file, u need to open output stream on file.
+
+
+			C++ stream hierarchy
+
+
+				ios
+
+
+istream						ostream
+
+
+				iostream
+
+
+
+ifstream					ofstream
+
+
+
+				fstream
+
+	cin is an object of istream , cout is an object of ostream.
+
+
+
+				

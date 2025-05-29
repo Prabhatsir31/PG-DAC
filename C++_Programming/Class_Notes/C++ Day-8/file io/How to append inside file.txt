@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    // Open the file for appending
+    ofstream outFile("c:\\temp\\example.txt", ios::app);
+
+    // Check if the file was opened successfully
+    if (!outFile) {
+        cerr << "Error opening file for appending!" << endl;
+        return 1;
+    }
+
+    // Append data to the file
+    outFile << "This line was appended to the file." << endl;
+
+    // Close the file
+    outFile.close();
+    cout << "Data appended to file successfully." << endl;
+
+    return 0;
+}

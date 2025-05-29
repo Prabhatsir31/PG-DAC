@@ -1,0 +1,17 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+int main() {
+    string filename = "c:\\temp\\example.txt";
+    ifstream file(filename);
+    if (file.is_open()) {
+        cout << "The file " << filename << " exists." << endl;
+    }
+    else {
+        cout << "The file " << filename << " does not exist." << endl;
+    }
+
+    return 0;
+}

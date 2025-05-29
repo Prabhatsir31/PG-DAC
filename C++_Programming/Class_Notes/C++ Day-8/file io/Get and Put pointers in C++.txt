@@ -1,0 +1,30 @@
+In C++, when working with file streams (such as ifstream or ofstream), you deal with two main types of file pointers or stream pointers:
+
+Get pointer (g in seekg and tellg): This pointer indicates the position in the file where the next input operation (e.g., get(), >>, or getline()) will occur. It is used when reading data from the file.
+
+Put pointer (p in seekp and tellp): This pointer indicates the position in the file where the next output operation (e.g., put(), <<, or write()) will occur. It is used when writing data to the file.
+
+The functions seekg(), seekp(), tellg(), and tellp() allow you to manipulate and query these pointers.
+
+seekg() and tellg() can be used together to move and then check the position of the get pointer, and similarly for seekp() and tellp() with the put pointer.
+
+
+fstream_obj.seekg(offset, direction);
+
+offset: The number of bytes to move the pointer.
+
+direction: This specifies the reference point from which the offset is applied. It can be one of the following:
+
+ios::beg: The offset is applied from the beginning of the file.
+ios::cur: The offset is applied from the current position of the pointer.
+ios::end: The offset is applied from the end of the file 
+
+
+fstream_obj.seekp(offset, direction);
+
+offset: The number of bytes to move the pointer.
+direction: The reference point from which the offset is applied, which can be:
+
+ios::beg: The offset is applied from the beginning of the file.
+ios::cur: The offset is applied from the current position of the pointer.
+ios::end: The offset is applied from the end of the file.

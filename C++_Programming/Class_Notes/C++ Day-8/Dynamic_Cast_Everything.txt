@@ -1,0 +1,115 @@
+#include<iostream>
+using namespace std;
+class Course
+{
+public:
+	virtual void start()
+	{
+	}
+};
+class Predac:public Course
+{
+public:
+	void start()
+	{
+		cout<<"predac start"<<endl;
+	}
+};
+class Mscit:public Course
+{
+public:
+	void start()
+	{
+		cout<<"Mscit start"<<endl;
+	}
+};
+class Dac:public Course
+{
+public:
+	void start()
+	{
+		cout<<"Dac start"<<endl;
+	}
+	void orientation()
+	{
+		cout<<"Dac orientation"<<endl;
+	}
+};
+/*
+void perform(Course *ptr)
+{
+	Dac *temp=dynamic_cast<Dac*>(ptr);
+	if(temp)
+	{
+		temp->orientation();
+	}
+	ptr->start();
+}
+void main()
+{
+	perform(new Mscit);
+	perform(new Predac);
+	perform(new Dac);
+}
+
+*/
+
+
+/*
+void perform(Course &ref)
+{
+	try
+	{
+		Dac &temp=dynamic_cast<Dac&>(ref);
+		temp.orientation();
+	}
+	catch(bad_cast &b)
+	{
+	}
+	ref.start();
+}
+void main()
+{
+	Predac p;
+	Mscit m;
+	Dac d;
+	perform(p);
+	perform(m);
+	perform(d);
+}
+*/
+
+/*
+void main()
+{
+	Course *arr[]={new Predac,new Mscit,new Dac};
+	for(int i=0;i<3;i++)
+	{
+		Dac *temp=dynamic_cast<Dac*>(arr[i]);
+		if(temp)
+		{
+			temp->orientation();
+		}
+		arr[i]->start();
+	}
+}
+
+*/
+
+void main()
+{
+	Course *arr[]={new Predac,new Mscit,new Dac};
+	for(int i=0;i<3;i++)
+	{
+		try
+		{
+			Dac &ref=dynamic_cast<Dac&>(*arr[i]);
+			ref.orientation();
+		}
+		catch(bad_cast &b)
+		{
+		}
+		arr[i]->start();
+	}
+}
+

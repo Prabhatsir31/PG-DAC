@@ -1,0 +1,45 @@
+	if (!out)
+	{
+		cout << endl << "can not open\n";
+		return 0;
+	}
+
+	if (!in)
+	{
+		cout << endl << "can not open\n";
+		return 0;
+	}
+operator ! has been overloaded in both ifstream and ofstream classes.
+
+If the file failed to open (i.e., in is in a failed state), operator! will return true, and the message "can not open file" will be printed.
+
+If the file was successfully opened, operator! will return false, and the program will continue to process the file.
+
+alternate way of checking whether file is opened or not is:
+
+
+#include<fstream>
+#include<iostream>
+using namespace std;
+int main()
+{
+	char str[30];
+	ofstream out("c:\\temp\\one.txt");
+	if (out.fail())
+	{
+		cout << endl << "can not open\n";
+		return 0;
+	}
+	out << "helloworld";
+	out.close();
+	ifstream in("c:\\temp\\one.txt");
+	if (in.fail())
+	{
+		cout << endl << "can not open\n";
+		return 0;
+	}
+	in >> str;
+	in.close();
+	cout << endl << str << endl;
+	return 0;
+}

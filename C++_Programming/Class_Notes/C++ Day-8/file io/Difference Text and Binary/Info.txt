@@ -1,0 +1,8 @@
+1) in text mode while writing, newline is converted to '\n' and '\r' combination. While reading, '\n' and '\r' combination is converted to newline. 
+	in binary mode, no such conversion takes place.
+
+2) in text mode end of file is represented by "EOF" having a value 26.
+	in binary mode, no such indication exists.
+
+3) in text mode if u write a value 1234.567 , it will take 8 bytes. This is because, each and every digit is treated as a character.
+	in binary mode above mentioned number will be stored ,the way it is stored in computer's memory. That is it will take 4 bytes (float).

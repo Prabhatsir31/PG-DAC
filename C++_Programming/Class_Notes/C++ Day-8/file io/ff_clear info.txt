@@ -1,0 +1,18 @@
+what does "ff.clear();" do ?
+
+when we traverse the file for read operation, after reading entire data , "eof" bit is set inside file. That means we cannot read one more time. if you want to remove this "eof bit" from the file , u need to invoke "ff.clear()" everytime u traverse through the file.
+
+
+
+When you perform the first "ff.read()", it reads data from the file into the e1 structure. After reading all the data (which corresponds to three "emp structs", each containing a name and an age), the get pointer (g pointer) moves to the end of the file.
+
+Now, after this operation, the EOF (End-of-File) flag is set in the stream because the file was successfully read to the end.
+
+Once the EOF flag is set, subsequent read operations will return immediately because the stream believes it has no more data to read.
+
+When you call ff.read() again after reaching the end of the file, the stream is in a "failed" state, because it has already encountered the end of the file during the first read operation
+
+What does "ff.clear()" do?
+
+ff.clear() resets the internal state of the stream, so the eofbit (EOF) is cleared and the stream can continue reading from the beginning of the file (or wherever the get pointer is positioned).
+

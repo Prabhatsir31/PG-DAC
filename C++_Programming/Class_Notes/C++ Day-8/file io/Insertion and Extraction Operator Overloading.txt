@@ -1,0 +1,56 @@
+//Random Access File
+#include<fstream>
+#include<iostream>
+using namespace std;
+class Person
+{
+	private:
+		char name[20];
+		int age;
+	public:
+		Person(char *name,int age)
+		{
+			strcpy(this->name,name);
+			this->age=age;
+		}
+		Person(){}
+
+		void setName(char *name)
+		{
+			strcpy(this->name,name);
+		}
+		char* getName()
+		{
+			return name;
+		}
+		void setAge(int age)
+		{
+			this->age=age;
+		}
+		int getAge()
+		{
+			return age;
+		}
+friend ostream& operator<<(ostream &,Person &);
+friend istream& operator>>(istream &,Person &);
+};
+ostream& operator<<(ostream &o,Person &ref)
+{
+	o<<ref.name<<"\t"<<ref.age<<endl;
+	return o;
+}
+istream& operator>>(istream &i,Person &ref)
+{
+	i>>ref.name>>ref.age;
+	return i;
+}
+int main()
+{
+	Person p1("Amit",23);
+
+	cout<<p1<<endl;
+	Person p2;
+	cin>>p2;
+	cout<<p2<<endl;
+}
+	

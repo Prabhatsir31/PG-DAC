@@ -1,0 +1,111 @@
+1) create a structure "Product"
+	with following members
+
+	char *pcode;
+	char *name;
+	int price;
+	int qty
+
+	in main function u should be able to say
+
+	Product p1("p1","soap",100,20);
+	Product p2("p2","perfume",300,50);
+	Product p3("p3","Deo",200,100);
+
+	cout<<p1<<"\t"<<p2<<"\t"<<p3<<endl;
+
+
+2) create a file.
+	store ur names initials in the file (char by char)
+	close the file 
+open the file in read mode and display all the characters.
+( hint:- use ofstream and ifstream)
+	
+
+3) create a file
+accept numbers from user and store inside the file till user enters 0.
+without closing and reopening a file read all the numbers stored inside the file.
+(Hint: use fstream )
+
+
+4) create a class Student
+	with following members
+	char prnno[10];
+	char name[20];
+	char stream[20];
+
+	store the details of 4 students  ( create an array of 4)
+
+	write all these details into file. (fstream)
+
+	write a global function show
+	void show(char *ptr)
+
+	the above function will take prnno as argument and traverse through the file and display the result of that prnno.
+
+
+
+Solution:
+
+
+#include<fstream>
+#include<iostream>
+using namespace std;
+class Student
+{
+private:
+	char prnno[10];
+	char name[20];
+	char stream[20];
+public:
+	Student()
+	{
+	}
+	Student(const char* a, const char* b, const char* c)
+	{
+		strcpy_s(prnno,strlen(a)+1, a);
+		strcpy_s(name, strlen(b) + 1, b);
+		strcpy_s(stream, strlen(c) + 1,c);
+	}
+	char* getPrnno()
+	{
+		return prnno;
+	}
+	char* getName()
+	{
+		return name;
+	}
+	char* getStream()
+	{
+		return stream;
+	}
+	friend ostream& operator<<(ostream&, Student&);
+};
+ostream& operator<<(ostream& ref1, Student& s2)
+{
+	ref1 << s2.prnno << "\t" << s2.name << "\t" << s2.stream << endl;
+	return ref1;
+}
+fstream f("c:\\temp\\myfile.txt", ios::in | ios::out | ios::trunc);
+void show(char* ptr)
+{
+	Student temp;
+	f.seekg(0, ios::beg);
+	while (f.read((char*)&temp, sizeof(temp)))
+	{
+		if (!strcmp(temp.getPrnno(), ptr))
+		{
+			cout << temp << endl;
+			break;
+		}
+	}
+}
+int main()
+{
+	Student arr[] = { Student("p001","abc","btech"),Student("p002","xyz","be"),Student("p003","pqr","mtech") };
+	f.write((char*)&arr, sizeof(arr));
+	cout << "enter prnno to search" << endl;
+	char prnno[20];
+	cin >> prnno;
+	show(prnno);
+}

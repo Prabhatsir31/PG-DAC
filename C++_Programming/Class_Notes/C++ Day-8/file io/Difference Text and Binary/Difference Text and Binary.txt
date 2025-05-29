@@ -1,0 +1,22 @@
+Text mode  vs Binary mode
+
+a) How newline is treated :-
+	In text mode , when u write a data inside file, "newline" is converted into "linefeed (\n)" and "carriage return (\r). Similarly when u read the data from file,  "linefeed (\n)" and "carriage return (\r) " are converted back to "newline".
+
+	In Binary Mode, no such conversion take place.
+
+b) How End Of File is represented :-
+	In text mode "End of File" is represented by a special character, having a value  26.
+	In Binary mode no such character present.
+
+c) How numeric data is stored :-
+	In text mode, if u store 1234.56 , it will take 7 bytes. This is because each and every digit ( including "dot" ) is treated as a single character.
+	In binay mode, if u store 1234.56, it will take 4 bytes only. This is because here numeric data is stored, the way it is stored in computer's memory.
+
+
+
+
+
+
+
+
