@@ -1,3 +1,0 @@
-memory allocation for instance members
-non-static block/s if any
-constructor

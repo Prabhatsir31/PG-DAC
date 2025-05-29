@@ -1,3 +1,0 @@
-What are we supposed to write in the synchronized block?
-
-ans:-  we are supposed to write "reference of the object on which Thread/s would like to acquire the lock" inside synchronized block.

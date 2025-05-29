@@ -1,7 +1,0 @@
-ofNullable
-ifPresent
-filter
-map
-flatmap
-orElse
-isPresent

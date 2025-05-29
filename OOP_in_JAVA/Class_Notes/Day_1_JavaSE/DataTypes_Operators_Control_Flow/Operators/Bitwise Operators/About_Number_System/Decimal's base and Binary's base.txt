@@ -1,3 +1,0 @@
-Decimal's base is 10
-
-Binary's base is 2

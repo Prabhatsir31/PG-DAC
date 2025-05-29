@@ -1,1 +1,0 @@
-The reduce() method is powerful for performing aggregate operations on streams and can be adapted for various data processing tasks
