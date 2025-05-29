@@ -1,0 +1,189 @@
+
+
+public class MyClass
+{
+
+	p.s.v.main()
+	{
+	}
+}
+
+	MyClass.java
+
+javac MyClass.java
+
+	MyClass.class
+
+java MyClass - execute
+
+class Student
+{
+
+}
+public class StudentDemo
+{
+	p.s.v.main()
+	{
+	}
+}
+
+StudentDemo.java
+
+javac StudentDemo.java
+
+	StudentDemo.class
+	Student.class
+
+java StudentDemo
+
+
+class A
+{
+	p.s.v.main()
+	{
+	}
+}
+
+A.java
+
+javac A.java
+	A.class
+
+java A
+
+
+class A
+{
+	p.s.v.main()
+	{
+	}
+}
+class B
+{
+}
+
+	A.java							B.java
+
+javac A.java							javac B.java
+
+	A.class								A.class
+	B.class								B.class
+java A								java A
+
+
+
+public class A
+{
+	p.s.v.main()
+	{
+	}
+}
+class B
+{
+}
+
+	A.java							
+
+javac A.java							
+
+	A.class								
+	B.class								
+java A								
+
+class A
+{
+	p.s.v.main()
+	{
+	}
+}
+public class B
+{
+}
+
+	B.java							
+
+javac B.java							
+
+	A.class								
+	B.class								
+java A		
+
+
+
+public class A
+{
+	p.s.v.main()
+	{
+	}
+}
+public class B
+{
+}
+
+if I save above file as A.java and compile
+	javac A.java
+Compilation error:
+	class B is public and hence should be inside "B.java"
+	
+
+if I save above file as B.java and compile
+	javac B.java
+Compilation error:
+	class A is public and hence should be inside "A.java"
+
+
+
+
+
+I would like to define and distribute 2 classes i.e. "Student.class" and "Course.class" to my clients.
+
+
+public class Student
+{
+	// member variables and member functions
+}
+	Student.java
+		compile - Student.class
+
+public class Course
+{
+	// member variables and member functions
+}
+
+	Course.java
+		compile - Course.class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

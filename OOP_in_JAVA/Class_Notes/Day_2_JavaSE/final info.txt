@@ -1,0 +1,42 @@
+/*
+	final keyword
+
+final keyword can be applied to 
+a) instance member
+b) class variable
+c) local variable
+d) member function
+e) class
+
+when "final" keyword is applied to any member, that means it is constant, once it is initialized.
+
+final member must be initialized.
+*/
+
+public class Demo4
+{
+	int k=60;
+	final int num1=30;
+	final static int num2=40;
+	public static void main(String args[])
+	{
+		final int num3=50;
+		System.out.println(new Demo4().num1+"\t"+num2+"\t"+num3);
+		new Demo4().k=90;
+		new Demo4().num1=20; // Error
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

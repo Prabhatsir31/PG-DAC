@@ -1,0 +1,35 @@
+What happens when you create an object?
+
+what happens when object is created.
+
+a) memory is allocated for instance member/s.
+b) members are implicitly initialized with default values e.g primitives like int,short etc  as 0 , boolean as false, reference types as null.  If programmer has done any explicit initialization, members are initialized.
+c) constructor is called and if programmer has done any explicit initialization inside it, members are initialized accordingly.
+
+
+
+what is constructor?
+
+ans:
+	Constructor is a "special member function". It is special because
+	a) it has same name that of class
+	b) it cannot have a return type as it is not expected to return anything.
+	c) it is invoked implicitly when you create an object
+
+There are 2 types of constructors in Java:
+
+a) default or no-arg constructor - it doesn't have any argument
+	e.g.  Account()
+	      {
+	      }
+
+b) parameterized constructor- it has atleast one argument
+	e.g  Account(int id,String name,double balance)
+	     {
+	     }
+
+
+What is the concept of default or no-arg constructor?
+
+ans:-  when we don't define any constructor inside the class, compiler provides "default or no-arg constructor".
+But the moment we define any constructor , compiler does not interfere ( it does not provide default or no-arg constructor)

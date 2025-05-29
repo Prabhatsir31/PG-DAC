@@ -1,0 +1,3 @@
+When a reference contains null and if u invoke a method on it , u get NullPointerException.
+
+	solution: - before invoking method on any reference just check it does not contain null.

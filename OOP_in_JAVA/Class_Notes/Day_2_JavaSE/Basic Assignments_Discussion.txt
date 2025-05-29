@@ -1,0 +1,70 @@
+1)create a class "Shape" with 2 attributes, "width" and "height". Make sure one can not access these attributes directly.
+provide accessor methods on these attributes and allow them to call from outside of your class.
+
+	class "Shape" will have "private int width and private int height" instance members.
+		public getter and setter methods
+			public void setWidth(int width) 
+			public int getWidth()
+			
+			public void setHeight(int height) 
+			public int getHeight()
+
+	public class "Demo" will have "main" function from which you need to create instance of "Shape" and invoke setters and getters.
+
+
+2) Define a class "MyClass" and make sure clients can instantiate it , 
+a) without any argument
+b) with one int argument
+c) with two int arguments
+
+	here you need to define 3 constructors inside "MyClass".
+		default constructor, one parameterized and two parameterized constructor
+
+ 
+
+3) Define a class "Emp" with private static member "int cnt".
+How will u make sure that outsiders can read the value of cnt ?
+
+	make sure you have defined
+	public static int getCnt() method
+
+
+
+4) Define a class "DemoOb". 
+create an instance of it.
+now create a reference and assign the reference created in the above statement.
+	Discuss what happens?
+Now since u have 2 references, take one of the reference and assign a new instance of the class.
+	Discuss what happens?
+(For ur discussion, write necessary comments in the program)
+
+
+	DemoOb ob1=new DemoOb();  // first instance
+
+	DemoOb ob2=ob1;  // ob2 is a reference to that instance where ob1 is referring to 
+
+	ob1=new DemoOb();  // here ob1 will refer to a new instance created.
+
+[ kindly draw the diagram for this program ]
+
+
+5) Define 3 classes A , B and C
+in all these classes create static and nonstatic variables as well as methods.
+	Now Define a class "Demo" ,in which define "main" function. From this main function try to access all the members of A ,B  and C.
+
+	it's simple. There will be total 4 classes. 
+		inside "Demo" class, you will have "main" method.
+	from main try to access static and non-static methods of A,B and C.
+
+6) define static initializers in the above A,B and C classes and check the order of their execution.
+
+	if you put static initializers or blocks inside A,B and C just notice how they are invoked. They will be invoked in the sequence you access these classes from main function.
+Also put static initializer or block inside "Demo" class and see what happens.
+
+
+
+
+
+
+
+

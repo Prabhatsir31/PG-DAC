@@ -1,0 +1,109 @@
+/*command line arguments
+
+	arguments given to running program.
+	arguments passed to main function.
+in java , main function is always ready to accept command line arguments.*/
+
+public class Demo
+{
+	public static void main(String args[])
+	{
+		for(int i=0;i<args.length;i++)
+		{
+			S.o.p(args[i]);
+		}
+	}
+}
+
+javac Demo.java
+java Demo abc xyz pqr
+
+
+
+
+public static void main(String args[])
+	
+
+public - so that main can be accessed from anywhere.
+
+static - so that jvm need not create the object of class in which main function is defined.
+
+void - main is not expected to return anything.
+
+String args[] - in java main should be always ready to accept command line arguments.
+
+
+
+Explain        System.out.println("hello");
+
+
+System.out.println("hello")
+
+
+
+
+class System
+{
+	public static PrintStream out;
+	
+}
+class PrintStream
+{
+	public void print(){}
+	public void println(){}
+}
+
+explanation:
+		a) we want to print "hello"
+				so we write ("hello")
+		b) using println() method we can print "hello"
+				so we write println("hello");
+		c) println() is a non-static method of PrintStream , hence it needs to be called using reference of PrintStream.
+		d) do we have any reference of PrintStream available? 
+				yes it's "out"
+					so we write   out.println("hello");
+
+		e) what is "out"?
+				"out" is a public static member of "System" class, hence we write
+
+							System.out
+
+		so that's why we have
+					System.out.println("hello");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

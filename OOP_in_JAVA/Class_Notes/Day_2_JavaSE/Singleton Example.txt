@@ -1,0 +1,40 @@
+/*Singleton class
+
+is a class where :
+a) only one object is created and that too inside the class itself by the developer.
+b) users are not allowed to create the object or instance of the class. They can use the same instance or object which has been created inside the class.
+c) may have some non-static methods.
+d) developer must share one and only one object created of the class among all the users , so that they can invoke non-static methods of the class.
+*/
+
+
+
+
+class Singleton
+{
+	private static Singleton singleton= new Singleton();
+
+	private Singleton()
+	{
+	}
+	public void disp1()
+	{
+	}
+	public void disp2()
+	{
+	}
+	public static Singleton getSingleton()
+	{
+		return singleton;
+	}
+}
+public class SingletonDemo
+{
+	main()
+	{
+		Singleton ref=Singleton.getSingleton();
+		ref.disp1();
+		ref.disp2();
+
+	}
+}

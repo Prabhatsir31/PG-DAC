@@ -1,0 +1,22 @@
+main()
+{
+	MyClass m1=new MyClass();  //  
+			a) instance member/s will be allocated memory
+			b) default constructor will be called
+
+
+
+
+} // what happens here?
+		a) scope of m1 gets over
+		b) m1 gets removed
+
+		c) object to which m1 was referring becomes unreferred
+		 so that object is going to be garbage collected.
+		d) just before the object gets garbage collected , "finalize" method gets called.
+
+finalize method can be defined in order to release resources such as File,Database connection or Socket.
+
+Since there is no guarantee as to when exactly object gets garbage collected, we cannot completely rely upon "finalize" method for releasing resources. We have to have some alternate mechanism in order to release resources.
+		
+			

@@ -1,0 +1,7 @@
+
+
+
+What is class "Class" in java?
+
+Ans:- in java whenever any class gets loaded , it is represented by instance of class "Class".
+Since class gets loaded only once, there is only one instance of class "Class" per class.

@@ -1,0 +1,9 @@
+
+What is class "Class" in java ?
+
+In java whenever any class gets loaded it is represented by instance of class "Class".
+This instance holds information about loaded class such as member variables, methods,constructors etc.
+
+
+Where exactly in java code we can use class "Class"?
+ans:- we use class "Class" in case of Reflection API.

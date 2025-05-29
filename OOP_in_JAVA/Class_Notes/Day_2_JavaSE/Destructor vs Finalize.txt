@@ -1,0 +1,26 @@
+
+
+			C++
+
+main()
+{
+	MyClass m1=new MyClass();  // a) memory allocation  b) constructor
+
+
+
+} // scope of m1 is over and here "destructor" for m1 will be invoked which will destroy all the 
+	instance members of m1
+	destructor can be used to release system resources if any.
+
+
+
+		  Java
+main()
+{
+	MyClass m1=new MyClass();  // a) memory allocation  b) constructor
+
+
+}// when scope of m1 is over, the object to which m1 was referring to , gets garbage collected
+	and just before that "finalize()" method gets called.
+
+	"finalize() method" can be used to release system resources if any.

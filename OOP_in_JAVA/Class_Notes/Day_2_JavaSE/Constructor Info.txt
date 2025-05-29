@@ -1,0 +1,44 @@
+constructor
+	It is a special member function .
+Special because
+
+a) it is used to initialize (construct) the instance member/s.
+b) it has got the same name as of class
+c) it does not have a return type.
+
+There are 2 types of constructor
+
+1) default or no-arg constructor
+
+	constructor having no arguments.
+	if no constructor is defined in the class, compiler by default provides "no-arg constructor". But the moment we define some constructor in the class, compiler does not provide "default or no-arg constructor".
+
+2) parameterized constructor
+	constructor with at least one argument.
+
+
+In which case no-arg constructor is required
+	MyClass m1=new MyClass();
+
+	new MyClass();
+
+In which case parameterized constructor is required
+	MyClass m1=new MyClass(20);
+
+	MyClass m2=new MyClass(40);
+
+what happens when object is created.
+
+a) memory is allocated for instance member/s.
+b) constructor is called 
+
+
+
+
+
+
+
+
+
+
+

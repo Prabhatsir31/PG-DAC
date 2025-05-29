@@ -1,0 +1,34 @@
+static block or static initializer
+
+syntax
+
+	static
+	{
+
+	}
+
+a) static block is used to access static variables.
+b) static block gets invoked as soon as class gets loaded.
+c) u can define more than one static blocks inside class definition. They will be executed in the order in which they  are defined.
+
+
+static block  vs  static member function
+
+static member function needs to be called explicitly whereas static blocks are called implicitly , as soon as class gets loaded.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

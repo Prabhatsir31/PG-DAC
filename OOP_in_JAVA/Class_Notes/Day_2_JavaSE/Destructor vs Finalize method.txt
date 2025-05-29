@@ -1,0 +1,29 @@
+
+
+main()
+{
+	Sample s1;  // object creation
+		1) instance members are allocated memory
+		2) default constructor is called
+
+
+
+
+}  // s1 goes out of scope and hence "destructor" gets called.
+
+Destructor in C++ allows you to perform clean up task if any i.e. if you want to release the resources like File,Socket etc.
+
+java does not have destructor.
+just before object gets garbage collected, following method gets called.
+
+protected void finalize()
+{
+}
+
+Since there is no guarantee as to when exactly object will get garbage collected, u can not rely upon "finalize" method to release the resources such as Connection , Socket etc.
+
+Garbage collection can not be forced in java. U can just make a request for Garbage Collection , by invoking a method "System.gc()". or "Runtime.getRuntime().gc()".
+
+
+
+

@@ -1,0 +1,18 @@
+
+
+System.out.println("hello");
+
+	a) "hello" needs to be displayed
+
+	b) u need to invoke "print()" or "println()" methods
+		println("hello");
+
+	c) both the methods are non-static in "PrintStream" class , so you need reference of "PrintStream" class
+		
+	d) "out" is a reference of "PrintStream" 
+
+		out.println("hello")
+
+
+	e) "out" is also a static member of "System" class which can be accessed as "classname.member" i.e.
+		System.out.println("hello");
