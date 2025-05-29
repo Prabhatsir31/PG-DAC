@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques6.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques6.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7EED067-B171-4761-85C0-E0421734E3DF}|ADD.Assignment\\ADD.Assignment.vcxproj|solutionrelative:ADD.Assignment\\Ques1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ques7.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques7.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques7.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques7.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques7.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:26:39.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ques6.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques6.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques6.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques6.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques6.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:25:57.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ques5.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques5.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques5.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques5.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques5.cpp",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowAoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:25:19.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ques4.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques4.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques4.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques4.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques4.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:24:38.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ques3.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques3.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques3.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques3.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques3.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:24:10.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ques2.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques2.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques2.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques2.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques2.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:23:43.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ques1.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques1.cpp",
+              "RelativeDocumentMoniker": "ADD.Assignment\\Ques1.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\DAY-6\\ADD.Assignment\\ADD.Assignment\\Ques1.cpp",
+              "RelativeToolTip": "ADD.Assignment\\Ques1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-28T10:23:32.277Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
