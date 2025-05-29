@@ -1,0 +1,28 @@
+/*
+The const_cast operator in C++ is used to add or remove 
+the const qualifiers to or from a variable.
+
+*/
+
+#include <iostream>
+using namespace std;
+
+void printAndModify(const int* ptr) {
+    cout << "Value before modification: " << *ptr << endl;
+
+    // Cast away constness ONLY if we know original data is NOT actually const
+    int* modifiable = const_cast<int*>(ptr);
+    *modifiable = 20;  // Safe if original data is not const
+
+    cout << "Value after modification: " << *modifiable << endl;
+}
+
+int main() {
+    int a = 10;  // Not const
+    cout << "before call value of a is\t" << a << endl;
+    printAndModify(&a);  // Pass address as const int*
+
+    cout << "Final value of a: " << a << endl;
+
+    return 0;
+}
