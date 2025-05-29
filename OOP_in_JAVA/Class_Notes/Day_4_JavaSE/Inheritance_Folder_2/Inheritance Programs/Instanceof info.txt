@@ -1,0 +1,1 @@
+instanceof is an operator used to check "is-a" relationship. It returns true or false.

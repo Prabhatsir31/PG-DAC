@@ -1,0 +1,14 @@
+class A
+{
+	public String toString()
+	{
+		return "My Name is\t"+getClass().getName();
+	}
+}
+
+getClass() method belongs to "java.lang.Object" class. It has a return type class "Class".
+	this method returns the object of class "Class" which represents class "A".
+
+
+getName() method belongs to "java.lang.Class" class. It has a return type "String". when we invoke it, it returns the name of that class to which class Class instance represents.
+

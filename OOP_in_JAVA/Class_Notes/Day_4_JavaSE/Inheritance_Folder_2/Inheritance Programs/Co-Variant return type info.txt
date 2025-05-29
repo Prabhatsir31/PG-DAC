@@ -1,0 +1,34 @@
+Same return type
+
+			base
+		void disp(){}
+
+			sub
+		void disp(){}
+
+
+Co-variant return type
+
+			base
+		Object disp() { }
+
+			sub
+
+		String/Integer/Thread etc. disp() { }
+
+
+
+Co-variant return type
+
+		class A {}
+		class B extends A{ }
+
+
+			base
+		A disp() { }
+
+			sub
+		B disp() { }
+
+
+			

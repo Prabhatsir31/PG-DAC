@@ -1,0 +1,32 @@
+//package core1;
+
+enum Sample
+{
+	member1,member2;
+	Sample()
+	{
+		System.out.println("inside Sample default constructor");
+	}
+	public void disp1()
+	{
+		System.out.println("inside disp1");
+	}
+	public void disp2()
+	{
+		System.out.println("inside disp2");
+	}
+}
+public class Demo_3
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Main function started");
+		
+		//Sample s1=new Sample(); // not possible
+		Sample ref1=Sample.member1;
+		Sample ref2=Sample.member2;
+		System.out.println(ref1==ref2);
+		System.out.println(ref1==Sample.member1);
+
+	}
+}

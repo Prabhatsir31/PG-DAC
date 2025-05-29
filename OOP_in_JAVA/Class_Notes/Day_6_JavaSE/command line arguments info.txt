@@ -1,0 +1,28 @@
+/*
+	command line arguments
+
+arguments which can be given to the running java program. it also means that arguments given to main function. in Java main function is always ready to accept command line arguments.
+	public static void main(String args[])
+*/
+
+
+
+public class CommandLineDemo
+{
+	public static void main(String args[])
+	{
+		for(int i=0;i<args.length;i++)
+		{
+			System.out.println(args[i]);
+		}
+	}
+}
+
+how to run above program?
+
+	java CommandLineDemo abc xyz pqr
+
+
+how will u run above example on eclipse?
+
+

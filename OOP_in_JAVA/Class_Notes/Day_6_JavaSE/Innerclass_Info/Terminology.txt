@@ -1,0 +1,8 @@
+Nested classes are divided into two categories: static and non-static. 
+
+
+Nested classes that are declared static are called static nested classes.
+ 
+Non-static nested classes are called inner classes.
+
+classes which are defined inside any method are known as "Local Inner Classes".

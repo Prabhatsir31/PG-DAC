@@ -1,0 +1,42 @@
+
+fixed no. of arguments function
+
+	void disp(int k,int p)
+	{
+		S.o.p(k+"\t"+p);
+	}
+
+	how will you call this function?
+
+	disp(10,20);
+
+ i.e. we must pass 2 arguments while calling this method. neither less than 2 nor more than 2
+
+
+
+what do you mean by variable no. of argument function ?
+
+	void disp(int ...k)  // it can take 0 or more arguments
+	{
+		for(int i=0;i<k.length;i++)
+		{
+			S.o.p(k[i]);
+		}
+
+	}
+	[ ... is called as ellipsys] 
+	
+	how will you call this function ?
+		disp();
+		disp(10);
+		disp(10,20);
+		disp(10,20,30);
+			and so on .........		
+
+
+
+
+
+
+
+	

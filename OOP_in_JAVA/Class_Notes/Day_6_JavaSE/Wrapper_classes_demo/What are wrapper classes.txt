@@ -1,0 +1,21 @@
+Wrapper classes are used to wrap primitive types.
+
+in java Wrapper classes are available for each primitive types.
+
+e.g.
+
+primitive	Wrapper class
+
+
+byte		Byte
+short		Short
+int		Integer
+long		Long
+
+float		Float
+double		Double
+
+char		Character
+
+boolean		Boolean
+

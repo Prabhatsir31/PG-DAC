@@ -1,0 +1,45 @@
+public class Object
+{
+	public String toString() 
+	{
+	        return getClass().getName() + "@" + Integer.toHexString(hashCode());
+    	}
+
+	public native int hashCode();
+
+	public boolean equals(Object obj) 
+	{
+	        return (this == obj);
+ 	}
+	
+}
+
+
+	Object class
+
+parent class of all the classes in java.
+
+some of the methods of Object class are
+
+public String toString()
+
+	returns the String representation of an instance.
+
+
+public boolean equals(Object)
+	
+	checks the equality of two references. If they are refering to same instance then they are equal otherwise not.
+
+public int hashCode()
+
+	every object is given a unique number inside memory. This number is called as hashcode. This method returns the hashcode of caller object.
+
+
+
+
+
+
+
+
+
+

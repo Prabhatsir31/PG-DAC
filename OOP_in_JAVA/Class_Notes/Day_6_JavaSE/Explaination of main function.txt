@@ -1,0 +1,16 @@
+Why main function's signature is:
+
+	public static void main(String args[])
+		or
+	public static void main(String ...args)
+
+
+	public - JVM should be able to access it from outside the class.
+
+	static - JVM should be able to invoke it without the object of a class in which main function is defined.
+
+	void - main function is not supposed to return anything to the JVM
+
+	String args[] - main function should be ready to accept command line arguments 
+			command line arguments are those which we pass at the time of executing the program. These are the arguments which are passed to the main function.
+

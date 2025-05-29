@@ -1,0 +1,55 @@
+abstract class Person
+{
+	walk(),talk(),sleep(),eat()
+
+	abstract performDuties();
+}
+
+class HouseWife extends Person
+{
+
+}
+class Teacher extends Person
+{
+
+}
+class Soldier extends Person
+{
+}
+
+public PersonDemo
+{
+	static void perform(Persorn ref)
+	{
+		ref.walk(); ref.talk(); ref.sleep(); ref.eat(); ref.performDuties();
+	}
+
+	main()
+	{
+		invoke perform by passing HouseWife, Teacher and Soldier
+	}
+}
+
+
+
+
+
+
+
+When to use abstract class in java?
+
+
+while designing Parent class, if u realize that there is some functionality compulsorily required in child classes but Parent class is not able to define it. This functionality is a contract or abstract function. Since abstract function can not be declared inside non-abstract class, u have to make class as abstract.
+
+abstract class cannot be instantiated.
+	because abstract class is incomplete i.e. it has at least one contract [abstract method]
+
+can abstract class have a constructor?
+
+	yes, it will be invoked from sub class constructor when sub class gets instantiated.
+
+
+
+
+
+

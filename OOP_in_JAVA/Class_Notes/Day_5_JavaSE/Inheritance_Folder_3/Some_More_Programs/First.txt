@@ -1,0 +1,27 @@
+
+class base
+{
+	static int a=20;
+	static
+	{
+		System.out.println("base static");
+	}
+}
+class sub extends base
+{
+	static int a=10;
+	static
+	{
+		System.out.println("sub static");
+	}
+}
+public class MyClass1
+{
+	public static void main(String[] args)
+	{
+		System.out.println(sub.a);
+	}
+	
+}
+
+

@@ -1,0 +1,11 @@
+1) House class instance is created on the heap and its members are allocated memory.
+2) When House class constructor gets invoked, Room class array of reference is created on the heap.
+3)"rooms" reference of Room type inside House instance refers to the array created above.
+4) 3 instances of Room class are created on the heap and their members are allocated memory.
+5) "rooms" reference created at //3 refers to the Room instances created above.
+6) "house" reference of type House class is created on the stack.
+7) "house" reference refers to the House class instance available on the heap.
+8) application says "house=null".
+9) House instance available on the heap is marked for GC.
+10) array of Room reference available on the heap is marked for GC.
+11) Room instances available on the heap are marked for GC.

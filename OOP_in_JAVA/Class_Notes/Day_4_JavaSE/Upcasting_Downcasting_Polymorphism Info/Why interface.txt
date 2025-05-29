@@ -1,0 +1,93 @@
+public abstract class MouseEventHandler
+{
+	public abstract void mouseClicked();
+	public abstract void mouseReleased();
+}
+
+public abstract class WindowEvenHandler
+{
+	public abstract void windowOpened();
+	public abstract void windowClosed();
+}
+
+what if our GUIApp class would like to extend both the classes?
+	it's not possible:
+	what's a solution?
+
+
+
+
+
+
+
+
+
+
+
+above should be interfaces as they contain only contracts
+	advantages
+		our GUIApp class can implement both of them.
+
+
+public interface Electronic_Appliance
+{
+	void switch_on();
+	void switch_off();
+}
+class TV implements Electronic_Appliance
+{
+
+}
+class Washing_Machine implements Electronic_Appliance
+{
+
+}
+class Refrigerator implements Electronic_Appliance
+{
+
+}
+
+compare above example with socket where u can plug-in tv or wm or refri.
+
+
+
+
+public interface Electronic_Appliance
+{
+	// only contract
+
+	 void on();
+	 void off();
+}
+class TV implements Electronic_Appliance
+{
+
+}
+class Washing_Machine implements Electronic_Appliance
+{
+
+}
+class Refrigerator implements Electronic_Appliance
+{
+
+}
+
+
+
+one more example
+
+
+public interface Room
+{
+  public void calcArea();
+  public void applyColors(Color c);
+   public void applyCurtains(Color c);
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+public interface MouseHandler
+{
+	void mouseClicked();
+	void mousePressed();
+	void mouseReleased();
+}
+public interface WindowHandler
+{
+	void windowClosing();
+	void windowClosed();
+}
+
+public class WindowGUIApp implements MouseHandler,WindowHandler
+{
+}
+public class GUIDemo
+{
+	main()
+	{
+		create the object of WindowGUIApp and invoke all the methods
+	}
+}
+
+
+
+
+
+
+
+
+

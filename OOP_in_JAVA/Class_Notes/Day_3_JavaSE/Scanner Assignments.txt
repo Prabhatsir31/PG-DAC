@@ -1,0 +1,64 @@
+1) accept marks from user. if marks are
+	> 75  display "Distinction"
+	> =60 and < =75 display "first class"
+	> =45 and < 60 display "second class"
+	>=35 and < 45 display "pass class"
+	<35 display "fail"
+
+2) accept a number and display whether it is divisible by 7 or not.
+
+3) accept a character and display (using if.. else ) whether it is vowel or not.
+
+4) accept 2 numbers and a character as operator ( + , - ,* , / , % ). Perform arithmetic according to the character entered.
+
+
+
+5) accept a number and display its table using 
+	while
+	do... while
+	for
+
+
+6) accept numbers and display as long as user does not enter 0.
+
+
+
+
+7) accept a number and display whether it is even , odd or zero.
+
+
+8) create int array of 5 elements and accept 5 values inside it. Now display all the numbers of array.
+
+9) create int array of 5 elements and accept 5 values inside it. Now accept one more number and check whether that number is there inside array or not.
+
+
+10) accept 5 numbers in an array and display their sum.
+
+
+11) accept 5 numbers in an array and sort them in ascending order.
+
+
+12) accept 2 numbers and display whether
+	a) first number is greater
+	b) second number is greater
+	c) both are equal
+
+
+
+
+
+13) accept 6 characters in an array and toggle them [ only if they are alphabets ]
+
+
+
+
+14) display prime numbers from 2 to 20
+
+
+15) accept a number and display whether it is prime or not.
+
+
+
+16) accept 3 digit number and display whether it is armstrong or not.
+	[ A number is called as armstrong number if sum of cubes of digits of number is equal to the number itself ]
+

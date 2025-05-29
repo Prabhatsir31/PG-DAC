@@ -1,0 +1,12 @@
+What is the role played by Compiler in case of late binding?
+
+Suppose we have,
+
+		base ref=new sub1();  // upcasting
+		ref.disp();  // late binding
+
+when compiler encounters "ref.disp()" ,
+	for the compiler "ref" is of type "base". So compiler searches "disp()" inside "base".
+if it's there,accessible and non-final,non-static compiler writes an instruction for runtime to follow. That instruction is 
+" during runtime check the content of "ref" and invoke "disp()" accordingly.
+

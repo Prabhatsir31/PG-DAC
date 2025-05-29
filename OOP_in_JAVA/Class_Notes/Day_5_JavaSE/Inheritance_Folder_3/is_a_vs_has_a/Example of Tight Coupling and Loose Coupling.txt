@@ -1,0 +1,34 @@
+BirdController class
+
+	Penguin p=new Penguine();  // program to implementation, 
+		p.move();
+
+tight coupling
+
+
+
+
+		Bird
+
+		move()
+
+Penguin		Robin		joy
+
+
+BirdController
+
+	Bird ref;  // program to interface
+
+		can be assigned any of the above mentioned implementation of bird and polymorphically invoked "move()"
+
+	tomorrow even if new bird is added e.g. "Crow" , no need to change "BirdController" class as long as it works with the base class "Bird". This is "Loose Coupling".
+
+
+
+
+
+
+
+
+
+

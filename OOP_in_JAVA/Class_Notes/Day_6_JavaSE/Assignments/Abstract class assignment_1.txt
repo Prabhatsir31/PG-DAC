@@ -1,0 +1,15 @@
+public abstract class Course
+{
+	public void start()
+	{
+		// start process
+	}
+	public abstract double getFee();
+	public abstract void evaluate();
+}
+
+define child classes of above abstract class
+	DACDBDACourse extends Course
+	MSCitCourse extends Course
+
+show late binding with the help of "perform()" method.

@@ -1,0 +1,45 @@
+pack1
+	public class Base
+		private fun1
+		fun2
+		protected fun3
+		public fun4
+
+
+	public class Sub1 extends Base
+		public void disp1()
+		{
+			fun1() // no
+			fun2() // yes
+			fun3() // yes
+			fun4() // yes
+		}
+
+pack2
+	public class Sub2 extends Base
+	{
+		public void disp2()
+		{
+			fun1() // no
+			fun2() // no
+			fun3() // yes
+			fun4() // yes
+		}
+	}
+
+	public class OtherClass
+	{
+		public void disp3()
+		{
+			fun1()/fun2()/fun3() // no
+			Base b=new Base();
+			b.fun4();
+		}
+	}
+
+
+public class Demo [ outside any package ]
+	main
+		create objects of Sub1,Sub2 and OtherClass and invoke disp1,disp2 and disp3
+
+

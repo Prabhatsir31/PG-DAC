@@ -1,0 +1,15 @@
+
+
+what is "instanceof" operator?
+
+instanceof operator checks is-a relationship. It returns true or false.
+
+e.g.
+
+if "ref" refers to "Dac_Dbda" and u check
+	if(ref instanceof Dac_Dbda)  it returns "true"
+
+
+if "ref" refers to "Mscit" and u check
+	if(ref instanceof Dac_Dbda)  it returns "false"
+

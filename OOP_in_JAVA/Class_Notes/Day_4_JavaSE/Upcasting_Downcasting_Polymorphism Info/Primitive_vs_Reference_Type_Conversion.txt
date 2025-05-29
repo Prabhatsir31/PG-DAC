@@ -1,0 +1,18 @@
+Primitive
+
+	int=short;      // implicit conversion or widening
+
+	short=int;     // won't work
+
+	short=(short)int;   // explicit conversion or typecasting
+
+
+reference type
+
+	Animal=Tiger;    //  upcasting
+
+	Tiger=Animal   // won't work
+	
+	Tiger=(Tiger)Animal    // downcasting
+
+

@@ -1,0 +1,13 @@
+Interface Course
+{
+	void start();
+	void stop();
+}
+now define 3 implementations: 
+	DACDBDACourse,MSCit and Basic
+
+inside "DACDBDACourse" class define one more method "public void orientation()"
+
+define one more class "CourseDemo" with main function and "public static void show()" method.
+from main function
+	invoke "show()" method by passing object of any implementations and invoke "start()" and "stop()" methods. Also invoke "orientation()" method whenever object of "DACDBDACourse" is passed.

@@ -1,0 +1,46 @@
+
+
+e.g.
+
+class Person
+{
+	
+	public void behave()
+	{
+		
+	}
+// Method Overloading
+	public void speak(English)
+	{
+		// some code
+	}
+	public void speak(Hindi)
+	{
+		// some code
+	}
+	public void speak(Mother tongue)
+	{
+		// some code
+	}
+}
+class Teacher extends Person
+{
+	public void behave()     // method overriding
+	{
+		// behaves like a teacher
+	}
+}
+class Customer extends Person
+{
+	public void behave()     // method overriding
+	{
+		// behaves like a customer
+	}
+}
+class Father extends Person
+{
+	public void behave()     // method overriding
+	{
+		// behaves like a father
+	}
+}

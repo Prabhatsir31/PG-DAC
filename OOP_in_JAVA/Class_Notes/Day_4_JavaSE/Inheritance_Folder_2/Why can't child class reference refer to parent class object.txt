@@ -1,0 +1,32 @@
+class base
+{
+	void disp()
+	{
+
+	}
+}
+class sub extends base
+{
+	void print()
+	{
+	}
+}
+
+public class Demo
+{
+	p.s.v.main()
+	{
+		base ref=new base();
+		sub ref2=(sub)ref;  // will fail but why?
+		discuss
+	}
+}
+
+
+let's assume that 
+sub ref2=(sub)ref;  works at runtime
+
+now what if we say:
+ref2.print();
+	when compiler had encountered this statement compiler must have written late binding instructions. As per those instructions since the content of "ref2" during runtime is "base" and base does not have "print()" method , it will be a problem. We shouldn't get this problem that's why JVM does not allow us to make 
+"sub class reference" refer to "base class".

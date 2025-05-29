@@ -1,0 +1,35 @@
+
+
+class Driver
+{
+// program to implementation
+// Driver is tightly coupled with Car or Bus
+
+	Car c=new Car();
+		or
+	Bus b=new Bus();
+
+	void perform()
+	{
+		c.drive();
+			or
+		b.drive();
+	}
+}
+
+
+	vs
+class Driver
+{
+	// program to interface
+
+	// Driver is loosely coupled with a specific FourWheeler
+
+	FourWheeler ref;
+	
+	void perform(FourWheeler ref)
+	{
+		this.ref=ref;
+		ref.drive();
+	}
+}

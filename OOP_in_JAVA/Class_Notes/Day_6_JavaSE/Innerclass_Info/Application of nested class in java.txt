@@ -1,0 +1,60 @@
+nested class gives us two advantages:
+
+a) easy maintenance
+b) encapsulation
+
+
+public class GUIAPP extends Applet implements MouseListener,WindowListener,KeyListener
+{
+
+	MouseListener's  5 methods
+
+	WindowListener's  7 methods
+
+	KeyListener's  4 methods
+
+		+
+
+	GUI logic
+
+}
+
+		vs
+
+
+public class GUIAPP extends Applet 
+{
+
+	GUI logic
+
+	class MyMouseListener implements MouseListener
+	{
+		5 methods
+	}
+	class MyWindowListener implements WindowListener
+	{
+		7 methods
+	}
+	class MyKeyListener implements KeyListener
+	{
+		4 methods
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

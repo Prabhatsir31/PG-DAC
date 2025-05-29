@@ -1,0 +1,21 @@
+on developer side:
+
+create interface "Shape" with "void draw();" method.
+
+now define child classes 
+	Triangle,Rect and Circle
+
+create necessary jar file and documentation.
+
+
+on Client side:
+
+define "ShapeDemo" class with main function
+
+create an array of "Shape" with 3 elements. store objects of Triangle,Rect and Circle in this array. now traverse the array and invoke "draw()" of each child.
+
+
+
+
+
+

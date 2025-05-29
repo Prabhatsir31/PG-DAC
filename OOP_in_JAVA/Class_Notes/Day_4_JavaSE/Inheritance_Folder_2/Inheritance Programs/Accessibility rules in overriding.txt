@@ -1,0 +1,68 @@
+
+			base
+
+		void disp() {  }
+
+			sub
+
+		void disp() { }
+
+
+
+		       base
+
+		void disp() {  }
+
+			sub
+
+		protected void disp() { }
+
+
+			       base
+
+		void disp() {  }
+
+			sub
+
+		public void disp() { }
+
+
+			       base
+
+		protected void disp() {  }
+
+			sub
+
+		 void disp() { }   // error
+
+
+
+			       base
+
+		public void disp() {  }
+
+			sub
+
+		protected void disp() { }    // error
+
+
+				 base
+
+		public void disp() {  }
+
+			sub
+
+		public void disp() { }    // will work
+
+
+
+
+
+
+
+
+
+
+
+
+

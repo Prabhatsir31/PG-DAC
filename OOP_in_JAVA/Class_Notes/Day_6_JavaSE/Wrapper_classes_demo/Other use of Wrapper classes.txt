@@ -1,0 +1,27 @@
+
+Wrapper class is also used in following case
+
+String str="125";
+
+System.out.println(str); // output  125
+
+str+=10;
+
+System.out.println(str);  // output  12510  ( concatenation )
+
+solution:
+	int temp=Integer.parseInt(str);
+	temp+=10;
+
+	System.out.println(temp); // output   135
+
+
+
+
+
+
+
+
+
+
+

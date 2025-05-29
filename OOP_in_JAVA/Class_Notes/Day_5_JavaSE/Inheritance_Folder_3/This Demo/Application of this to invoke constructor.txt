@@ -1,0 +1,19 @@
+public class MyDynamicArray
+{
+	public MyDynamicArray()
+	{
+		this(10);
+	}
+
+	public MyDynamicArray(int capacity)
+	{
+		create dynamic array with the given capacity
+	}
+}
+
+we want to make capacity by default 10 if not provided
+
+
+MyDynamicArray array1=new MyDynamicArray(50);
+
+MyDynamicArray array2=new MyDyanamicArray();

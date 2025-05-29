@@ -1,0 +1,131 @@
+Polymorphism is the ability of an object to take on many forms. 
+e.g.
+
+person behaves like student at college, son at home, customer in the mall.
+	how can we implement this program design?
+
+class Person
+{
+	void behave()
+	{
+	}
+}
+class Student extends Person
+{
+	void behave()
+	{
+		behaves like a student
+	}
+}
+class Son extends Person
+{
+	void behave()
+	{
+		behaves like a son
+	}
+}
+class Customer extends Person
+{
+	void behave()
+	{
+		behaves like a customer
+	}
+}
+
+
+void perform(Person p)
+{
+	p.behave();  // late binding or polymorphism
+}
+main()
+{
+	perform(new Student());
+	perform(new Son());
+	perform(new Customer());
+}
+
+
+
+different animals make different sound
+
+class Animal
+{
+	void makeSound()
+	{
+	}
+}
+class Dog extends Animal
+{
+	void makeSound()
+	{
+		bark
+	}
+}
+class Cat extends Animal
+{
+	void makeSound()
+	{
+		meow
+	}
+}
+class Tiger extends Animal
+{
+	void makeSound()
+	{
+		roar
+	}
+}
+
+void perform(Animal a)
+{
+	a.makeSound();  // late binding or polymorphism
+}
+main()
+{
+	perform(new Dog());
+	perform(new Cat());
+	perform(new Tiger());
+}
+
+we can attack using any weapon
+
+class Weapon
+{
+	void attack()
+	{
+	}
+}
+class Gun extends Weapon
+{
+	void attack()
+	{
+		Gun attack
+	}
+}
+class Sword extends Weapon
+{
+	void attack()
+	{
+		Sword attack
+	}
+}
+class Bomb extends Weapon
+{
+	void attack()
+	{
+		Bomb attack
+	}
+}
+
+
+void perform(Weapon w)
+{
+	w.attack();  // late binding or polymorphism
+}
+
+main()
+{
+	perform(new Gun());
+	perform(new Sword());
+	perform(new Bomb());
+}

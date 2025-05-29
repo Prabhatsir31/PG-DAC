@@ -1,0 +1,8 @@
+why do you upcast?
+	
+	- Upcasting allows us to write methods that work with any subclass of a parent class without being tied to a specific subclass. That is using parent class reference only we can invoke method of any child class polymorphically. It is basically a "program to interface" concept which always gives us maintenance advantage even if there is a change in the inheritance hierarchy.
+
+
+why do you downcast?
+
+	- suppose we have written a function which has an argument of "base type" so that we can pass any child object i.e. we follow "program to interface" concept. In this scenario, if you want to invoke a particular child class method [which is not available in parent class] we need to downcast parent class reference to that particular child class reference.

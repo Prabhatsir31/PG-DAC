@@ -1,0 +1,64 @@
+class base
+{
+	void disp(Object ref)
+	{
+		System.out.println("in Object method");
+	}
+}
+class sub extends base
+{
+	void disp(String ref)
+	{
+		System.out.println("in String method");
+	}
+}
+public class MyClass
+{
+	public static void main(String[] args)
+	{
+		base b=new sub();
+		b.disp("hello");  
+	/*here for compiler, b is of type "base"
+	compiler will check "disp("hello") "  inside "base" class
+	yes
+		it's disp(Object)
+
+	now compiler writes an instruction for JVM to follow:
+		during runtime check the content of "b" and invoke "disp(Object)" of that content
+
+	*/
+
+
+
+		
+		sub s=new sub();
+		s.disp("welcome");
+
+		/*	here for compiler "s" is of type "sub"
+		compiler will check whether "disp("welcome")" is there in sub
+
+			actually sub class has two disp methods:
+				disp(Object) and disp(String)
+			so as usual compiler gives preference to disp(String) and writes following instruction for JVM
+
+		during runtime check the content of "s" and invoke "disp(String)" of that content.*/
+
+
+		s.disp(100);
+
+	/*	here for compiler "s" is of type "sub"
+		compiler will check whether "disp(100)" is there in sub
+
+			 sub class has two disp methods:
+				disp(Object) and disp(String)
+			compiler here knows where 100 can go , i.e. disp(Object)
+			 and writes following instruction for JVM
+
+		during runtime check the content of "s" and invoke "disp(Object)" of that content.*/
+
+	}
+}
+
+
+
+

@@ -1,0 +1,14 @@
+what is Binding?
+
+resolving function call with function body is called as Binding.
+
+how many types of Binding are there?
+
+2 types: early binding and late binding
+
+	early binding means resolving function call with function body at the compilation time.
+	In Java early binding happens when a function is "private" or "static" or "final".
+
+	late binding means resolving function call with function body at the runtime.
+	for the methods other than "private" or "static" or "final" we have always late binding in java.
+

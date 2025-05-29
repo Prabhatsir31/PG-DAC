@@ -1,0 +1,8 @@
+create abstract class "Shape" with
+	a contract "draw()" and concrete behaviour "show()"
+
+create 3 child classes
+	Triangle, Rectangle and Circle
+
+define a class "ShapeDemo" with main
+inside main create an array of "Shape" of 3 elements. Store all the child class objects inside the array, traverse it and invoke "draw()" and "show()" methods polymorphically.

@@ -1,0 +1,24 @@
+package
+
+package is a collection of related classes and interfaces.
+
+package is mainly used to avoid name conflicts.
+package concept is similar to "namespace" concept of C++.
+
+java has so many in-built packages . e.g.
+
+java.awt
+java.io
+java.util
+java.lang
+and so on
+
+by def. java.lang is available to all the java applications.
+
+in order to use package u need to use the keyword "import".
+
+when u say "import", nothing is physically included ( unlike #include of c and c++ ). It is only for compiler. Runtime performance is not at all affected with "import" statements.
+
+
+
+

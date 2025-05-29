@@ -1,0 +1,35 @@
+abstract class Beverages {
+
+	// Defined
+	public void addMilk(int quantity) {
+		add milk as per quantity given
+	}
+
+	// abstract
+	abstract void addIngredients();
+}
+
+class Coffee extends Beverages
+{
+	void addIngredients()
+	{
+		// ingredients for Coffee
+	}
+	// addMilk inherited
+}
+class Tea extends Beverages
+{
+	void addIngredients()
+	{
+		// ingredients for Tea
+	}
+	// addMilk inherited
+}
+class FruitJuice extends Beverages
+{
+	void addIngredients()
+	{
+		// ingredients for FruitJuice
+	}
+	// addMilk inherited
+}

@@ -1,0 +1,5 @@
+we cannot instantiate a class in two scenarios:
+
+a) when class is abstract
+	or
+b) private constructor

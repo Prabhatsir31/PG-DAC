@@ -1,0 +1,10 @@
+enum is a user defined data type.
+
+it is used to define set of predefined values. It helps in making the program more readable and also helps to reduce programming bugs. 
+
+some of the examples where enum is used in java are:
+
+compass directions (values of NORTH, SOUTH, EAST, and WEST) 
+The days of the week. MONDAY,TUESDAY etc.
+sizes in case of Pizza
+	SMALL , MEDIUM,LARGE  etc.

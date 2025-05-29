@@ -1,0 +1,16 @@
+enum is internally derived from java.lang.Enum which is an abstract class (without any abstract method). so enum cannot be derived from some other class but it can implement interface/s.
+
+ a class can have enum/s inside it the way we have nested class.
+
+enum cannot be defined inside the method as enum cannot be local.
+
+enum was introduced in Java 5
+
+enum is a special type of datatype which is a collection of constants.
+
+actually enum is just like a class that can have constant, method and a private constructor. ( private constructor is added implicitly by the compiler)
+
+because of private constructor we cannot instantiate enum with "new" keyword.
+
+enum constants are by default "public", "final" and "static"
+

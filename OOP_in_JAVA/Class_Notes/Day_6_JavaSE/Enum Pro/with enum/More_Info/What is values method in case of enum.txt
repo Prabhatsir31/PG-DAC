@@ -1,0 +1,1 @@
+For each enum type, the Java compiler generates a static method named values() in the enum class. This method returns an array of all the enum constants in the order they are declared.

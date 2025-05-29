@@ -1,0 +1,39 @@
+class base
+{
+	void disp() // overridden
+	{
+		System.out.println("base disp");
+	}
+}
+class sub1 extends base   
+{
+	void disp() // overriding
+	{
+		System.out.println("sub disp");
+		
+	}
+}
+public class Demo14
+{
+	public static void main(String args[])
+	{
+		sub1 s1=new sub1(); 
+		s1.disp();
+	}
+}
+
+In the above example when compiler encounters the statement "s1.disp()", what compiler does?
+	ans: For the compiler "s1" is of type "sub1". Compiler will search "disp()" in "sub1"
+is it there ? yes
+is it accessible from main ?  yes
+is it final ?  no
+is it static ?  no
+
+now compiler writes an instruction for runtime to follow. What is that instruction ?
+ans: during runtime check the content of "s1" and invoke "disp()" of that content (object).
+
+so what happens in the above example?
+	during runtime content of "s1" is "sub1's object", hence "disp()" of "sub1" gets invoked.
+
+
+

@@ -1,0 +1,53 @@
+class FourWheeler
+{
+	void start()	
+	{
+		some basic instructions to start any fourwheeler
+	}
+}
+
+class Engine
+{
+	void start()
+	{
+	}
+}
+class HondaEngine extend Engine
+{
+	void start()
+	{
+		HondaEngine starts
+	}
+}
+class MarutiEngine extend Engine
+{
+	void start()
+	{
+		MarutiEngine starts
+	}
+}
+class BMWEngine extend Engine
+{
+	void start()
+	{
+		BMWEngine starts
+	}
+}
+
+
+class Car extends FourWheeler
+{
+	private Engine engine;     // has-a relationship
+	Car(Engine engine)       
+	{
+		this.engine=engine;
+	}
+	void start()
+	{
+		super.start();  // "white-box reuse" bec. u know which "star()" u r invoking
+		engine.start();    // "black box reuse" as we don't know exactly on which child class of 
+					// Engine we are invoking "start()" method
+	}
+}
+
+

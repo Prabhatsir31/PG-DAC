@@ -1,0 +1,27 @@
+class A
+{
+	public A(int k)
+	{
+		System.out.println("inside A parameterized constructor\t"+k);
+	}
+}
+public class MyClass {
+
+	A getA()
+	{
+		return new A(2)// same as "super(2)"
+		{
+			public String toString()
+			{
+				return getClass().getName();
+			}
+		};
+	}
+	public static void main(String[] args) {
+		
+		MyClass m=new MyClass();
+		A ref=m.getA();
+		System.out.println(ref);
+	}
+
+}

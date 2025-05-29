@@ -1,0 +1,23 @@
+
+
+show(Object ref)
+{
+	S.o.p(ref);
+}
+
+
+
+we can call this show() function as follows:
+	
+	int num=100;
+	show(num);  // it's possible from jdk5 onwards
+
+how it's possible?
+
+when you say 
+	show(num);
+
+what compiler does ?
+	show(new Integer(num));
+
+i.e. compile does autoboxing ( converts int to Integer ) and pass that Integer to the method which has "Object" as a parameter.

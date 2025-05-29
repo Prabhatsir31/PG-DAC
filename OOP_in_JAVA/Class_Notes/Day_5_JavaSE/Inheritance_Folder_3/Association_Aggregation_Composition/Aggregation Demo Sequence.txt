@@ -1,0 +1,10 @@
+1) Department class gets instantiated and its members are allocated memory.
+2) "md" reference is created on the stack.
+3) "md" refers to the instance of Department inside heap.
+4) Teacher class gets instantiated and its members are allocated memory.
+5) "t1" reference is created on the stack.
+6) "t1" refers to the instance of Teacher inside heap.
+7) when "addTeacher()" method gets called,"teacher" reference of Teacher class inside the instance of Department refers to the Teacher instance on the heap.
+8) we say "md=null" inside the application.
+9) Department instance on the heap is marked for GC.
+10) That does not affect Teacher instance available on heap because it is still referenced by "t1" reference on the stack. 
