@@ -1,0 +1,9 @@
+1) download "jdeserialize-1.2.jar" 
+2) store it inside the folder from where you would like to check the content of the generated file in case of serialization.
+
+3) go to the folder where you would like to check the content of the generated file and give following command on the command prompt
+
+java -jar jdeserialize-1.2.jar e:\\my.ser
+
+here it is assumed that "my.ser" is the file in which object is serialized and it is located in "e:\\" drive.
+

@@ -1,0 +1,25 @@
+
+
+	Java8 interface changes
+
+	1) default methods ( virtual methods ) with definition
+
+		e.g
+
+	interface First
+	{
+		void disp1();  // public and abstract
+		
+		default void disp2()
+		{
+			some code
+		}
+	}
+
+it means implementation class of "First" has to define "disp1"
+and "disp2" will be simply inherited inside the child class or at the most child class can override it.
+
+
+
+
+	2) static methods

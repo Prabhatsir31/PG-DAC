@@ -1,0 +1,10 @@
+exception can be raised by 
+	a) JVM
+		or
+	b) Application [ Developer ]
+
+
+When exception is raised , it happens in two steps :
+
+a) instantiation of that particular exception class
+b) throwing that exception (that instance) to the caller.

@@ -1,0 +1,49 @@
+Here the most imp. thing is that since "return" statement is given inside "try" "catch" and "finally" so,compiler removes "return" from both try and catch.  So that means we have only one "return" statement inside "finally".
+
+This example also demonstrates one of the scenarios where finally block does not get executed.
+
+
+let's discuss this application flow considering value 5
+
+Execution starts with main() function.
+
+disp() method is called by passing the value 5
+
+control goes inside "disp()" method
+
+value 5 is passed to the variable "k"
+
+accept() method is called from disp() by passing same value i.e. 5
+
+control goes inside "accept()" method.
+
+since 5 is not less than equal to zero, exception is not raised.
+
+control goes back to disp()
+
+since no exception was raised , control goes to "System.exit(0)" statement of "try" because of which application terminates.
+This is one of the scenarios where finally block does not get executed.
+
+
+
+
+let's discuss this application flow considering value -5
+
+Execution starts with main() function.
+
+disp() method is called by passing the value -5
+
+control goes inside "disp()" method
+
+value -5 is passed to the variable "k"
+
+accept() method is called from disp() by passing same value i.e. -5
+
+control goes inside "accept()" method.
+
+since -5 is less than equal to zero, exception is raised.
+
+control goes back to disp()
+
+since exception was raised , "System.exit(0)" of try gets skipped and control goes inside "catch" which also has "System.exit(0)" because of which application terminates.
+

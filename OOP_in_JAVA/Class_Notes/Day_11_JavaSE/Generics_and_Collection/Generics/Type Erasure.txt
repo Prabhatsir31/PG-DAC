@@ -1,0 +1,41 @@
+public class Generic1<T>
+{
+	private T first;
+	void setVal(T first)
+	{
+		this.first=first;
+	}
+	T getVal()
+	{
+		return first;
+	}
+
+when u compile above class, compiler will remove all the generic information because JVM can't understand Generics. This is known as "Type Erasure". So after compilation the above class will be as follows:
+
+public class Generic1
+{
+	private Object first;
+	void setVal(Object first)
+	{
+		this.first=first;
+	}
+	Object getVal()
+	{
+		return first;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

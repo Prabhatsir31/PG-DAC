@@ -1,0 +1,11 @@
+1) Don't provide "setter" methods — methods that modify fields 
+
+2) If the instance fields include references to mutable objects, don't allow those objects to be changed: 
+i.e. Don't provide methods that modify the mutable objects.
+
+3) If the instance fields include references to mutable objects, don't allow those objects to be changed:
+ Don't share references to the mutable objects.
+
+4) if necessary, create copies to avoid returning the originals in your methods
+
+5) a class should be final

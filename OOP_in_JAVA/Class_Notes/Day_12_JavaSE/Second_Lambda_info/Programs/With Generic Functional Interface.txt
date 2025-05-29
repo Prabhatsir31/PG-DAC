@@ -1,0 +1,13 @@
+//package core;
+interface MyGeneric<T>
+{
+	void disp(T ref);
+}
+public class Demo {
+
+	public static void main(String[] args) 
+	{
+		MyGeneric<String> m=(k)->{System.out.println(k);};
+		m.disp("Welcome");
+	}
+}

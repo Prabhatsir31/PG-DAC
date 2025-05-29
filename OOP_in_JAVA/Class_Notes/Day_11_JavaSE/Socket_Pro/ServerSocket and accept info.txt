@@ -1,0 +1,7 @@
+what does ServerSocket class do?
+
+	ServerSocket class allows server program to wait for client request on the given port no.
+
+	This is possible with the help of "accept()" of ServerSocket class.
+
+	So we can say that "accept()" of ServerSocket class is similar to "receive()" method of DatagramSocket.

@@ -1,0 +1,172 @@
+ compile "Sample.java"
+you'll get "Sample.class"
+
+now go to command prompt and give following command
+
+javap -verbose Sample.class
+
+	you'll get following output:
+
+
+Classfile /E:/DAC_Sept_22/JavaSE_Physical_Batch/Resolution Phase Info/Demo/Sample.class
+  Last modified 21 Sep, 2022; size 417 bytes
+  MD5 checksum 6dc6352e23feb298e1ab9da1eeb21058
+  Compiled from "Sample.java"
+public class Sample
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #6.#15         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #16.#17        // java/lang/System.out:Ljava/io/PrintStream;
+   #3 = String             #18            // Hello World
+   #4 = Methodref          #19.#20        // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #5 = Class              #21            // Sample
+   #6 = Class              #22            // java/lang/Object
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               main
+  #12 = Utf8               ([Ljava/lang/String;)V
+  #13 = Utf8               SourceFile
+  #14 = Utf8               Sample.java
+  #15 = NameAndType        #7:#8          // "<init>":()V
+  #16 = Class              #23            // java/lang/System
+  #17 = NameAndType        #24:#25        // out:Ljava/io/PrintStream;
+  #18 = Utf8               Hello World
+  #19 = Class              #26            // java/io/PrintStream
+  #20 = NameAndType        #27:#28        // println:(Ljava/lang/String;)V
+  #21 = Utf8               Sample
+  #22 = Utf8               java/lang/Object
+  #23 = Utf8               java/lang/System
+  #24 = Utf8               out
+  #25 = Utf8               Ljava/io/PrintStream;
+  #26 = Utf8               java/io/PrintStream
+  #27 = Utf8               println
+  #28 = Utf8               (Ljava/lang/String;)V
+{
+  public Sample();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String Hello World
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 5: 0
+        line 6: 8
+}
+SourceFile: "Sample.java"
+
+
+
+	from the above output notice following line from "Sample()" default constructor:
+	   1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+
+	here #1 is a symbolic reference so what happens to it during "Resolve" phase?
+
+	#1 will be referred from the constant pool,
+	
+	 #1 = Methodref          #6.#15         // java/lang/Object."<init>":()V
+
+	if you check #6 and #15 , you will get
+	
+		 #6 = Class              #22            // java/lang/Object
+
+		#15 = NameAndType        #7:#8          // "<init>":()V
+
+	if you check #7  and #8 , you will get
+
+	#7 = Utf8               <init>
+   	#8 = Utf8               ()V
+
+This means during "Resolve" phase, 
+	 1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+	will be replaced with "call to Object class default constructor"
+
+
+
+	from the above output notice these lines from main function:
+
+ 	0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String Hello World
+         5: invokevirtual #4 
+
+
+look at #2 , #3 and #4 
+These are "symbolic references". During "Resolve" phase these "symbolic references" are replaced with the actual references from the "constant pool".
+
+so , if you check #2  in the constant pool, it is written like this:
+
+  #2 = Fieldref           #16.#17        // java/lang/System.out:Ljava/io/PrintStream;
+
+	if you check what is #16  and #17
+
+  #16 = Class              #23            // java/lang/System
+  #17 = NameAndType        #24:#25        // out:Ljava/io/PrintStream;
+
+	further if you check #23,#24 and #25 you will get:
+
+  #23 = Utf8               java/lang/System
+  #24 = Utf8               out
+  #25 = Utf8               Ljava/io/PrintStream;
+
+This means during "Resolve" phase 
+
+	0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+
+will be replaced with 
+                field "out"
+
+
+
+3: ldc           #3                  // String Hello World
+
+if you check #3 in the constant pool,
+	 #3 = String             #18            // Hello World
+
+further if you check #18 , you will get:
+	 #18 = Utf8               Hello World
+
+so, in the "Resolve" phase,
+	3: ldc           #3    
+will be replaced with  "Hello World"
+
+
+
+5: invokevirtual #4 
+
+if you check #4 in the constant pool,
+	
+	 #4 = Methodref          #19.#20        // java/io/PrintStream.println:
+
+ if you check #19 and #20 , you will get:
+
+	#19 = Class              #26            // java/io/PrintStream
+  #20 = NameAndType        #27:#28        // println:(Ljava/lang/String;)V
+
+
+further if you check #26,#27 and #28 , you will get:
+
+
+ #26 = Utf8               java/io/PrintStream
+  #27 = Utf8               println
+  #28 = Utf8 
+
+so, 
+	5: invokevirtual #4 
+will be replaced with the "invocation of println() method"

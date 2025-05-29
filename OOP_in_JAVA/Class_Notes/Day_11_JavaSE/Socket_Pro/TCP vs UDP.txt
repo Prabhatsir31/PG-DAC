@@ -1,0 +1,19 @@
+TCP
+
+	Transmission Control Protocol
+
+	It is similar to telephone service. i.e. when sender sends the message he gets to know whether receiver received the message or not.
+
+	It is reliable. i.e. it gives guarantee that all the packets will be delivered at the other end and that too in the order in which they are delievered. However this reliability comes at the cost of performance.
+
+
+
+UDP
+
+	User Datagram Protocol
+
+	it is similar to postal service where sender does not know whether message is received by receiver or not.
+
+	it is not reliable as TCP. i.e. it does not give you guarantee of delivery of packets. However it is faster than TCP.
+
+	

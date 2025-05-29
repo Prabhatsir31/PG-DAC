@@ -1,0 +1,26 @@
+The Arrays class in java.util package is a part of the Java Collection Framework. This class provides static methods to dynamically create and access Java arrays.
+
+
+
+int arr[]= {8,2,5,3,9,7};
+		 System.out.println("Let's print array using foreach");
+		 for(int i:arr)
+		 {
+			 System.out.println(i);
+		 }
+		 System.out.println("Let's print array using Arrays class");
+		 System.out.println(Arrays.toString(arr));
+		 
+		 Arrays.sort(arr);
+		 System.out.println("After sorting");
+		 for(int i:arr)
+		 {
+			 System.out.println(i);
+		 }
+		 
+		 List<int[]>mylist=Arrays.asList(arr);
+		 System.out.println("Traversing from the list");
+		 for(int k:mylist.get(0))
+		 {
+			 System.out.println(k);
+		 }

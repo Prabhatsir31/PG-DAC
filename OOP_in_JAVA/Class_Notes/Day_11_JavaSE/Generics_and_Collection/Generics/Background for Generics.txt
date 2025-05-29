@@ -1,0 +1,57 @@
+
+Before Java5
+
+public class StorageClass
+{
+	private Object ref;
+	public void store(Object ref)
+	{
+		this.ref=ref;
+	}
+	public Object get()
+	{
+		return ref;
+	}
+}
+
+How will you use above class?
+
+
+StorageClass s=new StorageClass();
+
+s.store(100);
+
+Integer ref1=(Integer)s.get();	
+System.out.println(ref1);
+
+what is the risk involved in the above code?
+	what if we don't remember what type of data we have passed to the "store()" method?
+
+suppose we have passed "String" 
+	i.e.
+		s.store("hello");
+and while invoking "get()" if we don't remember what we had passed in the "store()" method, we might say:
+
+	Integer ref1=(Integer)s.get();
+
+now here compiler will not give any error as this statement is syntactically correct. But during runtime "String" will be returned which we are trying to cast with "Integer" and this will result into "ClassCastException".
+
+So this is the risk with the code prior to java5.
+
+JAVA5 introduced the concept of "Generics" according to which you can say
+
+StorageClass<Integer> s=new StorageClass<Integer>();
+
+	when you create object this way, for the compiler reference "s" is only for the type "Integer". If you try to pass type other than Integer, compiler will give error which makes program safe. e.g.
+
+		s.store(100); will work
+		s.store("hello");  compilation error
+
+		while invoking "get()"
+
+		Integer ref1=s.get();   no need to do typecasting
+
+		String ref2=s.get();   compilation error
+
+
+

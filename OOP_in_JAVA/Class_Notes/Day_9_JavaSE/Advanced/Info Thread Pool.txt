@@ -1,0 +1,2 @@
+Thread pool
+	is the one which contains already created threads in the idle state. Whenever requirement comes any randomly selected thread from the thread pool will be made active and that thread is supposed to perform the given task. Once task gets completed the thread is not killed rather it is sent back to the thread pool in order to serve any new requirement. This approach ( instead of creating new thread from the scratch when requirement comes , use the existing thread from the thread pool) improves the performance especially on the server side applications.

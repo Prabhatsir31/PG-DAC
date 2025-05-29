@@ -1,0 +1,39 @@
+mapToInt(i -> i)           we are invoking
+
+since we are passing lambda expression, mapToInt() method must have functional interface as an argument.
+
+it's "ToIntFunction" with 
+	
+	int	applyAsInt(T value)    abstract method
+
+
+how mapToInt must be working?
+
+
+class ToIntFunctionImp implements ToIntFunction
+{
+	int applyAsInt(Integer value)
+	{
+		converts value into "int" 
+		and return
+	}
+}
+
+code inside "mapToInt()" method
+
+mapToInt(ToIntFunction ref)
+{
+	traverse the stream which has  got numbers 12 and 20
+
+	invoke 
+		ref.applyAsInt(12)
+			12 will come back as "int"
+			store it inside "IntStream"
+		ref.applyAsInt(20)
+			20 will come back as "int"
+			store it inside "IntStream"
+
+	finally return this "IntStream"
+}
+
+

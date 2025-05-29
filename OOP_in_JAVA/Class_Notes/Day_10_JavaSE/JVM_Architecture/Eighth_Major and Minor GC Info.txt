@@ -1,0 +1,16 @@
+The garbage collection cycles in the young generation (eden and survivor spaces) are considered minor garbage collection. The garbage collection cycles in the old generation (tenured space) is known as old garbage collection or major garbage collection because it takes longer than minor garbage collection.
+
+Major GC cleans up the old generation. The task of Major GC is as same as the minor GC, but the only difference is minor GC reclaims the memory of the young generation whereas Major GC reclaims the memory of the old generation. 
+
+What happens when we say "System.gc()"?
+
+ans:- 
+When you call System.gc() in Java, you are requesting that the Java Virtual Machine (JVM) perform garbage collection. However, this call is a request rather than a guarantee, and the JVM is free to ignore it if it decides that garbage collection is not necessary or appropriate at that time.
+
+System.gc() suggests that the JVM perform garbage collection. The JVM might choose to perform garbage collection on both the Young Generation (which involves Minor GC) and the Old Generation (which involves Major GC or Full GC), but it does not guarantee it.
+
+
+New object created is kept in Eden inside Young generation.
+Once Eden is full, a Minor GC happened to clear Eden ,removed unused objects and move the survivor objects to Survivor space. When Survivor space is full, they are moved to Old Generation by the Minor GC. Minor GC takes less time as the memory area of Young generation is small. To clean up Old Generation once it is full, Major GC happens which takes more time as the memory area of Old generation is big.
+
+

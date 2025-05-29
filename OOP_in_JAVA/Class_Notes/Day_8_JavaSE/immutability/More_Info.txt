@@ -1,0 +1,1 @@
+The standard argument for making immutable classes final is that if you don't do this, then subclasses can add mutability, thereby violating the contract of the superclass. Clients of the class will assume immutability, but will be surprised when something mutates out from under them.

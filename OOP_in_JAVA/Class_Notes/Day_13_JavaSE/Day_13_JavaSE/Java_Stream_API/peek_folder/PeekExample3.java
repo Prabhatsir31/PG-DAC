@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class PeekExample3 
+{
+
+	public static void main(String args[])
+	{
+List<String> flatNums=Arrays.asList("A93","A43","A67","A12","A07","G107","K56","P89","J77");
+
+System.out.println("Let's debug what happens after filter and sorted operations");
+System.out.println();
+
+List <String> startWithA=flatNums.stream().filter(k->k.startsWith("A")).sorted().peek(System.out::println).skip(2).collect(Collectors.toList());
+System.out.println();
+System.out.println();
+System.out.println("Final result with startwithA after skipping first 2 values is\t"+startWithA);
+	}
+
+}

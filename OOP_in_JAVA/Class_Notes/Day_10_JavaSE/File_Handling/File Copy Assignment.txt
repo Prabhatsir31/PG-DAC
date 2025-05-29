@@ -1,0 +1,9 @@
+write a file copy program using FileInputStream and FileOutputStream
+
+	hint: existing file u need to open using FileInputStream and new file u need
+ to open using FileOutputStream.
+
+	first read existing file's data inside byte array and then write the same
+ byte array inside new file.
+
+	byte array should be created equivalent to the length of existing file.

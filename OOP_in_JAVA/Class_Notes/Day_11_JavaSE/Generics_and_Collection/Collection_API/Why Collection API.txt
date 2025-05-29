@@ -1,0 +1,22 @@
+Why Collection API?
+	
+	Arrays are fixed in size.
+
+Collection API provides us
+	Containers
+		They are dynamic
+		Some of them are sorted
+		Some of them allow only unique elements
+		some of them are thread-safe
+		some of them are not thread-safe , so they are efficient
+		Some of them allow u to store key and value 
+		all the containers implement Serializable so that they can be easily persisted inside file system.
+
+	Iterator
+		allows u to traverse through containers.
+	Algorithms
+		sort,count,max,min etc.
+
+
+
+Entire support for Collection API has been given inside "java.util" package.

@@ -1,0 +1,33 @@
+minor version error is thrown in Java when a class is compiled using a higher version of the Java Development Kit (JDK) but executed on a lower version of the Java Runtime Environment (JRE). The exact cause is printed on the version e.g. in the case of major.
+
+
+
+Unsupported major.minor Version Error Example
+Here is an example of an unsupported major.minor version error thrown when a Java class is compiled using Java 1.8, but executed using Java 1.7:
+
+public class UnsupportedVersionErrorExample {
+    public static void main(String args[]) {
+        System.out.println("Hello World");
+    }
+}
+
+Running the above code produces the following error:
+
+Exception in thread "main" java.lang.UnsupportedClassVersionError: UnsupportedVersionErrorExample : Unsupported major.minor version 52.0
+
+    at java.lang.ClassLoader.defineClass1(Native Method)
+    at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+    at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+    at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+    at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+    at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+    at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+    at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+    at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+    at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+    at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:482)
+
+
+In the above example, Java 1.8 is used to compile the code, which is higher than the Java version it is executed on (1.7). Since the major version 52 corresponds to Java SE 8, the unsupported major.minor version 52.0 error is thrown.

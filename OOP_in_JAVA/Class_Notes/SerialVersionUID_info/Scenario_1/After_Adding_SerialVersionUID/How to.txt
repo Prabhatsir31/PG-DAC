@@ -1,0 +1,13 @@
+1) run SerializeDemo
+
+2) run DeserializeDemo
+	you will get the output
+
+3) make some changes in SerializeDemo
+	i.e. add a field "private double Salary"
+
+	compile SerializeDemo
+	do not run
+
+4) run DeserializeDemo
+	still you will get output as serialization and deserialization don't generate serialversionuid.

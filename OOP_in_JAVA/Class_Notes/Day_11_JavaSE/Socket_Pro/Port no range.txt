@@ -1,0 +1,13 @@
+
+
+in java when u write socket program you have to use port no.
+
+Total range of port no. is
+
+1 to 65535
+
+out of that
+
+1 to 1023 is reserved for system applications.
+
+1024 to 65535 can be used by java application.

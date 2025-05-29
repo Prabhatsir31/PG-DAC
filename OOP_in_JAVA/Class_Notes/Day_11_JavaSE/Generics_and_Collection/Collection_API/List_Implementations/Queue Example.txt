@@ -1,0 +1,18 @@
+package core1;
+import java.util.*;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		Queue<Integer> q1=new LinkedList<>();
+		q1.add(100);
+		q1.add(200);
+		q1.add(300);
+		System.out.println("Queue is\t"+q1);
+		System.out.println("First element\t"+q1.peek());
+		System.out.println("Queue is\t"+q1);
+		q1.remove();
+		System.out.println("After removing Queue is\t"+q1);
+    }
+}

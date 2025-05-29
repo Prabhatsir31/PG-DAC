@@ -1,0 +1,48 @@
+core
+	pack1 package
+
+	Student implements Serializable
+		click on "default serial version uid"
+
+		private int rollno;
+		public String name;
+
+	Demo.java
+		Serialization
+
+
+run "Demo.java"
+
+	right click on "pack1"
+		create "jar" file
+
+core1
+	MyApp
+		main
+			deserialization
+
+	build path
+		add above jar file.
+
+	run "MyApp" and make sure deserialization happens.
+
+
+
+now go to "Student.java"
+	change "private int rollno"  to "protected int rollno"
+
+	save and compile "Student.java"
+		do not run "Demo.java"
+
+	create jar file again and distribute it to "MyApp.java"
+
+
+go to "core1"
+	build path again new jar file
+
+run "MyApp.java"
+	make sure it runs.
+
+
+
+

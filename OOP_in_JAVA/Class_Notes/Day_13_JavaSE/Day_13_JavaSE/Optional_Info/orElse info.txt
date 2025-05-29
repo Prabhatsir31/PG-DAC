@@ -1,0 +1,28 @@
+Optional<MyClass> op=Optional.ofNullable(getMyClass());
+
+System.out.println(op.map(MyClass::disp).orElse("could not get MyClass instance"));
+
+
+T	orElse(T other)
+
+Return the value if present, otherwise return other.
+
+Explanation:
+	here if getMyClass() returns instance of MyClass,
+		op will have reference for that instance.
+
+		op.map(MyClass::disp)
+			will invoke "disp" on that instance of MyClass and return "Optional<String>
+			now you are invoking "orElse("could not get MyClass instance")" on "Optional<String>"
+
+		since Optional<String> has a value "in disp of MyClass", it will be returned by "orElse()" method.
+			
+
+if getMyClass() returns null,
+		op will be empty.
+
+		op.map(MyClass::disp)
+			will not invoke "disp" and return "Optional.empty".
+			now you are invoking "orElse("could not get MyClass instance")" on "Optional.empty".
+
+		since Optional.empty does not have a value , "orElse()" method will return "could not get MyClass instance".

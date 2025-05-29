@@ -1,0 +1,17 @@
+Background for Optional class
+
+code without Optional
+
+code using Optional
+	ofNullble(), map() and orElse() methods info
+
+Demo1
+	ifPresent() info
+
+Demo2
+	isPresent() info
+
+More_Examples
+	flatmap() info given in Demo5
+
+The Purpose of Optional

@@ -1,0 +1,29 @@
+sorted((a,b)->b.compareTo(a))   // we are invoking
+
+sorted() method's argument is
+	Comparator functional interface which has got 
+
+
+		int compare(String a,String b)     abstract method
+
+
+
+implementation of Comparator
+
+class ComparatorImpl implements Comparator
+{
+	public int compare(String a,String b)
+	{
+		return b.compareTo(a);
+	}
+}
+
+sorted(Comparator ref)
+{
+	traverse the stream
+	and pass 2 elements every time to "compare" method of Comparator implementation
+
+		ref.compare(first element,second element)
+}	
+
+

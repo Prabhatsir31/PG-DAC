@@ -1,0 +1,3560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc,fixuphtml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Unnamed patterns and variables (Preview)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../resources/jdk-default.css" />
+  <link rel="stylesheet" href="../resources/spec-changes.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<header id="title-block-header">
+<div class="navbar"><div><strong>Java SE 21 & JDK 21</strong></div><nav><ul><li><a href="../api/index.html">API</a>
+<li><a href="index.html">OTHER SPECIFICATIONS</a>
+<li><a href="man/index.html">TOOL GUIDES</a></ul></nav></div>
+
+<h1 class="title">Unnamed patterns and variables (Preview)</h1>
+<p class="subtitle">Changes to the Java® Language Specification •
+Version 21.0.6+8-LTS-188</p>
+</header>
+<nav id="TOC" role="doc-toc" title="Table Of Contents">
+<ul>
+<li><a href="#jls-3" id="toc-jls-3">Chapter 3: Lexical Structure</a>
+<ul>
+<li><a href="#jls-3.8" id="toc-jls-3.8">3.8 Identifiers</a></li>
+<li><a href="#jls-3.9" id="toc-jls-3.9">3.9 Keywords</a></li>
+</ul></li>
+<li><a href="#jls-6" id="toc-jls-6">Chapter 6: Names</a>
+<ul>
+<li><a href="#jls-6.1" id="toc-jls-6.1">6.1 Declarations</a></li>
+</ul></li>
+<li><a href="#jls-8" id="toc-jls-8">Chapter 8: Classes</a>
+<ul>
+<li><a href="#jls-8.3" id="toc-jls-8.3">8.3 Field Declarations</a></li>
+<li><a href="#jls-8.4" id="toc-jls-8.4">8.4 Method Declarations</a>
+<ul>
+<li><a href="#jls-8.4.1" id="toc-jls-8.4.1">8.4.1 Formal
+Parameters</a></li>
+</ul></li>
+<li><a href="#jls-8.10" id="toc-jls-8.10">8.10 Record Classes</a>
+<ul>
+<li><a href="#jls-8.10.1" id="toc-jls-8.10.1">8.10.1 Record
+Components</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#jls-9" id="toc-jls-9">Chapter 9: Interfaces</a>
+<ul>
+<li><a href="#jls-9.3" id="toc-jls-9.3">9.3 Field (Constant)
+Declarations</a></li>
+</ul></li>
+<li><a href="#jls-14" id="toc-jls-14">Chapter 14: Blocks, Statements,
+and Patterns</a>
+<ul>
+<li><a href="#jls-14.4" id="toc-jls-14.4">14.4 Local Variable
+Declarations</a></li>
+<li><a href="#jls-14.11" id="toc-jls-14.11">14.11 The
+<code>switch</code> Statement</a>
+<ul>
+<li><a href="#jls-14.11.1" id="toc-jls-14.11.1">14.11.1 Switch
+Blocks</a></li>
+</ul></li>
+<li><a href="#jls-14.14" id="toc-jls-14.14">14.14 The <code>for</code>
+Statement</a>
+<ul>
+<li><a href="#jls-14.14.2" id="toc-jls-14.14.2">14.14.2 The enhanced
+<code>for</code> statement</a></li>
+</ul></li>
+<li><a href="#jls-14.20" id="toc-jls-14.20">14.20 The <code>try</code>
+statement</a>
+<ul>
+<li><a href="#jls-14.20.3" id="toc-jls-14.20.3">14.20.3
+<code>try</code>-with-resources</a></li>
+</ul></li>
+<li><a href="#jls-14.30" id="toc-jls-14.30">14.30 Patterns</a>
+<ul>
+<li><a href="#jls-14.30.1" id="toc-jls-14.30.1">14.30.1 Kinds of
+Patterns</a></li>
+<li><a href="#jls-14.30.2" id="toc-jls-14.30.2">14.30.2 Pattern
+Matching</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<main><p>This document describes changes to the <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html">Java Language
+Specification</a> to support unnamed patterns and variables, which is a
+preview feature of Java SE 21. See <a
+href="https://openjdk.org/jeps/443">JEP:443</a> for overview of the
+feature.</p>
+<p>Changes are described with respect to existing sections of the JLS.
+New text is indicated <strong>like this</strong> and deleted text is
+indicated <del>like this</del>. Explanation and discussion, as needed,
+is set aside in grey boxes.</p>
+<div class="editorial">
+<p>Changelog:</p>
+<p>2023-03-22: Initial spec draft.</p>
+</div>
+<h2 id="jls-3">Chapter 3: Lexical Structure</h2>
+<h3 id="jls-3.8">3.8 Identifiers</h3>
+<p>An <em>identifier</em> is an unlimited-length sequence of <em>Java
+letters</em> and <em>Java digits</em>, the first of which must be a
+<em>Java letter</em>.</p>
+<dl>
+<dt><em>Identifier:</em></dt>
+<dd>
+<em>IdentifierChars</em> <em>but not a</em> <em>Keyword</em> <em>or</em>
+<em>BooleanLiteral</em> <em>or</em> <em>NullLiteral</em>
+</dd>
+<dt><em>IdentifierChars:</em></dt>
+<dd>
+<em>JavaLetter</em> {<em>JavaLetterOrDigit</em>}
+</dd>
+<dt><em>JavaLetter:</em></dt>
+<dd>
+<em>any Unicode character that is a "Java letter"</em>
+</dd>
+<dt><em>JavaLetterOrDigit:</em></dt>
+<dd>
+<em>any Unicode character that is a "Java letter-or-digit"</em>
+</dd>
+</dl>
+<p>A "Java letter" is a character for which the method
+<code>Character.isJavaIdentifierStart(int)</code> returns true.</p>
+<p>A "Java letter-or-digit" is a character for which the method
+<code>Character.isJavaIdentifierPart(int)</code> returns true.</p>
+<blockquote>
+<p>The "Java letters" include uppercase and lowercase ASCII Latin
+letters <code>A-Z</code> (<code>\u0041-\u005a</code>), and
+<code>a-z</code> (<code>\u0061-\u007a</code>), and, for historical
+reasons, the ASCII dollar sign (<code>$</code>, or <code>\u0024</code>)
+and underscore (<code>_</code>, or <code>\u005f</code>). The dollar sign
+should be used only in mechanically generated source code or, rarely, to
+access pre-existing names on legacy systems. The underscore may be used
+in identifiers formed of two or more characters, but it cannot be used
+as a one-character identifier due to being a keyword <strong>(<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.9">3.9</a>)</strong>.</p>
+</blockquote>
+<blockquote>
+<p>The "Java digits" include the ASCII digits <code>0-9</code>
+(<code>\u0030-\u0039</code>).</p>
+</blockquote>
+<p>Letters and digits may be drawn from the entire Unicode character
+set, which supports most writing scripts in use in the world today,
+including the large sets for Chinese, Japanese, and Korean. This allows
+programmers to use identifiers in their programs that are written in
+their native languages.</p>
+<p>Two identifiers are the same only if, after ignoring characters that
+are ignorable, the identifiers have the same Unicode character for each
+letter or digit. An ignorable character is a character for which the
+method <code>Character.isIdentifierIgnorable(int)</code> returns true.
+Identifiers that have the same external appearance may yet be
+different.</p>
+<blockquote>
+<p>For example, the identifiers consisting of the single letters LATIN
+CAPITAL LETTER A (<code>A</code>, <code>\u0041</code>), LATIN SMALL
+LETTER A (<code>a</code>, <code>\u0061</code>), GREEK CAPITAL LETTER
+ALPHA (<code>A</code>, <code>\u0391</code>), CYRILLIC SMALL LETTER A
+(<code>a</code>, <code>\u0430</code>) and MATHEMATICAL BOLD ITALIC SMALL
+A (<code>a</code>, <code>\ud835\udc82</code>) are all different.</p>
+<p>Unicode composite characters are different from their canonical
+equivalent decomposed characters. For example, a LATIN CAPITAL LETTER A
+ACUTE (<code>Á</code>, <code>\u00c1</code>) is different from a LATIN
+CAPITAL LETTER A (<code>A</code>, <code>\u0041</code>) immediately
+followed by a NON-SPACING ACUTE (<code>´</code>, <code>\u0301</code>) in
+identifiers. See The Unicode Standard, Section 3.11 "Normalization
+Forms".</p>
+</blockquote>
+<blockquote>
+<p>Examples of identifiers are:</p>
+<ul>
+<li><code>String</code></li>
+<li><code>i3</code></li>
+<li>αρετη</li>
+<li><code>MAX_VALUE</code></li>
+<li><code>isLetterOrDigit</code></li>
+</ul>
+</blockquote>
+<p>An identifier never has the same spelling (Unicode character
+sequence) as a reserved keyword (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.9">3.9</a>),
+a boolean literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.10.3">3.10.3</a>)
+or the null literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.10.8">3.10.8</a>),
+due to the rules of tokenization (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.5">3.5</a>).
+However, an identifier may have the same spelling as a contextual
+keyword, because the tokenization of a sequence of input characters as
+an identifier or a contextual keyword depends on where the sequence
+appears in the program.</p>
+<p>To facilitate the recognition of contextual keywords, the syntactic
+grammar (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-2.html#jls-2.3">2.3</a>)
+sometimes disallows certain identifiers by defining a production to
+accept only a subset of identifiers. The subsets are as follows:</p>
+<dl>
+<dt><em>TypeIdentifier:</em></dt>
+<dd>
+<em>Identifier</em> <em>but not</em> <code>permits</code>,
+<code>record</code>, <code>sealed</code>, <code>var</code>, <em>or</em>
+<code>yield</code>
+</dd>
+<dt><em>UnqualifiedMethodIdentifier:</em></dt>
+<dd>
+<em>Identifier</em> <em>but not</em> <code>yield</code>
+</dd>
+</dl>
+<blockquote>
+<p><em>TypeIdentifier</em> is used in the declaration of classes,
+interfaces, and type parameters (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1">8.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.1">9.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.4">4.4</a>),
+and when referring to types (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5">6.5</a>).
+For example, the name of a class must be a <em>TypeIdentifier</em>, so
+it is illegal to declare a class named <code>permits</code>,
+<code>record</code>, <code>sealed</code>, <code>var</code>, or
+<code>yield</code>.</p>
+</blockquote>
+<blockquote>
+<p><em>UnqualifiedMethodIdentifier</em> is used when a method invocation
+expression refers to a method by its simple name (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.7.1">6.5.7.1</a>).
+Since the term <code>yield</code> is excluded from
+<em>UnqualifiedMethodIdentifier</em>, any invocation of a method named
+<code>yield</code> must be qualified, thus distinguishing the invocation
+from a <code>yield</code> statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.21">14.21</a>).</p>
+</blockquote>
+<h3 id="jls-3.9">3.9 Keywords</h3>
+<div class="editorial">
+<p>The following changes assume that the JLS changes resulting from JEP
+440 (Record Patterns) and JEP 441 (Pattern Matching for
+<code>switch</code>) have been applied (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html">JLS:JEP440+441</a>).</p>
+</div>
+<p>51 character sequences, formed from ASCII characters, are reserved
+for use as keywords and cannot be used as identifiers (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.8">3.8</a>).
+Another 16 character sequences, also formed from ASCII characters, may
+be interpreted as keywords or as other tokens, depending on the context
+in which they appear.</p>
+<dl>
+<dt><em>Keyword:</em></dt>
+<dd>
+<em>ReservedKeyword</em>
+</dd>
+<dd>
+<em>ContextualKeyword</em>
+</dd>
+<dt><em>ReservedKeyword:</em></dt>
+<dd>
+(one of)
+</dd>
+<dd>
+<code>abstract continue for new switch</code><br />
+<code>assert default if package synchronized</code><br />
+<code>boolean do goto private this</code><br />
+<code>break double implements protected throw</code><br />
+<code>byte else import public throws</code><br />
+<code>case enum instanceof return transient</code><br />
+<code>catch extends int short try</code><br />
+<code>char final interface static void</code><br />
+<code>class finally long strictfp volatile</code><br />
+<code>const float native super while</code><br />
+<code>_</code> (underscore)
+</dd>
+<dt><em>ContextualKeyword:</em></dt>
+<dd>
+(one of)
+</dd>
+<dd>
+<code>exports    permits  sealed     var</code><br />
+<code>module     provides to         when</code><br />
+<code>non-sealed record   transitive with</code><br />
+<code>open       requires uses       yield</code><br />
+<code>opens</code>
+</dd>
+</dl>
+<blockquote>
+<p>The keywords <code>const</code> and <code>goto</code> are reserved,
+even though they are not currently used. This may allow a Java compiler
+to produce better error messages if these C++ keywords incorrectly
+appear in programs.</p>
+</blockquote>
+<blockquote>
+<p>The keyword <code>strictfp</code> is obsolete and should not be used
+in new code.</p>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<p>The keyword <code>_</code> (underscore) is reserved for possible
+future use in parameter declarations.</p>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<p>The keyword <code>_</code> (underscore) may be used in declarations
+in place of an identifier (<a href="#jls-6.1">6.1</a>).</p>
+</blockquote>
+</div>
+<blockquote>
+<p><code>true</code> and <code>false</code> are not keywords, but rather
+boolean literals (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.10.3">3.10.3</a>).</p>
+</blockquote>
+<blockquote>
+<p><code>null</code> is not a keyword, but rather the null literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.10.8">3.10.8</a>).</p>
+</blockquote>
+<p>During the reduction of input characters to input elements (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.5">3.5</a>),
+a sequence of input characters that notionally matches a contextual
+keyword is reduced to a contextual keyword if and only if both of the
+following conditions hold:</p>
+<ol type="1">
+<li><p>The sequence is recognized as a terminal specified in a suitable
+context of the syntactic grammar (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-2.html#jls-2.3">2.3</a>),
+as follows:</p>
+<ul>
+<li><p>For <code>module</code> and <code>open</code>, when recognized as
+a terminal in a <em>ModuleDeclaration</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.7">7.7</a>).</p></li>
+<li><p>For <code>exports</code>, <code>opens</code>,
+<code>provides</code>, <code>requires</code>, <code>to</code>,
+<code>uses</code>, and <code>with</code>, when recognized as a terminal
+in a <em>ModuleDirective</em>.</p></li>
+<li><p>For <code>transitive</code>, when recognized as a terminal in a
+<em>RequiresModifier</em>.</p>
+<blockquote>
+<p>For example, recognizing the sequence <code>requires</code>
+<code>transitive</code> <code>;</code> does not make use of
+<em>RequiresModifier</em>, so the term <code>transitive</code> is
+reduced here to an identifier and not a contextual keyword.</p>
+</blockquote></li>
+<li><p>For <code>var</code>, when recognized as a terminal in a
+<em>LocalVariableType</em> (<a href="#jls-14.4">14.4</a>) or a
+<em>LambdaParameterType</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.27.1">15.27.1</a>).</p>
+<blockquote>
+<p>In other contexts, attempting to use <code>var</code> as an
+identifier will cause an error, because <code>var</code> is not a
+<em>TypeIdentifier</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.8">3.8</a>).</p>
+</blockquote></li>
+<li><p>For <code>yield</code>, when recognized as a terminal in a
+<em>YieldStatement</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.21">14.21</a>).</p>
+<blockquote>
+<p>In other contexts, attempting to use the <code>yield</code> as an
+identifier will cause an error, because <code>yield</code> is neither a
+<em>TypeIdentifier</em> nor a <em>UnqualifiedMethodIdentifier</em>.</p>
+</blockquote></li>
+<li><p>For <code>record</code>, when recognized as a terminal in a
+<em>RecordDeclaration</em> (<a href="#jls-8.10">8.10</a>).</p></li>
+<li><p>For <code>non-sealed</code>, <code>permits</code>, and
+<code>sealed</code>, when recognized as a terminal in a
+<em>NormalClassDeclaration</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1">8.1</a>)
+or a <em>NormalInterfaceDeclaration</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.1">9.1</a>).</p></li>
+<li><p>For <code>when</code>, when recognized as a terminal in a
+<em>Guard</em> (<a href="#jls-14.11.1">14.11.1</a>).</p></li>
+</ul></li>
+<li><p>The sequence is not immediately preceded or immediately followed
+by an input character that matches <em>JavaLetterOrDigit</em>.</p></li>
+</ol>
+<blockquote>
+<p>In general, accidentally omitting white space in source code will
+cause a sequence of input characters to be tokenized as an identifier,
+due to the "longest possible translation" rule (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.2">3.2</a>).
+For example, the sequence of twelve input characters
+<code>p u b l i c s t a t i c</code> is always tokenized as the
+identifier <code>publicstatic</code>, rather than as the reserved
+keywords <code>public</code> and <code>static</code>. If two tokens are
+intended, they must be separated by white space or a comment.</p>
+</blockquote>
+<blockquote>
+<p>The rule above works in tandem with the "longest possible
+translation" rule to produce an intuitive result in contexts where
+contextual keywords may appear. For example, the sequence of eleven
+input characters <code>v a r f i l e n a m e</code> is usually tokenized
+as the identifier <code>varfilename</code>, but in a local variable
+declaration, the first three input characters are tentatively recognized
+as the contextual keyword <code>var</code> by the first condition of the
+rule above. However, it would be confusing to overlook the lack of white
+space in the sequence by recognizing the next eight input characters as
+the identifier <code>filename</code>. (This would mean that the sequence
+undergoes different tokenization in different contexts: an identifier in
+most contexts, but a contextual keyword and an identifier in local
+variable declarations.) Accordingly, the second condition prevents
+recognition of the contextual keyword <code>var</code> on the grounds
+that the immediately following input character <code>f</code> is a
+<em>JavaLetterOrDigit</em>. The sequence
+<code>v a r f i l e n a m e</code> is therefore tokenized as the
+identifier <code>varfilename</code> in a local variable declaration.</p>
+</blockquote>
+<blockquote>
+<p>As another example of the careful recognition of contextual keywords,
+consider the sequence of 15 input characters
+<code>n o n - s e a l e d c l a s s</code>. This sequence is usually
+translated to three tokens - the identifier <code>non</code>, the
+operator <code>-</code>, and the identifier <code>sealedclass</code> -
+but in a normal class declaration, where the first condition holds, the
+first ten input characters are tentatively recognized as the contextual
+keyword <code>non-sealed</code>. To avoid translating the sequence to
+two keyword tokens (<code>non-sealed</code> and <code>class</code>)
+rather than three non-keyword tokens, and to avoid rewarding the
+programmer for omitting white space before <code>class</code>, the
+second condition prevents recognition of the contextual keyword. The
+sequence <code>n o n - s e a l e d c l a s s</code> is therefore
+tokenized as three tokens in a class declaration.</p>
+</blockquote>
+<blockquote>
+<p>In the rule above, the first condition depends on details of the
+syntactic grammar, but a compiler for the Java programming language can
+implement the rule without fully parsing the input program. For example,
+a heuristic could be used to track the contextual state of the
+tokenizer, as long as the heuristic guarantees that valid uses of
+contextual keywords are tokenized as keywords, and valid uses of
+identifiers are tokenized as identifiers. Alternatively, a compiler
+could always tokenize a contextual keyword as an identifier, leaving it
+to a later phase to recognize special uses of these identifiers.</p>
+</blockquote>
+<h2 id="jls-6">Chapter 6: Names</h2>
+<h3 id="jls-6.1">6.1 Declarations</h3>
+<div class="deleted">
+<p>A <em>declaration</em> introduces an entity into a program, and
+includes an identifier (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.8">3.8</a>)
+that can be used in a name to refer to this entity. The identifier is
+constrained to avoid certain contextual keywords when the entity being
+introduced is a class, interface, or type parameter.</p>
+<p>A declared entity is one of the following:</p>
+</div>
+<div class="inserted">
+<p>A <em>declaration</em> introduces an entity into a program, one of
+the following:</p>
+</div>
+<ul>
+<li><p>A module, declared in a <code>module</code> declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.7">7.7</a>)</p></li>
+<li><p>A package, declared in a <code>package</code> declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.4">7.4</a>)</p></li>
+<li><p>An imported class or interface, declared in a single-type-import
+declaration or a type-import-on-demand declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.1">7.5.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.2">7.5.2</a>)</p></li>
+<li><p>An imported <code>static</code> member, declared in a
+single-static-import declaration or a static-import-on-demand
+declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.3">7.5.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.4">7.5.4</a>)</p></li>
+<li><p>A class, declared by a normal class declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1">8.1</a>),
+an enum declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.9">8.9</a>),
+or a record declaration (<a href="#jls-8.10">8.10</a>)</p></li>
+<li><p>An interface, declared by a normal interface declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.1">9.1</a>)
+or an annotation interface declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6">9.6</a>).</p></li>
+<li><p>A type parameter, declared as part of the declaration of a
+generic class, interface, method, or constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1.2">8.1.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.1.2">9.1.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.4.4">8.4.4</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8.4">8.8.4</a>)</p></li>
+<li><p>A member of a reference type (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.2">8.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.2">9.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.9.3">8.9.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6">9.6</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.7">10.7</a>),
+one of the following:</p>
+<ul>
+<li><p>A member class (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.5">8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.5">9.5</a>)</p></li>
+<li><p>A member interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.5">8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.5">9.5</a>)</p></li>
+<li><p>A field, one of the following:</p>
+<ul>
+<li><p>A field declared in a class (<a href="#jls-8.3">8.3</a>)</p></li>
+<li><p>A field declared in an interface (<a
+href="#jls-9.3">9.3</a>)</p></li>
+<li><p>An implicitly declared field of a class corresponding to an enum
+constant or a record component</p></li>
+<li><p>The field <code>length</code>, which is implicitly a member of
+every array type (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.7">10.7</a>)</p></li>
+</ul></li>
+<li><p>A method, one of the following:</p>
+<ul>
+<li><p>A method (<code>abstract</code> or otherwise) declared in a class
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.4">8.4</a>)</p></li>
+<li><p>A method (<code>abstract</code> or otherwise) declared in an
+interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.4">9.4</a>)</p></li>
+<li><p>An implicitly declared accessor method corresponding to a record
+component</p></li>
+</ul></li>
+</ul></li>
+<li><p>An enum constant (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.9.1">8.9.1</a>)</p></li>
+<li><p>A record component (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.3">8.10.3</a>)</p></li>
+<li><p>A formal parameter, one of the following:</p>
+<ul>
+<li><p>A formal parameter of a method of a class or interface (<a
+href="#jls-8.4.1">8.4.1</a>)</p></li>
+<li><p>A formal parameter of a constructor of a class (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8.1">8.8.1</a>)</p></li>
+<li><p>A formal parameter of a lambda expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.27.1">15.27.1</a>)</p></li>
+</ul></li>
+<li><p>An exception parameter of an exception handler declared in a
+<code>catch</code> clause of a <code>try</code> statement (<a
+href="#jls-14.20">14.20</a>)</p></li>
+<li><p>A local variable, one of the following:</p>
+<ul>
+<li><p>A local variable declared by a local variable declaration
+statement in a block (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.4.2">14.4.2</a>)</p></li>
+<li><p>A local variable declared by a <code>for</code> statement or a
+<code>try</code>-with-resources statement (<a
+href="#jls-14.14">14.14</a>, <a
+href="#jls-14.20.3">14.20.3</a>)</p></li>
+<li><p>A local variable declared by a pattern (<a
+href="#jls-14.30.1">14.30.1</a>)</p></li>
+</ul></li>
+<li><p>A local class or interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.3">14.3</a>),
+one of the following:</p>
+<ul>
+<li><p>A local class declared by a normal class declaration</p></li>
+<li><p>A local class declared by an enum declaration</p></li>
+<li><p>A local class declared by an record declaration</p></li>
+<li><p>A local interface declared by a normal interface
+declaration</p></li>
+</ul></li>
+</ul>
+<p>Constructors (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8">8.8</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.4">8.10.4</a>)
+are also introduced by declarations, but use the name of the class in
+which they are declared rather than introducing a new name.</p>
+<div class="inserted">
+<p>A declaration commonly includes an identifier (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.8">3.8</a>)
+that can be used in a name to refer to the declared entity. The
+identifier is constrained to avoid certain contextual keywords when the
+entity being introduced is a class, interface, or type parameter.</p>
+<p>If a declaration does not include an identifier, but instead includes
+the reserved keyword <code>_</code> (underscore), then the entity cannot
+be referred to by name. The following kinds of entity may be declared
+using an underscore:</p>
+<ul>
+<li><p>A local variable, one of the following:</p>
+<ul>
+<li><p>A local variable declared by a local variable declaration
+statement in a block (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.4.2">14.4.2</a>)</p></li>
+<li><p>A local variable declared by a <code>for</code> statement or a
+<code>try</code>-with-resources statement (<a
+href="#jls-14.14">14.14</a>, <a
+href="#jls-14.20.3">14.20.3</a>)</p></li>
+<li><p>A local variable declared by a pattern (<a
+href="#jls-14.30.1">14.30.1</a>)</p></li>
+</ul></li>
+<li><p>An exception parameter of an exception handler declared in a
+<code>catch</code> clause of a <code>try</code> statement (<a
+href="#jls-14.20">14.20</a>)</p></li>
+<li><p>A formal parameter of a lambda expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.27.1">15.27.1</a>)</p></li>
+</ul>
+<p>A local variable, exception parameter, or lambda parameter that is
+declared using an underscore is called an <em>unnamed local
+variable</em>, <em>unnamed exception parameter</em>, or <em>unnamed
+lambda parameter</em>, respectively.</p>
+</div>
+<blockquote>
+<p>The declaration of a generic class or interface (<code>class</code>
+<em>C</em><code>&lt;</code><em>T</em><code>&gt;</code> <code>...</code>
+or <code>interface</code>
+<em>C</em><code>&lt;</code><em>T</em><code>&gt;</code> <code>...</code>)
+introduces both a class named <em>C</em> and a family of types: the raw
+type <em>C</em>, the parameterized type
+<em>C</em><code>&lt;Foo&gt;</code>, the parameterized type
+<em>C</em><code>&lt;Bar&gt;</code>, etc.</p>
+</blockquote>
+<blockquote>
+<p>When a reference to <em>C</em> occurs where genericity is
+unimportant, identified below as one of the non-generic contexts, the
+reference to <em>C</em> denotes the class or interface <em>C</em>. In
+other contexts, the reference to <em>C</em> denotes a type, or part of a
+type, introduced by <em>C</em>.</p>
+</blockquote>
+<blockquote>
+<p>The 15 non-generic contexts are as follows:</p>
+</blockquote>
+<blockquote>
+<ol type="1">
+<li><p>In a <code>uses</code> or <code>provides</code> directive in a
+module declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.7.1">7.7.1</a>)</p></li>
+<li><p>In a single-type-import declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.1">7.5.1</a>)</p></li>
+<li><p>To the left of the <code>.</code> in a single-static-import
+declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.3">7.5.3</a>)</p></li>
+<li><p>To the left of the <code>.</code> in a static-import-on-demand
+declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-7.html#jls-7.5.4">7.5.4</a>)</p></li>
+<li><p>In a <code>permits</code> clause of a <code>sealed</code> class
+or interface declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1.6">8.1.6</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.1.4">9.1.4</a>).</p></li>
+<li><p>To the left of the <code>(</code> in a constructor declaration
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8">8.8</a>)</p></li>
+<li><p>After the <code>@</code> sign in an annotation (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7">9.7</a>)</p></li>
+<li><p>To the left of <code>.class</code> in a class literal (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.8.2">15.8.2</a>)</p></li>
+<li><p>To the left of <code>.this</code> in a qualified
+<code>this</code> expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.8.4">15.8.4</a>)</p></li>
+<li><p>To the left of <code>.super</code> in a qualified superclass
+field access expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.11.2">15.11.2</a>)</p></li>
+<li><p>To the left of <code>.</code><em>Identifier</em> or
+<code>.super.</code><em>Identifier</em> in a qualified method invocation
+expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.12">15.12</a>)</p></li>
+<li><p>To the left of <code>.super::</code> in a method reference
+expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.13">15.13</a>)</p></li>
+<li><p>In a qualified expression name in a postfix expression or a
+<code>try</code>-with-resources statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.14.1">15.14.1</a>,
+<a href="#jls-14.20.3">14.20.3</a>)</p></li>
+<li><p>In a <code>throws</code> clause of a method or constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.4.6">8.4.6</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8.5">8.8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.4">9.4</a>)</p></li>
+<li><p>In an exception parameter declaration (<a
+href="#jls-14.20">14.20</a>)</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>The first twelve non-generic contexts correspond to the first twelve
+syntactic contexts for a <em>TypeName</em> in [6.5.1]. The thirteenth
+non-generic context is where a qualified <em>ExpressionName</em> such as
+<code>C.x</code> may include a <em>TypeName</em> <code>C</code> to
+denote static member access. The common use of <em>TypeName</em> in
+these thirteen contexts is significant: it indicates that these contexts
+involve a less-than-first-class use of a type. In contrast, the
+fourteenth and fifteenth non-generic contexts employ <em>ClassType</em>,
+indicating that <code>throws</code> and <code>catch</code> clauses use
+types in a first-class way, in line with, for example, field
+declarations. The characterization of these two contexts as non-generic
+is due to the fact that an exception type cannot be parameterized (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1.2">8.1.2</a>).</p>
+</blockquote>
+<blockquote>
+<p>Note that the <em>ClassType</em> production allows annotations, so it
+is possible to annotate the use of a type in a <code>throws</code> or
+<code>catch</code> clause, whereas the <em>TypeName</em> production
+disallows annotations, so it is not possible to annotate the name of a
+type in, for example, a single-type-import declaration.</p>
+</blockquote>
+<blockquote>
+<p><em>Naming Conventions</em></p>
+</blockquote>
+<blockquote>
+<p>The class libraries of the Java SE Platform attempt to use, whenever
+possible, names chosen according to the conventions presented below.
+These conventions help to make code more readable and avoid certain
+kinds of name conflicts.</p>
+</blockquote>
+<blockquote>
+<p>We recommend these conventions for use in all programs written in the
+Java programming language. However, these conventions should not be
+followed slavishly if long-held conventional usage dictates otherwise.
+So, for example, the <code>sin</code> and <code>cos</code> methods of
+the class <code>java.lang.Math</code> have mathematically conventional
+names, even though these method names flout the convention suggested
+here because they are short and are not verbs.</p>
+</blockquote>
+<blockquote>
+<p><em>Package Names and Module Names</em></p>
+</blockquote>
+<blockquote>
+<p>Programmers should take steps to avoid the possibility of two
+published packages having the same name by choosing <em>unique package
+names</em> for packages that are widely distributed. This allows
+packages to be easily and automatically installed and catalogued. This
+section specifies a suggested convention for generating such unique
+package names. Implementations of the Java SE Platform are encouraged to
+provide automatic support for converting a set of packages from local
+and casual package names to the unique name format described here.</p>
+</blockquote>
+<blockquote>
+<p>If unique package names are not used, then package name conflicts may
+arise far from the point of creation of either of the conflicting
+packages. This may create a situation that is difficult or impossible
+for the user or programmer to resolve. The classes
+<code>ClassLoader</code> and <code>ModuleLayer</code> can be used to
+isolate packages with the same name from each other in those cases where
+the packages will have constrained interactions, but not in a way that
+is transparent to a naïve program.</p>
+</blockquote>
+<blockquote>
+<p>You form a unique package name by first having (or belonging to an
+organization that has) an Internet domain name, such as
+<code>oracle.com</code>. You then reverse this name, component by
+component, to obtain, in this example, <code>com.oracle</code>, and use
+this as a prefix for your package names, using a convention developed
+within your organization to further administer package names. Such a
+convention might specify that certain package name components be
+division, department, project, machine, or login names.</p>
+</blockquote>
+<div class="example">
+<p>Example 6.1-1. Unique Package Names</p>
+<pre><code>com.nighthacks.scrabble.dictionary
+org.openjdk.compiler.source.tree
+net.jcip.annotations
+edu.cmu.cs.bovik.cheese
+gov.whitehouse.socks.mousefinder</code></pre>
+</div>
+<blockquote>
+<p>The first component of a unique package name is always written in
+all-lowercase ASCII letters and should be one of the top level domain
+names, such as <code>com</code>, <code>edu</code>, <code>gov</code>,
+<code>mil</code>, <code>net</code>, or <code>org</code>, or one of the
+English two-letter codes identifying countries as specified in <em>ISO
+Standard 3166</em>.</p>
+</blockquote>
+<blockquote>
+<p>In some cases, the Internet domain name may not be a valid package
+name. Here are some suggested conventions for dealing with these
+situations:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>If the domain name contains a hyphen, or any other special
+character not allowed in an identifier (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.8">3.8</a>),
+convert it into an underscore.</p></li>
+<li><p>If any of the resulting package name components are keywords (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.9">3.9</a>),
+append an underscore to them.</p></li>
+<li><p>If any of the resulting package name components start with a
+digit, or any other character that is not allowed as an initial
+character of an identifier, have an underscore prefixed to the
+component.</p></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>The name of a module should correspond to the name of its principal
+exported package. If a module does not have such a package, or if for
+legacy reasons it must have a name that does not correspond to one of
+its exported packages, then its name should still start with the
+reversed form of an Internet domain with which its author is
+associated.</p>
+</blockquote>
+<div class="example">
+<p>Example 6.1-2. Unique Module Names</p>
+<pre><code>com.nighthacks.scrabble
+org.openjdk.compiler
+net.jcip.annotations</code></pre>
+</div>
+<blockquote>
+<p>The first component of a package or module name must not be the
+identifier <code>java</code>. Package and module names that start with
+the identifier <code>java</code> are reserved for packages and modules
+of the Java SE Platform.</p>
+</blockquote>
+<blockquote>
+<p>The name of a package or module is not meant to imply where the
+package or module is stored on the Internet. For example, a package
+named <code>edu.cmu.cs.bovik.cheese</code> is not necessarily obtainable
+from the host <code>cmu.edu</code> or <code>cs.cmu.edu</code> or
+<code>bovik.cs.cmu.edu</code>. The suggested convention for generating
+unique package and module names is merely a way to piggyback a package
+and module naming convention on top of an existing, widely known unique
+name registry instead of having to create a separate registry for
+package and module names.</p>
+</blockquote>
+<blockquote>
+<p><em>Class and Interface Names</em></p>
+</blockquote>
+<blockquote>
+<p>Names of class should be descriptive nouns or noun phrases, not
+overly long, in mixed case with the first letter of each word
+capitalized.</p>
+</blockquote>
+<div class="example">
+<p>Example 6.1-3. Descriptive Class Names</p>
+<pre><code>`ClassLoader`
+SecurityManager
+`Thread`
+Dictionary
+BufferedInputStream</code></pre>
+</div>
+<blockquote>
+<p>Likewise, names of interface should be short and descriptive, not
+overly long, in mixed case with the first letter of each word
+capitalized. The name may be a descriptive noun or noun phrase, which is
+appropriate when an interface is used as if it were an abstract
+superclass, such as interfaces <code>java.io.DataInput</code> and
+<code>java.io.DataOutput</code>; or it may be an adjective describing a
+behavior, as for the interfaces <code>Runnable</code> and
+<code>Cloneable</code>.</p>
+</blockquote>
+<blockquote>
+<p><em>Type Variable Names</em></p>
+</blockquote>
+<blockquote>
+<p>Type variable names should be pithy (single character if possible)
+yet evocative, and should not include lower case letters. This makes it
+easy to distinguish type parameters from ordinary classes and
+interfaces.</p>
+</blockquote>
+<blockquote>
+<p>Container classes and interfaces should use the name <code>E</code>
+for their element type. Maps should use <code>K</code> for the type of
+their keys and <code>V</code> for the type of their values. The name
+<code>X</code> should be used for arbitrary exception types. We use
+<code>T</code> for type, whenever there is not anything more specific
+about the type to distinguish it. (This is often the case in generic
+methods.)</p>
+</blockquote>
+<blockquote>
+<p>If there are multiple type parameters that denote arbitrary types,
+one should use letters that neighbor <code>T</code> in the alphabet,
+such as <code>S</code>. Alternately, it is acceptable to use numeric
+subscripts (e.g., <code>T1</code>, <code>T2</code>) to distinguish among
+the different type variables. In such cases, all the variables with the
+same prefix should be subscripted.</p>
+</blockquote>
+<blockquote>
+<p>If a generic method appears inside a generic class, it is a good idea
+to avoid using the same names for the type parameters of the method and
+class, to avoid confusion. The same applies to nested generic
+classes.</p>
+</blockquote>
+<div class="example">
+<p>Example 6.1-4. Conventional Type Variable Names</p>
+<pre><code>public class HashSet&lt;E&gt; extends AbstractSet&lt;E&gt; { ... }
+public class HashMap&lt;K,V&gt; extends AbstractMap&lt;K,V&gt; { ... }
+public class ThreadLocal&lt;T&gt; { ... }
+public interface Functor&lt;T, X extends Throwable&gt; {
+    T eval() throws X;
+}</code></pre>
+</div>
+<blockquote>
+<p>When type parameters do not fall conveniently into one of the
+categories mentioned, names should be chosen to be as meaningful as
+possible within the confines of a single letter. The names mentioned
+above (<code>E</code>, <code>K</code>, <code>V</code>, <code>X</code>,
+<code>T</code>) should not be used for type parameters that do not fall
+into the designated categories.</p>
+</blockquote>
+<blockquote>
+<p><em>Method Names</em></p>
+</blockquote>
+<blockquote>
+<p>Method names should be verbs or verb phrases, in mixed case, with the
+first letter lowercase and the first letter of any subsequent words
+capitalized. Here are some additional specific conventions for method
+names:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>Methods to get and set an attribute that might be thought of as a
+variable <em>V</em> should be named <code>getV</code> and
+<code>setV</code>. An example is the methods <code>getPriority</code>
+and <code>setPriority</code> of class <code>Thread</code>.</p></li>
+<li><p>A method that returns the length of something should be named
+<code>length</code>, as in class <code>String</code>.</p></li>
+<li><p>A method that tests a boolean condition <em>V</em> about an
+object should be named <code>isV</code>. An example is the method
+<code>isInterrupted</code> of class <code>Thread</code>.</p></li>
+<li><p>A method that converts its object to a particular format
+<em>F</em> should be named <code>toF</code>. Examples are the method
+<code>toString</code> of class <code>Object</code> and the methods
+<code>toLocaleString</code> and <code>toGMTString</code> of class
+<code>java.util.Date</code>.</p></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Whenever possible and appropriate, basing the names of methods in a
+new class on names in an existing class that is similar, especially a
+class from the Java SE Platform API, will make it easier to use.</p>
+</blockquote>
+<blockquote>
+<p><em>Field Names</em></p>
+</blockquote>
+<blockquote>
+<p>Names of fields that are not <code>final</code> should be in mixed
+case with a lowercase first letter and the first letters of subsequent
+words capitalized. Note that well-designed classes have very few
+<code>public</code> or <code>protected</code> fields, except for fields
+that are constants (<code>static</code> <code>final</code> fields).</p>
+</blockquote>
+<blockquote>
+<p>Fields should have names that are nouns, noun phrases, or
+abbreviations for nouns.</p>
+</blockquote>
+<blockquote>
+<p>Examples of this convention are the fields <code>buf</code>,
+<code>pos</code>, and <code>count</code> of the class
+<code>java.io.ByteArrayInputStream</code> and the field
+<code>bytesTransferred</code> of the class
+<code>java.io.InterruptedIOException</code>.</p>
+</blockquote>
+<blockquote>
+<p><em>Constant Names</em></p>
+</blockquote>
+<blockquote>
+<p>The names of constants in interfaces should be, and
+<code>final</code> variables of classes may conventionally be, a
+sequence of one or more words, acronyms, or abbreviations, all
+uppercase, with components separated by underscore "<code>_</code>"
+characters. Constant names should be descriptive and not unnecessarily
+abbreviated. Conventionally they may be any appropriate part of
+speech.</p>
+</blockquote>
+<blockquote>
+<p>Examples of names for constants include <code>MIN_VALUE</code>,
+<code>MAX_VALUE</code>, <code>MIN_RADIX</code>, and
+<code>MAX_RADIX</code> of the class <code>Character</code>.</p>
+</blockquote>
+<blockquote>
+<p>A group of constants that represent alternative values of a set, or,
+less frequently, masking bits in an integer value, are sometimes
+usefully specified with a common acronym as a name prefix.</p>
+</blockquote>
+<blockquote>
+<p>For example:</p>
+<pre><code>interface ProcessStates {
+    int PS_RUNNING   = 0;
+    int PS_SUSPENDED = 1;
+}</code></pre>
+</blockquote>
+<blockquote>
+<p><em>Local Variable and Parameter Names</em></p>
+</blockquote>
+<blockquote>
+<p>Local variable and parameter names should be short, yet meaningful.
+They are often short sequences of lowercase letters that are not words,
+such as:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>Acronyms, that is the first letter of a series of words, as in
+<code>cp</code> for a variable holding a reference to a
+<code>ColoredPoint</code></p></li>
+<li><p>Abbreviations, as in <code>buf</code> holding a pointer to a
+buffer of some kind</p></li>
+<li><p>Mnemonic terms, organized in some way to aid memory and
+understanding, typically by using a set of local variables with
+conventional names patterned after the names of parameters to widely
+used classes. For example:</p>
+<ul>
+<li><p><code>in</code> and <code>out</code>, whenever some kind of input
+and output are involved, patterned after the fields of
+<code>System</code></p></li>
+<li><p><code>off</code> and <code>len</code>, whenever an offset and
+length are involved, patterned after the parameters to the
+<code>read</code> and <code>write</code> methods of the interfaces
+<code>DataInput</code> and <code>DataOutput</code> of
+<code>java.io</code></p></li>
+</ul></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>One-character local variable or parameter names should be avoided,
+except for temporary and looping variables, or where a variable holds an
+undistinguished value of a type. Conventional one-character names
+are:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>b</code> for a <code>byte</code></li>
+<li><code>c</code> for a <code>char</code></li>
+<li><code>d</code> for a <code>double</code></li>
+<li><code>e</code> for an <code>Exception</code></li>
+<li><code>f</code> for a <code>float</code></li>
+<li><code>i</code>, <code>j</code>, and <code>k</code> for
+<code>int</code>s</li>
+<li><code>l</code> for a <code>long</code></li>
+<li><code>o</code> for an <code>Object</code></li>
+<li><code>s</code> for a <code>String</code></li>
+<li><code>v</code> for an arbitrary value of some type</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Local variable or parameter names that consist of only two or three
+lowercase letters should not conflict with the initial country codes and
+domain names that are the first component of unique package names.</p>
+</blockquote>
+<h2 id="jls-8">Chapter 8: Classes</h2>
+<h3 id="jls-8.3">8.3 Field Declarations</h3>
+<p>The variables of a class are introduced by <em>field
+declarations</em>.</p>
+<dl>
+<dt><em>FieldDeclaration:</em></dt>
+<dd>
+{<em>FieldModifier</em>} <em>UnannType</em>
+<em>VariableDeclaratorList</em> <code>;</code>
+</dd>
+<dt><em>VariableDeclaratorList:</em></dt>
+<dd>
+<em>VariableDeclarator</em> {<code>,</code> <em>VariableDeclarator</em>}
+</dd>
+<dt><em>VariableDeclarator:</em></dt>
+<dd>
+<em>VariableDeclaratorId</em> [<code>=</code>
+<em>VariableInitializer</em>]
+</dd>
+</dl>
+<div class="deleted">
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</div>
+<div class="inserted">
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+<code>_</code>
+</dd>
+</dl>
+</div>
+<dl>
+<dt><em>VariableInitializer:</em></dt>
+<dd>
+<em>Expression</em>
+</dd>
+<dd>
+<em>ArrayInitializer</em>
+</dd>
+<dt><em>UnannType:</em></dt>
+<dd>
+<em>UnannPrimitiveType</em>
+</dd>
+<dd>
+<em>UnannReferenceType</em>
+</dd>
+<dt><em>UnannPrimitiveType:</em></dt>
+<dd>
+<em>NumericType</em>
+</dd>
+<dd>
+<code>boolean</code>
+</dd>
+<dt><em>UnannReferenceType:</em></dt>
+<dd>
+<em>UnannClassOrInterfaceType</em>
+</dd>
+<dd>
+<em>UnannTypeVariable</em>
+</dd>
+<dd>
+<em>UnannArrayType</em>
+</dd>
+<dt><em>UnannClassOrInterfaceType:</em></dt>
+<dd>
+<em>UnannClassType</em>
+</dd>
+<dd>
+<em>UnannInterfaceType</em>
+</dd>
+<dt><em>UnannClassType:</em></dt>
+<dd>
+<em>TypeIdentifier</em> [<em>TypeArguments</em>]
+</dd>
+<dd>
+<em>PackageName</em> <code>.</code> {<em>Annotation</em>}
+<em>TypeIdentifier</em> [<em>TypeArguments</em>]
+</dd>
+<dd>
+<em>UnannClassOrInterfaceType</em> <code>.</code> {<em>Annotation</em>}
+<em>TypeIdentifier</em><br />
+[<em>TypeArguments</em>]
+</dd>
+<dt><em>UnannInterfaceType:</em></dt>
+<dd>
+<em>UnannClassType</em>
+</dd>
+<dt><em>UnannTypeVariable:</em></dt>
+<dd>
+<em>TypeIdentifier</em>
+</dd>
+<dt><em>UnannArrayType:</em></dt>
+<dd>
+<em>UnannPrimitiveType</em> <em>Dims</em>
+</dd>
+<dd>
+<em>UnannClassOrInterfaceType</em> <em>Dims</em>
+</dd>
+<dd>
+<em>UnannTypeVariable</em> <em>Dims</em>
+</dd>
+</dl>
+<blockquote>
+<p>The following production from <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>
+is shown here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+</dl>
+</blockquote>
+<p>Each declarator in a <em>FieldDeclaration</em> declares one field.
+<strong>The declarator must include an <em>Identifier</em>, or a
+compile-time error occurs.</strong> The <em>Identifier</em> <del>in a
+declarator</del> may be used in a name to refer to the field.</p>
+<p>More than one field may be declared in a single
+<em>FieldDeclaration</em> by using more than one declarator; the
+<em>FieldModifier</em>s and <em>UnannType</em> apply to all the
+declarators in the declaration.</p>
+<p>The <em>FieldModifier</em> clause is described in [8.3.1].</p>
+<p>The declared type of a field is denoted by <em>UnannType</em> if no
+bracket pairs appear in <em>UnannType</em> and
+<em>VariableDeclaratorId</em>, and is specified by <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.2">10.2</a>
+otherwise.</p>
+<p>The scope and shadowing of a field declaration is specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.3">6.3</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.4.1">6.4.1</a>.</p>
+<p>It is a compile-time error for the body of a class declaration to
+declare two fields with the same name.</p>
+<p>If a class declares a field with a certain name, then the declaration
+of that field is said to <em>hide</em> any and all accessible
+declarations of fields with the same name in superclasses, and
+superinterfaces of the class.</p>
+<blockquote>
+<p>In this respect, hiding of fields differs from hiding of methods (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.4.8.3">8.4.8.3</a>),
+for there is no distinction drawn between <code>static</code> and
+non-<code>static</code> fields in field hiding whereas a distinction is
+drawn between <code>static</code> and non-<code>static</code> methods in
+method hiding.</p>
+</blockquote>
+<p>A hidden field can be accessed by using a qualified name (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.6.2">6.5.6.2</a>)
+if it is <code>static</code>, or by using a field access expression that
+contains the keyword <code>super</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.11.2">15.11.2</a>)
+or a cast to a superclass type.</p>
+<blockquote>
+<p>In this respect, hiding of fields is similar to hiding of
+methods.</p>
+</blockquote>
+<p>If a field declaration hides the declaration of another field, the
+two fields need not have the same type.</p>
+<p>A class inherits from its direct superclass and direct
+superinterfaces all the non-<code>private</code> fields of the
+superclass and superinterfaces that are both accessible (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.6">6.6</a>)
+to code in the class and not hidden by a declaration in the class.</p>
+<p>A <code>private</code> field of a superclass might be accessible to a
+subclass - for example, if both classes are members of the same class.
+Nevertheless, a <code>private</code> field is never inherited by a
+subclass.</p>
+<p>It is possible for a class to inherit more than one field with the
+same name, either from its superclass and superinterfaces or from its
+superinterfaces alone. Such a situation does not in itself cause a
+compile-time error. However, any attempt within the body of the class to
+refer to any such field by its simple name will result in a compile-time
+error, because the reference is ambiguous.</p>
+<p>There might be several paths by which the same field declaration is
+inherited from an interface. In such a situation, the field is
+considered to be inherited only once, and it may be referred to by its
+simple name without ambiguity.</p>
+<div class="example">
+<p>Example 8.3-1. Multiply Inherited Fields</p>
+<p>A class may inherit two or more fields with the same name, either
+from its superclass and a superinterface or from two superinterfaces. A
+compile-time error occurs on any attempt to refer to any ambiguously
+inherited field by its simple name. A qualified name or a field access
+expression that contains the keyword <code>super</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.11.2">15.11.2</a>)
+may be used to access such fields unambiguously. In the program:</p>
+<pre><code>interface Frob  { float v = 2.0f; }
+class SuperTest { int   v = 3; }
+class Test extends SuperTest implements Frob {
+    public static void main(String[] args) {
+        new Test().printV();
+    }
+    void printV() { System.out.println(v); }
+}</code></pre>
+<p>the class <code>Test</code> inherits two fields named <code>v</code>,
+one from its superclass <code>SuperTest</code> and one from its
+superinterface <code>Frob</code>. This in itself is permitted, but a
+compile-time error occurs because of the use of the simple name
+<code>v</code> in method <code>printV</code>: it cannot be determined
+which <code>v</code> is intended.</p>
+<p>The following variation uses the field access expression
+<code>super.v</code> to refer to the field named <code>v</code> declared
+in class <code>SuperTest</code> and uses the qualified name
+<code>Frob.v</code> to refer to the field named <code>v</code> declared
+in interface <code>Frob</code>:</p>
+<pre><code>interface Frob  { float v = 2.0f; }
+class SuperTest { int   v = 3; }
+class Test extends SuperTest implements Frob {
+    public static void main(String[] args) {
+        new Test().printV();
+    }
+    void printV() {
+        System.out.println((super.v + Frob.v)/2);
+    }
+}</code></pre>
+<p>It compiles and prints:</p>
+<pre><code>2.5</code></pre>
+<p>Even if two distinct inherited fields have the same type, the same
+value, and are both <code>final</code>, any reference to either field by
+simple name is considered ambiguous and results in a compile-time error.
+In the program:</p>
+<pre><code>interface Color        { int RED=0, GREEN=1,  BLUE=2;  }
+interface TrafficLight { int RED=0, YELLOW=1, GREEN=2; }
+class Test implements Color, TrafficLight {
+    public static void main(String[] args) {
+        System.out.println(GREEN);  // compile-time error
+        System.out.println(RED);    // compile-time error
+    }
+}</code></pre>
+<p>it is not astonishing that the reference to <code>GREEN</code> should
+be considered ambiguous, because class <code>Test</code> inherits two
+different declarations for <code>GREEN</code> with different values. The
+point of this example is that the reference to <code>RED</code> is also
+considered ambiguous, because two distinct declarations are inherited.
+The fact that the two fields named <code>RED</code> happen to have the
+same type and the same unchanging value does not affect this
+judgment.</p>
+</div>
+<div class="example">
+<p>Example 8.3-2. Re-inheritance of Fields</p>
+<p>If the same field declaration is inherited from an interface by
+multiple paths, the field is considered to be inherited only once. It
+may be referred to by its simple name without ambiguity. For example, in
+the code:</p>
+<pre><code>interface Colorable {
+    int RED = 0xff0000, GREEN = 0x00ff00, BLUE = 0x0000ff;
+}
+interface Paintable extends Colorable {
+    int MATTE = 0, GLOSSY = 1;
+}
+class Point { int x, y; }
+class ColoredPoint extends Point implements Colorable {}
+class PaintedPoint extends ColoredPoint implements Paintable {
+    int p = RED;
+}</code></pre>
+<p>the fields <code>RED</code>, <code>GREEN</code>, and
+<code>BLUE</code> are inherited by the class <code>PaintedPoint</code>
+both through its direct superclass <code>ColoredPoint</code> and through
+its direct superinterface <code>Paintable</code>. The simple names
+<code>RED</code>, <code>GREEN</code>, and <code>BLUE</code> may
+nevertheless be used without ambiguity within the class
+<code>PaintedPoint</code> to refer to the fields declared in interface
+<code>Colorable</code>.</p>
+</div>
+<h3 id="jls-8.4">8.4 Method Declarations</h3>
+<h4 id="jls-8.4.1">8.4.1 Formal Parameters</h4>
+<p>The <em>formal parameters</em> of a method or constructor, if any,
+are specified by a list of comma-separated parameter specifiers. Each
+parameter specifier consists of a type (optionally preceded by the
+<code>final</code> modifier and/or one or more annotations) and an
+identifier (optionally followed by brackets) that specifies the name of
+the parameter.</p>
+<p>If a method or constructor has no formal parameters, and no receiver
+parameter, then an empty pair of parentheses appears in the declaration
+of the method or constructor.</p>
+<dl>
+<dt><em>FormalParameterList:</em></dt>
+<dd>
+<em>FormalParameter</em> {<code>,</code> <em>FormalParameter</em>}
+</dd>
+<dt><em>FormalParameter:</em></dt>
+<dd>
+{<em>VariableModifier</em>} <em>UnannType</em>
+<em>VariableDeclaratorId</em>
+</dd>
+<dd>
+<em>VariableArityParameter</em>
+</dd>
+<dt><em>VariableArityParameter:</em></dt>
+<dd>
+{<em>VariableModifier</em>} <em>UnannType</em> {<em>Annotation</em>}
+<code>...</code> <em>Identifier</em>
+</dd>
+<dt><em>VariableModifier:</em></dt>
+<dd>
+<em>Annotation</em>
+</dd>
+<dd>
+<code>final</code>
+</dd>
+</dl>
+<blockquote>
+<p>The following productions from <a href="#jls-8.3">8.3</a> and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>
+are shown here for convenience:</p>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+_
+</dd>
+</dl>
+</blockquote>
+</div>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+</dl>
+</blockquote>
+<p>A formal parameter of a method or constructor may be a <em>variable
+arity parameter</em>, indicated by an ellipsis following the type. At
+most one variable arity parameter is permitted for a method or
+constructor. It is a compile-time error if a variable arity parameter
+appears anywhere in the list of parameter specifiers except the last
+position.</p>
+<blockquote>
+<p>In the grammar for <em>VariableArityParameter</em>, note that the
+ellipsis (<code>...</code>) is a token unto itself (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-3.html#jls-3.11">3.11</a>).
+It is possible to put whitespace between it and the type, but this is
+discouraged as a matter of style.</p>
+</blockquote>
+<p>If the last formal parameter of a method is a variable arity
+parameter, the method is a <em>variable arity method</em>. Otherwise, it
+is a <em>fixed arity method</em>.</p>
+<p>The rules concerning annotation modifiers for a formal parameter
+declaration and for a receiver parameter are specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.4">9.7.4</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.5">9.7.5</a>.</p>
+<p>It is a compile-time error if <code>final</code> appears more than
+once as a modifier for a formal parameter declaration.</p>
+<p>The scope and shadowing of a formal parameter is specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.3">6.3</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.4">6.4</a>.</p>
+<p>References to a formal parameter from a nested class or interface, or
+a lambda expression, are restricted, as specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.6.1">6.5.6.1</a>.</p>
+<div class="inserted">
+<p>Every declaration of a formal parameter of a method or constructor
+must include an <em>Identifier</em>, otherwise a compile-time error
+occurs.</p>
+</div>
+<p>It is a compile-time error for a method or constructor to declare two
+formal parameters with the same name. (That is, their declarations
+mention the same <em>Identifier</em>.)</p>
+<p>It is a compile-time error if a formal parameter that is declared
+<code>final</code> is assigned to within the body of the method or
+constructor.</p>
+<p>The declared type of a formal parameter depends on whether it is a
+variable arity parameter:</p>
+<ul>
+<li><p>If the formal parameter is not a variable arity parameter, then
+the declared type is denoted by <em>UnannType</em> if no bracket pairs
+appear in <em>UnannType</em> and <em>VariableDeclaratorId</em>, and
+specified by <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.2">10.2</a>
+otherwise.</p></li>
+<li><p>If the formal parameter is a variable arity parameter, then the
+declared type is an array type specified by <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.2">10.2</a>.</p></li>
+</ul>
+<p>If the declared type of a variable arity parameter has a
+non-reifiable element type (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.7">4.7</a>),
+then a compile-time unchecked warning occurs for the declaration of the
+variable arity method, unless the method is annotated with
+<code>@SafeVarargs</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6.4.7">9.6.4.7</a>)
+or the warning is suppressed by <code>@SuppressWarnings</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6.4.5">9.6.4.5</a>).</p>
+<p>When the method or constructor is invoked (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.12">15.12</a>),
+the values of the actual argument expressions initialize newly created
+parameter variables, each of the declared type, before execution of the
+body of the method or constructor. The <em>Identifier</em> that appears
+in the <em>FormalParameter</em> may be used as a simple name in the body
+of the method or constructor to refer to the formal parameter.</p>
+<p>Invocations of a variable arity method may contain more actual
+argument expressions than formal parameters. All the actual argument
+expressions that do not correspond to the formal parameters preceding
+the variable arity parameter will be evaluated and the results stored
+into an array that will be passed to the method invocation (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.12.4.2">15.12.4.2</a>).</p>
+<blockquote>
+<p>Here are some examples of receiver parameters in instance methods and
+inner classes' constructors:</p>
+<pre><code>class Test {
+    Test(/* ?? ?? */) {}
+      // No receiver parameter is permitted in the constructor of
+      // a top level class, as there is no conceivable type or name.
+
+    void m(Test this) {}
+      // OK: receiver parameter in an instance method
+
+    static void n(Test this) {}
+      // Illegal: receiver parameter in a static method
+
+    class A {
+        A(Test Test.this) {}
+          // OK: the receiver parameter represents the instance
+          // of Test which immediately encloses the instance
+          // of A being constructed.
+
+        void m(A this) {}
+          // OK: the receiver parameter represents the instance
+          // of A for which A.m() is invoked.
+
+        class B {
+            B(Test.A A.this) {}
+              // OK: the receiver parameter represents the instance
+              // of A which immediately encloses the instance of B
+              // being constructed.
+
+            void m(Test.A.B this) {}
+              // OK: the receiver parameter represents the instance
+              // of B for which B.m() is invoked.
+        }
+    }
+}</code></pre>
+<p><code>B</code>'s constructor and instance method show that the type
+of the receiver parameter may be denoted with a qualified
+<em>TypeName</em> like any other type; but that the name of the receiver
+parameter in an inner class's constructor must use the simple name of
+the enclosing class.</p>
+</blockquote>
+<h3 id="jls-8.10">8.10 Record Classes</h3>
+<h4 id="jls-8.10.1">8.10.1 Record Components</h4>
+<p>The <em>record components</em> of a record class, if any, are
+specified in the header of a record declaration. Each record component
+consists of a type (optionally preceded by one or more annotations) and
+an identifier that specifies the name of the record component. A record
+component corresponds to two members of the record class: a
+<code>private</code> field declared implicitly, and a
+<code>public</code> accessor method declared explicitly or implicitly
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.3">8.10.3</a>).</p>
+<p>If a record class has no record components, then an empty pair of
+parentheses appears in the header of the record declaration.</p>
+<dl>
+<dt><em>RecordHeader:</em></dt>
+<dd>
+<code>(</code> [<em>RecordComponentList</em>] <code>)</code>
+</dd>
+<dt><em>RecordComponentList:</em></dt>
+<dd>
+<em>RecordComponent</em> {<code>,</code> <em>RecordComponent</em>}
+</dd>
+<dt><em>RecordComponent:</em></dt>
+<dd>
+{<em>RecordComponentModifier</em>} <em>UnannType</em>
+<em>Identifier</em>
+</dd>
+<dd>
+<em>VariableArityRecordComponent</em>
+</dd>
+<dt><em>VariableArityRecordComponent:</em></dt>
+<dd>
+{<em>RecordComponentModifier</em>} <em>UnannType</em>
+{<em>Annotation</em>} <code>...</code> <em>Identifier</em>
+</dd>
+<dt><em>RecordComponentModifier:</em></dt>
+<dd>
+<em>Annotation</em>
+</dd>
+</dl>
+<p>A record component may be a <em>variable arity record component</em>,
+indicated by an ellipsis following the type. At most one variable arity
+record component is permitted for a record class. It is a compile-time
+error if a variable arity record component appears anywhere in the list
+of record components except the last position.</p>
+<p>The rules concerning annotation modifiers for a record component
+declaration are specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.4">9.7.4</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.5">9.7.5</a>.</p>
+<blockquote>
+<p>Annotations on a record component declaration are available via
+reflection if their annotation interfaces are applicable in the record
+component context (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6.4.1">9.6.4.1</a>).
+Independently, annotations on a record component declaration are
+propagated to the declarations of members and constructors of the record
+class if their annotation interfaces are applicable in other contexts
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.3">8.10.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.4">8.10.4</a>).</p>
+</blockquote>
+<p>It is a compile-time error for a record declaration to declare a
+record component with the name <code>clone</code>,
+<code>finalize</code>, <code>getClass</code>, <code>hashCode</code>,
+<code>notify</code>, <code>notifyAll</code>, <code>toString</code>, or
+<code>wait</code>.</p>
+<blockquote>
+<p>These are the names of the no-args <code>public</code> and
+<code>protected</code> methods in <code>Object</code>. Disallowing them
+as the names of record components avoids confusion in a number of ways.
+First, every record class provides implementations of
+<code>hashCode</code> and <code>toString</code> that return
+representations of a record object as a whole; they cannot serve as
+accessor methods (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.3">8.10.3</a>)
+for record components called <code>hashCode</code> or
+<code>toString</code>, and there would be no way to access such record
+components from outside the record class. Similarly, some record classes
+may provide implementations of <code>clone</code> and (regrettably)
+<code>finalize</code>, so a record component called <code>clone</code>
+or <code>finalize</code> could not be accessed via an accessor method.
+Finally, the <code>getClass</code>, <code>notify</code>,
+<code>notifyAll</code>, and <code>wait</code> methods in
+<code>Object</code> are <code>final</code>, so record components with
+the same names could not have accessor methods. (The accessor methods
+would have the same signatures as the <code>final</code> methods, and
+would thus attempt, unsuccessfully, to override them.)</p>
+</blockquote>
+<p>It is a compile-time error for a record declaration to declare two
+record components with the same name.</p>
+<div class="inserted">
+<p>Every declaration of a record component of a record declaration must
+include an <em>Identifier</em>, otherwise a compile-time error
+occurs.</p>
+</div>
+<p>The declared type of a record component depends on whether it is a
+variable arity record component:</p>
+<ul>
+<li><p>If the record component is not a variable arity record component,
+then the declared type is denoted by <em>UnannType</em>.</p></li>
+<li><p>If the record component is a variable arity record component,
+then the declared type is an array type specified by <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.2">10.2</a>.</p></li>
+</ul>
+<p>If the declared type of a variable arity record component has a
+non-reifiable element type (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.7">4.7</a>),
+then a compile-time unchecked warning occurs for the declaration of the
+variable arity record component, unless the canonical constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.10.4">8.10.4</a>)
+is annotated with <code>@SafeVarargs</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6.4.7">9.6.4.7</a>)
+or the warning is suppressed by <code>@SuppressWarnings</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.6.4.5">9.6.4.5</a>).</p>
+<h2 id="jls-9">Chapter 9: Interfaces</h2>
+<h3 id="jls-9.3">9.3 Field (Constant) Declarations</h3>
+<dl>
+<dt><em>ConstantDeclaration:</em></dt>
+<dd>
+{<em>ConstantModifier</em>} <em>UnannType</em>
+<em>VariableDeclaratorList</em> <code>;</code>
+</dd>
+<dt><em>ConstantModifier:</em></dt>
+<dd>
+(one of)
+</dd>
+<dd>
+<em>Annotation</em> <code>public</code>
+</dd>
+<dd>
+<code>static</code> <code>final</code>
+</dd>
+</dl>
+<blockquote>
+<p>See <a href="#jls-8.3">8.3</a> for <em>UnannType</em>. The following
+productions from <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>
+and <a href="#jls-8.3">8.3</a> are shown here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorList:</em></dt>
+<dd>
+<em>VariableDeclarator</em> {<code>,</code> <em>VariableDeclarator</em>}
+</dd>
+<dt><em>VariableDeclarator:</em></dt>
+<dd>
+<em>VariableDeclaratorId</em> [<code>=</code>
+<em>VariableInitializer</em>]
+</dd>
+</dl>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+_
+</dd>
+</dl>
+</blockquote>
+</div>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+<dt><em>VariableInitializer:</em></dt>
+<dd>
+<em>Expression</em>
+</dd>
+<dd>
+<em>ArrayInitializer</em>
+</dd>
+</dl>
+</blockquote>
+<p>The rules concerning annotation modifiers for an interface field
+declaration are specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.4">9.7.4</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.5">9.7.5</a>.</p>
+<p>Every field declaration in the body of an interface declaration is
+implicitly <code>public</code>, <code>static</code>, and
+<code>final</code>. It is permitted to redundantly specify any or all of
+these modifiers for such fields.</p>
+<p>It is a compile-time error if the same keyword appears more than once
+as a modifier for a field declaration.</p>
+<blockquote>
+<p>If two or more (distinct) field modifiers appear in a field
+declaration, it is customary, though not required, that they appear in
+the order consistent with that shown above in the production for
+<em>ConstantModifier</em>.</p>
+</blockquote>
+<p>The declared type of a field is denoted by <em>UnannType</em> if no
+bracket pairs appear in <em>UnannType</em> and
+<em>VariableDeclaratorId</em>, and is specified by <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.2">10.2</a>
+otherwise.</p>
+<div class="inserted">
+<p>Every declarator in a <em>ConstantDeclaration</em> must include an
+<em>Identifier</em>, or a compile-time error occurs.</p>
+</div>
+<p>The scope and shadowing of an interface field declaration is
+specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.3">6.3</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.4.1">6.4.1</a>.</p>
+<p>Because an interface field is <code>static</code>, its declaration
+introduces a static context (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.1.3">8.1.3</a>),
+which limits the use of constructs that refer to the current object.
+Notably, the keywords <code>this</code> and <code>super</code> are
+prohibited in a static context (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.8.3">15.8.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.11.2">15.11.2</a>),
+as are unqualified references to instance variables, instance methods,
+and type parameters of lexically enclosing declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.5.1">6.5.5.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.6.1">6.5.6.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.12.3">15.12.3</a>).</p>
+<p>It is a compile-time error for the body of an interface declaration
+to declare two fields with the same name.</p>
+<p>If the interface declares a field with a certain name, then the
+declaration of that field is said to <em>hide</em> any and all
+accessible declarations of fields with the same name in superinterfaces
+of the interface.</p>
+<p>It is possible for an interface to inherit more than one field with
+the same name. Such a situation does not in itself cause a compile-time
+error. However, any attempt within the body of the interface declaration
+to refer to any such field by its simple name will result in a
+compile-time error, because the reference is ambiguous.</p>
+<p>There might be several paths by which the same field declaration is
+inherited from an interface. In such a situation, the field is
+considered to be inherited only once, and it may be referred to by its
+simple name without ambiguity.</p>
+<div class="example">
+<p>Example 9.3-1. Ambiguous Inherited Fields</p>
+<p>If two fields with the same name are inherited by an interface
+because, for example, two of its direct superinterfaces declare fields
+with that name, then a single ambiguous member results. Any use of this
+ambiguous member will result in a compile-time error. In the
+program:</p>
+<pre><code>interface BaseColors {
+    int RED = 1, GREEN = 2, BLUE = 4;
+}
+interface RainbowColors extends BaseColors {
+    int YELLOW = 3, ORANGE = 5, INDIGO = 6, VIOLET = 7;
+}
+interface PrintColors extends BaseColors {
+    int YELLOW = 8, CYAN = 16, MAGENTA = 32;
+}
+interface LotsOfColors extends RainbowColors, PrintColors {
+    int FUCHSIA = 17, VERMILION = 43, CHARTREUSE = RED+90;
+}</code></pre>
+<p>the interface <code>LotsOfColors</code> inherits two fields named
+<code>YELLOW</code>. This is all right as long as the interface does not
+contain any reference by simple name to the field <code>YELLOW</code>.
+(Such a reference could occur within a variable initializer for a
+field.)</p>
+<p>Even if interface <code>PrintColors</code> were to give the value
+<code>3</code> to <code>YELLOW</code> rather than the value
+<code>8</code>, a reference to field <code>YELLOW</code> within
+interface <code>LotsOfColors</code> would still be considered
+ambiguous.</p>
+</div>
+<div class="example">
+<p>Example 9.3-2. Multiply Inherited Fields</p>
+<p>If a single field is inherited multiple times from the same interface
+because, for example, both this interface and one of this interface's
+direct superinterfaces extend the interface that declares the field,
+then only a single member results. This situation does not in itself
+cause a compile-time error.</p>
+<p>In the previous example, the fields <code>RED</code>,
+<code>GREEN</code>, and <code>BLUE</code> are inherited by interface
+<code>LotsOfColors</code> in more than one way, through interface
+<code>RainbowColors</code> and also through interface
+<code>PrintColors</code>, but the reference to field <code>RED</code> in
+interface <code>LotsOfColors</code> is not considered ambiguous because
+only one actual declaration of the field <code>RED</code> is
+involved.</p>
+</div>
+<h2 id="jls-14">Chapter 14: Blocks, Statements, and Patterns</h2>
+<div class="editorial">
+<p>The following changes assume that the JLS changes resulting from JEP
+440 (Record Patterns) and JEP 441 (Pattern Matching for
+<code>switch</code>) have been applied (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html">JLS:JEP440+441</a>).</p>
+</div>
+<h3 id="jls-14.4">14.4 Local Variable Declarations</h3>
+<p>A <em>local variable declaration</em> declares and optionally
+initializes one or more local variables (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.12.3">4.12.3</a>).</p>
+<dl>
+<dt><em>LocalVariableDeclaration:</em></dt>
+<dd>
+{<em>VariableModifier</em>} <em>LocalVariableType</em>
+<em>VariableDeclaratorList</em>
+</dd>
+<dt><em>LocalVariableType:</em></dt>
+<dd>
+<em>UnannType</em>
+</dd>
+<dd>
+<code>var</code>
+</dd>
+</dl>
+<blockquote>
+<p>See <a href="#jls-8.3">8.3</a> for <em>UnannType</em>. The following
+productions from <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>,
+<a href="#jls-8.3">8.3</a>, and <a href="#jls-8.4.1">8.4.1</a> are shown
+here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>VariableModifier:</em></dt>
+<dd>
+<em>Annotation</em>
+</dd>
+<dd>
+<code>final</code>
+</dd>
+<dt><em>VariableDeclaratorList:</em></dt>
+<dd>
+<em>VariableDeclarator</em> {<code>,</code> <em>VariableDeclarator</em>}
+</dd>
+<dt><em>VariableDeclarator:</em></dt>
+<dd>
+<em>VariableDeclaratorId</em> [<code>=</code>
+<em>VariableInitializer</em>]
+</dd>
+</dl>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+_
+</dd>
+</dl>
+</blockquote>
+</div>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+<dt><em>VariableInitializer:</em></dt>
+<dd>
+<em>Expression</em>
+</dd>
+<dd>
+<em>ArrayInitializer</em>
+</dd>
+</dl>
+</blockquote>
+<p>A local variable declaration can appear in the following
+locations:</p>
+<ul>
+<li><p>a local variable declaration statement in a block (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.4.2">14.4.2</a>)</p></li>
+<li><p>the header of a basic <code>for</code> statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.14.1">14.14.1</a>)</p></li>
+<li><p>the header of an enhanced <code>for</code> statement (<a
+href="#jls-14.14.2">14.14.2</a>)</p></li>
+<li><p>the resource specification of a <code>try</code>-with-resources
+statement (<a href="#jls-14.20.3">14.20.3</a>)</p></li>
+<li><p>a pattern (<a href="#jls-14.30.1">14.30.1</a>)</p></li>
+</ul>
+<p>The rules concerning annotation modifiers for a local variable
+declaration are specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.4">9.7.4</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-9.html#jls-9.7.5">9.7.5</a>.</p>
+<p>If the keyword <code>final</code> appears as a modifier for a local
+variable declaration, then the local variable is a <code>final</code>
+variable (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.12.4">4.12.4</a>).</p>
+<p>It is a compile-time error if <code>final</code> appears more than
+once as a modifier for a local variable declaration.</p>
+<div class="inserted">
+<p>It is a compile-time error if a local variable declaration that does
+not include an <em>Identifier</em> and does not have an initializer is
+used in the following locations:</p>
+<ul>
+<li><p>a local variable declaration statement in a block (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.4.2">14.4.2</a>)</p></li>
+<li><p>the header of a basic <code>for</code> statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.14.1">14.14.1</a>)</p></li>
+</ul>
+</div>
+<p>It is a compile-time error if the <em>LocalVariableType</em> is
+<code>var</code> and any of the following are true:</p>
+<ul>
+<li><p>More than one <em>VariableDeclarator</em> is listed.</p></li>
+<li><p>The <em>VariableDeclaratorId</em> has one or more bracket
+pairs.</p></li>
+<li><p>The <em>VariableDeclarator</em> lacks an initializer.</p></li>
+<li><p>The initializer of the <em>VariableDeclarator</em> is an
+<em>ArrayInitializer</em>.</p></li>
+<li><p>The initializer of the <em>VariableDeclarator</em> contains a
+reference to the variable.</p></li>
+</ul>
+<div class="example">
+<p>Example 14.4-1. Local Variables Declared With <code>var</code></p>
+<p>The following code illustrates these rules restricting the use of
+<code>var</code>:</p>
+<pre><code>var a = 1;            // Legal
+var b = 2, c = 3.0;   // Illegal: multiple declarators
+var d[] = new int[4]; // Illegal: extra bracket pairs
+var e;                // Illegal: no initializer
+var f = { 6 };        // Illegal: array initializer
+var g = (g = 7);      // Illegal: self reference in initializer</code></pre>
+<p>These restrictions help to avoid confusion about the type being
+represented by <code>var</code>.</p>
+</div>
+<h3 id="jls-14.11">14.11 The <code>switch</code> Statement</h3>
+<p>The <code>switch</code> statement transfers control to one of several
+statements or expressions, depending on the value of an expression.</p>
+<dl>
+<dt><em>SwitchStatement:</em></dt>
+<dd>
+<code>switch</code> <code>(</code> <em>Expression</em> <code>)</code>
+<em>SwitchBlock</em>
+</dd>
+</dl>
+<p>The <em>Expression</em> is called the <em>selector expression</em>.
+The type of the selector expression must be <code>char</code>,
+<code>byte</code>, <code>short</code>, <code>int</code>, or a reference
+type, or a compile-time error occurs.</p>
+<h4 id="jls-14.11.1">14.11.1 Switch Blocks</h4>
+<p>The body of both a <code>switch</code> statement and a
+<code>switch</code> expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.28">15.28</a>)
+is called a <em>switch block</em>. This subsection presents general
+rules which apply to all switch blocks, whether they appear in
+<code>switch</code> statements or <code>switch</code> expressions. Other
+subsections present additional rules which apply either to switch blocks
+in <code>switch</code> statements (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.11.2">14.11.2</a>)
+or to switch blocks in <code>switch</code> expressions (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.28.1">15.28.1</a>).</p>
+<dl>
+<dt><em>SwitchBlock:</em></dt>
+<dd>
+<code>{</code> <em>SwitchRule</em> {<em>SwitchRule</em>} <code>}</code>
+</dd>
+<dd>
+<code>{</code> {<em>SwitchBlockStatementGroup</em>}
+{<em>SwitchLabel</em> <code>:</code>} <code>}</code>
+</dd>
+<dt><em>SwitchRule:</em></dt>
+<dd>
+<em>SwitchLabel</em> <code>-&gt;</code> <em>Expression</em>
+<code>;</code>
+</dd>
+<dd>
+<em>SwitchLabel</em> <code>-&gt;</code> <em>Block</em>
+</dd>
+<dd>
+<em>SwitchLabel</em> <code>-&gt;</code> <em>ThrowStatement</em>
+</dd>
+<dt><em>SwitchBlockStatementGroup:</em></dt>
+<dd>
+<em>SwitchLabel</em> <code>:</code> { <em>SwitchLabel</em>
+<code>:</code>} <em>BlockStatements</em>
+</dd>
+</dl>
+<div class="deleted">
+<dl>
+<dt><em>SwitchLabel:</em></dt>
+<dd>
+<code>case</code> <em>CaseConstant</em> {<code>,</code>
+<em>CaseConstant</em>}
+</dd>
+<dd>
+<code>case null</code> [<code>, default</code>]
+</dd>
+<dd>
+<code>case</code> <em>CasePattern</em> [ <em>Guard</em> ]
+</dd>
+<dd>
+<code>default</code>
+</dd>
+</dl>
+</div>
+<div class="inserted">
+<dl>
+<dt><em>SwitchLabel:</em></dt>
+<dd>
+<code>case</code> <em>CaseConstant</em> {<code>,</code>
+<em>CaseConstant</em>}
+</dd>
+<dd>
+<code>case null</code> [<code>, default</code>]
+</dd>
+<dd>
+<code>case</code> <em>CasePattern</em>{<code>,</code>
+<em>CasePattern</em> } [ <em>Guard</em> ]
+</dd>
+<dd>
+<code>default</code>
+</dd>
+</dl>
+</div>
+<dl>
+<dt><em>CaseConstant:</em></dt>
+<dd>
+<em>ConditionalExpression</em>
+</dd>
+<dt><em>CasePattern</em>:</dt>
+<dd>
+<em>Pattern</em>
+</dd>
+<dt><em>Guard</em>:</dt>
+<dd>
+<code>when</code> <em>Expression</em>
+</dd>
+</dl>
+<p>A switch block can consist of either:</p>
+<ul>
+<li><p><em>Switch rules</em>, which use <code>-&gt;</code> to introduce
+either a <em>switch rule expression</em>, a <em>switch rule block</em>,
+or a <em>switch rule <code>throw</code> statement</em>; or</p></li>
+<li><p><em>Switch labeled statement groups</em>, which use
+<code>:</code> to introduce <em>switch labeled block
+statements</em>.</p></li>
+</ul>
+<p>Every switch rule and switch labeled statement group starts with a
+<em>switch label</em>, which is either a <code>case</code> label or a
+<code>default</code> label. Multiple switch labels are permitted for a
+switch labeled statement group.</p>
+<p>A <code>case</code> label consists of either a list of
+<code>case</code> constants or <del>a single</del> <strong>one or
+more</strong> <code>case</code> pattern<strong>s</strong>.</p>
+<ul>
+<li><p><del>Every</del><strong>For a case label with case constants,
+every</strong> <code>case</code> constant must be either (1) the
+<code>null</code> literal, (2) a constant expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.29">15.29</a>),
+or (3) the (simple or qualified) name of an enum constant (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.9.1">8.9.1</a>);
+otherwise a compile-time error occurs. A single <code>null</code> case
+constant may also be paired with the <code>default</code>
+keyword.</p></li>
+<li><p><strong>For a case label with case patterns, it is a compile-time
+error if any of its case patterns declares one or more pattern
+variables.</strong></p>
+<div class="inserted">
+<blockquote>
+<p>If a <code>case</code> label had more than one <code>case</code>
+pattern that declared pattern variables, then it would not be clear
+which variable would be initialized if the <code>case</code> label were
+to apply. For example, in the code fragment
+<code>switch (obj) { case Integer i, Boolean b -&gt; { ... } ... }</code>
+it is not clear in the block to the right of the <code>-&gt;</code>
+which of the pattern variables <code>i</code> or <code>b</code> will be
+initialized, so this is a compile-time error. The fragment
+<code>switch(obj) { case Integer i, Boolean _ -&gt; { ... } ... }</code>
+still results in a compile-time error, as it is still not clear if the
+pattern variable <code>i</code> will be initialized. The fragment
+<code>switch (obj) { case Integer _, Boolean _ -&gt; { ... } ... }</code>
+does not result in a compile-time error.</p>
+</blockquote>
+<!--
+It is a compile-time error if any `case` pattern in a `case` label with more
+than one `case` pattern declares a pattern variable.
+-->
+</div></li>
+</ul>
+<!--
+Syntactic: A `case` label with a `case` pattern that has a `when` expression
+Semantic:  A `case` label with an unguarded `case` pattern
+-->
+<p>A <code>case</code> label with a <code>case</code> pattern may have
+an optional <code>when</code> expression, known as a <em>guard</em>,
+which represents a further test on values that match the pattern. A
+<code>case</code> label is said to be <em>unguarded</em> if either (i)
+it has no guard, or (ii) it has a guard that is a constant expression
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.29">15.29</a>)
+with value <code>true</code>; and <em>guarded</em> otherwise.</p>
+<p>Switch labels and their <code>case</code> constants and
+<code>case</code> patterns are said to be <em>associated</em> with the
+switch block.</p>
+<p>For a given switch block both of the following must be true,
+otherwise a compile-time error occurs:</p>
+<ul>
+<li>No two of the <code>case</code> constants associated with a switch
+block may have the same value.</li>
+</ul>
+<!-- The following rule is covered by the new dominance rules:
+
+-   A switch block may not have both an associated `default` label and a `case`
+    label with a `default`.
+-->
+<ul>
+<li>No more than one <code>default</code> label may be associated with a
+switch block.</li>
+</ul>
+<!--
+The following check is not needed. For this to apply, there would have to be more
+ than one null case constant which is ruled out by the first rule!
+
+-   No more than one of the `case` labels associated with a switch block may
+    have a `default`.
+-->
+<p>Any guard associated with a <code>case</code> label must have type
+<code>boolean</code> or <code>Boolean</code>. Any variable that is used
+but not declared by a guard must either be <code>final</code> or
+effectively final (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.12.4">4.12.4</a>)
+and cannot be assigned to (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.26">15.26</a>),
+incremented ([15.14.2]), or decremented ([15.14.3]), otherwise a
+compile-time error occurs. It is a compile-time error if a guard is a
+constant expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.29">15.29</a>)
+with the value <code>false</code>.</p>
+<p>The switch block of a <code>switch</code> statement or a
+<code>switch</code> expression is <em>switch compatible</em> with the
+type of the selector expression, <em>T</em>, if all of the following are
+true:</p>
+<ul>
+<li><p>If any <code>null</code> constant is associated with the switch
+block, then <em>T</em> is a reference type.</p></li>
+<li><p>If <em>T</em> is an enum type, then every <code>case</code>
+constant associated with the switch block that is the name of an enum
+constant is the name of an enum constant of type <em>T</em>.</p></li>
+<li><p>If <em>T</em> is not an enum type, then every <code>case</code>
+constant associated with the switch block that is the name of of an enum
+constant is the qualified name of an enum constant that is assignment
+compatible with <em>T</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-5.html#jls-5.2">5.2</a>).</p></li>
+<li><p>Every <code>case</code> constant associated with the switch block
+that is a constant expression is assignment compatible with <em>T</em>,
+and <em>T</em> is one of <code>char</code>, <code>byte</code>,
+<code>short</code>, <code>int</code>, <code>Character</code>,
+<code>Byte</code>, <code>Short</code>, <code>Integer</code>, or
+<code>String</code>.</p></li>
+<li><p>Every pattern <em>p</em> associated with the switch block,
+<em>p</em> is applicable for type <em>T</em> (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html#jls-14.30.3">14.30.3</a>).</p></li>
+</ul>
+<blockquote>
+<p>Switch blocks are not designed to work with the types
+<code>boolean</code>, <code>long</code>, <code>float</code>, and
+<code>double</code>. The selector expression of a <code>switch</code>
+statement or <code>switch</code> expression can not have one of these
+types.</p>
+</blockquote>
+<p>The switch block of a <code>switch</code> statement or a
+<code>switch</code> expression must be switch compatible with the type
+of the selector expression, or a compile-time error occurs.</p>
+<p>A switch label in a switch block is said to be <em>dominated</em> if
+for every value that it applies to, one of the preceding switch labels
+would also apply. It is a compile-time error if any switch label in a
+switch block is dominated. The rules for determining whether a switch
+label is dominated are as follows:</p>
+<ul>
+<li><p>A <code>case</code> label with a <code>case</code> pattern
+<em>q</em> is dominated if there is a preceding unguarded
+<code>case</code> label in the switch block with a <code>case</code>
+pattern <em>p</em>, and <em>p</em> dominates <em>q</em> (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html#jls-14.30.3">14.30.3</a>).</p>
+<blockquote>
+<p>The definition of one pattern dominating another pattern is based on
+types. For example, the type pattern <em>Object o</em> dominates the
+type pattern <em>String s</em>, and so the following results in a
+compile-time error:</p>
+<pre><code>Object obj = ...
+switch (obj) {
+    case Object o -&gt;
+        System.out.println(&quot;An object&quot;);
+    case String s   -&gt;                 // Error - dominated case label
+        System.out.println(&quot;A string&quot;);
+}</code></pre>
+<p>A guarded <code>case</code> label with a <code>case</code> pattern is
+dominated by a <code>case</code> label with the same pattern but without
+the guard. For example, the following results in a compile-time
+error:</p>
+<pre><code>String str = ...;
+switch (str) {
+    case String s -&gt;
+        System.out.println(&quot;A string&quot;);
+    case String s when s.length() == 2 -&gt;  // Error - dominated case label
+        System.out.println(&quot;Two character string&quot;);
+    ...
+}</code></pre>
+<p>On the other hand, a guarded <code>case</code> label with a
+<code>case</code> pattern is not considered to dominate an unguarded
+<code>case</code> label with the same <code>case</code> pattern. This
+allows the following common pattern programming style:</p>
+<pre><code>Integer j = ...;
+switch (j) {
+    case Integer i when i &lt;= 0 -&gt;
+        System.out.println(&quot;Less than or equal to zero&quot;);
+    case Integer i -&gt;
+        System.out.println(&quot;An integer&quot;);
+}</code></pre>
+<p>The only exception is where the guard is a constant expression that
+has the value <code>true</code>, for example:</p>
+<pre><code>Integer j = ...;
+switch (j) {
+    case Integer i when true -&gt;            // Allowed but why write this?
+        System.out.println(&quot;An integer&quot;);
+    case Integer i -&gt;                     // Error - dominated case label
+        System.out.println(&quot;An integer&quot;);
+}</code></pre>
+<div class="inserted">
+<p>A case label with multiple patterns is dominated if any one of these
+patterns is dominated by a pattern that appears as a case pattern in a
+preceding unguarded case label; for example <code>Integer _</code> is
+dominated by <code>Number _</code> on a preceding unguarded case:</p>
+<pre><code>Object o = ...
+switch (o) {
+    case Number _ -&gt;
+        System.out.println(&quot;A Number&quot;);
+    case Integer _, String _ -&gt;             // Error - dominated case pattern: `Integer _`
+        System.out.println(&quot;An Integer or a String&quot;);
+}</code></pre>
+</div>
+</blockquote></li>
+<li><p>A <code>case</code> label with a <code>case</code> constant
+<em>c</em> is dominated if one of the following holds:</p>
+<ul>
+<li><p><em>c</em> is a constant expression of a primitive type
+<em>S</em>, and there is a preceding <code>case</code> label in the
+switch block with a <code>case</code> pattern <em>p</em>, where
+<em>p</em> is unconditional for the wrapper class of
+<em>S</em>.</p></li>
+<li><p><em>c</em> is either a constant expression of a reference type
+<em>T</em>, and there is a preceding <code>case</code> label in the
+switch block with a <code>case</code> pattern <em>p</em>, where
+<em>p</em> is unconditional for the type <em>T</em>.</p></li>
+<li><p><em>c</em> is an enum constant of type <em>T</em>, and there is a
+preceding <code>case</code> label in the switch block with a
+<code>case</code> pattern <em>p</em>, where <em>p</em> is unconditional
+for the type <em>T</em>.</p></li>
+</ul>
+<blockquote>
+<p>For example, a <code>case</code> label with an <code>Integer</code>
+type pattern dominates a <code>case</code> label with an integer
+literal:</p>
+<pre><code>Integer j = ...;
+switch (j) {
+    case Integer i -&gt;
+        System.out.println(&quot;An integer&quot;);
+    case 42 -&gt;                              // Error - dominated!
+        System.out.println(&quot;42!&quot;);
+}</code></pre>
+<p>Analysis of guards—undecidable in general—is not attempted. For
+example, the following results in a compile-time error, even though the
+first switch label does not match if the value of the selector
+expression is <code>42</code>:</p>
+<pre><code>Integer j = ...;
+switch (j) {
+    case Integer i when i != 42 -&gt;
+        System.out.println(&quot;An integer that isn&#39;t 42&quot;);
+    case 42 -&gt;                                  // Error - dominated!
+        System.out.println(&quot;42!&quot;);
+}</code></pre>
+<p>Any <code>case</code> labels with <code>case</code> constants should
+appear before those with <code>case</code> patterns; for example:</p>
+<pre><code>Integer j = ...;
+switch (j) {
+    case 42 -&gt;
+        System.out.println(&quot;42&quot;);
+    case Integer i when i &lt; 50 -&gt;
+        System.out.println(&quot;An integer less than 50&quot;);
+    case Integer i  -&gt;
+        System.out.println(&quot;An integer&quot;);
+}</code></pre>
+</blockquote></li>
+</ul>
+<!--
+The following rules are new for the JDK 20 preview. We force default labels to come last
+if it is a new switch block.
+
+-->
+<ul>
+<li><p>A <code>case</code> label with a <code>case</code> pattern is
+dominated if there is a preceding <code>default</code> label in the
+switch block.</p></li>
+<li><p>A <code>case</code> label with a <code>null</code> case constant
+is dominated if there is a preceding <code>default</code> label in the
+switch block.</p>
+<blockquote>
+<p>If used, a <code>default</code> label should come last in a
+<code>switch</code> block.</p>
+<p>For historical reasons, a <code>default</code> label may appear
+<em>before</em> <code>case</code> labels that do not have a
+<code>null</code> <code>case</code> constant or a <code>case</code>
+pattern.</p>
+<pre><code>int i = ...;
+switch(i) {
+    default -&gt;
+        System.out.println(&quot;Some other integer&quot;);
+    case 42 -&gt; // allowed
+        System.out.println(&quot;42&quot;);
+}</code></pre>
+<p>This style is discouraged in new code.</p>
+</blockquote></li>
+<li><p>A switch label is dominated if there is a preceding
+<code>case null, default</code> label in the switch block.</p>
+<blockquote>
+<p>If used, a <code>case null, default</code> label always comes last in
+a <code>switch</code> block.</p>
+</blockquote></li>
+</ul>
+<!--
+The following rule is new for JDK 20 preview; it was previously a separate condition,
+but now has been folded into the dominance relation, given the rule above has
+also been added.
+-->
+<ul>
+<li><p>A <code>default</code> label is dominated if there is a preceding
+unguarded <code>case</code> label in the switch block with a
+<code>case</code> pattern <em>p</em> where <em>p</em> is unconditional
+for the type of the selector expression (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html#jls-14.30.3">14.30.3</a>).</p></li>
+<li><p>A <code>case null, default</code> label is dominated if there is
+a preceding unguarded <code>case</code> label in the switch block with a
+<code>case</code> pattern <em>p</em> where <em>p</em> is unconditional
+for the type of the selector expression (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html#jls-14.30.3">14.30.3</a>).</p>
+<!-- This one has to check unconditional as the presence of a null case constant means that null may flow through. If the pattern p is unconditional, then we know it will have matched even the null value.-->
+<blockquote>
+<p>A <code>case</code> label with a <code>case</code> pattern that is
+unconditional for the type of the selector expression will, as the name
+suggests, match every value and so behaves like a <code>default</code>
+label. A switch block can not have more than one switch label that acts
+like a <code>default</code>.</p>
+</blockquote></li>
+</ul>
+<div class="inserted">
+<p>It is a compile-time error if in a switch block there is a
+<code>case</code> label with <code>case</code> patterns
+<em>p<sub>1</sub></em>,...,<em>p<sub>n</sub></em> (<em>n &gt; 1</em>)
+where one of the patterns <em>p<sub>i</sub></em> (<em>1 ≤ i &lt; n</em>)
+dominates another of the patterns <em>p<sub>j</sub></em> (<em>i &lt; j ≤
+n</em>).</p>
+</div>
+<p>It is a compile-time error if, in a switch block that consists of
+switch labeled statement groups, a statement is labeled with a
+<code>case</code> pattern that declares one or more pattern variables,
+and either:</p>
+<ul>
+<li><p>An immediately preceding statement in the switch block can
+complete normally (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.22">14.22</a>),
+or</p></li>
+<li><p>The statement is labeled with more than one switch
+label.</p></li>
+</ul>
+<blockquote>
+<p>The first condition prevents a statement group from "falling through"
+to another statement group without initializing pattern variables. For
+example, were a statement labeled by <code>case Integer i</code>
+reachable from the preceding statement group, the pattern variable
+<code>i</code> would not have been initialized:</p>
+<pre><code>Object o = &quot;Hello&quot;;
+switch (o) {
+    case String s:
+        System.out.println(&quot;String: &quot; + s );  // No break!
+    case Integer i:
+        System.out.println(i + 1);            // Error! Can be reached
+                                              // without matching the
+                                              // pattern `Integer i`
+    default:
+}</code></pre>
+<p>Switch blocks consisting of switch label statement groups allow
+multiple labels to apply to a statement group. The second condition
+prevents a statement group from being executed based on one label
+without initializing the pattern variables of another label. For
+example:</p>
+<pre><code>Object o = &quot;Hello World&quot;;
+switch (o) {
+    case String s:
+    case Integer i:
+        System.out.println(i + 1);  // Error! Can be reached
+                                    // without matching the
+                                    // pattern `Integer i`
+    default:
+}
+
+Object obj = null;
+switch (obj) {
+    case null:
+    case String s:
+        System.out.println(s);      // Error! Can be reached
+                                    // without matching the
+                                    // pattern `String s`
+    default:
+}</code></pre>
+<p>Both of these conditions apply only when the <code>case</code>
+pattern declares pattern variables. The following examples, in contrast,
+are unproblematic:</p>
+<pre><code>record R() {}
+record S() {}
+
+Object o = &quot;Hello World&quot;;
+switch (o) {
+    case String s:
+        System.out.println(s);        // No break!
+    case R():
+        System.out.println(&quot;It&#39;s either an R or a string&quot;);
+        break;
+    default:
+}
+
+Object ob = new R();
+switch (ob) {
+    case R():
+    case S():                         // Multiple case labels!
+        System.out.println(&quot;Either R or an S&quot;);
+        break;
+    default:
+}
+
+Object obj = null;
+switch (obj) {
+    case null:
+    case R():                         // Multiple case labels!
+        System.out.println(&quot;Either null or an R&quot;);
+        break;
+    default:
+}</code></pre>
+</blockquote>
+<h5 id="jls-14.11.1.2">14.11.1.2 Determining which Switch Label Applies
+at Run-Time</h5>
+<p>Both the execution of a <code>switch</code> statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.11.3">14.11.3</a>)
+and the evaluation of a <code>switch</code> expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.28.2">15.28.2</a>)
+need to determine if a switch label associated with the switch block
+<em>applies</em> to the value of the selector expression. This proceeds
+as follows:</p>
+<ol type="1">
+<li><p>If the value is the null reference, then a <code>case</code>
+label with a <code>null</code> <code>case</code> constant
+applies.</p></li>
+<li><p>If the value is not the null reference, then we determine the
+first (if any) <code>case</code> label in the switch block that applies
+to the value as follows:</p>
+<ul>
+<li><p>A <code>case</code> label with a non-null <code>case</code>
+constant <em>c</em> applies to a value of type <code>Character</code>,
+<code>Byte</code>, <code>Short</code>, or <code>Integer</code>, if the
+value is first subjected to unboxing conversion (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-5.html#jls-5.1.8">5.1.8</a>)
+and the constant <em>c</em> is equal to the unboxed value.</p>
+<blockquote>
+<p>Any unboxing conversion must complete normally as the value being
+unboxed is guaranteed not to be the null reference.</p>
+</blockquote>
+<p>Equality is defined in terms of the <code>==</code> operator (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.21">15.21</a>).</p></li>
+<li><p>A <code>case</code> label with a non-null <code>case</code>
+constant <em>c</em> applies to a value that is not of type
+<code>Character</code>, <code>Byte</code>, <code>Short</code>, or
+<code>Integer</code>, if the constant <em>c</em> is equal to the
+value.</p>
+<p>Equality is defined in terms of the <code>==</code> operator unless
+the value is a <code>String</code>, in which case equality is defined in
+terms of the <code>equals</code> method of class
+<code>String</code>.</p></li>
+<li><div class="deleted">
+<p>Determining that a <code>case</code> label with a <code>case</code>
+pattern <em>p</em> applies to a value proceeds first by checking if the
+value matches the pattern <em>p</em> (<a
+href="#jls-14.30.2">14.30.2</a>).</p>
+</div>
+<div class="inserted">
+<p>Determining that a <code>case</code> label with <code>case</code>
+patterns <em>p<sub>1</sub></em>,...,<em>p<sub>n</sub></em> (<em>n ≥
+1</em>) <em>applies</em> to a value proceeds by determining the first
+(if any) <code>case</code> pattern <em>p<sub>i</sub></em> (<em>1 ≤ i ≤
+n</em>) that applies.</p>
+<p>If the process of determining which <code>case</code> pattern applies
+completes abruptly, then the process of determining which switch label
+applies completes abruptly for the same reason.</p>
+<p>Determining that a <code>case</code> pattern <em>p</em> applies to a
+value proceeds first by checking if the value matches the pattern
+<em>p</em> (<a href="#jls-14.30.2">14.30.2</a>).</p>
+</div>
+<p>If pattern matching completes abruptly then the process of
+determining which <del>switch label</del><strong><code>case</code>
+pattern</strong> applies completes abruptly for the same reason.</p>
+<p>If pattern matching succeeds and the <code>case</code>
+<del>label</del><strong>pattern</strong> is unguarded then this
+<code>case</code> <del>label</del><strong>pattern</strong> applies.</p>
+<p>If pattern matching succeeds and the <code>case</code>
+<del>label</del><strong>pattern</strong> is guarded, then the guard is
+evaluated. If the result is of type <code>Boolean</code>, it is
+subjected to unboxing conversion (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-5.html#jls-5.1.8">5.1.8</a>).</p>
+<p>If evaluation of the guard or the subsequent unboxing conversion (if
+any) completes abruptly for some reason, the process of determining
+which <del>switch label</del><strong>pattern</strong> applies completes
+abruptly for the same reason.</p>
+<p>Otherwise, if the resulting value is <code>true</code> then the
+<code>case</code> <del>label</del><strong>pattern</strong> applies.
+:::</p></li>
+<li><p>A <code>case null, default</code> label applies to every
+value</p></li>
+</ul></li>
+<li><p>If the value is not the null reference, and no <code>case</code>
+label applies according to the rules of step 2, then if a
+<code>default</code> label is associated with the switch block, that
+label applies.</p></li>
+</ol>
+<blockquote>
+<p>A single <code>case</code> label can contain several
+<code>case</code> constants. The label applies to the value of the
+selector expression if any one of its constants is equal to the value of
+the selector expression. For example, in the following code, the
+<code>case</code> label matches if the enum variable <code>day</code> is
+either one of the enum constants shown:</p>
+<pre><code>switch (day) {
+    ...
+    case SATURDAY, SUNDAY :
+        System.out.println(&quot;It&#39;s the weekend!&quot;);
+        break;
+    ...
+}</code></pre>
+<p>If a <code>case</code> label with a <code>case</code> pattern
+applies, then this is because the process of pattern matching the value
+against the pattern has succeeded (<a href="#jls-14.30.2">14.30.2</a>).
+If a value successfully matches a pattern then the process of pattern
+matching initializes any pattern variables declared by the pattern.</p>
+</blockquote>
+<blockquote>
+<p>For historical reasons, a <code>default</code> label is only
+considered after all <code>case</code> labels have failed to match, even
+if some of those labels appear after the <code>default</code> label.
+However, subsequent labels may only make use of non-<code>null</code>
+case constants (<a href="#jls-14.11.1">14.11.1</a>), and as a matter of
+style, programmers are encouraged to place their <code>default</code>
+labels last.</p>
+</blockquote>
+<blockquote>
+<p>In C and C++ the body of a <code>switch</code> statement can be a
+statement and statements with <code>case</code> labels do not have to be
+immediately contained by that statement. Consider the simple loop:</p>
+<pre><code>for (i = 0; i &lt; n; ++i) foo();</code></pre>
+<p>where <code>n</code> is known to be positive. A trick known as
+<em>Duff's device</em> can be used in C or C++ to unroll the loop, but
+this is not valid code in the Java programming language:</p>
+<pre><code>int q = (n+7)/8;
+switch (n%8) {
+    case 0: do { foo();    // Great C hack, Tom,
+    case 7:      foo();    // but it&#39;s not valid here.
+    case 6:      foo();
+    case 5:      foo();
+    case 4:      foo();
+    case 3:      foo();
+    case 2:      foo();
+    case 1:      foo();
+            } while (--q &gt; 0);
+}</code></pre>
+<p>Fortunately, this trick does not seem to be widely known or used.
+Moreover, it is less needed nowadays; this sort of code transformation
+is properly in the province of state-of-the-art optimizing
+compilers.</p>
+</blockquote>
+<h3 id="jls-14.14">14.14 The <code>for</code> Statement</h3>
+<h4 id="jls-14.14.2">14.14.2 The enhanced <code>for</code>
+statement</h4>
+<p>The enhanced <code>for</code> statement has the form:</p>
+<dl>
+<dt><em>EnhancedForStatement:</em></dt>
+<dd>
+<code>for</code> <code>(</code> <em>LocalVariableDeclaration</em>
+<code>:</code> <em>Expression</em> <code>)</code><br />
+<em>Statement</em>
+</dd>
+<dt><em>EnhancedForStatementNoShortIf:</em></dt>
+<dd>
+<code>for</code> <code>(</code> <em>LocalVariableDeclaration</em>
+<code>:</code> <em>Expression</em> <code>)</code><br />
+<em>StatementNoShortIf</em>
+</dd>
+</dl>
+<blockquote>
+<p>The following productions from <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>,
+<a href="#jls-8.3">8.3</a>, <a href="#jls-8.4.1">8.4.1</a>, and <a
+href="#jls-14.4">14.4</a> are shown here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>LocalVariableDeclaration:</em></dt>
+<dd>
+{<em>VariableModifier</em>} <em>LocalVariableType</em>
+<em>VariableDeclaratorList</em>
+</dd>
+<dt><em>VariableModifier:</em></dt>
+<dd>
+<em>Annotation</em>
+</dd>
+<dd>
+<code>final</code>
+</dd>
+<dt><em>LocalVariableType:</em></dt>
+<dd>
+<em>UnannType</em>
+</dd>
+<dd>
+<code>var</code>
+</dd>
+<dt><em>VariableDeclaratorList:</em></dt>
+<dd>
+<em>VariableDeclarator</em> {<code>,</code> <em>VariableDeclarator</em>}
+</dd>
+<dt><em>VariableDeclarator:</em></dt>
+<dd>
+<em>VariableDeclaratorId</em> [<code>=</code>
+<em>VariableInitializer</em>]
+</dd>
+</dl>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+_
+</dd>
+</dl>
+</blockquote>
+</div>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+</dl>
+</blockquote>
+<p>The type of the <em>Expression</em> must be an array type (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.1">10.1</a>)
+or a subtype of the raw type <code>Iterable</code>, or a compile-time
+error occurs.</p>
+<p>The header of the enhanced <code>for</code> statement
+<strong>either</strong> declares a local variable whose name is the
+identifier given by <em>VariableDeclaratorId</em><strong>, or declares
+an unnamed local variable (<a href="#jls-6.1">6.1</a>).</strong>. When
+the enhanced <code>for</code> statement is executed, the local variable
+is initialized, on each iteration of the loop, to successive elements of
+the <code>Iterable</code> or the array produced by the expression.</p>
+<p>The rules for a local variable declared in the header of an enhanced
+<code>for</code> statement are specified in <a
+href="#jls-14.4">14.4</a>, disregarding any rules in that section which
+apply when the <em>LocalVariableType</em> is <code>var</code>. In
+addition, all of the following must be true, or a compile-time error
+occurs:</p>
+<ul>
+<li><p>The <em>VariableDeclaratorList</em> consists of a single
+<em>VariableDeclarator</em>.</p></li>
+<li><p>The <em>VariableDeclarator</em> has no initializer.</p></li>
+<li><p>The <em>VariableDeclaratorId</em> has no bracket pairs if the
+<em>LocalVariableType</em> is <code>var</code>.</p></li>
+</ul>
+<p>The scope and shadowing of a local variable declared in the header of
+an enhanced <code>for</code> statement is specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.3">6.3</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.4">6.4</a>.</p>
+<p>References to the local variable from a nested class or interface, or
+a lambda expression, are restricted, as specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.6.1">6.5.6.1</a>.</p>
+<p>The type <em>T</em> of the local variable declared in the header of
+the enhanced <code>for</code> statement is determined as follows:</p>
+<ul>
+<li><p>If the <em>LocalVariableType</em> is <em>UnannType</em>, and no
+bracket pairs appear in <em>UnannType</em> or
+<em>VariableDeclaratorId</em>, then <em>T</em> is the type denoted by
+<em>UnannType</em>.</p></li>
+<li><p>If the <em>LocalVariableType</em> is <em>UnannType</em>, and
+bracket pairs appear in <em>UnannType</em> or
+<em>VariableDeclaratorId</em>, then <em>T</em> is specified by <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-10.html#jls-10.2">10.2</a>.</p></li>
+<li><p>If the <em>LocalVariableType</em> is <code>var</code>, then let
+<em>R</em> be derived from the type of the <em>Expression</em>, as
+follows:</p>
+<ul>
+<li><p>If the <em>Expression</em> has an array type, then <em>R</em> is
+the component type of the array type.</p></li>
+<li><p>Otherwise, if the <em>Expression</em> has a type that is a
+subtype of <code>Iterable&lt;</code><em>X</em><code>&gt;</code>, for
+some type <em>X</em>, then <em>R</em> is <em>X</em>.</p></li>
+<li><p>Otherwise, the <em>Expression</em> has a type that is a subtype
+of the raw type <code>Iterable</code>, and <em>R</em> is
+<code>Object</code>.</p></li>
+</ul>
+<p><em>T</em> is the upward projection of <em>R</em> with respect to all
+synthetic type variables mentioned by <em>R</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.10.5">4.10.5</a>).</p></li>
+</ul>
+<p>The precise meaning of the enhanced <code>for</code> statement
+<strong>whose header declares a local variable
+<em>Identifier</em></strong> is given by translation into a basic
+<code>for</code> statement, as follows:</p>
+<ul>
+<li><p>If the type of <em>Expression</em> is a subtype of
+<code>Iterable</code>, then the basic <code>for</code> statement has
+this form:</p>
+<pre><code>for (<em>I</em> #i = <em>Expression</em>.iterator(); #i.hasNext(); ) {
+    <em>{VariableModifier} T Identifier</em> = (<em>TargetType</em>) #i.next();
+    <em>Statement</em>
+}
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p>If the type of <em>Expression</em> is a subtype of
+<code>Iterable&lt;</code><em>X</em><code>&gt;</code> for some type
+argument <em>X</em>, then <em>I</em> is the type
+<code>java.util.Iterator&lt;</code><em>X</em><code>&gt;</code>.
+Otherwise, <em>I</em> is the raw type
+<code>java.util.Iterator</code>.</p></li>
+<li><p><code>#i</code> is an automatically generated identifier that is
+distinct from any other identifiers (automatically generated or
+otherwise) that are in scope (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.3">6.3</a>)
+at the point where the enhanced <code>for</code> statement
+occurs.</p></li>
+<li><p><em>{VariableModifier}</em> is as given in the header of the
+enhanced <code>for</code> statement.</p></li>
+<li><p><em>T</em> is the type of the local variable as determined
+above.</p></li>
+<li><p>If <em>T</em> is a reference type, then <em>TargetType</em> is
+<em>T</em>. Otherwise, <em>TargetType</em> is the upper bound of the
+capture conversion (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-5.html#jls-5.1.10">5.1.10</a>)
+of the type argument of <em>I</em>, or <code>Object</code> if <em>I</em>
+is raw.</p></li>
+</ul></li>
+<li><p>Otherwise, the <em>Expression</em> necessarily has an array type,
+<em>S</em><code>[]</code>, and the basic <code>for</code> statement has
+this form:</p>
+<pre><code><em>S</em>[] #a = <em>Expression</em>;
+<em>L<sub>1</sub></em>: <em>L<sub>2</sub></em>: ... <em>L<sub>m</sub></em>:
+for (int #i = 0; #i &#60; #a.length; #i++) {
+    <em>{VariableModifier} T Identifier</em> = #a[#i];
+    <em>Statement</em>
+}
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p><em>L<sub>1</sub></em> ... <em>L<sub>m</sub></em> is the
+(possibly empty) sequence of labels immediately preceding the enhanced
+<code>for</code> statement.</p></li>
+<li><p><code>#a</code> and <code>#i</code> are automatically generated
+identifiers that are distinct from any other identifiers (automatically
+generated or otherwise) that are in scope at the point where the
+enhanced <code>for</code> statement occurs.</p></li>
+<li><p><em>{VariableModifier}</em> is as given in the header of the
+enhanced <code>for</code> statement.</p></li>
+<li><p><em>T</em> is the type of the local variable as determined
+above.</p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>For example, this code:</p>
+<pre><code>List&lt;? extends Integer&gt; l = ...
+for (float i : l) ...</code></pre>
+<p>will be translated to:</p>
+<pre><code>for (Iterator&lt;Integer&gt; #i = l.iterator(); #i.hasNext(); ) {
+    float #i0 = (Integer)#i.next();
+    ...</code></pre>
+</blockquote>
+<div class="example">
+<p>Example 14.14-1. Enhanced <code>for</code> And Arrays</p>
+<p>The following program, which calculates the sum of an integer array,
+shows how enhanced <code>for</code> works for arrays:</p>
+<pre><code>int sum(int[] a) {
+    int sum = 0;
+    for (int i : a) sum += i;
+    return sum;
+}</code></pre>
+</div>
+<div class="example">
+<p>Example 14.14-2. Enhanced <code>for</code> And Unboxing
+Conversion</p>
+<p>The following program combines the enhanced <code>for</code>
+statement with auto-unboxing to translate a histogram into a frequency
+table:</p>
+<pre><code>Map&lt;String, Integer&gt; histogram = ...;
+double total = 0;
+for (int i : histogram.values())
+    total += i;
+for (Map.Entry&lt;String, Integer&gt; e : histogram.entrySet())
+    System.out.println(e.getKey() + &quot; &quot; + e.getValue() / total);
+}</code></pre>
+</div>
+<p><strong>The precise meaning of an enhanced <code>for</code> statement
+whose header declares an unnamed local variable is given by translation
+into a basic <code>for</code> statement as above but using an unnamed
+local variable in place of <em>Identifier</em></strong>.</p>
+<h3 id="jls-14.20">14.20 The <code>try</code> statement</h3>
+<h4 id="jls-14.20.3">14.20.3 <code>try</code>-with-resources</h4>
+<p>A <code>try</code>-with-resources statement is parameterized with
+variables (known as <em>resources</em>) that are initialized before
+execution of the <code>try</code> block and closed automatically, in the
+reverse order from which they were initialized, after execution of the
+<code>try</code> block. <code>catch</code> clauses and a
+<code>finally</code> clause are often unnecessary when resources are
+closed automatically.</p>
+<dl>
+<dt><em>TryWithResourcesStatement:</em></dt>
+<dd>
+<code>try</code> <em>ResourceSpecification</em> <em>Block</em>
+[<em>Catches</em>] [<em>Finally</em>]
+</dd>
+<dt><em>ResourceSpecification:</em></dt>
+<dd>
+<code>(</code> <em>ResourceList</em> [<code>;</code>] <code>)</code>
+</dd>
+<dt><em>ResourceList:</em></dt>
+<dd>
+<em>Resource</em> {<code>;</code> <em>Resource</em>}
+</dd>
+<dt><em>Resource:</em></dt>
+<dd>
+<em>LocalVariableDeclaration</em>
+</dd>
+<dd>
+<em>VariableAccess</em>
+</dd>
+<dt><em>VariableAccess:</em></dt>
+<dd>
+<em>ExpressionName</em>
+</dd>
+<dd>
+<em>FieldAccess</em>
+</dd>
+</dl>
+<blockquote>
+<p>The following productions from <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>,
+<a href="#jls-8.3">8.3</a>, <a href="#jls-8.4.1">8.4.1</a>, and <a
+href="#jls-14.4">14.4</a> are shown here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>LocalVariableDeclaration:</em></dt>
+<dd>
+{<em>VariableModifier</em>} <em>LocalVariableType</em>
+<em>VariableDeclaratorList</em>
+</dd>
+<dt><em>VariableModifier:</em></dt>
+<dd>
+<em>Annotation</em>
+</dd>
+<dd>
+<code>final</code>
+</dd>
+<dt><em>LocalVariableType:</em></dt>
+<dd>
+<em>UnannType</em>
+</dd>
+<dd>
+<code>var</code>
+</dd>
+<dt><em>VariableDeclaratorList:</em></dt>
+<dd>
+<em>VariableDeclarator</em> {<code>,</code> <em>VariableDeclarator</em>}
+</dd>
+<dt><em>VariableDeclarator:</em></dt>
+<dd>
+<em>VariableDeclaratorId</em> [<code>=</code>
+<em>VariableInitializer</em>]
+</dd>
+</dl>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+_
+</dd>
+</dl>
+</blockquote>
+</div>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+<dt><em>VariableInitializer:</em></dt>
+<dd>
+<em>Expression</em>
+</dd>
+<dd>
+<em>ArrayInitializer</em>
+</dd>
+</dl>
+</blockquote>
+<blockquote>
+<p>See <a href="#jls-8.3">8.3</a> for <em>UnannType</em>.</p>
+</blockquote>
+<p>The <em>resource specification</em> denotes the resources of the
+<code>try</code>-with-resources statement, either by declaring local
+variables with initializer expressions or by referring to existing
+variables. An existing variable is referred to by an expression name (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.6">6.5.6</a>)
+or a field access expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.11">15.11</a>).</p>
+<p>The rules for a local variable declared in a resource specification
+are specified in <a href="#jls-14.4">14.4</a>. In addition, all of the
+following must be true, or a compile-time error occurs:</p>
+<ul>
+<li><p>The <em>VariableDeclaratorList</em> consists of a single
+<em>VariableDeclarator</em>.</p></li>
+<li><p>The <em>VariableDeclarator</em> has an initializer.</p></li>
+<li><p>The <em>VariableDeclaratorId</em> has no bracket pairs.</p></li>
+</ul>
+<p>The scope and shadowing of a local variable declared in a resource
+specification is specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.3">6.3</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.4">6.4</a>.</p>
+<p>References to the local variable from a nested class or interface, or
+a lambda expression, are restricted, as specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-6.html#jls-6.5.6.1">6.5.6.1</a>.</p>
+<p>The type of a local variable declared in a resource specification is
+specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.4.1">14.4.1</a>.</p>
+<p>The type of a local variable declared in a resource specification, or
+the type of an existing variable referred to in a resource
+specification, must be a subtype of <code>AutoCloseable</code>, or a
+compile-time error occurs.</p>
+<p>It is a compile-time error for a resource specification to declare
+two local variables with the same name.</p>
+<div class="inserted">
+<blockquote>
+<p>Note that a resource specification may contain the declaration of
+multiple unnamed local variables (<a href="#jls-6.1">6.1</a>).</p>
+</blockquote>
+</div>
+<p>Resources are <code>final</code>, in that:</p>
+<ul>
+<li><p>A local variable declared in a resource specification is
+implicitly declared <code>final</code> if it is not explicitly declared
+<code>final</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.12.4">4.12.4</a>).</p></li>
+<li><p>An existing variable referred to in a resource specification must
+be a <code>final</code> or effectively <code>final</code> variable that
+is definitely assigned before the <code>try</code>-with-resources
+statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-16.html">16</a>),
+or a compile-time error occurs.</p></li>
+</ul>
+<p>Resources are initialized in left-to-right order. If a resource fails
+to initialize (that is, its initializer expression throws an exception),
+then all resources initialized so far by the
+<code>try</code>-with-resources statement are closed. If all resources
+initialize successfully, the <code>try</code> block executes as normal
+and then all non-null resources of the <code>try</code>-with-resources
+statement are closed.</p>
+<p>Resources are closed in the reverse order from that in which they
+were initialized. A resource is closed only if it initialized to a
+non-null value. An exception from the closing of one resource does not
+prevent the closing of other resources. Such an exception is
+<em>suppressed</em> if an exception was thrown previously by an
+initializer, the <code>try</code> block, or the closing of a
+resource.</p>
+<p>A <code>try</code>-with-resources statement whose resource
+specification indicates multiple resources is treated as if it were
+multiple <code>try</code>-with-resources statements, each of which has a
+resource specification that indicates a single resource. When a
+<code>try</code>-with-resources statement with <em>n</em> resources
+(<em>n</em> &gt; 1) is translated, the result is a
+<code>try</code>-with-resources statement with <em>n</em>-1 resources.
+After <em>n</em> such translations, there are <em>n</em> nested
+<code>try</code>-<code>catch</code>-<code>finally</code> statements, and
+the overall translation is complete.</p>
+<h5 id="jls-14.20.3.1">14.20.3.1 Basic
+<code>try</code>-with-resources</h5>
+<p>A <code>try</code>-with-resources statement with no
+<code>catch</code> clauses or <code>finally</code> clause is called a
+<em>basic</em> <code>try</code>-with-resources statement.</p>
+<p>If a basic <code>try</code>-with-resources statement is of the
+form:</p>
+<pre><code>try (VariableAccess ...)
+    <em>Block</em>
+</code></pre>
+<p>then the resource is first converted to a local variable declaration
+by the following translation:</p>
+<pre><code>try (T #r = VariableAccess ...) {
+    <em>Block</em>
+}
+</code></pre>
+<p><code>T</code> is the type of the variable denoted by
+<em>VariableAccess</em> and <code>#r</code> is an automatically
+generated identifier that is distinct from any other identifiers
+(automatically generated or otherwise) that are in scope at the point
+where the <code>try</code>-with-resources statement occurs. The
+<code>try</code>-with-resources statement is then translated according
+to the rest of this section.</p>
+<p>The meaning of a basic <code>try</code>-with-resources statement of
+the form:</p>
+<pre><code>try (<em>{VariableModifier} R Identifier</em> = <em>Expression</em> ...)
+    <em>Block</em>
+</code></pre>
+<p>is given by the following translation to a local variable declaration
+and a <code>try</code>-<code>catch</code>-<code>finally</code>
+statement:</p>
+<pre><code>{
+    final <em>{VariableModifierNoFinal} R Identifier</em> = <em>Expression</em>;
+    Throwable #primaryExc = null;
+
+    try <em>ResourceSpecification_tail</em>
+        <em>Block</em>
+    catch (Throwable #t) {
+        #primaryExc = #t;
+        throw #t;
+    } finally {
+        if (<em>Identifier</em> != null) {
+            if (#primaryExc != null) {
+                try {
+                    <em>Identifier</em>.close();
+                } catch (Throwable #suppressedExc) {
+                    #primaryExc.addSuppressed(#suppressedExc);
+                }
+            } else {
+                <em>Identifier</em>.close();
+            }
+        }
+    }
+}
+</code></pre>
+<p><em>{VariableModifierNoFinal}</em> is defined as
+<em>{VariableModifier}</em> without <code>final</code>, if present.</p>
+<p><code>#t</code>, <code>#primaryExc</code>, and
+<code>#suppressedExc</code> are automatically generated identifiers that
+are distinct from any other identifiers (automatically generated or
+otherwise) that are in scope at the point where the
+<code>try</code>-with-resources statement occurs.</p>
+<div class="inserted">
+<p>Alternatively, the meaning of a basic <code>try</code>-with-resources
+statement of the form:</p>
+<pre><code>try (<em>{VariableModifier} R _</em> = <em>Expression</em> ...)
+    <em>Block</em>
+</code></pre>
+<p>is given by the following translation to a local variable declaration
+and a <code>try</code>-<code>catch</code>-<code>finally</code>
+statement:</p>
+<pre><code>{
+    final <em>{VariableModifierNoFinal} R #i</em> = <em>Expression</em>;
+    Throwable #primaryExc = null;
+
+    try <em>ResourceSpecification_tail</em>
+        <em>Block</em>
+    catch (Throwable #t) {
+        #primaryExc = #t;
+        throw #t;
+    } finally {
+        if (<em>#i</em> != null) {
+            if (#primaryExc != null) {
+                try {
+                    <em>#i</em>.close();
+                } catch (Throwable #suppressedExc) {
+                    #primaryExc.addSuppressed(#suppressedExc);
+                }
+            } else {
+                <em>#i</em>.close();
+            }
+        }
+    }
+}
+</code></pre>
+<p><em>{VariableModifierNoFinal}</em> is defined as
+<em>{VariableModifier}</em> without <code>final</code>, if present.</p>
+<p><code>#t</code>, <code>#primaryExc</code>,
+<code>#suppressedExc</code>, and <code>#i</code> are automatically
+generated identifiers that are distinct from any other identifiers
+(automatically generated or otherwise) that are in scope at the point
+where the <code>try</code>-with-resources statement occurs.</p>
+</div>
+<p>If the resource specification indicates one resource, then
+<em>ResourceSpecification_tail</em> is empty (and the
+<code>try</code>-<code>catch</code>-<code>finally</code> statement is
+not itself a <code>try</code>-with-resources statement).</p>
+<p>If the resource specification indicates <em>n</em> &gt; 1 resources,
+then <em>ResourceSpecification_tail</em> consists of the 2nd, 3rd, ...,
+<em>n</em>'th resources indicated in the resource specification, in the
+same order (and the
+<code>try</code>-<code>catch</code>-<code>finally</code> statement is
+itself a <code>try</code>-with-resources statement).</p>
+<p>Reachability and definite assignment rules for the basic
+<code>try</code>-with-resources statement are implicitly specified by
+the <del>translation</del> <strong>translations</strong> above.</p>
+<p>In a basic <code>try</code>-with-resources statement that manages a
+single resource:</p>
+<ul>
+<li><p>If the initialization of the resource completes abruptly because
+of a <code>throw</code> of a value <em>V</em>, then the
+<code>try</code>-with-resources statement completes abruptly because of
+a <code>throw</code> of the value <em>V</em>.</p></li>
+<li><p>If the initialization of the resource completes normally, and the
+<code>try</code> block completes abruptly because of a
+<code>throw</code> of a value <em>V</em>, then:</p>
+<ul>
+<li><p>If the automatic closing of the resource completes normally, then
+the <code>try</code>-with-resources statement completes abruptly because
+of a <code>throw</code> of the value <em>V</em>.</p></li>
+<li><p>If the automatic closing of the resource completes abruptly
+because of a <code>throw</code> of a value <em>V2</em>, then the
+<code>try</code>-with-resources statement completes abruptly because of
+a <code>throw</code> of the value <em>V</em>, with <em>V2</em> added to
+the suppressed exception list of <em>V</em>.</p></li>
+</ul></li>
+<li><p>If the initialization of the resource completes normally, and the
+<code>try</code> block completes normally, and the automatic closing of
+the resource completes abruptly because of a <code>throw</code> of a
+value <em>V</em>, then the <code>try</code>-with-resources statement
+completes abruptly because of a <code>throw</code> of the value
+<em>V</em>.</p></li>
+</ul>
+<p>In a basic <code>try</code>-with-resources statement that manages
+multiple resources:</p>
+<ul>
+<li><p>If the initialization of a resource completes abruptly because of
+a <code>throw</code> of a value <em>V</em>, then:</p>
+<ul>
+<li><p>If the automatic closings of all successfully initialized
+resources (possibly zero) complete normally, then the
+<code>try</code>-with-resources statement completes abruptly because of
+a <code>throw</code> of the value <em>V</em>.</p></li>
+<li><p>If the automatic closings of all successfully initialized
+resources (possibly zero) complete abruptly because of
+<code>throw</code>s of values <em>V1</em>...<em>Vn</em>, then the
+<code>try</code>-with-resources statement completes abruptly because of
+a <code>throw</code> of the value <em>V</em>, with any remaining values
+<em>V1</em>...<em>Vn</em> added to the suppressed exception list of
+<em>V</em>.</p></li>
+</ul></li>
+<li><p>If the initialization of all resources completes normally, and
+the <code>try</code> block completes abruptly because of a
+<code>throw</code> of a value <em>V</em>, then:</p>
+<ul>
+<li><p>If the automatic closings of all initialized resources complete
+normally, then the <code>try</code>-with-resources statement completes
+abruptly because of a <code>throw</code> of the value
+<em>V</em>.</p></li>
+<li><p>If the automatic closings of one or more initialized resources
+complete abruptly because of <code>throw</code>s of values
+<em>V1</em>...<em>Vn</em>, then the <code>try</code>-with-resources
+statement completes abruptly because of a <code>throw</code> of the
+value <em>V</em>, with any remaining values <em>V1</em>...<em>Vn</em>
+added to the suppressed exception list of <em>V</em>.</p></li>
+</ul></li>
+<li><p>If the initialization of every resource completes normally, and
+the <code>try</code> block completes normally, then:</p>
+<ul>
+<li><p>If one automatic closing of an initialized resource completes
+abruptly because of a <code>throw</code> of value <em>V</em>, and all
+other automatic closings of initialized resources complete normally,
+then the <code>try</code>-with-resources statement completes abruptly
+because of a <code>throw</code> of the value <em>V</em>.</p></li>
+<li><p>If more than one automatic closing of an initialized resource
+completes abruptly because of <code>throw</code>s of values
+<em>V1</em>...<em>Vn</em> (where <em>V1</em> is the exception from the
+rightmost resource failing to close and <em>Vn</em> is the exception
+from the leftmost resource failing to close), then the
+<code>try</code>-with-resources statement completes abruptly because of
+a <code>throw</code> of the value <em>V1</em>, with any remaining values
+<em>V2</em>...<em>Vn</em> added to the suppressed exception list of
+<em>V1</em>.</p></li>
+</ul></li>
+</ul>
+<h5 id="jls-14.20.3.2">14.20.3.2 Extended
+<code>try</code>-with-resources</h5>
+<p>A <code>try</code>-with-resources statement with at least one
+<code>catch</code> clause and/or a <code>finally</code> clause is called
+an <em>extended</em> <code>try</code>-with-resources statement.</p>
+<p>The meaning of an extended <code>try</code>-with-resources
+statement:</p>
+<pre><code>
+try <em>ResourceSpecification</em>
+    <em>Block</em>
+<em>[Catches]</em>
+<em>[Finally]</em>
+</code></pre>
+<p>is given by the following translation to a basic
+<code>try</code>-with-resources statement nested inside a
+<code>try</code>-<code>catch</code> or
+<code>try</code>-<code>finally</code> or
+<code>try</code>-<code>catch</code>-<code>finally</code> statement:</p>
+<pre><code>
+try {
+    try <em>ResourceSpecification</em>
+        Block
+}
+<em>[Catches]</em>
+<em>[Finally]</em>
+</code></pre>
+<p>The effect of the translation is to put the resource specification
+"inside" the <code>try</code> statement. This allows a
+<code>catch</code> clause of an extended <code>try</code>-with-resources
+statement to catch an exception due to the automatic initialization or
+closing of any resource.</p>
+<p>Furthermore, all resources will have been closed (or attempted to be
+closed) by the time the <code>finally</code> block is executed, in
+keeping with the intent of the <code>finally</code> keyword.</p>
+<h3 id="jls-14.30">14.30 Patterns</h3>
+<h4 id="jls-14.30.1">14.30.1 Kinds of Patterns</h4>
+<div class="editorial">
+<p>The following changes assume that the JLS changes resulting from JEP
+440 (Record Patterns) and JEP 441 (Pattern Matching for
+<code>switch</code>) have been applied (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html">JLS:JEP440+441</a>).</p>
+</div>
+<p>A <em>type pattern</em> is used to test whether a value is an
+instance of the type appearing in the pattern. <strong>A <em>record
+pattern</em> is used to test whether a value is an instance of a record
+class type and, if it is, to recursively perform pattern matching on the
+record component values.</strong></p>
+<dl>
+<dt><em>Pattern</em>:</dt>
+<dd>
+<em>TypePattern</em>
+</dd>
+<dd>
+<em>RecordPattern</em>
+</dd>
+<dt><em>TypePattern</em>:</dt>
+<dd>
+<em>LocalVariableDeclaration</em>
+</dd>
+<dt><em>RecordPattern</em>:</dt>
+<dd>
+<em>ReferenceType</em> <code>(</code> [ <del><em>PatternList</em></del>
+<strong><em>ComponentPatternList</em></strong> ] <code>)</code>
+</dd>
+</dl>
+<div class="deleted">
+<dl>
+<dt><em>PatternList</em> :</dt>
+<dd>
+<em>Pattern</em> { <code>,</code> <em>Pattern</em> }
+</dd>
+</dl>
+</div>
+<div class="inserted">
+<dl>
+<dt><em>ComponentPatternList</em>:</dt>
+<dd>
+<em>ComponentPattern</em> { <code>,</code> <em>ComponentPattern</em> }
+</dd>
+<dt><em>ComponentPattern</em>:</dt>
+<dd>
+<em>Pattern</em>
+</dd>
+<dd>
+<em>UnnamedPattern</em>
+</dd>
+<dt><em>UnnamedPattern</em>:</dt>
+<dd>
+_
+</dd>
+</dl>
+</div>
+<blockquote>
+<p>The following productions from <a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.3">4.3</a>,
+<a href="#jls-8.3">8.3</a>, <a href="#jls-8.4.1">8.4.1</a>, and <a
+href="#jls-14.4">14.4</a> are shown here for convenience:</p>
+</blockquote>
+<blockquote>
+<dl>
+<dt><em>LocalVariableDeclaration:</em></dt>
+<dd>
+{<em>VariableModifier</em>} <em>LocalVariableType</em>
+<em>VariableDeclaratorList</em>
+</dd>
+<dt><em>VariableModifier:</em></dt>
+<dd>
+<em>Annotation</em>
+</dd>
+<dd>
+<code>final</code>
+</dd>
+<dt><em>LocalVariableType:</em></dt>
+<dd>
+<em>UnannType</em>
+</dd>
+<dd>
+<code>var</code>
+</dd>
+<dt><em>VariableDeclaratorList:</em></dt>
+<dd>
+<em>VariableDeclarator</em> {<code>,</code> <em>VariableDeclarator</em>}
+</dd>
+<dt><em>VariableDeclarator:</em></dt>
+<dd>
+<em>VariableDeclaratorId</em> [<code>=</code>
+<em>VariableInitializer</em>]
+</dd>
+</dl>
+</blockquote>
+<div class="deleted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="inserted">
+<blockquote>
+<dl>
+<dt><em>VariableDeclaratorId:</em></dt>
+<dd>
+<em>Identifier</em> [<em>Dims</em>]
+</dd>
+<dd>
+_
+</dd>
+</dl>
+</blockquote>
+</div>
+<blockquote>
+<dl>
+<dt><em>Dims:</em></dt>
+<dd>
+{<em>Annotation</em>} <code>[</code> <code>]</code>
+{{<em>Annotation</em>} <code>[</code> <code>]</code>}
+</dd>
+</dl>
+</blockquote>
+<blockquote>
+<p>See <a href="#jls-8.3">8.3</a> for <em>UnannType</em>.</p>
+</blockquote>
+<p>A pattern that does not appear as an element in the nested pattern
+list of a record pattern is called a <em>top-level</em> pattern;
+otherwise it is called a <em>nested</em> pattern.</p>
+<!-- Details about type patterns -->
+<p>A type pattern declares exactly one pattern variable. <strong>This
+pattern variable may be an <em>unnamed pattern variable</em> (denoted by
+<code>_</code>), otherwise the</strong> <del>The</del>
+<em>Identifier</em> in the local variable declaration specifies the name
+of the pattern variable.</p>
+<p>The rules for a pattern variable declared in a type pattern are
+specified in <a href="#jls-14.4">14.4</a>. In addition, all of the
+following must be true, or a compile-time error occurs:</p>
+<ul>
+<li><p>The <em>LocalVariableType</em> in a top-level type pattern
+denotes a reference type (and furthermore is not
+<code>var</code>).</p></li>
+<li><p>The <em>VariableDeclaratorList</em> consists of a single
+<em>VariableDeclarator</em>.</p></li>
+<li><p>The <em>VariableDeclarator</em> has no initializer.</p></li>
+<li><p>The <em>VariableDeclaratorId</em> has no bracket pairs.</p></li>
+</ul>
+<p>The type of a pattern variable declared in a top-level type pattern
+is the reference type denoted by <em>LocalVariableType</em>.</p>
+<p>The type of a pattern variable declared in a nested type pattern is
+determined as follows:</p>
+<ul>
+<li><p>If the <em>LocalVariableType</em> is <em>UnannType</em> then the
+type of the pattern variable is denoted by <em>UnannType</em></p></li>
+<li><p>If the <em>LocalVariableType</em> is <code>var</code> then the
+type pattern must be nested in a <strong>component</strong> pattern list
+of a record pattern with type <em>R</em>. Let <em>T</em> be the type of
+the corresponding component field in <em>R</em>. The type of the pattern
+variable is the upward projection of <em>T</em> with respect to all
+synthetic type variables mentioned by <em>T</em>.</p>
+<blockquote>
+<p>Consider the following record declaration:</p>
+<pre><code>record R&lt;T&gt;(ArrayList&lt;T&gt; r){}</code></pre>
+<p>Given the pattern <code>R&lt;String&gt;(var r)</code>, the type of
+the pattern variable <code>r</code> is thus
+<code>ArrayList&lt;String&gt;</code>.</p>
+</blockquote></li>
+</ul>
+<p>A type pattern is said to be <em>null-matching</em> if it appears as
+an element in a pattern list of a record pattern with type <em>R</em>,
+the corresponding record component of <em>R</em> has type <em>U</em>,
+and the type pattern is unconditional for the type <em>U</em> (<a
+href="https://cr.openjdk.org/~gbierman/jep440%2B441/jep440+441-20230406/specs/patterns-switch-record-patterns-jls.html#jls-14.30.3">14.30.3</a>).</p>
+<blockquote>
+<p>Note that this compile-time property of type patterns is used in the
+process of pattern matching (<a href="#jls-14.30.2">14.30.2</a>), so it
+is associated with the type pattern for use at run time.</p>
+</blockquote>
+<!-- Details about Record Patterns -->
+<p>A record pattern consists of a <em>ReferenceType</em> and a nested
+<strong>component</strong> pattern list. If <em>ReferenceType</em> is
+not a record class type (<a href="#jls-8.10">8.10</a>) then a
+compile-time error occurs.</p>
+<p>If the <em>ReferenceType</em> is a raw type, then the type of the
+record pattern is inferred, as described in [18.5.5]. It is a
+compile-time error if no type can be inferred for the record
+pattern.</p>
+<p>Otherwise, the type of the record pattern is
+<em>ReferenceType</em>.</p>
+<p>The length of the record pattern's nested <strong>component</strong>
+pattern list must be the same as the length of the record component list
+in the declaration of the record class named by <em>ReferenceType</em>;
+otherwise a compile-time error occurs.</p>
+<blockquote>
+<p>Currently, there is no support for variable arity record patterns.
+This may be supported in future versions of the Java Programming
+Language.</p>
+</blockquote>
+<p>A record pattern declares the pattern variables, if any, that are
+declared by the patterns in the nested <strong>component</strong>
+pattern list.</p>
+<div class="inserted">
+<p>An unnamed pattern is a special pattern that can only appear as an
+element in a component pattern list of a record pattern with type
+<em>R</em>. Let <em>T</em> be the type of the corresponding component
+field in <em>R</em>. An unnamed pattern does not declare any pattern
+variables and its type is defined to be the upward projection of
+<em>T</em> with respect to all synthetic type variables mentioned by
+<em>T</em>. An unnamed pattern is always null-matching.</p>
+</div>
+<h4 id="jls-14.30.2">14.30.2 Pattern Matching</h4>
+<p><em>Pattern matching</em> is the process of testing a value against a
+pattern at run time. Pattern matching is distinct from statement
+execution (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-14.html#jls-14.1">14.1</a>)
+and expression evaluation (<a
+href="https://docs.oracle.com/javase/specs/jls/se19/html/jls-15.html#jls-15.1">15.1</a>).
+<strong>If a value successfully matches a pattern, then the process of
+pattern matching will initialize all the pattern variables declared by
+the pattern, if any.</strong></p>
+<p>The process of pattern matching may involve expression evaluation or
+statement execution. Accordingly, pattern matching is said to
+<em>complete abruptly</em> if evaluation of a expression or execution of
+a statement completes abruptly. An abrupt completion always has an
+associated reason, which is always a <code>throw</code> with a given
+value. Pattern matching is said to <em>complete normally</em> if it does
+not complete abruptly.</p>
+<p>The rules for determining whether a value matches a pattern, and for
+initializing pattern variables, are as follows:</p>
+<ul>
+<li><p>The null reference <em>matches</em> a <del>type pattern</del>
+<strong>null-matching pattern</strong> <del>if the type pattern is
+null-matching</del> (<a href="#jls-14.30.1">14.30.1</a>); and <em>does
+not match</em> otherwise.</p>
+<p>If the null reference matches, then the pattern variable<strong>, if
+any,</strong> declared by the <del>type</del>
+<strong>null-matching</strong> pattern is initialized to the null
+reference.</p>
+<p>If the null reference does not match, then the pattern
+variable<strong>, if any,</strong> declared by the <del>type</del>
+<strong>null-matching</strong> pattern is not initialized.</p></li>
+<li><p>A value <em>v</em> that is not the null reference
+<em>matches</em> a type pattern of type <em>T</em> if <em>v</em> can be
+cast to <em>T</em> without raising a <code>ClassCastException</code>;
+and <em>does not match</em> otherwise.</p>
+<p>If <em>v</em> matches, then the pattern variable declared by the type
+pattern is initialized to <em>v</em>.</p>
+<p>If <em>v</em> does not match, then the pattern variable declared by
+the type pattern is not initialized.</p></li>
+<li><p>The null reference <em>does not match</em> a record pattern.</p>
+<p>In this case, any pattern variables declared by the record pattern
+are not initialized.</p></li>
+<li><p>A value <em>v</em> that is not the null reference
+<em>matches</em> a record pattern with type <em>R</em> and nested
+<strong>component</strong> pattern list <em>L</em> if (i) <em>v</em> can
+be cast to <em>R</em> without raising a <code>ClassCastException</code>;
+and (ii) each record component of <em>v</em> matches the corresponding
+pattern in <em>L</em>; and <em>does not match</em> otherwise.</p>
+<p>Each record component of <em>v</em> is determined by invoking the
+accessor method of <em>v</em> corresponding to that component. If
+execution of the invocation of the accessor method completes abruptly
+for reason <em>S</em>, then pattern matching completes abruptly by
+throwing a <code>MatchException</code> with cause <em>S</em>.</p>
+<blockquote>
+<p>Any pattern variable declared in a pattern appearing in the nested
+<strong>component</strong> pattern list is initialized only if
+<em>all</em> the patterns in the list match.</p>
+</blockquote></li>
+</ul>
+</main><footer class="legal-footer"><hr/><a href="../legal/copyright.html">Copyright</a> &copy; 1993, 2024, Oracle and/or its affiliates, 500 Oracle Parkway, Redwood Shores, CA 94065 USA.<br>All rights reserved. Use is subject to <a href="https://www.oracle.com/java/javase/terms/license/java21speclicense.html">license terms</a> and the <a href="https://www.oracle.com/technetwork/java/redist-137594.html">documentation redistribution policy</a>. <!-- Version 21.0.6+8-LTS-188 --></footer>
+</body>
+</html>

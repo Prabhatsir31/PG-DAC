@@ -1,0 +1,2 @@
+Resolution: In this phase, symbolic references are replaced with direct references present in the runtime constant pool.
+

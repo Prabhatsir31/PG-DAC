@@ -1,0 +1,42 @@
+inside constant pool
+
+
+#1 = Methodref          #6.#15         // java/lang/Object."<init>":()V
+
+	
+		inside public Sample();
+
+					invokespecial #1
+
+
+#1 is a symbol for java/lang/Object."<init>":()V i.e. Object class default constructor as you know the first line of Sample class constructor is always a call to Object class default constructor.
+
+
+inside 
+	 public static void main(java.lang.String[]);
+
+					getstatic     #2
+
+and in the constant pool
+
+			#2 = Fieldref      // java/lang/System.out:Ljava/io/PrintStream;
+
+so here "getstatic   #2" means to access static member "System.out"
+
+
+ldc        #3      
+
+		in the constant pool #3
+
+			#3 = String             // Hello World
+
+so "ldc" instruction tells JVM to extract "Hello world" from constant pool and place it on the operand stack [ the operand stack is part of the stack frame for each method invocation ] so that it will be utilize to call "println()" method. 
+
+				invokevirtual #4
+in the constant pool,
+		#4 = Methodref             // java/io/PrintStream.println:(Ljava/lang/String;)V
+
+it means "invokevirtual  #4" tells JVM to invoke or call "println" method
+
+
+

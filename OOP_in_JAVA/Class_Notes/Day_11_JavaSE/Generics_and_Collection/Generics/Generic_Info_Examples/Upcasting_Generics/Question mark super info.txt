@@ -1,0 +1,23 @@
+
+class babyDog extends Dog{}
+
+
+		disp(List<? super Dog> mylist)
+		{
+			mylist.add(new Dog());    // allowed
+			mylist.add(new babyDog());  // allowed
+			mylist.add(new String());  // not allowed
+			mylist.add(new Animal());   // not allowed
+		}
+
+
+		disp( list of Dog )  // allowed
+		disp( list of Object )  // allowed
+
+		disp( list of Animal ) // allowed
+
+		disp( list of babyDog) // not allowed
+
+
+means when u call disp you can pass list of Dog or its parent , but not child.
+moreover you can add also here. But you can add only Dog or its sub types.

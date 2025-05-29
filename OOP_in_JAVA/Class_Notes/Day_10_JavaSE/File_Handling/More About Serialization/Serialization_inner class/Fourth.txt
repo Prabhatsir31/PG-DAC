@@ -1,0 +1,93 @@
+/*
+output:
+
+writing is over
+java.io.InvalidClassException: core1.Outer$inner; no valid constructor
+	at java.io.ObjectStreamClass$ExceptionInfo.newInvalidClassException(Unknown Source)
+	at java.io.ObjectStreamClass.checkDeserialize(Unknown Source)
+	at java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+	at java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.io.ObjectInputStream.readObject(Unknown Source)
+	at core1.MyClass.main(MyClass.java:51)
+Exception in thread "main" java.lang.NullPointerException
+	at core1.MyClass.main(MyClass.java:61)
+
+
+*/
+
+/*
+even if we provide no-arg constructor inside inner class, the generated class for inner class does not contain it.
+
+*/
+
+
+package core1;
+
+import java.io.Externalizable;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Outer implements Serializable
+{
+	class inner implements Externalizable
+	{
+		int num=10;
+		
+		public inner()
+		{
+			System.out.println("inner class no-arg constructor");
+		}
+
+		@Override
+		public void writeExternal(ObjectOutput out) throws IOException {
+			// TODO Auto-generated method stub
+			out.writeInt(num);
+			
+		}
+
+		@Override
+		public void readExternal(ObjectInput in) throws IOException,
+				ClassNotFoundException {
+			// TODO Auto-generated method stub 
+			int k=in.readInt();
+			
+		}
+	}
+}
+public class MyClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Outer o=new Outer();
+		Outer.inner i=o.new inner();
+		Outer.inner ref=null;
+		
+		try
+		{
+		FileOutputStream fos=new FileOutputStream("d:\\try.txt");
+		ObjectOutputStream oos=new ObjectOutputStream(fos);
+		oos.writeObject(i);
+		System.out.println("writing is over");
+		FileInputStream fis=new FileInputStream("d:\\try.txt");
+		ObjectInputStream ois=new ObjectInputStream(fis);
+		ref=(Outer.inner)ois.readObject();
+		}
+		catch(IOException ie)
+		{
+			ie.printStackTrace();
+		}
+		catch(ClassNotFoundException cnfe)
+		{
+			cnfe.printStackTrace();
+		}
+		System.out.println(ref.num);
+
+	}
+
+}

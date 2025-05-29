@@ -1,0 +1,102 @@
+// a) overriding  method may not declare any checked exception
+
+
+class base
+{
+	void disp()throws IOException
+	{
+		// some code
+	}
+}
+
+class sub extends base
+{
+	void disp()
+	{
+	}
+}
+
+
+b)
+(i) overriding method can declare same checked exception
+
+class base
+{
+	void disp()throws IOException
+	{
+		// some code
+	}
+}
+
+class sub extends base
+{
+	void disp()throws IOException
+	{
+	}
+}
+
+
+b)
+(ii) overriding method can declare same checked exception or its sub-type declared by overriden method.
+
+class base
+{
+	void disp()throws IOException
+	{
+		// some code
+	}
+}
+
+class sub extends base
+{
+	void disp()throws FileNotFoundException
+	{
+	}
+}
+
+
+c) overriding method can not declare checked exception not declared by overriden method.
+
+
+class base
+{
+	void disp()throws IOException
+	{
+		// some code
+	}
+}
+
+class sub extends base
+{
+	void disp()throws Exception
+	{
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

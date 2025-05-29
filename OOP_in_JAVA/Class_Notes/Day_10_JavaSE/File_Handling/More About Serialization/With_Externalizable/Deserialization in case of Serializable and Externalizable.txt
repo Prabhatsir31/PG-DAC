@@ -1,0 +1,14 @@
+in case of Serializable when u deserialize an object
+
+	a) new object gets created
+	b) instance members are allocated memory
+	c) constructor does not get called
+	d) non-static and non-transient members are initialized with the help of file info
+
+
+in case of Externalizable when u deserialize an object
+
+	a) new object gets created
+	b) instance members are allocated memory
+	c) default constructor gets called
+	c) readExternal() method will get called which initializes non-static and non-transient members with the help of file info

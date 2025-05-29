@@ -1,0 +1,39 @@
+package core;
+
+import java.util.*;
+/*
+
+The ArrayList stores the elements ["hello", "welcome"] in heap memory.
+
+The stream() method returns a Stream object that internally holds a reference to mylist.
+
+No elements are actually copied or processed until a terminal operation is invoked.
+
+
+mylist.stream().forEach(System.out::println);
+
+Execution Flow:
+
+stream() creates a Stream<String>.
+
+forEach(System.out::println) is a terminal operation, so now: 
+
+	The stream starts reading elements from mylist.
+	It prints each element one by one.
+
+*/
+
+
+public class StreamExample1 
+{
+
+	public static void main(String args[])
+	{
+		List<String>mylist=new ArrayList<String>();
+		mylist.add("hello");
+		mylist.add("welcome");
+		mylist.stream().forEach(System.out::println);
+
+	}
+
+}

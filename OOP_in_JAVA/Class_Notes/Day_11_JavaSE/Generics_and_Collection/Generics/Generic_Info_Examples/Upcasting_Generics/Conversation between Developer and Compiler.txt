@@ -1,0 +1,50 @@
+
+compiler allows us to assign child class array to parent class reference. Even though it has got a risk of putting non-compatible ( some other child class) object inside the array, compiler allows you to do this because there is JVM to check during runtime if anything happens illegal.
+
+	vs
+generic
+
+developer - why don't you allow me to pass ArrayList<Dog> to the method which accepts List<Animal>
+
+compiler - there is a risk that during runtime inside the method one can "add Cat" inside the list meant for Dog. JVM cannot detect this problem as it does not know anything about generic.
+
+developer - so how could I store multiple child classes of Animal inside the list
+compiler - yes there is a way
+
+compiler- why programmer wants to pass "list of Dog" to the method which accepts "list of Animal" 
+
+developer - not just "list of Dog", I would like pass "list of Cat","list of Tiger" etc. also. This is because inside the method I would like to invoke "eat()" method of any given Animal polymorphically.
+
+compiler - ok ,I got it, I will allow you to pass "list of Dog" e.g. to the method which accepts "list of Animal" but on one condition. You will not add anything inside the list in the method.
+
+developer - but if I want to add , do you have any mechanism
+compiler - yes but of course it's not possible in case of
+		? extends but in  case of ?super
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

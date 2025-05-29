@@ -1,0 +1,4 @@
+Why static methods were introduced inside Java8 interface?
+
+
+When changes were made in an interface of Java8 (default methods), Java founders recalled that long time back when they wanted to design algorithms which are nothing but static methods (utility methods), they could not add them inside an interface. It wasn't allowed then. For this purpose(adding static methods) they had to design a separate class "Collections" and define all the static methods as algorithms inside it. So in future if such requirement arises, programmers need not design a separate class for static methods, they can easily define static methods inside an interface.

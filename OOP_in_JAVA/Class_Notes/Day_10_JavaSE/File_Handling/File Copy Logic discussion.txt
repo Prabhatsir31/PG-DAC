@@ -1,0 +1,13 @@
+e:\\temp\\xyz.txt
+
+write a file copy program using FileInputStream and FileOutputStream
+
+
+1) File f=new File("e:\\temp\\xyz.txt");
+2) FileInputStream [ f ]
+3) byte[] - length of the file
+4) read using FileInputStream
+5) FileOutputStream -  "e:\\temp\\pqr.txt"
+6) FileOutputStream
+		write(byte [] in which you have read the contents of "xyz.txt")
+

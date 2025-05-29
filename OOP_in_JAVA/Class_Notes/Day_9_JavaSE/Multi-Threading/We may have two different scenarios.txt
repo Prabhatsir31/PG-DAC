@@ -1,0 +1,16 @@
+we may have 2 scenarios
+
+a) we would like to have one thread at a time to work and only when it finishes , the other thread should work.
+
+	banking application
+		one thread should complete the job of depositing money
+	and then only the other thread can withdraw
+
+		synchronized - keyword
+
+
+
+b) we would like to have all our threads to work simultaneously.
+
+	server side application where server would like to have all the clients( threads) connecting simultaneously.
+		sleep - method

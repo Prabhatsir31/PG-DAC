@@ -1,0 +1,17 @@
+how to create user defined exception?
+	checked exception or unchecked exception
+
+for checked exception:
+
+	public class MyException extends Exception{}
+
+for unchecked exception:
+
+	public class MyException extends RuntimeException{}
+
+
+on what basis you will decide whether to create checked or unchecked exception?
+
+you create checked exception when you would like your client to take corrective action/s in case of exception.  i.e. checked exception somehow enforces client to handle it. (using try...catch) and the corrective action/s can be taken inside catch block.
+
+you create unchecked exception when you feel there is no need of any corrective action by client in case of exception.

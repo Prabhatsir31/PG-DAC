@@ -1,0 +1,13 @@
+
+
+for reading purpose
+
+	we read channel's data (file's data)  into buffer
+			program converts buffer to String.
+
+for writing purpose
+
+	program writes data into buffer
+			buffer is written to channel(file).
+
+

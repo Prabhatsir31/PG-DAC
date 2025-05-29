@@ -1,0 +1,6 @@
+@FunctionalInterface
+public interface MyInterface
+{
+	void disp1();
+	//void disp2();
+}

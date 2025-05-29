@@ -1,0 +1,12 @@
+suppose you are a developer and develop one class for clients. e.g.
+
+public class MyClass
+{
+	members and methods
+}
+
+now this class is derived from Object which has "protected Object clone()" method. It means MyClass has the same method because it hasn't overridden "clone()" method. Now think can client from some other package invoke "clone()" method of MyClass?
+answer is :
+	if client creates the child class of "MyClass" then client can invoke "clone()" method through inheritance ( direct call) , but if client creates object of MyClass and tries to invoke it is not possible. Client will not always create child class of MyClass without any valid reason.
+In this case if developer would like clients to invoke "clone()" using the reference of MyClass, he will override it with "public" accessibility. 
+Hence to give a choice to a programmer (in our example developer) whether or not his clone method should be invoked by client, "clone()" method is protected in Object class.

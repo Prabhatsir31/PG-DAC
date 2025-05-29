@@ -1,0 +1,114 @@
+Question:
+
+define a class Player
+ 	with
+		int playerid
+		String name
+		int runs
+		String countryname
+
+		define
+			parameterized constructor and getter methods
+
+create 10 players and store them inside a list.
+
+using java8 stream api:
+
+1) display all the players representing "India".
+
+	hint:- use "filter" to check players representing "India" and "forEach" method in order to print them.
+
+
+2) find out how many players have scored more than 5000 runs.
+
+	hint:- use "filter" to check players scored more than 5000 runs and "count" method to count them.
+
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Player
+{
+	private int playerid;
+	private String name;
+	private int runs;
+	private String countryname;
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Player [playerid=" + playerid + ", name=" + name + ", runs="
+				+ runs + ", countryname=" + countryname + "]";
+	}
+	public Player(int playerid, String name, int runs, String countryname) {
+		super();
+		this.playerid = playerid;
+		this.name = name;
+		this.runs = runs;
+		this.countryname = countryname;
+	}
+	/**
+	 * @return the playerid
+	 */
+	public int getPlayerid() {
+		return playerid;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @return the runs
+	 */
+	public int getRuns() {
+		return runs;
+	}
+	/**
+	 * @return the countryname
+	 */
+	public String getCountryname() {
+		return countryname;
+	}
+	
+}
+public class Demo
+{
+	public static void main(String args[])
+	{
+		Player p1=new Player(1,"sachin",12000,"India");
+		Player p2=new Player(2,"ponting",10000,"australia");
+		Player p3=new Player(3,"guptil",4000,"new_zealand");
+		Player p4=new Player(4,"rahul",11000,"India");
+		Player p5=new Player(5,"viru",9000,"India");
+		Player p6=new Player(6,"root",9000,"England");
+		Player p7=new Player(7,"smith",4500,"australia");
+		Player p8=new Player(8,"gale",6000,"west_indies");
+		Player p9=new Player(9,"jaysurya",3000,"srilanka");
+		Player p10=new Player(10,"deviliers",8000,"south_africa");
+		
+		List<Player>mylist=new ArrayList<Player>();
+		
+		mylist.add(p1);
+		mylist.add(p2);
+		mylist.add(p3);
+		mylist.add(p4);
+		mylist.add(p5);
+		mylist.add(p6);
+		mylist.add(p7);
+		mylist.add(p8);
+		mylist.add(p9);
+		mylist.add(p10);
+		
+		mylist.stream().filter(s->s.getCountryname().equalsIgnoreCase("india")).forEach(System.out::println);
+		System.out.println(mylist.stream().filter(s->s.getCountryname().equalsIgnoreCase("australia")).mapToInt(s->s.getRuns()).sum());
+		System.out.println(mylist.stream().filter(s->s.getRuns()>5000).count());
+		
+	}
+}
+

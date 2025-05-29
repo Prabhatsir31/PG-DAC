@@ -1,0 +1,8 @@
+
+
+		Class
+			newInstance()  // instantiate the loaded class by invoking default constructor
+
+
+		Constructor 
+			newInstance(Object ...)  // instantiate the loaded class by invoking parameterized constructor

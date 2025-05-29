@@ -1,0 +1,13 @@
+what is hash function?
+
+maps larger values to smaller values
+should be O(1) or O(len) for string keys
+	O(1) means while calculating hash no loop should be invoked.
+
+e.g.
+hash(2192354) = 7
+
+hash("tiger")= 2
+
+
+In Java, a hash function is a function used to map data of arbitrary size to fixed-size values, typically integers, which are used to index into an array or a hash table. The primary purpose of a hash function is to efficiently distribute data across the available slots in the array or hash table, facilitating fast retrieval and storage of data.

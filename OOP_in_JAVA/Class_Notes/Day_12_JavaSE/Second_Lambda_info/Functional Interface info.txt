@@ -1,0 +1,56 @@
+Lambda expressions can work with only "functional interfaces"
+
+"functional interface" is the one which has only one abstract method. It may have static and default methods.
+
+"functional interface" was known as "SAM ( Single Abstract Method ) interface" before Java8.
+
+how to declare "functional" interface ?
+
+@FunctionalInterface
+interface Emp 
+{
+	void disp();
+	static void disp1()
+	{
+	}
+	default void disp2()
+	{
+	}
+}
+
+here annotation "@FunctionalInterface" is not compulsory, but if you use it and try to add one more abstract method , that will give you compilation error.
+
+e.g.
+
+@FunctionalInterface
+interface Emp     // error
+{
+	void disp();
+	static void disp1()
+	{
+	}
+	default void disp2()
+	{
+	}
+	void fun();  
+}
+
+
+or
+
+interface Emp1
+{
+	void disp1();
+}
+
+@FunctionalInterface
+interface Emp extends Emp1   // error
+{
+	void disp();
+	
+}
+
+
+
+
+

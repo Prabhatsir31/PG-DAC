@@ -1,0 +1,27 @@
+			object persistence
+
+it means saving the state of an object inside either filesystem or database so that it can be retrieved back in future.
+
+When we save the state of an object inside filesystem , it is known as "Serialization".
+
+in java there are two rules for Serialization:
+
+	a) a class has to implement either Serializable or Externalizable interface.
+
+	b) class must have all the instance members of type serialized. (Serialized type means which can be easily converted into sequence of bytes) . By default all the primitives are of serialized type.
+Reference type can be made serialized type by implementing either Serializable or Externalizable interface.
+
+Serializing object means writing Object inside filesystem as follows:
+		FileOutputStream fos=new FileOutputStream("filename");
+		ObjectOutputStream oos=new ObjectOutputStream(fos);
+			oos.writeObject(<object to be written>);
+
+Deserializing object means reading object from filesystem as follows:
+		FileInputStream fis=new FileInputStream("filename");
+		ObjectInputStream ois=new ObjectInputStream(fis);
+			ois.readObject();
+
+
+
+
+

@@ -1,0 +1,32 @@
+Question
+
+define a class Student 
+	rollno
+	name
+	age
+	marks
+
+	parameterized constructor 
+	getter methods
+
+	create 5 objects and store them inside list.
+
+	using java8 stream api:
+
+	1) find out name starts with 's'
+
+		hint:- use "filter" to check names start with "s" and "forEach" method to display all those names.
+
+	
+	2) how many students got more than 70
+
+		hint: use "filter" and "count"
+
+	3) how many students in between age 22 and 25
+
+		hint: use "filter" and "count"
+
+
+		
+		
+

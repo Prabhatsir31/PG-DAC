@@ -1,0 +1,10 @@
+Fail-Fast Iterator
+	in case of ArrayList while u r traversing through the list using iterator if u try to 
+add inside the list, u get "ConcurrentModificationException". It means iterator of 
+ArrayList is "Fail-Fast".
+
+
+
+Fail-Safe Iterator
+	in case of CopyOnWriteArrayList when u create an iterator, it creates a snapshot of original list so that u can traverse it. If u try to add inside the list, element gets added inside original list.  It means iterator of 
+CopyOnWriteArrayList is "Fail-Safe".

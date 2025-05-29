@@ -1,0 +1,31 @@
+//package optional_pro;
+
+class MyClass
+{
+	public String disp()
+	{
+		return "in disp of MyClass";
+	}
+}
+public class Demo {
+	//private static MyClass ref=new MyClass();
+	 private static MyClass ref;
+	public static MyClass getMyClass()
+	{
+		return ref;
+	}
+	public static void main(String[] args)
+	{
+		MyClass temp=getMyClass();
+		System.out.println(temp.disp());   // NullPointerException
+		/*if(temp!=null)
+		{
+			System.out.println(temp.disp());
+		}
+		else
+		{
+			System.out.println("temp is null");
+		}*/
+
+	}
+}

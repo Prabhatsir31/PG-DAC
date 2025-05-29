@@ -1,0 +1,14 @@
+
+	Application Layer [ specific to application ]
+
+		Http
+		FTP
+		SMTP
+	
+		JRMP [ Java Remote Method Protocol ]
+			( it is used for RMI [ Remote Method Invocation ]
+
+		IIOP [ Internet Inter ORB protocol ]
+
+			( it is used for CORBA [ Common Object Request Brocker Architecture ] and EJB [ Enterprise Java Beans ] )
+	

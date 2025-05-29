@@ -1,0 +1,38 @@
+
+
+
+
+
+				byte streams
+
+InputStream				OutputStream     [ abstract classes ]
+  [ read ]				   [ write ]
+
+
+FileInputStream			        FileOutputStream
+
+
+
+
+
+
+				unicode character streams
+
+Reader						Writer		[ abstract classes ]
+[ read ]					  [ write ]
+
+
+FileReader					FileWriter
+
+
+
+				File class in java
+
+	File class in java allows you to check properties of a given file such as size,last modified date,name, read/write permission, whether file is existing or not.
+	Additionally File class also allows you to display information about a particular folder.
+
+
+
+
+
+

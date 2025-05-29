@@ -1,0 +1,60 @@
+1) create a class Student with name,age,marks
+create 4 objects, store them in ArrayList. store ArrayList inside the filesystem. Read the file and display ArrayList using Iterator.
+
+2) create interface Electronic_Appliance with on and off  methods
+define two implementations Tv and Refrigerator
+create ArrayList for Electronic_Appliance  i.e.  new ArrayList<Electronic_Appliance>
+store Tv and Refrigerator inside ArrayList. Store ArrayList inside the file
+read the list from the file and traverse it using Iterator. Also while iterating invoke on and off  methods.
+
+3) create checked exception:
+	InvalidLengthException
+
+define a class 
+
+public class Authenticator
+	
+with
+a parameterized constructor which takes String as a password.
+this class also will have "done()" method with "successful authentication" message.
+Parameterized constructor should check the length of the password passed if it is less than 5 or more that 9 , it should raise "InvalidLengthException" 
+	[ constructor shouldn't handle the exception]
+
+create a class "Demo" with main
+	inside main function create the object of "Authenticator" class and invoke "done()" method.
+
+
+4) create a class Employee with empid,name,salary as fields , setters , getters and toString methods
+
+create 3 objects
+create HashMap with Integer as key and Employee as value
+new HashMap<Integer,Employee>
+
+store above created 3 objects inside the map.
+
+write Map inside the file system.
+read Map from the file and iterate it using iterator.
+
+5) create interface "Game" , have an abstract method "play()". from this interface implements classes like "Cricket" , "FootBall" and "Tennis".
+Now Define one more class 
+public class Demo with main function.
+In this class have a static method "perform" which will take interface reference as parameter.inside "perform()" see to it that if Cricket is passed ,its "play()" method should be invoked only. Call "perform()" method from main function.
+
+6) create abstract class Shape. declare "draw()" function as abstract. From this class define "Triangle","Polygon" and "Circle" .
+create an array of Shape having 3 elements.
+store child objects into this array . and call
+draw function of Polygon only.
+
+7) create HashMap<Integer,String>
+store 4 entries
+	key	value
+
+	1    	Java
+	2    	C++
+	3    	Python
+	4    	Database
+
+now accept a number from user between 1 to 4
+and retrive modulename for that number from the HashMap
+e.g. if user enters 3, Python should be retrieved from the HashMap
+

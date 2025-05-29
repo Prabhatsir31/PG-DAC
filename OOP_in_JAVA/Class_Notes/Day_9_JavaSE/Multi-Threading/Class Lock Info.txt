@@ -1,0 +1,7 @@
+
+
+	when u want to ensure that non-static method/s should be called by only one thread at a time, u apply lock on an object which is shared by more than one threads. The technique to apply "object lock" is to have synchronized non-static method/s or block/s.
+
+
+What if u want to ensure that static method/s should be called by only one thread at a time?
+	here object lock will not help at all because static methods are not at all associated with the object. Hence u need to apply "class lock" i.e. lock on an instance of class "Class". The technique to apply "class lock" is to have synchronized static method/s or block/s.

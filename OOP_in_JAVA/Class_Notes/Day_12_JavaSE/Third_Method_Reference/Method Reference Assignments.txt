@@ -1,0 +1,41 @@
+1) define a functional interface "First" with an abstract method "void disp1()".
+define a class "Second" with a method "void fun1()"
+
+inside main function create a method reference for "First" and invoke "fun1" of "Second"
+
+2) define a functional interface "Third" with an abstract method "void show(int num)".
+define a class "Sample" with a method "void disp(int num)"
+
+inside main function create a method reference for "Third" and invoke "disp" of "Sample" by passing a value "500".
+
+3) define a functional interface "Fifth" with an abstract method "int add(int a,int b)"
+define a class Math1 with a method "int calc(int a,int b)" 
+
+inside main function invoke "calc" method with the help of
+	a) lamdba expression
+	b) method reference
+
+4) define a functional interface "Sixth" with an abstract method "void disp5()".
+define a class "Sample" with a static method "void fun1()"
+
+inside main function create a method reference for "Sixth" and invoke "fun1" of "Sample"
+
+5) define a functional interface "Emp" with an abstract method "void show()".
+define a class "MyClass" with default constructor with the message "inside default constructor of MyClass".
+
+inside main function instantiate "MyClass" using method reference to "Emp"
+
+6) define a functional interface "Seventh" with an abstract method "void fun(int k)".
+define a class "Sample" with parameterized constructor with the message "inside parameterized constructor of Sample\t"+k .
+
+inside main function instantiate "Sample" by passing value "200" using method reference to "Seventh"
+
+7) define a class "Student" with name and age as member variables, parameterized constructor , setters , getters and "toString" method. 
+
+define a functional interface "MyInterface" with an abstract method "void show(Student ref)"
+
+inside main function 
+a) create an instance of "Student" class by passing "Vijay" and '20' values.
+
+b) create method reference for "MyInterface" and display the instance of "Student" class created above.
+

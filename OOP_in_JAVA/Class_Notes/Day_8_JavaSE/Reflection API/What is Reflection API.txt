@@ -1,0 +1,8 @@
+The Reflection API in Java allows a program to inspect and manipulate classes, methods, and fields at runtime, even if their names are unknown at compile time. It helps in accessing private methods, creating objects dynamically, and analyzing class structure.
+
+
+
+
+
+
+

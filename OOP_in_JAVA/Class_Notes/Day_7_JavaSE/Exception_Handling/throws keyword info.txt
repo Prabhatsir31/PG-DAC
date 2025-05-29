@@ -1,0 +1,6 @@
+
+throws keyword is used to "declare" exception.
+
+what do you mean by "declaring" exception ?
+
+"Declaring" exception means propagating it to the caller and then it's caller's responsibility to "handle or declare".

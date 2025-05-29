@@ -1,0 +1,15 @@
+List
+	4 2 7 13 14 48 32 8 10
+
+
+Stream API
+
+	find out how many nos. divisible by 2   - intermediate operation
+
+		4 2 14 48 32 8 10
+
+	sort					-  intermediate operation
+		2 4 8 10 14 32 48
+
+	sum					-  terminal operation
+		total of all the above nos.

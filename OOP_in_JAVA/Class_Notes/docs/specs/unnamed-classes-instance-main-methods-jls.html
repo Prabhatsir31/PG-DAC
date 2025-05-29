@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc,fixuphtml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Unnamed Classes and Instance main Methods (Preview)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../resources/jdk-default.css" />
+  <link rel="stylesheet" href="../resources/spec-changes.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<header id="title-block-header">
+<div class="navbar"><div><strong>Java SE 21 & JDK 21</strong></div><nav><ul><li><a href="../api/index.html">API</a>
+<li><a href="index.html">OTHER SPECIFICATIONS</a>
+<li><a href="man/index.html">TOOL GUIDES</a></ul></nav></div>
+
+<h1 class="title">Unnamed Classes and Instance <code>main</code> Methods
+(Preview)</h1>
+<p class="subtitle">Changes to the Java® Language Specification •
+Version 21.0.6+8-LTS-188</p>
+</header>
+<nav id="TOC" role="doc-toc" title="Table Of Contents">
+<ul>
+<li><a href="#jls-6" id="toc-jls-6">Chapter 6: Names</a>
+<ul>
+<li><a href="#jls-6.7" id="toc-jls-6.7">6.7 Fully Qualified Names and
+Canonical Names</a></li>
+</ul></li>
+<li><a href="#jls-7" id="toc-jls-7">Chapter 7: Packages and Modules</a>
+<ul>
+<li><a href="#jls-7.3" id="toc-jls-7.3">7.3 Compilation Units</a></li>
+</ul></li>
+<li><a href="#jls-8" id="toc-jls-8">Chapter 8: Classes</a>
+<ul>
+<li><a href="#jls-8.1" id="toc-jls-8.1">8.1 Class Declarations</a></li>
+</ul></li>
+<li><a href="#jls-9" id="toc-jls-9">Chapter 9: Interfaces</a></li>
+<li><a href="#jls-12" id="toc-jls-12">Chapter 12: Execution</a>
+<ul>
+<li><a href="#jls-12.1" id="toc-jls-12.1">12.1 Java Virtual Machine
+Startup</a>
+<ul>
+<li><a href="#jls-12.1.1" id="toc-jls-12.1.1">12.1.1 Load the
+<strong>Initial</strong> Class <strong>or Interface</strong>
+<del><code>Test</code></del></a></li>
+<li><a href="#jls-12.1.2" id="toc-jls-12.1.2">12.1.2 Link <strong>the
+Initial Class or Interface</strong> <del><code>Test</code></del>:
+Verify, Prepare, (Optionally) Resolve</a></li>
+<li><a href="#jls-12.1.3" id="toc-jls-12.1.3">12.1.3 Initialize
+<strong>the Initial Class or Interface</strong> <del>Test</del>: Execute
+Initializers</a></li>
+<li><a href="#jls-12.1.4" id="toc-jls-12.1.4">12.1.4 Invoke
+<del><code>Test.main</code></del> <strong>a <code>main</code>
+method</strong></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#jls-13" id="toc-jls-13">Chapter 13: Binary
+Compatibility</a>
+<ul>
+<li><a href="#jls-13.1" id="toc-jls-13.1">13.1 The Form of a
+Binary</a></li>
+</ul></li>
+</ul>
+</nav>
+<main><p>This document describes changes to the <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html">Java Language Specification</a>
+to support <em>Unnamed Classes and Instance <code>main</code>
+Methods</em>, which is a preview feature of Java SE 21. See <a
+href="https://openjdk.org/jeps/445">JEP 445</a> for an overview of the
+feature.</p>
+<p>A <a
+href="unnamed-classes-instance-main-methods-jvms.html">companion document</a>
+describes the changes needed to the <a
+href="https://docs.oracle.com/javase/specs/jvms/se20/html">Java Virtual Machine Specification</a>
+to support Unnamed Classes and Instance <code>main</code> Methods.</p>
+<p>Changes are described with respect to existing sections of the JLS.
+New text is indicated <strong>like this</strong> and deleted text is
+indicated <del>like this</del>. Explanation and discussion, as needed,
+is set aside in grey boxes.</p>
+<div class="editorial">
+<p>Changelog:</p>
+<p>2023-05-30: Minor editorial changes.</p>
+<p>2023-05-24: Misc editorial changes.</p>
+<p>2023-05-19: <a href="#jls-12.1.4">12.1.4</a> Change to the definition
+of a candidate <code>main</code> method, reflecting change in the
+JEP.</p>
+<p>2023-05-15:</p>
+<ul>
+<li>Added reference to companion JVMS document.</li>
+<li><a href="#jls-12.1.4">12.1.4</a> Improvements to explanation of
+candidate <code>main</code> methods.</li>
+</ul>
+<p>2023-05-02: First draft released</p>
+</div>
+<h2 id="jls-6">Chapter 6: Names</h2>
+<h3 id="jls-6.7">6.7 Fully Qualified Names and Canonical Names</h3>
+<p>Every primitive type, named package, <strong>named</strong> top level
+class, and top level interface has a <em>fully qualified name</em>:</p>
+<ul>
+<li><p>The fully qualified name of a primitive type is the keyword for
+that primitive type, namely <code>byte</code>, <code>short</code>,
+<code>char</code>, <code>int</code>, <code>long</code>,
+<code>float</code>, <code>double</code>, or
+<code>boolean</code>.</p></li>
+<li><p>The fully qualified name of a named package that is not a
+subpackage of a named package is its simple name.</p></li>
+<li><p>The fully qualified name of a named package that is a subpackage
+of another named package consists of the fully qualified name of the
+containing package, followed by "<code>.</code>", followed by the simple
+(member) name of the subpackage.</p></li>
+<li><p>The fully qualified name of a <strong>named</strong> top level
+class or top level interface that is declared in an unnamed package is
+the simple name of the class or interface.</p></li>
+<li><p>The fully qualified name of a top level class or top level
+interface that is declared in a named package consists of the fully
+qualified name of the package, followed by "<code>.</code>", followed by
+the simple name of the class or interface.</p></li>
+</ul>
+<p>Each member class, member interface, and array type <em>may</em> have
+a fully qualified name:</p>
+<ul>
+<li><p>A member class or member interface <em>M</em> of another class or
+interface <em>C</em> has a fully qualified name if and only if
+<em>C</em> has a fully qualified name.</p>
+<p>In that case, the fully qualified name of <em>M</em> consists of the
+fully qualified name of <em>C</em>, followed by "<code>.</code>",
+followed by the simple name of <em>M</em>.</p></li>
+<li><p>An array type has a fully qualified name if and only if its
+element type has a fully qualified name.</p>
+<p>In that case, the fully qualified name of an array type consists of
+the fully qualified name of the component type of the array type
+followed by "<code>[]</code>".</p></li>
+</ul>
+<p>A local class, local interface, <del>or</del> anonymous
+class<strong>, or unnamed top level class</strong> does not have a fully
+qualified name.</p>
+<p>Every primitive type, named package, <strong>named</strong> top level
+class, and top level interface has a <em>canonical name</em>:</p>
+<ul>
+<li>For every primitive type, named package, top level class, and top
+level interface, the canonical name is the same as the fully qualified
+name.</li>
+</ul>
+<p>Each member class, member interface, and array type <em>may</em> have
+a canonical name:</p>
+<ul>
+<li><p>A member class or member interface <em>M</em> declared in another
+class or interface <em>C</em> has a canonical name if and only if
+<em>C</em> has a canonical name.</p>
+<p>In that case, the canonical name of <em>M</em> consists of the
+canonical name of <em>C</em>, followed by "<code>.</code>", followed by
+the simple name of <em>M</em>.</p></li>
+<li><p>An array type has a canonical name if and only if its component
+type has a canonical name.</p>
+<p>In that case, the canonical name of the array type consists of the
+canonical name of the component type of the array type followed by
+"<code>[]</code>".</p></li>
+</ul>
+<p>A local class, local interface, <del>or</del> anonymous
+class<strong>, or unnamed top level class</strong> does not have a
+canonical name.</p>
+<div class="example">
+<p>Example 6.7-1. Fully Qualified Names</p>
+<ul>
+<li><p>The fully qualified name of the type <code>long</code> is
+"<code>long</code>".</p></li>
+<li><p>The fully qualified name of the package <code>java.lang</code> is
+"<code>java.lang</code>" because it is subpackage <code>lang</code> of
+package <code>java</code>.</p></li>
+<li><p>The fully qualified name of the class <code>Object</code>, which
+is defined in the package <code>java.lang</code>, is
+"<code>java.lang.Object</code>".</p></li>
+<li><p>The fully qualified name of the interface
+<code>Enumeration</code>, which is defined in the package
+<code>java.util</code>, is
+"<code>java.util.Enumeration</code>".</p></li>
+<li><p>The fully qualified name of the type "array of
+<code>double</code>" is "<code>double[]</code>".</p></li>
+<li><p>The fully qualified name of the type "array of array of array of
+array of <code>String</code>" is
+"<code>java.lang.String[][][][]</code>".</p></li>
+</ul>
+<p>In the code:</p>
+<pre><code>package points;
+class Point    { int x, y; }
+class PointVec { Point[] vec; }</code></pre>
+<p>the fully qualified name of the type <code>Point</code> is
+"<code>points.Point</code>"; the fully qualified name of the type
+<code>PointVec</code> is "<code>points.PointVec</code>"; and the fully
+qualified name of the type of the field <code>vec</code> of class
+<code>PointVec</code> is "<code>points.Point[]</code>".</p>
+</div>
+<div class="example">
+<p>Example 6.7-2. Fully Qualified Names v. Canonical Name</p>
+<p>The difference between a fully qualified name and a canonical name
+can be seen in code such as:</p>
+<pre><code>package p;
+class O1 { class I {} }
+class O2 extends O1 {}</code></pre>
+<p>Both <code>p.O1.I</code> and <code>p.O2.I</code> are fully qualified
+names that denote the member class <code>I</code>, but only
+<code>p.O1.I</code> is its canonical name.</p>
+</div>
+<h2 id="jls-7">Chapter 7: Packages and Modules</h2>
+<h3 id="jls-7.3">7.3 Compilation Units</h3>
+<p><em>CompilationUnit</em> is the goal symbol (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-2.html#jls-2.1">2.1</a>)
+for the syntactic grammar (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-2.html#jls-2.3">2.3</a>)
+of Java programs. It is defined by the following production:</p>
+<dl>
+<dt><em>CompilationUnit:</em></dt>
+<dd>
+<em>OrdinaryCompilationUnit</em>
+</dd>
+<dd>
+<strong><em>UnnamedClassCompilationUnit</em></strong>
+</dd>
+<dd>
+<em>ModularCompilationUnit</em>
+</dd>
+<dt><em>OrdinaryCompilationUnit:</em></dt>
+<dd>
+[<em>PackageDeclaration</em>] {<em>ImportDeclaration</em>}
+{<em>TopLevelClassOrInterfaceDeclaration</em>}
+</dd>
+</dl>
+<div class="inserted">
+<dl>
+<dt><em>UnnamedClassCompilationUnit:</em></dt>
+<dd>
+{<em>ImportDeclaration</em>} {<em>ClassMemberDeclarationNoMethod</em>}
+<em>MethodDeclaration</em> {<em>ClassMemberDeclaration</em>}
+</dd>
+<dt><em>ClassMemberDeclarationNoMethod:</em></dt>
+<dd>
+<em>FieldDeclaration</em>
+</dd>
+<dd>
+<em>ClassDeclaration</em>
+</dd>
+<dd>
+<em>InterfaceDeclaration</em>
+</dd>
+<dd>
+<code>;</code>
+</dd>
+</dl>
+</div>
+<dl>
+<dt><em>ModularCompilationUnit:</em></dt>
+<dd>
+{<em>ImportDeclaration</em>} <em>ModuleDeclaration</em>
+</dd>
+</dl>
+<p>An <em>ordinary compilation unit</em> consists of three parts, each
+of which is optional:</p>
+<ul>
+<li><p>A <code>package</code> declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4">7.4</a>),
+giving the fully qualified name (<a href="#jls-6.7">6.7</a>) of the
+package to which the compilation unit belongs.</p>
+<p>A compilation unit that has no <code>package</code> declaration is
+part of an unnamed package (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4.2">7.4.2</a>).</p></li>
+<li><p><code>import</code> declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.5">7.5</a>)
+that allow classes and interface from other packages, and
+<code>static</code> members of classes and interfaces, to be referred to
+using their simple names.</p></li>
+<li><p>Top level declarations of classes and interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>).</p></li>
+</ul>
+<div class="inserted">
+<p>An <em>unnamed class compilation unit</em> consists of:</p>
+<ul>
+<li><p>zero or more <code>import</code> declarations that allow classes
+and interface from other packages, and <code>static</code> members of
+classes and interfaces, to be referred to using their simple
+names.</p></li>
+<li><p>The declarations of the members (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.2">8.2</a>)
+of the implicitly declared top level class, at least one of which is a
+method declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4">8.4</a>).</p>
+<blockquote>
+<p>This means that the following compilation unit is unambiguously an
+ordinary compilation unit:</p>
+<pre><code>import p.*;
+class Test { ... }</code></pre>
+<p>whereas the following is unambiguously an unnamed class compilation
+unit:</p>
+<pre><code>import p.*;
+static void main(){ ... }
+class Test { ... }</code></pre>
+</blockquote></li>
+</ul>
+<p>An unnamed class compilation unit implicitly declares a class that
+satisfies the following properties:</p>
+<ul>
+<li><p>It is always a top level class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>).</p></li>
+<li><p>It is always an <em>unnamed</em> class (it has no canonical or
+fully qualified name (<a href="#jls-6.7">6.7</a>)).</p></li>
+<li><p>It is never <code>abstract</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.1.1">8.1.1.1</a>).</p></li>
+<li><p>It is always <code>final</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.1.2">8.1.1.2</a>).</p></li>
+<li><p>It is always a member of an unnamed package (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4.2">7.4.2</a>)
+and has package access.</p></li>
+<li><p>Its direct superclass type is always <code>Object</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.4">8.1.4</a>).</p></li>
+<li><p>It never has any direct superinterface types (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.5">8.1.5</a>).</p></li>
+<li><p>The body of the class contains every
+<em>ClassMemberDeclaration</em> (these are declarations of fields (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.3">8.3</a>),
+methods (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4">8.4</a>),
+member classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>),
+and member interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.1.1.3">9.1.1.3</a>))
+from the unnamed class compilation unit. It is not possible for an
+unnamed class compilation unit to declare an instance initializer (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.6">8.6</a>),
+static initializer (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.7">8.7</a>),
+or constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8">8.8</a>).</p></li>
+<li><p>It has an implicitly declared default constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.9">8.8.9</a>).</p></li>
+</ul>
+<p>All members of this class, including any implicitly declared members,
+are subject to the usual rules for member declarations in a class.</p>
+<p>It is a compile-time error if this class does not declare a candidate
+<code>main</code> method (<a href="#jls-12.1.4">12.1.4</a>).</p>
+<blockquote>
+<p>Note that an unnamed package may have multiple unnamed classes as
+members.</p>
+</blockquote>
+</div>
+<p>A <em>modular compilation unit</em> consists of a <code>module</code>
+declaration (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7">7.7</a>),
+optionally preceded by <code>import</code> declarations. The
+<code>import</code> declarations allow classes and interfaces from
+packages in this module and other modules, as well as
+<code>static</code> members of classes and interfaces, to be referred to
+using their simple names within the <code>module</code> declaration.</p>
+<p>Every compilation unit implicitly imports every <code>public</code>
+class or interface declared in the predefined package
+<code>java.lang</code>, as if the declaration
+<code>import java.lang.*;</code> appeared at the beginning of each
+compilation unit immediately after any <code>package</code> declaration.
+As a result, the names of all those classes and interfaces are available
+as simple names in every compilation unit.</p>
+<p>The host system determines which compilation units are
+<em>observable</em>, except for the compilation units in the predefined
+package <code>java</code> and its subpackages <code>lang</code> and
+<code>io</code>, which are all always observable.</p>
+<p>Each observable compilation unit may be <em>associated</em> with a
+module, as follows:</p>
+<ul>
+<li><p>The host system may determine that an observable ordinary
+compilation unit is associated with a module chosen by the host system,
+except for (i) the ordinary compilation units in the predefined package
+<code>java</code> and its subpackages <code>lang</code> and
+<code>io</code>, which are all associated with the
+<code>java.base</code> module, and (ii) any ordinary compilation unit in
+an unnamed package, which is associated with a module as specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4.2">7.4.2</a>.</p></li>
+<li><p>The host system must determine that an observable modular
+compilation unit is associated with the module declared by the modular
+compilation unit.</p></li>
+</ul>
+<blockquote>
+<p>The observability of a compilation unit influences the observability
+of its package (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4.3">7.4.3</a>),
+while the association of an observable compilation unit with a module
+influences the observability of that module (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7.6">7.7.6</a>).</p>
+</blockquote>
+<p>When compiling the modular and ordinary compilation units associated
+with a module <em>M</em>, the host system must respect the dependences
+specified in <em>M</em>'s declaration. Specifically, the host system
+must limit the ordinary compilation units that would otherwise be
+observable, to only those that are <em>visible to M</em>. The ordinary
+compilation units that are visible to <em>M</em> are the observable
+ordinary compilation units associated with the modules that are <em>read
+by M</em>. The modules read by <em>M</em> are given by the result of
+<em>resolution</em>, as described in the <code>java.lang.module</code>
+package specification, with <em>M</em> as the only root module. The host
+system must perform resolution to determine the modules read by
+<em>M</em>; it is a compile-time error if resolution fails for any of
+the reasons described in the <code>java.lang.module</code> package
+specification.</p>
+<blockquote>
+<p>The readability relation is reflexive, so <em>M</em> reads itself,
+and thus all of the modular and ordinary compilation units associated
+with <em>M</em> are visible to <em>M</em>.</p>
+</blockquote>
+<blockquote>
+<p>The modules read by <em>M</em> drive the packages that are uniquely
+visible to <em>M</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.4.3">7.4.3</a>),
+which in turn drives both the top level packages in scope and the
+meaning of package names for code in the modular and ordinary
+compilation units associated with <em>M</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.3">6.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.5.3">6.5.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.5.5">6.5.5</a>).</p>
+</blockquote>
+<blockquote>
+<p>The rules above ensure that package and type names used in
+annotations in a modular compilation unit (in particular, annotations
+applied to the module declaration) are interpreted as if they appeared
+in an ordinary compilation unit associated with the module.</p>
+</blockquote>
+<p>Classes and interfaces declared in different ordinary compilation
+units can refer to each other, circularly. A Java compiler must arrange
+to compile all such classes and interfaces at the same time.</p>
+<h2 id="jls-8">Chapter 8: Classes</h2>
+<p>A class declaration defines a new class and describes how it is
+implemented (<a href="#jls-8.1">8.1</a>).</p>
+<p>A <em>top level class</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>)
+is a class declared directly in a compilation unit.</p>
+<p>A <em>nested class</em> is any class whose declaration occurs within
+the body of another class or interface declaration. A nested class may
+be a member class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.5">9.5</a>),
+a local class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.3">14.3</a>),
+or an anonymous class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9.5">15.9.5</a>).</p>
+<p>Some kinds of nested class are an <em>inner class</em> (<a
+href="#jls-8.1.3">8.1.3</a>), which is a class that can refer to
+enclosing class instances, local variables, and type variables.</p>
+<p>An <em>enum class</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9">8.9</a>)
+is a class declared with abbreviated syntax that defines a small set of
+named class instances.</p>
+<p>A <em>record class</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.10">8.10</a>)
+is a class declared with abbreviated syntax that defines a simple
+aggregate of values.</p>
+<div class="inserted">
+<p>For very small programs and casual development, a top level class can
+be <em>unnamed</em>, that is, it has no canonical or fully qualified
+name (<a href="#jls-6.7">6.7</a>). An unnamed class is never declared
+explicitly, but rather is declared implicitly by an unnamed class
+compilation unit (<a href="#jls-7.3">7.3</a>). An unnamed top level
+class can be the initial class of the program (<a
+href="#jls-12.1.4">12.1.4</a>) but cannot be referred to by a name from
+any source code, including its own.</p>
+</div>
+<p>This chapter discusses the common semantics of all classes. Details
+that are specific to particular kinds of classes are discussed in the
+sections dedicated to these constructs.</p>
+<p>A class may be declared <code>public</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.1">8.1.1</a>)
+so it can be referred to from code in any package of its module and
+potentially from code in other modules.</p>
+<p>A class may be declared <code>abstract</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.1.1">8.1.1.1</a>),
+and must be declared <code>abstract</code> if it is incompletely
+implemented; such a class cannot be instantiated, but can be extended by
+subclasses. The degree to which a class can be extended can be
+controlled explicitly (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.1.2">8.1.1.2</a>):
+it may be declared <code>sealed</code> to limit its subclasses, or it
+may be declared <code>final</code> to ensure no subclasses. Each class
+except <code>Object</code> is an extension of (that is, a subclass of) a
+single existing class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.4">8.1.4</a>)
+and may implement interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.5">8.1.5</a>).</p>
+<p>A class may be <em>generic</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.2">8.1.2</a>),
+that is, its declaration may introduce type variables whose bindings
+differ among different instances of the class.</p>
+<p>Class declarations may be decorated with annotations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.7">9.7</a>)
+just like any other kind of declaration.</p>
+<p>The body of a class declares members (fields, methods, classes, and
+interfaces), instance and static initializers, and constructors (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.7">8.1.7</a>).
+The scope (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.3">6.3</a>)
+of a member (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.2">8.2</a>)
+is the entire body of the declaration of the class to which the member
+belongs. Field, method, member class, member interface, and constructor
+declarations may include the access modifiers <code>public</code>,
+<code>protected</code>, or <code>private</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.6">6.6</a>).
+The members of a class include both declared and inherited members (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.2">8.2</a>).
+Newly declared fields can hide fields declared in a superclass or
+superinterface. Newly declared member classes and member interfaces can
+hide member classes and member interfaces declared in a superclass or
+superinterface. Newly declared methods can hide, implement, or override
+methods declared in a superclass or superinterface.</p>
+<p>Field declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.3">8.3</a>)
+describe class variables, which are incarnated once, and instance
+variables, which are freshly incarnated for each instance of the class.
+A field may be declared <code>final</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.3.1.2">8.3.1.2</a>),
+in which case it can be assigned to only once. Any field declaration may
+include an initializer.</p>
+<p>Member class declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>)
+describe nested classes that are members of the surrounding class.
+Member classes may be <code>static</code>, in which case they have no
+access to the instance variables of the surrounding class; or they may
+be inner classes.</p>
+<p>Member interface declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>)
+describe nested interfaces that are members of the surrounding
+class.</p>
+<p>Method declarations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4">8.4</a>)
+describe code that may be invoked by method invocation expressions (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.12">15.12</a>).
+A class method is invoked relative to the class; an instance method is
+invoked with respect to some particular object that is an instance of a
+class. A method whose declaration does not indicate how it is
+implemented must be declared <code>abstract</code>. A method may be
+declared <code>final</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.3.3">8.4.3.3</a>),
+in which case it cannot be hidden or overridden. A method may be
+implemented by platform-dependent <code>native</code> code (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.3.4">8.4.3.4</a>).
+A <code>synchronized</code> method (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.3.6">8.4.3.6</a>)
+automatically locks an object before executing its body and
+automatically unlocks the object on return, as if by use of a
+<code>synchronized</code> statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.19">14.19</a>),
+thus allowing its activities to be synchronized with those of other
+threads (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-17.html#jls-17">17</a>).</p>
+<p>Method names may be overloaded (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.9">8.4.9</a>).</p>
+<p>Instance initializers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.6">8.6</a>)
+are blocks of executable code that may be used to help initialize an
+instance when it is created (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9">15.9</a>).</p>
+<p>Static initializers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.7">8.7</a>)
+are blocks of executable code that may be used to help initialize a
+class.</p>
+<p>Constructors (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8">8.8</a>)
+are similar to methods, but cannot be invoked directly by a method call;
+they are used to initialize new class instances. Like methods, they may
+be overloaded (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.8">8.8.8</a>).</p>
+<h3 id="jls-8.1">8.1 Class Declarations</h3>
+<p>A <em>class declaration</em> specifies a class.</p>
+<p>There are three kinds of class declarations: <em>normal class
+declarations</em>, <em>enum declarations</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9">8.9</a>),
+and <em>record declarations</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.10">8.10</a>).</p>
+<dl>
+<dt><em>ClassDeclaration:</em></dt>
+<dd>
+<em>NormalClassDeclaration</em>
+</dd>
+<dd>
+<em>EnumDeclaration</em>
+</dd>
+<dd>
+<em>RecordDeclaration</em>
+</dd>
+<dt><em>NormalClassDeclaration:</em></dt>
+<dd>
+{<em>ClassModifier</em>} <code>class</code> <em>TypeIdentifier</em>
+[<em>TypeParameters</em>]<br />
+[<em>ClassExtends</em>] [<em>ClassImplements</em>]
+[<em>ClassPermits</em>] <em>ClassBody</em>
+</dd>
+</dl>
+<p>A class is also implicitly declared by <strong>an unnamed class
+compilation unit (<a href="#jls-7.3">7.3</a>)</strong>, a class instance
+creation expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9.5">15.9.5</a>)
+and an enum constant that ends with a class body (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.1">8.9.1</a>).</p>
+<p>The <em>TypeIdentifier</em> in a class declaration specifies the name
+of the class.</p>
+<p>It is a compile-time error if a class has the same simple name as any
+of its enclosing classes or interfaces.</p>
+<p>The scope and shadowing of a class declaration is specified in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.3">6.3</a>
+and <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.4.1">6.4.1</a>.</p>
+<h2 id="jls-9">Chapter 9: Interfaces</h2>
+<p>An interface declaration defines a new interface that can be
+implemented by one or more classes. Programs can use interfaces to
+provide a common supertype for otherwise unrelated classes, and to make
+it unnecessary for related classes to share a common
+<code>abstract</code> superclass.</p>
+<p>Interfaces have no instance variables, and typically declare one or
+more <code>abstract</code> methods; otherwise unrelated classes can
+implement an interface by providing implementations for its
+<code>abstract</code> methods. Interfaces may not be directly
+instantiated.</p>
+<p>A <em>top level interface</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>)
+is an interface declared directly in a compilation unit.</p>
+<p>A <em>nested interface</em> is any interface whose declaration occurs
+within the body of another class or interface declaration. A nested
+interface may be a member interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.5">9.5</a>)
+or a local interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.3">14.3</a>).</p>
+<p>An <em>annotation interface</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.6">9.6</a>)
+is an interface declared with distinct syntax, intended to be
+implemented by reflective representations of <em>annotations</em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.7">9.7</a>).</p>
+<p>This chapter discusses the common semantics of all interfaces.
+Details that are specific to particular kinds of interfaces are
+discussed in the sections dedicated to these constructs.</p>
+<p>An interface may be declared to be a <em>direct extension</em> of one
+or more other interfaces, meaning that it inherits all the member
+classes and interfaces, instance methods, and <code>static</code> fields
+of the interfaces it extends, except for any members that it may
+override or hide.</p>
+<p>A class may be declared to <em>directly implement</em> one or more
+interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.5">8.1.5</a>),
+meaning that any instance of the class implements all the
+<code>abstract</code> methods specified by the interface or interfaces.
+A class necessarily implements all the interfaces that its direct
+superclasses and direct superinterfaces do. This (multiple) interface
+inheritance allows objects to support (multiple) common behaviors
+without sharing a superclass.</p>
+<p>Unlike a class, an interface cannot be declared <code>final</code>.
+However, an interface may be declared <code>sealed</code> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.1.1.4">9.1.1.4</a>)
+to limit its subclasses and subinterfaces.</p>
+<p>A variable whose declared type is an interface type may have as its
+value a reference to any instance of a class which implements the
+specified interface. It is not sufficient that the class happen to
+implement all the <code>abstract</code> methods of the interface; the
+class or one of its superclasses must actually be declared to implement
+the interface, or else the class is not considered to implement the
+interface.</p>
+<div class="inserted">
+<blockquote>
+<p>Note that, unlike classes, it is not possible to declare, even
+implicitly, an <em>unnamed</em> top level interface (<a
+href="#jls-7.3">7.3</a>).</p>
+</blockquote>
+</div>
+<h2 id="jls-12">Chapter 12: Execution</h2>
+<p>This chapter specifies activities that occur during execution of a
+program. It is organized around the life cycle of the Java Virtual
+Machine and of the classes, interfaces, and objects that form a
+program.</p>
+<p>The Java Virtual Machine starts up by loading a specified class or
+interface, then invoking <del>the</del> <strong>a</strong> method
+<code>main</code> in this specified class or interface. Section <a
+href="#jls-12.1">12.1</a> outlines the loading, linking, and
+initialization steps involved in executing <code>main</code>, as an
+introduction to the concepts in this chapter. Further sections specify
+the details of loading (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.2">12.2</a>),
+linking (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.3">12.3</a>),
+and initialization (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.4">12.4</a>).</p>
+<p>The chapter continues with a specification of the procedures for
+creation of new class instances (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.5">12.5</a>);
+and finalization of class instances (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.6">12.6</a>).
+It concludes by describing the unloading of classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.7">12.7</a>)
+and the procedure followed when a program exits (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.8">12.8</a>).</p>
+<h3 id="jls-12.1">12.1 Java Virtual Machine Startup</h3>
+<p>The Java Virtual Machine starts execution by invoking <del>the</del>
+<strong>a</strong> method <code>main</code> of some specified class or
+interface. <strong>If this <code>main</code> method has a formal
+parameter, it is passed</strong> <del>passing it</del> a single argument
+which is an array of strings. <del>In the examples in this
+specification, this first class is typically called
+<code>Test</code>.</del></p>
+<p>The precise semantics of Java Virtual Machine startup are given in
+Chapter 5 of <em>The Java Virtual Machine Specification, Java SE 21
+Edition</em>. Here we present an overview of the process from the
+viewpoint of the Java programming language.</p>
+<p>The manner in which the initial class or interface is specified to
+the Java Virtual Machine is beyond the scope of this specification, but
+it is typical, in host environments that use command lines, for the
+fully qualified name of the <strong>initial</strong> class or interface
+to be specified as a command line argument and for following command
+line arguments to be used as strings to be provided as the argument to
+the method <code>main</code>. <strong>If the original compilation unit
+was an unnamed class compilation unit (<a href="#jls-7.3">7.3</a>), then
+the name of the file that contained the compilation unit is typically
+used to specify the name of the initial class or interface.</strong></p>
+<blockquote>
+<p>For example, in a UNIX implementation, the command line:</p>
+<pre><code>java Test reboot Bob Dot Enzo</code></pre>
+<p>will typically start a Java Virtual Machine by invoking method
+<code>main</code> of class <code>Test</code> (a class in an unnamed
+package), passing it an <strong>argument</strong> array containing the
+four strings "<code>reboot</code>", "<code>Bob</code>",
+"<code>Dot</code>", and "<code>Enzo</code>".</p>
+</blockquote>
+<div class="inserted">
+<blockquote>
+<p>Whereas if the file <code>HelloWorld.java</code> contained the
+following unnamed class compilation unit:</p>
+<pre><code>void main() {
+    System.out.println(&quot;Hello, World!&quot;);
+}</code></pre>
+<p>which has been compiled, then the command line:</p>
+<pre><code>java HelloWorld</code></pre>
+<p>will typically start a Java Virtual Machine by invoking the
+<code>main</code> method of the implicitly declared unnamed class (<a
+href="#jls-7.3">7.3</a>) producing the output:</p>
+<pre><code>Hello, World!</code></pre>
+</blockquote>
+</div>
+<p>We now outline the steps the Java Virtual Machine may take to execute
+<del><code>Test</code></del> <strong>the initial class or
+interface</strong>, as an example of the loading, linking, and
+initialization processes that are described further in later
+sections.</p>
+<h4 id="jls-12.1.1">12.1.1 Load the <strong>Initial</strong> Class
+<strong>or Interface</strong> <del><code>Test</code></del></h4>
+<p>The initial attempt to execute <del>the</del> <strong>a</strong>
+method <code>main</code> of <strong>the initial</strong> class
+<strong>or interface</strong> <del><code>Test</code></del> discovers
+that <del>the class <code>Test</code></del> <strong>it</strong> is not
+loaded - that is, that the Java Virtual Machine does not currently
+contain a binary representation for this class <strong>or
+interface</strong>. The Java Virtual Machine then uses a class loader to
+attempt to find such a binary representation. If this process fails,
+then an error is thrown. This loading process is described further in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.2">12.2</a>.</p>
+<h4 id="jls-12.1.2">12.1.2 Link <strong>the Initial Class or
+Interface</strong> <del><code>Test</code></del>: Verify, Prepare,
+(Optionally) Resolve</h4>
+<p>After <strong>the class or interface</strong>
+<del><code>Test</code></del> is loaded, it must be initialized before
+<strong>a method</strong> <code>main</code> can be invoked. And
+<del><code>Test</code></del>, like all classes and interfaces,
+<strong>it</strong> must be linked before it is initialized. Linking
+involves verification, preparation, and (optionally) resolution. Linking
+is described further in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.3">12.3</a>.</p>
+<p>Verification checks that the loaded representation of <strong>the
+class or interface</strong> <del><code>Test</code></del> is well-formed,
+with a proper symbol table. Verification also checks that the code that
+implements <strong>the class or interface</strong>
+<del><code>Test</code></del> obeys the semantic requirements of the Java
+programming language and the Java Virtual Machine. If a problem is
+detected during verification, then an error is thrown. Verification is
+described further in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.3.1">12.3.1</a>.</p>
+<p>Preparation involves allocation of static storage and any data
+structures that are used internally by the implementation of the Java
+Virtual Machine, such as method tables. Preparation is described further
+in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.3.2">12.3.2</a>.</p>
+<p>Resolution is the process of checking symbolic references from
+<strong>the class or interface</strong> <del><code>Test</code></del> to
+other classes and interfaces, by loading the other classes and
+interfaces that are mentioned and checking that the references are
+correct.</p>
+<p>The resolution step is optional at the time of initial linkage. An
+implementation may resolve symbolic references from a class or interface
+that is being linked very early, even to the point of resolving all
+symbolic references from the classes and interfaces that are further
+referenced, recursively. (This resolution may result in errors from
+these further loading and linking steps.) This implementation choice
+represents one extreme and is similar to the kind of "static" linkage
+that has been done for many years in simple implementations of the C
+language. (In these implementations, a compiled program is typically
+represented as an "<code>a.out</code>" file that contains a fully-linked
+version of the program, including completely resolved links to library
+routines used by the program. Copies of these library routines are
+included in the "<code>a.out</code>" file.)</p>
+<p>An implementation may instead choose to resolve a symbolic reference
+only when it is actively used; consistent use of this strategy for all
+symbolic references would represent the "laziest" form of resolution. In
+this case, if <strong>the class or interface</strong>
+<del><code>Test</code></del> had several symbolic references to another
+class, then the references might be resolved one at a time, as they are
+used, or perhaps not at all, if these references were never used during
+execution of the program.</p>
+<p>The only requirement on when resolution is performed is that any
+errors detected during resolution must be thrown at a point in the
+program where some action is taken by the program that might, directly
+or indirectly, require linkage to the class or interface involved in the
+error. Using the "static" example implementation choice described above,
+loading and linkage errors could occur before the program is executed if
+they involved a class or interface mentioned in the
+<strong>initial</strong> class <strong>or interface</strong>
+<del><code>Test</code></del> or any of the further, recursively
+referenced, classes and interfaces. In a system that implemented the
+"laziest" resolution, these errors would be thrown only when an
+incorrect symbolic reference is actively used.</p>
+<p>The resolution process is described further in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.3.3">12.3.3</a>.</p>
+<h4 id="jls-12.1.3">12.1.3 Initialize <strong>the Initial Class or
+Interface</strong> <del>Test</del>: Execute Initializers</h4>
+<p>In our continuing example, the Java Virtual Machine is still trying
+to execute <del>the</del> <strong>a</strong> method <code>main</code> of
+<strong>the initial</strong> class <strong>or
+interface</strong><del><code>Test</code></del>. This is permitted only
+if the class has been initialized (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.4.1">12.4.1</a>).</p>
+<p>Initialization consists of execution of any class variable
+initializers and static initializers of the <strong>initial</strong>
+class <strong>or interface</strong> <del><code>Test</code></del>, in
+textual order. But before <strong>it</strong>
+<del><code>Test</code></del> can be initialized, its direct superclass
+must be initialized, as well as the direct superclass of its direct
+superclass, and so on, recursively. In the simplest case, <strong>the
+initial class or interface</strong> <del><code>Test</code></del> has
+<code>Object</code> as its implicit direct superclass; if class
+<code>Object</code> has not yet been initialized, then it must be
+initialized before <strong>the initial class or interface</strong>
+<del><code>Test</code></del> is initialized. Class <code>Object</code>
+has no superclass, so the recursion terminates here.</p>
+<p>If <strong>the initial</strong> class <strong>or interface</strong>
+<del><code>Test</code></del> has another class <code>Super</code> as its
+superclass, then <code>Super</code> must be initialized before
+<strong>the initial class or
+interface</strong><del><code>Test</code></del>. This requires loading,
+verifying, and preparing <code>Super</code> if this has not already been
+done and, depending on the implementation, may also involve resolving
+the symbolic references from <code>Super</code> and so on,
+recursively.</p>
+<p>Initialization may thus cause loading, linking, and initialization
+errors, including such errors involving other classes and
+interfaces.</p>
+<p>The initialization process is described further in <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.4">12.4</a>.</p>
+<h4 id="jls-12.1.4">12.1.4 Invoke <del><code>Test.main</code></del>
+<strong>a <code>main</code> method</strong></h4>
+<p>Finally, after completion of the initialization for <strong>the
+initial</strong> class <strong>or interface</strong>
+<del><code>Test</code></del> (during which other consequential loading,
+linking, and initializing may have occurred), <del>the</del> <strong>a
+<code>main</code></strong> method <del><code>main</code></del> of
+<strong>the initial class or interface</strong>
+<del><code>Test</code></del> is invoked.</p>
+<div class="deleted">
+<p>The method <code>main</code> must be declared <code>public</code>,
+<code>static</code>, and <code>void</code>. It must specify a formal
+parameter (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.1">8.4.1</a>)
+whose declared type is array of <code>String</code>. Therefore, either
+of the following declarations is acceptable:</p>
+<p><code>public static void main(String[] args)</code></p>
+<p><code>public static void main(String... args)</code></p>
+</div>
+<div class="inserted">
+<p>A method of the initial class or interface is a <em>candidate</em> if
+it is named <code>main</code> and one of the following applies:</p>
+<ul>
+<li><p>It is a <code>static</code> method, declared in the initial class
+or interface, with a <code>void</code> result, with <code>public</code>,
+<code>protected</code> or package access, and with either no formal
+parameters or a single formal parameter whose declared type is an array
+of <code>String</code>.</p>
+<blockquote>
+<p>Note that such a <code>static</code> method may not be inherited from
+a superclass of the initial class or interface.</p>
+</blockquote></li>
+<li><p>It is an instance method, declared in or inherited by the initial
+class or interface, with a <code>void</code> result, with
+<code>public</code>, <code>protected</code> or package access, and with
+either no formal parameters or a single formal parameter whose declared
+type is an array of <code>String</code>; and where, moreover, the
+initial class or interface is not an inner class.</p></li>
+</ul>
+<blockquote>
+<p>Note that a candidate <code>main</code> method may have a
+<code>throws</code> clause (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.6">8.4.6</a>).</p>
+<p>The permitted signature of a <code>main</code> method expanded
+significantly in Java SE 21. Prior to that, the only variation possible
+in the signature of <code>main</code> was <code>String[]</code> versus
+<code>String...</code> for the type of the single formal parameter. In
+Java SE 21 and above, <code>main</code> can have one of twelve possible
+signatures: six <code>static</code> and six non-<code>static</code>.
+This number increases to 18 if <code>String[]</code> is distinguished
+from <code>String...</code> in the type of the single formal
+parameter.</p>
+<p>Note that it is <em>not</em> a compile-time error if the initial
+class or interface counts more than one candidate <code>main</code>
+method among its members.</p>
+<p>The presence of a <code>main</code> method in a class or interface
+may not be immediately apparent because a non-<code>static</code>
+<code>main</code> method may be inherited. For example, a default method
+in an interface is an instance method (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.4">9.4</a>),
+so may be a candidate when inherited by a class that implements the
+interface. Development tools are encouraged to highlight when a class or
+interface has a member <code>main</code> method that could serve as the
+start of the program.</p>
+<p>A behavioral change was made in Java SE 21, whereby an inherited
+<code>static</code> <code>main</code> method is no longer considered a
+candidate method. Any existing initial class or interface whose only
+<code>main</code> method is both <code>static</code> and inherited will
+need to be refactored to continue to serve as the start of the
+program.</p>
+</blockquote>
+<!--
+If there are no candidate `main` methods of the launch class, then the Java
+Virtual Machine will emit an error.
+
+If there are one or more candidate `main` methods of the launch class then
+selection and execution proceeds by considering, in order, the following steps:
+-->
+<p>A <code>main</code> method of the initial class or interface is
+invoked, as if by application of the following rules:</p>
+<ul>
+<li><p>If there is a <code>static</code> candidate method with a formal
+parameter then this method is invoked, passing the argument array (<a
+href="#jls-12.1">12.1</a>).</p></li>
+<li><p>Otherwise, if there is a <code>static</code> candidate method
+with no formal parameters then this method is invoked.</p></li>
+<li><p>Otherwise, if there is a instance candidate method with a formal
+parameter, then this method is invoked, passing the argument array, on
+an instance of the initial class created by using a constructor with no
+formal parameters and either <code>public</code>,
+<code>protected</code>, or package access.</p></li>
+<li><p>Otherwise, if there is a instance candidate method with no formal
+parameters, then this method is invoked on an instance of the initial
+class created by using a constructor with no formal parameters and
+either <code>public</code>, <code>protected</code>, or package
+access.</p></li>
+</ul>
+<blockquote>
+<p>The behavior of an implementation if there is no candidate method to
+invoke, or if there is no suitable constructor in the initial class when
+invoking an instance candidate method, is beyond the scope of this
+specification.</p>
+</blockquote>
+</div>
+<h2 id="jls-13">Chapter 13: Binary Compatibility</h2>
+<h3 id="jls-13.1">13.1 The Form of a Binary</h3>
+<p>Programs must be compiled either into the <code>class</code> file
+format specified by <em>The Java Virtual Machine Specification, Java SE
+20 Edition</em>, or into a representation that can be mapped into that
+format by a class loader written in the Java programming language.</p>
+<p>A <code>class</code> file corresponding to a class or interface
+declaration must have certain properties. A number of these properties
+are specifically chosen to support source code transformations that
+preserve binary compatibility. The required properties are:</p>
+<ol type="1">
+<li><p>The class or interface must be named by its <em>binary name</em>,
+which must meet the following constraints:</p>
+<ul>
+<li><p>The binary name of a <strong>named</strong> top level class or
+interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.6">7.6</a>)
+is its canonical name (<a href="#jls-6.7">6.7</a>). <strong>The binary
+name of an unnamed top level class (<a href="#jls-7.3">7.3</a>) is any
+valid identifier (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-3.html#jls-3.8">3.8</a>).</strong></p>
+<div class="inserted">
+<blockquote>
+<p>In simple implementations of the Java SE Platform, where compilation
+units are stored in files, the binary name of an unnamed top level class
+would typically be the name of the file containing the unnamed top level
+class compilation unit (<a href="#jls-7.3">7.3</a>) minus any extension
+(such as <code>.java</code> or <code>.jav</code>).</p>
+</blockquote>
+</div></li>
+<li><p>The binary name of a member class or interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.5">9.5</a>)
+consists of the binary name of its immediately enclosing class or
+interface, followed by <code>$</code>, followed by the simple name of
+the member.</p></li>
+<li><p>The binary name of a local class or interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-14.html#jls-14.3">14.3</a>)
+consists of the binary name of its immediately enclosing class or
+interface, followed by <code>$</code>, followed by a non-empty sequence
+of digits, followed by the simple name of the local class.</p></li>
+<li><p>The binary name of an anonymous class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9.5">15.9.5</a>)
+consists of the binary name of its immediately enclosing class or
+interface, followed by <code>$</code>, followed by a non-empty sequence
+of digits.</p></li>
+<li><p>The binary name of a type variable declared by a generic class or
+interface (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.1.2">8.1.2</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.1.2">9.1.2</a>)
+is the binary name of its immediately enclosing class or interface,
+followed by <code>$</code>, followed by the simple name of the type
+variable.</p></li>
+<li><p>The binary name of a type variable declared by a generic method
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.4">8.4.4</a>)
+is the binary name of the class or interface declaring the method,
+followed by <code>$</code>, followed by the descriptor of the method
+(JVMS §4.3.3), followed by <code>$</code>, followed by the simple name
+of the type variable.</p></li>
+<li><p>The binary name of a type variable declared by a generic
+constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.4">8.8.4</a>)
+is the binary name of the class declaring the constructor, followed by
+<code>$</code>, followed by the descriptor of the constructor (JVMS
+§4.3.3), followed by <code>$</code>, followed by the simple name of the
+type variable.</p></li>
+</ul></li>
+<li><p>A reference to another class or interface must be symbolic, using
+the binary name of the class or interface.</p></li>
+<li><p>A reference to a field that is a constant variable (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.12.4">4.12.4</a>)
+must be resolved at compile time to the value <em>V</em> denoted by the
+constant variable's initializer.</p>
+<p>If such a field is <code>static</code>, then no reference to the
+field should be present in the code in a binary file, including the
+class or interface which declared the field. Such a field must always
+appear to have been initialized (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.4.2">12.4.2</a>);
+the default initial value for the field (if different than <em>V</em>)
+must never be observed.</p>
+<p>If such a field is non-<code>static</code>, then no reference to the
+field should be present in the code in a binary file, except in the
+class containing the field. (It will be a class rather than an
+interface, since an interface has only <code>static</code> fields.) The
+class should have code to set the field's value to <em>V</em> during
+instance creation (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-12.html#jls-12.5">12.5</a>).</p></li>
+<li><p>Given a legal expression denoting a field access in a class
+<em>C</em>, referencing a field named <em>f</em> that is not a constant
+variable and is declared in a (possibly distinct) class or interface
+<em>D</em>, we define the <em>qualifying class or interface of the field
+reference</em> as follows:</p>
+<ul>
+<li><p>If the expression is referenced by a simple name, then if
+<em>f</em> is a member of the current class or interface, <em>C</em>,
+then let <em>Q</em> be <em>C</em>. Otherwise, let <em>Q</em> be the
+innermost lexically enclosing class or interface declaration of which
+<em>f</em> is a member. In either case, <em>Q</em> is the qualifying
+class or interface of the reference.</p></li>
+<li><p>If the reference is of the form
+<em>TypeName</em><code>.</code><em>f</em>, where <em>TypeName</em>
+denotes a class or interface, then the class or interface denoted by
+<em>TypeName</em> is the qualifying class or interface of the
+reference.</p></li>
+<li><p>If the expression is of the form
+<em>ExpressionName</em><code>.</code><em>f</em> or
+<em>Primary</em><code>.</code><em>f</em>, then:</p>
+<ul>
+<li><p>If the compile-time type of <em>ExpressionName</em> or
+<em>Primary</em> is an intersection type <em>V<sub>1</sub></em>
+<code>&amp;</code> ... <code>&amp;</code> <em>V<sub>n</sub></em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.9">4.9</a>),
+then the qualifying class or interface of the reference is the erasure
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-4.html#jls-4.6">4.6</a>)
+of <em>V<sub>1</sub></em>.</p></li>
+<li><p>Otherwise, the erasure of the compile-time type of
+<em>ExpressionName</em> or <em>Primary</em> is the qualifying class or
+interface of the reference.</p></li>
+</ul></li>
+<li><p>If the expression is of the form <code>super.</code><em>f</em>,
+then the superclass of <em>C</em> is the qualifying class or interface
+of the reference.</p></li>
+<li><p>If the expression is of the form
+<em>TypeName</em><code>.super.</code><em>f</em>, then the superclass of
+the class denoted by <em>TypeName</em> is the qualifying class or
+interface of the reference.</p></li>
+</ul>
+<p>The reference to <em>f</em> must be compiled into a symbolic
+reference to the qualifying class or interface of the reference, plus
+the simple name of the field, <em>f</em>.</p>
+<p>The reference must also include a symbolic reference to the erasure
+of the declared type of the field, so that the verifier can check that
+the type is as expected.</p></li>
+<li><p>Given a method invocation expression or a method reference
+expression in a class or interface <em>C</em>, referencing a method
+named <em>m</em> declared (or implicitly declared (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.2">9.2</a>))
+in a (possibly distinct) class or interface <em>D</em>, we define the
+<em>qualifying class or interface of the method invocation</em> as
+follows:</p>
+<ul>
+<li><p>If <em>D</em> is <code>Object</code> then the qualifying class or
+interface of the method invocation is <code>Object</code>.</p></li>
+<li><p>Otherwise:</p>
+<ul>
+<li><p>If the method is referenced by a simple name, then if <em>m</em>
+is a member of the current class or interface <em>C</em>, let <em>Q</em>
+be <em>C</em>; otherwise, let <em>Q</em> be the innermost lexically
+enclosing class or interface declaration of which <em>m</em> is a
+member. In either case, <em>Q</em> is the qualifying class or interface
+of the method invocation.</p></li>
+<li><p>If the expression is of the form
+<em>TypeName</em><code>.</code><em>m</em> or
+<em>ReferenceType</em><code>::</code><em>m</em>, then the class or
+interface denoted by <em>TypeName</em>, or the erasure of
+<em>ReferenceType</em>, is the qualifying class or interface of the
+method invocation.</p></li>
+<li><p>If the expression is of the form
+<em>ExpressionName</em><code>.</code><em>m</em> or
+<em>Primary</em><code>.</code><em>m</em> or
+<em>ExpressionName</em><code>::</code><em>m</em> or
+<em>Primary</em><code>::</code><em>m</em>, then:</p>
+<ul>
+<li><p>If the compile-time type of <em>ExpressionName</em> or
+<em>Primary</em> is an intersection type <em>V<sub>1</sub></em>
+<code>&amp;</code> ... <code>&amp;</code> <em>V<sub>n</sub></em>, then
+the qualifying class or interface of the method invocation is the
+erasure of <em>V<sub>1</sub></em>.</p></li>
+<li><p>Otherwise, the erasure of the compile-time type of
+<em>ExpressionName</em> or <em>Primary</em> is the qualifying class or
+interface of the method invocation.</p></li>
+</ul></li>
+<li><p>If the expression is of the form <code>super.</code><em>m</em> or
+<code>super::</code><em>m</em>, then the superclass of <em>C</em> is the
+qualifying class or interface of the method invocation.</p></li>
+<li><p>If the expression is of the form
+<em>TypeName</em><code>.super.</code><em>m</em> or
+<em>TypeName</em><code>.super::</code><em>m</em>, then if
+<em>TypeName</em> denotes a class <em>X</em>, the superclass of
+<em>X</em> is the qualifying class or interface of the method
+invocation; if <em>TypeName</em> denotes an interface <em>X</em>,
+<em>X</em> is the qualifying class or interface of the method
+invocation.</p></li>
+</ul></li>
+</ul>
+<p>A reference to a method must be resolved at compile time to a
+symbolic reference to the qualifying class or interface of the method
+invocation, plus the erasure of the declared signature (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.2">8.4.2</a>)
+of the method. The signature of a method must include all of the
+following as determined by <a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.12.3">15.12.3</a>:</p>
+<ul>
+<li><p>The simple name of the method</p></li>
+<li><p>The number of parameters to the method</p></li>
+<li><p>A symbolic reference to the type of each parameter</p></li>
+</ul>
+<p>A reference to a method must also include either a symbolic reference
+to the erasure of the return type of the denoted method or an indication
+that the denoted method is declared <code>void</code> and does not
+return a value.</p></li>
+<li><p>Given a class instance creation expression (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9">15.9</a>)
+or an explicit constructor invocation statement (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.7.1">8.8.7.1</a>)
+or a method reference expression of the form <em>ClassType
+<code>::</code> <code>new</code></em> (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.13">15.13</a>)
+in a class or interface <em>C</em>, referencing a constructor <em>m</em>
+declared in a (possibly distinct) class or interface <em>D</em>, we
+define the <em>qualifying class of the constructor invocation</em> as
+follows:</p>
+<ul>
+<li><p>If the expression is of the form <code>new</code>
+<em>D</em><code>(...)</code> or <em>ExpressionName</em><code>.new</code>
+<em>D</em><code>(...)</code> or <em>Primary</em><code>.new</code>
+<em>D</em><code>(...)</code> or <em>D</em> <code>::</code>
+<code>new</code>, then the qualifying class of the constructor
+invocation is <em>D</em>.</p></li>
+<li><p>If the expression is of the form <code>new</code>
+<em>D</em><code>(...){...}</code> or
+<em>ExpressionName</em><code>.new</code>
+<em>D</em><code>(...){...}</code> or <em>Primary</em><code>.new</code>
+<em>D</em><code>(...){...}</code>, then the qualifying class of the
+constructor invocation is the anonymous class declared by the
+expression.</p></li>
+<li><p>If the expression is of the form <code>super(...)</code> or
+<em>ExpressionName</em><code>.super(...)</code> or
+<em>Primary</em><code>.super(...)</code>, then the qualifying class of
+the constructor invocation is the direct superclass of
+<em>C</em>.</p></li>
+<li><p>If the expression is of the form <code>this(...)</code>, then the
+qualifying class of the constructor invocation is <em>C</em>.</p></li>
+</ul>
+<p>A reference to a constructor must be resolved at compile time to a
+symbolic reference to the qualifying class of the constructor
+invocation, plus the declared signature of the constructor (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.2">8.8.2</a>).
+The signature of a constructor must include both:</p>
+<ul>
+<li><p>The number of parameters of the constructor</p></li>
+<li><p>A symbolic reference to the type of each formal
+parameter</p></li>
+</ul></li>
+</ol>
+<p>A binary representation for a class or interface must also contain
+all of the following:</p>
+<ol type="1">
+<li><p>If it is a class and is not <code>Object</code>, then a symbolic
+reference to the direct superclass of this class.</p></li>
+<li><p>A symbolic reference to each direct superinterface, if
+any.</p></li>
+<li><p>A specification of each field declared in the class or interface,
+given as the simple name of the field and a symbolic reference to the
+erasure of the type of the field.</p></li>
+<li><p>If it is a class, then the erased signature of each constructor,
+as described above.</p></li>
+<li><p>For each method declared in the class or interface (excluding,
+for an interface, its implicitly declared methods (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.2">9.2</a>)),
+its erased signature and return type, as described above.</p></li>
+<li><p>The code needed to implement the class or interface:</p>
+<ul>
+<li><p>For an interface, code for the field initializers and the
+implementation of each method with a block body (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.4.3">9.4.3</a>).</p></li>
+<li><p>For a class, code for the field initializers, the instance and
+static initializers, the implementation of each method with a block body
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.4.7">8.4.7</a>),
+and the implementation of each constructor.</p></li>
+</ul></li>
+<li><p>Every class or interface must contain sufficient information to
+recover its canonical name (<a href="#jls-6.7">6.7</a>).</p></li>
+<li><p>Every member class or interface must have sufficient information
+to recover its source-level access modifier (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-6.html#jls-6.6">6.6</a>).</p></li>
+<li><p>Every nested class or interface must have a symbolic reference to
+its immediately enclosing class or interface (<a
+href="#jls-8.1.3">8.1.3</a>).</p></li>
+<li><p>Every class or interface must contain symbolic references to all
+of its member classes and interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.5">8.5</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.5">9.5</a>),
+and to all other nested classes and interfaces declared within its
+body.</p></li>
+<li><p>A construct emitted by a Java compiler must be marked as
+<em>synthetic</em> if it does not correspond to a construct declared
+explicitly or implicitly in source code<del>, unless the emitted
+construct is a class initialization method (JVMS §2.9)</del>.
+<strong>There are two exceptions:</strong></p>
+<ol type="1">
+<li><p><strong>A class initialization method (JVMS §2.9) does not
+correspond to any single method declared explicitly or implicitly in
+source code, but does correspond to a class's static initializers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.7">8.7</a>)
+and/or <code>static</code> field initializers (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.3.2">8.3.2</a>);
+for this reason, a class initialization method must not be marked as
+synthetic.</strong></p></li>
+<li><p><strong>The binary representation of an unnamed class must be
+marked as synthetic.</strong></p></li>
+</ol></li>
+<li><p>A construct emitted by a Java compiler must be marked as
+<em>mandated</em> if it corresponds to a formal parameter declared
+implicitly in source code (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.1">8.8.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.9">8.8.9</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.3">8.9.3</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9.5.1">15.9.5.1</a>).</p></li>
+</ol>
+<blockquote>
+<p>The following formal parameters are declared implicitly in source
+code:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>The first formal parameter of a constructor of a
+non-<code>private</code> inner member class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.1">8.8.1</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.9">8.8.9</a>).</p></li>
+<li><p>The first formal parameter of an anonymous constructor of an
+anonymous class whose superclass is an inner class (not in a static
+context) (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9.5.1">15.9.5.1</a>).</p></li>
+<li><p>The formal parameter <code>name</code> of the
+<code>valueOf</code> method which is implicitly declared in an enum
+class (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.3">8.9.3</a>).</p></li>
+<li><p>The formal parameters of a compact constructor of a record class
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.10.4">8.10.4</a>).</p></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>For reference, the following constructs are declared implicitly in
+source code, but are not marked as mandated because only formal
+parameters and modules can be so marked in a <code>class</code> file
+(JVMS §4.7.24, JVMS §4.7.25):</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>Default constructors of normal and enum classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.8.9">8.8.9</a>,
+<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.2">8.9.2</a>)</p></li>
+<li><p>Canonical constructors of record classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.10.4">8.10.4</a>)</p></li>
+<li><p>Anonymous constructors (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-15.html#jls-15.9.5.1">15.9.5.1</a>)</p></li>
+<li><p>The <code>values</code> and <code>valueOf</code> methods of enum
+classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.3">8.9.3</a>)</p></li>
+<li><p>Certain <code>public</code> fields of enum classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.9.3">8.9.3</a>)</p></li>
+<li><p>Certain <code>private</code> fields and <code>public</code>
+methods of record classes (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-8.html#jls-8.10.3">8.10.3</a>)</p></li>
+<li><p>Certain <code>public</code> methods of interfaces (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.2">9.2</a>)</p></li>
+<li><p>Container annotations (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-9.html#jls-9.7.5">9.7.5</a>)</p></li>
+<li><p><strong>Unnamed classes, implicitly declared in an unnamed class
+compilation units (<a href="#jls-7.3">7.3</a>).</strong></p></li>
+</ul>
+</blockquote>
+<p>A <code>class</code> file corresponding to a module declaration must
+have the properties of a <code>class</code> file for a class whose
+binary name is <code>module-info</code> and which has no superclass, no
+superinterfaces, no fields, and no methods. In addition, the binary
+representation of the module must contain all of the following:</p>
+<ul>
+<li><p>A specification of the name of the module, given as a symbolic
+reference to the name indicated after <code>module</code>. Also, the
+specification must include whether the module is normal or open (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7">7.7</a>).</p></li>
+<li><p>A specification of each dependence denoted by a
+<code>requires</code> directive, given as a symbolic reference to the
+name of the module indicated by the directive (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7.1">7.7.1</a>).
+Also, the specification must include whether the dependence is
+<code>transitive</code> and whether the dependence is
+<code>static</code>.</p></li>
+<li><p>A specification of each package denoted by an
+<code>exports</code> or <code>opens</code> directive, given as a
+symbolic reference to the name of the package indicated by the directive
+(<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7.2">7.7.2</a>).
+Also, if the directive was qualified, the specification must give
+symbolic references to the names of the modules indicated by the
+directive's <code>to</code> clause.</p></li>
+<li><p>A specification of each service denoted by a <code>uses</code>
+directive, given as a symbolic reference to the name of the class or
+interface indicated by the directive (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7.3">7.7.3</a>).</p></li>
+<li><p>A specification of the service providers denoted by a
+<code>provides</code> directive, given as symbolic references to the
+names of the classes and interfaces indicated by the directive's
+<code>with</code> clause (<a
+href="https://docs.oracle.com/javase/specs/jls/se20/html/jls-7.html#jls-7.7.4">7.7.4</a>).
+Also, the specification must give a symbolic reference to the name of
+the class or interface indicated as the service by the
+directive.</p></li>
+</ul>
+<p>The following sections discuss changes that may be made to class and
+interface declarations without breaking compatibility with pre-existing
+binaries. Under the translation requirements given above, the Java
+Virtual Machine and its <code>class</code> file format support these
+changes. Any other valid binary format, such as a compressed or
+encrypted representation that is mapped back into <code>class</code>
+files by a class loader under the above requirements, will necessarily
+support these changes as well.</p>
+</main><footer class="legal-footer"><hr/><a href="../legal/copyright.html">Copyright</a> &copy; 1993, 2024, Oracle and/or its affiliates, 500 Oracle Parkway, Redwood Shores, CA 94065 USA.<br>All rights reserved. Use is subject to <a href="https://www.oracle.com/java/javase/terms/license/java21speclicense.html">license terms</a> and the <a href="https://www.oracle.com/technetwork/java/redist-137594.html">documentation redistribution policy</a>. <!-- Version 21.0.6+8-LTS-188 --></footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+oos.writeObject(s)
+	
+	when u call "writeObject" , it will check whether "s" implements "Serializable" or "Externalizable"
+
+	if it implements "Serializable"
+		it will check whether
+			u have defined "private writeObject"
+				if yes
+					it will invoke it
+
+				if no
+					it will go for def. serialization
+	if it implements "Externalizable"
+		it will invoke "writeExternal()"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ois.readObject()
+	
+	when u call "readObject",it will check whether class has implement "Serializable" or "Externalizable"
+
+	if it implements "Serializable"
+		it will check whether
+			u have defined "private readObject"
+				if yes
+					it will invoke it
+
+				if no
+					it will go for def. deserialization
+
+
+
+	if it implements "Externalizable"
+		invoke default constructor
+		invoke "readExternal()" method
+
+
+
+
+
+
+
+
+
+
+
+
+

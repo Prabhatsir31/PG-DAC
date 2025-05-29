@@ -1,0 +1,16 @@
+Optional<MyClass> op=Optional.ofNullable(getMyClass());
+		
+op.ifPresent(k->System.out.println(k.disp()));
+
+
+void	ifPresent(Consumer<? super T> consumer)
+
+If a value is present, invoke the specified consumer with the value, otherwise do nothing.
+
+it means that if getMyClass() method returns instance of MyClass, then 
+
+op.ifPresent(k->System.out.println(k.disp()));
+
+"k" will represent that instance and we can invoke "k.disp()".
+
+

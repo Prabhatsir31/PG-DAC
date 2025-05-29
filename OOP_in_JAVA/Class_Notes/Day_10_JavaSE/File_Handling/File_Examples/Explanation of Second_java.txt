@@ -1,0 +1,22 @@
+FileOutputStream fos=new FileOutputStream("d:\\abc1.txt",true)
+	above statement will create a file if file does not exist.
+	argument "true" inside FileOutputStream constructor indicates that if file exists then it will get appended.
+		
+	byte b[]=new byte[100];
+		byte array is created so that user input can be stored inside it.
+	
+	int k=System.in.read(b);
+		we accept input from user inside "b" which is byte array.
+	here "k" will hold number of bytes read.
+	
+	fos.write(b,0,k);
+		here we write user input stored inside byte array to file.
+	write has 3 arguments:
+		1) byte array to be written
+		2) it should start with 0
+		3) how many exact no. of bytes we would like to write inside file.
+
+
+
+
+

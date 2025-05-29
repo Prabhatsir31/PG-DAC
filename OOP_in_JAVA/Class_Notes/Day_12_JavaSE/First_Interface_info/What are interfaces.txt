@@ -1,0 +1,41 @@
+		interface
+
+interfaces are abstract in nature. i.e. they can not be instantiated.
+
+interface can contain 
+	members
+	abstract methods
+	default methods
+	static methods
+
+members declared in interface are by default "public","static" and "final".
+
+methods declared ( and not defined) inside interface are by default "public" and "abstract".
+
+a class can be derived from more than one interfaces.  (implements keyword is used here )
+
+child class of an interface has to provide implementation of the method/s which are declared abstract in parent or else child class also has to be declared as "abstract".
+
+default method/s (which are by default "public") may or may not be overridden by child class. ( if overridden, "public" modifier is compulsory)
+
+static methods are like utility methods which can be invoked only on the interface in which they are defined.
+
+
+
+
+
+
+
+
+
+
+
+
+Summary of Interfaces:
+
+
+An interface declaration can contain method signatures, default methods, static methods and constant definitions. The only methods that have implementations are default and static methods.
+A class that implements an interface must implement all the methods declared in the interface.
+
+
+

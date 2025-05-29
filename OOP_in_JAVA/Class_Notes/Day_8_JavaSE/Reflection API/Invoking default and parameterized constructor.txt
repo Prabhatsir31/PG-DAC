@@ -1,0 +1,88 @@
+// how to instantiate a class by invoking default constructor or parameterized constructor with the help of Reflection API
+
+package reflectionapi;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
+import java.lang.reflect.*;
+class MyClass
+{
+	private String message;
+	public MyClass() {
+		super();
+	}
+	
+
+	public String getMessage() {
+		return message;
+	}
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
+	public MyClass(String message) {
+		super();
+		this.message = message;
+	}
+
+	@Override
+	public String toString() {
+		return "MyClass [message=" + message + "]";
+	}
+	
+	
+}
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Class c=null;
+		try {
+			c=Class.forName("MyClass");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("instantiate MyClass using default constructor");
+		Object first=null;
+		try {
+			first=c.newInstance();
+		} catch (InstantiationException | IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		MyClass ref=null;
+		if(first instanceof MyClass)
+		{
+			ref=(MyClass)first;
+		}
+		ref.setMessage("hello world");
+		System.out.println(ref.getMessage());
+		System.out.println("instantiate MyClass using parameterized constructor");
+		Constructor ctor=null;
+		try {
+			ctor=c.getDeclaredConstructor(String.class);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Object second=null;
+		try {
+			second=ctor.newInstance("welcome");
+		} catch (InstantiationException | IllegalAccessException 
+				| InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(second);
+
+	}
+
+}

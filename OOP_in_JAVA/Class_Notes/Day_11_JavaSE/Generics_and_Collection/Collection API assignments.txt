@@ -1,0 +1,104 @@
+1) accept 10 numbers from user and add them inside the ArrayList.
+using ListIterator display all the numbers bidirectionally.
+
+2) on the developer side:
+	create a generic class which can accept any type
+		with setters , getters and toString methods.
+	create necessary jar files and  documentation.
+
+on client side 
+	create the object of above generic class and invoke its setters , getters and display the object.
+  
+
+3) create LinkedList with the values 10,20,30 and 40.
+display it.
+now insert 500 in the beginning.
+	insert 400 at 2nd position.
+	add 1000 at the end.
+display the list again.
+
+4) add 5 numbers inside CopyOnWriteArrayList and show how can you add one more number at the same time of traversal through its iterator.
+
+
+5) create a class MyNum with
+		private int num;
+		parameterized constructor
+
+	
+Demo class with main
+	create 4 objects of MyNum by passing different integers.
+	store these 4 objects inside "ArrayList"
+	and now store that ArrayList inside file system.
+	
+	read ArrayList from file and traverse it using Iterator.
+
+6)
+Create a Student class with fields:
+
+id (int)
+name (String)
+age (int)
+marks (double)
+Constructor & toString() method
+
+Use an ArrayList<Student> to store student records.
+
+Implement the following operations in the main function.
+
+Add a student
+Display all students
+Search for a student by ID
+
+
+7) 
+Create an interface Product with a method displayDetails().
+
+Create two classes:
+
+Electronics and Groceries 
+
+Both should implement Product.
+
+Store objects of both the classes in a ArrayList<Product>.
+
+store ArrayList in the file , then read ArrayList from the file and display.
+
+
+
+8) create a class "MyClass".
+create 5 different objects of it.
+add them in a ArrayList.
+store ArrayList in file.
+Now open a file, read ArrayList and display all objects.
+
+9) create a HashMap.
+store  prn no. and students name of 10 students inside the HashMap.
+now write this HashMap inside the file and read also. After reading display it using iterator.
+
+10) create a hierarchy as follows
+	interface Game- play() method
+	Derive at least 3 classes from it. ( Cricket, Chess and Football )
+Now Create generic class which can take Game type (i.e. any sub type of Game) as parameter.
+In this class try to call the play() method of the class which is passed to it.
+
+
+11) maintain ICC ranking of at least 5 batsmen in the "HashMap".
+list should be maintain as "rank" "name"
+e.g. "1" "Rohit Sharma".
+Now ask any rank bet'n 1 to 5 from user. ( user input).
+if user asks for a particular rank , retrieve batsman name for that rank from the HashMap.
+
+12)
+Create a base class Animal with makeSound().
+
+Create subclasses Dog and Cat, each overriding makeSound().
+
+Store objects of Dog and Cat in an ArrayList<Animal>.
+Now traverse the ArrayList using iterator and call makeSound() dynamically.
+
+
+
+
+
+
+

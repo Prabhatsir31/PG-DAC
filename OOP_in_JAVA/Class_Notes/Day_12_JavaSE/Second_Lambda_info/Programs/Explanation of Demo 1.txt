@@ -1,0 +1,16 @@
+
+
+
+emp ref2=(String name)->{ return "Welcome to our site\t"+name;};
+
+	a) implementation of emp which defines "wish" method which takes "String name" as a parameter.
+	in that "wish" method there is code
+		return "Welcome to our site\t"+name;
+
+	b) instantiates implementation of emp
+	c) assigns that instance of emp implementation to "ref2" (upcasting)
+
+
+
+		System.out.println(ref2.wish("Sachin"));
+		System.out.println("Implementation class name is\t"+ref2.getClass().getName());

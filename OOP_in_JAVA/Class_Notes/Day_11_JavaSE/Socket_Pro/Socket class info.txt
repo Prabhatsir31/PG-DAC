@@ -1,0 +1,14 @@
+Socket class on client side allows you to connect to the server. So when u instantiate Socket class in client application you need to pass two arguments
+	1) machine name on which server application is running
+
+	2) port no on which you would like to get connected.
+
+ Since Socket class allows client to get connected with the server, Socket class on client side represents the server.
+
+
+
+Socket class on server side:
+
+	When client gets connected with the server, server application also gets a Socket.
+
+So Socket class on server side is used to represent client.

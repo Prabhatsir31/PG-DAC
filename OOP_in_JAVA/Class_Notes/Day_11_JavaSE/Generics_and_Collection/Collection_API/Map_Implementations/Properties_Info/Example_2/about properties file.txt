@@ -1,0 +1,1 @@
+"info.properties" will be created inside "e:\\" drive.

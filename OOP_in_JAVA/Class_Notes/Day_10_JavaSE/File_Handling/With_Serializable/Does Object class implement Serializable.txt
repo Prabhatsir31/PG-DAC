@@ -1,0 +1,16 @@
+Does Object class implement Serializable?
+
+no. 
+why?
+
+Because had Java Founders made Object class implements Serializable, each and every class in java would have become eligible for serialization by default. They didn't want this. They wanted developers to decide whether to go for serialization or not.
+
+What if Object class were Serializable?
+
+	Then each and every class in java would be serialized by default. In case of some classes like Thread, Socket , Database connection etc. serialization does not make any sense.
+
+Threads, Sockets, Database Connections etc. are tightly linked to the JVM’s runtime environment, which means:
+
+They depend on the OS and JVM state (e.g., a thread’s execution stack, a socket’s network session, a database connection’s session).
+
+If you serialize them in one JVM and deserialize in another JVM, they won’t work because the new JVM has a completely different runtime state.
