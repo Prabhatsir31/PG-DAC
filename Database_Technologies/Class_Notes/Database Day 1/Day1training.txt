@@ -1,0 +1,414 @@
+mysql -uroot -p 	===> it is used to start the mysql in cmd
+
+show databases;	===> used to show the database that  is present in your db
+
+select database();	===> used to select the db
+
+use mysql		
+
+show tables;
+
+create database vita_2025;	===> create a new db
+
+use vita_2025	===> taken for the access
+
+show tables;	===> show all the tables that you make 
+
+create table test(id int,name varchar(10));	===> create a table
+
+desc test;	===> see the structure
+
+select * from test;	===> show the table
+
+--insert the items
+
+insert into test(id , name) values(1,'a');
+insert into test(id , name) values(2,'b'),(3,'c'),(4,'d');
+insert into test values(5,'e');
+insert into test(name) values('f');
+
+-- select with where clause
+
+select * from test;
+
+select id from test;
+select * from test where id=1;
+select * from test where id!=1;
+select * from test where id<>1;
+select * from test where id in (1,3); 
+ select * from test where id not in (1,3); 
+
+select * from test where id is null;
+select * from test where id is not null;
+select * from test where id<3;
+select * from test where id<=3;
+
+select * from test where id>3;
+
+select * from test where id>=3;
+
+before you use delete command 
+	start transaction;
+otherwise all the is in trashed and commit
+-- delete
+
+delete from test where id=3;
+
+-- update
+
+
+update test set id=7 where id is null;
+
+
+
+update test set id=8,name='x' where id =2;
+
+
+
+
+select * from test where id between 1 and 5;
+
+
+select * from test where id not between 1 and 5;
+
+if you want to print even number
+
+select * from test where mod(id,2)=0;
+
+print the ascii of variable
+
+select ascii('a');
+
+
+select * from test order by name nulls last;
+
+
+select * from test order by name desc;
+
+
+-- add column
+alter table test add c1 int;
+alter table test drop column c1;
+alter table test add c1 int default 10;
+alter table test drop column c1;
+
+-- change data type
+alter table test modify name varchar(20);
+alter table test modify name varchar(10);
+alter table test modify id int not null;	
+insert into test(name) values('y'); -- fails as Id doesn't allow null value and it doesn't have any default values
+alter table test modify id int not null default 1;
+insert into test(name) values('y');
+alter table test rename to test2;
+alter table test2 rename to test;
+alter table test modify name varchar(10) default 'a';
+
+
+-- unique key
+create table t_uk(id int unique ,name varchar(10));
+insert into t_uk values(1,'a');
+insert into t_uk values(1,'b');
+insert into t_uk values(null,'b');
+insert into t_uk values(null,'b');
+
+
+-- composite unique key
+create table test_comp_uk (c1 int, c2 int, c3 varchar(10), unique(c1,c2));
+insert into test_comp_uk values(1,1,'a');
+insert into test_comp_uk values(1,2,'a');
+insert into test_comp_uk values(2,2,'a');
+insert into test_comp_uk values(2,2,'c'); -- fails
+
+
+-- multiple unique
+create table t_mult_uk(c1 int unique, c2 int unique , c3  varchar(10));
+
+insert into t_mult_uk values(1,1,'a');
+
+
+insert into t_mult_uk values(1,2,'a'); -- fail
+
+
+
+
+create table t_1 (id int, name varchar(10));
+
+insert into t_1 values(1,'a'),(2,'b');
+
+
+alter table t_1 add constraint t_1_unique unique(id);
+
+use information_schema;
+
+select table_name from tables where table_schema='vita_2025';
+
+ select table_name, CONSTRAINT_NAME from TABLE_CONSTRAINTS where CONSTRAINT_schema='vita_2025';
+
+use vita_2025;
+alter table t_mult_uk drop constraint c1;  
+
+
+-- primary key
+
+create table t_pk ( id int primary key, name varchar(10));
+
+insert into t_pk values(1,'a'); -- works
+
+insert into t_pk values(1,'b'); -- fails
+
+insert into t_pk values(null,'b'); -- fails
+
+insert into t_pk(name) values('b'); -- fails
+
+create table t_multi_pk(c1 int primary key, c2 int primary key); -- not allowed
+
+
+create table t_comp_pk(c1 int, c2 int, primary key(c1,c2)); -- allowed
+
+
+          
+alter table t_comp_pk drop  primary key;
+
+
+create table t_nn (id int not null, name varchar(100));
+
+insert into t_nn values(null,'a'); -- fails
+
+
+-- check constraint
+
+create table t_check(id int, salary int check(salary>100));
+
+insert into t_check values(1,1); -- fails
+
+insert into t_check values(1,null); -- works
+
+
+create - FK
+
+create table t_parent
+(deptid int primary key, deptname varchar(10));
+
+
+create table t_child
+(eid int, ename varchar(10),
+deptid int,
+foreign key fk1 (deptid) references t_parent(deptid));
+
+
+insert into t_child values(1,'a',1); -- fails
+
+
+insert into t_child values(1,'a',null); -- works
+
+insert into t_parent values(1,'HR');
+insert into t_child values(1,'a',1); -- works
+
+
+
+-- default
+
+create table t_def(id int default 1 , name varchar(10));
+
+
+insert into t_def(name) values('a');
+
+insert into t_def values(null,'a');
+
+
+
+
+select * from t_def;
+
+start transaction;
+
+
+create table t1 (c1 int, c2 varchar(5));
+
+create table t2 (c1 int, c3 varchar(5));
+
+
+insert into t1 values(1,'a'),(2,'b'),(3,'c');
+insert into t2 values(3,'x'),(4,'y'),(5,'z');
+
+
+-- cross Join 
+
+-- Old syntax
+
+select * from t1,t2;
+
+select t1.c1,c2,c3 from t1,t2;
+
+
+select c1,c2,c3 from t1,t2; -- ambigous column error
+
+-- new/ansi syntax
+
+
+select * from t1  cross join t2;
+
+select t1.c1,c2,c3 from t1   cross join  t2;
+
+
+select c1,c2,c3 from t1    cross join t2; -- ambigous column error
+
+
+-- inner join
+
+-- old synt
+
+
+select * from t1,t2
+where t1.c1=t2.c1;
+
+-- new /ansi synt
+
+
+select * from t1  inner join t2
+on t1.c1=t2.c1;
+
+
+select * from t1  join t2
+on t1.c1=t2.c1;
+
+
+--left join
+
+-- new /ansi synt
+
+
+select * from t1  left  join t2
+on t1.c1=t2.c1;
+
+
+
+--right join
+
+-- new /ansi synt
+
+
+select * from t1  right join t2
+on t1.c1=t2.c1;
+
+
+select * from t1  full  join t2
+on t1.c1=t2.c1;
+
+
+--- we will see the workaround of implementing full join in mysql later
+
+
+
+create table a(id int);
+create table b(id int);
+
+insert into a values(1),(2),(3);
+insert into b values(3),(4),(5);
+
+
+select * from a
+union 
+select * from b;
+
+
+select * from b
+union 
+select * from a;
+
+select * from a
+union  all
+select * from b;
+
+
+select * from b
+union all
+select * from a;
+
+
+select * from a
+intersect
+select * from b;
+
+
+select * from b
+intersect
+select * from a;
+
+
+select * from a
+except
+select * from b;
+
+
+select * from b
+except
+select * from a;
+
+
+-- workaround of full join
+select * from t1  left  join t2
+on t1.c1=t2.c1
+union
+select * from t1  right  join t2
+on t1.c1=t2.c1;
+
+
+
+
+select count(*) from t_def;
+select count(1) from t_def;
+select count('a') from t_def;
+select count(2) from t_def;
+
+select count(id) from t_def;
+
+select count(name) from t_def;
+
+select count(distinct name) from t_def;
+
+select count(distinct id) from t_def;
+
+select sum(id) from test;
+
+
+
+select salary from emp;
+
+select sum(salary) from emp;
+
+select sum(salary) from emp join dept on emp.deptid=dept.deptid;
+
+select deptname,sum(salary) from emp join dept on emp.deptid=dept.deptid
+group by deptname;
+
+
+select deptname,sum(salary) total_salary from emp join dept on emp.deptid=dept.deptid
+group by deptname;
+
+select deptname,sum(salary) total_salary from emp join dept on emp.deptid=dept.deptid
+group by deptname;
+
+
+
+
+select deptname,count(eid) num_employees from emp join dept
+on emp.deptid=dept.deptid
+group by deptname;
+
+
+select deptname,sum(salary) total_salary from emp join dept
+on emp.deptid=dept.deptid
+group by deptname
+having sum(salary)>50000;
+
+
+select * from emp ;
+select * from emp order by salary desc ;
+
+select * from emp order by salary desc limit 5;
+
+select * from emp order by salary desc limit 5 offset 1;
+
+
+select * from emp order by salary desc limit 1,5;

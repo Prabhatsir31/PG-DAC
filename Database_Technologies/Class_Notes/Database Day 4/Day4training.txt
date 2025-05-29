@@ -1,0 +1,258 @@
+show variables like 'transaction_isolation';
+
+create table cust_orders
+(cid int, orderdate date);
+
+
+insert into cust_orders values(1,'2025-10-20');
+insert into cust_orders values(1,'2025-01-01');
+insert into cust_orders values(1,'2024-01-10');
+insert into cust_orders values(1,'2023-12-31');
+insert into cust_orders values(1,'2023-12-10');
+insert into cust_orders values(1,'2023-10-10');
+insert into cust_orders values(2,'2025-10-20');
+insert into cust_orders values(2,'2025-05-01');
+insert into cust_orders values(2,'2024-03-10');
+insert into cust_orders values(2,'2023-12-31');
+insert into cust_orders values(2,'2023-12-10');
+insert into cust_orders values(2,'2023-10-10');
+insert into cust_orders values(3,'2024-04-01');
+insert into cust_orders values(3,'2024-03-10');
+insert into cust_orders values(3,'2023-12-31');
+insert into cust_orders values(3,'2023-12-10');
+insert into cust_orders values(3,'2023-10-10');
+
+
+select distinct cid from (
+select *,
+case when year(orderdate)=year(next_orderdate) and
+month(orderdate)-month(next_orderdate)=1 then 1 
+when year(orderdate)-year(next_orderdate)=1 and
+month(orderdate)=1 and month(next_orderdate)=12 then 1
+else 0 end flag
+ from (
+select cid,orderdate,
+lead(orderdate,1) over(partition by cid order by orderdate desc) next_orderDate
+from cust_orders) as t ) t2 where flag=1;
+
+
+
+
+select cid,orderdate,
+lead(orderdate,1) over(partition by cid order by orderdate desc) next_orderDate
+from cust_orders;
+
+
+
+select cid,orderdate,
+(select max(orderdate) from cust_orders i
+where i.cid=o.cid
+and i.orderdate<o.orderdate) next_orderDate
+from cust_orders o;
+
+
+select sum(case when Deptname='HR' then salary end ) HR,
+sum(case when Deptname='IT' then salary end ) IT,
+sum(case when Deptname='Finance' then salary end ) Finance,
+sum(case when Deptname='OPR' then salary end ) OPR
+from emp join dept 
+on emp.deptid=dept.deptid;
+
+
+
+select salary ,count(*) from emp group by salary 
+having count(*)>1;
+
+insert into emp values(46,'a46',20001,2);
+
+
+
+
+select eid,deptname,ename,salary,
+(select sum(salary) from emp i
+where i.salary>o.salary
+or
+(i.salary=o.salary and i.eid<=o.eid )
+) runningsalarytotal
+from emp o join dept
+on o.deptid=dept.deptid
+order by salary desc, eid;
+
+select deptname,ename,salary,
+sum(salary) over(order by salary desc
+rows between unbounded preceding and current row
+) runningsalarytotal
+from emp o join dept
+on o.deptid=dept.deptid
+;
+
+
+unbounded preceding
+1 preceding
+2 preceding
+..
+n preceding
+current row
+1 following
+2 following
+..
+n following
+
+
+
+select deptname,ename,salary,
+sum(salary) over(order by salary desc
+rows between 1 following and 1 following 
+) nexthighsalary
+from emp o join dept
+on o.deptid=dept.deptid
+;
+
+
+select deptname,ename,salary,
+sum(salary) over(order by salary desc
+rows between 1 preceding and 1 preceding
+) prevhighsalary
+from emp o join dept
+on o.deptid=dept.deptid
+;
+
+
+select group_concat(ename,',') from emp;
+
+with recursive cte
+as
+(
+select partid originalpartid,parentpartid immediateparent,parentpartid  topmostparent ,0 level from parts
+union all
+select originalpartid,immediateparent,p.parentpartid,level+1 from
+cte c join parts p
+where c.topmostparent=p.partid
+and p.partid<>p.parentpartid)
+select concat(topmostparent,'->',group_concat(originalpartid  separator '->'))
+hierarchy
+ from
+(select topmostparent,level,group_concat(originalpartid separator ',') originalpartid  from (select *,row_number() over(partition by originalpartid order by level desc) rn  from cte) t2
+where rn=1 and originalpartid  <>topmostparent
+group by topmostparent,level) as t3
+group by topmostparent;  
+
+
+
+
+
+
+28. Write a query that produces all customers serviced by salespeople
+ with a commission above
+12%. Output the customer’s name and the salesperson’s rate of commission.
+
+
+select cname,sname,comm
+from customers c join salespeople s 
+on c.snum=s.snum
+and comm>0.12 ;
+
+
+
+78. Write a query that extracts from the Customers table
+ every customer assigned to a
+salesperson
+
+ who currently has at least one other customer (besides the customer being
+selected) with orders in the Orders table.
+
+
+select distinct cname,sname
+from customers c join salespeople s 
+on c.snum=s.snum join orders o
+on 
+c.cnum=o.cnum
+and s.snum=o.snum
+where
+exists(select 1 from orders i 
+where i.snum=s.snum and i.cnum<>c.cnum);
+
+
+
+select cname
+from customers c 
+where snum in(
+select snum from  orders o 
+group by snum 
+having count(distinct cnum)>1);
+
+
+
+61. Produce all combinations of salespeople and customer names such that the former precedes
+the latter alphabetically, and the latter has a rating of less than 200.
+
+
+select sname,cname
+from
+salespeople s, customers c 
+where s.snum=c.snum
+and rating<200
+and sname<cname;
+
+
+63. Write a query that produces the names and cities of all customers 
+with the same rating as
+Hoffman. Write the query using Hoffman’s CNUM rather than his rating, so that it would still be
+usable if his rating changed.
+
+
+select cname,city from customers
+where rating=(select rating from customers where cnum=2001);
+
+
+
+
+17. Give the sums of the amounts from the Orders table, grouped by date, eliminating all those
+dates where the SUM was not at least 2000.00 above the MAX amount.
+
+
+select odate,sum(amt),max(amt) from orders
+group by odate
+having sum(amt)>=2000+max(amt);
+
+
+
+
+18. Select all orders
+ that had amounts that were greater than at least one of the orders from
+October 6.
+
+select * from orders
+where amt>(select min(amt) from orders where odate='1996-10-06')
+;
+
+
+select * from orders
+where amt>any(select amt from orders where odate='1996-10-06')
+;
+
+
+46. Write a query that produces all pairs of salespeople with themselves as well as duplicate rows
+with the order reversed.
+
+select s1.sname,s2.sname
+from salespeople s1, salespeople s2;
+
+
+
+
+122.Does the total amount in orders by customer in Rome and London exceed the commission
+paid to salespersons in London and New York by more than 5 times?
+
+select case when amt>5*com then 'Yes, the total amount in orders by customer in Rome and London exceeds the commission
+paid to salespersons in London and New York by more than 5 times'
+else 'No, the total amount in orders by customer in Rome and London doesn''t exceed the commission
+paid to salespersons in London and New York by more than 5 times' end Result
+from(
+select sum(amt) amt from orders o , customers c
+where o.cnum=c.cnum
+and city in ('Rome','London')) as c,
+(
+select sum(amt*comm) com from orders o , salespeople s
+where o.snum=s.snum
+and city in ('New York','London')) s;

@@ -1,0 +1,293 @@
+DAY-5
+-------------------
+
+show table status like 'emp'; // gives the sub tables of emp file
+
+
+show table status like 'emp' \G; // gives the tables in the row format
+
+
+show tables status; // gives all the tables sub-tables
+
+IDB : innode data base 
+
+
+create table t_myisam(id int ) engine=myisam;
+
+show table status like 't_myisam' \G;
+
+start transaction;
+
+insert into t_myiasm values(1);
+
+rollback;
+
+select * from t_myisam;
++------+
+| id   |
++------+
+|    1 |
++------+
+
+create a table by myisam
+--------------------------------
+
+create table t_parent_m(deptid int unique, daptname varchar(10)) engine=myisam;
+
+create table t_child_m(eid int, ename varchar(10), deptid int,
+foreign key fk1(deptid) references t_parent_m(deptid)) engine=myisam;
+
+
+create a table by csv 
+-----------------------
+create table t_csv(id int not null, name varchar(10) not null) engine =csv;
+
+show table status like 't_csv' \G;
+
+insert into t_csv values (1,'a'),(2,'b'),(3,'c');
+
+select * from t_csv;
+
+show variables like 'datadir';
+==>  select the directory and add the data over there
+
+==>  after this go to the file and update the file and run it again 
+
+==>  update there multiple data by your own and then 
+
+select * from t_csv;
+
+
+the data u will not show 
+
+run this command
+flush table t_csv;
+
+
+select * from t_csv;
+
+
+----------------
+
+
+select * from information_schema.tables;
+
+select engine,table_type, count(*) from 
+information_schema.tables 
+where table_schema=database()
+group by engine, table_type;
+
++--------+------------+----------+
+| ENGINE | TABLE_TYPE | count(*) |
++--------+------------+----------+
+| InnoDB | BASE TABLE |       24 |
+| MyISAM | BASE TABLE |        3 |
+| NULL   | VIEW       |        3 |
++--------+------------+----------+
+
+----------------------------
+
+create table t_archive(id int, name varchar(100)) engine=archive;
+
+show table status like 't_archive' \G;
+
+*************************** 1. row ***************************
+           Name: t_archive
+         Engine: ARCHIVE
+        Version: 10
+     Row_format: Compressed
+           Rows: 0
+ Avg_row_length: 407
+    Data_length: 88
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: 1
+    Create_time: 2025-04-01 09:06:58
+    Update_time: 2025-04-01 09:06:58
+     Check_time: NULL
+      Collation: utf8mb4_0900_ai_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+1 row in set (0.01 sec)
+
+
+
+insert into t_archive values (1,'a'),(2,'b'),(3,'c');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+select * from t_archive;
++------+------+
+| id   | name |
++------+------+
+|    1 | a    |
+|    2 | b    |
+|    3 | c    |
++------+------+
+
+
+show variables like 'datadir';
++---------------+---------------------------------------------+
+| Variable_name | Value                                       |
++---------------+---------------------------------------------+
+| datadir       | C:\ProgramData\MySQL\MySQL Server 8.0\Data\ |
++---------------+---------------------------------------------+
+
+
+delete from t_archive where id=2;
+
+ERROR 1031 (HY000): Table storage engine for 't_archive' doesn't have this option
+
+mysql> select * from t_archive;
++------+------+
+| id   | name |
++------+------+
+|    1 | a    |
+|    2 | b    |
+|    3 | c    |
++------+------+
+3 rows in set (0.00 sec)
+
+----------------------------------
+
+
+create table t_memory(id int, name varchar(100)) engine=memory;
+
+
+insert into t_memory values (1,'a'),(2,'b'),(3,'c');
+
+desc t_memory;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | YES  |     | NULL    |       |
+| name  | varchar(100) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+
+
+select * from t_memory;
+ERROR 2013 (HY000): Lost connection to MySQL server during query
+No connection. Trying to reconnect...
+Connection id:    8
+Current database: vita_2025
+
+Empty set (0.04 sec)
+
+--------------------------------------------
+
+
+
+Binary Tree / Balance Tree
+----------------------------
+
+show indexes from t_mult_uk;;
++-----------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table     | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++-----------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| t_mult_uk |          0 | c1       |            1 | c1          | A         |           2 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| t_mult_uk |          0 | c2       |            1 | c2          | A         |           2 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++-----------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+2 rows in set (0.02 sec)
+
+
+call cp_loademp(5000000);
+
+
+select * from t_mult_uk where eid=1;
+
+select count(*) from t_mult_uk;
+
+
+explain select * from emp where c1=1; // show me the index only where c1=1
+
+
+create index emp_eid_idx on t_mult_uk(c1); // this is used to create a indexes
+
+
+select * from t_mult_uk where c3='a'; // show me the data where c3='a'
+
+drop index emp_eid_idx on emp; // drop the indexes from emp file
+
+
+
+diff b/w
+
+truncate and delete
+normalization and  denormalization
+rowid and row_number
+cluster and non-cluster 
+
+
+char and varchar
+
+All Data Type
+-------------
+char
+varchar(size)
+tinytext(size)
+text(size)
+mediumtext(Size)
+
+
+
+bit
+tinyint(n)
+smallint(n)
+mediumint(n)
+int(n)
+
+
+ER - Entity Relationship
+----------------------------------
+
+one-to-many(1:M)
+
+|-----------------------------|         |----------------------------|
+|             A               |         |            1               |
+|                             |         |            2               |
+|                             |         |            3               |
+|                             |         |            4               |
+|                             |         |            5               |
+|                             |         |            6               |
+|                             |         |            7               | 
+|-----------------------------|         |----------------------------|
+
+mant-to-one(M:1)
+
+one-to-one(1,1)
+
+
+
+---------------------------------
+Extra
+-------
+
+Q1) 
+
+
+create table t_product(pid int, price float, qty int);
+
+
+insert into t_product values(1,1.2,10);
+insert into t_product values(2,2.1,2);
+insert into t_product values(3,2.4,5);
+insert into t_product values(4,3,20);
+insert into t_product values(5,4.4,10);
+insert into t_product values(6,5.5,3);
+
+
+with recursive cte
+as
+(
+    select 100 amountinpocket, 100 amountleft, 0 qtypurchased, 0 prodnum
+    union all
+    select amountinpocket, case when amountleft-(qty*price)>=0 then amountleft-(qty*price) else amountleft-(floor(amountleft/price)*price) end,
+    case when amountleft-(qty*price)>=0 then qtypurchased+qty 
+    else qtypurchased+ floor(amountleft/price) end,
+    prodnum+1
+    from (select *, row_number() over(order by price) rn from t_product) as t, cte where rn-prodnum+1 and amountleft>0) select max(qtypurchased) from cte;
+
+
+

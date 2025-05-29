@@ -1,0 +1,790 @@
+DAY-4
+----------------
+
+write ahead locking
+-----------------------
+
+isolation
+-----------------
+we cannot change the same data at the same time 
+
+show variables like 'transaction_isolation';
+
+show variables like 'transaction%isolation%';
+
+show database like 'transaction%isolation%';
+
++-----------------------+-----------------+
+| Variable_name         | Value           |
++-----------------------+-----------------+
+| transaction_isolation | REPEATABLE-READ |
++-----------------------+-----------------+
+
+blocking
+--------------
+
+show variables like '%lock%time%';
+
++--------------------------+----------+
+| Variable_name            | Value    |
++--------------------------+----------+
+| innodb_lock_wait_timeout | 50       |
+| innodb_old_blocks_time   | 1000     |
+| lock_wait_timeout        | 31536000 |
++--------------------------+----------+
+
+
+set lock_wait_timeout=200000;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> set innodb_lock_wait_timeout=2;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show variables like '%lock%time%';
++--------------------------+--------+
+| Variable_name            | Value  |
++--------------------------+--------+
+| innodb_lock_wait_timeout | 2      |
+| innodb_old_blocks_time   | 1000   |
+| lock_wait_timeout        | 200000 |
++--------------------------+--------+
+
+
+screen-1
+
+select * from test;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
+|  2 | b    |
+|  3 | c    |
+|  4 | d    |
+|  5 | e    |
+|  6 | f    |
+|  7 | y    |
++----+------+
+7 rows in set (0.00 sec)
+
+mysql> set transaction_isolation='read-uncommitted';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> start transaction;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> update test set name='hari' where id=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> update test set name='hari' where id=7;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+screen-2
+-------------
+
+ select * from test;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
+|  2 | hari |
+|  3 | c    |
+|  4 | d    |
+|  5 | e    |
+|  6 | f    |
+|  7 | y    |
++----+------+
+7 rows in set (0.00 sec)
+
+mysql> select * from test;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
+|  2 | b    |
+|  3 | c    |
+|  4 | d    |
+|  5 | e    |
+|  6 | f    |
+|  7 | y    |
++----+------+
+7 rows in set (0.00 sec)
+
+mysql> select * from test;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
+|  2 | b    |
+|  3 | c    |
+|  4 | d    |
+|  5 | e    |
+|  6 | f    |
+|  7 | hari |
++----+------+
+7 rows in set (0.00 sec)
+
+mysql> update test set name='hari' where id=6;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update test set name='hari' where id=7;
+^C -- query aborted
+ERROR 1317 (70100): Query execution was interrupted
+mysql> update test set name='hari' where id=7;
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+
+
+read committed isolation doesnot support repeatable read 
+
+
+repeatable read isolation
+----------------------------
+
+screen-1
+-----------
+
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> update test set name='pra' where id=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> commit;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from test where id=1;
++----+------+
+| id | name |
++----+------+
+|  1 | pra  |
++----+------+
+1 row in set (0.00 sec)
+
+screen-2
+------------
+
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> set transaction_isolation='Repeatable-read';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show variables like 'transaction-isolation';
+Empty set (0.00 sec)
+
+mysql> select * from test;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
+|  2 | b    |
+|  3 | c    |
+|  4 | d    |
+|  5 | ppp  |
+|  6 | hari |
+|  7 | hari |
++----+------+
+7 rows in set (0.00 sec)
+
+mysql> select * from test where id=1;;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
++----+------+
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql> select * from test where id=1;
++----+------+
+| id | name |
++----+------+
+|  1 | a    |
++----+------+
+1 row in set (0.00 sec)
+
+mysql> select * from test where id=1;;
++----+------+
+| id | name |
++----+------+
+|  1 | pra  |
++----+------+
+1 row in set (0.00 sec)
+
+Serializable
+-------------------
+
+
+
+
+
+query
+--------------
+
+CREATE TABLE Orders (
+    CID INT, 
+    OrderDate DATE
+);
+
+INSERT INTO Orders (CID, OrderDate) VALUES
+(1, '2025-10-20'),
+(1, '2025-01-01'),
+(1, '2024-01-10'),
+(1, '2023-12-31'),
+(1, '2023-12-10'),
+(1, '2023-10-10'),
+(2, '2025-10-20'),
+(2, '2025-05-01'),
+(2, '2025-03-10'),
+(2, '2025-01-01'),
+(2, '2024-01-10'),
+(2, '2023-12-31'),
+(3, '2023-12-10'),
+(3, '2023-12-10'),
+(3, '2023-12-31'),
+(3, '2023-12-10'),
+(3, '2023-10-10');
+
+
+select cid, orderdate,
+    lead(orderdate,1) over(partition by cid order by orderdate desc) next_orderdate from orders;
+
++------+------------+----------------+
+| cid  | orderdate  | next_orderdate |
++------+------------+----------------+
+|    1 | 2025-10-20 | 2025-01-01     |
+|    1 | 2025-01-01 | 2024-01-10     |
+|    1 | 2024-01-10 | 2023-12-31     |
+|    1 | 2023-12-31 | 2023-12-10     |
+|    1 | 2023-12-10 | 2023-10-10     |
+|    1 | 2023-10-10 | NULL           |
+|    2 | 2025-10-20 | 2025-05-01     |
+|    2 | 2025-05-01 | 2025-03-10     |
+|    2 | 2025-03-10 | 2025-01-01     |
+|    2 | 2025-01-01 | 2024-01-10     |
+|    2 | 2024-01-10 | 2023-12-31     |
+|    2 | 2023-12-31 | NULL           |
+|    3 | 2023-12-31 | 2023-12-10     |
+|    3 | 2023-12-10 | 2023-12-10     |
+|    3 | 2023-12-10 | 2023-12-10     |
+|    3 | 2023-12-10 | 2023-10-10     |
+|    3 | 2023-10-10 | NULL           |
++------+------------+----------------+
+
+
+select distinct cid from (
+    select *,
+    case when year(orderdate)=year(next_orderdate) and 
+    month(orderdate)-month(next_orderdate)=1 then 1
+    when year(orderdate)-year(next_orderdate)=1 and
+    month(orderdate)=1 and month(next_orderdate)=12 then 1
+    else 0 end flag
+    from (
+    select cid, orderdate,
+    lead(orderdate,1) over(partition by cid order by orderdate desc) next_orderdate
+    from orders) as t) t2 where flag=1;
+    
+
++------+
+| cid  |
++------+
+|    1 |
+|    2 |
++------+
+
+
+select cid, orderdate,
+(select max(orderdate) from orders i
+
+)
+
+
+
+
+explain select * from orders;
++----+-------------+--------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table  | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+--------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | orders | NULL       | ALL  | NULL          | NULL | NULL    | NULL |   17 |   100.00 | NULL  |
++----+-------------+--------+------------+------+---------------+------+---------+------+------+----------+-------+
+
+
+
+mysql> explain select * from orders \G;
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: orders
+   partitions: NULL
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 17
+     filtered: 100.00
+        Extra: NULL
+1 row in set, 1 warning (0.00 sec)
+
+ERROR:
+No query specified
+
+
+---------------------------------
+
+
+show deptname and total salary of each deptname in column form
+
+SELECT 
+    SUM(CASE WHEN deptname = 'HR' THEN salary END) AS HR,
+    SUM(CASE WHEN deptname = 'IT' THEN salary END) AS IT,
+    SUM(CASE WHEN deptname = 'Finance' THEN salary END) AS Finance,
+    SUM(CASE WHEN deptname = 'OPR' THEN salary END) AS OPR
+FROM emp join dept on emp.deptid=dept.deptid;
+
++-------+-------+---------+------+
+| HR    | IT    | Finance | OPR  |
++-------+-------+---------+------+
+| 80973 | 15407 |   53399 | NULL |
++-------+-------+---------+------+
+
+-------------------------------
+
+insert on duplicate value in emp file 
+
+
+mysql> select salary, count(*) from emp group by salary having count(*) > 1;
+Empty set (0.00 sec)
+
+mysql> insert into emp values(46,'a46',20001,2);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select salary, count(*) from emp group by salary having count(*) > 1;
++--------+----------+
+| salary | count(*) |
++--------+----------+
+|  20001 |        2 |
++--------+----------+
+
+---------------------------------------
+
+deptname ename, salary
+
+
+
+SELECT deptname, ename, salary 
+FROM dept 
+JOIN emp ON dept.deptid = emp.deptid 
+ORDER BY emp.salary DESC;
+
+------------------
+show the eid deptname ename and salary and print the running total
+
+SELECT deptname, ename, salary, 
+(select sum(salary) from emp i 
+where i.salary>=o.salary) runningsalarytotal 
+FROM emp o join dept 
+ON o.deptid=dept.deptid
+order BY salary desc;
+
++----------+-------+--------+--------------------+
+| deptname | ename | salary | runningsalarytotal |
++----------+-------+--------+--------------------+
+| HR       | x     |  28222 |              28222 |
+| Finance  | w     |  20001 |              68224 |
+| IT       | a46   |  20001 |              68224 |
+| Finance  | y     |  19212 |              87436 |
+| HR       | z     |  12111 |              99547 |
+| HR       | a2    |   9238 |             108785 |
+| HR       | v     |   9029 |             117814 |
+| HR       | b7    |   6432 |             124246 |
+| IT       | b8    |   4532 |             128778 |
+| Finance  | b4    |   4444 |             133222 |
+| IT       | b3    |   4212 |             137434 |
+| HR       | b9    |   3355 |             140789 |
+| HR       | n     |   3223 |             144012 |
+| HR       | a1    |   3211 |             147223 |
+| IT       | c1    |   2324 |             149547 |
+| Finance  | f     |   2023 |             151570 |
+| Finance  | o     |   1999 |             153569 |
+| Finance  | b6    |   1553 |             155122 |
+| IT       | b2    |   1242 |             156364 |
+| HR       | b1    |   1212 |             157576 |
+| IT       | b     |   1023 |             158599 |
+| HR       | a     |   1000 |             159599 |
+| Finance  | k     |    978 |             160577 |
+| Finance  | u     |    888 |             161465 |
+| HR       | a8    |    845 |             162310 |
+| Finance  | p     |    821 |             163131 |
+| IT       | t     |    817 |             163948 |
+| HR       | m     |    746 |             164694 |
+| IT       | s     |    717 |             165411 |
+| Finance  | a3    |    653 |             166064 |
+| HR       | j     |    627 |             166691 |
+| HR       | b5    |    555 |             167246 |
+| Finance  | r     |    546 |             167792 |
+| IT       | h     |    523 |             168315 |
+| HR       | q     |    324 |             168639 |
+| HR       | g     |    323 |             168962 |
+| HR       | l     |    222 |             169184 |
+| HR       | i     |    136 |             169320 |
+| Finance  | a9    |    135 |             169455 |
+| Finance  | d     |    123 |             169578 |
+| HR       | e     |    102 |             169680 |
+| HR       | a4    |     44 |             169724 |
+| Finance  | c     |     23 |             169747 |
+| HR       | a6    |     16 |             169763 |
+| IT       | a7    |     14 |             169777 |
+| IT       | a5    |      3 |             169780 |
++----------+-------+--------+--------------------+
+
+
+ select count(*) from emp;
++----------+
+| count(*) |
++----------+
+|       46 |
++----------+
+
+
+select salary, count(*) from emp group by salary having count(*) > 1;
++--------+----------+
+| salary | count(*) |
++--------+----------+
+|  20001 |        2 |
++--------+----------+
+
+---------------------------------------
+
+
+show the eid deptname ename and salary and print the running total but skip the distinct name 
+
+SELECT eid, deptname, ename, salary, 
+(select sum(salary) from emp i 
+where i.salary>o.salary
+or
+(i.salary=o.salary and i.eid<=o.eid)
+) runningsalarytotal 
+FROM emp o join dept 
+ON o.deptid=dept.deptid
+order BY salary desc, eid;
+
+
++------+----------+-------+--------+--------------------+
+| eid  | deptname | ename | salary | runningsalarytotal |
++------+----------+-------+--------+--------------------+
+|   24 | HR       | x     |  28222 |              28222 |
+|   23 | Finance  | w     |  20001 |              48223 |
+|   46 | IT       | a46   |  20001 |              68224 |
+|   25 | Finance  | y     |  19212 |              87436 |
+|   26 | HR       | z     |  12111 |              99547 |
+|   28 | HR       | a2    |   9238 |             108785 |
+|   22 | HR       | v     |   9029 |             117814 |
+|   42 | HR       | b7    |   6432 |             124246 |
+|   43 | IT       | b8    |   4532 |             128778 |
+|   39 | Finance  | b4    |   4444 |             133222 |
+|   38 | IT       | b3    |   4212 |             137434 |
+|   44 | HR       | b9    |   3355 |             140789 |
+|   14 | HR       | n     |   3223 |             144012 |
+|   27 | HR       | a1    |   3211 |             147223 |
+|   45 | IT       | c1    |   2324 |             149547 |
+|    6 | Finance  | f     |   2023 |             151570 |
+|   15 | Finance  | o     |   1999 |             153569 |
+|   41 | Finance  | b6    |   1553 |             155122 |
+|   37 | IT       | b2    |   1242 |             156364 |
+|   36 | HR       | b1    |   1212 |             157576 |
+|    2 | IT       | b     |   1023 |             158599 |
+|    1 | HR       | a     |   1000 |             159599 |
+|   11 | Finance  | k     |    978 |             160577 |
+|   21 | Finance  | u     |    888 |             161465 |
+|   34 | HR       | a8    |    845 |             162310 |
+|   16 | Finance  | p     |    821 |             163131 |
+|   20 | IT       | t     |    817 |             163948 |
+|   13 | HR       | m     |    746 |             164694 |
+|   19 | IT       | s     |    717 |             165411 |
+|   29 | Finance  | a3    |    653 |             166064 |
+|   10 | HR       | j     |    627 |             166691 |
+|   40 | HR       | b5    |    555 |             167246 |
+|   18 | Finance  | r     |    546 |             167792 |
+|    8 | IT       | h     |    523 |             168315 |
+|   17 | HR       | q     |    324 |             168639 |
+|    7 | HR       | g     |    323 |             168962 |
+|   12 | HR       | l     |    222 |             169184 |
+|    9 | HR       | i     |    136 |             169320 |
+|   35 | Finance  | a9    |    135 |             169455 |
+|    4 | Finance  | d     |    123 |             169578 |
+|    5 | HR       | e     |    102 |             169680 |
+|   30 | HR       | a4    |     44 |             169724 |
+|    3 | Finance  | c     |     23 |             169747 |
+|   32 | HR       | a6    |     16 |             169763 |
+|   33 | IT       | a7    |     14 |             169777 |
+|   31 | IT       | a5    |      3 |             169780 |
++------+----------+-------+--------+--------------------+
+
+-----------------------------
+
+
+how previous query in one line query
+
+SELECT eid, deptname, ename, salary,
+    -> sum(salary)
+    -> from emp o join dept i  on e.deptid=i.deptid;
+ERROR 1054 (42S22): Unknown column 'e.deptid' in 'on clause'
+mysql> SELECT eid, deptname, ename, salary,
+    -> sum(salary)
+    -> from emp o join dept i  on o.deptid=i.deptid;
+
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'vita_2025.o.eid'; this is incompatible with sql_mode=only_full_group_by
+
+----to overcome this error
+
+SELECT eid, deptname, ename, salary, 
+sum(salary) over(order by salary desc
+rows between unbounded preceding and current row
+) runningsalarytotal
+from emp o join dept i  
+on o.deptid=i.deptid;
+
++------+----------+-------+--------+--------------------+
+| eid  | deptname | ename | salary | runningsalarytotal |
++------+----------+-------+--------+--------------------+
+|   24 | HR       | x     |  28222 |              28222 |
+|   23 | Finance  | w     |  20001 |              48223 |
+|   46 | IT       | a46   |  20001 |              68224 |
+|   25 | Finance  | y     |  19212 |              87436 |
+|   26 | HR       | z     |  12111 |              99547 |
+|   28 | HR       | a2    |   9238 |             108785 |
+|   22 | HR       | v     |   9029 |             117814 |
+|   42 | HR       | b7    |   6432 |             124246 |
+|   43 | IT       | b8    |   4532 |             128778 |
+|   39 | Finance  | b4    |   4444 |             133222 |
+|   38 | IT       | b3    |   4212 |             137434 |
+|   44 | HR       | b9    |   3355 |             140789 |
+|   14 | HR       | n     |   3223 |             144012 |
+|   27 | HR       | a1    |   3211 |             147223 |
+|   45 | IT       | c1    |   2324 |             149547 |
+|    6 | Finance  | f     |   2023 |             151570 |
+|   15 | Finance  | o     |   1999 |             153569 |
+|   41 | Finance  | b6    |   1553 |             155122 |
+|   37 | IT       | b2    |   1242 |             156364 |
+|   36 | HR       | b1    |   1212 |             157576 |
+|    2 | IT       | b     |   1023 |             158599 |
+|    1 | HR       | a     |   1000 |             159599 |
+|   11 | Finance  | k     |    978 |             160577 |
+|   21 | Finance  | u     |    888 |             161465 |
+|   34 | HR       | a8    |    845 |             162310 |
+|   16 | Finance  | p     |    821 |             163131 |
+|   20 | IT       | t     |    817 |             163948 |
+|   13 | HR       | m     |    746 |             164694 |
+|   19 | IT       | s     |    717 |             165411 |
+|   29 | Finance  | a3    |    653 |             166064 |
+|   10 | HR       | j     |    627 |             166691 |
+|   40 | HR       | b5    |    555 |             167246 |
+|   18 | Finance  | r     |    546 |             167792 |
+|    8 | IT       | h     |    523 |             168315 |
+|   17 | HR       | q     |    324 |             168639 |
+|    7 | HR       | g     |    323 |             168962 |
+|   12 | HR       | l     |    222 |             169184 |
+|    9 | HR       | i     |    136 |             169320 |
+|   35 | Finance  | a9    |    135 |             169455 |
+|    4 | Finance  | d     |    123 |             169578 |
+|    5 | HR       | e     |    102 |             169680 |
+|   30 | HR       | a4    |     44 |             169724 |
+|    3 | Finance  | c     |     23 |             169747 |
+|   32 | HR       | a6    |     16 |             169763 |
+|   33 | IT       | a7    |     14 |             169777 |
+|   31 | IT       | a5    |      3 |             169780 |
++------+----------+-------+--------+--------------------+
+
+--------------------------------
+
+following give the end salay value is NULL
+
+SELECT eid, deptname, ename, salary, 
+sum(salary) over(order by salary desc
+rows between 1 following and 1 following
+) runningsalarytotal
+from emp o join dept i  
+on o.deptid=i.deptid;
+
++------+----------+-------+--------+--------------------+
+| eid  | deptname | ename | salary | runningsalarytotal |
++------+----------+-------+--------+--------------------+
+|   24 | HR       | x     |  28222 |              20001 |
+|   23 | Finance  | w     |  20001 |              20001 |
+|   46 | IT       | a46   |  20001 |              19212 |
+|   25 | Finance  | y     |  19212 |              12111 |
+|   26 | HR       | z     |  12111 |               9238 |
+|   28 | HR       | a2    |   9238 |               9029 |
+|   22 | HR       | v     |   9029 |               6432 |
+|   42 | HR       | b7    |   6432 |               4532 |
+|   43 | IT       | b8    |   4532 |               4444 |
+|   39 | Finance  | b4    |   4444 |               4212 |
+|   38 | IT       | b3    |   4212 |               3355 |
+|   44 | HR       | b9    |   3355 |               3223 |
+|   14 | HR       | n     |   3223 |               3211 |
+|   27 | HR       | a1    |   3211 |               2324 |
+|   45 | IT       | c1    |   2324 |               2023 |
+|    6 | Finance  | f     |   2023 |               1999 |
+|   15 | Finance  | o     |   1999 |               1553 |
+|   41 | Finance  | b6    |   1553 |               1242 |
+|   37 | IT       | b2    |   1242 |               1212 |
+|   36 | HR       | b1    |   1212 |               1023 |
+|    2 | IT       | b     |   1023 |               1000 |
+|    1 | HR       | a     |   1000 |                978 |
+|   11 | Finance  | k     |    978 |                888 |
+|   21 | Finance  | u     |    888 |                845 |
+|   34 | HR       | a8    |    845 |                821 |
+|   16 | Finance  | p     |    821 |                817 |
+|   20 | IT       | t     |    817 |                746 |
+|   13 | HR       | m     |    746 |                717 |
+|   19 | IT       | s     |    717 |                653 |
+|   29 | Finance  | a3    |    653 |                627 |
+|   10 | HR       | j     |    627 |                555 |
+|   40 | HR       | b5    |    555 |                546 |
+|   18 | Finance  | r     |    546 |                523 |
+|    8 | IT       | h     |    523 |                324 |
+|   17 | HR       | q     |    324 |                323 |
+|    7 | HR       | g     |    323 |                222 |
+|   12 | HR       | l     |    222 |                136 |
+|    9 | HR       | i     |    136 |                135 |
+|   35 | Finance  | a9    |    135 |                123 |
+|    4 | Finance  | d     |    123 |                102 |
+|    5 | HR       | e     |    102 |                 44 |
+|   30 | HR       | a4    |     44 |                 23 |
+|    3 | Finance  | c     |     23 |                 16 |
+|   32 | HR       | a6    |     16 |                 14 |
+|   33 | IT       | a7    |     14 |                  3 |
+|   31 | IT       | a5    |      3 |               NULL |
++------+----------+-------+--------+--------------------+
+
+---------------------------------------------------------------
+
+preceding gives upper salary NULL
+
+SELECT eid, deptname, ename, salary, 
+sum(salary) over(order by salary desc
+rows between 1 preceding and 1 preceding
+) runningsalarytotal
+from emp o join dept i  
+on o.deptid=i.deptid;
+
+
++------+----------+-------+--------+--------------------+
+| eid  | deptname | ename | salary | runningsalarytotal |
++------+----------+-------+--------+--------------------+
+|   24 | HR       | x     |  28222 |               NULL |
+|   23 | Finance  | w     |  20001 |              28222 |
+|   46 | IT       | a46   |  20001 |              20001 |
+|   25 | Finance  | y     |  19212 |              20001 |
+|   26 | HR       | z     |  12111 |              19212 |
+|   28 | HR       | a2    |   9238 |              12111 |
+|   22 | HR       | v     |   9029 |               9238 |
+|   42 | HR       | b7    |   6432 |               9029 |
+|   43 | IT       | b8    |   4532 |               6432 |
+|   39 | Finance  | b4    |   4444 |               4532 |
+|   38 | IT       | b3    |   4212 |               4444 |
+|   44 | HR       | b9    |   3355 |               4212 |
+|   14 | HR       | n     |   3223 |               3355 |
+|   27 | HR       | a1    |   3211 |               3223 |
+|   45 | IT       | c1    |   2324 |               3211 |
+|    6 | Finance  | f     |   2023 |               2324 |
+|   15 | Finance  | o     |   1999 |               2023 |
+|   41 | Finance  | b6    |   1553 |               1999 |
+|   37 | IT       | b2    |   1242 |               1553 |
+|   36 | HR       | b1    |   1212 |               1242 |
+|    2 | IT       | b     |   1023 |               1212 |
+|    1 | HR       | a     |   1000 |               1023 |
+|   11 | Finance  | k     |    978 |               1000 |
+|   21 | Finance  | u     |    888 |                978 |
+|   34 | HR       | a8    |    845 |                888 |
+|   16 | Finance  | p     |    821 |                845 |
+|   20 | IT       | t     |    817 |                821 |
+|   13 | HR       | m     |    746 |                817 |
+|   19 | IT       | s     |    717 |                746 |
+|   29 | Finance  | a3    |    653 |                717 |
+|   10 | HR       | j     |    627 |                653 |
+|   40 | HR       | b5    |    555 |                627 |
+|   18 | Finance  | r     |    546 |                555 |
+|    8 | IT       | h     |    523 |                546 |
+|   17 | HR       | q     |    324 |                523 |
+|    7 | HR       | g     |    323 |                324 |
+|   12 | HR       | l     |    222 |                323 |
+|    9 | HR       | i     |    136 |                222 |
+|   35 | Finance  | a9    |    135 |                136 |
+|    4 | Finance  | d     |    123 |                135 |
+|    5 | HR       | e     |    102 |                123 |
+|   30 | HR       | a4    |     44 |                102 |
+|    3 | Finance  | c     |     23 |                 44 |
+|   32 | HR       | a6    |     16 |                 23 |
+|   33 | IT       | a7    |     14 |                 16 |
+|   31 | IT       | a5    |      3 |                 14 |
++------+----------+-------+--------+--------------------+
+
+
+------------------
+
+
+Assignment-2
+----------------Question
+
+select partid from parts;
++--------+
+| partid |
++--------+
+| A      |
+| B      |
+| C      |
+| D      |
+| E      |
+| F      |
+| G      |
+| H      |
+| I      |
+| J      |
++--------+
+
+
+with recursive cte
+as
+( select partid originalpartid, parentpartid immediateparent, parentpartid
+topmostparent, 0 level from parts
+union all
+select originalpartid, immediateparent, p.parentpartid, level+1 from
+cte c join parts p
+where c.topmostparent=p.partid
+and p.partid<>p.parentpartid)
+select concat(topmostparent, '->', group_concat(originalpartid separator '->'))
+hierarchy
+from
+(select topmostparent, level, group_concat(originalpartid separator',') originalpartid from (select *, row_number() over(partition by originalpartid order by level desc) rn
+from cte) t2
+where rn=1 and originalpartid<>topmostparent
+group by topmostparent,level) as t3
+group by topmostparent;
+
+
+
+
+
+
+
+
+

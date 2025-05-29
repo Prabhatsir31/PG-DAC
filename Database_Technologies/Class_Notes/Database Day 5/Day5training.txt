@@ -1,0 +1,130 @@
+show table status like 'emp';
+
+show table status like 'emp' \G;
+
+
+show table status ;
+
+create table t_myisam(id int) engine=myisam;
+show table status like 't_myisam' \G;
+start transaction;
+insert into t_myisam values(1);
+rollback;
+
+
+select * from 
+t_myisam ;
+
+create table t_parent_m(deptid int unique, deptname varchar(10)) engine =myisam;
+create table t_child_m(eid int, ename varchar(10), deptid int,
+foreign key fk1 (deptid) references t_parent_m(deptid)) engine=myisam;
+
+
+insert into t_child_m values(1,'a',1);
+
+
+create table t_csv(id int not null, name varchar(10) not null) engine=csv;
+show table status like 't_csv' \G;
+
+insert into t_csv values(1,'a'),(2,'b'),(3,'c');
+flush table t_csv;
+
+
+
+alter table t_csv  engine=innodb;
+
+
+select engine,table_type,count(*) from 
+information_schema.tables
+where table_schema=database()
+group by engine,table_type;
+
+
+create table t_memory(id int, name varchar(10)) engine=memory;
+insert into t_memory values(1,'a'),(2,'b');
+
+
+explain select * from emp where eid=1;
+
+create index emp_eid_idx on emp(eid);
+
+drop index emp_eid_idx on emp;
+
+
+create table dt(c1 date, c2 datetime,c3 timestamp, c4 time, c5 year);
+
+insert into dt valueS(now(),now(),now(),now(),now());
+
+
+
+
+
+
+
+
+
+4. Find the largest order taken by each salesperson on each date.
+
+-- max function
+select sname,odate,max(amt) from salespeople s , orders o
+where s.snum=o.snum
+group by sname,odate;
+
+-- ranking function
+select * from (select sname,odate,onum,amt,rank() over(partition by sname,odate order by amt desc) rn  from salespeople s , orders o
+where s.snum=o.snum
+) as t where rn=1;
+
+
+19. Write a query that uses the EXISTS operator to extract all salespeople who have customers
+with a rating of 300.
+
+
+select * from salespeople s
+where exists(select 1 from customers c where c.snum=s.snum
+and rating=300);
+
+
+
+ Given the products table with columns name, price, and quantity, write an SQL query to determine the maximum number of products that can be purchased with a budget of 100 units.
+
+Each product can be bought multiple times, but the total cost should not exceed 100 units. Consider all product types and their available quantities.
+
+
+ Given a products table with two products, determine the maximum total quantity of products that can be purchased with exactly 100 total_price(price * quantity), prioritizing lower-priced items first to maximize the total count.
+
+create table products(pid int, price float);
+insert into products values(1,1),(2,2.5);
+truncate table products;
+
+insert into products values(1,1.7),(2,2.5);
+
+
+drop table products ;
+
+create table products(pid int, price float, qty int);
+
+
+insert into products values(1,1.2,10);
+insert into products values(2,2.1,2);
+insert into products values(3,2.4,5);
+insert into products values(4,3,20);
+insert into products values(5,4.4,10);
+insert into products values(6,5.5,3);
+
+
+with recursive cte 
+as
+(
+select 100 amountinpocket, 100 amountleft, 0 qtypurchased, 0 prodnum
+union all
+select amountinpocket, case when amountleft-(qty*price)>=0 then amountleft-(qty*price) else amountleft-(floor(amountleft/price)*price) end ,
+case when amountleft-(qty*price)>=0 then  qtypurchased+qty
+else qtypurchased+ floor(amountleft/price) end,
+prodnum+1
+from (select * , row_number() over (order by price) rn from products) as t, cte
+ where rn=prodnum+1  and amountleft>0)
+select max(qtypurchased) from cte;
+
+
+

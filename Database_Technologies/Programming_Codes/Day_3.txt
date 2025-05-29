@@ -1,0 +1,605 @@
+DAY-3
+----------------------------------
+
+
+functions
+procedure
+
+deterministic function 
+
+Substring
+Instr
+Replace
+Left
+Right
+Ltrim
+Rtrim
+Trim
+reverse
+
+non-deterministic function 
+A Non-Deterministic Function returns different results even when given the same input because it depends on external factors like time, system state, or randomness.
+
+
+Program-1
+-----------------
+
+delimiter $$
+drop function s_fact;
+create function s_fact(num int)
+returns bigint
+DETERMINISTIC 
+begin
+
+declare fact bigint;
+declare i int;
+set fact=num;
+set i=num-1;
+while(i>1)
+do
+set fact=fact*i;
+set i=i-1;
+end while;
+return(fact);
+
+end;
+$$
+delimiter ;
+
+output--->
+
+        select s_fact(num int);
+            select s_fact(3);
+            +-----------+
+            | s_fact(3) |
+            +-----------+
+            |         6 |
+            +-----------+
+
+
+Program-2
+-----------------------
+
+delimiter $$
+drop function s_prime;
+create function s_prime(num int)
+returns varchar(100)
+DETERMINISTIC
+begin
+
+declare i int default 2;
+while(i<=num/2)
+do
+if mod(num,i)=0 
+then 
+return (concat(num,' is a not a prime number'));
+end if;
+set i=i+1;
+end while;
+return (concat(num,' is a prime number'));
+
+end;
+$$
+delimiter ;
+
+output--->
+
+        select s_prime(num int);
+            select s_prime(31);
+            +----------------------+
+            | s_prime(31)          |
+            +----------------------+
+            | 31 is a prime number |
+            +----------------------+
+
+
+Program-3
+------------------
+
+drop function sf_checkprime;
+delimiter $$
+create function sf_checkprime(num int)
+returns varchar(100)
+deterministic
+begin
+declare i int default 2;
+while(i<=num/2)
+do
+if mod(num,i)=0 then
+return(concat(num,' is not a prime number,', i ,' divides ', num,' with remainder 0'));
+end if;
+set i=i+1;
+end while;
+return(concat(num,' is  a prime number'));
+end;
+$$
+
+delimiter ;
+
+output===>
+
+        select sf_checkprime(32);
+        +--------------------------------------------------------+
+        | sf_checkprime(32)                                      |
+        +--------------------------------------------------------+
+        | 32 is not a prime number,2 divides 32 with remainder 0 |
+        +--------------------------------------------------------+
+
+
+Program-4
+----------------
+
+delimiter $$
+drop function sf_getdept;
+create function sf_getdept(v_eid int)
+returns varchar(100)
+READS SQL DATA
+begin 
+
+declare v_deptname varchar(100);
+select deptname into v_deptname from emp join dept on 
+emp.deptid=dept.deptid
+where eid=v_eid;
+return(v_deptname);
+
+end;
+$$
+delimiter ;
+
+output--->
+
+        select sf_getdept(v_eid int);
+
++----------------+
+| sf_getdept(23) |
++----------------+
+| Finance        |
++----------------+
+
+        select ename, eid, sf_getdept(eid) from emp;
+
++-------+------+-----------------+
+| ename | eid  | sf_getdept(eid) |
++-------+------+-----------------+
+| a     |    1 | HR              |
+| b     |    2 | IT              |
+| c     |    3 | Finance         |
+| d     |    4 | Finance         |
+| e     |    5 | HR              |
+| f     |    6 | Finance         |
+| g     |    7 | HR              |
+| h     |    8 | IT              |
+| i     |    9 | HR              |
+| j     |   10 | HR              |
+| k     |   11 | Finance         |
+| l     |   12 | HR              |
+| m     |   13 | HR              |
+| n     |   14 | HR              |
+| o     |   15 | Finance         |
+| p     |   16 | Finance         |
+| q     |   17 | HR              |
+| r     |   18 | Finance         |
+| s     |   19 | IT              |
+| t     |   20 | IT              |
+| u     |   21 | Finance         |
+| v     |   22 | HR              |
+| w     |   23 | Finance         |
+| x     |   24 | HR              |
+| y     |   25 | Finance         |
+| z     |   26 | HR              |
+| a1    |   27 | HR              |
+| a2    |   28 | HR              |
+| a3    |   29 | Finance         |
+| a4    |   30 | HR              |
+| a5    |   31 | IT              |
+| a6    |   32 | HR              |
+| a7    |   33 | IT              |
+| a8    |   34 | HR              |
+| a9    |   35 | Finance         |
+| b1    |   36 | HR              |
+| b2    |   37 | IT              |
+| b3    |   38 | IT              |
+| b4    |   39 | Finance         |
+| b5    |   40 | HR              |
+| b6    |   41 | Finance         |
+| b7    |   42 | HR              |
+| b8    |   43 | IT              |
+| b9    |   44 | HR              |
+| c1    |   45 | IT              |
++-------+------+-----------------+
+
+
+Program-5
+----------------
+
+
+delimiter $$
+create function sf_getelist(v_deptname varchar(100))
+returns text
+READS SQL DATA
+begin 
+
+declare elist text default '';
+declare v_ename varchar(100);
+declare i int default 0;
+myloop: loop
+select ename into v_ename from emp join dept 
+on emp.deptid=dept.deptid 
+where deptname=v_deptname limit 1 offset i;
+if v_ename is null 
+then
+leave myloop;
+else
+set elist=concat(elist, ',', v_ename);
+set v_ename=null;
+end if;
+set i=i+1;
+end loop myloop;
+return(substring(elist,2));
+
+end;
+$$
+delimiter ;
+
+ 
+output===>
+        select sf_getelist('HR');
++----------------------------------------------------+
+| sf_getelist('HR')                                  |
++----------------------------------------------------+
+| a,e,g,i,j,l,m,n,q,v,x,z,a1,a2,a4,a6,a8,b1,b5,b7,b9 |
++----------------------------------------------------+
+
+        select deptname, sf_getelist(deptname) from dept;
++----------+----------------------------------------------------+
+| deptname | sf_getelist(deptname)                              |
++----------+----------------------------------------------------+
+| HR       | a,e,g,i,j,l,m,n,q,v,x,z,a1,a2,a4,a6,a8,b1,b5,b7,b9 |
+| IT       | b,h,s,t,a5,a7,b2,b3,b8,c1                          |
+| Finance  | c,d,f,k,o,p,r,u,w,y,a3,a9,b4,b6                    |
+| OPR      |                                                    |
++----------+----------------------------------------------------+
+
+
+---------------------cursor
+
+Program-1
+-------------
+
+delimiter $$
+drop function sf_getelist;
+create function sf_getelist(v_deptname varchar(100))
+returns text
+reads sql data
+begin
+
+declare flag int default 1;
+declare elist text default '';
+declare v_ename varchar(100);
+declare c1 cursor for 
+select ename from emp join dept on emp.deptid=dept.deptid
+where deptname=v_deptname;
+declare continue handler for not found set flag=0;
+open c1;
+myloop: loop 
+fetch c1 into v_ename;
+if flag=0 then 
+leave myloop;
+else 
+set elist = concat(elist, ',', v_ename);
+end if;
+end loop;
+close c1;
+return(substring(elist,2));
+end;
+$$
+delimiter ;
+
+
+Program-2
+---------------
+
+delimiter $$
+drop function sf_getelist;
+create function sf_getelist(v_deptname varchar(100))
+returns text
+reads sql data
+begin
+
+declare flag int default 1;
+declare elist text default '';
+declare v_ename varchar(100);
+declare c1 cursor for 
+select ename from emp join dept on emp.deptid=dept.deptid
+where deptname=v_deptname;
+declare continue handler for not found set flag=0;
+open c1;
+myloop: loop 
+fetch c1 into v_ename;
+if flag=0 then 
+leave myloop;
+else 
+if v_ename is not null then
+set elist = concat(elist, ',', v_ename);
+end if;
+end if;
+end loop;
+close c1;
+return(substring(elist,2));
+
+end;
+$$
+delimiter ;
+
+output====>
+
+        select sf_getelist('HR');
+        +--------------------------------------------------+
+        | sf_getelist('HR')                                |
+        +--------------------------------------------------+
+        | a1,e5,i9,m13,q17,u21,y25,c29,g33,k37,o41,s45,w49 |
+        +--------------------------------------------------+
+
+
+
+Q )  tell me  how many duplicate value of emp table;
+
+    SELECT deptname, sf_getelist(deptname) elist from dept;
+ 
+SELECT COUNT(*) AS duplicate_count
+FROM (
+    SELECT ename, COUNT(*) AS count
+    FROM emp
+    GROUP BY ename
+    HAVING COUNT(*) > 1
+) AS duplicates;
+
+----------------
+
+create a procedure to do following task :-
+
+    remove all the existing data from emp table
+    insert as many records in the emp table as the input number
+    EID- 1,2,3,4,........
+    ename- a1,b2,c3,.....
+    salary- random number
+    procedure should commit after every 50000 rows
+    
+ 
+delimiter $$
+drop procedur sp_loademp;
+create procedure sp_loademp(rec int)
+begin
+declare i int default 1;
+truncate table emp;
+start transaction;
+while(i<=rec) do
+
+insert into emp(eid,ename,salary,deptid) 
+values(i,concat(convert(char(mod((i-1),26)+97), char(10)), i),
+rand()*100000,mod((i-1),4)+1);
+
+if mod(i,50000)=0 then 
+commit;
+start transaction;
+end if;
+set i=i+1;
+end while;
+commit;
+
+end;
+$$
+delimiter ;
+
+
+/*
+rohit 
+---------------correct
+
+delimiter $$
+
+drop procedure sp_loademp;
+create procedure sp_loademp(rec int)
+begin
+declare i int default 1;
+truncate table emp;
+start transaction;
+while(i<=rec) do
+insert into emp(eid,ename,salary,deptid)
+values(i,concat(convert(char(mod((i-1),26)+97), char(10)),i),
+rand()*1000000 , mod((i-1) , 4)+1);
+if mod(i,50000)=0 then
+commit;
+start transaction;
+end if;
+set i=i+1;
+end while;
+commit;
+
+end;
+$$
+delimiter ;
+
+
+output ====>
+
+        mysql> call sp_loademp(500000);
+        Query OK, 0 rows affected (53.46 sec)
+
+        mysql> select count(*) from emp;
+        +----------+
+        | count(*) |
+        +----------+
+        |   500000 |
+        +----------+
+
+
+*/
+
+
+------------------------
+
+select routine_type, routine_name from information_schema.routines where routine_schema='vita_2025';
++--------------+---------------+
+| ROUTINE_TYPE | ROUTINE_NAME  |
++--------------+---------------+
+| FUNCTION     | get_employees |
+| FUNCTION     | sf_deptname   |
+| FUNCTION     | sf_fact       |
+| FUNCTION     | sf_getdept    |
+| FUNCTION     | sf_getelist   |
+| FUNCTION     | s_fact        |
+| FUNCTION     | s_prime       |
+| PROCEDURE    | sp_loademp    |
++--------------+---------------+
+
+
+--------------
+
+select routine_type, routine_name from information_schema.routines where routine_schema='vita_2025';
+
+create view vw_emp_deptname
+as
+select ename, deptname, salary from emp join dept on
+emp.deptid=dept.deptid;
+
+
+select * from vw_emp_deptname;
+
+explain select * from vw_emp_deptname;
+
+
+------------------
+
+select table_name, table_type 
+from information_schema.tables where table_schema=database();
+
+-------------------
+
+if a view is CREATE on a join two or more tahn two tables than u can not perform view based on 
+
+    delete from vw_emp_deptname;
+    ERROR 1395 (HY000): Can not delete from join view 'vita_2025.vw_emp_deptname'
+
+--------------------------
+
+update vw_emp_deptname set ename='x' where ename='a';
+Query OK, 0 rows affected (4.51 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+
+update vw_emp_deptname set ename='x',salary=5000 where ename='a';
+Query OK, 0 rows affected (4.37 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+update vw_emp_deptname set deptid=1 ,ename='x',salary=5000  where ename='a';
+
+
+insert into vw_emp_deptname(ename, deptname, salary) values('v', 'HR',100);
+ERROR 1393 (HY000): Can not modify more than one base table through a join view 'vita_2025.vw_emp_deptname'
+
+insert into vw_emp_deptname(ename, salary) values('v',100);
+mysql> insert into vw_emp_deptname(ename, salary) values('v',100);
+Query OK, 1 row affected (0.01 sec)
+
+------------------------------------
+
+=====>   if a view doesnot contain  any of the which have then u canot perform insert on that view 
+
+create table table_rest(id int not null, name varchar(100), salary int);
+
+create view vw_rest 
+as
+select name,salary from table_rest;
+
+
+insert into vw_rest(name,salary) values('a',100);
+ERROR 1423 (HY000): Field of view 'vita_2025.vw_rest' underlying table doesn't have a default value
+
+-----------------------------
+
+
+view error 
+----------------------------------------
+
+
+
+-----------Triggers
+
+--uses of Triggers
+        Auditing
+        Automation
+
+diff b/w statement level triggers and  row level triggers
+
+create table emp_audit(
+username varchar(10),
+upd_dt timestamp,
+old_eid int,
+new_eid int,
+old_ename varchar(10),
+new_ename varchar(10),
+old_salary int,
+new_salary int,
+old_deptid int,
+new_deptid int);
+
+update emp set salary=100 where eid=2;
+
+
+
+delimiter $$
+drop trigger trig_emp_update;
+create trigger trig_emp_update 
+after update on emp for each row
+begin
+
+insert into emp_audit(username,upd_dt,old_eid,old_ename,old_salary,
+new_eid,new_ename,new_salary,old_deptid,new_deptid)
+values(user(),now(),old.eid,old.ename,old.salary,new.eid,
+new.ename,new.salary,old.deptid,new.deptid);
+
+END
+$$
+delimiter ;
+
+mysql> update emp set salary=100 where eid=2;
+ERROR 1406 (22001): Data too long for column 'username' at row 1
+mysql> select * from emp where eid=3;
++------+-------+--------+--------+
+| eid  | ename | salary | deptid |
++------+-------+--------+--------+
+|    3 | c3    | 760226 |      3 |
++------+-------+--------+--------+
+
+
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+Queries:
+
+1. Display the name of all employees whose salary is between 500 and 1300
+
+	select ename, salary from emp where salary between 500 and 1300;
+							or
+	select ename, salary from emp where salary >= 500 and  salary <= 1300;
+	
+2. Display the name of all employees who are in HR dept
+
+	select ename from emp join dept on emp.deptid=dept.deptid where deptname='HR';
+							or
+old syntax
+	select deptname, ename from emp e, dept d where e.deptid=d.deptid and deptname='HR';
+							or
+subQuery
+	select 'HR' deptname, ename from emp where deptid = (select deptid from dept where deptname='HR');
+
+3. Display the name of all the dept and count of all the employees in that dept.
+
+	select deptname, count(eid) from dept left join emp on emp.deptid=dept.deptid group by deptname; 
+	
+4. Display the name , deptname and  salary of the employee whose salary is highest.
+
+	select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select max(salary) from emp);	
+							or
+	select ename,deptname, salary from dept  join emp on dept.deptid=emp.deptid order by salary desc limit 1;
+
+5. Display the name , deptname and  salary of the employee whose salary is lowest.
+
+	select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select min(salary) from emp);
+							or
+	select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1;
+
+6. Display the name , deptname of employee whose salary is second highest.
+
+subQuery
+	select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select max(salary) from emp where salary < (select max(salary) from emp));
+							or
+using limit without offset
+	select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1, 1;
+							or
+using limit with offset
+	select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1 offset 1;
+	
+7. display the name, deptname of top five earning employees.
+
+	select ename,deptname, salary from dept  join emp on dept.deptid=emp.deptid order by salary desc limit 5;	
+
+8. Display the deptname, name of top 5 earning employees from each dept.
+
+	select deptname, ename, salary,
+	row_number() over (partition by deptname order by salary desc) rn
+	from 
+	emp e join dept d
+	on e.deptid=d.deptid;
+			or
+	select * from (
+	select deptname, ename, salary,
+	row_number() over (partition by deptname order by salary desc) rn
+	from 
+	emp e join dept d
+	on e.deptid=d.deptid) as t where rn<=5;
+
+9. Display the avg salary of each dept.
+
+	select deptname, avg(salary) avg_sal from dept left join emp on emp.deptid=dept.deptid group by deptname; 	
+
+10.Display the min and max salary of each dept.
+
+	select deptname, min(salary) min_sal, max(salary) max_salary from dept left join emp on emp.deptid=dept.deptid group by deptname; 	
+
+
+

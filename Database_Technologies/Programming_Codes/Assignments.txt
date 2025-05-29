@@ -1,0 +1,34 @@
+DAY-1
+	1. Revice Slides till 34
+	2. Redo all day-1 queries
+	3. Read all the Codd Rules
+	4. Read first three normalization with example
+	5. Do emp dept 10 ques with all method you know
+	6. 100 ques of queries
+
+DAY-2
+	1.Revise Day 1 and Day 2 queries
+	2. Revise MySQLTraining slides
+	3. Read all the 7 Normal Forms
+	4. Read CODD rules
+	5. Do the hierarhy query using parts table to get below output
+	Hierarchy
+	A->B->C,D->E
+	F->G->H->I->J
+
+DAY-3
+
+	1. Revise Day 1 and Day 2 queries
+	2. Revise MySQLTraining slides
+	3. Read all the 7 Normal Forms
+	4. Read CODD rules
+	5. Do the hierarhy query using parts table to get below output
+		Hierarchy
+		A->B->C,D->E
+		F->G->H->I->J
+	6. Read Isolation levels
+	7. Complete first 60 queries from 125 queries assignment
+	8. write a function within your grp to take upto 9 digits number and convert it to indian notation words
+
+DAY-4
+	Do all 125 queries

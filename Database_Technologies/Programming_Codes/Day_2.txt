@@ -1,0 +1,2061 @@
+select ename, salary from emp where salary between 500 and 1300;
++-------+--------+
+| ename | salary |
++-------+--------+
+| a     |   1000 |
+| b     |   1023 |
+| h     |    523 |
+| j     |    627 |
+| k     |    978 |
+| m     |    746 |
+| p     |    821 |
+| r     |    546 |
+| s     |    717 |
+| t     |    817 |
+| u     |    888 |
+| a3    |    653 |
+| a8    |    845 |
+| b1    |   1212 |
+| b2    |   1242 |
+| b5    |    555 |
++-------+--------+
+16 rows in set (0.00 sec)
+
+mysql> select ename from emp join dept on emp.deptid=dept.deptid where deptname='HR';
++-------+
+| ename |
++-------+
+| a     |
+| e     |
+| g     |
+| i     |
+| j     |
+| l     |
+| m     |
+| n     |
+| q     |
+| v     |
+| x     |
+| z     |
+| a1    |
+| a2    |
+| a4    |
+| a6    |
+| a8    |
+| b1    |
+| b5    |
+| b7    |
+| b9    |
++-------+
+21 rows in set (0.00 sec)
+
+mysql> select deptname, count(eid) from dept left join emp on emp.deptid=dept.deptid group by deptname;
++----------+------------+
+| deptname | count(eid) |
++----------+------------+
+| HR       |         21 |
+| IT       |         10 |
+| Finance  |         14 |
+| OPR      |          0 |
++----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select max(salary) from emp);
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| x     | HR       |  28222 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename,deptname, salary from dept  join emp on dept.deptid=emp.deptid order by salary desc limit 1;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| x     | HR       |  28222 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select min(salary) from emp);
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a5    | IT       |      3 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary, from dept join emp on dept.deptid= mp.deptid order by salary limit 1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from dept join emp on dept.deptid= mp.deptid order by salary limit 1' at line 1
+mysql> select ename, deptname, salary from dept join emp on dept.deptid= mp.deptid order by salary limit 1;
+ERROR 1054 (42S22): Unknown column 'mp.deptid' in 'on clause'
+mysql> select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a5    | IT       |      3 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select min(salary) from emp);
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a5    | IT       |      3 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1, 1;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a7    | IT       |     14 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1, offset 1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+mysql> select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1 offset 1;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a7    | IT       |     14 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1 offset 1;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a7    | IT       |     14 |
++-------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary limit 5;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a     | HR       |   1000 |
+| b     | IT       |   1023 |
+| c     | Finance  |     23 |
+| d     | Finance  |    123 |
+| e     | HR       |    102 |
++-------+----------+--------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> select ename,deptname, salary from dept  join emp on dept.deptid=emp.deptid order by salary desc limit 5;
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| x     | HR       |  28222 |
+| w     | Finance  |  20001 |
+| y     | Finance  |  19212 |
+| z     | HR       |  12111 |
+| a2    | HR       |   9238 |
++-------+----------+--------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> select deptname, count(salary) avg_sal from dept left join emp on emp.deptid=dept.deptid group by deptname;
++----------+---------+
+| deptname | avg_sal |
++----------+---------+
+| HR       |      21 |
+| IT       |      10 |
+| Finance  |      14 |
+| OPR      |       0 |
++----------+---------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select deptname, avg(salary) avg_sal from dept left join emp on emp.deptid=dept.deptid group by deptname;
++----------+-----------+
+| deptname | avg_sal   |
++----------+-----------+
+| HR       | 3855.8571 |
+| IT       | 1540.7000 |
+| Finance  | 3814.2143 |
+| OPR      |      NULL |
++----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select deptname, min(salary) min_sal, max(salary) max_salary from dept left join emp on emp.deptid=dept.deptid group by deptname;
++----------+---------+------------+
+| deptname | min_sal | max_salary |
++----------+---------+------------+
+| HR       |      16 |      28222 |
+| IT       |       3 |       4532 |
+| Finance  |      23 |      20001 |
+| OPR      |    NULL |       NULL |
++----------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> create table emp_rank(eid int , ename varchar(100), salary int, deptid int);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc emp_rank;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| eid    | int          | YES  |     | NULL    |       |
+| ename  | varchar(100) | YES  |     | NULL    |       |
+| salary | int          | YES  |     | NULL    |       |
+| deptid | int          | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insert into emp_rank values(
+    -> (1,'a',100,1)
+    -> (2,'b',200,2)
+    -> (2,'b',200,2),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(2,'b',200,2)
+(2,'b',200,2),' at line 3
+mysql> insert into emp_rank values(
+    -> (1,'a',100,1),
+    -> (2,'b',200,2),
+    -> (3,'c',100,1),
+    -> (4,'d',200,2),
+    -> (5,'e',50,1),
+    -> (6,'f',60,2),
+    -> (7,'g',70,1);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 8
+mysql>  insert into emp_rank values(
+    ->     -> (1,'a',100,1),
+    ->     -> (2,'b',200,2),
+    ->     -> (3,'c',100,1),
+    ->     -> (4,'d',200,2),
+    ->     -> (5,'e',50,1),
+    ->     -> (6,'f',60,2),
+    ->     -> (7,'g',70,1));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> (1,'a',100,1),
+    -> (2,'b',200,2),
+    -> (3,'c',100,1),
+    -> (4,'d',200,' at line 2
+mysql> insert into emp_rank values(1,'a',100,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_rank values(2,'b',200,2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_rank values(3,'c',100,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_rank values(4,'d',200,2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_rank values(5,'e',50,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_rank values(6,'f',60,2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_rank values(7,'g',70,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from emp_rank;
++------+-------+--------+--------+
+| eid  | ename | salary | deptid |
++------+-------+--------+--------+
+|    1 | a     |    100 |      1 |
+|    2 | b     |    200 |      2 |
+|    3 | c     |    100 |      1 |
+|    4 | d     |    200 |      2 |
+|    5 | e     |     50 |      1 |
+|    6 | f     |     60 |      2 |
+|    7 | g     |     70 |      1 |
++------+-------+--------+--------+
+7 rows in set (0.00 sec)
+
+mysql> select *, row_number() over ( order by salary desc) rn,
+    -> rank() over (order by salary desc) rnk,
+    -> dense_rank() over (order by salary desc) drnk from emp_rank;
++------+-------+--------+--------+----+-----+------+
+| eid  | ename | salary | deptid | rn | rnk | drnk |
++------+-------+--------+--------+----+-----+------+
+|    2 | b     |    200 |      2 |  1 |   1 |    1 |
+|    4 | d     |    200 |      2 |  2 |   1 |    1 |
+|    1 | a     |    100 |      1 |  3 |   3 |    2 |
+|    3 | c     |    100 |      1 |  4 |   3 |    2 |
+|    7 | g     |     70 |      1 |  5 |   5 |    3 |
+|    6 | f     |     60 |      2 |  6 |   6 |    4 |
+|    5 | e     |     50 |      1 |  7 |   7 |    5 |
++------+-------+--------+--------+----+-----+------+
+7 rows in set (0.01 sec)
+
+mysql> select *,
+    -> row_number() over (partition by deptid order by salary desc ) rm,
+    -> rank() over ( partition by deptid order by salary desc) rnk,
+    -> dense_rank() over (partition by deptid order by salary desc ) drnk
+    -> from emp_rank;
++------+-------+--------+--------+----+-----+------+
+| eid  | ename | salary | deptid | rm | rnk | drnk |
++------+-------+--------+--------+----+-----+------+
+|    1 | a     |    100 |      1 |  1 |   1 |    1 |
+|    3 | c     |    100 |      1 |  2 |   1 |    1 |
+|    7 | g     |     70 |      1 |  3 |   3 |    2 |
+|    5 | e     |     50 |      1 |  4 |   4 |    3 |
+|    2 | b     |    200 |      2 |  1 |   1 |    1 |
+|    4 | d     |    200 |      2 |  2 |   1 |    1 |
+|    6 | f     |     60 |      2 |  3 |   3 |    2 |
++------+-------+--------+--------+----+-----+------+
+7 rows in set (0.00 sec)
+
+mysql> select *,
+    ->     -> row_number() over ( order by salary desc) rn,
+    ->     -> rank() over (order by salary desc) rnk,
+    ->     -> dense_rank() over (order by salary desc) drnk
+    ->     -> from emp_rank;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> row_number() over ( order by salary desc) rn,
+    -> rank() over (order by sa' at line 2
+mysql> select *,
+    ->      row_number() over ( order by salary desc) rn,
+    ->      rank() over (order by salary desc) rnk,
+    ->      dense_rank() over (order by salary desc) drnk
+    ->      from emp_rank;
++------+-------+--------+--------+----+-----+------+
+| eid  | ename | salary | deptid | rn | rnk | drnk |
++------+-------+--------+--------+----+-----+------+
+|    2 | b     |    200 |      2 |  1 |   1 |    1 |
+|    4 | d     |    200 |      2 |  2 |   1 |    1 |
+|    1 | a     |    100 |      1 |  3 |   3 |    2 |
+|    3 | c     |    100 |      1 |  4 |   3 |    2 |
+|    7 | g     |     70 |      1 |  5 |   5 |    3 |
+|    6 | f     |     60 |      2 |  6 |   6 |    4 |
+|    5 | e     |     50 |      1 |  7 |   7 |    5 |
++------+-------+--------+--------+----+-----+------+
+7 rows in set (0.00 sec)
+
+mysql>  select *,
+    ->      row_number() over (partition by deptid order by salary desc ) rm,
+    ->      rank() over ( partition by deptid order by salary desc) rnk,
+    ->      dense_rank() over (partition by deptid order by salary desc ) drnk
+    ->      from emp_rank;
++------+-------+--------+--------+----+-----+------+
+| eid  | ename | salary | deptid | rm | rnk | drnk |
++------+-------+--------+--------+----+-----+------+
+|    1 | a     |    100 |      1 |  1 |   1 |    1 |
+|    3 | c     |    100 |      1 |  2 |   1 |    1 |
+|    7 | g     |     70 |      1 |  3 |   3 |    2 |
+|    5 | e     |     50 |      1 |  4 |   4 |    3 |
+|    2 | b     |    200 |      2 |  1 |   1 |    1 |
+|    4 | d     |    200 |      2 |  2 |   1 |    1 |
+|    6 | f     |     60 |      2 |  3 |   3 |    2 |
++------+-------+--------+--------+----+-----+------+
+7 rows in set (0.00 sec)
+
+mysql> select deptname, ename, salary,
+    -> row_number() over ( parition by deptname order by salary desc) rn,
+    -> from
+    -> emp e join dept d
+    -> on e.deptid=d.deptid as t where rn<=5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by deptname order by salary desc) rn,
+from
+emp e join dept d
+on e.deptid=d.dept' at line 2
+mysql> select deptname, ename, salary,
+    -> row_number() over ( parition by deptname order by salary desc) rn,
+    -> from
+    -> emp e join dept d
+    -> on e.deptid=d.deptid) as t where rn<=5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by deptname order by salary desc) rn,
+from
+emp e join dept d
+on e.deptid=d.dept' at line 2
+mysql> select * from (select deptname, ename, salary, row_number() over (partition by deptname order by salary desc) rn
+    -> from
+    -> emp e join dept d
+    -> e.deptid=d.deptid)
+    -> as t where rn<=5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'e.deptid=d.deptid)
+as t where rn<=5' at line 4
+mysql> select * from (
+    -> select deptname, ename, salary,
+    -> row_number() over ( parition by deptname order by salary desc) rn
+    -> from
+    -> emp e join dept d
+    -> on e.deptid=d.deptid) as t where rn<=5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by deptname order by salary desc) rn
+from
+emp e join dept d
+on e.deptid=d.depti' at line 3
+mysql> select * from (
+    -> select deptname, ename, salary,
+    -> row_number() over (partition by deptname order by salary desc) rn
+    -> from
+    -> emp e join dept d
+    -> on e.deptid=d.deptid) as t where rn<=5;
++----------+-------+--------+----+
+| deptname | ename | salary | rn |
++----------+-------+--------+----+
+| Finance  | w     |  20001 |  1 |
+| Finance  | y     |  19212 |  2 |
+| Finance  | b4    |   4444 |  3 |
+| Finance  | f     |   2023 |  4 |
+| Finance  | o     |   1999 |  5 |
+| HR       | x     |  28222 |  1 |
+| HR       | z     |  12111 |  2 |
+| HR       | a2    |   9238 |  3 |
+| HR       | v     |   9029 |  4 |
+| HR       | b7    |   6432 |  5 |
+| IT       | b8    |   4532 |  1 |
+| IT       | b3    |   4212 |  2 |
+| IT       | c1    |   2324 |  3 |
+| IT       | b2    |   1242 |  4 |
+| IT       | b     |   1023 |  5 |
++----------+-------+--------+----+
+15 rows in set (0.00 sec)
+
+mysql>
+mysql> select deptname, ename, salary,
+    -> row_number() over (partition by deptname order by salary desc) rn
+    -> from
+    -> emp e join dept d
+    -> on e.deptid=d.deptid;
++----------+-------+--------+----+
+| deptname | ename | salary | rn |
++----------+-------+--------+----+
+| Finance  | w     |  20001 |  1 |
+| Finance  | y     |  19212 |  2 |
+| Finance  | b4    |   4444 |  3 |
+| Finance  | f     |   2023 |  4 |
+| Finance  | o     |   1999 |  5 |
+| Finance  | b6    |   1553 |  6 |
+| Finance  | k     |    978 |  7 |
+| Finance  | u     |    888 |  8 |
+| Finance  | p     |    821 |  9 |
+| Finance  | a3    |    653 | 10 |
+| Finance  | r     |    546 | 11 |
+| Finance  | a9    |    135 | 12 |
+| Finance  | d     |    123 | 13 |
+| Finance  | c     |     23 | 14 |
+| HR       | x     |  28222 |  1 |
+| HR       | z     |  12111 |  2 |
+| HR       | a2    |   9238 |  3 |
+| HR       | v     |   9029 |  4 |
+| HR       | b7    |   6432 |  5 |
+| HR       | b9    |   3355 |  6 |
+| HR       | n     |   3223 |  7 |
+| HR       | a1    |   3211 |  8 |
+| HR       | b1    |   1212 |  9 |
+| HR       | a     |   1000 | 10 |
+| HR       | a8    |    845 | 11 |
+| HR       | m     |    746 | 12 |
+| HR       | j     |    627 | 13 |
+| HR       | b5    |    555 | 14 |
+| HR       | q     |    324 | 15 |
+| HR       | g     |    323 | 16 |
+| HR       | l     |    222 | 17 |
+| HR       | i     |    136 | 18 |
+| HR       | e     |    102 | 19 |
+| HR       | a4    |     44 | 20 |
+| HR       | a6    |     16 | 21 |
+| IT       | b8    |   4532 |  1 |
+| IT       | b3    |   4212 |  2 |
+| IT       | c1    |   2324 |  3 |
+| IT       | b2    |   1242 |  4 |
+| IT       | b     |   1023 |  5 |
+| IT       | t     |    817 |  6 |
+| IT       | s     |    717 |  7 |
+| IT       | h     |    523 |  8 |
+| IT       | a7    |     14 |  9 |
+| IT       | a5    |      3 | 10 |
++----------+-------+--------+----+
+45 rows in set (0.00 sec)
+
+mysql> create table marks(Roll int, Name varchar(100), marks int);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into marks values(1,'a',43);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into marks values(2,'b',78);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(3,'c',67);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(4,'d',98);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(5,'e',87);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into marks values(6,'f',23);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(7,'g',12);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc marks;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| Roll  | int          | YES  |     | NULL    |       |
+| Name  | varchar(100) | YES  |     | NULL    |       |
+| marks | int          | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from marks;
++------+------+-------+
+| Roll | Name | marks |
++------+------+-------+
+|    1 | a    |    43 |
+|    2 | b    |    78 |
+|    3 | c    |    67 |
+|    4 | d    |    98 |
+|    5 | e    |    87 |
+|    6 | f    |    23 |
+|    7 | g    |    12 |
++------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select roll,
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> drop marks;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'marks' at line 1
+mysql> delete table marks;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table marks' at line 1
+mysql> delete marks;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table mark(Roll int, Name varchar(100), marks int);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> insert into marks values(1,'M',43);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(1,'H',78);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(1,'E',67);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(2,'M',98);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(2,'H',87);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(2,'E',87);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(3,'E',23);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(3,'M',12);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(3,'H',12);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into marks values(3,'E',87);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select roll, 'Pass' Result from marks;
++------+--------+
+| roll | Result |
++------+--------+
+|    1 | Pass   |
+|    2 | Pass   |
+|    3 | Pass   |
+|    4 | Pass   |
+|    5 | Pass   |
+|    6 | Pass   |
+|    7 | Pass   |
+|    1 | Pass   |
+|    1 | Pass   |
+|    1 | Pass   |
+|    2 | Pass   |
+|    2 | Pass   |
+|    2 | Pass   |
+|    3 | Pass   |
+|    3 | Pass   |
+|    3 | Pass   |
+|    3 | Pass   |
++------+--------+
+17 rows in set (0.00 sec)
+
+mysql> select roll, 'Pass' Result from mark;
+Empty set (0.00 sec)
+
+mysql>
+mysql> insert into mark values(1,'M',43);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(1,'H',78);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(1,'E',67);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(2,'M',98);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(2,'H',87);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(2,'E',87);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(3,'E',23);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(3,'M',12);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(3,'H',12);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mark values(3,'E',87);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select roll, 'Pass' Result from mark;
++------+--------+
+| roll | Result |
++------+--------+
+|    1 | Pass   |
+|    1 | Pass   |
+|    1 | Pass   |
+|    2 | Pass   |
+|    2 | Pass   |
+|    2 | Pass   |
+|    3 | Pass   |
+|    3 | Pass   |
+|    3 | Pass   |
+|    3 | Pass   |
++------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select roll , min(mark) from mark;
+ERROR 1054 (42S22): Unknown column 'mark' in 'field list'
+mysql> desc mark;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| Roll  | int          | YES  |     | NULL    |       |
+| Name  | varchar(100) | YES  |     | NULL    |       |
+| marks | int          | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select roll , min(marks) from mark;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'vita_2025.mark.Roll'; this is incompatible with sql_mode=only_full_group_by
+mysql> select  roll, case
+    -> when min(marks)>=30, avg(marks)>=40
+    -> then 'Pass' else 'Fail' end Result
+    -> from mark
+    -> group by roll;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', avg(marks)>=40
+then 'Pass' else 'Fail' end Result
+from mark
+group by roll' at line 2
+mysql> select  roll, case
+    ->     -> when min(marks)>=30, avg(marks)>=40
+    ->     -> then 'Pass' else 'Fail' end Result
+    ->     -> from mark
+    ->     -> then 'Pass' else 'Fail' end Result;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> when min(marks)>=30, avg(marks)>=40
+    -> then 'Pass' else 'Fail' end Result' at line 2
+mysql> select  roll, case
+    -> when min(marks)>=30 and avg(marks)>=40
+    -> then 'Pass' else 'Fail' end Result
+    -> from mark
+    -> group by roll;
++------+--------+
+| roll | Result |
++------+--------+
+|    1 | Pass   |
+|    2 | Pass   |
+|    3 | Fail   |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''ds
+    '>
+    '> ;
+    '> ;
+    '> ^C
+mysql>
+mysql>
+mysql>
+mysql> select roll, 'Pass' Result from mark
+    -> group by roll
+    -> having
+    -> min(marks)>=35 and aavg(marks)>=40
+    -> union all
+    -> select roll, 'Fail' Result from mark
+    -> group by roll
+    -> having
+    -> min(marks)<35 and avg(marks)<40;
+ERROR 1305 (42000): FUNCTION vita_2025.aavg does not exist
+mysql> select roll, 'Pass' Result from mark
+    -> group by roll
+    -> having
+    -> min(marks)>=35 and avg(marks)>=40
+    -> union all
+    -> select roll, 'Fail' Result from mark
+    -> group by roll
+    -> having
+    -> when min(marks)<0 and avg(marks)<40;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when min(marks)<0 and avg(marks)<40' at line 9
+mysql> select roll, 'Pass' Result from mark
+    -> group by roll
+    -> having
+    -> min(marks)>=35 and avg(marks)>=40
+    -> union all
+    -> select roll, 'Fail' Result from mark
+    -> group by roll
+    -> having
+    -> when min(marks)<30 and avg(marks)<40;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when min(marks)<30 and avg(marks)<40' at line 9
+mysql> select roll, 'Pass' Result from mark
+    -> group by roll
+    -> having
+    -> min(marks)>=35 and avg(marks)>=40
+    -> union all
+    -> select roll, 'Fail' Result from mark
+    -> group by roll
+    -> having
+    -> min(marks)<30 and avg(marks)<40;
++------+--------+
+| roll | Result |
++------+--------+
+|    1 | Pass   |
+|    2 | Pass   |
+|    3 | Fail   |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> -------------------------------------------------------
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-----------------------------------------------------' at line 1
+mysql> create table emp_mgr(EID int , ENAME varchar(20), MGRID int);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> insert into emp_mgr values(1,'a',4);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into emp_mgr values(1,'b',4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(1,'c',4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(2,'d',4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(2,'e',6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(2,'f',6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(3,'g',6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from emp_mgr;
++------+-------+-------+
+| EID  | ENAME | MGRID |
++------+-------+-------+
+|    1 | a     |     4 |
+|    1 | b     |     4 |
+|    1 | c     |     4 |
+|    2 | d     |     4 |
+|    2 | e     |     6 |
+|    2 | f     |     6 |
+|    3 | g     |     6 |
++------+-------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select mgrid, eid, ename from emp_mgr;
++-------+------+-------+
+| mgrid | eid  | ename |
++-------+------+-------+
+|     4 |    1 | a     |
+|     4 |    1 | b     |
+|     4 |    1 | c     |
+|     4 |    2 | d     |
+|     6 |    2 | e     |
+|     6 |    2 | f     |
+|     6 |    3 | g     |
++-------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select mgrid, eid, ename from emp_mgr where mgrid<>eid;
++-------+------+-------+
+| mgrid | eid  | ename |
++-------+------+-------+
+|     4 |    1 | a     |
+|     4 |    1 | b     |
+|     4 |    1 | c     |
+|     4 |    2 | d     |
+|     6 |    2 | e     |
+|     6 |    2 | f     |
+|     6 |    3 | g     |
++-------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql> ------------------------------------------------------------------------------------------------------------------------------------------------
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '--------------------------------------------------------------------------------' at line 1
+mysql> select e,mgrid, e.eid, e.ename
+    -> from emp_mgr e
+    -> where e.mgrid<>e.eid;
+ERROR 1054 (42S22): Unknown column 'e' in 'field list'
+mysql> select e,mgrid, e.eid, e.ename
+    -> from emp_mgr e
+    -> where e.mgrid<>e.eid;
+ERROR 1054 (42S22): Unknown column 'e' in 'field list'
+mysql> select e.mgrid, e.eid, e.ename
+    -> from emp_mgr e
+    -> where e.mgrid<>e.eid;
++-------+------+-------+
+| mgrid | eid  | ename |
++-------+------+-------+
+|     4 |    1 | a     |
+|     4 |    1 | b     |
+|     4 |    1 | c     |
+|     4 |    2 | d     |
+|     6 |    2 | e     |
+|     6 |    2 | f     |
+|     6 |    3 | g     |
++-------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select e.mgrid, e.name mgename, e.eid, e.name
+    -> from emp_mgr e, emp_mgr m
+    -> where
+    -> e.mgrid=m.eid and
+    -> e.mgrid<>e.eid;
+ERROR 1054 (42S22): Unknown column 'e.name' in 'field list'
+mysql> select e.mgrid, m.name mgrname, e.eid, e.name
+    -> from emp_mgr e, emp_mgr m
+    -> where
+    -> e.mgrid= m.eid and
+    -> e.mgrid<>e.eid;
+ERROR 1054 (42S22): Unknown column 'm.name' in 'field list'
+mysql>
+mysql> select e.mgrid, e.name mgrname, e.eid, e.name
+    -> from emp_mgr e, emp_mgr m
+    -> where
+    -> e.mgrid= m.eid and
+    -> e.mgrid<>e.eid;
+ERROR 1054 (42S22): Unknown column 'e.name' in 'field list'
+mysql> select e.mgrid, e.ename mgename, e.eid, e.ename
+    -> from emp_mgr e, emp_mgr m
+    -> where
+    -> e.mgrid=m.eid and
+    -> e.mgrid<>e.eid;
+Empty set (0.00 sec)
+
+mysql> select * from emp_mgr;
++------+-------+-------+
+| EID  | ENAME | MGRID |
++------+-------+-------+
+|    1 | a     |     4 |
+|    1 | b     |     4 |
+|    1 | c     |     4 |
+|    2 | d     |     4 |
+|    2 | e     |     6 |
+|    2 | f     |     6 |
+|    3 | g     |     6 |
++------+-------+-------+
+7 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| a                   |
+| b                   |
+| dept                |
+| emp                 |
+| emp_mgr             |
+| emp_rank            |
+| mark                |
+| marks               |
+| t1                  |
+| t2                  |
+| t_1                 |
+| t_check             |
+| t_child             |
+| t_comp_pk           |
+| t_mult_uk           |
+| t_parent            |
+| test                |
+| test_comp_uk        |
++---------------------+
+18 rows in set (0.01 sec)
+
+mysql> select * from emp;
++------+-------+--------+--------+
+| eid  | ename | salary | deptid |
++------+-------+--------+--------+
+|    1 | a     |   1000 |      1 |
+|    2 | b     |   1023 |      2 |
+|    3 | c     |     23 |      3 |
+|    4 | d     |    123 |      3 |
+|    5 | e     |    102 |      1 |
+|    6 | f     |   2023 |      3 |
+|    7 | g     |    323 |      1 |
+|    8 | h     |    523 |      2 |
+|    9 | i     |    136 |      1 |
+|   10 | j     |    627 |      1 |
+|   11 | k     |    978 |      3 |
+|   12 | l     |    222 |      1 |
+|   13 | m     |    746 |      1 |
+|   14 | n     |   3223 |      1 |
+|   15 | o     |   1999 |      3 |
+|   16 | p     |    821 |      3 |
+|   17 | q     |    324 |      1 |
+|   18 | r     |    546 |      3 |
+|   19 | s     |    717 |      2 |
+|   20 | t     |    817 |      2 |
+|   21 | u     |    888 |      3 |
+|   22 | v     |   9029 |      1 |
+|   23 | w     |  20001 |      3 |
+|   24 | x     |  28222 |      1 |
+|   25 | y     |  19212 |      3 |
+|   26 | z     |  12111 |      1 |
+|   27 | a1    |   3211 |      1 |
+|   28 | a2    |   9238 |      1 |
+|   29 | a3    |    653 |      3 |
+|   30 | a4    |     44 |      1 |
+|   31 | a5    |      3 |      2 |
+|   32 | a6    |     16 |      1 |
+|   33 | a7    |     14 |      2 |
+|   34 | a8    |    845 |      1 |
+|   35 | a9    |    135 |      3 |
+|   36 | b1    |   1212 |      1 |
+|   37 | b2    |   1242 |      2 |
+|   38 | b3    |   4212 |      2 |
+|   39 | b4    |   4444 |      3 |
+|   40 | b5    |    555 |      1 |
+|   41 | b6    |   1553 |      3 |
+|   42 | b7    |   6432 |      1 |
+|   43 | b8    |   4532 |      2 |
+|   44 | b9    |   3355 |      1 |
+|   45 | c1    |   2324 |      2 |
++------+-------+--------+--------+
+45 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| a                   |
+| b                   |
+| dept                |
+| emp                 |
+| emp_mgr             |
+| emp_rank            |
+| mark                |
+| marks               |
+| t1                  |
+| t2                  |
+| t_1                 |
+| t_check             |
+| t_child             |
+| t_comp_pk           |
+| t_mult_uk           |
+| t_parent            |
+| test                |
+| test_comp_uk        |
++---------------------+
+18 rows in set (0.00 sec)
+
+mysql> select mark;
+ERROR 1054 (42S22): Unknown column 'mark' in 'field list'
+mysql> select * from mark;
++------+------+-------+
+| Roll | Name | marks |
++------+------+-------+
+|    1 | M    |    43 |
+|    1 | H    |    78 |
+|    1 | E    |    67 |
+|    2 | M    |    98 |
+|    2 | H    |    87 |
+|    2 | E    |    87 |
+|    3 | E    |    23 |
+|    3 | M    |    12 |
+|    3 | H    |    12 |
+|    3 | E    |    87 |
++------+------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select * from marks;
++------+------+-------+
+| Roll | Name | marks |
++------+------+-------+
+|    1 | a    |    43 |
+|    2 | b    |    78 |
+|    3 | c    |    67 |
+|    4 | d    |    98 |
+|    5 | e    |    87 |
+|    6 | f    |    23 |
+|    7 | g    |    12 |
+|    1 | M    |    43 |
+|    1 | H    |    78 |
+|    1 | E    |    67 |
+|    2 | M    |    98 |
+|    2 | H    |    87 |
+|    2 | E    |    87 |
+|    3 | E    |    23 |
+|    3 | M    |    12 |
+|    3 | H    |    12 |
+|    3 | E    |    87 |
++------+------+-------+
+17 rows in set (0.00 sec)
+
+mysql> delete table marks;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table marks' at line 1
+mysql> drop table marks;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| a                   |
+| b                   |
+| dept                |
+| emp                 |
+| emp_mgr             |
+| emp_rank            |
+| mark                |
+| t1                  |
+| t2                  |
+| t_1                 |
+| t_check             |
+| t_child             |
+| t_comp_pk           |
+| t_mult_uk           |
+| t_parent            |
+| test                |
+| test_comp_uk        |
++---------------------+
+17 rows in set (0.00 sec)
+
+mysql> drop table emp_mgr;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_vita_2025 |
++---------------------+
+| a                   |
+| b                   |
+| dept                |
+| emp                 |
+| emp_rank            |
+| mark                |
+| t1                  |
+| t2                  |
+| t_1                 |
+| t_check             |
+| t_child             |
+| t_comp_pk           |
+| t_mult_uk           |
+| t_parent            |
+| test                |
+| test_comp_uk        |
++---------------------+
+16 rows in set (0.00 sec)
+
+mysql> create table emp_mgr(Roll int, Name varchar(100), marks int);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into emp_mgr values(1,'a',4);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into emp_mgr values(2,'b',4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(3,'c',4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(4,'d',4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(5,'e',6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(6,'f',6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into emp_mgr values(7,'g',6);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc emp_mgr;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| Roll  | int          | YES  |     | NULL    |       |
+| Name  | varchar(100) | YES  |     | NULL    |       |
+| marks | int          | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp_mgr;
++------+------+-------+
+| Roll | Name | marks |
++------+------+-------+
+|    1 | a    |     4 |
+|    2 | b    |     4 |
+|    3 | c    |     4 |
+|    4 | d    |     4 |
+|    5 | e    |     6 |
+|    6 | f    |     6 |
+|    7 | g    |     6 |
++------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select * emp_mgr e, emp_mgr m where e.mgrid=m.mgrid;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp_mgr e, emp_mgr m where e.mgrid=m.mgrid' at line 1
+mysql> select * emp_mgr e, emp_mgr m where e.eid=m.mgrid;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp_mgr e, emp_mgr m where e.eid=m.mgrid' at line 1
+mysql> select * from emp_mgr e, emp_mgr m where e.eid=m.mgrid;
+ERROR 1054 (42S22): Unknown column 'e.eid' in 'where clause'
+
+mysql> select * from emp_mgr;
++------+------+-------+
+| Roll | Name | marks |
++------+------+-------+
+|    1 | a    |     4 |
+|    2 | b    |     4 |
+|    3 | c    |     4 |
+|    4 | d    |     4 |
+|    5 | e    |     6 |
+|    6 | f    |     6 |
+|    7 | g    |     6 |
++------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select * from emp_mgr e1,emp_mgr e2 where e1.marks=e2.roll;
++------+------+-------+------+------+-------+
+| Roll | Name | marks | Roll | Name | marks |
++------+------+-------+------+------+-------+
+|    4 | d    |     4 |    4 | d    |     4 |
+|    3 | c    |     4 |    4 | d    |     4 |
+|    2 | b    |     4 |    4 | d    |     4 |
+|    1 | a    |     4 |    4 | d    |     4 |
+|    7 | g    |     6 |    6 | f    |     6 |
+|    6 | f    |     6 |    6 | f    |     6 |
+|    5 | e    |     6 |    6 | f    |     6 |
++------+------+-------+------+------+-------+
+7 rows in set (0.00 sec)
+
+
+--- sub_query
+
+select * from dept;
++--------+----------+
+| deptid | deptname |
++--------+----------+
+|      1 | HR       |
+|      2 | IT       |
+|      3 | Finance  |
+|      4 | OPR      |
++--------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from dept where not exists(select 1 from emp where emp.deptid=dept.deptid);
++--------+----------+
+| deptid | deptname |
++--------+----------+
+|      4 | OPR      |
++--------+----------+
+1 row in set (0.00 sec)
+
+mysql> select deptname from dept where not exists(select 1 from emp where emp.deptid=dept.deptid);
++----------+
+| deptname |
++----------+
+| OPR      |
++----------+
+
+--- take the deptname with using exists print the dept whose employees are greater than 14
+
+select deptname from dept where exists(select 1 from emp  where emp.deptid=dept.deptid having count(eid)>14);
++----------+
+| deptname |
++----------+
+| HR       |
++----------+
+
+
+---- recommedation 
+
+select c1.cid c1, c2.cid c2 from custprod c1, custprod c2;
++------+------+
+| c1   | c2   |
++------+------+
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    3 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    2 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    1 |    1 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    3 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    2 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    1 |    2 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    3 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    2 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
+|    1 |    3 |
++------+------+
+256 rows in set (0.00 sec)
+
+mysql> select c1.cid c1, c2.cid c2 from custprod c1, custprod c2 where c1.cid<c2.cid group by c1.cid, c2.cid;
++------+------+
+| c1   | c2   |
++------+------+
+|    1 |    2 |
+|    2 |    3 |
+|    1 |    3 |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> select distinct c1.cid c1, c2.cid c2 from custprod c1, custprod c2 where c1.cid<c2.cid group by c1.cid, c2.cid;
++------+------+
+| c1   | c2   |
++------+------+
+|    1 |    2 |
+|    2 |    3 |
+|    1 |    3 |
++------+------+
+
+mysql> select c1.cid c1, c2.cid c2, count(case when c1.pid=c2.pid then c1.pid end) num from custprod c1, custprod c2 where c1.cid<c2.cid group by c1.cid, c2.cid;
++------+------+-----+
+| c1   | c2   | num |
++------+------+-----+
+|    1 |    2 |   1 |
+|    2 |    3 |   5 |
+|    1 |    3 |   2 |
++------+------+-----+
+
+
+/*
+select c1,c2,num,den, concat(num*100/den,'%') as similarity from (
+select c1.cid c1, c2.cid c2, 
+count(case when c1.pid=c2.pid then c1.pid end) num, 
+count(distinct c1.pid) + count(distinct c2.pid) - count(case when c1.pid=c2.pid then c1.pid end) den
+from custprod c1, custprod c2 
+where c1.cid<c2.cid 
+group by c1.cid, c2.cid) as t;
+*/
+
+
+select c1,c2,num,den, concat(num*100/den,'%') as similarity from (
+    -> select c1.cid c1, c2.cid c2,
+    -> count(case when c1.pid=c2.pid then c1.pid end) num,
+    -> count(distinct c1.pid) + count(distinct c2.pid) - count(case when c1.pid=c2.pid then c1.pid end) den
+    -> from custprod c1, custprod c2
+    -> where c1.cid<c2.cid
+    -> group by c1.cid, c2.cid) as t;
++------+------+-----+-----+------------+
+| c1   | c2   | num | den | similarity |
++------+------+-----+-----+------------+
+|    1 |    2 |   1 |   9 | 11.1111%   |
+|    1 |    3 |   2 |   7 | 28.5714%   |
+|    2 |    3 |   5 |   4 | 125.0000%  |
++------+------+-----+-----+------------+
+
+
+----in excel to get the table content 
+
+        ="INSERT INTO <table_name> VALUES('" & <cell_no> & "', '" & <cell_no> & "');"
+
+in windows 10
+
+
+create table account(accno int unique auto_increment, accname varchar(100));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into account values('a'), ('b'),('c');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into account(accname) values('a'), ('b'),('c');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> alter account auto_increment=10001;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'account auto_increment=10001' at line 1
+mysql> alter table account auto_increment=10001;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into account(accname) values('a'), ('b'),('c');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> alter account auto_increment=10001;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'account auto_increment=10001' at line 1
+mysql> alter table account auto_increment=10001;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from account;
++-------+---------+
+| accno | accname |
++-------+---------+
+|     1 | a       |
+|     2 | b       |
+|     3 | c       |
+| 10001 | a       |
+| 10002 | b       |
+| 10003 | c       |
++-------+---------+
+6 rows in set (0.00 sec)
+
+mysql> alter table account auto_increment=10001;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from account;
++-------+---------+
+| accno | accname |
++-------+---------+
+|     1 | a       |
+|     2 | b       |
+|     3 | c       |
+| 10001 | d       |
+| 10002 | e       |
++-------+---------+
+
+rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from account;
++--------+---------+
+| accno  | accname |
++--------+---------+
+|      1 | a       |
+|      2 | b       |
+|      3 | c       |
+|  10001 | d       |
++--------+---------+
+
+----built-in FUNCTION
+
+permutation
+combination
+algebra 
+basic concept of mathematics of class 10
+
+select round(10.34);
++--------------+
+| round(10.34) |
++--------------+
+|           10 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select round(10.64);
++--------------+
+| round(10.64) |
++--------------+
+|           11 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select (10.64);
++-------+
+| 10.64 |
++-------+
+| 10.64 |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select floor(10.64);
++--------------+
+| floor(10.64) |
++--------------+
+|           10 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil(10.64);
++-------------+
+| ceil(10.64) |
++-------------+
+|          11 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select power(10.64);
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'power'
+mysql> select power(12,2);
++-------------+
+| power(12,2) |
++-------------+
+|         144 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sort(12,2);
+ERROR 1305 (42000): FUNCTION vita_2025.sort does not exist
+mysql> select sqrt(12);
++--------------------+
+| sqrt(12)           |
++--------------------+
+| 3.4641016151377544 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select cube(12);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cube(12)' at line 1
+mysql> select power(12,2) as 3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3' at line 1
+mysql> select power(12,2) as cube_value;
++------------+
+| cube_value |
++------------+
+|        144 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select power(12,3) as cube_value;
++------------+
+| cube_value |
++------------+
+|       1728 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select power(12,4) as cube_value;
++------------+
+| cube_value |
++------------+
+|      20736 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select power(12,4) as quad_value;
++------------+
+| quad_value |
++------------+
+|      20736 |
++------------+
+
+
+--- string part 
+
+
+ select substring('abcdefg', 2,3);
++---------------------------+
+| substring('abcdefg', 2,3) |
++---------------------------+
+| bcd                       |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substring('asdfsdfs',2,3);
++---------------------------+
+| substring('asdfsdfs',2,3) |
++---------------------------+
+| sdf                       |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substring('asdfsdfs',-2,3);
++----------------------------+
+| substring('asdfsdfs',-2,3) |
++----------------------------+
+| fs                         |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substring('asdfsdfs',3);
++-------------------------+
+| substring('asdfsdfs',3) |
++-------------------------+
+| dfsdfs                  |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr('asfsdf','cd');
++----------------------+
+| instr('asfsdf','cd') |
++----------------------+
+|                    0 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr('abcdefgh','cd');
++------------------------+
+| instr('abcdefgh','cd') |
++------------------------+
+|                      3 |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr('abcdefgh','cdd');
++-------------------------+
+| instr('abcdefgh','cdd') |
++-------------------------+
+|                       0 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr('cdabcdecdfghcd','cdd');
++-------------------------------+
+| instr('cdabcdecdfghcd','cdd') |
++-------------------------------+
+|                             0 |
++-------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr('cddabcdecddfghcd','cdd');
++---------------------------------+
+| instr('cddabcdecddfghcd','cdd') |
++---------------------------------+
+|                               1 |
++---------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr('abcdecddfghcd','cdd');
++------------------------------+
+| instr('abcdecddfghcd','cdd') |
++------------------------------+
+|                            6 |
++------------------------------+
+
+
+select 1 where 'abc'='abc';
++---+
+| 1 |
++---+
+| 1 |
++---+
+
+
+SELECT day('2025-04-29'), weekday('2025-4-29');
++-------------------+----------------------+
+| day('2025-04-29') | weekday('2025-4-29') |
++-------------------+----------------------+
+|                29 |                    1 |
++-------------------+----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT day('2025-04-29'), weekday('2025-3-29');
++-------------------+----------------------+
+| day('2025-04-29') | weekday('2025-3-29') |
++-------------------+----------------------+
+|                29 |                    5 |
++-------------------+----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT day('2025-04-29'), weekday('2025-3-30');
++-------------------+----------------------+
+| day('2025-04-29') | weekday('2025-3-30') |
++-------------------+----------------------+
+|                29 |                    6 |
++-------------------+----------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff(now(),last_day(now()));
++---------------------------------+
+| datediff(now(),last_day(now())) |
++---------------------------------+
+|                              -2 |
++---------------------------------+
+1 row in set (0.00 sec)
+
+
+mysql> select date_Add(now(), interval 10 year);
++-----------------------------------+
+| date_Add(now(), interval 10 year) |
++-----------------------------------+
+| 2035-03-29 13:57:53               |
++-----------------------------------+
+
+mysql> SELECT DATE_FORMAT(NOW(), '%d-%b-%Y') AS formatted_date;
++----------------+
+| formatted_date |
++----------------+
+| 29-Mar-2025    |
++----------------+
+
+mysql> select date_format(now(), '%W %y');
++-----------------------------+
+| date_format(now(), '%W %y') |
++-----------------------------+
+| Saturday 25                 |
++-----------------------------+
+
+
+mysql> select * from t;
++------+
+| id   |
++------+
+|    1 |
+|  100 |
+|    4 |
+|  300 |
+|  440 |
++------+
+5 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from t;
++------+
+| id   |
++------+
+|    1 |
+|  100 |
+|  200 |
+|  300 |
+|  440 |
++------+
+5 rows in set (0.00 sec)
+
+
+show variables like 'datadir'
+    -> ;
++---------------+---------------------------------------------+
+| Variable_name | Value                                       |
++---------------+---------------------------------------------+
+| datadir       | C:\ProgramData\MySQL\MySQL Server 8.0\Data\ |
++---------------+---------------------------------------------+
+1 row in set (0.01 sec)
+
+
+------------ctes == common table expressions
+normal ctes 
+
+with
+tab
+as
+(select 1 id)
+select  * from tab;
++----+
+| id |
++----+
+|  1 |
++----+
+
+
+with recursive
+tab
+as
+(select 1 id 
+union all 
+select id+1 
+from tab where id<10)
+select  * from tab;
+
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
+|    7 |
+|    8 |
+|    9 |
+|   10 |
++------+
+
+
+----between 1 to 1000 print all prime number in recursive query without using any function
+
+WITH RECURSIVE numbers AS (
+    SELECT 2 AS num  
+    UNION ALL
+    SELECT num + 1 FROM numbers WHERE num < 1000
+),
+primes AS (
+    SELECT n1.num FROM numbers n1
+    WHERE NOT EXISTS (
+        SELECT 1 FROM numbers n2
+        WHERE n2.num > 1
+        AND n2.num < n1.num
+        AND n1.num % n2.num = 0
+    )
+)
+SELECT num FROM primes;
+
+
+--- write a recursive CTE to display 1000 rows which have below columns and values 
+----eid- 1,2,3,4,..... 1000
+
+WITH RECURSIVE 
+emp  as (    
+SELECT 1 AS eid     
+UNION ALL    
+SELECT eid + 1 
+FROM emp 
+WHERE eid < 1000)
+SELECT * FROM emp;
+
+
+----ename-  a1,b2,c3,....z26, a27,b27.....
+
+with recursive
+tab 
+as (select 1 eid,concat(convert(char(mod(0,26)+97),char(10)),1) ename ,rand()*100000 salary,1 deptid
+union all
+select eid+1,concat(convert(char(mod(0,26)+97),char(10)),eid+1),rand()*100000,mod(eid,3)+1
+from tab where eid<70)
+select eid,ename,floor(salary) salary,deptid from tab;
+
+
+----salary- 2324,34355,56
+
+with recursive
+tab as (
+select  1 eid, rand()*10000,1 deptid
+union all
+select eid+1, rand()*100000, mod(eid,3)+1
+from tab where eid<1000)
+select * from tab;
+
+--- eid, deptid
+
+WITH RECURSIVE 
+emp  as (    
+SELECT 1 AS eid, 1 deptid     
+UNION ALL    
+SELECT eid + 1, mod(eid,3)+1  
+FROM emp 
+WHERE eid < 1000)
+SELECT * FROM emp;
+
+
+------
+
+create table Parts(Partid varchar(10), ParentPartid varchar(10));
+
+INSERT INTO Parts VALUES('A', 'A');
+INSERT INTO Parts VALUES('B', 'A');
+INSERT INTO Parts VALUES('C', 'B');
+INSERT INTO Parts VALUES('D', 'B');
+INSERT INTO Parts VALUES('E', 'D');
+INSERT INTO Parts VALUES('F', 'F');
+INSERT INTO Parts VALUES('G', 'F');
+INSERT INTO Parts VALUES('H', 'G');
+INSERT INTO Parts VALUES('I', 'H');
+INSERT INTO Parts VALUES('J', 'I');
+
+
+
+with cte 
+as (
+select partid originalpartid, parentpartid immediatepartid,
+parentpartid topmostparent, 0 level
+from parts)
+select * from cte;
+
++----------------+-----------------+---------------+-------+
+| originalpartid | immediatepartid | topmostparent | level |
++----------------+-----------------+---------------+-------+
+| A              | A               | A             |     0 |
+| B              | A               | A             |     0 |
+| C              | B               | B             |     0 |
+| D              | B               | B             |     0 |
+| E              | D               | D             |     0 |
+| F              | F               | F             |     0 |
+| G              | F               | F             |     0 |
+| H              | G               | G             |     0 |
+| I              | H               | H             |     0 |
+| J              | I               | I             |     0 |
++----------------+-----------------+---------------+-------+
+10 rows in set (0.00 sec)
+
+
+WITH RECURSIVE cte AS (
+    SELECT 
+        partid AS originalpartid, 
+        parentpartid AS immediatepartid,
+        parentpartid AS topmostparent, 
+        0 AS level
+    FROM parts
+    UNION ALL
+    SELECT 
+        cte.originalpartid, 
+        cte.immediatepartid, 
+        parts.parentpartid, 
+        cte.level + 1
+    FROM cte 
+    JOIN parts ON cte.topmostparent = parts.partid
+    WHERE parts.partid <> parts.parentpartid
+)
+SELECT originalpartid AS partid, topmostparent 
+FROM (
+    SELECT *, ROW_NUMBER() OVER (PARTITION BY originalpartid ORDER BY level DESC) AS rn 
+    FROM cte
+) AS t 
+WHERE rn = 1;
+
++--------+---------------+
+| partid | topmostparent |
++--------+---------------+
+| A      | A             |
+| B      | A             |
+| C      | A             |
+| D      | A             |
+| E      | A             |
+| F      | F             |
+| G      | F             |
+| H      | F             |
+| I      | F             |
+| J      | F             |
++--------+---------------+
+10 rows in set (0.00 sec)
+
+
+
+
+

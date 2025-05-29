@@ -1,0 +1,378 @@
+delimiter $$
+create function sf_fact(num int)
+returns bigint
+DETERMINISTIC
+begin
+declare fact bigint;
+declare i int;
+set fact=num;
+set i=num-1;
+while(i>1)
+do
+set fact=fact*i;
+set i=i-1;
+end while;
+return(fact);
+end;
+$$
+delimiter ;
+
+
+select sf_fact(5);
+
+drop function sf_checkprime;
+delimiter $$
+create function sf_checkprime(num int)
+returns varchar(100)
+deterministic
+begin
+declare i int default 2;
+while(i<=num/2)
+do
+if mod(num,i)=0 then
+return(concat(num,' is not a prime number,', i ,' divides ', num,' with remainder 0'));
+end if;
+set i=i+1;
+end while;
+return(concat(num,' is  a prime number'));
+end;
+$$
+
+delimiter ;
+
+
+select sf_checkprime(13);
+
+
+
+delimiter $$
+create function sf_getdept(v_eid int)
+returns varchar(100)
+READS SQL DATA
+begin
+declare v_deptname varchar(100);
+select deptname into v_deptname from emp join dept on
+emp.deptid=dept.deptid
+where eid=v_eid;
+return(v_deptname);
+end;
+$$
+
+delimiter ;
+
+select sf_getdept(1);
+select eid,ename,sf_getdept(eid) from emp;
+
+
+
+
+
+
+insert into emp (eid , deptid) values(1,2);
+
+drop  function sf_getelist;
+delimiter $$
+create function sf_getelist(v_deptname varchar(100))
+returns text
+reads sql data
+begin
+declare elist text default '';
+declare v_ename varchar(100);
+declare i int default 0;
+myloop: loop
+select ename into v_ename  from emp join dept
+on emp.deptid=dept.deptid
+where deptname=v_deptname limit 1 offset i;
+if v_ename is null then
+leave  myloop;
+else
+set elist=concat(elist,',',v_ename);
+set v_ename=null;
+end if;
+set i=i+1;
+end loop myloop;
+return(substring(elist,2));
+end;
+$$
+delimiter ;
+
+select sf_getelist('HR');
+
+select deptname,sf_getelist(deptname) elist from dept;
+
+
+
+
+
+
+
+
+
+drop  function sf_getelist;
+delimiter $$
+create function sf_getelist(v_deptname varchar(100))
+returns text
+reads sql data
+begin
+
+declare flag int default 1;
+declare elist text default '';
+declare v_ename varchar(100);
+declare c1 cursor for
+select ename from emp join dept on emp.deptid=dept.deptid
+where deptname=v_deptname;
+declare continue handler for not found set flag=0;
+open c1;
+myloop: loop
+fetch c1 into v_ename;
+if flag=0 then
+leave myloop;
+else
+if v_ename is not null then
+set elist=concat(elist,',',v_ename);
+end if;
+end if;
+end loop myloop;
+close c1;
+return(substring(elist,2));
+
+end;
+$$
+delimiter ;
+
+
+select deptname,sf_getelist(deptname) elist from dept;
+
+
+
+
+
+
+select eid,count(*) from emp group by eid having count(*)>1;
+
+
+create a procedure which takes input a number and do the following tasks-
+
+1. remove all the existing data from emp table
+2. insert as many records in the emp table as the input number
+3. EID-1,2,3...
+4. ename- a1,b2,c3...z26,a27...
+5. salary- random number
+6. deptid- 1,2,3,4,1,2,3,4...
+7. Procedure should commit after every 50000 rows
+
+delimiter $$
+create procedure sp_loademp(rec int)
+begin
+declare i int default 1;
+truncate table emp;
+start transaction;
+while(i<=rec) do
+insert into emp(eid,ename,salary , deptid)
+values(i,concat(convert(char(mod((i-1),26)+97), char(10)),i),
+rand()*100000,mod((i-1),4)+1);
+if mod(i,50000)=0 then
+commit;
+start transaction;
+end if;
+set i=i+1;
+end while;
+commit;
+end;
+$$
+delimiter ;
+
+call sp_loademp(100);
+
+
+
+select routine_type,routine_name from information_schema.routines
+where routine_schema='vita_2025';
+
+
+
+
+
+select ename,deptname,salary from emp join dept on 
+emp.deptid=dept.deptid;
+
+
+explain
+select ename,deptname,salary from emp join dept on 
+emp.deptid=dept.deptid;
+
+
+
+
+create view vw_emp_deptname
+as
+select ename,deptname,salary from emp join dept on 
+emp.deptid=dept.deptid;
+
+
+
+select  * from vw_emp_deptname;
+
+
+explain select  * from vw_emp_deptname;
+
+
+select table_name,table_type
+from information_schema.tables where table_schema=database();
+
+
+
+
+insert into vw_emp_deptname(ename,deptname,salary) values('v','HR',100);
+
+insert into vw_emp_deptname(ename,salary) values('v',100);
+
+create table table_rest(id int not null,name varchar(100),salary int);
+
+create view vw_rest as
+select name,salary from table_rest;
+
+insert into vw_rest(name,salary) values('a',100);
+
+
+
+create table emp_audit
+(username varchar(100),upd_dt timestamp,old_eid int,new_eid int,old_ename varchar(100),new_ename varchar(100),old_salary int,new_salary int,
+old_deptid int,new_deptid int);
+
+delimiter $$
+create trigger trig_emp_update
+after update on emp for each row
+begin
+insert into emp_audit(username,upd_dt,old_eid,new_eid,old_ename,new_ename,
+old_salary,new_salary,old_deptid,new_deptid) 
+values(user(),now(),old.eid,new.eid,old.ename,new.ename,
+old.salary,new.salary,old.deptid,new.deptid);
+end;
+$$
+delimiter ;
+update emp set salary=100 where eid=2;
+select * from emp where eid=3;
+
+start transaction;
+update emp set salary=300 where eid=3;
+rollback;
+
+select * from emp where eid=3;
+
+
+create table salespeople 
+(snum int, sname varchar(20),city varchar(20), comm float);
+
+insert into salespeople values(1001,'Peel','London',0.12);
+insert into salespeople values(1002,'Serres','San Jose',0.13);
+insert into salespeople values(1004,'Motika','London',0.11);
+insert into salespeople values(1007,'Rifkin','Barcelona',0.15);
+insert into salespeople values(1003,'AxelRod','New York',0.1);
+insert into salespeople values(1005,'Fran','London',0.26);
+
+
+
+create table customers
+(cnum int, cname varchar(20),
+city varchar(20),rating int,
+snum int);
+
+insert into customers values(2001,'Hoffman','London',100,1001);
+insert into customers values(2002,'Giovanni','Rome',200,1003);
+insert into customers values(2003,'Liu','San Jose',200,1002);
+insert into customers values(2004,'Grass','Berlin',300,1002);
+insert into customers values(2006,'Clemens','London',100,1001);
+insert into customers values(2008,'Cisneros','San Jose',300,1007);
+insert into customers values(2007,'Pereira','Rome',100,1004);
+
+
+
+
+create table orders (onum int, amt float,odate date,cnum int,snum int);
+
+insert into orders values(3001,18.69,'1996-10-03',2008,1007);
+insert into orders values(3003,767.19,'1996-10-03',2001,1001);
+insert into orders values(3002,1900.1,'1996-10-03',2007,1004);
+insert into orders values(3005,5160.45,'1996-10-03',2003,1002);
+insert into orders values(3006,1098.16,'1996-10-03',2008,1007);
+insert into orders values(3009,1713.23,'1996-10-04',2002,1003);
+insert into orders values(3007,75.75,'1996-10-04',2002,1003);
+insert into orders values(3008,4723,'1996-10-05',2006,1001);
+insert into orders values(3010,1309.95,'1996-10-06',2004,1002);
+insert into orders values(3011,9891.88,'1996-10-06',2006,1001);
+
+
+
+
+
+38. Write a select command using a corelated subquery that selects the names and numbers of all
+customers with ratings equal to the maximum for their city.
+
+select cname,cnum from customers o
+where exists
+(select 1 from customers i 
+where i.city=o.city 
+group by i.city 
+having max(i.rating)=o.rating );
+
+
+
+17. Give the sums of the amounts from the Orders table, grouped by date, eliminating all those
+dates where the SUM was not at least 2000.00 above the MAX amount.
+
+
+select odate,sum(amt),max(amt) 
+from orders
+group by odate
+having sum(amt)>=2000+max(amt);
+
+
+
+
+7. List names of all customers matched with the salespeople serving them.
+
+select cname,sname from customers  c , salespeople s
+where c.snum=s.snum;
+
+
+19. Write a query that uses the EXISTS operator to extract all salespeople who have customers
+with a rating of 300.
+
+
+select * from salespeople s
+where exists
+(select 1 from customers c
+where c.snum=s.snum
+and rating=300);
+
+25. Find all customers located in cities where Serres (SNUM 1002) has customers.
+
+select * from customers
+where city in
+(select city from customers where snum=1002);
+
+
+
+
+
+52. Write 2 queries that select all salespeople (by name and number) who have customers in their
+cities who they do not service, one using a join and one a corelated subquery. Which solution
+is more elegant?
+
+-- join
+select distinct s.snum,sname,s.city from salespeople s, customers c
+where c.city=s.city
+and c.snum<>s.snum;
+
+
+-- correlated sub query
+
+select s.snum,sname,s.city from salespeople s
+where exists(select 1 from customers c
+where c.city=s.city
+and c.snum<>s.snum);
+
+
+
+

@@ -1,0 +1,203 @@
+Queries:
+
+1. Display the name of all employees whose salary is between 500 and 1300
+
+	select ename, salary from emp where salary between 500 and 1300;
+
+	select ename, salary from emp where salary >= 500 and  salary <= 1300;
+
++-------+--------+
+| ename | salary |
++-------+--------+
+| a     |   1000 |
+| b     |   1023 |
+| h     |    523 |
+| j     |    627 |
+| k     |    978 |
+| m     |    746 |
+| p     |    821 |
+| r     |    546 |
+| s     |    717 |
+| t     |    817 |
+| u     |    888 |
+| a3    |    653 |
+| a8    |    845 |
+| b1    |   1212 |
+| b2    |   1242 |
+| b5    |    555 |
++-------+--------+
+	
+2. Display the name of all employees who are in HR dept
+
+	select ename from emp join dept on emp.deptid=dept.deptid where deptname='HR';
+old syntax
+	select deptname, ename from emp e, dept d where e.deptid=d.deptid and deptname='HR';
+subQuery
+	select 'HR' deptname, ename from emp where deptid = (select deptid from dept where deptname='HR');
+
++-------+
+| ename |
++-------+
+| a     |
+| e     |
+| g     |
+| i     |
+| j     |
+| l     |
+| m     |
+| n     |
+| q     |
+| v     |
+| x     |
+| z     |
+| a1    |
+| a2    |
+| a4    |
+| a6    |
+| a8    |
+| b1    |
+| b5    |
+| b7    |
+| b9    |
++-------+
+
+3. Display the name of all the dept and count of all the employees in that dept.
+
+	select deptname, count(eid) from dept left join emp on emp.deptid=dept.deptid group by deptname; 
+
++----------+------------+
+| deptname | count(eid) |
++----------+------------+
+| HR       |         21 |
+| IT       |         10 |
+| Finance  |         14 |
+| OPR      |          0 |
++----------+------------+
+	
+4. Display the name , deptname and  salary of the employee whose salary is highest.
+
+	select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select max(salary) from emp);	
+
+	select ename,deptname, salary from dept  join emp on dept.deptid=emp.deptid order by salary desc limit 1;
+
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| x     | HR       |  28222 |
++-------+----------+--------+
+
+5. Display the name , deptname and  salary of the employee whose salary is lowest.
+
+	select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select min(salary) from emp);
+
+	select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1;
+
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a5    | IT       |      3 |
++-------+----------+--------+
+
+6. Display the name , deptname of employee whose salary is second highest.
+
+subQuery
+	select ename, deptname, salary from emp join dept on emp.deptid=dept.deptid where emp.salary = (select max(salary) from emp where salary < (select max(salary) from emp));
+
+using limit without offset
+	select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1, 1;
+
+using limit with offset
+	select ename, deptname, salary from dept join emp on dept.deptid= emp.deptid order by salary limit 1 offset 1;
+
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| a7    | IT       |     14 |
++-------+----------+--------+
+	
+7. display the name, deptname of top five earning employees.
+
+	select ename,deptname, salary from dept  join emp on dept.deptid=emp.deptid order by salary desc limit 5;
+
++-------+----------+--------+
+| ename | deptname | salary |
++-------+----------+--------+
+| x     | HR       |  28222 |
+| w     | Finance  |  20001 |
+| y     | Finance  |  19212 |
+| z     | HR       |  12111 |
+| a2    | HR       |   9238 |
++-------+----------+--------+	
+
+8. Display the deptname, name of top 5 earning employees from each dept.
+
+	select deptname, ename, salary,
+	row_number() over (partition by deptname order by salary desc) rn
+	from 
+	emp e join dept d
+	on e.deptid=d.deptid;
+
+	select * from (
+	select deptname, ename, salary,
+	row_number() over (partition by deptname order by salary desc) rn
+	from 
+	emp e join dept d
+	on e.deptid=d.deptid) as t where rn<=5;
+	
++----------+-------+--------+----+
+| deptname | ename | salary | rn |
++----------+-------+--------+----+
+| Finance  | w     |  20001 |  1 |
+| Finance  | y     |  19212 |  2 |
+| Finance  | b4    |   4444 |  3 |
+| Finance  | f     |   2023 |  4 |
+| Finance  | o     |   1999 |  5 |
+| HR       | x     |  28222 |  1 |
+| HR       | z     |  12111 |  2 |
+| HR       | a2    |   9238 |  3 |
+| HR       | v     |   9029 |  4 |
+| HR       | b7    |   6432 |  5 |
+| IT       | b8    |   4532 |  1 |
+| IT       | b3    |   4212 |  2 |
+| IT       | c1    |   2324 |  3 |
+| IT       | b2    |   1242 |  4 |
+| IT       | b     |   1023 |  5 |
++----------+-------+--------+----+
+	
+
+9. Display the avg salary of each dept.
+
+	select deptname, avg(salary) avg_sal from dept left join emp on emp.deptid=dept.deptid group by deptname; 	
+
++----------+-----------+
+| deptname | avg_sal   |
++----------+-----------+
+| HR       | 3855.8571 |
+| IT       | 1540.7000 |
+| Finance  | 3814.2143 |
+| OPR      |      NULL |
++----------+-----------+
+
+10.Display the min and max salary of each dept.
+
+	select deptname, min(salary) min_sal, max(salary) max_salary from dept left join emp on emp.deptid=dept.deptid group by deptname; 	
+
++----------+---------+------------+
+| deptname | min_sal | max_salary |
++----------+---------+------------+
+| HR       |      16 |      28222 |
+| IT       |       3 |       4532 |
+| Finance  |      23 |      20001 |
+| OPR      |    NULL |       NULL |
++----------+---------+------------+
+
+
+
+
+
+
+
+
+
+
+

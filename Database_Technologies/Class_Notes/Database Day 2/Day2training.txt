@@ -1,0 +1,497 @@
+Queries:
+
+1. Display the name of all employees whose salary is between 500 and 1300
+
+select ename,salary from emp where salary between 500 and 1300;
+select ename,salary from emp where salary >= 500 and salary <= 1300;
+
+2. Display the name of all employees who are in HR dept
+
+-- join
+select deptname,ename from emp e join dept d
+on e.deptid=d.deptid
+where deptname='HR';
+
+select deptname,ename from emp e , dept d
+where e.deptid=d.deptid
+and deptname='HR';
+
+-- subquery
+
+select 'HR' Deptname,ename from emp
+where deptid =(select deptid from dept where deptname='HR');
+
+3. Display the name of all the dept and count of all the employees in that dept.
+
+select deptname,count(eid) num_employees
+from
+dept d left join emp e
+on d.deptid=e.deptid
+group by deptname;
+
+4. Display the name , deptname and  salary of the employee whose salary is highest.
+
+select ename,deptname,salary
+from
+dept d  join emp e
+on d.deptid=e.deptid
+order by salary desc
+limit 1;
+
+
+5. Display the name , deptname and  salary of the employee whose salary is lowest.
+
+select ename,deptname,salary
+from
+dept d  join emp e
+on d.deptid=e.deptid
+order by salary 
+limit 1;
+
+
+
+
+6. Display the name , deptname of employee whose salary is second highest.
+
+select ename,deptname,salary
+from
+dept d  join emp e
+on d.deptid=e.deptid
+order by salary desc
+limit 1 offset 1;
+
+
+select ename,deptname,salary
+from
+dept d  join emp e
+on d.deptid=e.deptid
+order by salary desc
+limit 1,1;
+
+
+7. display the name, deptname of top five earning employees.
+
+
+select ename,deptname,salary
+from
+dept d  join emp e
+on d.deptid=e.deptid
+order by salary desc
+limit 5;
+
+
+9. Display the avg salary of each dept.
+
+
+select deptname,avg(salary) avg_sal
+from
+dept d left join emp e
+on d.deptid=e.deptid
+group by deptname;
+
+10.Display the min and max salary of each dept.
+
+select deptname,min(salary) min_sal, max(salary) max_sal
+from
+dept d left join emp e
+on d.deptid=e.deptid
+group by deptname;
+
+
+create table emp_rank
+(eid int , ename varchar(100),salary int, deptid int);
+insert into emp_rank values(1,'a',100,1);
+insert into emp_rank values(2,'b',200,2);
+insert into emp_rank values(3,'c',100,1);
+insert into emp_rank values(4,'d',200,2);
+insert into emp_rank values(5,'e',50,1);
+insert into emp_rank values(6,'f',60,2);
+insert into emp_rank values(7,'g',70,1);
+
+select  *,
+row_number() over (order by salary desc) rn,
+rank() over (order by salary desc) rnk,
+dense_rank() over (order by salary desc) drnk
+ from emp_rank;
+
+select  *,
+row_number() over (partition by deptid order by salary desc) rn,
+rank() over (partition by deptid order by salary desc) rnk,
+dense_rank() over (partition by deptid order by salary desc) drnk
+ from emp_rank;
+
+
+
+select deptname,ename,salary,
+row_number() over (partition by deptname order by salary desc) rn
+from
+emp e join dept d
+on e.deptid=d.deptid;
+
+
+
+
+
+8. Display the deptname, name of top 5 earning employees from each dept.
+
+select * from (
+select deptname,ename,salary,
+row_number() over (partition by deptname order by salary desc) rn
+from
+emp e join dept d
+on e.deptid=d.deptid) as t where rn<=5;
+
+
+
+
+
+create table marks(roll int,sub varchar(1),mark int);
+insert into marks values(1,'M',98);
+insert into marks values(1,'H',97);
+insert into marks values(1,'E',99);
+insert into marks values(2,'M',92);
+insert into marks values(2,'H',90);
+insert into marks values(2,'E',20);
+insert into marks values(3,'M',35);
+insert into marks values(3,'H',37);
+insert into marks values(3,'E',38);
+
+select roll , 'Pass' Result from marks
+group by roll
+having
+min(mark)>=35 and avg(mark)>=40
+union all
+select roll , 'Fail' Result from marks
+group by roll
+having
+min(mark)<35 or avg(mark)<40;
+
+select roll ,
+case when min(mark)>=35 and avg(mark)>=40
+then  'Pass'  else 'Fail' end Result
+from marks
+group by roll;
+
+
+
+create table emp_mgr
+(eid int, ename varchar(5),mgrid int);
+insert into emp_mgr values(1,'a',4);
+insert into emp_mgr values(2,'b',4);
+insert into emp_mgr values(3,'c',4);
+insert into emp_mgr values(4,'d',4);
+insert into emp_mgr values(5,'e',6);
+insert into emp_mgr values(6,'f',6);
+insert into emp_mgr values(7,'g',6);
+
+
+select mgrid,eid,ename
+from emp_mgr
+where mgrid<>eid;
+
+
+
+
+select e.mgrid,e.eid,e.ename
+from emp_mgr e
+where e.mgrid<>e.eid;
+
+
+select e.mgrid,m.ename mgrname,e.eid,e.ename
+from emp_mgr e, emp_mgr m
+where 
+e.mgrid=m.eid and
+e.mgrid<>e.eid;
+
+
+
+select deptname from dept
+where not exists
+(select 1 from emp where emp.deptid=dept.deptid);
+
+
+select deptname from dept
+where  exists
+(select 1 from emp where emp.deptid=dept.deptid
+group by deptid having count(eid)>14);
+
+
+SELECT department_name
+FROM departments d
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM employees e
+    WHERE e.department_id = d.department_id
+);
+
+
+
+
+create table custprod (cid int,pid int);
+
+insert into custprod values(1,1);
+insert into custprod values(1,5);
+insert into custprod values(1,8);
+insert into custprod values(1,10);
+insert into custprod values(1,20);
+insert into custprod values(1,25);
+insert into custprod values(2,1);
+insert into custprod values(2,3);
+insert into custprod values(2,11);
+insert into custprod values(2,12);
+insert into custprod values(2,13);
+insert into custprod values(3,12);
+insert into custprod values(3,13);
+insert into custprod values(3,10);
+insert into custprod values(3,20);
+insert into custprod values(3,25);
+
+
+select c1.cid c1,c2.cid c2
+from custprod c1, custprod c2
+where c1.cid<c2.cid
+group by c1.cid,c2.cid;
+
+
+
+
+select c1.cid c1,c2.cid c2,
+count(case when c1.pid=c2.pid then c1.pid  end) num
+from custprod c1, custprod c2
+where c1.cid<c2.cid
+group by c1.cid,c2.cid;
+
+
+
+
+
+select c1.cid c1,c2.cid c2,
+count(case when c1.pid=c2.pid then c1.pid  end) num,
+count(distinct c1.pid)+ count(distinct c2.pid) -count(case when c1.pid=c2.pid then c1.pid  end) den
+from custprod c1, custprod c2
+where c1.cid<c2.cid
+group by c1.cid,c2.cid;
+
+
+
+
+select c1,c2,num,den,concat(num*100/den,'%') as similarity from (
+select c1.cid c1,c2.cid c2,
+count(case when c1.pid=c2.pid then c1.pid  end) num,
+count(distinct c1.pid)+ count(distinct c2.pid) -count(case when c1.pid=c2.pid then c1.pid  end) den
+from custprod c1, custprod c2
+where c1.cid<c2.cid
+group by c1.cid,c2.cid) as t ;
+
+
+
+
+
+
+
+create table account(accno int unique auto_increment,accname varchar(100));
+
+insert into account(accname) values('a'),('b'),('c');
+
+alter table account auto_increment=10001;
+
+insert into account(accname) values('a'),('b'),('c');
+
+
+
+start transaction;
+insert into account(accname) values('d');
+rollback;
+
+insert into account(accname) values('d');
+
+
+
+delete from account;
+
+insert into account(accname) values('d');
+
+start transaction;
+truncate table account;
+rollback;
+
+
+select substring('abcdef',2,3);
+select substring('abcdef',-2,3);
+select substring('abcdef',3);
+select instr('abcded','cd');
+select instr('abcded','cdd');
+select instr('abcdedcdcd','cd');
+
+replace
+ltrim
+rtrim
+trim
+left
+right
+reverse
+length
+
+select length('abcdef');
+
+select 1 where 'abc'='abc';
+
+select current_date(),curdate(),current_time(),curtime();
+
+
+select datediff(now(),last_day(now()));
+select date_add(now(), interval 10 year);
+
+
+select date_format(now(),'%d-%m-%y');
+
+select date_format(now(),'%W %y');
+
+
+show variables like 'datadir';
+
+
+show variables like 'autocommit';
+
+
+
+with 
+tab
+as(select 1 id )
+select * from tab;
+
+
+
+with recursive
+tab
+as(select 1 id 
+union all
+select id+1
+from tab where id<100 )
+select * from tab;
+
+
+
+
+-- emp
+eid
+ename
+salary
+deptid
+
+-- write a recursive CTE to display 1000 rows which have below columns and values
+-- eid- 1,2,3,4...1000
+--ename- a1,b2,c3...z26,a27,b28...
+--salary-2324,34355,56534,34346,66565,7765....
+--deptid- 1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3......
+
+
+with 
+emp
+as
+(select 1 eid)
+select * from emp;
+
+
+
+with recursive
+emp
+as
+(select 1 eid
+union all
+select eid+1 from emp where eid<1000)
+select * from emp;
+
+
+
+
+
+with recursive
+emp
+as
+(select 1 eid,1 deptid
+union all
+select eid+1,mod(eid,3)+1 from emp where eid<1000)
+select * from emp;
+
+
+
+
+with recursive
+emp
+as
+(select 1 eid,rand()*100000 salary,1 deptid
+union all
+select eid+1,rand()*100000,mod(eid,3)+1 from emp where eid<1000)
+select * from emp;
+
+
+select ascii('a');
+select ascii('z');
+
+select mod(0,26)+97;
+
+select char(mod(0,26)+97);
+
+select concat(convert(char(mod(0,26)+97),char(10)),1);
+
+
+with recursive
+emp
+as
+(select 1 eid, concat(convert(char(mod(0,26)+97),char(10)),1) ename,rand()*100000 salary,1 deptid
+union all
+select eid+1,concat(convert(char(mod(eid,26)+97),char(10)),eid+1),rand()*100000,mod(eid,3)+1 from emp where eid<60)
+select eid,ename,floor(salary) salary , deptid from emp;
+
+
+
+
+
+
+create table parts (partid varchar(10), parentpartid varchar(10));
+insert into parts values('A','A');
+insert into parts values('B','A');
+insert into parts values('C','B');
+insert into parts values('D','B');
+insert into parts values('E','D');
+insert into parts values('F','F');
+insert into parts values('G','F');
+insert into parts values('H','G');
+insert into parts values('I','H');
+insert into parts values('J','I');
+
+
+
+
+with cte
+as
+(select partid orignalpartid, parentpartid immediatepartid,
+parentpartid topmostparent,0 level
+from parts)
+select * from cte;
+
+
+
+
+with recursive cte
+as
+(select partid orignalpartid, parentpartid immediatepartid,
+parentpartid topmostparent,0 level
+from parts
+union all
+select orignalpartid,immediatepartid,parts.parentpartid,level+1
+from cte, parts 
+where cte.topmostparent=parts.partid
+and
+parts.partid<>parts.parentpartid
+)
+select orignalpartid partid,topmostparent from(select *,row_number() over(partition by orignalpartid order by level desc) rn from cte ) as t 
+where rn=1;
+
+
+
+
+
+
+
