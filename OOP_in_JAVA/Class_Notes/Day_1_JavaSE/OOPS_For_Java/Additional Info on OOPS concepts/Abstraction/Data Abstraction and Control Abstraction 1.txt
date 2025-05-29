@@ -1,0 +1,17 @@
+In programming, "data abstraction" focuses on hiding the internal details of how data is stored and manipulated, presenting only the essential operations needed to interact with it, while "control abstraction" hides the intricacies of how a program executes its logic, allowing users to focus on the overall functionality without worrying about the underlying steps involved; essentially, data abstraction deals with data representation, while control abstraction deals with program flow and execution details. 
+
+Key points about data abstraction:
+
+Focuses on data:
+It's about creating complex data types and exposing only the necessary operations to interact with them, effectively hiding the internal implementation details.
+
+Example:
+Defining a "Stack" data type where users can only push and pop elements without needing to know how the data is stored internally. 
+
+Key points about control abstraction:
+
+Focuses on program flow:
+It involves creating functions or procedures that encapsulate a sequence of operations, allowing users to call them without needing to understand the specific steps involved in their execution.
+
+Example:
+Writing a function called "calculateAverage" which takes a list of numbers and returns the average, hiding the calculation steps from the user. 

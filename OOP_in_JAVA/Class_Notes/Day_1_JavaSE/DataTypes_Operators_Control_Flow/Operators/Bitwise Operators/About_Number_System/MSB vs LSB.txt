@@ -1,0 +1,14 @@
+		1  0 0 0 1 0 0 1 0 
+		MSB		 LSB
+
+
+MSB  - Most Significant Bit
+	if it is 1 then the number is negative
+	if it is 0 then the number is positive
+
+LSB - Least Significant Bit
+	if it is 0 then the number is even
+	if it is 1 then the number is odd
+
+
+

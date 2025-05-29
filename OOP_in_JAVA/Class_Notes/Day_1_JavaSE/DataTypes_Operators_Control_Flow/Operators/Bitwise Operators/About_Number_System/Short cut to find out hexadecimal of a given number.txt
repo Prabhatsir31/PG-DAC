@@ -1,0 +1,54 @@
+suppose we want to find out hexadecimal of 35
+
+1) method is:
+
+				Hexadecimal of 35
+
+
+	16	35	
+	16	2	3
+	16	0	2
+
+
+	0 	2	3
+
+	16[2]	16[1]	16[0]
+
+	  	32    +	3
+
+so hexadecimal of 35 is     023
+
+
+2) method is:
+
+go on writing
+
+	
+	16[1]	16[0]  .. till you get power of 16 greater than the given number
+		i.e. 35
+
+so here  16[0]  is 1
+	 16[1]  is 16
+
+   16[2] is 256 which is larger than 35
+
+so we should take only  16[1] and 16[0]
+
+now think how many times we need to take 16[1] so that the result won't be more than 35 ?
+	it's 16[1]  2 times
+		and that comes to 16*2  i.e.  32
+
+			35-32  is 3
+
+now think how many times we need to take 16[0] so that the result will be 3?
+	it's 16[0]  3 times
+		and that comes to 16[0] * 3  which comes to 3
+
+so if we consider the order
+	16[1]        16[0]
+
+	2	     3
+
+so hexadecimal of 35 is       23
+
+ 

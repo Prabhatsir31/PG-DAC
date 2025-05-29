@@ -1,0 +1,80 @@
+Procedure Oriented Programming
+
+deals with functions only
+lots of functions we write to achieve the given assignment ( i.e. a project )
+when the volume of application becomes large, we write more and more functions and thus the code becomes difficult to manage or maintain.
+There is no data security in Procedure Oriented Programming. The data (global data) can be modified from any function any time.
+POP does not deal with real world problems or entities like 
+	person,vehicle,company,account,tour etc.
+
+
+Object Oriented Programming
+
+deals with all real life problems or entities like person,vehicle,company,account,tour etc.   
+
+provides data security , data is not feely available.
+
+What is object?
+
+in our everyday life we see all objects around us. 
+What does that mean? What are the different object we see around us?
+
+person
+AC
+chair
+laptop
+Mobile
+
+Now when you see all these objects there are two imp. aspects
+a) you need to describe how exactly these objects would be and their behaviour
+e.g.
+when you talk about person basic attributes like
+	name,age,address etc.
+and the behaviour is "walk","talk","eat","sleep" etc.
+
+	 Object Oriented Programming allows you to describe the objects using the concept of "class". So in case of person we write:
+
+class Person
+{
+	name
+	age
+	address
+
+	walk()
+	{
+		walking
+	}
+	talk()
+	{
+		talking
+	}
+	eat()
+	{
+		eating
+	}
+	sleep()
+	{
+		sleeping
+	}
+}
+
+b) you actually see these objects e.g. in case of person people around us are objects , they have their name,age,address etc. (attributes) and they also have behaviours i.e. they all walk,talk,eat,sleep etc.
+
+So class and object are very imp. concept in object oriented programming.
+class- is a blueprint,just an idea of how object would be. It actually describes the object
+object - is a real life entity which we can see around us, we can talk about it.
+
+for a particular class there can be n number of objects.
+
+for e.g. for the above  "Person" class we can have
+Sachin,Vishal,Rahul,Reeta,Pooja etc. objects. i.e. these people ,we can say they are all objects of type "Person".
+
+
+now think about class and object concept in other examples such as
+AC
+Laptop
+Chair
+Mobile
+
+
+

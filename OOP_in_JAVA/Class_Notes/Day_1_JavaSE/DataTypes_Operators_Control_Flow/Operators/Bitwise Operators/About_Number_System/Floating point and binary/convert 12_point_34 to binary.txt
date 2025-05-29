@@ -1,0 +1,56 @@
+if the number given is 12.34
+	how will you calculate its binary?
+
+12 is an integer part and .34 is a fractional part.
+
+
+first calculate binary of 12
+
+			8	4	2	1
+			1	1	0	0
+
+so, binary of 12 is 1100
+
+now let's see  .34
+
+.34*2
+	0.68
+			integer part		fraction part
+			   0			.68
+
+.68*2
+	1.36
+			   1			.36
+
+.36*2
+	0.72		   0			.72
+
+.72*2
+	1.44		   1			.44
+
+.44*2
+	0.88		   0			.88
+
+.88*2
+	1.76		   1			.76
+
+.76*2
+	1.52		   1			.52
+
+.52*2
+	1.04		   1			.04
+
+.04*2
+	0.08		   0			.08
+
+0.08*2
+	0.16		   0			.16
+
+
+note:- here we have calculated upto 10 digits.
+
+so binary of 0.34   is .0101011100
+we've already calculated binary of 12 i.e.   1100
+
+Hence binary of 12.34 is
+			1100.0101011100

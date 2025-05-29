@@ -1,0 +1,67 @@
+1)	display a table of a particular number           
+2)	declare two numbers and one operator as a character. e.g. '+'
+using switch... case check which operator is declared and accordingly perform the action.
+3)	Display numbers  1 to 10 using loop
+4)	Display numbers from 3 to 30 except number 24  using loop.
+5)	Using if…….else if….  Else,  display whether result is  fail, pass, second class , first class, Distinction etc.  
+
+6) display all prime numbers between 3 to 30
+
+7) using nested for loop display following :
+
+A  a
+A  b
+A  c
+
+B  a
+B  b
+B  c
+
+C  a
+C  b
+C  c
+
+8) solve following patten programs:
+
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+
+
+       * * * * 
+        * * * 
+         * * 
+          * 
+
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+
+
+11) display all prime numbers between 3 to 30
+
+13) using nested for loop display following :
+
+A  a
+A  b
+A  c
+
+B  a
+B  b
+B  c
+
+C  a
+C  b
+C  c
+
+
+

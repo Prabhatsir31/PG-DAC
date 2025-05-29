@@ -1,0 +1,17 @@
+public static void main(String args[])   
+	{   
+		int x = 23;   
+		System.out.println(Integer.toBinaryString(x));
+		System.out.println(Integer.toHexString(x));
+		System.out.println(Integer.toOctalString(x));
+	}  
+
+
+other methods are 
+
+
+static String	toHexString(int i)
+Returns a string representation of the integer argument as an unsigned integer in base 16.
+
+static String	toOctalString(int i)
+Returns a string representation of the integer argument as an unsigned integer in base 8.

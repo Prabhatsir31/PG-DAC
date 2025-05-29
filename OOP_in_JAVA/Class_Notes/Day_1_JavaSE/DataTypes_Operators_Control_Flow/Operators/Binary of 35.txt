@@ -1,0 +1,25 @@
+devision	number			remainder
+by
+
+
+
+2		35		    	    1
+		17		    	    1
+2		8		    	    0
+2		4		    	    0
+2		2		    	    0
+2		1 			    1	
+		0 (start from here)
+
+thus binary of 35 is
+
+0100011
+
+lets check.....
+
+0	1	0	0	0	1	1
+
+2[6]	2[5]	2[4]	2[3]	2[2]	2[1]	2[0]
+
+
+32  +	0  +	0   +	0   +	2   +	1	= 35

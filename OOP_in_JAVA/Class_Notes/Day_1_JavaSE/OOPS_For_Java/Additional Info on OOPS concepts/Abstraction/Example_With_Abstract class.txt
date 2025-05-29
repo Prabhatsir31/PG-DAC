@@ -1,0 +1,73 @@
+// Abstract class
+abstract class Animal {
+    // Abstract method (no implementation)
+    abstract void makeSound();
+    
+    abstract void move();
+    
+    // Concrete method (implemented in abstract class)
+    public void breathe() {
+        System.out.println("Breathing...");
+    }
+}
+
+// Dog class inherits from Animal (abstract class)
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+
+    @Override
+    void move() {
+        System.out.println("Dog runs");
+    }
+}
+
+// Cat class inherits from Animal (abstract class)
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow");
+    }
+
+    @Override
+    void move() {
+        System.out.println("Cat walks");
+    }
+}
+
+public class Main {
+    static void perform(Animal ref) // actual code for abstraction
+    {
+	ref.makeSound();  // Output: Bark or Meow
+        ref.move();       // Output: Dog runs or Cat runs
+        ref.breathe();    // Output: Breathing...
+    }
+    public static void main(String[] args) 
+    {
+        Dog myDog = new Dog();
+        Cat myCat = new Cat();
+	perform(myDog);
+	perform(myCat);
+     
+    }
+}
+
+
+Explanation:
+
+In this program, we use an abstract class Animal to model the general behavior of all animals. The Animal class declares two methods: makeSound() and move(). However, these methods don’t have actual behavior in the Animal class itself; they are abstract methods, which means that any specific animal class (like Dog or Cat) must provide its own implementation for these methods.
+
+This hides the complexity of how animals make sounds or move. For instance, we don’t need to know the details of how a dog runs or how a cat walks when we use the Animal reference. We just know that calling makeSound() will result in a sound (bark or meow) and calling move() will result in some form of movement (running or walking).
+
+By doing this, we don’t have to worry about the specifics of each animal every time we use the Animal type. All we need to know is that an Animal can perform these actions, and the specific implementation is handled by the subclass, which is where the complexity is abstracted away.
+
+For example, the perform method can take any object that extends the Animal class. Whether it's a Dog or a Cat, the perform method can call makeSound() and move() without needing to know the specific type of animal. This is the key benefit of abstraction: you focus on what the animal does, not how it does it.
+
+
+The perform method abstracts away the details of each animal’s implementation. It doesn’t need to know whether it's a Dog or a Cat; it just calls the methods defined in the Animal class and lets the implementation class handle the specifics.
+
+The complexity of how an animal makes a sound or moves is hidden inside the Dog and Cat classes, allowing you to interact with animals in a simplified, uniform way.
+
+Abstraction of common behavior: The breathe() method provides a common implementation for all animals. The user doesn’t need to know how breathing is done internally for each animal, just that all animals breathe in the same way.

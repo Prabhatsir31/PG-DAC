@@ -1,0 +1,72 @@
+when you divide a number , you get quotient and remainder.
+you have to keep on dividing till you get quotient zero (0).
+
+ /*
+		Binary of 35
+
+devision	number			remainder
+by
+
+
+
+2		35		    	    1
+		17		    	    1
+2		8		    	    0
+2		4		    	    0
+2		2		    	    0
+2		1 			    1	
+		0 (start from here)
+
+thus binary of 35 is
+
+0100011
+
+lets check.....
+
+0	1	0	0	0	1	1
+
+2[6]	2[5]	2[4]	2[3]	2[2]	2[1]	2[0]
+
+
+32  +	0  +	0   +	0   +	2   +	1	= 35
+
+*/
+
+
+/*
+			Octal of 35
+	
+	8	35	
+	8	4	3
+	8	0	4
+
+
+	0	4	3
+
+	8[2]	8[1]	8[0]
+
+	    32  +	3
+*/
+
+	
+/*
+				Hexadecimal of 35
+
+
+	16	35	
+	16	2	3
+	16	0	2
+
+
+	0 	2	3
+
+	16[2]	16[1]	16[0]
+
+	  	32    +	3
+
+*/
+	
+	
+
+
+	

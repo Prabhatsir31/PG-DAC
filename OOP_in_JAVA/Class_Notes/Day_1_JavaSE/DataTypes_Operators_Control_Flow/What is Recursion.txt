@@ -1,0 +1,29 @@
+Recursion is a process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function. Using a recursive algorithm, certain problems can be solved quite easily. A few Java recursion examples are Towers of Hanoi (TOH), Inorder/Preorder/Postorder Tree Traversals, DFS of Graph, etc.
+
+
+Example 1:
+
+
+package core1;
+
+public class Main {
+	
+	static int factorial(int k)
+	{
+		if(k==1)
+		{
+			return 1;
+		}
+		else
+		{
+			return k*factorial(k-1);
+		}
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(factorial(5));
+	}
+}
+
+

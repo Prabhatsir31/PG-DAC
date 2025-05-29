@@ -1,0 +1,177 @@
+a
+ab
+abc
+
+
+    A B C D E F 
+     A B C D E 
+      A B C D 
+       A B C 
+        A B 
+         A 
+
+
+         A
+        A B
+       A B C
+      A B C D
+     A B C D E
+    A B C D E F 
+     A B C D E 
+      A B C D 
+       A B C 
+        A B 
+         A 
+
+
+      ABCDEF
+       BCDEF
+        CDEF
+         DEF
+          EF
+           F
+           F
+          EF
+         DEF
+        CDEF
+       BCDEF
+      ABCDEF
+
+
+
+        A
+       ABA
+      ABCBA
+     ABCDCBA
+    ABCDEDCBA
+   ABCDEFEDCBA
+
+
+
+     	AAAAAA
+	AAAAAB
+	AAAACC
+	AAADDD
+	AAEEEE
+	AFFFFF
+	GGGGGG
+
+
+	BCDEFEDCBA
+	 BCDEFEDCB
+	  CDEFEDC
+	   DEFED
+	    EFE
+	     F
+
+
+      A 
+     B B 
+    C C C 
+   D D D D 
+  E E E E E 
+ F F F F F F
+
+
+	      J
+   	  AAA
+  	VVVVV
+               AAAAAAA
+
+
+
+	                  A      
+		CB     
+		DEF    
+		JIHG   
+		KLMNO  
+
+
+
+                A          
+               BC         
+              FED        
+             GHIJ     
+           ONMLK 
+
+
+                ABCDE          
+                BCDEF        
+                CDEFG        
+                DEFGH     
+                EFGHI  
+
+
+                ABCDEDCBA          
+	ABCDCBA        
+	  ABCBA        
+	    ABA     
+	      A   
+
+
+      F 
+     E F 
+    D E F 
+   C D E F 
+  B C D E F 
+ A B C D E F 
+
+
+       A 
+      B G    
+     C H M 
+    D I N S 
+   E J O T Y 
+  F K P U Z _
+
+
+       A 
+      B C    
+     D E F 
+    G H I J 
+   K L M N O 
+  P Q R S T U
+
+
+       ABCDEF
+       ABCDE
+       ABCD
+       ABC
+       AB
+       A
+       AB
+       ABC
+       ABCD
+       ABCDE
+       ABCDEF
+
+
+
+     J
+     I H
+     G F E
+     D C B A
+
+
+     E E E E E
+     E D D D D
+     E D C C C
+     E D C B B
+     E D C B A
+
+ A
+ BD   
+ CFI
+ DHLP
+ EJOTY    
+ FLRX
+ GNU
+ HP
+ I
+
+
+ A
+ BF   
+ CGJ  
+ DHKM  
+ EILNO

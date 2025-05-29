@@ -1,0 +1,10 @@
+Purpose of Number System
+Types of Number Systems
+Binary, Octal and Hexadecimal of 35
+MSB vs LSB
+Short cut to find out binary of a given number
+Binary Addition
+How to find out binary of negative number
+Binary of -42 using both the methods
+
+Floating point and binary

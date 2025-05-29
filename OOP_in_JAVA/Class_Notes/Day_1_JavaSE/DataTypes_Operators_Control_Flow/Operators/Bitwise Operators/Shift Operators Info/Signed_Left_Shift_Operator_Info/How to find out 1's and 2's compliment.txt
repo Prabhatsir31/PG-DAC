@@ -1,0 +1,32 @@
+given binary representation is
+
+11010110
+
+its 1's compliment ( convert 1 to 0 and 0 to 1) would be
+
+00101001
+
+
+now in order to find out 2's compliment
+	first step is to convert it into 1's compliment
+		i.e.
+		00101001
+	add 1 to it. So,
+		00101001
+	      +	  1
+
+in binary 1+1 is 0 ,  
+	   0+1 is 1
+
+so in the above addition result 
+
+	00101001
+      +        1
+	       
+from the right side,
+	1+1  is  0
+	1 gets carried to second last element i.e. 0
+		0+1  is 1
+	and then other digits remain as it is. Hence the result is
+	
+00101010  [ is the 2's compliment of above binary representation]

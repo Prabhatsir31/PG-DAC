@@ -1,0 +1,29 @@
+suppose you want to find out binary of -42
+
+	first step
+		just ignore minus (-) sign and find out binary of 42
+
+2  42
+    21 0
+    10 1
+    5  0
+    2  1
+    1  0
+    0  1
+
+0101010
+
+1010101  [ 1's compliment of above binary representation ]
++     1
+
+1010110			binary of -42
+
+
+second method (shortcut i.e. without deriving 1's complement of a binary)
+
+	0101010        // binary of 42
+
+		just start from the right side and write all the numbers as it is (from the right side itself) till you get first 1. After that flip all the digits in the binary.
+ 
+	      1010110    // 2's complement of 42's binary or binary of -42
+

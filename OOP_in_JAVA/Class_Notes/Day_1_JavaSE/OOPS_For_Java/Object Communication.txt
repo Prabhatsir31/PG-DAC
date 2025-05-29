@@ -1,0 +1,5 @@
+In object-oriented programming (OOP), objects communicate with each other by sending messages. This is typically achieved through method calls, where one object invokes a method on another object to request some action or information. 
+e.g.
+
+Student object can communicate Course object in order to find out course name,duration and fees whereas Course object can communicate with Student in order to find out his qualification.
+

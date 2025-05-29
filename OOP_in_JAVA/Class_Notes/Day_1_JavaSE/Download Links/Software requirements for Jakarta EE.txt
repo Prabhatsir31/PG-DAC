@@ -1,0 +1,53 @@
+download Java 17 from 
+	https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+
+Windows x64 Installer			153.28 MB
+	
+https://download.oracle.com/java/17/archive/jdk-17.0.7_windows-x64_bin.exe (sha256 )
+
+
+install Java 17 and set its "path"  with the value
+
+	C:\Program Files\Java\jdk-17\bin;
+
+and "java_home" variable with the value
+	C:\Program Files\Java\jdk-17
+
+
+after doing this , open a command prompt and give "javac" command. Make sure it doesn't give you "unrecognized command" error.
+
+
+download Eclipse from 
+
+	https://www.eclipse.org/downloads/packages/release/2023-03/r
+
+Eclipse IDE for Enterprise Java and Web Developers
+	Version: 2023-03 (4.27.0)
+
+after downloading unzip the zip file inside "e", or "d" drive.
+
+Try "Hello World" Java program in this eclipse version , make sure Java 17 version is selected while creating Java project.
+
+
+download "Apache Tomcat 10.1" version from
+	https://tomcat.apache.org/download-10.cgi
+
+		64-bit Windows zip (pgp, sha512)
+
+
+download  "maven 3.9.2" from
+	https://maven.apache.org/download.cgi
+			apache-maven-3.9.2-bin.zip
+
+download  "Spring Tool Suite 4" from
+	https://spring.io/tools
+		Spring Tools 4 for Eclipse
+			4.18.1 WINDOWS X86_64
+
+how to use them I'll explain in the lecture itself.
+
+
+
+
+
+

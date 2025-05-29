@@ -1,0 +1,14 @@
+/* Program to implementation, Tight Coupling.
+In case of following example, Soldier class is tightly coupled with Gun. In future suppose we want to replace Gun with Sword, we will have to make changes in Soldier class, ie it gives us maintenance drawback.
+*/
+
+class Soldier
+{
+	private Gun obj1=new Gun();
+	public void action()
+	{
+		obj1.attack();
+	}
+}
+
+this is called as "Program to implementation" because inside Soldier class we create an instance of a child class i.e. Gun.
