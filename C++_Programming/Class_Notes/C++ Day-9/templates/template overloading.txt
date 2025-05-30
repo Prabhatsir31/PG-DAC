@@ -1,0 +1,28 @@
+//overloading function template
+#include<iostream>
+using namespace std;
+template <class type1,class type2>
+void add(type1 a,type2 b)
+{
+	cout<<endl<<a+b<<endl;
+}
+
+template <class type1,class type2,class type3>
+void add(type1 a,type2 b,type3 c)
+{
+	cout<<endl<<a+b+c<<endl;
+}
+void main()
+{
+	add(20,7.8);
+	add('A',4.5);
+	add(34.30,12);
+	add(20,30);
+	add(2,'A',3.5);
+}
+
+
+
+
+
+

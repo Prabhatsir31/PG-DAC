@@ -1,0 +1,78 @@
+/*
+f.write(charvect.data(), charvect.size()):
+
+Writes the data from charvect (the vector of characters)
+to the file.
+
+charvect.data() gives the pointer to the character array
+inside the vector.
+
+charvect.size() tells how many bytes (characters) to write.
+
+
+f.read(temp.data(), temp.size()):
+
+Reads data from the file and stores it in the temp vector.
+temp.data() provides the memory location where the data
+will be placed.
+temp.size() specifies how many bytes to read from the file.
+
+
+
+*/
+
+#include<iostream>
+#include<vector>
+#include<fstream>
+using namespace std;
+
+int main() {
+    std::vector<char> charvect, temp;
+    std::vector<char>::iterator myiter;
+
+    // Fill vector with characters A-J (ASCII 65-74)
+    for (int i = 0; i < 10; i++) {
+        charvect.push_back(65 + i); // Add 'A' to 'J' (ASCII 65 to 74)
+    }
+
+    // Print original vector content
+    cout << "Original vector contents: " << endl;
+    for (myiter = charvect.begin(); myiter != charvect.end(); myiter++) {
+        cout << *myiter << endl;
+    }
+
+    // Open the file in append and binary mode
+    fstream f("C:\\temp\\charvect.txt",ios::out | ios::ate | ios::binary);
+
+    if (!f.is_open()) {
+        cerr << "Failed to open file!" << endl;
+        return 1;  // Exit with error if the file cannot be opened
+    }
+
+    // Write vector data to the file
+    f.write(charvect.data(), charvect.size());  // Write binary data to the file
+
+    f.close();
+    f.open("C:\\temp\\charvect.txt", ios::in);
+    cout << "\n\nLet's read from the file" << endl;
+
+    // Resize temp vector to the same size as charvect to hold the data
+    temp.resize(charvect.size());  // Ensure temp has enough space
+
+    // Read data from the file into temp vector
+    f.read(temp.data(), temp.size());  // Read binary data into temp
+
+    cout << "Done reading from file" << endl;
+
+    // Print the read data
+    cout << "Contents read from file: " << endl;
+    for (myiter = temp.begin(); myiter != temp.end(); myiter++) {
+        cout << *myiter << endl;
+    }
+
+    cout << "Size of temp is: " << temp.size() << endl;
+
+    f.close();  // Close the file
+
+    return 0;
+}

@@ -1,0 +1,439 @@
+MyClass<int>::MyClass<int>
+PUBLIC	?disp@?$MyClass@H@@QAEXXZ			; MyClass<int>::disp
+PUBLIC	??0?$MyClass@D@@QAE@D@Z				; MyClass<char>::MyClass<char>
+PUBLIC	?disp@?$MyClass@D@@QAEXXZ			; MyClass<char>::disp
+PUBLIC	??0?$MyClass@N@@QAE@N@Z				; MyClass<double>::MyClass<double>
+PUBLIC	?disp@?$MyClass@N@@QAEXXZ			; MyClass<double>::disp
+
+
+
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+?disp@?$MyClass@N@@QAEXXZ PROC				; MyClass<double>::disp, COMDAT
+; _this$ = ecx
+
+; 20   : 		{
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 21   : 			cout<<endl<<a<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	edi, esp
+	mov	ecx, DWORD PTR _this$[ebp]
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR [ecx]
+	movsd	QWORD PTR [esp], xmm0
+	mov	ebx, esp
+	mov	edx, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	edx
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	ebx, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@N@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 22   : 		}
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?disp@?$MyClass@N@@QAEXXZ ENDP				; MyClass<double>::disp
+_TEXT	ENDS
+
+
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_a$ = 8							; size = 8
+??0?$MyClass@N@@QAE@N@Z PROC				; MyClass<double>::MyClass<double>, COMDAT
+; _this$ = ecx
+
+; 15   : 		MyClass(type1 a)
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 16   : 		{
+; 17   : 			this->a=a;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	movsd	xmm0, QWORD PTR _a$[ebp]
+	movsd	QWORD PTR [eax], xmm0
+
+; 18   : 		}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+??0?$MyClass@N@@QAE@N@Z ENDP				; MyClass<double>::MyClass<double>
+_TEXT	ENDS
+
+
+
+
+
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+?disp@?$MyClass@D@@QAEXXZ PROC				; MyClass<char>::disp, COMDAT
+; _this$ = ecx
+
+; 20   : 		{
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 21   : 			cout<<endl<<a<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	movzx	edx, BYTE PTR [ecx]
+	push	edx
+	mov	edi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	push	eax
+	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@D@Z ; std::operator<<<std::char_traits<char> >
+	add	esp, 8
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 22   : 		}
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?disp@?$MyClass@D@@QAEXXZ ENDP				; MyClass<char>::disp
+_TEXT	ENDS
+
+
+
+
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_a$ = 8							; size = 1
+??0?$MyClass@D@@QAE@D@Z PROC				; MyClass<char>::MyClass<char>, COMDAT
+; _this$ = ecx
+
+; 15   : 		MyClass(type1 a)
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 16   : 		{
+; 17   : 			this->a=a;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	cl, BYTE PTR _a$[ebp]
+	mov	BYTE PTR [eax], cl
+
+; 18   : 		}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??0?$MyClass@D@@QAE@D@Z ENDP				; MyClass<char>::MyClass<char>
+_TEXT	ENDS
+
+
+
+
+
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+?disp@?$MyClass@H@@QAEXXZ PROC				; MyClass<int>::disp, COMDAT
+; _this$ = ecx
+
+; 20   : 		{
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 21   : 			cout<<endl<<a<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	edi, esp
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	push	edx
+	mov	ebx, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	ebx, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 22   : 		}
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?disp@?$MyClass@H@@QAEXXZ ENDP				; MyClass<int>::disp
+_TEXT	ENDS
+
+
+
+
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+_a$ = 8							; size = 4
+??0?$MyClass@H@@QAE@H@Z PROC				; MyClass<int>::MyClass<int>, COMDAT
+; _this$ = ecx
+
+; 15   : 		MyClass(type1 a)
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 16   : 		{
+; 17   : 			this->a=a;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _a$[ebp]
+	mov	DWORD PTR [eax], ecx
+
+; 18   : 		}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??0?$MyClass@H@@QAE@H@Z ENDP				; MyClass<int>::MyClass<int>
+_TEXT	ENDS
+
+
+
+;	COMDAT _main
+_TEXT	SEGMENT
+_s3$ = -36						; size = 8
+_s2$ = -17						; size = 1
+_s1$ = -8						; size = 4
+_main	PROC						; COMDAT
+
+; 25   : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-232]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+
+; 26   : 	MyClass<int>s1(10);
+
+	push	10					; 0000000aH
+	lea	ecx, DWORD PTR _s1$[ebp]
+	call	??0?$MyClass@H@@QAE@H@Z			; MyClass<int>::MyClass<int>
+
+; 27   : 	MyClass<char>s2('A');
+
+	push	65					; 00000041H
+	lea	ecx, DWORD PTR _s2$[ebp]
+	call	??0?$MyClass@D@@QAE@D@Z			; MyClass<char>::MyClass<char>
+
+; 28   : 	MyClass<double>s3(10.5);
+
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR __real@4025000000000000
+	movsd	QWORD PTR [esp], xmm0
+	lea	ecx, DWORD PTR _s3$[ebp]
+	call	??0?$MyClass@N@@QAE@N@Z			; MyClass<double>::MyClass<double>
+
+; 29   : 	s1.disp();
+
+	lea	ecx, DWORD PTR _s1$[ebp]
+	call	?disp@?$MyClass@H@@QAEXXZ		; MyClass<int>::disp
+
+; 30   : 	s2.disp();
+
+	lea	ecx, DWORD PTR _s2$[ebp]
+	call	?disp@?$MyClass@D@@QAEXXZ		; MyClass<char>::disp
+
+; 31   : 	s3.disp();
+
+	lea	ecx, DWORD PTR _s3$[ebp]
+	call	?disp@?$MyClass@N@@QAEXXZ		; MyClass<double>::disp
+
+; 32   : }
+
+	xor	eax, eax
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN7@main
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 232				; 000000e8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	3
+$LN7@main:
+	DD	3
+	DD	$LN6@main
+$LN6@main:
+	DD	-8					; fffffff8H
+	DD	4
+	DD	$LN3@main
+	DD	-17					; ffffffefH
+	DD	1
+	DD	$LN4@main
+	DD	-36					; ffffffdcH
+	DD	8
+	DD	$LN5@main
+$LN5@main:
+	DB	115					; 00000073H
+	DB	51					; 00000033H
+	DB	0
+$LN4@main:
+	DB	115					; 00000073H
+	DB	50					; 00000032H
+	DB	0
+$LN3@main:
+	DB	115					; 00000073H
+	DB	49					; 00000031H
+	DB	0
+_main	ENDP
+_TEXT	ENDS
+
+
+
+
+
+
+
+
+

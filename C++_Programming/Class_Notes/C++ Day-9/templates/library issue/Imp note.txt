@@ -1,0 +1,4 @@
+we can not distribute function templates and class templates in object libraries.
+
+Reason:-
+we can compile a function template or class template into object code(.obj file). The code that contains a call to the function template or the code that creates an object from a class template can get compiled. This is because the compiler merely checks whether the call matches the declaration (in case of function template) and whether the object definition matches class declaration (in case of class template). Since the function template and the class template definitions are not found, the compiler leaves it to the linker to resolve this. However, during linking, linker doesn't find the matching definitions for the function call or a matching definition for the object creation. In short  the expanded versions of templates are not found in the object library. Hence the linker reports error.

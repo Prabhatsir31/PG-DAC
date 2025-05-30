@@ -1,0 +1,1 @@
+Namespaces are used in the C++ programming language to create a separate region for a group of variables, functions and classes etc. Namespaces are needed because there can be many functions, variables for classes in one program and they can conflict with the existing names of variables, functions and classes. C++ uses namespace to avoid the conflicts.

@@ -1,0 +1,65 @@
+		header file
+
+			Header1.h
+namespace group1
+{
+class First
+{
+private:
+	int num;
+public:
+	First();
+	First(int);
+	~First();
+	void setNum(int);
+	int getNum();
+};
+}
+
+
+
+			library code
+
+#include<iostream>
+#include "Header1.h"
+using namespace std;
+group1::First::First()
+{
+	cout<<"in no-arg const"<<endl;
+	num=0;
+}
+group1::First::First(int num)
+{
+	cout<<"in parameterized const"<<endl;
+	this->num=num;
+}
+group1::First::~First()
+{
+	cout<<"In destructor"<<endl;
+}
+void group1::First::setNum(int num)
+{
+	this->num=num;
+}
+int group1::First::getNum()
+{
+	return num;
+}
+
+
+
+				client code
+#include<iostream>
+#include "E:\nitin\My_C++\client\Header1.h"
+using namespace std;
+using namespace group1;
+void main()
+{
+	cout<<"namespace library"<<endl;
+	First f1;
+	f1.setNum(200);
+	cout<<f1.getNum()<<endl;
+	First s1(300);
+	cout<<s1.getNum()<<endl;
+}
+

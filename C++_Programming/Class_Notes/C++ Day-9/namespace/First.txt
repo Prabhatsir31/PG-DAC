@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+/*namespaces
+
+purpose is to localize the names of identifiers to avoid name
+ conflicts. c++ library has default namespace "std"
+ */
+
+namespace com_sun
+{
+	class myclass
+	{
+	public:
+		void disp()
+		{
+			cout << endl << "in disp of myclass of com_sun" << endl;
+		}
+	};
+}
+namespace com_oracle
+{
+	class myclass
+	{
+	public:
+		void disp()
+		{
+			cout << endl << "in disp of myclass of com_oracle" << endl;
+		}
+	};
+}
+int main()
+{
+	com_sun::myclass m1;
+	m1.disp();
+
+	com_oracle::myclass m2;
+	m2.disp();
+}

@@ -1,0 +1,22 @@
+namespace com_sun
+{
+	namespace dev
+	{
+		class myclass
+		{
+		public:
+			void disp()
+			{
+				cout << endl << "in disp of myclass of com_sun" << endl;
+			}
+		};
+	}
+}
+
+com_sun::dev::myclass m1;
+	m1.disp();
+
+or
+
+using namespace com_sun::dev;
+	myclass m1;

@@ -1,0 +1,10 @@
+			STL
+		Standard Template Library
+
+it consists of inbuilt class templates for various differnt data structures like vector,list,map etc. It also consists of iterators ( for traversing through the data structures) and algorithms ( specific tasks like count, max,min etc).
+
+what's the main difference between STL classes and normal array?
+
+normal array is static in nature , size is fixed.
+
+STL classes are dynamic in nature, meaning we can always increase the size of internal array.

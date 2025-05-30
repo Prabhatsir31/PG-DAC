@@ -1,0 +1,35 @@
+/*
+Sometimes we have to specialize template for particular data type
+
+Template specialization in C++ allows you to define different implementations for a template based on the type of the template parameter. This is useful when you need to handle different data types in a way that is specific to those types, while still maintaining the benefits of using templates.
+*/
+
+#include <iostream>
+using namespace std;
+
+// Primary template
+template <typename T>
+void print(T value) {
+    cout << "General template: " << value << endl;
+}
+
+// Full specialization for int
+template <>
+void print<int>(int value) {
+    cout << "Specialized template for int: " << value << endl;
+}
+
+int main() {
+    print(5);      // Will call the specialized version for int
+    print(3.14);   // Will call the general template version
+
+    return 0;
+}
+
+
+/*
+
+How Specialization still maintains benefits of template?
+
+The primary template [ void print(T value) ] still handles all types generically, and you're not manually writing separate functions for every possible type.
+The specialized template for int [void print<int>(int value)]  is just an optimization or customization, but the general template still works for any type other than int. You don't lose the flexibility of using the template with other types like double, char, etc.

@@ -1,0 +1,15 @@
+template<class type>
+class myclass
+{
+	private:
+		type a;
+	public:
+		myclass(type a)
+		{
+			this->a=a;
+		}
+		void disp()
+		{
+			cout<<a<<endl;
+		}
+};

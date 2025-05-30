@@ -1,0 +1,57 @@
+client program will give linking error.
+
+
+
+		myhead.h
+
+template<class type>
+class myclass
+{
+	private:
+		type a;
+	public:
+		myclass(type a);
+		void disp();
+};
+
+
+		library (develop.cpp)
+
+#include<iostream.h>
+#include "D:\cprog\developer\myhead.h"
+template<class type>
+myclass<type>::myclass(type a)
+{
+	this->a=a;
+}
+template<class type>
+void myclass<type>::disp()
+{
+	cout<<a<<endl;
+}
+
+
+		client
+
+
+#include<iostream.h>
+#include "D:\cprog\developer\myhead.h"
+void main()
+{
+	myclass<int> m1(500);
+	m1.disp();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

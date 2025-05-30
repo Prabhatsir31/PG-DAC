@@ -1,0 +1,134 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Person
+{
+    int age;
+    char* pName;
+
+    public:
+        Person(): pName(0),age(0)
+        {
+        }
+        Person(char* pName, int age)
+        {
+			this->pName=new char[strlen(pName)+1];
+			strcpy(this->pName,pName);
+			this->age=age;
+        }
+        ~Person()
+        {
+			cout<<"inside dest"<<endl;
+			delete pName;
+        }
+		Person(Person &ref)
+		{
+			cout<<"copy const"<<endl;
+			pName=new char[strlen(ref.pName)+1];
+			strcpy(pName,ref.pName);
+			age=ref.age;
+		}
+        void display()
+        {
+            cout<<pName<<"\t"<<age<<endl;
+        }
+        void shout()
+        {
+            cout<<"aaaaaaaaaaaoooooooooo"<<endl;
+        } 
+};
+
+class Vehicle
+{
+    int speed;
+    char* vName;
+
+    public:
+        Vehicle(): vName(0),speed(0)
+        {
+        }
+        Vehicle(char* vName, int speed)
+        {
+			this->vName=new char[strlen(vName)+1];
+			strcpy(this->vName,vName);
+			this->speed=speed;
+        }
+        ~Vehicle()
+        {
+			cout<<"inside dest"<<endl;
+			delete vName;
+        }
+		Vehicle(Vehicle &ref)
+		{
+			cout<<"copy const"<<endl;
+			vName=new char[strlen(ref.vName)+1];
+			strcpy(vName,ref.vName);
+			speed=ref.speed;
+		}
+        void display()
+        {
+            cout<<vName<<"\t"<<speed<<endl;
+        }
+        void start()
+		{
+			cout<<vName<<"\t"<<"started"<<endl;
+		}
+};
+template<class Type>
+class SP
+{
+private:
+    Type*    pData; // pointer to generic class
+public:
+    SP(Type* pValue) 
+    {
+		pData=new Type(*pValue);
+		delete pValue;
+    }
+    ~SP()
+    {
+        // pointer no longer requried
+        delete pData;
+    }
+
+    Type& operator*()
+    {
+        return *pData;
+    }
+
+    Type* operator->()
+    {    
+        return pData;
+    }
+};
+
+int main()
+{
+	SP<Person>s(new Person("abc",10));
+	s->display();
+	s->shout();
+	(*s).display();
+	(*s).shout();
+
+	SP<Vehicle>s1(new Vehicle("Car",100));
+	s1->display();
+	s1->start();
+	(*s1).display();
+	(*s1).start();
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

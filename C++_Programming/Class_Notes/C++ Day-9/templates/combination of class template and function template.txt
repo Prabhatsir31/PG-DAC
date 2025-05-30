@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+template<class T>
+class myclass
+{
+private:
+	T ref;
+public:
+	myclass(T ref)
+	{
+		this->ref = ref;
+	}
+	void disp1()
+	{
+		cout << endl << "in disp1\t"<<ref<<endl;
+	}
+	template<class type>
+	void disp2(type a)
+	{
+		cout << "\n in template fun\t" << a << endl;
+	}
+};
+int main()
+{
+	myclass<int> m(100);
+	m.disp1();
+	m.disp2(4.5);
+}

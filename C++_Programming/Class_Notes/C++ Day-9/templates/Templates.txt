@@ -1,0 +1,37 @@
+Template is a mechanism that makes it possible to use one function or class to handle many different data types.By using templates,we can design a single class/function for each type. When used with functions they are known as "function templates",whereas when used with classes they are called "class templates". 
+
+
+Templates
+
+are used to write generic  functions and generic classes
+
+function overloading -writing same operation on different types. 
+
+Drawbacks of Function Overloading
+1)Rewriting the same function body over and over for different type is time consuming.
+2)The program consumes more disk space
+3)If we locate any error in one such function,we need to remember to correct it in each function body.
+
+With template you can write one generic function,which can serve any data type
+
+we can also write class for generic purpose
+i.e. a class which can create any type of array e.g. int ,char ,double etc.
+
+syntax for generic function is
+
+template<typename type>
+ret.type function(arg/s)
+{
+}
+template<class type>
+ret.type function(arg/s)
+{
+}
+
+
+when you create a template function,you are in essence ,allowing the compiler to generate as many different versions of that function as are necessary for handling the various ways that your program calls the function.
+
+
+
+
+

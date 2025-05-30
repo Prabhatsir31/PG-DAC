@@ -1,0 +1,245 @@
+PUBLIC	_main
+PUBLIC	??$add@H@@YAXHH@Z				; add<int>
+PUBLIC	??$add@D@@YAXDD@Z				; add<char>
+PUBLIC	??$add@N@@YAXNN@Z				; add<double>
+PUBLIC	??$construct@PADAAPAD@?$_Wrap_alloc@V?
+
+
+
+_TEXT	SEGMENT
+_a$ = 8							; size = 8
+_b$ = 16						; size = 8
+??$add@N@@YAXNN@Z PROC					; add<double>, COMDAT
+
+; 11   : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+
+; 12   : 	cout<<endl<<a+b<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	movsd	xmm0, QWORD PTR _a$[ebp]
+	addsd	xmm0, QWORD PTR _b$[ebp]
+	mov	edi, esp
+	sub	esp, 8
+	movsd	QWORD PTR [esp], xmm0
+	mov	ebx, esp
+	mov	ecx, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	ecx
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	ebx, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@N@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 13   : }
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$add@N@@YAXNN@Z ENDP					; add<double>
+_TEXT	ENDS
+
+
+
+_TEXT	SEGMENT
+_a$ = 8							; size = 1
+_b$ = 12						; size = 1
+??$add@D@@YAXDD@Z PROC					; add<char>, COMDAT
+
+; 11   : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+
+; 12   : 	cout<<endl<<a+b<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	movsx	ecx, BYTE PTR _a$[ebp]
+	movsx	edx, BYTE PTR _b$[ebp]
+	add	ecx, edx
+	mov	edi, esp
+	push	ecx
+	mov	ebx, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	ebx, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 13   : }
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$add@D@@YAXDD@Z ENDP					; add<char>
+_TEXT	ENDS
+
+
+
+_TEXT	SEGMENT
+_a$ = 8							; size = 4
+_b$ = 12						; size = 4
+??$add@H@@YAXHH@Z PROC					; add<int>, COMDAT
+
+; 11   : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+
+; 12   : 	cout<<endl<<a+b<<endl;
+
+	mov	esi, esp
+	mov	eax, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	eax
+	mov	ecx, DWORD PTR _a$[ebp]
+	add	ecx, DWORD PTR _b$[ebp]
+	mov	edi, esp
+	push	ecx
+	mov	ebx, esp
+	mov	edx, DWORD PTR __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z
+	push	edx
+	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	ebx, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	mov	ecx, eax
+	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 13   : }
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$add@H@@YAXHH@Z ENDP					; add<int>
+_TEXT	ENDS
+
+
+
+;	COMDAT _main
+_TEXT	SEGMENT
+_main	PROC						; COMDAT
+
+; 15   : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+
+; 16   : 	add(20,40);
+
+	push	40					; 00000028H
+	push	20					; 00000014H
+	call	??$add@H@@YAXHH@Z			; add<int>
+	add	esp, 8
+
+; 17   : 	add('A','b');
+
+	push	98					; 00000062H
+	push	65					; 00000041H
+	call	??$add@D@@YAXDD@Z			; add<char>
+	add	esp, 8
+
+; 18   : 	add(34.30,45.89);
+
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR __real@4046f1eb851eb852
+	movsd	QWORD PTR [esp], xmm0
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR __real@4041266666666666
+	movsd	QWORD PTR [esp], xmm0
+	call	??$add@N@@YAXNN@Z			; add<double>
+	add	esp, 16					; 00000010H
+
+; 19   : }
+
+	xor	eax, eax
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_main	ENDP
+_TEXT	ENDS
+
+

@@ -1,0 +1,47 @@
+// when object are stored in STL ,their copies are stored
+
+#include<iostream>
+#include<vector>
+using namespace std;
+class MyClass
+{
+	int num;
+public:
+	MyClass()
+	{
+		num = 0;
+	}
+	MyClass(int k)
+	{
+		num = k;
+		cout << endl << "In parameterized const\n";
+	}
+	MyClass(const MyClass& ref)
+	{
+		num = ref.num;
+		cout << "inside copy constructor\t" << endl;
+	}
+	void disp()
+	{
+		cout << endl << num << endl;
+	}
+	~MyClass()
+	{
+		cout << "inside MyClass destructor" << endl;
+	}
+};
+int main()
+{
+	vector<MyClass> v1;
+	v1.reserve(2); // set the capacity of vector
+	cout << "Capacity of v1 is\t" << v1.capacity() << endl;
+	MyClass m1(10), m2(20);
+	v1.push_back(m1);
+	v1.push_back(m2);
+
+	for (int i = 0; i < v1.size(); i++)
+	{
+		v1[i].disp();
+	}
+}
+

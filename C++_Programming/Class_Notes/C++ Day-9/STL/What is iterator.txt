@@ -1,0 +1,57 @@
+// the following iterator is defined inside vector template. 
+
+class iterator : public const_iterator {
+	public:
+		iterator()
+			: const_iterator() {}
+		iterator(size_t _O, _Vbase *_P)
+			: const_iterator(_O, _P) {}
+		reference operator*() const
+			{return (reference(_Off, _Ptr)); }
+		iterator& operator++()
+			{_Inc();
+			return (*this); }
+		iterator operator++(int)
+			{iterator _Tmp = *this;
+			_Inc();
+			return (_Tmp); }
+		iterator& operator--()
+			{_Dec();
+			return (*this); }
+		iterator operator--(int)
+			{iterator _Tmp = *this;
+			_Dec();
+			return (_Tmp); }
+		iterator& operator+=(difference_type _N)
+			{_Off += _N;
+			_Ptr += _Off / _VBITS;
+			_Off %= _VBITS;
+			return (*this); }
+		iterator& operator-=(difference_type _N)
+			{return (*this += -_N); }
+		iterator operator+(difference_type _N) const
+			{iterator _Tmp = *this;
+			return (_Tmp += _N); }
+		iterator operator-(difference_type _N) const
+			{iterator _Tmp = *this;
+			return (_Tmp -= _N); }
+		difference_type operator-(const iterator _X) const
+			{return (_VBITS * (_Ptr - _X._Ptr)
+				+ (difference_type)_Off
+				- (difference_type)_X._Off); }
+		reference operator[](difference_type _N) const
+			{return (*(*this + _N)); }
+		bool operator==(const iterator& _X) const
+			{return (_Ptr == _X._Ptr && _Off == _X._Off); }
+		bool operator!=(const iterator& _X) const
+			{return (!(*this == _X)); }
+		bool operator<(const iterator& _X) const
+			{return (_Ptr < _X._Ptr
+				|| _Ptr == _X._Ptr && _Off < _X._Off); }
+		bool operator>(const iterator& _X) const
+			{return (_X < *this); }
+		bool operator<=(const iterator& _X) const
+			{return (!(_X < *this)); }
+		bool operator>=(const iterator& _X) const
+			{return (!(*this < _X)); }
+		};

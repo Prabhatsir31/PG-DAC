@@ -1,0 +1,42 @@
+in case of all the following assignments u need to create header file which will have template ( function template or class template) which will be given to client application to use.
+
+1) Write a C++ template function max() that takes two arguments of any data type and returns the larger of the two.
+
+call this max() function from the main() function to find the largest number among two integers, two floats, and two strings.
+
+2) write a function template,which can accept anything as an argument and display it.
+It can also accept "Emp" class object as an argument.
+Now overload this function template, for int.
+
+3) write a function template,which can accept argument as any type of array( char,int or double) and sort it in ascending order.
+
+4) write a function template which will accept 3 different types of argument and return the total size of arguments passed.
+
+5) Write a template function show() that prints the type of the argument other than "int" and "double". 
+now provide template specializations for int and double which will print the message "in int method" and "in double method" before printing the data which is passed from main function.
+
+From main function call these show function by passing string, int ,char double etc. and check how this template specialization works.
+
+6) Write a template function swap() that swaps the values of two variables of any type.
+In the main() function, test swap() with different types such as int, double, and string. Make sure in the main function you cross check the values whether they are swapped or not.
+
+7) Create a template class Box with one data member value of any type.
+Implement a constructor to initialize value.
+Implement a member function getValue() that returns the value.
+In the main() function, create objects of Box with different types (e.g., int, float, and string) and display the values.
+
+8) write a class template , which can take any generic type display it and return the size of type passed.
+(hint : in this class template write two functions void disp() and int size() ).
+
+
+9) define a function template inside a class,which will display any given type.
+
+10)define a class "Emp" with "private int data=100"  
+write a function template,which can accept anything as an argument and display it.
+It can also accept "Emp" class object as an argument and display it 
+( Hint:- insertion operator overloading )
+
+
+11) Write a class template, which can take 3 different type of arguments. Do not define any constructor for this class template.
+class must have 3 setter methods and 3 getter methods.
+

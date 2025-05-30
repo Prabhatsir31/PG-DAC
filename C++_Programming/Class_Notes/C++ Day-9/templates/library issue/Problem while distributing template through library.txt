@@ -1,0 +1,45 @@
+		Header.h
+
+template<class type>
+void add(type,type);
+
+
+		Source.cpp
+
+#include "Header.h"
+#include<iostream>
+using namespace std;
+
+template<class type>
+void add(type a,type b)
+{
+	cout<<a+b<<endl;
+}
+
+the above Source.cpp file will be compiled successfully. compiler will mangle the function name as "add_type_type(type,type)" inside library.
+
+
+
+		App.cpp
+
+#include<iostream>
+using namespace std;
+#include "Header.h"
+
+void main()
+{
+	add(10,20);
+}
+
+the above App.cpp file will be compiled successfully. compiler will mangle Header.h content as
+
+	void add_int_int(int,int);
+
+and main function statement as
+
+	add_int_int(10,20);
+
+but when linker will try to resolve above function call inside library, it will give error. This is because inside library function is defined as "add_type_type(type,type)".
+
+
+
