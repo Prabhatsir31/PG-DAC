@@ -1,0 +1,67 @@
+; 28   : 	Number ref(1000);
+
+	mov	edx, 1000				; 000003e8H
+	lea	rcx, QWORD PTR ref$[rbp]
+	call	??0Number@@QEAA@H@Z			; Number::Number
+	npad	1
+
+; 29   : 	cout << ref.getA() << "\t" << ref.getB() << endl;
+
+	lea	rcx, QWORD PTR ref$[rbp]
+	call	?getB@Number@@QEAAHXZ			; Number::getB
+	mov	DWORD PTR tv77[rbp], eax
+	lea	rcx, QWORD PTR ref$[rbp]
+	call	?getA@Number@@QEAAHXZ			; Number::getA
+	mov	edx, eax
+	mov	rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
+	lea	rdx, OFFSET FLAT:??_C@_01GPOEFGEJ@?7@
+	mov	rcx, rax
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+	mov	ecx, DWORD PTR tv77[rbp]
+	mov	edx, ecx
+	mov	rcx, rax
+	call	QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
+	lea	rdx, OFFSET FLAT:??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
+	mov	rcx, rax
+	call	QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z
+	npad	1
+
+; 30   : 	Number n1(100,45);
+
+	mov	r8d, 45					; 0000002dH
+	mov	edx, 100				; 00000064H
+	lea	rcx, QWORD PTR n1$[rbp]
+	call	??0Number@@QEAA@HH@Z			; Number::Number
+	npad	1
+
+; 31   : 	cout << n1.getA() << "\t" << n1.getB() << endl;
+
+	lea	rcx, QWORD PTR n1$[rbp]
+	call	?getB@Number@@QEAAHXZ			; Number::getB
+	mov	DWORD PTR tv95[rbp], eax
+	lea	rcx, QWORD PTR n1$[rbp]
+	call	?getA@Number@@QEAAHXZ			; Number::getA
+	mov	edx, eax
+	mov	rcx, QWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	call	QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
+	lea	rdx, OFFSET FLAT:??_C@_01GPOEFGEJ@?7@
+	mov	rcx, rax
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+	mov	ecx, DWORD PTR tv95[rbp]
+	mov	edx, ecx
+	mov	rcx, rax
+	call	QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
+	lea	rdx, OFFSET FLAT:??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
+	mov	rcx, rax
+	call	QWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z
+	npad	1
+
+; 32   : 	constexpr Number n2(400, 500);
+
+	mov	DWORD PTR n2$[rbp], 400			; 00000190H
+	mov	DWORD PTR n2$[rbp+4], 500		; 000001f4H
+
+; 33   : 	//cout << n2.getA() << "\t" << n2.getB() << endl;
+; 34   : }
+

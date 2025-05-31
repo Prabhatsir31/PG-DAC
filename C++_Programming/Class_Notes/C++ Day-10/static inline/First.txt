@@ -1,0 +1,36 @@
+/*
+With the introduction of inline in C++17, 
+you can initialize static member variables 
+directly within the class definition. 
+This eliminates the need for a separate definition.
+
+before compiling the code ,
+right click on the project name
+	properties
+			C/C++
+				language
+					select C++ 17
+*/
+
+#include<iostream>
+using namespace std;
+
+
+class A
+{
+public:
+	static int cnt1;
+};
+int A::cnt1 = 10;  // if not defined,linker error
+
+
+class B
+{
+public:
+	static inline int  cnt2 = 10; // works on online compiler as it's a feature of c++17
+};
+int main()
+{
+	cout << A::cnt1 << endl;
+	cout << B::cnt2 << endl;
+}

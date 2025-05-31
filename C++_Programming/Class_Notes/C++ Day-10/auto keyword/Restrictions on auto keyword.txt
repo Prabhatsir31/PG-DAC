@@ -1,0 +1,23 @@
+auto variable cannot be combined with other type specifiers
+
+e.g.
+
+auto num=20;   // correct
+
+auto int num=30;  // incorrect
+
+auto x=1,y=3.5;  // error, both of them should have values of same type
+
+auto x=1,y=5;  // correct
+
+auto *x=new auto(5), *y=new auto(6.7);  // error, diff datatypes not allowed
+
+auto x=x+5;  // error
+
+auto x=5;  // correct
+
+sizeof(auto); // incorrect
+
+auto a=10;
+sizeof(a);  // correct
+

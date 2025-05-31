@@ -1,0 +1,11 @@
+; 18   : 	int result1 = fun1(3);
+
+	mov	ecx, 3
+	call	?fun1@@YAHH@Z				; fun1
+	mov	DWORD PTR result1$[rbp], eax
+
+; 19   : 	//int arr[result1];  // not allowed
+; 20   : 	constexpr int result2 = fun2(3);   
+	mov	DWORD PTR result2$[rbp], 9
+
+; 21   : 	int arr[result2];

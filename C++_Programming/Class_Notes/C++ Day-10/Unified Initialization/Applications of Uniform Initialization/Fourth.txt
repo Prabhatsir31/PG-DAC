@@ -1,0 +1,45 @@
+// Implicitly initialize function parameter
+
+
+// C++ program to demonstrate how to
+// initialize a function parameter
+// using Uniform Initialization
+
+#include <iostream>
+using namespace std;
+
+// declaring a class 'A'
+class A {
+
+    // a and b are data members
+    int a;
+    int b;
+
+public:
+    A(int x, int y) : a(x), b(y)
+    {
+        cout << "in param constructor" << endl;
+    }
+    A(const A& ref)
+    {
+        this->a = ref.a;
+        this->b = ref.b;
+        cout << "in copy constructor" << endl;
+    }
+    void show() { cout << a << " " << b; }
+};
+
+void f(A x)  // internally it is   A x={1,2} which is same as A x(1,2)
+{ 
+    x.show(); 
+}
+
+// client Code
+int main()
+{
+
+    // calling function and initializing it's argument
+    // using brace initialization
+    f({ 1, 2 });
+    return 0;
+}

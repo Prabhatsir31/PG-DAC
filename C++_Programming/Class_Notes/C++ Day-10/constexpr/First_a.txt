@@ -1,0 +1,31 @@
+/*
+In C++, the constexpr function must be defined before it is used in a context 
+that requires a constant expression, such as when initializing another constexpr 
+variable or defining an array with a size based on that value.
+
+*/
+
+
+#include<iostream>
+using namespace std;
+int fun1(int k)
+{
+	return k * k;
+}
+
+int main()
+{
+	constexpr int fun2(int);
+	int result1 = fun1(3);
+	//int arr[result1];  // not allowed
+	constexpr int result2 = fun2(5);   
+	int arr[result2];
+	int result3 = fun2(20);  // Error
+	cout << result3 << endl;
+	// char arr1[result3];  not allowed
+}
+  
+constexpr int fun2(int k)  // not allowed, must be defined before its use
+{
+	return k * k;
+}

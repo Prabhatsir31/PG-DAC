@@ -1,0 +1,7 @@
+Constant expressions were introduced in C++ 11. They are expressions whose:
+
+value cannot change,
+and can be evaluated at compile time.
+The reason we want to use them in C++ is to avoid calculation being done multiple times at runtime.
+
+We use the constexpr keyword to create constant expressions. 

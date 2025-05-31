@@ -1,0 +1,22 @@
+The auto keyword in C++11 is used for type deduction, allowing the compiler to automatically determine the type of a variable based on its initializer. On the other hand, the auto keyword used for storage class (storage duration) specifies automatic storage duration for variables in C and C++. Let's delve into each:
+
+auto for type deduction (C++11 and later):
+Used for automatic type deduction during variable declaration.
+Enables writing more concise and readable code by allowing the compiler to infer the type.
+Introduced in C++11 to facilitate the use of complex types without explicitly specifying them.
+
+auto x = 10;     // Type of x is deduced to be int
+auto y = 3.14;   // Type of y is deduced to be double
+
+auto for storage class (C and C++):
+
+Specifies automatic storage duration for variables.
+Variables declared with auto storage class have a lifetime limited to the block in which they are defined. They are automatically destroyed when the block is exited.
+This usage of auto is considered illegal (for representing automatic storage class) in modern C++. Instead, it's generally advised to use block-scope variables without specifying any storage class.
+
+auto int x;  // illeagal in C++ 11 onwards
+
+In modern C++, when you see the keyword auto, it's always for type deduction only.
+
+
+
