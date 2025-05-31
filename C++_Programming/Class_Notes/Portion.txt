@@ -1,0 +1,54 @@
+OOPS
+	heap and stack based object
+	constructors
+	default,parameterized
+	copy constructor
+	destructor - calling explicitly in case of heap based object
+	array of object
+	DMA - array of object
+	use of "delete" in case of DMA
+
+Friend function
+	forward declaration
+	syntax for defining member function outside the class.
+
+Operator Overloading
+	assignment
+	pre-post increment/decrement
+	all arithmetic operators
+	> , <, ==
+	compound assignment
+	primitive on the left side during operator overloading
+		need of friend function inside operator overloading
+
+	insertion operator overloading
+
+
+conversion
+	primitive to user defined
+	user defined to primitive
+
+
+virtual functions, pure virtual function , abstract class
+
+upcasting with pointer and reference 
+
+parent class array stores child class objects
+
+function to accept parent class pointer and polymorphically invokes virtual or pure virtual function/s.
+
+function to accept parent class reference and polymorphically invokes virtual or pure virtual function/s.
+
+downcasting (dynamic_cast) using pointer and reference.
+bad_cast exception handling while using reference with dynamic_cast.
+
+Imp note:
+if the question contains a message:
+	program should not give any dangling pointer and memory leak problem, then you must
+	define copy constructor to perform deep copy
+		and
+	define destructor to release the heap based memory using "delete"
+
+
+
+

@@ -1,0 +1,67 @@
+1) allocate memory for 1 int and store 420 value inside. now release it.
+allocate memory for 10 characters on heap store 10 characters ,display them and release that memory.
+
+2) define a class to meet following requirements
+	First f1("hello","welcome");    f1.disp
+	First f2=f1;			f2.disp
+	First f3;
+	f3=f1				f3.disp
+make sure neither memory leak nor dangling pointer arises in the code
+
+
+3) define a class “Voter”,its members should be int id, char *name, char *address. 
+Define input() , show() methods
+
+Accept from user , how many voters he has .
+[DMA]				Depending upon that , allocate the memory,invoke input() and  get the data from user.
+Now invoke show method for all the objects created. make sure neither memory leak nor dangling pointer arises in the code
+
+4) Sample s1(10)
+
+s1-300
+
+s1=600
+
+int data=s1
+s1+s2
+++s1
+s1++
+s1+=20
+100+s1
+
+cin>>s1
+cout<<s1
+
+5) RTTI
+	virtual or pure virtual function
+	collect child class addresses in parent pointer, child class object in parent reference, array of parent pointers storing addresses of child classes
+dynamic_cast
+
+6)
+
+class B
+	int y;
+	void disp2() {  how will you access "x" here? }
+
+class A
+	int x;
+	void disp1(){}
+
+do not change the order of above classes
+
+7) Given
+
+class A
+{
+private:
+	int* ptr;  // allocate memory inside heap
+	int len;
+void disp(){  // incomplete }
+};
+
+while creating object of above class pass int array and its length
+make sure when you call disp , it should display the whole array which was passed while creating array
+also make sure you can perform following operations on the objects of class A
+	cout<<ref1[1];  // ref1 is assumed to be the object of A
+	ref1[0]=1000;
+
