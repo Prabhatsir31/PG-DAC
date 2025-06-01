@@ -1,0 +1,30 @@
+/*
+
+Here, 100 is a literal constant, which is an rvalue.
+Rvalue references (int&&) can bind directly to rvalues, such as literal constants.
+Therefore, ref2 binds to the temporary value 100 without issues.
+
+int &&ref1 = num;:
+
+num is a named variable of type const int, making it an lvalue.
+Rvalue references (int&&) cannot bind directly to lvalues, including const lvalues.
+Therefore, trying to bind ref1 to num results in a compilation error.
+
+In summary, while rvalue references (int&&) can bind directly to rvalues, they cannot bind directly to lvalues. This distinction is what 
+allows int&& ref2 = 100; to compile 
+while  int &&ref1 = num; does not.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int num = 100;
+    //int&& ref1 = num;  // not allowed
+    int&& ref2 = 100;  // allowed
+    cout << ref2 << endl;
+    ref2 = 200;
+    cout << ref2 << endl;
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include<iostream>
+#include<thread>
+#include<mutex>
+using namespace std;
+
+mutex m;
+void myfun()
+{
+	while (true)
+	{
+		if (m.try_lock())
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				cout << "Hello\t" << i << "\t by\t" << this_thread::get_id() << endl;
+			}
+			m.unlock();
+			break;
+		}
+		else
+		{
+			cout << this_thread::get_id() << "\t is doing some other task" << endl;
+		}
+	}
+}
+int main()
+{
+	thread t1(myfun);
+	thread t2(myfun);
+	t1.join();  
+	t2.join();
+	cout << "inside main thread"<<endl;
+}

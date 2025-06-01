@@ -1,0 +1,21 @@
+// Lambda Closure by multiple values is a very tedious task. 
+//To make our work easier, we can simply use 
+// "implicit capture by value". 
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+	int a = 10,b=20,c=30;
+
+	auto mymethod = [a, b, c]() {cout << a << "\t" << b << "\t" << c << endl; };
+	mymethod();
+
+	/*Here, [=] says all the variables of the enclosing 
+	function are captured by value.*/
+
+	auto mymethod1 = [=]() {cout <<"With implicit capture by value\t"<< a << "\t" << b << "\t" << c << endl; };
+	mymethod1();
+}

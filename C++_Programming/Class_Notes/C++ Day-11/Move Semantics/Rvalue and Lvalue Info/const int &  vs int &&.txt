@@ -1,0 +1,34 @@
+/*
+in the following example,
+20 and 40 are pure rvalues (temporary values)
+they don't have a name or storage location in memory.
+
+Rvalue references (int&&) are designed specifically 
+to bind to such rvalues.
+
+k is a named variable, even though it's const
+That makes it a const lvalue.
+
+You cannot bind an int&& (rvalue reference) to an 
+lvalue, even if it's const.
+*/
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+    const int& ref1 = 20;
+    cout << ref1 << endl;
+   // ref1 = 30;  // not allowed
+    int&& ref2 = 40;
+    cout << ref2 << endl;
+    ref2 = 50;   // allwed
+    cout << ref2 << endl;
+    const int k = 200;
+    const int& ref3 = k; // possible
+   // int&& ref4 = k;   // not possible
+    return 0;
+}

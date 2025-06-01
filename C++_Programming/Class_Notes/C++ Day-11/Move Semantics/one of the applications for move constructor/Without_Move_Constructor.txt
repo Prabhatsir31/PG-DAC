@@ -1,0 +1,46 @@
+/* in this example resources (contents of ptr here) are duplicated for stack-based
+objects and also for those objects which are copied inside vector. This leads to
+unnecessary copies of resources.
+*/
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+class MyClass
+{
+private:
+    int *ptr;
+public:
+    MyClass(int num)
+    {
+        ptr=new int(num);
+        cout << "inside MyClass parameterized constructor" << endl;
+    }
+    MyClass(const MyClass& ref)
+    {
+        this->ptr = new int(*ref.ptr);
+        cout << "inside MyClass copy constructor" << endl;
+    }
+    
+    void disp()
+    {
+        cout << *ptr << endl;
+    }
+    ~MyClass()
+    {
+        cout << "inside MyClass destructor"<<endl; 
+        delete ptr;
+    }
+};
+
+int main()
+{ 
+    MyClass m1(10), m2(20);
+    m1.disp();
+    m2.disp();
+    vector<MyClass> v1;
+    v1.push_back(m1);
+    v1.push_back(m2);
+    return 0;
+}

@@ -1,0 +1,23 @@
+#include<iostream>
+#include<functional>
+using namespace std;
+
+void myfun(void (*ptr)())
+{
+	ptr();
+}
+void disp1()
+{
+	cout << "inside disp1 method" << endl;
+}
+int main()
+{
+	myfun(disp1);
+	auto mymethod1 = []() {cout << "inside lambda method" << endl; };
+	myfun(mymethod1);
+	myfun([]() {cout << "inside anonymous lambda method" << endl; });
+
+	function<void()> mymethod2 = []() {cout << "inside another lambda method" << endl; };
+	// myfun(mymethod2);   // error
+	
+}

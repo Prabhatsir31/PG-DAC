@@ -1,0 +1,16 @@
+#include<iostream>
+#include<thread>
+using namespace std;
+
+
+void myfun1()
+{
+	cout << "inside myfun1 function of thread" << endl;
+}
+int main()
+{
+	cout << "in main function before" << endl;
+	thread t1(myfun1);
+	cout << "After thread created" << endl;
+	cout << "let's see what happens" << endl;
+} // the program will crash

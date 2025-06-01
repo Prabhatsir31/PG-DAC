@@ -1,0 +1,1 @@
+The work of "tie()" is to unpack the tuple values into seperate variables.

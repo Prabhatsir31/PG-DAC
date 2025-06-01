@@ -1,0 +1,31 @@
+/*
+Function Type Deduction
+
+auto can be used to deduce the return type of functions, 
+but in the case of functions returning references or void, it can be ambiguous.
+decltype can precisely determine the return type, 
+including references and const.
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int& getRef() {
+    static int value = 42;
+    return value;
+}
+
+int main() {
+    // Using auto to deduce the return type of the function
+    auto x = getRef();  // x is an int (not a reference)
+    x = 10;  // Modifying x does not change the original value of "value" variable
+    cout << "value after auto return: " << getRef() << endl;  // Outputs 42
+    // Using decltype to deduce the return type (including reference)
+    decltype(getRef()) y = getRef();  // y is a reference to value
+    y = 20;  // Modifying y changes the original value
+
+    cout << "value after decltype return: " << getRef() << endl;  // Outputs 20
+
+    return 0;
+}

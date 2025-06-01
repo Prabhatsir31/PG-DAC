@@ -1,0 +1,60 @@
+/*
+Rule for Move Constructor and Copy Constructor in C++:
+If you provide a copy constructor in your class, 
+the compiler does not automatically generate a move 
+constructor for you.
+If you don't provide a move constructor, and later 
+you attempt to move an object 
+(e.g., by using std::move()), the compiler will 
+fall back to using the copy constructor instead. 
+This is because, by default, the compiler does not 
+assume you want to move objects unless 
+you explicitly provide a move constructor.
+
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+class MyClass
+{
+private:
+    int* ptr;
+public:
+    MyClass(int num)
+    {
+        ptr = new int(num);
+        cout << "inside MyClass parameterized constructor" << endl;
+    }
+    MyClass(const MyClass& ref)
+    {
+        this->ptr = new int(*ref.ptr);
+        cout << "inside MyClass copy constructor" << endl;
+    }
+   
+    void disp()
+    {
+        if (ptr != NULL)
+            cout << *ptr << endl;
+        else
+            cout << "There is nothing inside the ptr of this object\t" << ptr << endl;
+    }
+    ~MyClass()
+    {
+        cout << "inside MyClass destructor" << endl;
+        delete ptr;
+    }
+};
+
+int main()
+{
+    MyClass m1(10);  // Constructor called, resource allocated
+    MyClass m2 = m1;  //  Copy constructor called, deep copy
+    MyClass m3 = move(m1); // Copy constructor called,by default as we have not defined move constructor
+    m2.disp();
+    m1.disp();
+    m3.disp();
+    return 0;
+}

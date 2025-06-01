@@ -1,0 +1,49 @@
+#include<iostream>
+#include<thread>
+#include<mutex>
+using namespace std;
+
+mutex m;
+condition_variable cv;
+long balance = 0;
+
+void deposit(int money)
+{
+	lock_guard<mutex> lg(m);
+	cout << "Press any key to continue depositing money" << endl;
+	int k;
+	cin >> k;
+	balance += money;
+	cout << "Deposited\t" << balance << " money by deposit thread" << endl;
+	//cv.notify_one();  // this is must
+}
+
+void withdraw(int money)
+{
+	unique_lock<mutex> ul(m);
+	cout << "withdraw thread ,waiting for the money being deposited" << endl;
+	
+	// the thread will continue waiting as long as the condition is false.
+
+	cv.wait(ul, [] {return (balance != 0) ? true : false; });
+	if (balance >= money)
+	{
+		balance -= money;
+		cout << "Amount deducted\t" << money << endl;
+	}
+	else
+	{
+		cout << "Amount can't be deducted, current balance is less than\t" << money << endl;
+	}
+	cout << "Current balance is\t" << balance << endl;
+}
+int main()
+{
+	//thread deposit_thread(deposit,1000);
+	thread withdraw_thread(withdraw, 1000);
+	thread deposit_thread(deposit, 1000);
+	deposit_thread.join();
+	withdraw_thread.join();
+
+	cout << "Transaction completed" << endl;
+}

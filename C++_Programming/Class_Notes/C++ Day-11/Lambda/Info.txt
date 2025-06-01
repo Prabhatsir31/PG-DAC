@@ -1,0 +1,7 @@
+Lambda functions in C++ are in-place functions that can be written for short code snippets that are not intended to be reused, so there is no need to name them as well. It was introduced in Modern C++ beginning from C++11.
+
+
+
+[] is called the lambda introducer which denotes the start of the lambda expression
+
+() is called the parameter list which is similar to the () operator of a normal function

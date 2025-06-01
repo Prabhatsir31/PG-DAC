@@ -1,0 +1,21 @@
+The call to join blocks the calling thread (in this case, the main thread) until the joined thread finishes execution. 
+
+
+Why Does Runtime Error Occur If We Don’t Call join() or detach()?
+
+
+In C++, when you create a std::thread, it must be either:
+
+Joined (using join()), or
+
+Detached (using detach()),
+
+	[ When you call t1.detach(); on a std::thread, you're telling the system:
+
+"Let this thread run on its own. I no longer care about it. I won’t wait for it or manage it."
+
+	]
+
+before the thread object (t1) is destroyed.
+
+If you don't do either, the C++ runtime terminates the program with a runtime error (often std::terminate is called), even if the thread finishes successfully.

@@ -1,0 +1,28 @@
+In modern c++ when you don't define any constructor in the class, compiler provides 3 constructors  default constructor, copy constructor and move constructor.
+
+
+if you explicitly define a move constructor, and not the copy constructor explicitly,the compiler does not generate a copy constructor implicitly.
+
+
+if you provide move assignment explicitly and not the assignment operator then compiler will not provide assignment operator implicitly
+
+
+The compiler implicitly declares and defines:
+
+	Default Constructor
+
+Initializes members with default values (if possible).
+
+	Copy Constructor
+
+Performs a member-wise copy of each member.
+
+	Copy Assignment Operator  ( operator=)
+
+	Move Constructor (C++11 and onward)
+
+Performs a move operation on members (if they support move semantics).
+
+	Move Assignment Operator (C++11 and onward)
+
+	Destructor

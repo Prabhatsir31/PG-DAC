@@ -1,0 +1,24 @@
+// Lambda Closure by value
+
+#include<iostream>
+#include<functional>
+using namespace std;
+
+
+int main()
+{
+	int a = 10;
+	//auto mymethod = []() {cout << a << endl; }; //error for "a"
+	/*an enclosing - function local variable
+	cannot be referenced in a lambda body
+	unless it is in the capture list
+	*/
+
+	auto mymethod = [a]() {cout << a << endl; };
+	cout << "Value of a before lambda call is\t" << a << endl;
+	mymethod();
+	cout << "Value of a after lambda call is\t" << a << endl;
+
+	function<void()> mymethod1 = [a]() {cout << a + 5; };
+	mymethod1();
+}

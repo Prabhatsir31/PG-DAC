@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void fun(int& r)
+{
+    cout << "lvalue reference\t" <<r<< endl;
+}
+void fun(const int& r)
+{
+    // r = 45; cannot do
+    cout << "const reference\t" <<r<< endl;
+}
+/*
+void fun(int&& r) // takes the precedence if present
+{
+    r = 45;  // can do
+    cout << "rvalue reference\t" <<r<< endl;
+}
+*/
+int main()
+{
+    int i = 10;
+    fun(i);
+    fun(10);
+    fun(move(i)); // move function accepts 
+    // lvalue reference and converts
+    // it into rvalue reference
+    fun(static_cast<int&&>(i));
+    return 0;
+}

@@ -1,0 +1,17 @@
+// specifying return type in lambda , though it's not
+// actually required in the following example
+
+#include<iostream>
+using namespace std;
+
+int sqr(int k)
+{
+	return k * k;
+}
+int main()
+{
+	cout << sqr(10) << endl;
+	//auto mymethod1 = [](int j){return j * j; };
+	auto mymethod1 = [](int j)->int {return j * j; };
+	cout << mymethod1(30) << endl;
+}

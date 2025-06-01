@@ -1,0 +1,10 @@
+Rvalue and Lvalue Info
+move constructor vs copy constructor
+	nullptr
+		problem with NULL
+		No problem with nullptr
+	 
+Copy Constructor vs Move Constructor.doc
+	one of the applications for move constructor
+
+Need for Move assignment operator

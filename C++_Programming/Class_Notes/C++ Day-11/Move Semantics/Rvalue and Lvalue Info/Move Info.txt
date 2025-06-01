@@ -1,0 +1,35 @@
+In C++, the move() function is part of the standard library's <utility> header and is used to perform a move operation on its argument, typically for move semantics in the context of C++11 and later versions.
+
+Here's a breakdown of what it does:
+
+Move Semantics: C++ introduced move semantics to efficiently transfer resources (like dynamically allocated memory) from one object to another. Instead of copying the resources, which can be expensive, move semantics allow the transfer of ownership from one object to another.
+
+Rvalue Reference: move() is used with an rvalue reference (&&). An rvalue reference indicates that the object it refers to is temporary and can be safely moved from.
+
+Transfer of Ownership: When you use move(), you're essentially telling the compiler that it's okay to "steal" the resources from the object being moved from and transfer them to the object being moved to. This typically involves just copying pointers or handles rather than copying the entire resource.
+
+No Deep Copy: Unlike copy constructors or assignment operators, move constructors and move assignment operators do not perform deep copies of the data. Instead, they transfer the internal resources (like pointers to dynamically allocated memory) from the source object to the target object.
+
+Here's a simple example to illustrate how move() works:
+
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    MyClass() {cout << "Constructor called" << endl; }
+    ~MyClass() { cout << "Destructor called" << endl; }
+    MyClass(const MyClass &ref) { cout << "Copy constructor called" << endl; }
+    MyClass(MyClass &&ref) noexcept { cout << "Move constructor called" << endl; }
+};
+
+int main() {
+    MyClass obj1; // Constructor called
+    MyClass obj2 = move(obj1); // Move constructor called
+    return 0;
+}
+In this example, move(obj1) allows obj1 to be efficiently "moved from" to obj2. This means that obj2 will take ownership of obj1's resources, and obj1 will be in a valid but unspecified state afterward. The move constructor is invoked to achieve this transfer of ownership.
+
+
+

@@ -1,0 +1,44 @@
+/*
+
+auto copy = getValue();
+
+The auto keyword deduces the type of copy to be int, not int&. So, copy is a copy of the value returned by getValue(), and modifying copy does not affect the original value.
+
+decltype(getValue()) ref = getValue();
+
+The decltype(getValue()) preserves the reference type, so ref is a reference to the original value. Modifying ref will affect value.
+
+Value (auto copy): 10
+Value (decltype ref): 30
+
+In this example, we needed decltype because auto would have given us a copy rather than a reference, which led to different behavior when modifying the variable.
+
+
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int value = 10;
+
+// Function returning a reference
+int& getValue() {
+    return value;
+}
+
+int main() {
+    // Using auto will give us a copy, not a reference
+    auto copy = getValue();  // copy is an integer (not a reference)
+    copy = 20;  // Modifying copy does not affect the original `value`
+
+    cout << "Value (auto copy): " << value << endl;  // Outputs 10, not 20
+
+    // Using decltype will preserve the reference
+    decltype(getValue()) ref = getValue();  // ref is a reference to `value`
+    ref = 30;  // Modifying ref will modify the original `value`
+
+    cout << "Value (decltype ref): " << value << endl;  // Outputs 30
+
+    return 0;
+}

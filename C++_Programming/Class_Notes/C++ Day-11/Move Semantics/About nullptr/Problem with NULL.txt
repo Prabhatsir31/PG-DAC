@@ -1,0 +1,36 @@
+/*
+In Microsoft Visual Studio 2022, this code 
+does not cause ambiguity, compiler treats 
+NULL as an integral value rather than a 
+null pointer constant. 
+Therefore, it would match the int k overload 
+of the disp() function rather than the 
+int* ptr overload.
+
+However, it's important to note that 
+relying on compiler-specific behavior 
+can lead to non-portable code. 
+Other compilers(e.g. online compiler) may not 
+behave the same way, and the code may fail 
+to compile or produce different results.
+
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+void disp(int *ptr)
+{
+    cout << "inside pointer function" << endl;
+}
+void disp(int k)
+{
+    cout << "inside int function" << endl;
+}
+int main()
+{
+    disp(NULL); // may cause ambiguity in case of some compilers
+    return 0;
+}

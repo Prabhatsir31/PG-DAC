@@ -1,0 +1,32 @@
+/*
+nullptr is a keyword introduced in C++11 
+to represent a null pointer constant. 
+It provides a type-safe alternative to 
+using 0 or NULL to represent null pointers.
+
+Unlike 0 or NULL, which can be ambiguous 
+in certain contexts, nullptr is explicitly 
+a null pointer constant of type 
+std::nullptr_t. It can be used wherever 
+a pointer type is expected.
+
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+void disp(int *ptr)
+{
+    cout << "inside pointer function" << endl;
+}
+void disp(int k)
+{
+    cout << "inside int function" << endl;
+}
+int main()
+{
+    disp(nullptr); // will not cause any ambiguity on any compiler
+    return 0;
+}

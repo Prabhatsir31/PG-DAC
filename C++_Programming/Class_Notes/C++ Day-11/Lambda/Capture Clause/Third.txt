@@ -1,0 +1,14 @@
+// Lambda Closure by multiple values
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+	int a = 10,b=20,c=30;
+
+	auto mymethod = [a, b, c]() {cout << a << "\t" << b << "\t" << c << endl; };
+	mymethod();
+
+}

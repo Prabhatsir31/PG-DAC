@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+class MyClass
+{
+private:
+    int *ptr;
+public:
+    MyClass()
+    {
+        ptr = NULL;
+    }
+    MyClass(int num)
+    {
+        ptr=new int(num);
+        cout << "inside MyClass parameterized constructor" << endl;
+    }
+    /*
+    MyClass& operator=(const MyClass& ref)
+    {
+        if (ptr == NULL)
+        {
+            ptr = new int(0);
+        }
+        *ptr = *ref.ptr;
+        cout << "inside MyClass assignment operator" << endl;
+        return *this;
+    }
+    */
+    MyClass& operator=(MyClass&& ref)
+    {
+        if (ptr == NULL)
+        {
+            ptr = new int(0);
+        }
+        *ptr = *ref.ptr;
+        ref.ptr = nullptr;
+        cout << "inside MyClass move assignment operator" << endl;
+        return *this;
+    }
+     
+    void disp()
+    {
+        if (ptr != NULL)
+            cout << *ptr << endl;
+        else
+            cout << "There is nothing inside the ptr of this object\t" << ptr << endl;
+    }
+    ~MyClass()
+    {
+        cout << "inside MyClass destructor"<<endl; 
+        delete ptr;
+    }
+};
+
+int main()
+{ 
+    MyClass m1(10), m2(20);
+    m1.disp();
+    m2.disp();
+    m1 =move(m2);
+    m1.disp();
+    m2.disp();  // can't be displayed
+    return 0;
+}

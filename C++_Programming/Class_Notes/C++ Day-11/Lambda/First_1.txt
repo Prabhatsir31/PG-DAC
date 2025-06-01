@@ -1,0 +1,19 @@
+#include<iostream>
+#include<functional>
+using namespace std;
+
+int main()
+{
+	// more than one statement in the lambda
+	auto mymethod1 = []() {
+		cout << "hello" << endl;
+		cout << "welcome" << endl;
+		cout << "all the very best" << endl;
+		};
+
+	function<void()> mymethod2 = []() {cout << "one more lambda function" << endl; };
+	
+	
+	mymethod1();
+	mymethod2();
+}

@@ -1,0 +1,44 @@
+/*
+int&& r = 10;
+
+r is an rvalue reference (denoted by &&), and it is 
+bound to a temporary object, the literal 10.
+In C++, an rvalue reference can bind to an rvalue 
+(temporary object like 10 of int type).
+This binding does not create a new variable 10, 
+but it creates a reference (r) that refers to the 
+temporary object 10.
+cout << r << endl;
+
+This prints the value of the temporary object that r 
+is referencing, which is 10.
+r = 20;:
+
+The value of the object that r refers to is modified. 
+Here, r refers to the temporary object 10, and now this 
+temporary object is updated to 20.
+The key point here is that r is a reference to the 
+temporary object 10, so when you modify r, you modify 
+the value of the temporary object.
+In C++, temporaries can be modified through rvalue 
+references (which is not possible with regular lvalue 
+references).
+cout << r << endl;:
+
+After modifying r, the value of the temporary object 
+has changed to 20, so this prints 20.
+*/
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    //  int& r = 10;  not possible
+    int&& r = 10;  // possible as it is rvalue reference
+    cout << r << endl;
+    r = 20;
+    cout << r << endl;
+    return 0;
+}

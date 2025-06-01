@@ -1,0 +1,45 @@
+/*
+string requires allocating new memory for the substring, which incurs both time and space overhead.
+
+string_view only creates a lightweight view of the original string, without allocating new memory, making it faster and more memory-efficient for substring operations.
+
+This is especially useful when you need to extract many substrings from a large string (such as parsing or searching text), where the overhead of memory allocation in string can become significant.
+Using string_view avoids these costs and provides a performance advantage.
+
+*/
+
+#include <iostream>
+#include <string>
+#include <string_view>
+#include <chrono>
+using namespace std;
+string str = "This is a test string for substring extraction in C++.";
+void substring_with_string()
+{
+     string sub = str.substr(10, 4); // Extract a substring from position 10 with length 4
+}
+
+void substring_with_string_view()
+{
+    string_view sv(str);
+    string_view sub_sv = sv.substr(10, 4); // Extract a substring view from position 10 with length 4
+}
+
+int main() {
+    
+    auto start = chrono::high_resolution_clock::now();
+    substring_with_string();
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> string_duration = end - start;
+    cout << "Time taken using string: " << string_duration.count() << " seconds\n";
+
+    start = chrono::high_resolution_clock::now();
+    substring_with_string_view();
+    end = chrono::high_resolution_clock::now();
+    chrono::duration<double> string_view_duration = end - start;
+    cout << "Time taken using string_view: " << string_view_duration.count() << " seconds\n";
+    
+
+    
+    return 0;
+}

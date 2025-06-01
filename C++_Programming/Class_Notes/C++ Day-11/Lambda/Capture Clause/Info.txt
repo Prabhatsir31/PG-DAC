@@ -1,0 +1,7 @@
+By default, lambda functions cannot access variables of the enclosing function. In order to access those variables, we use the capture clause.
+
+We can capture the variables in two ways:
+
+Capture by Value
+
+Capture by Reference

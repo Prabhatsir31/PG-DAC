@@ -1,0 +1,17 @@
+ string str = "This is a test string for substring extraction in C++.";
+    string sub = str.substr(10, 4); // Extract a substring from position 10 with length 4
+
+	sub (in string) actually contains the copied string data after the substring operation. It has its own memory and can be modified independently.
+
+
+
+
+ string str = "This is a test string for substring extraction in C++.";
+    string_view sv(str);
+    string_view sub_sv = sv.substr(10, 4); // Extract a substring view from position 10 with length 4
+
+	sub_sv (in string_view) does not contain the string data itself. It is just a pointer to the data in the original string str and the length of the substring. It does not own the data and cannot modify it.
+
+
+
+Therefore, "sub_sv" is much more efficient in terms of memory and performance because it avoids copying data, but you need to be careful with its lifetime—if the original string "str" goes out of scope or is modified, the string_view (sub_sv) will become invalid.

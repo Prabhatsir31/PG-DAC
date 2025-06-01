@@ -1,0 +1,51 @@
+#include<iostream>
+#include<mutex>
+#include<thread>
+#include<Windows.h>
+using namespace std;
+
+class Bank
+{
+private:
+	mutex m;
+	double balance=0;
+	condition_variable cv;
+public:
+	void deposit(int money)
+	{
+		lock_guard<mutex> lg(m);
+		cout << "Press any key to continue depositing money" << endl;
+		int k;
+		cin >> k;
+		balance += money;
+		cout << "Deposited\t" << balance << " money by deposit thread" << endl;
+		cv.notify_one();
+	}
+	void withdraw(int money)
+	{
+		unique_lock<mutex> ul(m);
+		cv.wait(ul, [&] {return (balance != 0) ? true : false; });
+		if (balance >= money)
+		{
+			balance -= money;
+			cout << "Amount deducted\t" << money << endl;
+		}
+		else
+		{
+			cout << "Amount can't be deducted, current balance is less than\t" << money << endl;
+		}
+		cout << "Current balance is\t" << balance << endl;
+	}
+};
+int main()
+{
+	Bank b;
+	thread t1([&]() { b.deposit(1000); }); // Using lambda function to bind member function to object instance
+	thread t2([&]() { b.withdraw(500); }); // Using lambda function to bind member function to object instance
+
+	t1.join(); // Wait for thread t1 to finish
+	t2.join(); // Wait for thread t2 to finish
+
+	cout << "Done" << endl;
+	return 0;
+}

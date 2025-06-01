@@ -1,0 +1,17 @@
+with the help of "lock_guard", you don't have to invoke "lock()" and "unlock()" methods.
+
+"lock_guard" will be locked only once on construction and unlocked on destruction.
+
+
+mutex m;
+
+void myfun()
+{
+	lock_guard<mutex> lg(m);
+	for (int i = 0; i < 10; i++)
+	{
+		cout << "Hello\t" << i << "\t by\t" << this_thread::get_id() << endl;
+	}
+}
+
+in the above example,whichever thread encounters "lock_guard<mutex> lg(m)" statement, will acquire the lock on "m". then it will execute complete for loop. When control goes out of "myfun()" , scope of "lg" is over and hence the lock on "m" will be released for that particular thread and hence other thread can acquire the lock.

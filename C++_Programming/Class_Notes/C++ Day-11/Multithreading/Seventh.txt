@@ -1,0 +1,12 @@
+#include<iostream>
+#include<thread>
+using namespace std;
+// multithreading using lambda capture by value
+
+int main()
+{
+	int val = 500;
+	thread t1([val]() {cout << "Value passed is\t" << val << endl;});
+	t1.join();  // this is must
+	cout << "in main function after" << endl;
+}

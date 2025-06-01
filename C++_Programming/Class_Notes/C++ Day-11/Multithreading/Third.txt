@@ -1,0 +1,20 @@
+#include<iostream>
+#include<thread>
+using namespace std;
+// more than one user defined thread
+
+void myfun1()
+{
+	cout << "inside myfun1 function of thread" << endl;
+}
+int main()
+{
+	cout << "in main function before" << endl;
+	thread t1(myfun1);
+	thread t2(myfun1);
+	// thread t1{ myfun1 }; // this syntax is also valid
+	t1.join();  // this is must
+	t2.join();
+	cout << "in main function after" << endl;
+	
+}

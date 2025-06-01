@@ -1,0 +1,24 @@
+#include<iostream>
+#include<functional>  // needed for "function"
+using namespace std;
+void disp1()
+{
+	cout << "inside disp1 method" << endl;
+}
+int main()
+{
+	auto k{ 8.9 };
+	cout << k << endl;
+	auto r{ 100 };
+	cout << r << endl;
+	auto s{ "hello" };
+	cout << s << endl;
+	disp1();
+	auto mymethod1 = []() {cout << "inside lambda method" << endl; };
+	mymethod1();
+	// without "auto"
+	function<void()> mymethod2 = []() {cout << "another lambda function" << endl; };
+	mymethod2();
+	cout << "Type of mymethod is\t" << typeid(mymethod1).name() << endl;
+	cout << "Type of disp1 is\t" << typeid(disp1).name() << endl;
+}

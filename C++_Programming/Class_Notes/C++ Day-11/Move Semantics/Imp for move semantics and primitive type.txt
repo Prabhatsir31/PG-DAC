@@ -1,0 +1,48 @@
+/*
+In C++, the move constructor is used to transfer 
+ownership of resources from one object to another, 
+leaving the source object in a valid but 
+unspecified state. However, moving a primitive 
+type (like int num in your example) does not 
+affect the state of the source object in any way. 
+
+In the following case, when you use move(m1), 
+the move constructor is invoked, but because 
+num is a primitive type (int), the value is not 
+"moved" but copied. The source object m1 still 
+holds the same value for num. 
+The concept of moving applies more clearly to 
+resource management like dynamic memory allocation 
+or other complex objects (e.g., pointers, containers),
+but for simple types, it behaves like a copy.
+*/
+#include<iostream>
+using namespace std;
+class MyClass
+{
+private:
+	int num=10;
+public:
+	int getNum()
+	{
+		return num;
+	}
+	~MyClass()
+	{
+		cout << "destructor\t" << num << endl;
+	}
+};
+int main() 
+{
+	MyClass m1; // default constructor by default
+	cout <<"m1's data is\t"<< m1.getNum() << endl;
+	MyClass m2 = m1; // copy constructor by default
+	cout << "m2's data is\t" << m2.getNum() << endl;
+	cout << "m1's data is\t" << m1.getNum() << endl;
+	MyClass m3 = move(m1); // copy constructor by default
+	cout << "m3's data is\t" << m3.getNum() << endl;
+	cout << "m1's data is\t" << m1.getNum() << endl;
+
+
+}
+

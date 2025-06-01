@@ -1,0 +1,20 @@
+#include<iostream>
+#include<thread>
+using namespace std;
+// thread function with templated parameter
+
+template<typename T1>
+void myfun(T1 a)
+{
+	cout << "The argument passed is\t" << a << "\t" << "of type\t" << typeid(a).name() << endl;
+}
+
+int main()
+{
+	int val = 400;
+	thread t1(myfun<int>, val);
+	thread t2(myfun<double>, 5.6);
+	t1.join();  // this is must
+	t2.join();
+	cout << "inside main thread" << endl;
+}

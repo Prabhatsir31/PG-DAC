@@ -1,0 +1,59 @@
+/*
+In this example, MyClass has a move constructor
+declared with the noexcept specifier, indicating
+that it won't throw exceptions during the move operation.
+This allows certain optimizations to be applied by the
+compiler and allows containers like std::vector
+to optimize their behavior when moving elements.
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+class MyClass
+{
+private:
+    int* ptr;
+public:
+    MyClass(int num)
+    {
+        ptr = new int(num);
+        cout << "inside MyClass parameterized constructor" << endl;
+    }
+    MyClass(const MyClass& ref)
+    {
+        this->ptr = new int(*ref.ptr);
+        cout << "inside MyClass copy constructor" << endl;
+    }
+    MyClass(MyClass&& ref)noexcept   // move constructor
+    {
+        cout << "Inside Move Constructor" << endl;
+        ptr = ref.ptr;
+        ref.ptr = nullptr; // this is must
+    }
+    void disp()
+    {
+        if (ptr != NULL)
+            cout << *ptr << endl;
+        else
+            cout << "There is nothing inside the ptr of this object\t" << ptr << endl;
+    }
+    ~MyClass()
+    {
+        cout << "inside MyClass destructor" << endl;
+        delete ptr;
+    }
+};
+
+int main()
+{
+    MyClass m1(10);  // Constructor called, resource allocated
+    MyClass m2 = m1;  //  Copy constructor called, deep copy
+    MyClass m3 = move(m1); // move constructor called since we have provided
+    m2.disp();
+    m1.disp();
+    m3.disp();
+    return 0;
+}

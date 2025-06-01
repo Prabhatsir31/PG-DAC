@@ -1,0 +1,25 @@
+#include<iostream>
+#include<tuple>
+using namespace std;
+
+tuple<int,char,string> fun(bool flag)
+{
+	if (flag)
+	{
+		return make_tuple(1, 'A', "Java");
+	}
+	else
+	{
+		return make_tuple(2, 'B', "C++");
+	}
+}
+int main()
+{
+	int x;
+	char y;
+	string z;
+	tie(x,y,z) = fun(true);
+	cout << x << "\t" << y << "\t" <<z << endl;
+	tie(x,y,z) = fun(false);
+	cout <<x << "\t" <<y << "\t" <<z << endl;
+}

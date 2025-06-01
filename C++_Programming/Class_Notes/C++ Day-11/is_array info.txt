@@ -1,0 +1,16 @@
+In C++, "is_array" is a type trait that determines whether a given type is an array type. It is part of the <type_traits> library and is used to check if a type is an array at compile time.
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	cout << is_array<float>::value;    // output 0 i.e. false
+	cout << is_array <int[2]>::value;  // output 1 i.e. true
+
+	cout << is_array<char>::value;     // output 0 i.e. false
+
+	return 0;
+}

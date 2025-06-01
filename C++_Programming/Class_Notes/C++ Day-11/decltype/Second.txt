@@ -1,0 +1,32 @@
+/*
+
+auto strips away const qualifier if it
+exists in the type being deduced.
+decltype preserves the exact type, including any 
+const qualifier.
+
+*/
+
+#include <iostream>
+using namespace std;
+
+const int value = 100;
+
+
+int main() {
+    // Using auto will strip away const 
+    auto a = value;          // `a` is an `int`, not `const int`
+ 
+    // Using decltype will preserve const 
+    decltype(value) c = value;            // `c` is `const int`
+
+    cout << "auto a: " << a << endl;  // Outputs 100
+    cout << "decltype c: " << c << endl;  // Outputs 100
+
+    a = 200;
+    // c = 300;    // not possible as c is const
+    cout << "auto a: " << a << endl;  // Outputs 200
+   // cout << "decltype c: " << c << endl;  
+
+    return 0;
+}

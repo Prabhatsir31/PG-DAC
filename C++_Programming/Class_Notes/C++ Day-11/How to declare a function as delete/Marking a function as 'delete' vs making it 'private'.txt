@@ -1,0 +1,29 @@
+Both marking a function as "deleted" and making it "private" serve different purposes in C++.
+
+Marking a function as "deleted" (= delete):
+
+When you mark a function as "deleted", you are explicitly stating that you do not want that function to be callable or usable. This is typically used to prevent certain operations, such as copying or assigning objects, to enforce specific class semantics.
+A deleted function is not accessible from within the class itself or from outside the class. Any attempt to call it will result in a compile-time error.
+Deleted functions can be declared within any access specifier (public, protected, or private).
+Once a function is marked as deleted, it cannot be accidentally made accessible later by changing its access modifier. This ensures that the design intention remains intact.
+
+
+
+Making a function "private":
+
+When you make a function "private", you are restricting its access to only member functions of the same class. This means that the function can only be called from within the class itself.
+Making a function "private" does not prevent it from being called within the class, but it does prevent external code from accessing it directly.
+Private functions are typically used to encapsulate implementation details and prevent external code from interfering with the internal state of the class.
+You might later decide to change the access of the private function, which could lead to accidental misuse.
+
+
+In summary, marking a function as "deleted" is a stronger form of restriction compared to making it "private". "Deleted" functions cannot be called at all, while "private" functions can still be called within the class that defines them.
+
+
+ Can we write any code inside a function or constructor that is marked as = delete?
+
+Ans:- No, not at all.
+
+Why?
+
+When you mark a function as = delete, you're instructing the compiler that the function is not allowed to be used — ever. It is a directive, not a function body.

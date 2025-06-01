@@ -1,0 +1,14 @@
+// // Lambda Closure by value and reference combination
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+	int a = 10,b=20;
+	cout << "Value of a and b before lambda call is\t" << a <<"\t"<<b<< endl;
+	auto mymethod = [b,&a]() {a = 25;};
+	mymethod();
+	cout << "Value of a and b after lambda call is\t" << a << "\t" << b << endl;
+}

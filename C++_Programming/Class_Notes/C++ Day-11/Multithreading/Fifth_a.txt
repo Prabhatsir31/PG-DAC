@@ -1,0 +1,16 @@
+#include <iostream>
+#include <thread>
+using namespace std;
+int main() {
+    int result;
+    thread t1([&result](int num) 
+    {
+        cout << "Value passed is\t" << num << endl;
+        result = num * 3;
+        }, 250);
+
+    // Wait for t1 to finish its execution
+    t1.join();
+    cout << "Result of thread's lambda is\t" << result << endl;
+     return 0;
+}

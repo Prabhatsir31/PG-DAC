@@ -1,0 +1,13 @@
+lock_guard is a class template provided by the C++ Standard Library 
+When you create a std::lock_guard object, you pass a reference to the mutex you want to lock to its constructor.
+The mutex is automatically locked when the lock_guard object is constructed and automatically unlocked when the lock_guard object goes out of scope (i.e., when the function exits or the block in which it's defined ends).
+
+This ensures that the mutex is always properly released, even in case of exceptions.
+
+mutex- lock and unlock  vs lockguard
+
+Manually calling std::mutex's lock and unlock:
+
+You can manually call the lock and unlock functions of a std::mutex object to achieve the same effect as using std::lock_guard, but you must remember to call unlock at the right place, which might be overlooked in complex code paths, leading to potential deadlocks or other synchronization issues.
+
+Using lock_guard ensures that the mutex is always released when it's no longer needed, reducing the chances of such errors.

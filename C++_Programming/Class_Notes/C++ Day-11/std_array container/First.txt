@@ -1,0 +1,43 @@
+//The C++ 11 standard introduces a std::array which is 
+//equivalent to a traditional fixed length array, 
+//but is accessible through standard container methods.
+//An array is potentially faster than a vector 
+//since it is a fixed size.
+
+#include<iostream>
+#include<array>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    array<int, 3> a1 = { 11, 2, 13 };
+    cout << "address of a1 is\t" << &a1 << endl;
+    // array<int> a2 = { 110,220 }; // size is compulsory
+     // Container operations are supported
+    sort(a1.begin(), a1.end());
+    cout << "Ascending order" << endl;
+    for (auto i : a1)
+    {
+        cout << i << endl;
+    }
+    sort(a1.begin(), a1.end(), greater<int>());
+    cout << "Descending order" << endl;
+    for (auto j : a1)
+    {
+        cout << j << endl;
+    }
+
+    cout << "Size of array is\t" << a1.size() << endl;
+    cout << "First element is\t" << a1.front() << endl;
+    cout << "Last element is\t" << a1.back() << endl;
+    a1 = { 6,7,8 }; // array elements can be modified
+    cout << "After changing array" << endl;
+    for (auto j : a1)
+    {
+        cout << j << endl;
+    }
+    cout << "address of a1 is\t" << &a1 << endl;
+    // array<int, 3> a2 = {100,200,300,400}; // not allowed
+
+}

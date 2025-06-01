@@ -1,0 +1,16 @@
+// implicit capture by reference.. 
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a = 10,b=20,c=30;
+
+
+	/*Here, [&] says all the variables of the enclosing 
+	function are captured by reference.*/
+
+	auto mymethod1 = [&]() {cout <<"With implicit capture by reference\t"<< a << "\t" << b << "\t" << c << endl; };
+	mymethod1();
+}

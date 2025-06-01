@@ -1,0 +1,34 @@
+/*
+string_view: Non-owning reference to an existing string
+or part of a string. Ideal for performance when you 
+don’t need to modify or own the data but need to work 
+with slices or substrings of a string.
+
+string: Owns the string data and is suitable for when 
+you need to create new strings, modify existing data, 
+or manage memory for dynamic strings.
+
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void process_string_view(string_view sv) {
+    cout << "Processing view: " << sv << endl;
+}
+
+void process_string(string str) {
+    // This string is a copy, so modifications can be made safely
+    str += " Modified!";
+    cout << "Processing new string: " << str << endl;
+}
+
+int main() {
+    string str = "The quick brown fox jumps over the lazy dog.";
+
+    process_string(str);  // Here, we make a copy and can modify it
+    process_string_view(str); // just a view of existing string
+    return 0;
+}

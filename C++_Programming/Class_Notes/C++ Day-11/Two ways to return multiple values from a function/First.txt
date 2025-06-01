@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+struct values
+{
+	int x;
+	char y;
+	string z;
+};
+
+values fun(bool flag)
+{
+	if (flag)
+	{
+		return { 1, 'A', "Java" };
+	}
+	else
+	{
+		return { 2, 'B', "C++" };
+	}
+}
+int main()
+{
+	values temp;
+	temp = fun(true);
+	cout << temp.x << "\t" << temp.y << "\t" << temp.z << endl;
+	temp = fun(false);
+	cout << temp.x << "\t" << temp.y << "\t" << temp.z << endl;
+}

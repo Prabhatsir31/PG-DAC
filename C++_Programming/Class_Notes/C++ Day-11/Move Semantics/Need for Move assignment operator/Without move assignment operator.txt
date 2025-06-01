@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class MyClass
+{
+private:
+    int *ptr;
+public:
+    MyClass()
+    {
+        ptr = NULL;
+    }
+    MyClass(int num)
+    {
+        ptr=new int(num);
+        cout << "inside MyClass parameterized constructor" << endl;
+    }
+    MyClass& operator=(const MyClass& ref)
+    {
+        if (ptr == NULL)
+        {
+            ptr = new int(0);
+        }
+        *ptr = *ref.ptr;
+        cout << "inside MyClass assignment operator" << endl;
+        return *this;
+    }
+     
+    void disp()
+    {
+        cout << *ptr << endl;
+    }
+    ~MyClass()
+    {
+        cout << "inside MyClass destructor"<<endl; 
+        delete ptr;
+    }
+};
+
+int main()
+{ 
+    MyClass m1(10), m2(20);
+    m1.disp();
+    m2.disp();
+    m1 = m2;
+    m1.disp();
+    m2.disp();
+    return 0;
+}

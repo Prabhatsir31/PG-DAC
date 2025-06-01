@@ -1,0 +1,23 @@
+#include <iostream>
+#include <functional>
+using namespace std;
+
+void myfun(function<void()> ptr) { // Change to accept std::function
+    ptr();
+}
+
+void disp1() {
+    cout << "inside disp1 method" << endl;
+}
+
+int main() {
+    myfun(disp1); // Works fine
+    auto mymethod1 = []() { cout << "inside lambda method" << endl; };
+    myfun(mymethod1); // Works fine
+    myfun([]() { cout << "inside anonymous lambda method" << endl; }); // Works fine
+
+    function<void()> mymethod2 = []() { cout << "inside another lambda method" << endl; };
+    myfun(mymethod2); // this works!
+
+    return 0;
+}

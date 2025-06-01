@@ -1,0 +1,7 @@
+Why string Takes More Time Than string_view
+
+string has more complex internal state: It includes metadata such as size, capacity, and potentially other attributes, which could involve more overhead when passing around and accessing the object.
+
+string_view is simpler: It only stores a pointer to the underlying string and its length, making it a lighter, faster object to work with.
+
+Possible optimizations: The compiler may optimize string_view more efficiently than string because of its simplicity.

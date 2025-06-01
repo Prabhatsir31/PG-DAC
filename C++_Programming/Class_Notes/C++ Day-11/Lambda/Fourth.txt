@@ -1,0 +1,17 @@
+#include<iostream>
+#include<functional>
+using namespace std;
+
+int sqr(int k)
+{
+	return k * k;
+}
+int main()
+{
+	cout << sqr(10) << endl;
+	auto mymethod1 = [](int j) {return j * j; };
+	cout << mymethod1(20) << endl;
+
+	function<int(int)> mymethod2 = [](int k) {return k + 10; };
+	cout << mymethod2(35) << endl;
+}

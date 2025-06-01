@@ -1,0 +1,41 @@
+/* in this example resources (contents of ptr here) are moved from stack-based
+objects to those objects which are copied inside vector. Hence there is no duplication of resources.
+*/
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+class MyClass {
+private:
+    int num=10;
+    /*
+    MyClass(const MyClass&ref) 
+    { 
+        this->num = ref.num; 
+        cout << "inside copy constructor" << endl;
+    }*/
+public:
+    MyClass(){}
+    //Declare the copy constructor as deleted
+    MyClass(const MyClass&) = delete;
+    void fun(MyClass temp)
+    {
+        cout << "inside temp" << endl;
+    }
+    void disp()
+    {
+        fun(*this); // cannot access copy constructor 
+        // from even within a class
+    }
+  
+};
+
+int main() 
+{
+    MyClass m1;
+    MyClass m2 = m1;  // not allowed
+    m1.disp();
+    m1.fun(m1);  // not allowed
+    return 0;
+}

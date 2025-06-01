@@ -1,0 +1,17 @@
+#include<iostream>
+#include<functional>
+using namespace std;
+
+int getNum1()
+{
+	return 100;
+}
+int main()
+{
+	cout << getNum1() << endl;
+	auto mymethod1 = []() {return 200; };
+	cout << mymethod1() << endl;
+
+	function<int()> mymethod2 = []() {return 500; };
+	cout << mymethod2() << endl;
+}

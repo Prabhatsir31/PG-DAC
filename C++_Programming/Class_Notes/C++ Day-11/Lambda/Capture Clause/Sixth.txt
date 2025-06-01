@@ -1,0 +1,19 @@
+// implicit capture by reference.. 
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+	int a = 10,b=20,c=30;
+
+
+	/*Here, [&] says all the variables of the enclosing 
+	function are captured by reference.*/
+
+	cout << "Before mymethod1 call\t" << a << "\t" << b << "\t" << c << endl;
+	auto mymethod1 = [&]() {a=11,b=21,c=31;};
+	mymethod1();
+	cout << "After mymethod1 call\t" << a << "\t" << b << "\t" << c << endl;
+}

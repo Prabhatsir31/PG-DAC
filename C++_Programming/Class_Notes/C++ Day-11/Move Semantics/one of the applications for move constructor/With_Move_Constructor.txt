@@ -1,0 +1,57 @@
+/* in this example resources (contents of ptr here) are moved from stack-based
+objects to those objects which are copied inside vector. Hence there is no duplication of resources.
+*/
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+class MyClass
+{
+private:
+    int* ptr;
+public:
+    MyClass(int num)
+    {
+        ptr = new int(num);
+        cout << "inside MyClass parameterized constructor" << endl;
+    }
+    MyClass(const MyClass& ref)
+    {
+        this->ptr = new int(*ref.ptr);
+        cout << "inside MyClass copy constructor" << endl;
+    }
+    MyClass(MyClass&& ref)noexcept   // move constructor
+    {
+        cout << "Inside Move Constructor" << endl;
+        ptr = ref.ptr;
+        ref.ptr = nullptr;
+    }
+
+    void disp()
+    {
+        if (ptr != nullptr)
+            cout << *ptr << endl;
+        else
+            cout << "object is empty" << endl;
+    }
+    ~MyClass()
+    {
+        cout << "inside MyClass destructor" << endl;
+        delete ptr;
+    }
+};
+
+int main()
+{
+    MyClass m1(10), m2(20);
+    m1.disp();
+    m2.disp();
+    vector<MyClass> v1;
+    v1.push_back(move(m1));
+    v1.push_back(move(m2));
+    cout << "data of m1 and m2 is" << endl;
+    m1.disp(); // use of a moved from object m1
+    m2.disp();// use of a moved from object m2
+    return 0;
+}

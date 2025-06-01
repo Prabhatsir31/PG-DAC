@@ -1,0 +1,12 @@
+#include<iostream>
+#include<thread>
+using namespace std;
+// multithreading using lambda
+
+int main()
+{
+	int val = 200;
+	thread t1([](int num) {cout << "Value passed is\t" << num << endl;},val);
+	t1.join();  // this is must
+	cout << "in main function after" << endl;
+}

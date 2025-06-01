@@ -1,0 +1,17 @@
+// specifying return type in lambda , though it's not
+// actually required in the following example
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	auto mymethod1 = []() {return 65; };
+	cout << mymethod1() << endl;
+
+	/*Here, even though the lambda returns an "int" value, 
+		it is explicitly converted to "char" type.*/
+
+	auto mymethod2 = []()->char {return 65;};
+	cout << mymethod2() << endl;
+}
