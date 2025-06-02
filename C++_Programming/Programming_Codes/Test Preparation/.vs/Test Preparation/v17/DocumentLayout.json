@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques6.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques6.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9AA1DAAF-AEB8-401A-A14C-0956D28166F6}|Test Preparation\\Test Preparation.vcxproj|solutionrelative:Test Preparation\\Ques2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ques7.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques7.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques7.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques7.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques7.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:35:24.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ques6.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques6.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques6.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques6.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques6.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:35:11.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ques5.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques5.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques5.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques5.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques5.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:34:55.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ques4.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques4.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques4.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques4.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques4.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:34:42.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ques3.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques3.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques3.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques3.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques3.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:34:27.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ques2.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques2.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques2.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques2.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques2.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:34:16.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ques1.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques1.cpp",
+              "RelativeDocumentMoniker": "Test Preparation\\Ques1.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Test Preparation\\Test Preparation\\Ques1.cpp",
+              "RelativeToolTip": "Test Preparation\\Ques1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T10:06:55.991Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
