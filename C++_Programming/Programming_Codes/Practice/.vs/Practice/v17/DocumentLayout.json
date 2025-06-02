@@ -1,0 +1,366 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ArrayInputDisplay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\ArrayInputDisplay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FriendFunction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\FriendFunction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CommandLineArgs.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\CommandLineArgs.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\EarlyBinding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\EarlyBinding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\LateBinding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\LateBinding.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FunctionOverride.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\FunctionOverride.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FunctionOverload.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\FunctionOverload.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\MultipleInheritance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\MultipleInheritance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\SingleInheritance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\SingleInheritance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CopyConstructor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\CopyConstructor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ParameterizedConstructor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\ParameterizedConstructor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\DefaultConstructor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\DefaultConstructor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\OperatorOverloading.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\OperatorOverloading.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\PointertoConstant.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\PointertoConstant.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ConstantPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\ConstantPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\PointertoPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\PointertoPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\MemoryLeak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\MemoryLeak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\DanglingPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\DanglingPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyReference.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\CallbyReference.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyAddress.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\CallbyAddress.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyValue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E0B317C-5CD2-4473-BC2C-DAB727F97A13}|Practice\\Practice.vcxproj|solutionrelative:Practice\\CallbyValue.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArrayInputDisplay.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ArrayInputDisplay.cpp",
+              "RelativeDocumentMoniker": "Practice\\ArrayInputDisplay.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ArrayInputDisplay.cpp",
+              "RelativeToolTip": "Practice\\ArrayInputDisplay.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:43:47.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CommandLineArgs.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CommandLineArgs.cpp",
+              "RelativeDocumentMoniker": "Practice\\CommandLineArgs.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CommandLineArgs.cpp",
+              "RelativeToolTip": "Practice\\CommandLineArgs.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:34:14.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EarlyBinding.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\EarlyBinding.cpp",
+              "RelativeDocumentMoniker": "Practice\\EarlyBinding.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\EarlyBinding.cpp",
+              "RelativeToolTip": "Practice\\EarlyBinding.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:31:30.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FriendFunction.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FriendFunction.cpp",
+              "RelativeDocumentMoniker": "Practice\\FriendFunction.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FriendFunction.cpp",
+              "RelativeToolTip": "Practice\\FriendFunction.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T05:57:56.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LateBinding.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\LateBinding.cpp",
+              "RelativeDocumentMoniker": "Practice\\LateBinding.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\LateBinding.cpp",
+              "RelativeToolTip": "Practice\\LateBinding.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:30:41.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FunctionOverride.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FunctionOverride.cpp",
+              "RelativeDocumentMoniker": "Practice\\FunctionOverride.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FunctionOverride.cpp",
+              "RelativeToolTip": "Practice\\FunctionOverride.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:16:17.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FunctionOverload.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FunctionOverload.cpp",
+              "RelativeDocumentMoniker": "Practice\\FunctionOverload.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\FunctionOverload.cpp",
+              "RelativeToolTip": "Practice\\FunctionOverload.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:13:45.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MultipleInheritance.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\MultipleInheritance.cpp",
+              "RelativeDocumentMoniker": "Practice\\MultipleInheritance.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\MultipleInheritance.cpp",
+              "RelativeToolTip": "Practice\\MultipleInheritance.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:08:31.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SingleInheritance.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\SingleInheritance.cpp",
+              "RelativeDocumentMoniker": "Practice\\SingleInheritance.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\SingleInheritance.cpp",
+              "RelativeToolTip": "Practice\\SingleInheritance.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T06:03:27.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CopyConstructor.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CopyConstructor.cpp",
+              "RelativeDocumentMoniker": "Practice\\CopyConstructor.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CopyConstructor.cpp",
+              "RelativeToolTip": "Practice\\CopyConstructor.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:58:44.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ParameterizedConstructor.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ParameterizedConstructor.cpp",
+              "RelativeDocumentMoniker": "Practice\\ParameterizedConstructor.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ParameterizedConstructor.cpp*",
+              "RelativeToolTip": "Practice\\ParameterizedConstructor.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:55:18.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DefaultConstructor.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\DefaultConstructor.cpp",
+              "RelativeDocumentMoniker": "Practice\\DefaultConstructor.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\DefaultConstructor.cpp",
+              "RelativeToolTip": "Practice\\DefaultConstructor.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:52:55.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OperatorOverloading.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\OperatorOverloading.cpp",
+              "RelativeDocumentMoniker": "Practice\\OperatorOverloading.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\OperatorOverloading.cpp",
+              "RelativeToolTip": "Practice\\OperatorOverloading.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:34:31.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PointertoConstant.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\PointertoConstant.cpp",
+              "RelativeDocumentMoniker": "Practice\\PointertoConstant.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\PointertoConstant.cpp",
+              "RelativeToolTip": "Practice\\PointertoConstant.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:31:43.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ConstantPointer.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ConstantPointer.cpp",
+              "RelativeDocumentMoniker": "Practice\\ConstantPointer.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\ConstantPointer.cpp",
+              "RelativeToolTip": "Practice\\ConstantPointer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:28:55.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PointertoPointer.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\PointertoPointer.cpp",
+              "RelativeDocumentMoniker": "Practice\\PointertoPointer.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\PointertoPointer.cpp",
+              "RelativeToolTip": "Practice\\PointertoPointer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:25:16.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MemoryLeak.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\MemoryLeak.cpp",
+              "RelativeDocumentMoniker": "Practice\\MemoryLeak.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\MemoryLeak.cpp",
+              "RelativeToolTip": "Practice\\MemoryLeak.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:23:13.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DanglingPointer.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\DanglingPointer.cpp",
+              "RelativeDocumentMoniker": "Practice\\DanglingPointer.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\DanglingPointer.cpp",
+              "RelativeToolTip": "Practice\\DanglingPointer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:14:50.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CallbyReference.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyReference.cpp",
+              "RelativeDocumentMoniker": "Practice\\CallbyReference.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyReference.cpp",
+              "RelativeToolTip": "Practice\\CallbyReference.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:12:50.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CallbyAddress.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyAddress.cpp",
+              "RelativeDocumentMoniker": "Practice\\CallbyAddress.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyAddress.cpp",
+              "RelativeToolTip": "Practice\\CallbyAddress.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:10:54.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CallbyValue.cpp",
+              "DocumentMoniker": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyValue.cpp",
+              "RelativeDocumentMoniker": "Practice\\CallbyValue.cpp",
+              "ToolTip": "E:\\SM_VITA-DAC\\MAIN_COURSE\\C\u002B\u002B Programming\\Programming_Codes\\Practice\\Practice\\CallbyValue.cpp",
+              "RelativeToolTip": "Practice\\CallbyValue.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-31T04:07:09.9Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
