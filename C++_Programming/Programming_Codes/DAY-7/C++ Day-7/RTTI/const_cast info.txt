@@ -1,0 +1,45 @@
+const_cast is a type of cast used to add or remove the const qualifier from a variable. It is typically used when you need to change a pointer or reference to a const type to a non-const type (or vice versa), but without altering the underlying object itself.
+
+e.g.
+
+
+
+
+#include<iostream>
+using namespace std;
+void modify(int* ptr) {
+    *ptr = 10; // Modify the value
+    cout << "changed value is\t" << *ptr << endl;
+}
+
+int main() {
+    const int x = 5;
+
+    // modify(&x);  // not allowed
+
+    // Const-casting the pointer to non-const to call modify()
+    modify(const_cast<int*>(&x));
+
+    cout << "x after function call: " << x << endl; 
+    return 0;
+}
+
+
+
+
+
+#include<iostream>
+using namespace std;
+void print(const int* ptr) {
+    cout << "Value: " << *ptr << endl;
+}
+
+int main() {
+    int x = 5;
+
+    // Const-casting to make the pointer const
+    print(const_cast<const int*>(&x));
+
+    return 0;
+}
+

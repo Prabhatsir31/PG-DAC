@@ -1,0 +1,32 @@
+exception - top-level base class from which all exceptions are derived.
+
+following are the child classes of exception
+
+a) logic_error
+
+b) bad_cast
+
+c) bad_typeid
+
+d) bad_alloc
+
+e) runtime_error
+
+
+logic_error is parent for the following classes
+
+1) domain_error
+2) invalid_argument
+3) length_error
+4) out_of_range
+
+
+runtime_error is parent for following classes
+
+1) range_error
+2) overflow_error
+3) underflow_error
+
+
+
+

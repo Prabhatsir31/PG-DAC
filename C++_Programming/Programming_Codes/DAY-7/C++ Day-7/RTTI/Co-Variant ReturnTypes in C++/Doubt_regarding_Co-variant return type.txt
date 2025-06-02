@@ -1,0 +1,85 @@
+if overridden method has got return type "Parent" , overriding method can have return type as "Child". This is allowed as a "Co-variant return type".
+
+What if overridden method has got return type "Child", is overriding method allowed to have "Parent" as a return type?
+
+	No
+
+Why?
+
+
+	ans:- 
+
+
+class A
+{
+};
+class B:public A
+{
+}
+
+class base
+{
+	public:
+	virtual B* disp()
+	{
+		cout<<"base disp"<<endl;
+		return new B();
+	}
+}
+class sub:public base
+{
+	public:
+	A*  disp()
+	{
+		cout<<"sub disp"<<endl;
+		return new A();
+	}
+}
+
+
+
+above code will not compile, but for the time being let's assume that it will compile successfully. What can be the side effect of this code?
+
+	some where in the code if we say
+
+	int main()
+	{
+		base *ptr=new sub();
+		B *ref1=ptr->disp();
+	}
+
+
+
+here for the compiler "ptr" is of type "base", so compiler will search "disp" in base 
+is it there ?    yes
+is it accessible ?   yes
+is it virtual ?  yes
+
+your statement inside "main"
+
+	B *ref1=ptr->disp();
+
+is correct as per compiler because "disp" of base has "B*" as a return type.
+
+so as per compiler's instruction (which you know) dynamic binding will take place i.e. "sub" class "disp" which will return "A*" which "B *ref1" cannot catch. It should not happen that's why compiler stops you at:
+
+
+
+class base
+{
+	public:
+	virtual B* disp()
+	{
+		cout<<"base disp"<<endl;
+		return new B();
+	}
+}
+class sub:public base
+{
+	public:
+	A*  disp()      // compilation error
+	{
+		cout<<"sub disp"<<endl;
+		return new A();
+	}
+}

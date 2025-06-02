@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class base
+{
+public:
+	virtual void disp()
+	{
+		cout << "in disp of base" << endl;
+	}
+};
+class sub:public base
+{
+public:
+	virtual void print()
+	{
+		cout << "in print of sub" << endl;
+	}
+};
+
+int main()
+{
+	base* ptr = new base;
+	sub* ptr1 = dynamic_cast<sub*>(ptr);  // will fail but why?
+	cout << ptr1 << endl; // why 0
+
+	/* discuss if ptr1 which is of sub
+	is allowed to point to base object
+	what is the risk
+	*/
+}
+
+
+
+let's assume that 
+sub* ptr1 = dynamic_cast<sub*>(ptr);      works at runtime
+
+now what if we say:
+ptr1->print();
+
+
+	when compiler had encountered this statement compiler must have written late binding instructions. As per those instructions since the content of "ptr1" during runtime is "base" and base does not have "print()" method , it will be a problem. We shouldn't get this problem that's why "dynamic_cast" does not allow us to make 
+"sub class pointer" points to "base class object".
+
+
+
+

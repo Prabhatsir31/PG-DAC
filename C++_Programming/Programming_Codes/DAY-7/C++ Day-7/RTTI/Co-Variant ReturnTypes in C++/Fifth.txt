@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+class A
+{
+public:
+	virtual void aFun()
+	{
+	}
+};
+class B:public A{};
+class base
+{
+public:
+	virtual A* disp()
+	{
+		cout<<"in base disp returning A*"<<endl;
+		return new A();
+	}
+};
+class sub:public base
+{
+public:
+	B* disp()
+	{
+		cout<<"in sub disp returning B*"<<endl;
+		return new B();
+	}
+};
+int main()
+{
+	base *ptr=new sub;
+	cout<<"Using Parent class Pointer"<<endl;
+	A *ob=ptr->disp();
+
+	// It will work since A is of Polymorphic type
+	if(dynamic_cast<B*>(ob))
+	{
+		cout<<"Content of ob is B"<<endl;
+	}
+	else
+	{
+		cout<<"Content of ob is A"<<endl;
+	}
+}

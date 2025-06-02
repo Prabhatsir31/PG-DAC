@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class A
+{
+public:
+	virtual void aFun()
+	{
+	}
+};
+class B :public A {};
+class base
+{
+public:
+	virtual A& disp()
+	{
+		cout << "in base disp returning A*" << endl;
+		static A temp;
+		return  temp;
+	}
+};
+class sub :public base
+{
+public:
+	B& disp()
+	{
+		cout << "in sub disp returning B*" << endl;
+		static B temp;
+		return  temp;
+	}
+};
+int main()
+{
+	base* ptr = new sub;
+	cout << "Using Parent class Pointer" << endl;
+	A& ob = ptr->disp();
+	try
+	{
+		dynamic_cast<B&>(ob);
+		cout << "contents of ob is B reference" << endl;
+	}
+	catch (bad_cast& bc)
+	{
+		cout << "contents of ob is not B reference\t" <<bc.what()<< endl;
+	}
+}

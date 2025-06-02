@@ -1,0 +1,1 @@
+Co-Variant return type means if overridden method return type is base type of pointer or reference, overriding method can have sub type of pointer or reference.

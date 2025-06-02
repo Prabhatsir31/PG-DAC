@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class A{};
+class B:public A{};
+class base
+{
+public:
+	virtual A* disp()
+	{
+		cout<<"in base disp returning A*"<<endl;
+		return new A();
+	}
+};
+class sub:public base
+{
+public:
+	B* disp()
+	{
+		cout<<"in sub disp returning B*"<<endl;
+		return new B();
+	}
+};
+int main()
+{
+	base *ptr=new sub;
+	cout<<"Using Parent class Pointer"<<endl;
+	ptr->disp();
+}
+

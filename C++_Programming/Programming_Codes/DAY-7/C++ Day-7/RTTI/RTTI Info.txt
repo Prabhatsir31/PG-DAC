@@ -1,0 +1,41 @@
+RTTI
+Runtime type identification
+reqd. in polymorphic languages like C++,java, C# etc.
+
+not reqd.in non-polymorphic language like c,because the type of each object is known at compile time.
+
+e.g
+Shape class pointer can point to any child class instance, i.e. Triangle,Rectangle,Circle or Polygon.
+At a given time if u want to check the existence of a particular child in parent class pointer,rtti is used.
+
+rtti can be achieved through "typeid operator" or "dynamic_cast".
+
+To obtain an object's type use "typeid "
+include header file <typeinfo>
+
+typeid(object)
+object is the object whose type you will be obtaining.It may be any type, i.e. userdefined or built in.
+
+typeid() returns a ref.of type "type_info" class.
+
+type_info Class
+
+The type_info class describes type information generated within the program by the compiler. Objects of this class effectively store a pointer to a name for the type.
+
+
+type_info class has following methods
+
+bool operator==(const type_info&)
+bool operator!=(const type_info&)
+const char* name()
+
+
+
+dynamic_cast
+
+dynamic_cast<targettype>(expr)
+type and the expression being cast must evaluate to a pointer or reference.
+dynamic_cast is used to cast one type of pointer into other or one type of reference into other.It is used to perform casts on polymorphic types.
+
+
+
