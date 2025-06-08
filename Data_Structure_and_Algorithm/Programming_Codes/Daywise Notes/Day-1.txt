@@ -1,0 +1,597 @@
+DAY-1 
+=======
+
+Data Structure and Algorithm
+==================================
+
+What is Data Structure?
+------------------------
+A data structure is a way of storing and organizing data so that it can be accessed and modified efficiently. It defines the relationship between the data and the operations that can be performed on the data.
+A data structure is a storage that is used to store and organize data.
+It is a way of arranging data on a computer so that it can be accessed and updated efficiently.
+
+Types of Data Structures
+------------------------
+1. Based on Access Pattern:
+   - Linear Data Structure
+   - Non-linear Data Structure
+
+2. Based on Memory Allocation:
+   - Static Data Structure
+   - Dynamic Data Structure
+
+Linear vs Non-linear Data Structures
+-------------------------------------
+Linear Data Structure:
+- Data elements are arranged in a linear order.
+- Each element is connected to its previous and next element.
+- Single level involved.
+- Implementation is easier.
+- Traversed in a single run.
+- Memory is not used efficiently.
+- Examples: Array, Stack, Queue, Linked List
+- Applications: Application Software Development
+
+Non-linear Data Structure:
+- Data elements are arranged hierarchically.
+- Multiple levels involved.
+- Implementation is complex.
+- Cannot be traversed in a single run.
+- Efficient memory usage.
+- Examples: Tree, Graph
+- Applications: Artificial Intelligence, Image Processing
+
+Static vs Dynamic Data Structures
+----------------------------------
+Static Data Structure:
+1. Fixed and predefined size.
+2. Cannot grow or shrink.
+3. Can only modify data.
+4. Less efficient.
+5. Memory allocation on the stack.
+6. Less flexible.
+7. Example: Array
+
+Dynamic Data Structure:
+1. Can store any amount of data.
+2. Can grow or shrink as needed.
+3. Can modify data and size at runtime.
+4. More efficient.
+5. Memory allocation on stack and heap.
+6. More flexible.
+7. Example: Linked List
+
+List of Common Data Structures
+-------------------------------
+• Stack
+• Queue
+• Linked List
+• Tree
+• Graph
+
+Abstract Data Type (ADT)
+=========================
+
+What is ADT?
+------------
+- ADT stands for Abstract Data Type.
+- It is a theoretical concept used to define the logical behavior of data structures.
+- ADT specifies *what operations* are to be performed but *not how* these operations will be implemented.
+
+Purpose of Using ADT
+---------------------
+- To provide a clear interface between the user and data structure implementation.
+- To focus on *what* the data structure does, not *how* it does it.
+- ADT helps programmers to develop and use data structures without worrying about implementation details.
+
+Why Do We Use ADT?
+-------------------
+1. Abstraction: Hides internal implementation details and exposes only necessary operations.
+2. Modularity: ADTs promote modular programming by separating concerns.
+3. Reusability: Once implemented, an ADT can be reused across different applications.
+4. Maintainability: Changes to implementation do not affect the rest of the program using the ADT.
+5. Standardization: Ensures that the data structure behaves consistently and predictably.
+
+Examples of ADTs:
+------------------
+- Stack
+- Queue
+- List
+- Deque
+- Tree
+- Graph
+- Map (Dictionary)
+
+Advantages of ADT
+------------------
+1. Encapsulation – It provides a clear separation between interface and implementation.
+2. Code Reusability – ADTs can be reused in multiple programs or modules.
+3. Ease of Maintenance – Modifying internal implementation doesn't affect code using the ADT.
+4. Improved Clarity – Makes code more understandable and organized.
+5. Consistency – ADT ensures that the data and operations follow a set rule.
+6. Platform Independence – Logical representation makes it easier to use across different systems.
+
+Disadvantages of ADT
+----------------------
+1. Overhead of Abstraction – Performance might slightly reduce due to abstraction.
+2. Initial Learning Curve – Beginners may find it difficult to grasp the idea of ADTs.
+3. Implementation Complexity – The actual implementation behind the scenes might be complex.
+4. Less Control – Programmers may have limited control over the specific implementation used.
+
+Conclusion:
+------------
+- ADT is an essential concept in designing and using data structures effectively.
+- It encourages good programming practices, clean code, and reliable software development.
+
+STACK DATA STRUCTURE
+========================
+
+What is Stack?
+---------------
+- A stack is a **linear data structure** that follows the **LIFO (Last In, First Out)** principle.
+- The last element added (pushed) to the stack is the first one to be removed (popped).
+- Think of a stack like a pile of plates – you can only take off the top plate or add a new one on top.
+
+Key Characteristics:
+---------------------
+1. Linear Structure
+2. LIFO Order
+3. One end access – Insertion and deletion are done from the top only.
+4. Can be implemented using arrays, linked lists, or the Java `Stack` class.
+
+Basic Stack Operations:
+-------------------------
+1. push(x) – Adds an element `x` to the top of the stack.
+2. pop() – Removes and returns the top element of the stack.
+3. peek() / top() – Returns the top element without removing it.
+4. isEmpty() – Returns `true` if the stack has no elements.
+5. isFull() – Applicable for static stack; checks if the stack is full.
+
+Stack Representation:
+------------------------
+[Top] → element  
+         element  
+         element  
+[Bottom] → element
+
+Stack Implementation Methods:
+------------------------------
+1. Array-based Stack (static)
+2. Linked List-based Stack (dynamic)
+3. Using Java Collection Framework – `java.util.Stack`
+
+Example 1: Stack using Array in Java
+---------------------------------------
+```java
+import java.util.Scanner;
+
+public class StackApp {
+    static class Stack {
+        private int top;
+        private final int[] stack;
+        private final int capacity;
+
+        public Stack(int size) {
+            capacity = size;
+            stack = new int[capacity];
+            top = -1;
+        }
+
+        public void push(int x) {
+            if (top == capacity - 1) {
+                System.out.println("Stack Overflow");
+            } else {
+                stack[++top] = x;
+                System.out.println(x + " pushed into the stack");
+            }
+        }
+
+        public void pop() {
+            if (top == -1) {
+                System.out.println("Stack Underflow");
+            } else {
+                System.out.println("Popped: " + stack[top--]);
+            }
+        }
+
+        public void peek() {
+            if (top == -1) {
+                System.out.println("Stack is Empty");
+            } else {
+                System.out.println("Top element: " + stack[top]);
+            }
+        }
+
+        public void printStack() {
+            if (top == -1) {
+                System.out.println("Stack is Empty");
+                return;
+            }
+            System.out.println("Stack elements (top to bottom):");
+            for (int i = top; i >= 0; i--) {
+                System.out.println(stack[i]);
+            }
+        }
+
+        public boolean isEmpty() {
+            return top == -1;
+        }
+
+        public boolean isFull() {
+            return top == capacity - 1;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack stack = new Stack(5); // stack size 5
+        int choice, value;
+
+        do {
+            System.out.println("\n----- Stack Menu -----");
+            System.out.println("1. Push");
+            System.out.println("2. Pop");
+            System.out.println("3. Peek");
+            System.out.println("4. Print Stack");
+            System.out.println("5. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter value to push: ");
+                    value = sc.nextInt();
+                    stack.push(value);
+                    break;
+                case 2:
+                    stack.pop();
+                    break;
+                case 3:
+                    stack.peek();
+                    break;
+                case 4:
+                    stack.printStack();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        } while (choice != 5);
+
+        sc.close();
+    }
+}
+
+Data Type vs Data Structure
+-------------------------------
+Data Type:
+- Defines the type of variable (int, float, etc).
+- Cannot hold multiple values.
+- Abstract implementation.
+- No time complexity.
+- Dataless: only type representation.
+
+Data Structure:
+- Collection of various data types.
+- Holds and organizes data.
+- Concrete implementation.
+- Time complexity is important.
+- Occupies space in memory.
+- Examples: Stack, Queue, Tree, Graph
+
+Coding Questions
+-----------------
+Q1) Stack Menu Driven Program:
+    ----- Stack Menu -----
+    1. Push
+    2. Pop
+    3. Peek
+    4. Print Stack
+    5. Exit
+
+Q2) Stack program using wrapper class to reverse a string.
+
+Q3) Decimal to Binary conversion using stack and wrapper class.
+
+Q4) Balanced Brackets checker using stack and wrapper class.
+
+Q5) Java program to convert Infix to Postfix using wrapper class.
+
+Q6) Java program to convert Infix to Prefix using wrapper class.
+
+Q7) Find the max value using stack program, use wrapper class also 
+
+Q8) Postfix Evaluation Program in java 
+
+Q9) Prefix Evaluation Program
+
+Expression Notations
+------------------------------
+- Prefix (Polish Notation)
+- Infix
+- Postfix (Reverse Polish Notation)
+
+Overview:
+Expression notations are different ways to write arithmetic expressions.
+
+1. Infix Notation
+------------------
+- Operators are written between operands.
+- This is the standard way humans write expressions.
+- Requires parentheses and operator precedence rules.
+
+Example:
+A + B * C
+=> * has higher precedence, so the expression means:
+A + (B * C)
+
+2. Prefix Notation (Polish Notation)
+------------------------------------
+- Operators are written before their operands.
+- No parentheses needed, operator precedence is implied by position.
+
+General form:
+Operator Operand1 Operand2
+
+Example:
++ A * B C
+=> Equivalent to: A + (B * C)
+
+3. Postfix Notation (Reverse Polish Notation)
+---------------------------------------------
+- Operators are written after their operands.
+- No parentheses needed.
+
+General form:
+Operand1 Operand2 Operator
+
+Example:
+A B C * +
+=> Equivalent to: A + (B * C)
+
+
+Detailed Example: A + B * C
+----------------------------
+
+Infix:
+A + B * C
+=> * has higher precedence
+=> A + (B * C)
+
+Prefix Conversion:
+1. Identify highest precedence operator: * between B and C
+2. Convert B * C => * B C
+3. Combine with A using + => + A * B C
+Prefix Expression: + A * B C
+
+Postfix Conversion:
+1. Identify highest precedence operator: * between B and C
+2. Convert B * C => B C *
+3. Combine with A using + => A B C * +
+Postfix Expression: A B C * +
+
+
+Another Example: (A + B) * (C - D)
+----------------------------------
+
+Infix:
+(A + B) * (C - D)
+
+Prefix:
+1. A + B => + A B
+2. C - D => - C D
+3. Combine with * => * + A B - C D
+Prefix Expression: * + A B - C D
+
+Postfix:
+1. A + B => A B +
+2. C - D => C D -
+3. Combine with * => A B + C D - *
+Postfix Expression: A B + C D - *
+
+
+Why Use Prefix/Postfix?
+------------------------
+- No ambiguity: No need for parentheses or precedence rules.
+- Efficient for computers: Easily evaluated using a stack.
+
+
+Postfix Evaluation Example:
+----------------------------
+
+Expression: 5 6 2 + * 
+Equivalent to: 5 * (6 + 2)
+
+Steps:
+1. Read 5 => push to stack
+2. Read 6 => push
+3. Read 2 => push
+4. Read + => pop 2, 6 => 6 + 2 = 8 => push 8
+5. Read * => pop 8, 5 => 5 * 8 = 40 => push 40
+
+Final Result = 40
+
+ALGORITHM: Postfix Expression Evaluation
+----------------------------------------
+
+Step 1: Initialize an empty stack.
+
+Step 2: Scan the postfix expression from left to right.
+
+Step 3: For each symbol in the expression:
+    → If the symbol is an operand (number):
+        - Push it onto the stack.
+    
+    → If the symbol is an operator (+, -, *, /, ^):
+        - Pop two operands from the stack.
+        - Apply the operator: result = operand2 operator operand1
+          (Note: Second popped value is operand1, first is operand2)
+        - Push the result back onto the stack.
+
+Step 4: After the entire expression is scanned,
+        - The result will be on the top of the stack.
+        - Pop and return it.
+
+Step 5: End
+
+----------------------------------------
+
+EXAMPLE:
+Postfix = 6 2 3 + - 3 8 2 / + *
+
+Step-by-step:
+Stack: [6]
+Stack: [6, 2]
+Stack: [6, 2, 3]
+Operator + → Pop 3, 2 → 2 + 3 = 5 → Stack: [6, 5]
+Operator - → Pop 5, 6 → 6 - 5 = 1 → Stack: [1]
+Stack: [1, 3]
+Stack: [1, 3, 8]
+Stack: [1, 3, 8, 2]
+Operator / → 8 / 2 = 4 → Stack: [1, 3, 4]
+Operator + → 3 + 4 = 7 → Stack: [1, 7]
+Operator * → 1 * 7 = 7 → Stack: [7]
+
+Answer: 7
+
+ALGORITHM: Prefix Expression Evaluation
+----------------------------------------
+
+Step 1: Initialize an empty stack.
+
+Step 2: Scan the prefix expression from **right to left**.
+
+Step 3: For each symbol in the expression:
+    → If the symbol is an operand (number):
+        - Push it onto the stack.
+
+    → If the symbol is an operator (+, -, *, /, ^):
+        - Pop two operands from the stack.
+        - Apply the operator: result = operand1 operator operand2
+          (Note: First popped value is operand1, second is operand2)
+        - Push the result back onto the stack.
+
+Step 4: After the entire expression is scanned,
+        - The result will be on the top of the stack.
+        - Pop and return it.
+
+Step 5: End
+
+----------------------------------------
+
+EXAMPLE:
+Prefix = * + 2 3 - 5 2
+
+Step-by-step:
+Read from right to left:
+→ Push 2
+→ Push 5
+→ Operator - → 5 - 2 = 3 → Stack: [3]
+→ Push 3
+→ Push 2
+→ Operator + → 2 + 3 = 5 → Stack: [3, 5]
+→ Operator * → 5 * 3 = 15 → Stack: [15]
+
+Answer: 15
+
+
+ALGORITHM: Infix to Postfix Conversion
+----------------------------------------
+
+Step 1: Initialize an empty stack for operators.
+Step 2: Initialize an empty postfix string for output.
+
+Step 3: Scan the infix expression from left to right.
+
+Step 4: For each character in the expression:
+    → If the character is an operand (A–Z or 0–9):
+        Append it to the postfix string.
+    
+    → If the character is an opening parenthesis '(':
+        Push it onto the stack.
+    
+    → If the character is a closing parenthesis ')':
+        While the top of the stack is not '(':
+            Pop from stack and append to postfix.
+        Pop '(' from the stack (discard it).
+    
+    → If the character is an operator (+, -, *, /, ^):
+        While the stack is not empty AND precedence of the
+        current operator <= precedence of the operator at the top of the stack:
+            Pop from stack and append to postfix.
+        Push the current operator onto the stack.
+
+Step 5: After scanning the entire expression,
+        pop all remaining operators from the stack and append to postfix.
+
+Step 6: End
+
+--------------------------------------
+OPERATOR PRECEDENCE (High to Low):
+^       : Right to Left Associative
+*, /    : Left to Right
++, -    : Left to Right
+
+--------------------------------------
+
+EXAMPLE:
+Infix   = A + B * C
+Postfix = ABC*+
+
+--------------------------------------
+
+
+ALGORITHM: Infix to Prefix Conversion
+--------------------------------------
+
+Step 1: Reverse the infix expression.
+    → While reversing, change '(' to ')' and ')' to '('.
+
+Step 2: Convert the reversed expression to postfix using the usual
+        infix-to-postfix algorithm.
+
+Step 3: Reverse the postfix expression obtained in Step 2.
+        The result is the prefix expression.
+
+Step 4: End
+
+--------------------------------------
+OPERATOR PRECEDENCE (High to Low):
+^       : Right to Left Associative
+*, /    : Left to Right
++, -    : Left to Right
+
+--------------------------------------
+
+EXAMPLE:
+Original Infix  = (A - B) / (C + D)
+
+Step 1 (Reversed and swapped): (D + C) / (B - A)
+Step 2 (Postfix of above)     : DC+BA-/
+Step 3 (Reverse postfix)      : /-AB+CD
+
+Prefix = /-AB+CD
+
+--------------------------------------
+
+Reverse String Using Stack
+---------------------------
+1. Input string.
+2. Push each char to stack.
+3. Pop all and build reversed string.
+
+Decimal to Binary Using Stack
+------------------------------
+1. Input number.
+2. Push n%2 onto stack, update n = n/2.
+3. Pop and append to binary string.
+
+Balanced Brackets Using Stack
+-----------------------------
+1. For each char in string:
+    - Push if opening bracket.
+    - If closing, check match with top of stack.
+2. Stack empty → balanced. Else → not balanced.
+

@@ -1,0 +1,453 @@
+DAY-2 
+=======
+
+Data Structure and Algorithm
+==================================
+
+Queue Data Structure
+-----------------------
+A queue is a linear data structure that follows the FIFO (First In First Out) principle. 
+The element added first will be removed first. It is like a real-world queue, for example, a queue of people in line at a ticket counter.
+
+Basic Operations:
+- Enqueue(): Add an element to the end of the queue.
+- Dequeue(): Remove an element from the front of the queue.
+- Peek()/Front(): Get the front element without removing it.
+- isEmpty(): Check if the queue is empty.
+- isFull(): Check if the queue is full (for fixed-size queues).
+
+
+Problem of Linear Queue
+----------------------------
+In a simple linear queue implemented with an array, after multiple enqueue and dequeue operations,
+there might be empty space at the front that can't be reused. This leads to inefficient space usage.
+
+Example:
+Queue size = 5
+Operations: enqueue(10), enqueue(20), enqueue(30), dequeue(), dequeue()
+Now front is at index 2, rear at index 2
+Even though there are empty spots at index 0 and 1, new elements can't be added unless we shift the data.
+
+Solution: Use Circular Queue
+
+
+Methods in Queue Data Structure
+-----------------------------------
+1. Enqueue(item): Inserts an element at the rear.
+2. Dequeue(): Removes and returns the front element.
+3. Front(): Returns the front element without removing it.
+4. Rear(): Returns the last element.
+5. isEmpty(): Checks whether the queue is empty.
+6. isFull(): Checks whether the queue is full (in case of fixed-size queues).
+
+Example (Java code):
+Queue<Integer> q = new LinkedList<>();
+q.add(10); // enqueue
+q.remove(); // dequeue
+q.peek(); // front
+
+
+Types of Queue (With Algorithms and Examples)
+==========================================
+
+1. Linear Queue
+--------------------
+Description:
+- Insertion at rear, deletion at front.
+- Does not reuse space after deletion.
+
+Algorithm:
+Enqueue(Q, x):
+    if rear == MAX - 1
+        print "Queue is Full"
+    else
+        rear = rear + 1
+        Q[rear] = x
+
+Dequeue(Q):
+    if front > rear
+        print "Queue is Empty"
+    else
+        x = Q[front]
+        front = front + 1
+        return x
+
+Java Example:
+--------------
+int front = 0, rear = -1;
+int[] q = new int[5];
+
+void enqueue(int x) {
+    if (rear == 4) System.out.println("Queue is Full");
+    else q[++rear] = x;
+}
+
+int dequeue() {
+    if (front > rear) {
+        System.out.println("Queue is Empty");
+        return -1;
+    }
+    return q[front++];
+}
+
+2. Circular Queue
+--------------------
+Description:
+- Overcomes limitations of linear queue using circular structure.
+- Reuses space after deletion.
+
+Algorithm:
+Enqueue(Q, x):
+    if (front == (rear + 1) % size)
+        print "Queue is Full"
+    else if (front == -1)
+        front = rear = 0
+    else
+        rear = (rear + 1) % size
+    Q[rear] = x
+
+Dequeue(Q):
+    if (front == -1)
+        print "Queue is Empty"
+    else if (front == rear)
+        front = rear = -1
+    else
+        front = (front + 1) % size
+
+Java Example:
+--------------
+int front = -1, rear = -1;
+int size = 5;
+int[] q = new int[size];
+
+void enqueue(int x) {
+    if ((rear + 1) % size == front) System.out.println("Full");
+    else {
+        if (front == -1) front = 0;
+        rear = (rear + 1) % size;
+        q[rear] = x;
+    }
+}
+
+3. Priority Queue
+--------------------
+Description:
+- Elements dequeued based on priority, not order.
+
+Algorithm:
+Insert(Q, x, priority):
+    Insert based on priority order
+
+Delete(Q):
+    Remove element with highest priority
+
+Java Example:
+--------------
+import java.util.PriorityQueue;
+
+PriorityQueue<Integer> pq = new PriorityQueue<>();
+pq.add(20);
+pq.add(5);
+pq.add(15);
+System.out.println(pq.poll()); // prints 5
+
+4. Deque (Double-Ended Queue)
+----------------------------------
+Description:
+- Insertion and deletion from both ends.
+
+Algorithm:
+InsertFront(Q, x)
+InsertRear(Q, x)
+DeleteFront(Q)
+DeleteRear(Q)
+
+Java Example:
+--------------
+import java.util.Deque;
+import java.util.LinkedList;
+
+Deque<Integer> dq = new LinkedList<>();
+dq.addFirst(10);  // Insert front
+dq.addLast(20);   // Insert rear
+dq.removeFirst(); // Delete front
+dq.removeLast();  // Delete rear
+
+
+Summary Table:
+---------------------------------------------------------------------------
+| Type              | Insert At | Delete At | Feature                     |
+|-------------------|-----------|-----------|-----------------------------|
+| Linear Queue      | Rear      | Front     | Fixed size, no reuse        |
+| Circular Queue    | Rear      | Front     | Reuses space circularly     |
+| Priority Queue    | Anywhere  | Highest   | Based on priority           |
+| Deque             | Both Ends | Both Ends | Versatile, stack + queue    |
+---------------------------------------------------------------------------
+
+
+Example in Java:
+Deque<Integer> dq = new LinkedList<>();
+dq.addFirst(10); // add at front
+dq.addLast(20);  // add at rear
+dq.removeFirst(); // remove from front
+dq.removeLast(); // remove from rear
+
+ArrayList
+---------
+
+- ArrayList is a resizable array implementation of the List interface in Java.
+- It allows dynamic resizing and provides fast random access to elements.
+- Elements are ordered and can contain duplicates.
+- Internally uses an Object array to store elements.
+- When the internal array is full, it grows by about 50% of its current size.
+- Allows null elements.
+- Not synchronized (not thread-safe).
+- Useful when frequent random access is needed, and insertions/removals mostly happen at the end.
+
+Common ArrayList Methods:
+- add(E e): Adds element to the end.
+- add(int index, E element): Inserts element at the specified position.
+- get(int index): Returns the element at the specified position.
+- remove(int index): Removes element at the specified position.
+- remove(Object o): Removes the first occurrence of the specified element.
+- size(): Returns the number of elements.
+- clear(): Removes all elements.
+- isEmpty(): Checks if the list is empty.
+- contains(Object o): Checks if the list contains the specified element.
+- indexOf(Object o): Returns the index of the first occurrence.
+- lastIndexOf(Object o): Returns the index of the last occurrence.
+
+Collection Interface
+--------------------
+
+- Collection is the root interface in the Java Collection Framework.
+- It represents a group of objects known as elements.
+- Extended by List, Set, Queue interfaces.
+- Provides basic operations like add, remove, size, and iterator.
+- Can be implemented by various collection types (ArrayList, HashSet, LinkedList, etc.).
+
+Common Methods of Collection Interface in Java
+----------------------------------------------
+
+1. add(E e)
+   - Purpose: Adds the specified element e to the collection.
+   - Returns: true if the collection changed as a result of the call, otherwise false.
+   - Example:
+     Collection<String> c = new ArrayList<>();
+     c.add("Apple");  // returns true
+
+2. addAll(Collection<? extends E> c)
+   - Purpose: Adds all the elements from the specified collection c to the current collection.
+   - Returns: true if the collection changed as a result of the call.
+   - Example:
+     Collection<String> c1 = new ArrayList<>();
+     c1.add("Apple");
+     Collection<String> c2 = new ArrayList<>();
+     c2.add("Banana");
+     c2.add("Mango");
+     c1.addAll(c2);  // adds Banana and Mango to c1
+
+3. remove(Object o)
+   - Purpose: Removes a single instance of the specified element o from the collection, if it is present.
+   - Returns: true if the element was present and removed, otherwise false.
+   - Example:
+     c.remove("Apple");  // removes "Apple" if exists
+
+4. clear()
+   - Purpose: Removes all elements from the collection.
+   - Returns: void.
+   - Example:
+     c.clear();  // removes all elements, collection becomes empty
+
+5. contains(Object o)
+   - Purpose: Checks if the collection contains the specified element o.
+   - Returns: true if the element is found, otherwise false.
+   - Example:
+     boolean hasApple = c.contains("Apple");
+
+6. isEmpty()
+   - Purpose: Checks if the collection has no elements.
+   - Returns: true if the collection is empty, otherwise false.
+   - Example:
+     if (c.isEmpty()) {
+       System.out.println("Collection is empty");
+     }
+
+7. size()
+   - Purpose: Returns the number of elements in the collection.
+   - Returns: int representing the size.
+   - Example:
+     int count = c.size();
+
+8. iterator()
+   - Purpose: Returns an iterator over the elements in the collection.
+   - Returns: Iterator<E> object to traverse the collection.
+   - Example:
+     Iterator<String> it = c.iterator();
+     while(it.hasNext()) {
+       System.out.println(it.next());
+     }
+
+Summary Table
+-------------
+Method                            | Purpose                                  | Return Type
+----------------------------------|------------------------------------------|---------------
+add(E e)                          | Add element                              | boolean
+addAll(Collection<? extends E> c) | Add all elements from another collection | boolean
+remove(Object o)                  | Remove one instance of element           | boolean
+clear()                           | Remove all elements                      | void
+contains(Object o)                | Check if element exists                  | boolean
+isEmpty()                         | Check if collection is empty             | boolean
+size()                            | Get number of elements                   | int
+iterator()                        | Get iterator to traverse elements        | Iterator<E>
+
+
+
+Q1) Queue Program ADT - Algorithm
+------------------------------------
+1. Initialize front = 0, rear = -1, and maxSize.
+2. Create an array queue[] of maxSize.
+3. Enqueue:
+    - Check if queue is full (rear == maxSize - 1).
+    - If not, increment rear and insert element.
+4. Dequeue:
+    - Check if queue is empty (front > rear).
+    - If not, print and increment front.
+5. Display all elements from front to rear.
+
+Q2) Queue Program ADT with Menu Driven - Algorithm
+-----------------------------------------------------
+1. Follow same steps as Q1 to initialize.
+2. Use a loop with menu choices:
+    a. 1 - Enqueue (input value and insert)
+    b. 2 - Dequeue (remove and display)
+    c. 3 - Display elements
+    d. 4 - Exit
+
+Q3) Circular Queue - Algorithm
+----------------------------------
+1. Initialize front = -1, rear = -1, maxSize.
+2. Create queue[] array of maxSize.
+3. Enqueue:
+    - If (front == 0 && rear == maxSize - 1) or (rear + 1 == front): Queue is full.
+    - Else, set rear = (rear + 1) % maxSize and insert.
+    - If front == -1, set front = 0.
+4. Dequeue:
+    - If front == -1: Queue is empty.
+    - Print queue[front], set front = (front + 1) % maxSize.
+    - If front == rear after dequeue, reset front and rear to -1.
+
+Q4) Circular Queue using Menu Driven - Algorithm
+--------------------------------------------------
+1. Initialize as in Q3.
+2. Use do-while or while loop with menu:
+    a. 1 - Enqueue
+    b. 2 - Dequeue
+    c. 3 - Display elements using circular traversal
+    d. 4 - Exit
+
+Q5) Priority Queue - Algorithm
+---------------------------------
+1. Use array of objects with value and priority.
+2. Enqueue:
+    - Insert in sorted order of priority.
+3. Dequeue:
+    - Remove element with highest priority (based on rule).
+4. Display all elements with priority.
+
+Q6) Binary Using Queue - Algorithm
+-------------------------------------
+1. Create a queue of strings.
+2. Enqueue "1".
+3. Loop n times:
+    a. Dequeue front.
+    b. Print it.
+    c. Enqueue front + "0" and front + "1".
+
+Q7) Reverse the k Element - Algorithm
+-----------------------------------------
+1. Push first k elements from queue into stack.
+2. Pop from stack and enqueue to queue.
+3. Move remaining size-k elements from front to back of queue.
+
+Q8) Reverse First N Elements - Algorithm
+---------------------------------------------
+1. Take input n (must be 0 < n <= size).
+2. Push first n elements into stack.
+3. Pop and enqueue all from stack.
+4. Move remaining elements to maintain order.
+
+
+Q9) Max in Sub Array
+----------------------
+Problem:
+Find the maximum element in a given subarray of an array.
+
+Algorithm:
+1. Input: An array 'arr', and two indices 'start' and 'end' defining the subarray.
+2. Initialize a variable 'maxVal' to the first element in the subarray (arr[start]).
+3. Loop from 'start' to 'end' inclusive:
+    a. Compare current element arr[i] with 'maxVal'.
+    b. If arr[i] > maxVal, update maxVal = arr[i].
+4. After loop ends, 'maxVal' holds the maximum element in the subarray.
+5. Output maxVal.
+
+Example:
+arr = [5, 8, 3, 12, 7, 9]
+start = 2, end = 4
+Subarray = [3, 12, 7]
+Max value = 12
+
+
+Q10) Sliding Window Max
+------------------------
+Problem:
+Given an array 'arr' and a window size 'k', find the maximum element in every contiguous subarray of size k.
+
+Algorithm:
+1. Input: Array 'arr', window size 'k'.
+2. Initialize an empty list 'result' to store max values.
+3. Loop i from 0 to arr.length - k:
+    a. Extract the subarray from i to i + k - 1.
+    b. Find the maximum element in this subarray using the Q9 algorithm.
+    c. Add this maximum to 'result'.
+4. After loop ends, 'result' contains the max elements of each window.
+5. Output 'result'.
+
+Example:
+arr = [1, 3, -1, -3, 5, 3, 6, 7], k=3
+Windows:
+[1,3,-1] max=3
+[3,-1,-3] max=3
+[-1,-3,5] max=5
+[-3,5,3] max=5
+[5,3,6] max=6
+[3,6,7] max=7
+Output: [3, 3, 5, 5, 6, 7]
+
+
+Q11) Sliding_Window_SumMax
+---------------------------
+Problem:
+Given an array 'arr' and window size 'k', find the maximum sum of any contiguous subarray of size k.
+
+Algorithm:
+1. Input: Array 'arr', window size 'k'.
+2. Initialize 'maxSum' to 0.
+3. Calculate the sum of first 'k' elements and store in 'currentSum'.
+4. Set maxSum = currentSum.
+5. Loop i from k to arr.length - 1:
+    a. Update currentSum = currentSum + arr[i] - arr[i-k]
+       (Add next element and remove first element of previous window)
+    b. If currentSum > maxSum, update maxSum = currentSum.
+6. After loop ends, maxSum holds the maximum sum of any subarray of size k.
+7. Output maxSum.
+
+Example:
+arr = [2, 3, 4, 1, 5], k=3
+Windows and sums:
+[2,3,4] sum=9
+[3,4,1] sum=8
+[4,1,5] sum=10
+Maximum sum = 10
+

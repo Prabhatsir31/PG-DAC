@@ -1,0 +1,399 @@
+DAY-3
+=======
+
+Data Structure and Algorithm
+==================================
+
+Algorithm: Queue using Two Stacks
+------------------------------------
+
+1. Initialize two stacks:
+   - stack1 for enqueue operations
+   - stack2 for dequeue operations
+
+2. Enqueue(x):
+   - Push the element x onto stack1
+   - Print "Enqueued: x"
+
+3. Dequeue():
+   - If stack2 is empty:
+       - While stack1 is not empty:
+           - Pop elements from stack1 and push them to stack2
+   - If stack2 is still empty:
+       - Print "Queue is empty"
+       - Return -1
+   - Else:
+       - Pop and return the top element of stack2
+
+4. Peek():
+   - If stack2 is empty:
+       - While stack1 is not empty:
+           - Pop elements from stack1 and push to stack2
+   - If stack2 is still empty:
+       - Print "Queue is empty"
+       - Return -1
+   - Else:
+       - Return top element of stack2
+
+5. isEmpty():
+   - Return true if both stack1 and stack2 are empty
+   - Else return false
+
+6. isFull():
+   - Return true if (stack1.size() + stack2.size()) == capacity
+   - Else return false
+
+7. Display():
+   - Print elements of stack2 in reverse order
+   - Then print elements of stack1 in normal order
+   - This shows the actual queue order
+
+8. Main Program Flow:
+   - Use Scanner to take input from the user
+   - Provide options:
+       1. Enqueue
+       2. Dequeue
+       3. Peek
+       4. isEmpty
+       5. Display
+       6. Exit
+   - Perform actions based on user choice
+
+Algorithm: Stack using Two Queue
+------------------------------------
+
+1. Initialize:
+   - queue1 for main operations (empty)
+   - queue2 for temporary use (empty)
+   - capacity = N
+
+2. isFull():
+   - Return true if queue1.size() == capacity
+   - Else return false
+
+3. push(x):
+   - If isFull():
+       • Print "Stack is full — cannot push."
+       • Return
+   - Enqueue x into queue2
+   - While queue1 is not empty:
+       • Dequeue from queue1 and enqueue into queue2
+   - Swap queue1 and queue2
+   - Print "Pushed: x"
+
+4. pop():
+   - If queue1 is empty:
+       • Print "Stack is empty."
+       • Return −1
+   - Else:
+       • Dequeue and return element from queue1
+
+5. peek():
+   - If queue1 is empty:
+       • Print "Stack is empty."
+       • Return −1
+   - Else:
+       • Return (without removing) the front element of queue1
+
+6. isEmpty():
+   - Return true if queue1 is empty
+   - Else return false
+
+7. display():
+   - Print "Stack elements (top→bottom):"
+   - For each element in queue1 from front to back:
+       • Print the element
+
+8. Main Program Loop:
+   - Use Scanner to read user’s choice:
+       1 → push
+       2 → pop
+       3 → peek
+       4 → isEmpty
+       5 → isFull
+       6 → display
+       7 → exit
+   - Perform the corresponding operation, print results
+
+
+Linked List 
+=================
+
+What is a Linked List?
+----------------------
+A Linked List is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, linked lists do not store elements in contiguous memory locations.
+
+Each node contains two parts:
+- Data (value)
+- Pointer (reference to the next node)
+
+Diagram (Singly Linked List):
+[10 | *] -> [20 | *] -> [30 | null]
+
+
+Types of Linked Lists:
+----------------------
+1. Singly Linked List (SLL)
+   - Each node points to the next node.
+   - Last node points to null.
+   - Traversal: Forward only.
+
+2. Doubly Linked List (DLL)
+   - Each node contains two pointers: previous and next.
+   - Traversal: Forward and backward.
+
+3. Circular Linked List (CLL)
+   - Last node points back to the first node.
+   - Can be singly or doubly circular.
+
+4. Doubly Circular Linked List
+   - Combination of doubly and circular.
+   - Last node points to the first and first to the last.
+
+
+Common Linked List Methods (with Description):
+----------------------------------------------
+
+1. insertAtBeginning(data)
+   - Inserts a new node at the beginning of the list.
+
+2. insertAtEnd(data)
+   - Adds a new node at the end of the list.
+
+3. insertAtPosition(data, position)
+   - Inserts a new node at a specified position.
+
+4. deleteFromBeginning()
+   - Removes the first node of the list.
+
+5. deleteFromEnd()
+   - Removes the last node.
+
+6. deleteAtPosition(position)
+   - Removes node at a specified position.
+
+7. display()
+   - Traverses and prints all node values.
+
+8. search(value)
+   - Checks whether a value exists in the list.
+
+9. reverse()
+   - Reverses the linked list.
+
+10. length()
+    - Returns the number of nodes in the list.
+
+
+Advantages of Linked Lists:
+---------------------------
+- Dynamic size (grow/shrink easily)
+- Efficient insertions/deletions (especially at head)
+
+Disadvantages of Linked Lists:
+------------------------------
+- No random access (unlike arrays)
+- Extra memory for pointers
+- Sequential access only
+
+
+Interesting Facts:
+------------------
+- Linked Lists form the basis of many complex data structures like graphs, hash tables, adjacency lists.
+- Recursive solutions are often easier to write with linked lists.
+- In Operating Systems, task scheduling often uses circular linked lists.
+- Linked Lists are great for implementing stacks, queues, and memory management (free lists).
+
+
+Visual Representation (Doubly Linked List):
+null <- [10 | * | *] <-> [20 | * | *] <-> [30 | * | null]
+
+
+Conclusion:
+-----------
+Linked lists are fundamental and flexible data structures used extensively in real-world applications. Mastering them helps in understanding memory management, pointer manipulation, and building complex data systems.
+
+Difference between Linked List and Array 
+---------------------------------------------
+
+
+
+which relarionship follows the linked list 
+---------------------------------------------
+
+
+Algorithm: Linked List with Common Operations
+--------------------------------------------------
+
+1. Initialize Node Structure:
+   - Define a class Node with:
+     • data : to store value
+     • next : pointer to next node (initially null)
+
+2. Initialize LinkedList:
+   - Define a class LinkedList with:
+     • head : pointer to the first node (initially null)
+
+3. isEmpty():
+   - Return true if head == null
+   - Else return false
+
+4. insertAtBeginning(data):
+   - Create newNode with given data
+   - Set newNode.next = head
+   - Set head = newNode
+
+5. insertAtEnd(data):
+   - Create newNode with given data
+   - If list is empty (head == null):
+     • Set head = newNode
+   - Else:
+     • Traverse to the last node
+     • Set lastNode.next = newNode
+
+6. insertAtPosition(data, pos):
+   - If pos == 0 → call insertAtBeginning(data)
+   - Traverse to (pos - 1)th node
+   - Set newNode.next = current.next
+   - Set current.next = newNode
+
+7. deleteAtBeginning():
+   - If list is empty → print "Underflow"
+   - Else:
+     • Set head = head.next
+
+8. deleteAtEnd():
+   - If list is empty → print "Underflow"
+   - If only one node → head = null
+   - Else:
+     • Traverse till second last node
+     • Set secondLast.next = null
+
+9. deleteAtPosition(pos):
+   - If pos == 0 → call deleteAtBeginning()
+   - Traverse to (pos - 1)th node
+   - Set current.next = current.next.next
+
+10. search(value):
+    - Traverse through list
+    - If current.data == value → return true
+    - After traversal, return false
+
+11. countNodes():
+    - Initialize count = 0
+    - Traverse the list incrementing count
+    - Return count
+
+12. reverse():
+    - Initialize 3 pointers: prev=null, current=head, next=null
+    - While current is not null:
+      • next = current.next
+      • current.next = prev
+      • prev = current
+      • current = next
+    - Set head = prev
+
+13. display():
+    - Traverse through list and print each node’s data
+
+14. Main Menu:
+    - Use Scanner to provide choices:
+      1. insertAtBeginning
+      2. insertAtEnd
+      3. insertAtPosition
+      4. deleteAtBeginning
+      5. deleteAtEnd
+      6. deleteAtPosition
+      7. search
+      8. countNodes
+      9. reverse
+     10. display
+     11. exit
+
+Q1) Linked List Program Algorithm
+-----------------------------------
+1. Start
+2. Define a class 'Node' with:
+   - int data
+   - Node next
+3. Define a class 'LinkedList' with:
+   - Node head = null
+4. Implement 'insertAtEnd(int data)':
+   - Create a new Node
+   - If head is null → head = newNode
+   - Else, traverse to the end and link newNode
+5. Implement 'display()':
+   - Traverse from head and print data
+6. In main:
+   - Create LinkedList object
+   - Call insert and display
+7. End
+
+Q2) Linked List with Menu Driven Algorithm
+-----------------------------------
+1. Start
+2. Define Node class
+3. Define LinkedList class with:
+   - insertAtBeginning
+   - insertAtEnd
+   - deleteFromBeginning
+   - deleteFromEnd
+   - display
+4. In main:
+   - Loop with menu using Scanner
+   - Use switch-case for operations
+5. End
+
+Q3) Linked List using Stack (Menu Driven) Algorithm
+-----------------------------------
+1. Start
+2. Create Node class
+3. Create StackUsingLinkedList class with:
+   - Node top = null
+   - push(int data)
+   - pop()
+   - peek()
+   - display()
+4. In main:
+   - Loop with menu:
+     - 1. Push
+     - 2. Pop
+     - 3. Peek
+     - 4. Display
+     - 5. Exit
+5. End
+
+Q4) Linked List using Queue (Menu Driven) Algorithm
+-----------------------------------
+1. Start
+2. Create Node class
+3. Create QueueUsingLinkedList class with:
+   - Node front = null, rear = null
+   - enqueue(int data)
+   - dequeue()
+   - peek()
+   - display()
+4. In main:
+   - Loop with menu:
+     - 1. Enqueue
+     - 2. Dequeue
+     - 3. Peek
+     - 4. Display
+     - 5. Exit
+5. End
+
+Q5) Circular Linked List Algorithm
+-----------------------------------
+1. Start
+2. Create Node class
+3. Create CircularLinkedList class with:
+   - Node root = null, last = null
+   - insertLeft(int data)
+   - insertRight(int data)
+   - deleteLeft()
+   - deleteRight()
+   - display()
+4. Use do-while in display to avoid infinite loop
+5. In main:
+   - Call insert, delete, and display operations
+6. End
