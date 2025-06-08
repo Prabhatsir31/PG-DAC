@@ -1,0 +1,55 @@
+===================
+Algorithm: Graph
+===================
+
+1. Graph Representation:
+   - Use adjacency matrix or adjacency list to represent the graph
+   - For adjacency list, each vertex stores a list of adjacent vertices
+
+2. Create Graph:
+   - Initialize graph with vertices and edges
+   - For each edge, add the connection in adjacency structure
+   - If undirected graph, add edges both ways
+
+3. Depth-First Search (DFS):
+   - Start at a chosen vertex
+   - Mark the current vertex as visited
+   - For each adjacent vertex,
+     - If not visited, recursively perform DFS on that vertex
+
+4. Breadth-First Search (BFS):
+   - Start at a chosen vertex
+   - Create a queue and enqueue the start vertex
+   - Mark start vertex as visited
+   - While queue is not empty,
+     - Dequeue a vertex
+     - For each adjacent vertex,
+       - If not visited, mark visited and enqueue it
+
+5. Add Vertex:
+   - Add new vertex to the graph structure
+   - Initialize adjacency list or matrix entry
+
+6. Add Edge:
+   - For vertices u and v,
+   - Add v to u’s adjacency list
+   - If undirected, also add u to v’s adjacency list
+
+7. Remove Vertex:
+   - Remove vertex from graph
+   - Remove all edges connected to vertex
+
+8. Remove Edge:
+   - Remove edge from u to v
+   - If undirected, also remove edge from v to u
+
+9. Detect Cycle:
+   - Using DFS and a recursion stack (for directed graph)
+   - Using Union-Find or DFS parent tracking (for undirected graph)
+
+10. Shortest Path:
+    - Use Dijkstra’s algorithm for weighted graph with non-negative edges
+    - Use BFS for unweighted graph
+
+11. Minimum Spanning Tree:
+    - Use Kruskal’s algorithm or Prim’s algorithm

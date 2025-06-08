@@ -1,0 +1,68 @@
+
+===================================
+ ALGORITHM: CIRCULAR LINKED LIST
+===================================
+
+1. NODE STRUCTURE:
+   - data
+   - next (reference to next node)
+
+2. INITIALIZE:
+   - head = null
+   - last = null
+
+3. INSERT AT BEGINNING (insertLeft):
+   a. Create new node with data
+   b. If head is null:
+        - head = last = node
+        - node.next = head
+   c. Else:
+        - node.next = head
+        - head = node
+        - last.next = head
+
+4. INSERT AT END (insertRight):
+   a. Create new node with data
+   b. If head is null:
+        - head = last = node
+        - node.next = head
+   c. Else:
+        - last.next = node
+        - last = node
+        - last.next = head
+
+5. DELETE FROM BEGINNING (deleteLeft):
+   a. If head is null:
+        - Print "List is empty"
+   b. Else if head == last:
+        - Print head.data + " deleted"
+        - head = last = null
+   c. Else:
+        - Print head.data + " deleted"
+        - head = head.next
+        - last.next = head
+
+6. DELETE FROM END (deleteRight):
+   a. If head is null:
+        - Print "List is empty"
+   b. Else if head == last:
+        - Print head.data + " deleted"
+        - head = last = null
+   c. Else:
+        - temp = head
+        - While temp.next != last:
+            - temp = temp.next
+        - Print last.data + " deleted"
+        - last = temp
+        - last.next = head
+
+7. DISPLAY:
+   a. If head is null:
+        - Print "List is empty"
+   b. Else:
+        - temp = head
+        - Do:
+            - Print temp.data + " -> "
+            - temp = temp.next
+          While temp != head
+        - Print "(circular to head)"

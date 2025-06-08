@@ -1,0 +1,53 @@
+==========================
+Algorithm: Binary Tree
+==========================
+
+1. Node Structure:
+   - Create a class Node
+     - Data field (e.g., int data)
+     - Pointer to left child (Node left)
+     - Pointer to right child (Node right)
+
+2. Create Tree:
+   - Initialize root as null
+
+3. Insert Node:
+   - If root is null, create root node with data
+   - Else,
+     - Compare data with current node
+     - If data < current node’s data, go to left subtree
+     - If data > current node’s data, go to right subtree
+     - Repeat recursively until correct position found
+     - Insert new node
+
+4. Traversal Methods:
+   - Inorder (Left, Root, Right)
+     - Recursively traverse left subtree
+     - Visit root node
+     - Recursively traverse right subtree
+
+   - Preorder (Root, Left, Right)
+     - Visit root node
+     - Recursively traverse left subtree
+     - Recursively traverse right subtree
+
+   - Postorder (Left, Right, Root)
+     - Recursively traverse left subtree
+     - Recursively traverse right subtree
+     - Visit root node
+
+5. Search Node:
+   - Start from root
+   - Compare value with current node
+   - If equal, return found
+   - If less, go to left subtree
+   - If greater, go to right subtree
+   - If null, not found
+
+6. Delete Node:
+   - Search node to delete
+   - Case 1: Node is leaf — remove node
+   - Case 2: Node has one child — replace node with child
+   - Case 3: Node has two children — find inorder successor or predecessor
+     - Replace node’s data with successor’s data
+     - Delete successor node

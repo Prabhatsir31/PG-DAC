@@ -1,0 +1,60 @@
+===============================
+ ALGORITHM: SINGLY LINKED LIST
+===============================
+
+1. NODE STRUCTURE:
+   - data
+   - next (reference to next node)
+
+2. INITIALIZE:
+   - head = null
+
+3. INSERT AT BEGINNING (insertFirst):
+   a. Create new node
+   b. node.data = data
+   c. node.next = head
+   d. head = node
+   e. Print data + " inserted at beginning"
+
+4. INSERT AT END (insertLast):
+   a. Create new node
+   b. node.data = data
+   c. node.next = null
+   d. If head == null:
+        - head = node
+   e. Else:
+        - temp = head
+        - While temp.next != null:
+            - temp = temp.next
+        - temp.next = node
+   f. Print data + " inserted at end"
+
+5. DELETE FROM BEGINNING (deleteFirst):
+   a. If head == null:
+        - Print "List is empty"
+   b. Else:
+        - Print head.data + " deleted from beginning"
+        - head = head.next
+
+6. DELETE FROM END (deleteLast):
+   a. If head == null:
+        - Print "List is empty"
+   b. Else If head.next == null:
+        - Print head.data + " deleted from end"
+        - head = null
+   c. Else:
+        - temp = head
+        - While temp.next.next != null:
+            - temp = temp.next
+        - Print temp.next.data + " deleted from end"
+        - temp.next = null
+
+7. DISPLAY:
+   a. If head == null:
+        - Print "List is empty"
+   b. Else:
+        - temp = head
+        - While temp != null:
+            - Print temp.data + " -> "
+            - temp = temp.next
+        - Print "null"

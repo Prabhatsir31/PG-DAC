@@ -1,0 +1,66 @@
+================================
+ ALGORITHM: DOUBLY LINKED LIST
+================================
+
+1. STRUCTURE OF NODE:
+   Define a Node with:
+      - data (int)
+      - prev (Node)
+      - next (Node)
+
+2. CREATE DOUBLY LINKED LIST CLASS:
+   - Initialize:
+       head = null
+
+3. INSERT AT BEGINNING:
+   a. Create a new node with data.
+   b. If head is null:
+        - head = new node
+   c. Else:
+        - new node.next = head
+        - head.prev = new node
+        - head = new node
+
+4. INSERT AT END:
+   a. Create a new node with data.
+   b. If head is null:
+        - head = new node
+   c. Else:
+        - Traverse till last node (tail)
+        - tail.next = new node
+        - new node.prev = tail
+
+5. DELETE FROM BEGINNING:
+   a. If head is null: print "Underflow"
+   b. Else:
+        - Move head to head.next
+        - If head != null, head.prev = null
+
+6. DELETE FROM END:
+   a. If head is null: print "Underflow"
+   b. Else if head.next is null:
+        - head = null
+   c. Else:
+        - Traverse to second last node
+        - secondLast.next = null
+
+7. DISPLAY FORWARD:
+   a. Traverse from head to end
+   b. Print each node's data
+
+8. DISPLAY BACKWARD:
+   a. Traverse to last node
+   b. While current != null:
+        - Print data
+        - Move to current.prev
+
+9. MENU DRIVEN PROGRAM:
+   a. Use do-while loop:
+      - 1. Insert at beginning
+      - 2. Insert at end
+      - 3. Delete at beginning
+      - 4. Delete at end
+      - 5. Display forward
+      - 6. Display backward
+      - 7. Exit
+   b. Perform action based on user's choice.

@@ -1,0 +1,93 @@
+==========================================
+ ALGORITHM: DOUBLY CIRCULAR LINKED LIST
+==========================================
+
+1. NODE STRUCTURE:
+   Define a Node with:
+      - data (int)
+      - prev (Node)
+      - next (Node)
+
+2. INITIALIZE LIST:
+   - head = null
+
+3. INSERT AT BEGINNING:
+   a. Create new node with data
+   b. If head is null:
+        - head = new node
+        - node.next = node
+        - node.prev = node
+   c. Else:
+        - last = head.prev
+        - new node.next = head
+        - new node.prev = last
+        - last.next = new node
+        - head.prev = new node
+        - head = new node
+
+4. INSERT AT END:
+   a. Create new node with data
+   b. If head is null:
+        - head = new node
+        - node.next = node
+        - node.prev = node
+   c. Else:
+        - last = head.prev
+        - new node.next = head
+        - new node.prev = last
+        - last.next = new node
+        - head.prev = new node
+
+5. DELETE FROM BEGINNING:
+   a. If head is null:
+        - Print "List Empty"
+   b. Else if head.next == head:
+        - head = null
+   c. Else:
+        - last = head.prev
+        - head = head.next
+        - head.prev = last
+        - last.next = head
+
+6. DELETE FROM END:
+   a. If head is null:
+        - Print "List Empty"
+   b. Else if head.next == head:
+        - head = null
+   c. Else:
+        - last = head.prev
+        - secondLast = last.prev
+        - secondLast.next = head
+        - head.prev = secondLast
+
+7. DISPLAY FORWARD:
+   a. If head is null:
+        - Print "List Empty"
+   b. Else:
+        - Start from head
+        - Do:
+            - Print data
+            - Move to next
+          While current != head
+
+8. DISPLAY BACKWARD:
+   a. If head is null:
+        - Print "List Empty"
+   b. Else:
+        - last = head.prev
+        - Start from last
+        - Do:
+            - Print data
+            - Move to prev
+          While current != last
+
+9. MENU DRIVEN PROGRAM:
+   a. Use do-while or while loop with menu:
+        1. Insert at beginning
+        2. Insert at end
+        3. Delete at beginning
+        4. Delete at end
+        5. Display forward
+        6. Display backward
+        7. Exit
+   b. Perform action based on user choice

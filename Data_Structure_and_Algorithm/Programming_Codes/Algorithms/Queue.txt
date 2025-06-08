@@ -1,0 +1,77 @@
+================================
+ ALGORITHM: STACK USING ARRAY
+================================
+
+1. INITIALIZE:
+   - Declare array stack[]
+   - top = -1
+   - max = size of array
+
+2. PUSH(data):
+   a. If top == max - 1:
+        - Print "Stack Overflow"
+   b. Else:
+        - top = top + 1
+        - stack[top] = data
+
+3. POP():
+   a. If top == -1:
+        - Print "Stack Underflow"
+   b. Else:
+        - data = stack[top]
+        - top = top - 1
+        - Print data + " popped"
+
+4. PEEK():
+   a. If top == -1:
+        - Print "Stack is empty"
+   b. Else:
+        - Print stack[top]
+
+5. DISPLAY():
+   a. If top == -1:
+        - Print "Stack is empty"
+   b. Else:
+        - Loop from i = top to 0:
+            - Print stack[i]
+
+======================================
+ ALGORITHM: STACK USING LINKED LIST
+======================================
+
+1. NODE STRUCTURE:
+   - data
+   - next
+
+2. INITIALIZE:
+   - top = null
+
+3. PUSH(data):
+   a. Create new node
+   b. Set new node.data = data
+   c. new node.next = top
+   d. top = new node
+   e. Print data + " pushed"
+
+4. POP():
+   a. If top == null:
+        - Print "Stack Underflow"
+   b. Else:
+        - temp = top
+        - top = top.next
+        - Print temp.data + " popped"
+
+5. PEEK():
+   a. If top == null:
+        - Print "Stack is empty"
+   b. Else:
+        - Print top.data
+
+6. DISPLAY():
+   a. If top == null:
+        - Print "Stack is empty"
+   b. Else:
+        - temp = top
+        - While temp != null:
+            - Print temp.data
+            - temp = temp.next
