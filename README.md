@@ -14,4 +14,4 @@
 
 ### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/C++_Programming">Module-6: C++</a>
 
-### <a href="">Module-7: Data Structure and Algorithm</a>
+### <a href="https://github.com/Prabhatsir31/PG-DAC/tree/main/Data_Structure_and_Algorithm">Module-7: Data Structure and Algorithm</a>
