@@ -1,0 +1,636 @@
+DAY-4 
+===========
+
+Data Structure and Algorithm 
+=================================
+
+Doubly Linked List
+------------------------
+
+Definition:
+A Doubly Linked List is a type of linked list in which each node contains three fields:
+1. Data
+2. Pointer to the next node
+3. Pointer to the previous node
+
+It allows traversal in both forward and backward directions.
+
+Example:
+NULL <- [10] <-> [20] <-> [30] -> NULL
+
+Each node contains data and two pointers: one pointing to the next node and one to the previous.
+
+--------------------------------------------
+Q1) Deque Implementation (Algorithm)
+
+1. Initialize deque with head and tail as null.
+2. For addFirst(element):
+   - Create new node.
+   - Set its next to current head and previous to null.
+   - Update head’s previous to new node.
+   - Update head to new node.
+3. For addLast(element):
+   - Create new node.
+   - Set its previous to current tail and next to null.
+   - Update tail’s next to new node.
+   - Update tail to new node.
+4. For removeFirst():
+   - Update head to head.next.
+   - Set head.prev = null.
+5. For removeLast():
+   - Update tail to tail.prev.
+   - Set tail.next = null.
+
+--------------------------------------------
+Q2) Reverse Linked List (Algorithm)
+
+1. Initialize three pointers: prev = null, curr = head, next = null.
+2. While curr is not null:
+   a. next = curr.next
+   b. curr.next = prev
+   c. curr.prev = next (for doubly linked list)
+   d. prev = curr
+   e. curr = next
+3. head = prev
+
+--------------------------------------------
+Q3) Student Management System (Menu Driven)
+
+Menu:
+1. Add Student
+2. Update Student by Roll No
+3. Delete Student by Roll No
+4. Search Student by Roll No
+5. Display All Students
+6. Exit
+
+Each student will have:
+- rollNo (int)
+- name (String)
+- gender (String)
+- contact (String)
+- year (int)
+- branch (String)
+
+Operations will be performed on a LinkedList<Student>.
+
+======================================================================
+
+Tree Data Structure
+-----------------------
+
+Definition:
+A tree is a non-linear data structure where each node has one parent and multiple children.
+
+Binary Tree:
+- A tree where each node has at most 2 children (left and right).
+
+Terms:
+- Root Node: Topmost node in tree.
+- Leaf Node: Node with no children.
+- Subtree: Any descendant node with its children.
+- Ancestor: Any node before the current node in path.
+- Depth: Distance from root to the node.
+- Height: Length of the longest path to a leaf.
+
+Example Tree:
+                A
+              /   \
+             B     C
+            / \   / \
+           D   E F   G
+
+--------------------------------------------
+Tree Traversals (Order of visiting each node)
+--------------------------------------------
+
+PreOrder (Root → Left → Right): A B D E C F G
+InOrder  (Left → Root → Right): D B E A F C G
+PostOrder(Left → Right → Root): D E B F G C A
+
+--------------------------------------------
+Types of Binary Tree
+--------------------------------------------
+1. Complete Binary Tree: All levels full except possibly last.
+2. Nearly Complete: All leaf nodes are at same depth or at most 1 level difference.
+3. Strict Binary Tree: Every node has either 0 or 2 children.
+4. Binary Search Tree (BST): 
+   Rules:
+   - Left child < Parent
+   - Right child > Parent
+
+BST Example from 50,25,12,60,80,55,50,4,6,28:
+                     50
+                   /   \
+                 25     60
+                /  \     \
+              12   28     80
+             /  \         /
+            4    6       55
+
+
+THREADED BINARY TREE
+======================
+
+What is a Threaded Binary Tree?
+-------------------------------
+A Threaded Binary Tree is a special binary tree that uses NULL pointers 
+to store additional information for easier tree traversal (usually inorder).
+
+In a regular Binary Tree, if a node has no left or right child, 
+the corresponding pointer is NULL.
+
+In a Threaded Binary Tree, these NULL pointers are replaced with:
+  → Pointers to the node’s inorder predecessor (left thread) or
+  → Pointers to the node’s inorder successor (right thread).
+
+This makes inorder traversal faster — without using recursion or a stack.
+
+------------------------------------------------------------
+Why Use Threaded Trees?
+-----------------------
+- Inorder traversal becomes efficient (no need for stack or recursion).
+- Saves memory by using unused NULL pointers.
+- Speeds up access in applications where traversal is frequent.
+
+------------------------------------------------------------
+Types of Threaded Trees:
+------------------------
+
+1. **Single Threaded Tree**
+   - Only left or right NULL pointers are replaced with threads.
+
+   a) Right Threaded: Only right NULL points to inorder successor.
+   b) Left Threaded: Only left NULL points to inorder predecessor.
+
+2. **Double Threaded Tree**
+   - Both left and right NULL pointers are replaced with threads.
+
+------------------------------------------------------------
+Example:
+---------
+Consider this BST:
+
+        10
+       /  \
+      5    15
+
+In a threaded tree:
+
+- 5's right pointer (which would be NULL) points to 10 (inorder successor).
+- 15's left pointer (which would be NULL) points to 10 (inorder predecessor).
+
+        10
+       /  \
+      5    15
+       \   /
+       [10][10]
+
+[] = threads to predecessor/successor
+
+------------------------------------------------------------
+Inorder Traversal Without Stack/Recursion:
+------------------------------------------
+In a Threaded Tree:
+1. Start from the leftmost node.
+2. Use threads to move to next inorder node.
+3. Repeat until all nodes are visited.
+
+Time: O(n)
+
+------------------------------------------------------------
+Threaded Tree vs Regular Tree:
+------------------------------
+| Feature              | Regular Tree | Threaded Tree  |
+|----------------------|--------------|----------------|
+| NULL pointers used   | Yes          | No             |
+| Memory utilization   | Low          | High           |
+| Traversal (Inorder)  | Recursion    | Threads (No stack) |
+| Complexity           | Standard     | Slightly more  |
+
+------------------------------------------------------------
+Applications of Threaded Tree:
+-------------------------------
+- Compiler syntax trees
+- Expression parsing
+- Memory-efficient data storage
+- Systems where frequent inorder traversal is required
+
+------------------------------------------------------------
+Advantages:
+-----------
+- Saves space and time during traversal.
+- Eliminates need for recursion stack.
+- Faster inorder access for sorted data.
+
+Disadvantages:
+--------------
+- Slightly complex insertion/deletion due to threads.
+- Not as balanced as AVL or Red-Black trees.
+
+------------------------------------------------------------
+
+SUMMARY:
+----------
+Threaded Binary Trees improve inorder traversal speed by replacing NULL
+pointers with links (threads) to inorder predecessor/successor.
+
+Especially useful when:
+- Memory is limited
+- Traversal is frequent
+- Stack/recursion is costly
+
+
+AVL TREE 
+==========================
+
+What is AVL Tree?
+------------------
+AVL Tree is a **self-balancing Binary Search Tree (BST)**.
+It was invented by Adelson-Velsky and Landis in 1962.
+
+It maintains a **balance factor** for every node to ensure the tree remains balanced after every insertion or deletion.
+
+Why AVL?
+---------
+- Keeps tree height = log(n), so search/insertion/deletion takes O(log n) time.
+- Balancing avoids worst-case skewed tree of BST (which degrades to a linked list).
+
+Balance Factor:
+----------------
+BF = Height of Left Subtree - Height of Right Subtree
+
+Allowed values:
+    BF = -1, 0, +1
+
+If balance factor goes beyond this range after insert/delete → rebalancing via rotations is required.
+
+------------------------------------------------------------
+Example:
+---------
+Unbalanced BST:
+       10
+         \
+         20
+           \
+           30
+
+Becomes skewed. Balance factor > 1 or < -1 → AVL fixes it.
+
+------------------------------------------------------------
+Types of Rotations:
+-------------------
+
+To rebalance, we use 4 types of rotations:
+
+1) Left Rotation (LL Imbalance)
+2) Right Rotation (RR Imbalance)
+3) Left-Right Rotation (LR Imbalance)
+4) Right-Left Rotation (RL Imbalance)
+
+------------------------------------------------------------
+1) LL Rotation (Right Rotation)
+-------------------------------
+When new node is inserted in LEFT subtree of LEFT child.
+
+Example:
+       30
+      /
+    20
+   /
+ 10
+
+Right rotate around 30:
+
+       20
+      /  \
+    10    30
+
+------------------------------------------------------------
+2) RR Rotation (Left Rotation)
+-------------------------------
+When new node is inserted in RIGHT subtree of RIGHT child.
+
+Example:
+     10
+       \
+        20
+          \
+           30
+
+Left rotate around 10:
+
+       20
+      /  \
+    10    30
+
+------------------------------------------------------------
+3) LR Rotation (Left-Right)
+-----------------------------
+When new node is inserted in RIGHT subtree of LEFT child.
+
+Example:
+     30
+    /
+  10
+    \
+     20
+
+Step 1: Left rotate around 10  
+Step 2: Right rotate around 30
+
+Final Tree:
+      20
+     /  \
+   10    30
+
+------------------------------------------------------------
+4) RL Rotation (Right-Left)
+----------------------------
+When new node is inserted in LEFT subtree of RIGHT child.
+
+Example:
+    10
+      \
+       30
+      /
+    20
+
+Step 1: Right rotate around 30  
+Step 2: Left rotate around 10
+
+Final Tree:
+      20
+     /  \
+   10    30
+
+------------------------------------------------------------
+AVL Tree Insertion (Algorithm)
+-------------------------------
+1. Insert node like BST.
+2. Update height and balance factor.
+3. If balance factor is violated:
+    a. LL → Right Rotate
+    b. RR → Left Rotate
+    c. LR → Left + Right Rotate
+    d. RL → Right + Left Rotate
+
+------------------------------------------------------------
+AVL Tree Deletion (Algorithm)
+-------------------------------
+1. Delete node like BST.
+2. Update height and balance factor.
+3. If imbalance occurs, apply proper rotation.
+
+------------------------------------------------------------
+AVL Tree Time Complexity:
+--------------------------
+| Operation  | Time Complexity |
+|------------|-----------------|
+| Search     | O(log n)        |
+| Insert     | O(log n)        |
+| Delete     | O(log n)        |
+
+------------------------------------------------------------
+Comparison: AVL vs BST
+-----------------------
+| Feature     | BST           | AVL Tree       |
+|-------------|---------------|----------------|
+| Balanced    | No (can skew) | Yes            |
+| Time        | O(n) worst    | O(log n)       |
+| Speed       | Faster insert | Faster search  |
+| Use Case    | Simpler logic | Time-sensitive |
+
+------------------------------------------------------------
+Applications of AVL Tree:
+---------------------------
+- Databases (indexes)
+- Memory Management
+- File systems
+- Data lookup, sorting, searching
+
+------------------------------------------------------------
+
+SUMMARY:
+---------
+AVL Tree is a height-balanced BST.
+Every insertion/deletion keeps tree balanced using rotations.
+It ensures O(log n) time for all operations.
+
+B-TREE
+========================
+
+What is B-Tree?
+---------------
+A B-Tree is a self-balancing search tree in which nodes can have more than two children.
+It is optimized for systems that read and write large blocks of data (like databases and file systems).
+
+B-Tree is a **generalization of Binary Search Tree (BST)** that allows a node to have **more than 2 children**.
+
+Key Features:
+-------------
+- Balanced tree
+- Supports sorted data
+- Minimizes disk reads
+- Widely used in databases and file systems
+
+B-Tree Properties:
+------------------
+1. All leaves are at the same level.
+2. A node with `n` keys has `n+1` children.
+3. A B-Tree of order `m`:
+   - Has at most `m` children.
+   - Has at least `⌈m/2⌉` children (except root).
+   - Each internal node has at least `⌈m/2⌉ - 1` keys.
+   - Each node can contain at most `m - 1` keys.
+
+Order (m):
+----------
+Defines the range of number of children.
+Example: For a B-Tree of order 4:
+- Minimum keys in a node: ⌈4/2⌉ - 1 = 1
+- Maximum keys: 3
+- Min children: 2
+- Max children: 4
+
+------------------------------------------------------------
+B-Tree Node Structure:
+----------------------
+Each node contains:
+- A list of keys: [k1, k2, ..., kn]
+- A list of child pointers: [c0, c1, ..., cn]
+
+All keys in:
+- `c0` are < k1
+- `c1` are between k1 and k2
+- ...
+- `cn` are > kn
+
+------------------------------------------------------------
+Basic Operations in B-Trees:
+----------------------------
+
+1) Search:
+   - Similar to binary search.
+   - Traverse keys in node and recursively go to child where key lies.
+
+2) Insertion:
+   - Insert key into the appropriate leaf node.
+   - If the node becomes overfull (more than m - 1 keys), **split** the node.
+   - Push the middle key to the parent.
+   - If the parent is full, split again (may go up to root).
+
+3) Deletion:
+   - Remove key.
+   - If a node has fewer than ⌈m/2⌉ - 1 keys, **rebalance**:
+     a) Borrow from sibling (if sibling has extra key)
+     b) Merge with sibling (if not)
+
+------------------------------------------------------------
+EXAMPLE:
+---------
+Order m = 4 → max 3 keys per node
+
+Insert: 10, 20, 5, 6, 12, 30, 7, 17
+
+Step-by-step:
+-------------
+Insert 10 → [10]  
+Insert 20 → [10, 20]  
+Insert 5  → [5, 10, 20]  
+Insert 6  → Node full → split
+
+Now:
+       [10]
+      /    \
+   [5,6]   [20]
+
+Insert 12 → goes to right → [12, 20]  
+Insert 30 → [12, 20, 30]  
+Insert 7  → [5,6,7]  
+Insert 17 → causes split again, may push up
+
+Tree grows balanced in height, maintaining sorted order.
+
+------------------------------------------------------------
+Advantages of B-Tree:
+---------------------
+- Balanced: height kept low, even for large datasets.
+- Efficient disk reads: minimizes I/O by storing many keys per node.
+- Dynamic: grows/shrinks as needed.
+- No rebalancing like AVL or Red-Black Tree.
+
+------------------------------------------------------------
+Applications:
+-------------
+- Databases (MySQL, PostgreSQL indexes)
+- Filesystems (NTFS, HFS+, EXT3/4)
+- Indexing large datasets
+- Multi-level indexing in memory
+
+------------------------------------------------------------
+Comparison: B-Tree vs BST
+--------------------------
+| Feature        | BST          | B-Tree            |
+|----------------|--------------|-------------------|
+| Children/node  | 2 max        | More than 2       |
+| Balanced       | No (normally)| Yes               |
+| Disk optimized | No           | Yes               |
+| Suitable for   | Memory       | Disk/Database     |
+
+------------------------------------------------------------
+
+SUMMARY:
+---------
+- B-Tree is a self-balancing multi-way search tree.
+- Minimizes disk access.
+- Nodes split/merge on insert/delete.
+- Used for indexing large data efficiently.
+
+------------------------------------------------------------
+
+
+B+ TREE
+-------
+
+Definition:
+-----------
+- A B+ Tree is an advanced self-balancing tree data structure that maintains sorted data in a way that allows for efficient insertion, deletion, and search operations.
+- It is an extension of the B-Tree structure and is used primarily in databases and file systems.
+
+Characteristics:
+----------------
+1. All data is stored at the leaf level.
+2. Internal (non-leaf) nodes only store keys used for routing.
+3. Leaf nodes are linked to facilitate efficient range queries (linked list).
+4. All leaves appear at the same depth, maintaining balance.
+5. Faster than B-Trees for range-based and sequential access.
+
+Structure:
+----------
+- Internal nodes: guide searches by holding keys and child pointers.
+- Leaf nodes: hold keys and corresponding data pointers and are linked to one another.
+
+Rules:
+------
+1. Each internal node can have at most 'm' children and at least ⌈m/2⌉ children.
+2. Each leaf node must hold between ⌈(m-1)/2⌉ and m-1 keys.
+3. The tree grows and shrinks from the root, which can be a leaf initially.
+
+Advantages:
+-----------
+- Faster range queries due to linked leaves.
+- All searches end at leaf level, providing predictable disk access patterns.
+- Suitable for databases and file systems.
+
+Properties (Order 4):
+---------------------
+- Max keys in a node = 3
+- Max children = 4
+- All data is stored in leaf nodes.
+- Leaf nodes are linked for fast range queries.
+
+Insert Sequence:
+----------------
+10, 20, 30, 40, 50, 60
+
+Tree Structure After Insertions:
+--------------------------------
+
+                    [40]
+                   /     \\
+       [10, 20, 30]       [40, 50, 60]
+
+Explanation:
+------------
+1. Insert 10, 20, 30 → fits in one leaf.
+2. Insert 40 → leaf full, split into two nodes: [10, 20, 30] and [40]
+3. Promote 40 to parent/internal node.
+4. Insert 50, 60 into second leaf → [40, 50, 60]
+5. Final internal node has one key [40], pointing to two leaf nodes.
+
+Final Structure:
+----------------
+- Internal Node: [40]
+- Leaf Nodes (linked): [10, 20, 30] -> [40, 50, 60]
+
+Search:
+-------
+- Starts at the root, follows the correct pointer until reaching a leaf.
+
+Use Cases:
+----------
+- Databases
+- File Systems
+- Large-scale indexing systems
+
+Difference Between B+ Tree and B-Tree:
+--------------------------------------
+| Feature             | B-Tree                   | B+ Tree                      |
+|---------------------|--------------------------|------------------------------|
+| Data Storage        | Internal and Leaf Nodes  | Only in Leaf Nodes           |
+| Sequential Access   | Slower                   | Faster (due to linked leaves)|
+| Leaf Node Linking   | Not necessarily linked   | All leaves are linked        |
+
+
+
