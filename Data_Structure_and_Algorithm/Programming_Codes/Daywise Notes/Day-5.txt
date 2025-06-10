@@ -1,0 +1,423 @@
+DAY-5
+==========
+
+Data Structure and Algorithm 
+=================================
+
+Tree Implementation
+-----------------------
+    Static: (array) -> oth root, for each ith parent 2i+1 : left child 
+                                                    2i+2 : right child 
+        +ve : fast access, easy to code
+        -ve : static so one allocated can not change 
+
+    Dynamic: (DLL) -> use node od DLL to create tree 
+
+        +ve : easy compared to other dynamic versoin, it is dynamic
+        -ve : as DLL node is used one can only go from top to bottom not reverse due to this one must use recursion for everything
+
+    Dynamic(Tree-Node) -> use tree-node which is 3 linked structure 
+
+        +ve : once can use it without using recursion, dynamic 
+        -ve : too complex to code and use 
+    
+
+Tree Data Structure
+------------------------
+
+Definition:
+A tree is a non-linear data structure made up of nodes connected by edges. It is a hierarchical structure that simulates a tree-like model with a root and subtrees of children.
+
+Applications:
+-------------
+- File System
+- Databases
+- Compilers
+- Artificial Intelligence (decision trees)
+- Network Routing Algorithms
+
+Binary Tree:
+-------------
+A special type of tree where each node has at most 2 children (left and right).
+
+Types of Binary Tree:
+---------------------
+1. Full Binary Tree: Every node has 0 or 2 children.
+2. Complete Binary Tree: All levels are filled except possibly the last, and all nodes are as far left as possible.
+3. Perfect Binary Tree: All internal nodes have two children and all leaves are at the same level.
+4. Balanced Binary Tree: Height of the tree is minimized.
+5. Degenerate (or pathological) Tree: Each parent node has only one child.
+
+Binary Search Tree (BST):
+--------------------------
+A binary tree in which each node follows the property:
+- Left subtree < Root < Right subtree
+
+Tree Traversals:
+----------------
+1. Inorder (Left → Root → Right)
+2. Preorder (Root → Left → Right)
+3. Postorder (Left → Right → Root)
+4. Level Order (Breadth-first)
+
+Java Code Example:
+------------------
+class Node {
+    int data;
+    Node left, right;
+
+    Node(int data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+public class TreeClass {
+    Node root;
+
+    void insert(Node r, Node n) {
+        if (root == null) {
+            root = n;
+        } else {
+            if (n.data < r.data) {
+                if (r.left == null) {
+                    r.left = n;
+                } else {
+                    insert(r.left, n);
+                }
+            } else {
+                if (r.right == null) {
+                    r.right = n;
+                } else {
+                    insert(r.right, n);
+                }
+            }
+        }
+    }
+
+    void inorder(Node r) {
+        if (r != null) {
+            inorder(r.left);
+            System.out.print(r.data + " ");
+            inorder(r.right);
+        }
+    }
+}
+
+Traversal Use Cases:
+--------------------
+| Traversal Type | Order               | Use Case                     |
+|----------------|---------------------|------------------------------|
+| Inorder        | Left → Root → Right | BST: Retrieves sorted order  |
+| Preorder       | Root → Left → Right | Tree Copy, Expression Trees  |
+| Postorder      | Left → Right → Root | Delete tree, expression eval |
+| Level Order    | Breadth-first       | Shortest path, BFS related   |
+
+
+Q1) 
+
+
+
+
+Graph Data Structure
+-------------------------
+
+Definition:
+A graph is a non-linear data structure consisting of nodes (vertices) and edges connecting them.
+
+Components:
+1. Vertex (Node): Fundamental part of graph.
+2. Edge (Link): Connection between two nodes.
+
+Types of Graphs
+================
+
+1. Directed Graph (Digraph)
+----------------------------
+Edges have direction (→). Each connection goes only one way.
+
+Example:
+    A → B → C
+         ↑
+         D
+
+2. Undirected Graph
+-------------------
+Edges do not have direction. Connections go both ways.
+
+Example:
+    A -- B
+    |    |
+    C -- D
+
+3. Weighted Graph
+-----------------
+Edges have weights (costs or distances).
+
+Example:
+    A --(4)-- B
+    |        /
+   (2)     (1)
+    |    /
+    C
+
+4. Unweighted Graph
+-------------------
+No weights on edges; only connection matters.
+
+Example:
+    A -- B -- C
+          |
+          D
+
+5. Cyclic Graph
+---------------
+Contains at least one cycle (closed loop).
+
+Example:
+    A -- B
+    |    |
+    D -- C
+
+6. Acyclic Graph
+----------------
+No cycles present.
+
+Example:
+    A → B → C → D
+
+7. Connected Graph
+------------------
+A path exists between every pair of vertices.
+
+Example:
+    A -- B -- C
+    |         |
+    D --------E
+
+8. Disconnected Graph
+---------------------
+Some vertices are not reachable from others.
+
+Example:
+    A -- B    E
+             /
+           C
+          (D is isolated)
+
+
+Graph Representations:
+-------------------------
+1. Adjacency Matrix:
+   - 2D array where matrix[i][j] = 1 if there is an edge between vertex i and j.
+   - For weighted graph: matrix[i][j] = weight.
+   - Time Complexity: O(V^2)
+   - Space Complexity: O(V^2)
+
+2. Adjacency List:
+   - Array of lists where list[i] contains all vertices adjacent to vertex i.
+   - Space Efficient for Sparse Graphs.
+   - Time Complexity: O(V + E)
+   - Space Complexity: O(V + E)
+
+Traversal Techniques:
+----------------------
+1. Depth First Search (DFS)
+   - Use stack or recursion.
+   - Explore as far as possible along a branch before backtracking.
+
+2. Breadth First Search (BFS)
+   - Use queue.
+   - Explore all neighbors at current depth before moving deeper.
+
+Applications of Graphs:
+--------------------------
+- Social Networks (Facebook, LinkedIn)
+- Google Maps (Path Finding)
+- Recommendation Systems (Netflix, Amazon)
+- Networking (Routing Algorithms)
+- Topological Sorting (Course Scheduling)
+
+Example: Adjacency List Representation (Undirected)
+------------------------------------------------------
+0: 1 -> 2
+1: 0 -> 2 -> 3
+2: 0 -> 1
+3: 1
+
+
+Graph Algorithms:
+---------------------
+
+1. Dijkstra’s Algorithm (Shortest path - Weighted Graphs)
+----------------------------------------------------------
+Use: Find the shortest path from a source to all vertices in a graph with non-negative weights.
+
+Pseudocode:
+-----------
+Dijkstra(G, w, source):
+  for v in G.V:
+    dist[v] = ∞
+    prev[v] = null
+  dist[source] = 0
+  Q = all vertices with dist[]
+  while Q not empty:
+    u = extract vertex in Q with min dist[u]
+    for each neighbor v of u:
+      alt = dist[u] + w(u, v)
+      if alt < dist[v]:
+        dist[v] = alt
+        prev[v] = u
+  return dist[], prev[]
+
+Example Graph:
+--------------
+   (A)
+  /   \
+4/     \5
+/       \
+(B)––11–(C)
+|        \
+9         3
+|          \
+(D)––2––(E)––6––(F)
+
+Result (Shortest from A):
+--------------------------
+A→A=0, A→B=4, A→C=5, A→D=13, A→E=8, A→F=14
+
+
+2. Prim’s Algorithm (Minimum Spanning Tree)
+-------------------------------------------
+Pseudocode:
+-----------
+Prim(G, w):
+  pick arbitrary start vertex r
+  for v in V:
+    key[v] = ∞
+    parent[v] = null
+  key[r] = 0
+  Q = all v
+  while Q not empty:
+    u = extract min key[u]
+    for each neighbor v of u:
+      if v in Q and w(u,v) < key[v]:
+        parent[v] = u
+        key[v] = w(u,v)
+  return parent[]
+
+
+3. Kruskal’s Algorithm (Minimum Spanning Tree)
+----------------------------------------------
+Pseudocode:
+-----------
+Kruskal(G, w):
+  A = ∅
+  for each v in V:
+    MAKE-SET(v)
+  sort edges E by ascending w
+  for each edge (u, v) in E:
+    if FIND-SET(u) ≠ FIND-SET(v):
+      A = A ∪ {(u, v)}
+      UNION(u, v)
+  return A
+
+
+4. Bellman-Ford Algorithm (Negative weights allowed)
+-----------------------------------------------------
+Pseudocode:
+-----------
+BellmanFord(G, w, s):
+  for v in V:
+    dist[v] = ∞
+  dist[s] = 0
+  for i = 1 to |V|–1:
+    for each edge (u, v):
+      if dist[u] + w(u,v) < dist[v]:
+        dist[v] = dist[u] + w(u,v)
+        parent[v] = u
+  // Detect negative cycle:
+  for each edge (u, v):
+    if dist[u] + w(u,v) < dist[v]:
+      error "Negative-weight cycle"
+  return dist[], parent[]
+
+
+5. Floyd-Warshall Algorithm (All-Pairs Shortest Path)
+------------------------------------------------------
+Pseudocode:
+-----------
+FloydWarshall(G):
+  for i in V:
+    for j in V:
+      if i == j: dist[i][j] = 0
+      else if (i,j) in E: dist[i][j] = w(i,j)
+      else dist[i][j] = ∞
+  for k in V:
+    for i in V:
+      for j in V:
+        if dist[i][k] + dist[k][j] < dist[i][j]:
+          dist[i][j] = dist[i][k] + dist[k][j]
+  return dist[][]
+
+
+6. Topological Sort (Directed Acyclic Graph)
+--------------------------------------------
+Pseudocode (Kahn’s Algorithm):
+------------------------------
+TopoSort(G):
+  L = empty list
+  S = set of all nodes with indegree = 0
+  while S not empty:
+    u = remove from S
+    add u to L
+    for each edge u→v:
+      remove edge u→v
+      if indegree[v] == 0:
+        add v to S
+  if edges remain:
+    error "Graph has a cycle"
+  else return L
+
+
+7. Union-Find (Disjoint Set Union - Cycle Detection)
+-----------------------------------------------------
+Pseudocode:
+-----------
+MAKE-SET(u): parent[u] = u, rank[u] = 0
+
+FIND-SET(u):
+  if parent[u] != u:
+    parent[u] = FIND-SET(parent[u])
+  return parent[u]
+
+UNION(u, v):
+  ru = FIND-SET(u), rv = FIND-SET(v)
+  if ru == rv: return
+  if rank[ru] > rank[rv]: parent[rv] = ru
+  else parent[ru] = rv
+    if rank[ru] == rank[rv]: rank[rv] += 1
+
+
+Summary Table:
+--------------
+| Algorithm        | Use Case                       | Complexity       | Supports Negative? | Handles Cycles?      |
+|------------------|--------------------------------|------------------|---------------------|---------------------|
+| Dijkstra         | Single-source, non-negative    | O(E log V)       | No                  | No                  |
+| Bellman–Ford     | Single-source, supports neg.   | O(VE)            | Yes                 | Detects neg. cycles |
+| Floyd–Warshall   | All-pairs shortest path        | O(V^3)           | Yes                 | No                  |
+| Prim's MST       | Minimum Spanning Tree          | O(E log V)       | —                   | —                   |
+| Kruskal’s MST    | Minimum Spanning Tree          | O(E log V)       | —                   | —                   |
+| Topological Sort | DAG Vertex Ordering            | O(V + E)         | —                   | No                  |
+| Union-Find       | Cycle Detection, MST           | ~O(1) per op     | —                   | —                   |
+
+
+Example Questions (Algorithm-Only):
+--------------------------------------
+Q1) Implement BFS traversal of graph using adjacency list.
+Q2) Implement DFS traversal of graph using recursion.
+Q3) Detect cycle in an undirected graph using Union-Find.
+Q4) Find shortest path from source to all vertices using Dijkstra.
+Q5) Create a class to represent graph using adjacency list and perform insertEdge, display.
+
+
