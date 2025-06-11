@@ -1,0 +1,539 @@
+DAY-6 
+===========
+
+Data Structure and Algorithm 
+=================================
+
+Algorithm 
+------------
+An algorithm is a step-by-step procedure or a set of rules designed to perform a specific task or solve a particular problem. 
+It is a well-defined sequence of instructions that takes an input, processes it, and produces an output. 
+Algorithms are fundamental to computer science and programming, as they provide a systematic way to solve problems efficiently.
+
+
+Pillar of Algorithm
+----------------------
+
+Input 
+    data
+    data-set
+    problem-set
+Output
+    Result
+    Response
+Finiteness
+    fixed steps and time
+Difiniteness
+    each step should be clearly defined so one can code/use
+Effectiveness
+    each steps should help to solve or find sol it-self
+
+Analysis
+--------------
+
+Why?
+    so one can predict time and space complexity and then select the one. 
+
+    T(p) = t compile(P) + t execute(P)
+
+    S(P) = s variable/ datatypes(P) + s statements(P)
+
+When?
+    Prior "Before"
+        Done before implementation
+        Using pen paper "Human"
+    Posterior "After" -> done to recheck analysis/verify
+        Done after implementation
+        Using software by professionals "s/w and testing"
+
+On What?
+    Best Case -> nearly no work : hardly can say anything   \  Best Approach
+    Worst Case -> max work : slow but accurate              /
+    Average Case -> nearly 50% work : fast but may / may not be accurate 
+
+Time complexity
+-------------------
+
+Comments ------- 0
+Operation ------ 1
+Lopp --------- n + k
+
+
+Problem 
+------------
+
+1) An algorithm takes 0.5 millisecond for 100 inputs calculate time if input increased to 500 and if complexities are 
+a) Linear (n)
+b) Quadratic (n^2 -> n squqre)
+c) Cubic (n^3-> n cube) 
+d) Log Based (log n)
+
+Asymptotic Notation  (unit to record complexity using maths formula)
+-------------------------
+
+Asymptotic Notation is used to describe the running time of an algorithm - how much time an algorithm takes with a given input, n.
+
+Algorithm Common Run:
+    fastest to slowest are: 
+        constant: Theta(1)
+        logarithm: Theta(log N) 
+        Linear: Theta(N)
+        Polynomial: Theta(N^2)
+        Exponential: Theta(2^N)
+        Factorial: Theta(N!)
+
+Big O ==> only target worst case, fast but less accurate due to rules it follows 
+
+Theta ==> AVG(best + worst) due to this slow but more accurate
+ 
+Omega ==> only targets best case hence not much used 
+
+f(n): Input rate - amount of input 
+g(n): Growth rate - number of steps to solve to get answer 
+
+Big O --> Worst Case =====>  f(n) <= c.g(n)
+
+Omega --> Best Case =====>   f(n) >= c.g(n)
+
+Theta --> AVG Case (best + worst) =====>   c1.g(n) <= f(n) <= c2.g(n)
+
+
+Big O Notation (O-Notation)
+----------------------------
+    Rules : 
+        Constant has no value
+        In additon use max (worst only) 
+        In nesting multiply and then use addition rule 
+
+    Calculate Completxity using Big O 
+
+        n 
+      -----
+      \     o2      ======\    O(n)
+      /      1      ======/
+      -----  
+      i=1
+
+
+
+SEARCHING AND SORTING ALGORITHMS 
+====================================
+
+Sorting         \
+                    Searching on sorted date is faster 
+Searching       /       
+
+Searching ==> will return either i(found) or - 1(not found)
+
+    Sequential Search ==> only search that can search over unsorted data.
+                    -ve : slow.. very slow specially if not found 
+
+    int Sequential_search(int a[], int key) {
+        for(int i = 0; i < a.length; i++) {
+            if(key == a[i])
+                return i;
+        }
+        return -1;
+    }
+
+    Binary Search ==> need sorted dat to work 
+                    -ve : sorted data needed
+                    +ve :  
+
+
+===========================
+SEARCHING ALGORITHMS
+===========================
+
+Definition:
+-----------
+Searching algorithms are used to find the position of a specific target value (key) within a data structure like an array or list.
+
+Common Searching Algorithms:
+----------------------------
+1. Linear Search
+2. Binary Search (Iterative and Recursive)
+
+-------------------
+1. Linear Search
+-------------------
+Definition:
+- Simple search that checks each element sequentially until the target is found or the list ends.
+- Time Complexity: O(n)
+
+Difference from others:
+- Does not require sorted data.
+- Less efficient for large datasets.
+
+Algorithm (Pseudocode):
+-----------------------
+1. For each element in the array:
+2.     If element equals target:
+3.         Return index
+4. Return -1 if target not found
+
+Java Code:
+----------
+public static int linearSearch(int[] arr, int x) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == x) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+-----------------------------
+2. Binary Search (Iterative)
+-----------------------------
+Definition:
+- Searches a sorted array by repeatedly dividing the search interval in half.
+- Time Complexity: O(log n)
+
+Difference from others:
+- Requires the array to be sorted.
+- More efficient than linear search for large sorted datasets.
+
+Algorithm (Pseudocode):
+-----------------------
+1. Set left = 0, right = array length - 1
+2. While left <= right:
+3.     mid = (left + right) / 2
+4.     If arr[mid] == target:
+5.         Return mid
+6.     Else if arr[mid] < target:
+7.         left = mid + 1
+8.     Else:
+9.         right = mid - 1
+10. Return -1 if target not found
+
+Java Code:
+----------
+public static int binarySearchIterative(int[] arr, int x) {
+    int left = 0;
+    int right = arr.length - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == x) {
+            return mid;
+        }
+        if (arr[mid] < x) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+
+-------------------------------
+3. Binary Search (Recursive)
+-------------------------------
+Definition:
+- Recursive implementation of binary search.
+- Also requires sorted array.
+
+Algorithm (Pseudocode):
+-----------------------
+1. If right >= left:
+2.     mid = (left + right) / 2
+3.     If arr[mid] == target:
+4.         Return mid
+5.     Else if arr[mid] > target:
+6.         Search left half recursively
+7.     Else:
+8.         Search right half recursively
+9. Return -1 if not found
+
+Java Code:
+----------
+public static int binarySearchRecursive(int[] arr, int left, int right, int x) {
+    if (right >= left) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == x) {
+            return mid;
+        }
+        if (arr[mid] > x) {
+            return binarySearchRecursive(arr, left, mid - 1, x);
+        }
+        return binarySearchRecursive(arr, mid + 1, right, x);
+    }
+    return -1;
+}
+
+
+========================
+SORTING ALGORITHMS
+========================
+
+Definition:
+-----------
+Sorting algorithms arrange the elements of a list or array in a certain order (commonly ascending or descending).
+
+Common Sorting Algorithms:
+---------------------------
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Merge Sort
+5. Quick Sort
+
+----------------------
+1. Bubble Sort
+----------------------
+Definition:
+- Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
+- Time Complexity: O(n^2)
+
+Difference:
+- Simple but inefficient for large datasets.
+- Stable sorting algorithm.
+
+Algorithm (Pseudocode):
+-----------------------
+1. For i from 0 to n-1:
+2.     For j from 0 to n-i-1:
+3.         If arr[j] > arr[j+1]:
+4.             Swap arr[j] and arr[j+1]
+
+Java Code:
+----------
+public static void bubbleSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+----------------------
+2. Selection Sort
+----------------------
+Definition:
+- Selects the minimum element from the unsorted part and swaps with the first unsorted element.
+- Time Complexity: O(n^2)
+
+Difference:
+- Performs fewer swaps than bubble sort.
+- Not stable.
+
+Algorithm (Pseudocode):
+-----------------------
+1. For i from 0 to n-1:
+2.     minIndex = i
+3.     For j from i+1 to n:
+4.         If arr[j] < arr[minIndex]:
+5.             minIndex = j
+6.     Swap arr[i] and arr[minIndex]
+
+Java Code:
+----------
+public static void selectionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        int temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+-----------------------
+3. Insertion Sort
+-----------------------
+Definition:
+- array sorted in 2 parts (sorted/unsorted) init 1 element in sorted and n-1 in unsorted in each pass an element from unsorted is Inserted in sorted part at right location.  
+- Builds the sorted array one element at a time, inserting elements at their correct position.
+- Time Complexity: O(n^2) average, O(n) best case
+
+Difference:
+- Efficient for small or nearly sorted arrays.
+- Stable.
+
+Algorithm (Pseudocode):
+-----------------------
+1. For i from 1 to n-1:
+2.     key = arr[i]
+3.     j = i - 1
+4.     While j >= 0 and arr[j] > key:
+5.         arr[j+1] = arr[j]
+6.         j = j - 1
+7.     arr[j+1] = key
+
+Java Code:
+----------
+public static void insertionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+----------------------
+4. Merge Sort
+----------------------
+Definition:
+- Divide and conquer algorithm that splits list into halves, sorts and merges them.
+- Time Complexity: O(n log n)
+
+Difference:
+- Stable and efficient.
+- Requires additional space for merging.
+
+Algorithm (Pseudocode):
+-----------------------
+1. If left < right:
+2.     mid = (left + right)/2
+3.     mergeSort(left, mid)
+4.     mergeSort(mid+1, right)
+5.     merge(left, mid, right)
+
+Java Code:
+----------
+public static void mergeSort(int[] arr, int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+}
+
+private static void merge(int[] arr, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    int[] L = new int[n1];
+    int[] R = new int[n2];
+    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+    for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k++] = L[i++];
+        } else {
+            arr[k++] = R[j++];
+        }
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}
+
+--------------------
+5. Quick Sort 
+--------------------
+Definition:
+- Divide and conquer algorithm choosing a pivot and partitioning around it.
+- Time Complexity: Average O(n log n), Worst O(n^2)
+
+Difference:
+- Generally faster than merge sort on average.
+- Not stable.
+- In-place sort.
+
+Algorithm:
+----------
+// Partitioning process:
+// 1. Choose last element as pivot.
+// 2. Rearrange array so elements < pivot on left, > pivot on right.
+// 3. Return pivot position.
+
+Java Code:
+----------
+public static void quickSort(int[] arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+private static int partition(int[] arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            swap(arr, i, j);
+        }
+    }
+    swap(arr, i + 1, high);
+    return i + 1;
+}
+
+private static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+============================
+Example Usage in Java
+============================
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of elements: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < n; i++){
+            arr[i] = scanner.nextInt();
+        }
+
+        System.out.println("Unsorted array:");
+        System.out.println(Arrays.toString(arr));
+
+        // Example: Sort using Quick Sort
+        SearchingAndSortingAlgorithms.quickSort(arr, 0, n - 1);
+
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(arr));
+
+        // Example: Search element using linear search
+        System.out.print("Enter element to search: ");
+        int x = scanner.nextInt();
+        int result = SearchingAndSortingAlgorithms.linearSearch(arr, x);
+        if(result == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index " + result);
+        }
+
+        scanner.close();
+    }
+}
+
+
+```
+SUMMARY TABLE
+===============
+| Algorithm        | Time Complexity (Worst) | Space Complexity | Stability | Performance                        |
+|------------------|-------------------------|------------------|-----------|------------------------------------|
+| Bubble Sort      | O(n^2)                  | O(1)             | Stable    | Simple, inefficient for large data |
+| Selection Sort   | O(n^2)                  | O(1)             | Unstable  | Fewer swaps, inefficient           |
+| Insertion Sort   | O(n^2)                  | O(1)             | Stable    | Efficient for small/nearly sorted  |
+| Merge Sort       | O(n log n)              | O(n)             | Stable    | Efficient for large datasets       |
+| Quick Sort       | O(n^2)                  | O(log n)         | Unstable  | Generally faster, efficient        |
+```
