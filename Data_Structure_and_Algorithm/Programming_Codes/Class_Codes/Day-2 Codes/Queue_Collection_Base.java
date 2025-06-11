@@ -47,32 +47,32 @@ public class Queue_Collection_Base
                         System.out.print("Enter element: ");
                         element = sc.nextInt();
                         queue.enqueue(element);
-                        System.out.println("✅ Element enqueued.");
+                        System.out.println("Element enqueued.");
                     break;
 
                 case 2: // Dequeue
                     if (queue.isEmpty()) {
-                        System.out.println("⚠️ Queue is Empty. Cannot Dequeue.");
+                        System.out.println("Queue is Empty. Cannot Dequeue.");
                     } else {
-                        System.out.println("✅ Popped element: " + queue.dequeue());
+                        System.out.println("Popped element: " + queue.dequeue());
                     }
                     break;
 
                 case 3:
                     if (queue.isEmpty()) {
-                        System.out.println("⚠️ Queue is Empty. Nothing to display.");
+                        System.out.println("Queue is Empty. Nothing to display.");
                     } else {
-                        System.out.println("📜 Queue contents (Start to End):");
+                        System.out.println("Queue contents (Start to End):");
                         queue.printQueue();
                     }
                     break;
 
                 case 4: // Exit
-                    System.out.println("👋 Exiting program. Thank you!");
+                    System.out.println("Exiting program. Thank you!");
                     break;
 
                 default:
-                    System.out.println("❌ Invalid choice. Please try again.");
+                    System.out.println("Invalid choice. Please try again.");
             }
 
         } while (choice != 4);
