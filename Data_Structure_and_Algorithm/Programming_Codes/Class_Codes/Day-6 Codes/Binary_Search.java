@@ -3,47 +3,41 @@ import java.util.Scanner;
 
 public class Binary_Search {
 
-    public static int binarySearch(int arr[], int left, int right, int x) {
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (arr[mid] == x) {
-                return mid;
-            }
-            if (arr[mid] < x) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
+    // Method to perform binary search
+    static int binarySearch(int a[], int start, int end, int key) {
+        if (start <= end) { // Searching is on
+            int mid = (start + end) / 2;
+            if (a[mid] == key)
+                return mid; // Key found
+            else {
+                if (key < a[mid])
+                    return binarySearch(a, start, mid - 1, key); // Search in left half
+                else
+                    return binarySearch(a, mid + 1, end, key); // Search in right half
             }
         }
-        return -1;
+        return -1; // Key not found
     }
 
     public static void main(String[] args) {
+        int[] numbers = {10, 25, 5, 40, 15, 30, 20}; // Unsorted array
+        System.out.println("Original Array: " + Arrays.toString(numbers));
+
+        // Sort the array before binary search
+        Arrays.sort(numbers);
+        System.out.println("Sorted Array: " + Arrays.toString(numbers));
+
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the key to find: ");
+        int keyToFind = scanner.nextInt(); // User input for the key to search
 
-        System.out.print("Enter the size of the array: ");
-        int n = scanner.nextInt();
-
-        int[] arr = new int[n];
-
-        System.out.println("Enter the array elements (unsorted):");
-        for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
-        }
-
-        Arrays.sort(arr);
-
-        System.out.print("Enter the element to search for: ");
-        int x = scanner.nextInt();
-
-        int result = binarySearch(arr, 0, arr.length - 1, x);
-
-        if (result == -1) {
-            System.out.println("Element not found");
+        int result = binarySearch(numbers, 0, numbers.length - 1, keyToFind);
+        if (result != -1) {
+            System.out.println("Key " + keyToFind + " found at index: " + result);
         } else {
-            System.out.println("Element found at index " + result);
+            System.out.println("Key " + keyToFind + " not found in the array.");
         }
 
-        scanner.close();
+        scanner.close(); // Close the scanner
     }
 }
