@@ -57,14 +57,14 @@ public class LinkedListClass {
             System.out.println("List Empty");
         } else {
             Node t = root;
-            Node t2 = root;
+            Node t2 = null;
 
             while (t.next != null) {
                 t2 = t;     // t2 trails behind t
                 t = t.next; // t moves to end
             }
 
-            if (t == root) {
+            if (t2 == null) {
                 root = null; // Only one node in list
             } else {
                 t2.next = null; // Remove last node
@@ -74,95 +74,93 @@ public class LinkedListClass {
         }
     }
 
+    // Search for an element in the list
     boolean SearchList(int key) {
-        if(root == null) {
+        if (root == null) {
             System.out.println("List Empty");
-        }
-        else {
+            return false;
+        } else {
             Node t = root;
-            while(t != null) {
-                if(t.data == key) {
-                    return true;
+            while (t != null) {
+                if (t.data == key) {
+                    return true; // Key found
                 }
                 t = t.next;
             }
         }
-        return false;
+        return false; // Key not found
     }
 
-    void insertAfter(int ref,int new_data)
-    {
-        if (root == null)//root not created but assigned
-            System.out.println("List Empty can not search anything");
-        else {
-              Node t = root;//1
-              while (t != null)
-              {
-                    if (t.data == ref)
-                      break;//stop searching
-                t = t.next;//move
+    // Insert a new node after a given reference node
+    void insertAfter(int ref, int new_data) {
+        if (root == null) {
+            System.out.println("List Empty, cannot search anything");
+        } else {
+            Node t = root;
+            while (t != null) {
+                if (t.data == ref) {
+                    break; // Stop searching
+                }
+                t = t.next; // Move
             }
-            if (t == null)
+            if (t == null) {
                 System.out.println(ref + " not found");
-            else//found
-            {
-                Node n=new Node(new_data);
-                n.next=t.next;//1
-                t.next=n;//2
-                System.out.println(n.data + " Inserted");
+            } else { // Found
+                Node n = new Node(new_data);
+                n.next = t.next; // Link new node to the next node
+                t.next = n; // Insert new node after the reference node
+                System.out.println(n.data + " inserted after " + ref);
             }
         }
     }
 
-
+    // Delete a specific element from the list
     void deleteElement(int key) {
-        if (root == null)//root not created but assigned
-            System.out.println("List Empty can not search anything");
-        else {
-            Node t = root;//1
-            Node t2 = root;//1
+        if (root == null) {
+            System.out.println("List Empty, cannot search anything");
+        } else {
+            Node t = root;
+            Node t2 = null;
             while (t != null) {
-                if (t.data == key)
-                    break;//stop searching
-                t2 = t;//tail
-                t = t.next;//move
+                if (t.data == key) {
+                    break; // Stop searching
+                }
+                t2 = t; // Track previous node
+                t = t.next; // Move
             }
-            if (t == null)
+            if (t == null) {
                 System.out.println(key + " not found");
-            else//found
-            {
-                if (t == root)//case 1
+            } else { // Found
+                if (t == root) { // Case 1: Deleting the root
                     root = root.next;
-                else if (t.next == null)//case 2
+                } else if (t.next == null) { // Case 2: Deleting the last node
                     t2.next = null;
-                else//case 3
+                } else { // Case 3: Deleting a middle node
                     t2.next = t.next;
+                }
                 System.out.println(t.data + " found and deleted");
             }
         }
     }
 
-    void Sorting() {
-        if(root == null || root.next == null) {
-            System.out.println("List is too short to sort");
-        }
-        boolean swapped;
-        do {
-            swapped = false;
-            Node current = root;
-            while (current.next != null) {
-                if (current.data > current.next.data) {
-                    // swap values
-                    int temp = current.data;
-                    current.data = current.next.data;
-                    current.next.data = temp;
-                    swapped = true;
+    // Sort the linked list using bubble sort
+    void sortList() {
+        if (root == null) {
+            System.out.println("List Empty");
+            return; // Exit if the list is empty
+        } else {
+            for (Node i = root; i != null; i = i.next) { // Outer loop
+                for (Node j = i.next; j != null; j = j.next) { // Inner loop
+                    if (j.data < i.data) {
+                        // Swap values
+                        int temp = i.data;
+                        i.data = j.data;
+                        j.data = temp;
+                    }
                 }
-                current = current.next;
             }
-        } while (swapped);
-
-        System.out.println("List sorted successfully.");
+            System.out.println("List sorted successfully.");
+        }
     }
 
     // Display the linked list
@@ -184,17 +182,20 @@ public class LinkedListClass {
     public static void main(String[] args) {
         LinkedListClass list = new LinkedListClass();
 
+        System.out.println();
         list.insertLeft(10);
         list.insertRight(20);
+        list.insertLeft(35);
+        list.insertRight(45);
         list.insertLeft(5);
         list.deleteElement(20);
         list.insertRight(30);
         list.printList(); 
 
         list.deleteLeft();
-        list.SearchList(10);
+        System.out.println("Searching for 10: " + list.SearchList(10));
         list.deleteRight();
-        list.Sorting();
+        list.sortList();
         list.printList();
     }
 }

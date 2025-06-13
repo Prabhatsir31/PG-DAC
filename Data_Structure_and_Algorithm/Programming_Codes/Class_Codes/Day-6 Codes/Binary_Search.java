@@ -11,16 +11,16 @@ public class Binary_Search {
                 return mid; // Key found
             else {
                 if (key < a[mid])
-                    return binarySearch(a, start, mid - 1, key); // Search in left half
+                    return binarySearch(a, start, mid - 1, key); 
                 else
-                    return binarySearch(a, mid + 1, end, key); // Search in right half
+                    return binarySearch(a, mid + 1, end, key); 
             }
         }
         return -1; // Key not found
     }
 
     public static void main(String[] args) {
-        int[] numbers = {10, 25, 5, 40, 15, 30, 20}; // Unsorted array
+        int[] numbers = {10, 25, 5, 40, 15, 30, 20}; 
         System.out.println("Original Array: " + Arrays.toString(numbers));
 
         // Sort the array before binary search
@@ -29,7 +29,7 @@ public class Binary_Search {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the key to find: ");
-        int keyToFind = scanner.nextInt(); // User input for the key to search
+        int keyToFind = scanner.nextInt(); 
 
         int result = binarySearch(numbers, 0, numbers.length - 1, keyToFind);
         if (result != -1) {
@@ -38,6 +38,6 @@ public class Binary_Search {
             System.out.println("Key " + keyToFind + " not found in the array.");
         }
 
-        scanner.close(); // Close the scanner
+        scanner.close(); 
     }
 }

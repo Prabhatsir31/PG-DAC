@@ -16,7 +16,6 @@ public class Sliding_Window_SumMax {
             System.out.println("Sum = " + sum);
             maxSum = Math.max(maxSum, sum);
         }
-
         return maxSum;
     }
 

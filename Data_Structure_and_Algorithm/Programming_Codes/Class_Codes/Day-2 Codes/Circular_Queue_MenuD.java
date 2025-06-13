@@ -57,12 +57,12 @@ public class Circular_Queue_MenuD {
         }
 
         System.out.print("Queue: ");
-        int i = front;
+
         while (true) {
-            System.out.print(queue[i] + " ");
-            if (i == rear)
+            System.out.print(queue[front] + " ");
+            if (front == rear)
                 break;
-            i = (i + 1) % size;
+            front = (front + 1) % size;
         }
         System.out.println();
     }

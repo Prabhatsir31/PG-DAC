@@ -1,41 +1,30 @@
-import java.util.Scanner;
-
 public class Sequential_Search {
 
     public static int linearSearch(int arr[], int key) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == key) {
-                return i;
+                return i; 
             }
         }
-        return -1;
+        return -1; 
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        int[] arr = {10, 25, 5, 40, 15, 30, 20}; 
+        int key = 15; 
 
-        System.out.print("Enter the size of the array: ");
-        int n = sc.nextInt();
-
-        int[] arr = new int[n];
-
-        System.out.println("Enter the array elements:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+        System.out.println("Array: ");
+        for (int value : arr) {
+            System.out.print(value + " ");
         }
-
-        System.out.print("Enter the element to search for: ");
-        int key = sc.nextInt();
+        System.out.println();
 
         int result = linearSearch(arr, key);
 
         if (result == -1) {
-            System.out.println("Element not found");
+            System.out.println("Element " + key + " not found");
         } else {
-            // System.out.println("Element found at index " + result);
-            System.out.println("Element found " + key);
+            System.out.println("Element " + key + " found at index " + result);
         }
-
-        sc.close();
     }
 }

@@ -1,9 +1,9 @@
-.import java.util.Scanner;
+import java.util.Scanner;
 
 public class Stack_Class_ADT {
     int top, maxSize, s[];
     
-    Stack_Class(int size) {
+    Stack_Class_ADT(int size) {
         top = -1;
         maxSize = size;
         s = new int[maxSize];
@@ -58,7 +58,7 @@ public class Stack_Class_ADT {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter stack size: ");
         int size = sc.nextInt();
-        Stack_Class stack = new Stack_Class(size);
+        Stack_Class_ADT stack = new Stack_Class_ADT(size);
 
         while (true) {
             System.out.print("""
@@ -79,12 +79,15 @@ public class Stack_Class_ADT {
                     stack.push(val);
                 }
                 case 2 -> {
+                    
                     int popped = stack.pop();
                     if (popped != -1) System.out.println("Popped: " + popped);
+                    // stack.pop();
                 }
                 case 3 -> {
                     int top = stack.peek();
                     if (top != -1) System.out.println("Top: " + top);
+                    // stack.peek();
                 }
                 case 4 -> stack.printStack();
                 case 5 -> {

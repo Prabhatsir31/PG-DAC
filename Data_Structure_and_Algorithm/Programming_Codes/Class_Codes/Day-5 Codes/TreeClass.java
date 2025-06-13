@@ -69,6 +69,10 @@ public class TreeClass {
     // Count Total Nodes
     int countNodes(Node r) {
         return (r == null) ? 0 : 1 + countNodes(r.left) + countNodes(r.right);
+        // if(r == null) {
+        //     return 0;
+        // }
+        // return 1 + countNodes(r.left) + countNodes(r.right);
     }
 
     // Count Leaf Nodes
@@ -100,11 +104,10 @@ public class TreeClass {
         }
     }
 
-    int findSum(Node r)
-    {
+    int findSum(Node r) {
         if(r==null)
             return 0;
-        return r.data+findSum(r.left)+findSum(r.right);
+        return r.data + findSum(r.left) + findSum(r.right);
     }
 
     // int diameter(Node r) {
@@ -156,8 +159,13 @@ public class TreeClass {
         System.out.print("\nPostorder Traversal: ");
         tree.postorder(tree.root);
 
+        // CountNodes
         System.out.println("\n\nTotal Nodes: " + tree.countNodes(tree.root));
+
+        //Count Leaf Nodes
         System.out.println("\nTotal Leaf Nodes: " + tree.countLeafNodes(tree.root));
+
+        //Height of the 
         System.out.println("\nHeight of Tree: " + tree.height(tree.root));
 
         System.out.println("\nLevel Order Traversal:");
@@ -169,7 +177,7 @@ public class TreeClass {
         boolean found = tree.searchElement(tree.root, keyToSearch);
         System.out.println("Result: " + (found ? "Key found in tree." : "Key not found in tree."));
 
-        System.out.println("\nTree Sum of all node's data: "+tree.findSum(tree.root));
+        System.out.println("\nTree Sum of all node's data: " + tree.findSum(tree.root));
         
         // System.out.println("\nTree Diameter of all node's data: "+tree.diameter(tree.root));
 

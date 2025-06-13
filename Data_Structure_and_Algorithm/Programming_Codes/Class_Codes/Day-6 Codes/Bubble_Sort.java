@@ -4,7 +4,7 @@ public class Bubble_Sort {
     static void Bubble_Sort(int a[]) {
         int n = a.length;
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false; // Optimization: track if any swap occurs
+            boolean swapped = false; 
             for (int j = 0; j < n - 1 - i; j++) {
                 if (a[j] > a[j + 1]) {
                     // Swap a[j] and a[j+1]
