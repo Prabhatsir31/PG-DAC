@@ -1,0 +1,359 @@
+DAY-6 
+===========
+
+Data Structure and Algorithm 
+=================================
+
+Divide and Conquer 
+-------------------
+l array of n, Division from mid again-n-again till we get to 
+n arrays of 1, then merge it in sorted manner (2^n)
+
+----------------------
+Merge Sort
+----------------------
+Definition:
+- Divide and conquer algorithm that splits list into halves, sorts and merges them.
+- Time Complexity: O(n log n)
+
+Difference:
+- Stable and efficient.
+- Requires additional space for merging.
+
+Algorithm (Pseudocode):
+-----------------------
+1. If left < right:
+2.     mid = (left + right)/2
+3.     mergeSort(left, mid)
+4.     mergeSort(mid+1, right)
+5.     merge(left, mid, right)
+
+Java Code:
+----------
+public static void mergeSort(int[] arr, int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+}
+
+private static void merge(int[] arr, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    int[] L = new int[n1];
+    int[] R = new int[n2];
+    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+    for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k++] = L[i++];
+        } else {
+            arr[k++] = R[j++];
+        }
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}
+
+
+Hepify Algorithm
+---------------------
+
+
+
+Heap Sort Explained with Diagram
+-----------------------------------
+
+Heap Sort is a comparison-based sorting algorithm. It uses a binary heap data structure, typically a max heap, to sort elements efficiently. The main idea is to build a max heap from the input array and then extract the largest element repeatedly to achieve a sorted array.
+
+Concept:
+Heap Sort works by first building a max heap (or min heap) from the input data, and then repeatedly extracting the maximum (or minimum) element from the heap and rebuilding the heap until all elements are sorted.
+
+Steps:
+1. Build a max heap from the input array.
+2. The largest element is at the root of the heap. Swap it with the last element of the heap.
+3. Reduce the size of the heap by one and heapify the root element to maintain the max heap roperty.
+4. Repeat steps 2 and 3 until the heap size is reduced to one
+
+Algorithm:
+1. Heapify: A function to maintain the heap property.
+   - Input: Array, size of the heap, index of the root.
+   - Output: The array with the heap property maintained.
+
+2. Heap Sort:
+   - Input: Array to be sorted.
+   - Output: Sorted array.
+   - Steps:
+     1. Build a max heap from the array.
+     2. For i from n-1 down to 1:
+        - Swap the root of the heap (largest element) with the last element of the heap.
+        - Call heapify on the reduced heap.
+
+Step-by-Step Concept with Diagrams:
+
+1) Initial Array:
+------------------
+Example array: [4, 10, 3, 5, 1]
+
+Index:     0   1   2   3   4
+Array:     4  10   3   5   1
+
+2) Build Max Heap:
+-----------------------
+Transform the array into a max heap where each parent node is greater than its child nodes.
+
+Max heap structure representation:
+
+           10
+          /  \
+         5    3
+        / \
+       1   4
+
+Array representation after building max heap:
+
+Index:     0   1   2   3   4
+Array:    10   5   3   1   4
+
+3) Swap Root with Last Element and Heapify:
+---------------------------------------------
+Step 1:
+- Swap root (10) with last element (4):
+
+Array becomes: [4, 5, 3, 1, 10]
+
+- Heapify root index (0) to maintain max heap property for sub-array of size 4:
+
+Heapify process:
+           4                      5
+          /  \         =>        /  \
+         5    3                4    3
+        /                      / 
+       1                      1
+
+Array after heapify:
+
+[5, 4, 3, 1, 10]
+
+Step 2:
+- Swap root (5) with last element of sub-array (1):
+
+Array: [1, 4, 3, 5, 10]
+
+- Heapify root (index 0) for sub-array size 3:
+
+Heapify process:
+           1                      4
+          /  \         =>        /  \
+         4    3                1    3
+
+Array after heapify:
+
+[4, 1, 3, 5, 10]
+
+Step 3:
+- Swap root (4) with last element of sub-array (3):
+
+Array: [3, 1, 4, 5, 10]
+
+- Heapify root (index 0) for sub-array size 2:
+
+Heapify process:
+           3                      3
+          /                      /
+         1                      1
+
+No swaps needed. Array remains:
+
+[3, 1, 4, 5, 10]
+
+Step 4:
+- Swap root (3) with last element of sub-array (1):
+
+Array: [1, 3, 4, 5, 10]
+
+- Heapify root index (0) for sub-array size 1 (no heapify needed):
+
+Array remains:
+
+[1, 3, 4, 5, 10]
+
+4) Final Sorted Array:
+-------------------------
+[1, 3, 4, 5, 10]
+
+Summary of the Algorithm:
+---------------------------
+- Build a max heap from the input array.
+- Swap the root (max element) with the last element.
+- Reduce the heap size by one.
+- Heapify the new root to maintain max heap property.
+- Repeat until the heap size is 1.
+
+Advantages:
+-------------
+- Time complexity is O(n log n) in all cases.
+- Performs sorting in place; requires no extra space beyond the input array.
+
+Disadvantages:
+----------------
+- Not a stable sorting algorithm.
+- Heapify operations can be costly compared to other O(n log n) sorts (like quicksort).
+
+This step-by-step guide with diagrams helps visualize how heap sort works by repeatedly ensuring the heap property and extracting the sorted elements from the heap.
+
+
+
+Types of Algorithms
+--------------------------------------------------------
+
+1) Divide and Conquer
+   - Example: Merge Sort
+   - Concept: 
+     - The array is divided into two halves.
+     - Each half is sorted recursively.
+     - The two sorted halves are merged to produce the final sorted array.
+   - Diagram:
+     ------------------------------------------------------------------------------------------------------
+         [10, 5, 2, 8, 7, 6]
+                / \
+           [10, 5, 2] [8, 7, 6]
+              / \         / \
+          [10] [5, 2]  [8] [7, 6]
+                / \         / \
+              [5] [2]     [7] [6]
+     ------------------------------------------------------------------------------------------------------
+
+2) Greedy Algorithm
+   - Example: Dijkstra's Algorithm
+   - Concept:
+     - Used for finding the shortest path in a graph.
+     - It selects the nearest vertex and updates the path lengths to its neighbors.
+   - Diagram:
+     ------------------------------------------------------------------------------------------------------
+         A --1-- B
+         |       |
+         4       2
+         |       |
+         C --3-- D
+     ------------------------------------------------------------------------------------------------------
+     - Start at A, select B (1), then D (2), and finally C (4).
+
+3) Dynamic Programming
+   - Example: Fibonacci Sequence
+   - Concept:
+     - Instead of recalculating Fibonacci numbers, store previously computed values.
+   - Diagram:
+     ------------------------------------------------------------------------------------------------------
+     Index:   0   1   2   3   4   5   6
+     Value:   0   1   1   2   3   5   8
+               ↑   ↑   ↑   ↑   ↑
+               |   |   |   |   |
+             F(0) F(1) F(2) F(3) F(4)
+     ------------------------------------------------------------------------------------------------------
+
+4) Back-Tracking
+   - Example: N-Queens Problem
+   - Concept:
+     - Place queens on a chessboard one by one.
+   - Diagram:
+     ------------------------------------------------------------------------------------------------------
+     [Q] . . . .
+     . . [Q] . .
+     . . . . [Q]
+     . [Q] . . .
+     ------------------------------------------------------------------------------------------------------
+     - Highlight conflicts and backtrack to previous positions.
+
+5) Branch and Bound
+   - Example: Traveling Salesman Problem
+   - Concept:
+     - Explore all possible routes to find the shortest one.
+   - Diagram:
+     ------------------------------------------------------------------------------------------------------
+         A
+        / \
+       B   C
+      / \ / \
+     D   E   F
+     ------------------------------------------------------------------------------------------------------
+     - Show routes explored and pruned paths.
+
+6) Stochastic Algorithm
+   - Example: Genetic Algorithm
+   - Concept:
+     - Mimics the process of natural selection.
+   - Diagram:
+     ------------------------------------------------------------------------------------------------------
+     Population: [A, B, C, D]
+        Selection: [A, C]
+            |   |
+        Crossover: [AC, AD]
+            |   |
+        Mutation: [AC', AD']
+     ------------------------------------------------------------------------------------------------------
+
+
+Hashing
+-----------
+
+Definition:
+Hashing is a technique used to uniquely identify a specific object from a group of similar objects. It is primarily used in data structures like hash tables to enable fast data retrieval. The process involves converting input data (keys) into a fixed-size string of characters, which is typically a hash code. This hash code is used as an index to store and retrieve data efficiently.
+
+Key Concepts:
+1. Hash Function: A function that takes an input (or 'key') and returns a fixed-size string of bytes. The output is typically a hash code that represents the input data.
+2. Hash Table: A data structure that implements an associative array abstract data type, a structure that can map keys to values. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+3. Collision: A situation that occurs when two different keys hash to the same index in a hash table. Collision resolution techniques are necessary to handle this scenario.
+
+Types of Hashing:
+1. Open Addressing: All elements are stored in the hash table itself. If a collision occurs, the algorithm searches for the next available slot.
+   - Linear Probing
+   - Quadratic Probing
+   - Double Hashing
+
+2. Chaining: Each slot in the hash table points to a linked list of entries that hash to the same index. When a collision occurs, the new entry is added to the list.
+
+Algorithm for Hashing:
+1. Hash Function:
+   - Input: Key (k)
+   - Output: Hash Code (h)
+   - Example: h = k mod m, where m is the size of the hash table.
+
+2. Insert Operation:
+   - Compute the hash code for the key using the hash function.
+   - If the computed index is empty, insert the key-value pair.
+   - If a collision occurs (the index is already occupied), apply the collision resolution technique (e.g., chaining or open addressing) to find the next available slot.
+
+3. Search Operation:
+   - Compute the hash code for the key using the hash function.
+   - Check the computed index:
+     - If the key is found, return the associated value.
+     - If a collision resolution technique was used, follow it to find the key in the linked list or the next available slot.
+
+4. Delete Operation:
+   - Compute the hash code for the key using the hash function.
+   - Check the computed index:
+     - If the key is found, remove it from the hash table.
+     - If a collision resolution technique was used, follow it to find the key and remove it.
+
+Advantages of Hashing:
+- Fast data retrieval: Average time complexity for search, insert, and delete operations is O(1).
+- Efficient use of memory: Hash tables can be resized dynamically.
+
+Disadvantages of Hashing:
+- Collisions can lead to performance degradation.
+- Requires a good hash function to minimize collisions.
+- Not suitable for ordered data retrieval.
+
+Applications of Hashing:
+- Implementing associative arrays.
+- Database indexing.
+- Caching data for quick access.
+- Cryptography and data integrity verification.
+
+
+
+
