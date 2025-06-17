@@ -1,0 +1,33 @@
+package trial;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class Demo1
+{
+	public static void main(String ...arg)
+	{
+		Integer ob1=Integer.valueOf(128);
+		Integer ob2=Integer.valueOf(128);
+		if(ob1.equals(ob2))
+		{
+			System.out.println("ob1 and ob2 are equals");
+		}
+		if(ob1==ob2)
+		{
+			System.out.println("ob1 and ob2 are ==");
+		}
+		System.out.println(ob1.hashCode());
+		System.out.println(ob2.hashCode());
+		}
+}
+
+
+/*
+
+output:
+
+ob1 and ob2 are equals
+128
+128
+
+*/

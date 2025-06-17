@@ -1,0 +1,66 @@
+how to create database ?
+
+create database mydb;
+
+how to open database ?
+
+use mydb;
+
+table name
+
+		dept
+
+
+structure
+create table dept(deptno  int(6),dname   varchar(30),loc varchar(30));
+
+insert into dept values(4,'Trg','Bangalore');
+
+
+
+
+copy "mysql.jar" in
+
+c: or d: or e:
+
+	mysqldriver
+
+		mysql.jar
+
+
+java code for "mysql"
+
+	Class.forName("com.mysql.jdbc.Driver");
+String ss="jdbc:mysql://localhost:3306/mydb";
+Connection con=DriverManager.getConnection(ss,"root","");
+
+
+
+
+
+how to write stored procedure in mysql ?
+
+delimiter //
+create procedure mypro1(in no int,out name varchar(20))
+begin
+select dname into name from dept where deptno=no;
+end//
+
+( note:- here delimeter // is to tell mysql that we are going to terminate our procedure with // )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

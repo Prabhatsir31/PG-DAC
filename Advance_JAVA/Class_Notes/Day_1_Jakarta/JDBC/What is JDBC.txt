@@ -1,0 +1,33 @@
+			JDBC
+
+		java database Connectivity
+
+using jdbc, java application can connect to any database such as MySQL,Oracle,SQLServer etc.
+jdbc provides two things:
+
+a) jdbc API [classes and interfaces] which remains same no matter which database you use.
+b) jdbc drivers
+	driver is a software to connect to database
+
+There are 4 types of drivers in jdbc:
+	Type 1   - which requires ODBC to be installed on a machine. It has almost become  obsolete.
+
+	Type 2  - which requires database client library to be installed on client machine. cannot be used for internet purpose.
+
+	Type 3  - which requires middleware (Application server) to get connected to database.
+	Type 4  - which is the fastest driver as it directly connects to the database.
+
+Steps required for jdbc application:
+a) load and register the driver with DriverManager.
+b) get connection with database
+c) communicate with database with the help of JDBC API.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+A disconnected environment is one in which a user is not necessarily connected with a database. Connection is required only at the time of retrieval after that connection is close and if data needs to be updated again connection will be re established.
+
+The main advantage of disconnected environment is no need to have a permanent connection with a Data Source which is advantageous especially when there are thousands of records in database which u want to traverse.
+
+Another advantage is difference between ResultSet and CachedRowSetImpl. ResultSet is not serializable but CachedRowSetImpl is. Hence we can always pass CachedRowSetImpl over the network.
+
+

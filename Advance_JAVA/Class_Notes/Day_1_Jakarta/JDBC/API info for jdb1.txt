@@ -1,0 +1,10 @@
+
+
+Connection - interface - used to represent the connection with the database.
+
+DriverManager - class - used to get the connection
+
+Statement - interface - used to communicate with the database 
+			( query or update statements)
+
+ResultSet - interface - used to store records retrieved from database.

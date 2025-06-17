@@ -1,0 +1,1 @@
+"Structural" refers to how objects and classes are composed to form larger structures. These patterns focus on the organization and relationships between objects and classes.

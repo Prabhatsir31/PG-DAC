@@ -1,0 +1,13 @@
+
+setMaxInactiveInterval(300);
+
+	here 300 are seconds.
+
+
+
+<session-config>
+	<session-timeout>8</session-timeout>
+</session-config>
+
+
+		here 8 are minutes.

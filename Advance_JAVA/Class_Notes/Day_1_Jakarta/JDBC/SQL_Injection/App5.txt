@@ -1,0 +1,40 @@
+/*
+ * Here , even if we manipulate SQL query using --
+ * It's because, we have invoked two set*** methods
+ * and with -- we are giving only one value to the query
+ * i.e. uname , So it will give SQLException.
+ * 
+ */
+package core1;
+
+import java.sql.*;
+import java.util.*;
+public class App5 
+{
+	public static void main(String args[])
+	{
+		String ss="jdbc:mysql://localhost:3306/mydb";
+		try(Connection con=DriverManager.getConnection(ss,"root","root"))
+		{
+			System.out.println("Implementation class is\t"+con.getClass()); 
+			PreparedStatement pst=con.prepareStatement("select count(*) from myaccount where uname=? -- and password=?");
+			System.out.println("enter username and password");
+			Scanner sc=new Scanner(System.in);
+			String uname=sc.next();
+			String password=sc.next();
+			pst.setString(1,uname);
+			pst.setString(2, password);
+			ResultSet rs=pst.executeQuery();
+			rs.next();
+			int count=rs.getInt(1);
+			System.out.println("Total no. of records matching with the condition are\t"+count);
+		}
+		catch(Exception ee)
+		{
+			System.out.println(ee);
+		}
+	}
+}	
+
+
+					

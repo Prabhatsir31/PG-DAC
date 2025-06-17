@@ -1,0 +1,10 @@
+Prod.html  - welcome page
+
+	it will display product names using checkboxes
+		submit button- Add_to_Cart
+
+on submit,
+control should go to "CartServ" which will retrieve all selected products , store them in ArrayList and store ArrayList inside "session".
+
+user then will call "ViewServ" servlet, which will retrieve ArrayList from session and display all the items purchased.
+ 	

@@ -1,0 +1,10 @@
+path
+D:\apache-tomcat-9.0.30\bin;
+
+java_home
+
+C:\Program Files\Java\jdk1.8.0_45
+
+
+catalina_home
+D:\apache-tomcat-9.0.30

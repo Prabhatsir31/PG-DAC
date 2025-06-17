@@ -1,0 +1,78 @@
+
+HttpSession interface is used to create session in java.
+
+
+HttpSession session=request.getSession();
+	or
+HttpSession session=request.getSession(true);
+
+	above statement will
+create a session if not exists
+
+	or
+retrieve existing session
+
+how to add values in session
+	session.setAttribute(String,Object)
+
+how to retrieve values from session
+	session.getAttribute(String)
+
+
+HttpSession session=request.getSession(false);
+	above statement will retrieve existing session only. if session does not exists, it will return null.
+
+
+
+What happens when session is not there?
+
+	HttpSession session=request.getSession();
+		or
+	HttpSession session=request.getSession(true);
+	session.setAttribute("book","CompleteReference");
+
+
+Container will
+
+a) create session object
+b) store attribute/s
+c) generate unique session id
+d) create cookie
+e) store session id inside cookie
+f) add cookie inside response.
+
+
+
+What happens when session is retrieved?
+
+HttpSession session=request.getSession(false);
+
+container will
+a) retrieve cookie from request
+b) retrieve session id from cookie.
+c) try to match session id with the session object available on server.
+	if it matches
+		return session object
+	else
+		return null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

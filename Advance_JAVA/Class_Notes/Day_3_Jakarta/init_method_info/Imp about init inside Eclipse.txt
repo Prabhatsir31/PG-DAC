@@ -1,0 +1,10 @@
+inside eclipse if init is generated as 
+
+public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);  // this is must
+
+
+if u don't want to invoke "super.init(config)" then define "init" as
+	public void init(){}
+

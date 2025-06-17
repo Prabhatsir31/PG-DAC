@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+ 
+     <head><title>JSF Hello World</title></head>
+     <body>
+      <h:form id="helloForm">
+        <h:outputLabel for="promptName" value="Please enter your name"/>
+        <h:panelGrid columns="2">
+           <h:outputLabel for ="name" value="Name:"/>
+           <h:inputText id ="name" value="#{person.name}"/>
+           <h:commandButton value="Say Hello" action="sayHello"/>
+           <h:commandButton value="Say Bye" action="sayBye"/>
+        </h:panelGrid>
+       </h:form>
+     </body>
+   
+  
+</html> 

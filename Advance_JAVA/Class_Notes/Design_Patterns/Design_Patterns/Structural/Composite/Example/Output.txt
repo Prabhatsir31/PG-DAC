@@ -1,0 +1,5 @@
+Supervisor Jerry showed happiness level of 7
+Supervisor Mary showed happiness level of 6
+Worker Tom showed happiness level of 5
+Supervisor Bob showed happiness level of 9
+Worker Jimmy showed happiness level of 8

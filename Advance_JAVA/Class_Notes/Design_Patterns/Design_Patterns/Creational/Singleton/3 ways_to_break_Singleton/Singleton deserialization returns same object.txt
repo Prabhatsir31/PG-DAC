@@ -1,0 +1,38 @@
+package core1;
+import java.io.*;
+
+class SingletonFixed implements Serializable {
+    private static final long serialVersionUID = 1L;
+    public static final SingletonFixed INSTANCE = new SingletonFixed();
+    public int value = 42;
+
+    private SingletonFixed() {}
+
+    // Ensures the same instance is returned upon deserialization
+    private Object readResolve() throws ObjectStreamException {
+        return INSTANCE;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) throws Exception {
+        SingletonFixed s1 = SingletonFixed.INSTANCE;
+        s1.value = 99;
+
+        // Serialize
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("c:\\temp\\fixed.ser"));
+        oos.writeObject(s1);
+        oos.close();
+
+        // Reset value
+        s1.value = 0;
+
+        // Deserialize
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("c:\\temp\\fixed.ser"));
+        SingletonFixed s2 = (SingletonFixed) ois.readObject();
+        ois.close();
+
+        System.out.println("s1 == s2: " + (s1 == s2)); // true → Same object
+        System.out.println("s2.value: " + s2.value);   // 0  Current singleton value
+    }
+}

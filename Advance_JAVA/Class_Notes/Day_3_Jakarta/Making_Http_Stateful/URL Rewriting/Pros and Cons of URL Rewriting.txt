@@ -1,0 +1,15 @@
+Here are some of the URL rewriting advantages:
+
+- the mechanism is browser independent: you can use it even if the cookies usage is disabled in the browser
+
+- easy to debug as the parameter are passed in the URL
+
+ 
+
+Here are some of the URL rewriting disadvantages:
+
+- is less secure than in the case of cookies
+
+- generate more network traffic
+
+- It will work only with links.

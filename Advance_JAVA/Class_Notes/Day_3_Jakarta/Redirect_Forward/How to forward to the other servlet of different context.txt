@@ -1,0 +1,25 @@
+first open "context.xml" and make following change.
+	
+	<Context crossContext="true">
+
+and restart tomcat.
+
+
+
+	code inside "ForwardingServ1.java"
+
+ServletContext context=getServletContext();  
+ServletContext context1=context.getContext("/myapp1");
+RequestDispatcher rd=context1.getRequestDispatcher("/FirstServ"); // must start with /
+rd.forward(request, response); 
+
+	here we assume that "myapp" is current context and "myapp1" is another context. "MyServ" is there inside "myapp1"
+
+
+Difference between "request.getRequestDispatcher()" and "context.getRequestDispatcher()".
+
+request.getRequestDispatcher()
+		cannot go beyond context.
+
+context.getRequestDispatcher()
+		can go beyond context. path must start with "/".

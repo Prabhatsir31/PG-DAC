@@ -1,0 +1,26 @@
+When the Container initializes a servlet,it makes a unique ServletConfig for the servlet. The Container “reads” the servlet init parameters from the DD and gives them to the ServletConfig, then
+passes the ServletConfig to the servlet’s init() method.
+
+Your superclass [HttpServlet] includes two versions of init(), one that takes a ServletConfig and a convenient version that’s a no-arg. The inherited init(ServletConfig) method calls the no-arg init() method, so the only one you need to override is the no-arg version.
+There’s no law that stops you from overriding the one that takes a ServletConfig, but if you DO, then you better call super.init(ServletConfig)! But there’s really NO reason why you need to override the init(ServletConfig) method,since you can always get your ServletConfig by calling your inherited getServletConfig() method.
+
+conclusion
+
+	override  
+	
+	a) init(ServletConfig config)  - say super.init(config)
+		get ServletConfig and ServletContext
+
+		or
+
+	b) init(ServletConfig config)
+		no need to say super.init(config)
+		but save config somehow so that, u can get config and context parameter
+
+		or
+	c) init() - 
+		get ServletConfig and ServletContext automatically from parent
+
+	d) do not override any init
+
+		still u	get ServletConfig and ServletContext automatically from parent

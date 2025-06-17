@@ -1,0 +1,47 @@
+PreparedStatement has 2 advantages:
+a) u can use placeholder so that values can be passed dynamically
+b) PreparedStatement contains precompiled sql statements which enable faster execution.
+
+
+suppose we want to issue same query again and again:
+
+Statement st=con.createStatement();
+st.executeQuery("select * from dept");
+		a) query goes to database
+		b) it gets parsed,compiled
+		c) execution plan is made
+		d) query gets executed.
+
+st.executeQuery("select * from dept");
+		a) query goes to database
+		b) it gets parsed,compiled
+		c) execution plan is made
+		d) query gets executed.
+
+st.executeQuery("select * from dept");
+		a) query goes to database
+		b) it gets parsed,compiled
+		c) execution plan is made
+		d) query gets executed.
+
+
+if we use PrepareStatement,
+
+PreparedStatement pst=con.prepareStatement("select * from dept");
+		a) query goes to database
+		b) it gets parsed,compiled
+		c) execution plan is made
+pst.executeQuery();
+	query gets executed
+pst.executeQuery();
+	query gets executed
+pst.executeQuery();
+	query gets executed
+
+
+
+
+
+
+
+

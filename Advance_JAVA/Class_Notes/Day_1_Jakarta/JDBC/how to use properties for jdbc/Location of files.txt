@@ -1,0 +1,1 @@
+copy "MyClass.java","ConnectionProvider.java" and "myproperty.properties" inside "default package" folder.

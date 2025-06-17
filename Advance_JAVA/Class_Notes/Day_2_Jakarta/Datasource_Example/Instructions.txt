@@ -1,0 +1,5 @@
+on making changes in context.xml, delete server from tomcat and add it again.
+
+mysqlconnector.jar should be copied in "lib" folder.
+
+

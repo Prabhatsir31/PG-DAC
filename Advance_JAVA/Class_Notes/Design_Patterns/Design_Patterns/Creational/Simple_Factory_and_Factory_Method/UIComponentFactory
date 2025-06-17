@@ -1,0 +1,21 @@
+public class UIComponentFactory
+{
+	public UIComponent createUIComponent(String type)
+	{
+		UIComponent compnent;
+			If(“button”)
+			{
+				component =new Button ();
+			}
+			else if(“textfield”)
+			{
+				component =new TextField(20);
+			}
+			else if(“checkbox”)
+			{
+				component=new Checkbox();
+			}
+			return component;
+	}
+}
+

@@ -1,0 +1,35 @@
+create or replace procedure mypro  
+(no IN NUMBER,  
+name IN VARCHAR2,place IN VARCHAR2)  
+is  
+begin  
+insert into dept values(no,name,place);  
+end;  
+/
+
+
+
+
+
+import java.sql.*;  
+public class MyApp {  
+public static void main(String[] args)
+{  
+	try
+	{  
+		Class.forName("oracle.jdbc.driver.OracleDriver");  
+		Connection con=DriverManager.getConnection(  
+		"jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  
+  
+		CallableStatement stmt=con.prepareCall("{call mypro(?,?,?)}");  
+		stmt.setInt(1,44);  
+		stmt.setString(2,"Account");  
+		stmt.setString(3,"Pune"); 
+		stmt.execute();  
+		System.out.println("success");  
+	}  
+	catch(Exception ee)
+	{
+		ee.printStackTrace();
+	}
+}  
