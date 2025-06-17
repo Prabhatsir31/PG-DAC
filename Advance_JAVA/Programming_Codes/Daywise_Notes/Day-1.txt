@@ -6,15 +6,77 @@ Advance Java
 
 Design Pattern
 -----------------
+Design patterns are typical solutions to common problems in software design.
+They are like pre-made blueprints that can be customized to solve a recurring design problem in your code.
 
-Static Content vs Dynamic Content 
----------------------------------------
+Types of Design Patterns:
+1. Creational Patterns (Singleton, Factory, Abstract Factory, Builder, Prototype)
+2. Structural Patterns (Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy)
+3. Behavioral Patterns (Observer, Strategy, Command, Iterator, Mediator, Memento, State, Visitor, etc.)
 
-Java-Enabled Web and Application Server 
-------------------------------------------
+Example:
+Singleton Pattern ensures a class has only one instance and provides a global point of access to it.
 
-Web container 
-Ejb container
+
+Static Content vs Dynamic Content
+--------------------------------------------
+Static Content:
+- Delivered to user exactly as stored.
+- Examples: HTML, CSS, JS, Images.
+- Doesn’t change based on user interaction or input.
+- Fast to load and cacheable.
+
+Dynamic Content:
+- Generated in real-time based on user input or backend logic.
+- Examples: JSP, PHP, ASP.NET.
+- Can display personalized data (e.g., user profiles, dashboards).
+- Slower as it requires processing on the server.
+
+
+Java-Enabled Web and Application Server
+----------------------------------------------
+- Web Server: Handles HTTP requests and responses (e.g., Apache HTTP Server).
+- Application Server: Provides full support for building and running enterprise applications.
+- Java-Enabled Application Servers support Java EE (Jakarta EE) technologies like Servlets, JSP, EJB, JPA, etc.
+
+Examples:
+1. Apache Tomcat – Web container (Servlet & JSP support).
+2. GlassFish, JBoss/WildFly – Full Java EE support.
+
+
+Web Container
+----------------------
+- A web container (also known as a servlet container) is part of a web server or application server.
+- Manages the lifecycle of servlets and JSP.
+- Provides support for HTTP protocol, security, concurrency, and deployment.
+
+Examples:
+- Apache Tomcat
+- Jetty
+
+Responsibilities:
+- Loading, instantiating, and invoking servlets.
+- Managing servlet context and configuration.
+- Handling requests/responses.
+
+
+EJB Container
+--------------------
+- Manages Enterprise Java Beans (EJBs).
+- Provides services like transactions, security, concurrency, remote access, and lifecycle management.
+
+Types of EJBs:
+1. Session Beans (Stateless, Stateful, Singleton)
+2. Message-Driven Beans (MDB)
+3. Entity Beans (Replaced by JPA)
+
+Examples:
+- JBoss/WildFly, GlassFish
+
+EJB Container Responsibilities:
+- Dependency injection.
+- Object pooling and lifecycle management.
+- Security and transaction management.
 
 
 SERVLET - ADVANCED JAVA COMPLETE NOTES
