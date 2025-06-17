@@ -1,0 +1,17 @@
+		SessionServ1 - doGet
+
+HttpSession session=request.getSession();
+session.setAttribute("book","Complete_Reference");
+
+PrintWriter pw=response.getWriter();
+pw.println("session created");
+
+
+		SessionServ2 - doGet
+
+PrintWriter pw=response.getWriter();
+HttpSession session=request.getSession(false);
+if(session!=null)
+{
+	pw.println(session.getAttribute("book"));
+}

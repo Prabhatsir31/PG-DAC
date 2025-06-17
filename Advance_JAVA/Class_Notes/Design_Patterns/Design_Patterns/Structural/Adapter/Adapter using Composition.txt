@@ -1,0 +1,35 @@
+public class CylindricalSocket {
+  public String supply(String cylinStem1, String cylinStem1) {
+    System.out.println("Power power power...");
+  }
+}
+ 
+public class RectangularAdapter {
+  private CylindricalSocket socket;
+ 
+  public String adapt(String rectaStem1, Sting rectaStem2) {
+    //some conversion logic
+    socket = new CylindricalSocket();
+    String cylinStem1 = rectaStem1;
+    String cylinStem2 = rectaStem2;
+    return socket.supply(cylinStem1, cylinStem2);
+  }
+}
+ 
+public class RectangularPlug {
+  private String rectaStem1;
+  private String rectaStem2;
+  public getPower() {
+    RectangulrAdapter adapter = new RectangulrAdapter();
+    String power = adapter.adapt(rectaStem1, rectaStem2);
+    System.out.println(power);
+  }
+}
+public class Demo
+{
+	public static void main(String args[])
+	{
+		RectangularPlug p=new RectangularPlug();
+		p.getPower();
+	}
+}

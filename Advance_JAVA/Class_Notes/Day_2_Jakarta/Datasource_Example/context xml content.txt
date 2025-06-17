@@ -1,0 +1,4 @@
+<Resource name="mypool" auth="Container"
+          type="javax.sql.DataSource" driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://127.0.0.1:3306/mydb"
+          username="root" password="root"/>

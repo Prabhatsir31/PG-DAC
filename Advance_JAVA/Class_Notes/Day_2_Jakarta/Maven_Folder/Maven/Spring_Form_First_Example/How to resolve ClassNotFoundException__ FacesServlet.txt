@@ -1,0 +1,12 @@
+if u get 
+
+java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet
+
+while running ur project
+
+In "Project Properties" -> "Deployment Assembly", 
+click on "add"
+
+ "Java Build Path Entries -> Maven Dependencies"
+
+refresh the project and run

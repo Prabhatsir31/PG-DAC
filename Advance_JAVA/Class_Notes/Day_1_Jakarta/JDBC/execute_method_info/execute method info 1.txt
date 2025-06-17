@@ -1,0 +1,15 @@
+ where executeQuery() can be used to execute selection group sql queries to fetch the data from database.
+When we use selection group sql query with executeQuery() then JVM will send that sql query to the database engine, database engine will execute it, by this database engine(DBE) will fetch the data from database and send back to the java application.
+Java is a purely object oriented technology. That’s why the jdbc application will maintain the fetched data from database, in the form of an object at heap memory, called as ResultSet object.
+
+            public  ResultSet executeQuery(String sqlquery)
+
+            where executeUpdate() can be used to execute updation group sql query to update the database. When we provide updation group sql query as a parameter to executeUpdate(), then JVM will send that sql query to DBE, here DBE will execute it and perform updations on the database, by this DBE will identify the number of records got updated value called as “records updated count” and return back to the java application.
+
+            public int executeUpdate(String sqlquery)
+
+            where execute() can be used to execute either selection group sql queries or updation group queries.
+            When we use selection group sql query with the execute() then we will get ResultSet object at heap memory with the fetched data. But execute() will return “true” as a Boolean value.
+            When we use updation group sql query with execute() then we will get “ records updated count value” at jdbc application. But execute() will return “false” as a Boolean value.
+
+            public  boolean execute(String sqlquery)

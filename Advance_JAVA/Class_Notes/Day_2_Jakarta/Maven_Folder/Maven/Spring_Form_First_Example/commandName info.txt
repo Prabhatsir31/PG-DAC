@@ -1,0 +1,1 @@
+commandName = name of a bean/pojo that contains the information required to create a form. It is because the spring framework expects an object of pojo/bean as a value for "commandName", if you are using <form:form> tags in your JSP file.

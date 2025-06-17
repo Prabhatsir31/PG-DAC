@@ -1,0 +1,19 @@
+public class Integer  
+
+private static class IntegerCache {
+        static final int low = -128;
+        static final int high=127;
+        static final Integer cache[]; 
+
+
+
+cache = new Integer[(high - low) + 1];
+            int j = low;
+            for(int k = 0; k < cache.length; k++)
+                cache[k] = new Integer(j++);
+
+so 0th element is -128
+	1st element is  -127
+	2nd element is  -126
+
+	255th element is   127

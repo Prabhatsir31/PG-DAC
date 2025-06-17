@@ -1,0 +1,9 @@
+byte: The byte data type is an 8-bit signed two's complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive).
+
+Byte is signed primitive datatype in java. When we assign something bigger than byte value, It is like a cycle.
+
+Suppose you entered 300 in byte variable. After first cycle byte variable filed with 0,127 means 128 place // 300-128 = 172
+
+After second cycle byte variable filed with 0,127 means 128 place // 172-128 = 44
+
+Now in the third cycle it is 44. 

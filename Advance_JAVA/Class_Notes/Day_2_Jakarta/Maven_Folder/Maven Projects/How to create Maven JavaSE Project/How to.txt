@@ -1,0 +1,118 @@
+start eclipse
+	java perspective
+
+File
+	new
+		Maven Project
+
+
+do not select
+	Create a simple project
+
+select
+	Use default workspace location
+
+do not select
+	Add project(s) to working set
+
+
+next
+
+
+org.apache.maven.archetypes    maven.archetype.quickstart    1.4
+
+
+next
+	group id   - com
+	artifact id - javastudent
+
+don't disturb other options
+
+click on "finish"
+
+in the console window
+infront of    Y    type  y
+
+make sure u get a message "build success". It means maven project is successfully created.
+
+run the generated "App.java"
+
+add following line inside "App.java"  :
+	import java.sql.*;
+
+now replace " System.out.println( "Hello World!" );" inside main with the following code:
+
+
+
+		String ss="jdbc:mysql://localhost:3306/bit";
+		try(Connection con=DriverManager.getConnection(ss,"root","root"))
+		{
+System.out.println("Implementation class is\t"+con.getClass());
+Statement st=con.createStatement();
+ResultSet rs=st.executeQuery("select * from dept");
+while(rs.next())
+{
+	int no=rs.getInt("deptno");
+	String name=rs.getString("dname");
+	String add=rs.getString("loc");
+	System.out.println(no+"\t"+name+"\t"+add);
+}
+}
+catch(Exception ee)
+{
+	System.out.println(ee);
+}
+
+
+save and run "App.java"
+	make sure you get following exception:
+
+
+
+java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/mydb
+
+
+now go to the generated
+	"pom.xml" and inside "dependencies" section add following dependency:
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.29</version>
+    <scope>runtime</scope>
+</dependency>
+
+save "pom.xml"
+
+now run "App.java" and make sure it gives you the proper output.
+
+
+now what if you want to create a jar file of your application for the distribution purpose?
+
+for that 
+	right click on project name
+		run as
+			maven install
+
+it will take some time
+make sure u get the output 
+	BUILD SUCCESS
+
+now go to 
+	"C:\Users\Sriram\.m2\repository"
+
+you'll find a folder "com"
+	inside "com" you'll find a folder "javastudent"
+	inside "javastudent" you'll find a folder "0.0.1-SNAPSHOT"
+	inside "0.0.1-SNAPSHOT" folder you'll find a jar file
+		
+		javastudent-0.0.1-SNAPSHOT.jar
+
+in the same folder you'll also find "javastudent-0.0.1-SNAPSHOT" pom file. Open it and check the content , you'll find something like this:
+
+
+ <groupId>com</groupId>
+  <artifactId>javastudent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>javastudent</name>

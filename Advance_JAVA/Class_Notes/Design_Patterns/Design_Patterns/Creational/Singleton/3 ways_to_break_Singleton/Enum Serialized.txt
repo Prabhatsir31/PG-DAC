@@ -1,0 +1,61 @@
+/*
+ * In Java, enums have special serialization behavior:
+
+Only the name of the constant (e.g., "INSTANCE") is 
+serialized.
+
+During deserialization, the JVM doesn't create a new 
+object. Instead, it returns the same enum constant 
+from the enum class that already exists in memory.
+
+Fields (like int value) are not serialized by default 
+for enums.
+ */
+
+/*
+ * How to preserve value field if needed?
+If you still want to preserve value, you need to:
+
+Manually handle it during serialization.
+
+Implement custom writeObject and readObject methods or 
+use external serialization mechanisms.
+
+However, that's usually not recommended with 
+enum singletons, because:
+
+Enum singletons should generally be stateless or 
+immutable.
+ */
+
+
+package core1;
+import java.io.*;
+
+enum MySingleton implements Serializable {
+    INSTANCE;
+    int value = 42;
+}
+public class Test {
+    public static void main(String[] args) throws Exception {
+        MySingleton s1 = MySingleton.INSTANCE;
+        s1.value = 99;
+
+        // Serialize
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("c:\\temp\\singleton.ser"));
+        oos.writeObject(s1);
+        oos.close();
+
+        // Reset value
+        s1.value = 0;
+
+        // Deserialize
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("c:\\temp\\singleton.ser"));
+        MySingleton s2 = (MySingleton) ois.readObject();
+        ois.close();
+
+        System.out.println(s1 == s2);      // true 
+        System.out.println(s2.value);      // 0  and not 99
+    }
+}
+

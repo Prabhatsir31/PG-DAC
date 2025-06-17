@@ -1,0 +1,10 @@
+	Shopserv
+
+while(rs.next())
+{
+pw.println("<input type=checkbox name=ch value="+rs.getString(1)+">"+rs.getString(1)+"<br/>");
+}
+
+	Controller
+
+arr = req.getParameterValues("ch");

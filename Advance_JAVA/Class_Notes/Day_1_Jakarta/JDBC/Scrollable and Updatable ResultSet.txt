@@ -1,0 +1,6 @@
+
+By default ResultSet is readonly and forward only. It means while traversing through the ResultSet we cannot modify records and we have only one method for traversing i.e. "next".
+
+But we can make ResultSet updatable ( while traversing through the ResultSet we can modify records) and scrollable ( not only "next" we can invoke "previous" or "absolute" method also )
+
+

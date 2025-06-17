@@ -1,0 +1,17 @@
+Install maven
+Set path
+D:\apache-maven-3.2.5\bin
+Set
+maven_home		D:\apache-maven-3.2.5
+m2_home		D:\apache-maven-3.2.5
+
+now open a new command prompt and give
+
+mvn   command
+
+it will give some message and error also. Don't worry go to "c:\users\<username>" and make sure 
+.m2 folder has been created.
+inside this ".m2" folder you will get a folder "repository".
+this is your "local repository" in which all the required jar files will be kept.
+
+

@@ -1,0 +1,18 @@
+public static Integer valueOf(int i) {
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        return new Integer(i);
+    }
+
+
+ Integer ob=Integer.valueOf(125); // 
+
+	return cache[125+(-(-128))]
+
+	i.e.
+	return cache[253]
+
+
+at cache[255] we have 127
+at cache[254] we have 126
+at cache[253] we have 125

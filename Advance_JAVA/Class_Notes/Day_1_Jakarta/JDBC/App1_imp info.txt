@@ -1,0 +1,18 @@
+String ss="jdbc:mysql://localhost:3306/mydb";
+Connection con=DriverManager.getConnection(ss,"root","root")
+
+how exactly "getConnection()" method works internally?
+
+ans:- internally, here's how the process works:
+
+a) DriverManager.getConnection(url, user, password) is called.
+b) DriverManager searches for a suitable driver.
+c) The appropriate driver (e.g., com.mysql.cj.jdbc.Driver) handles the connection creation. [ provided the classpath for "com.mysql.cj.jdbc.Driver" is set ]
+
+d) The driver parses the URL and establishes a TCP/IP connection to the MySQL database server.
+
+e) Authentication is handled by sending the username and password to the MySQL server.
+
+f) A Connection object is created and returned to the application for further use.
+
+This process makes it easier to establish and manage connections to different databases without needing to write low-level socket code, making JDBC a powerful abstraction for database communication in Java.

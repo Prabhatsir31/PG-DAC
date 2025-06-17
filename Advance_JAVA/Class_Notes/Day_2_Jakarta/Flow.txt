@@ -1,0 +1,29 @@
+Static Content vs Dynamic Content ppt
+Java-Enabled Web and Application Server ppt
+servlet info
+Welcome servlet on notepad and command prompt
+how to start tomcat server
+classpath , path and environment variables
+Web Application Strucure as per JavaEE Spec ppt
+how to run servlet
+discussion about first servlet
+what is the difference between PrintWriter and ServletOutputStream
+servlet execution
+Servlet Execution Flow ppt
+
+service() / doGet() / doPost() methods overriding
+
+Html to Servlet Communication
+
+Html to Servlet to database communication
+
+JDBC_using_Properties
+
+Database_Connection Pool
+
+JNDI
+
+Datasource_Example
+
+
+	

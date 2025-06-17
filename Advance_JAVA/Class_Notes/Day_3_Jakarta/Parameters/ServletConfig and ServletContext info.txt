@@ -1,0 +1,10 @@
+getServletConfig().getInitParameter("file");
+
+getServletConfig() returns "ServletConfig".
+ServletConfig is one per servlet. it is used to read "init" or "config" parameter value/s.
+
+String database=getServletContext().getInitParameter("database");
+pw.println(database);
+
+getServletContext() returns "ServletContext".
+ServletContext is one per web app. it is used to read "context" parameter value/s.

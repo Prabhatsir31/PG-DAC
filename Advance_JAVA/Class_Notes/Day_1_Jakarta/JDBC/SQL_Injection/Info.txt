@@ -1,0 +1,1 @@
+SQL Injection aka SQLI means passing special symbol ( -- ) to SQL query along with the input values of the application and changing the behaviour of SQL query and the underlying application.

@@ -1,0 +1,55 @@
+HttpSession - interface from "http" package
+
+how to use HttpSession?
+
+HttpSession session=request.getSession();
+	or
+HttpSession session=request.getSession(true);
+	
+	above statement will
+
+	a) create a new session if it doesn't exist
+		or
+	b) retrieve an existing session
+
+how to check whether session is new or existing ?
+
+	session.isNew()
+		returns
+			true - if it is new
+
+			false - otherwise
+
+
+how to store the state inside session?
+
+	session.setAttribute(String name,Object value);
+
+how to retrieve the state from session?
+
+	session.getAttribute(String name);
+
+
+how to retrieve existing session only?
+
+HttpSession session=request.getSession(false);
+	
+	above statement will retrieve existing session only. if session is not there it will return "null".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

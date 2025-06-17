@@ -1,0 +1,9 @@
+1) Cloning
+	Solution - do not implement Cloneable in Singleton or override "clone()" and raise exception
+
+2) Serialization
+	Solution - do not implement Serializable in Singleton or override "private readResolve()" and return the same object.
+
+
+3) Reflection
+	Solution - raise exception inside the constructor

@@ -1,0 +1,52 @@
+public class Trial
+{
+	public static void main(String args[])
+	{
+		char ch='A';
+		double d=4.5;
+		String str="hello";
+
+	System.out.println(ch+"\t"+d+"\t"+str);
+	}
+}
+
+/*
+
+what compiler does:
+
+
+ public static void main(String args[])
+    {
+        char c = 'A';
+        double d = 4.5D;
+        String s = "hello";
+        System.out.println((new StringBuilder()).append(c).append("\t").append(d).append("\t").append(s).toString());
+    }
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

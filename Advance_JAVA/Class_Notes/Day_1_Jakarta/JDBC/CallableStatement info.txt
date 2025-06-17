@@ -1,0 +1,46 @@
+CallableStatement cst=con.prepareCall("{ call mypro1(?,?)}");
+	here we are creating CallableStatement. while creating it we have to invoke "prepareCall()" method.
+	inside "prepareCall()" we have written
+		call mypro(?,?)
+
+		it means "mypro" is a procedure which has two arguments.
+
+cst.setInt(1,3);
+	since 1'st argument of "mypro1" is "in" and is of datatype "int",
+	we pass 3 as a value.
+	here (1,3) means replace 1'st question mark with 3
+
+cst.execute();
+	finally we invoke "execute()" method to execute the stored procedure.
+
+String name=cst.getString(2);
+	once procedure gets executed it can give us output in the 2nd argument and it is of "Varchar" type. That's why we have said:
+		cst.getString(2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

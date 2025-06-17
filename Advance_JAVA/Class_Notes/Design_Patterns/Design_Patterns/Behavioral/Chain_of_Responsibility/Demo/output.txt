@@ -1,0 +1,5 @@
+Standard Console::Logger: This is an information.
+
+File::Logger: This is an debug level information.
+
+Error Console::Logger: This is an error information.

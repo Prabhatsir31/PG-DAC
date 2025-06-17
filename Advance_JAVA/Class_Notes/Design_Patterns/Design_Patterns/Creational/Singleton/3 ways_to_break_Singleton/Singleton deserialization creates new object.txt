@@ -1,0 +1,33 @@
+package core1;
+import java.io.*;
+
+class SingletonBroken implements Serializable {
+    private static final long serialVersionUID = 1L;
+    public static final SingletonBroken INSTANCE = new SingletonBroken();
+    public int value = 42;
+
+    private SingletonBroken() {}
+}
+
+public class Test {
+    public static void main(String[] args) throws Exception {
+        SingletonBroken s1 = SingletonBroken.INSTANCE;
+        s1.value = 99;
+
+        // Serialize
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("c:\\temp\\broken.ser"));
+        oos.writeObject(s1);
+        oos.close();
+
+        // Reset value
+        s1.value = 0;
+
+        // Deserialize
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("c:\\temp\\broken.ser"));
+        SingletonBroken s2 = (SingletonBroken) ois.readObject();
+        ois.close();
+
+        System.out.println("s1 == s2: " + (s1 == s2)); // false  Different objects
+        System.out.println("s2.value: " + s2.value);   // 99  Deserialized value preserved
+    }
+}

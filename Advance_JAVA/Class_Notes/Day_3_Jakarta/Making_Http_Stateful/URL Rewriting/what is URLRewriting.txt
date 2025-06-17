@@ -1,0 +1,9 @@
+
+
+what is URLRewriting?
+
+URLRewriting is a technique where session id can be added at the end of URL.
+
+Why it's required?
+
+it's required in case client does not accept cookies. Because in that case session id can not come through cookies, they will come through URL.

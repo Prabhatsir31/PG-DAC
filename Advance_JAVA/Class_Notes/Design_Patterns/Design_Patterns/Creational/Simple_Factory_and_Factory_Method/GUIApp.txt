@@ -1,0 +1,14 @@
+public class GUIApp
+{
+	private UIComponentFactory factory;
+	public GUIApp (UIComponentFactory factory)
+	{
+		this.factory=factory;
+	}
+	public UIComponent getUIComponent (String type)
+	{
+		UIComponent component;
+		component=factory.createUIComponent(type);
+		return component;
+	}
+}

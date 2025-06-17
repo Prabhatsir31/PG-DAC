@@ -1,0 +1,10 @@
+1) There are two init() methods with HttpServlet
+	public void init()
+	public void init(ServletConfig config)
+
+2) Web Container before invoking init method , creates ServletConfig and stores any init parameter set inside it.
+
+3) Web Container invokes "init(ServletConfig config)" method of HttpServlet by passing ServletConfig implementation.
+
+4) HttpServlet's "init(ServletConfig config)" method invokes "init()" method of its own.
+

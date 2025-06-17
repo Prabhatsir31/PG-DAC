@@ -1,0 +1,29 @@
+you have seen how "getConnection()" works with the help of ppt.
+
+		DriverManager's getConnection method is used to connect to a particular database.
+
+Statement st=con.createStatement();
+	once u get connected with the database, u can communicate with it. This can be done with the help of 3 interfaces from jdbc API:
+		Statement
+		PreparedStatement
+		CallableStatement
+
+
+ResultSet rs=st.executeQuery("select * from dept");
+	when we execute any query we get ResultSet where records are available.
+while(rs.next())
+{
+	int no=rs.getInt("deptno");
+	String name=rs.getString("dname");
+	String add=rs.getString("loc");
+	System.out.println(no+"\t"+name+"\t"+add);
+}
+
+rs.next()
+	inside ResultSet record pointer is always before the first record u have to say "next()" so that it comes on the first record.
+	rs.getXXX() methods are used to access data from respective columns.
+
+
+
+
+
