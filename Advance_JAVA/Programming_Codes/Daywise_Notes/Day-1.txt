@@ -1,0 +1,154 @@
+DAY-1 
+============
+
+Advance Java 
+====================
+
+Design Pattern
+-----------------
+
+Static Content vs Dynamic Content 
+---------------------------------------
+
+Java-Enabled Web and Application Server 
+------------------------------------------
+
+Web container 
+Ejb container
+
+
+SERVLET - ADVANCED JAVA COMPLETE NOTES
+======================================
+
+1. WHAT IS A SERVLET?
+----------------------
+- A Servlet is a Java programming class used to handle requests and generate responses in a web application.
+- It runs on a web server or application server and is used to create dynamic web content.
+- It works on the request-response model and is part of Java EE (Jakarta EE).
+
+2. ADVANTAGES OF SERVLETS
+---------------------------
+- Platform Independent
+- Better performance than CGI
+- Robust and Scalable
+- Can handle multiple requests simultaneously using multithreading
+- Reusable and maintainable
+
+3. LIFE CYCLE OF A SERVLET
+---------------------------
+The lifecycle is managed by the Servlet container (e.g., Apache Tomcat). It includes:
+
+  a. Loading and Instantiation:
+     - Servlet class is loaded and an instance is created.
+  
+  b. Initialization (init() method):
+     - Called once when servlet is first loaded.
+
+  c. Request Handling (service() method):
+     - Called each time a request is made to the servlet.
+     - It internally calls doGet(), doPost(), etc. based on the HTTP request.
+
+  d. Destruction (destroy() method):
+     - Called once before the servlet is removed from service.
+
+4. SERVLET API INTERFACES
+--------------------------
+- javax.servlet.Servlet (interface)
+- javax.servlet.ServletRequest
+- javax.servlet.ServletResponse
+- javax.servlet.http.HttpServlet (abstract class)
+
+5. TYPES OF SERVLETS
+----------------------
+- GenericServlet: Protocol independent
+- HttpServlet: Protocol dependent (HTTP), commonly used
+
+6. METHODS IN HttpServlet
+---------------------------
+- init()
+- service()
+- doGet()
+- doPost()
+- doPut()
+- doDelete()
+- destroy()
+
+7. BASIC SERVLET EXAMPLE
+--------------------------
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class MyServlet extends HttpServlet {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+        out.println("<h1>Hello Servlet</h1>");
+    }
+}
+
+8. WEB.XML CONFIGURATION
+--------------------------
+<web-app>
+  <servlet>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>com.example.MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+9. DEPLOYMENT STEPS
+---------------------
+1. Write the Servlet code
+2. Compile and place the .class file inside WEB-INF/classes directory
+3. Configure web.xml in WEB-INF folder
+4. Deploy the project in Apache Tomcat webapps folder
+5. Start the server and access: http://localhost:8080/YourAppName/hello
+
+10. DIFFERENCE BETWEEN CGI AND SERVLET
+---------------------------------------
+- Servlet is platform-independent, CGI is not
+- Servlet uses multithreading, CGI spawns a new process for each request
+- Servlet is faster and more efficient
+
+11. COMMON USES OF SERVLETS
+-----------------------------
+- Processing form data
+- Dynamic content generation
+- Session tracking
+- Connecting to databases
+- Creating REST APIs (in combination with frameworks)
+
+12. TOOLS & SERVLET CONTAINERS
+-------------------------------
+- Apache Tomcat
+- Jetty
+- GlassFish
+- Eclipse IDE (with servlet plugins)
+
+13. HOW SERVLETS HANDLE CLIENT REQUESTS
+----------------------------------------
+- Client sends HTTP request to server
+- Servlet container maps request to appropriate Servlet
+- Servlet processes request using doGet/doPost etc.
+- Generates response (usually HTML)
+- Response sent back to the client (browser)
+
+
+
+Important Points About Servlet 
+--------------------------------
+
+PrintWriter pw = response.getWriter();
+  PrintWriter is an outputstream used to send response to the client ( on the browser )
+That is why it is created with the help of “response”.
+
+pw.println("welcome to servlet world");
+- println is an method of PrintWriter which is used to send the response on the browser.
+- Apart from printwriter there is one more class which can be used to send the response. It is servletOutputStream ( byte sstream )
+- How can we use servletoutputStream in the servlet code? 
+ServletOutputStream ss = response.getOutputStream();
+ss.println(“welcome to servlet”);

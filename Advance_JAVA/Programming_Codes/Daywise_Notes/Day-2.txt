@@ -1,0 +1,261 @@
+DAY-2
+============
+
+Advance Java 
+====================
+
+Annonation vs xml 
+--------------------------
+-----------------------------------------------------------------------------------------------
+| Feature                    | Annotation                     | XML                            |
+------------------------------------------------------------------------------------------------
+| Location of Config         | Inside Java code using         | In external XML files          |
+|                            | @annotations                   | (e.g., applicationContext.xml) |
+------------------------------------------------------------------------------------------------
+| Readability                | Easy to read in code           | Clear separation of config     |
+------------------------------------------------------------------------------------------------
+| Flexibility                | Less flexible after compile    | Easy to change without code    |
+------------------------------------------------------------------------------------------------
+| Ease of Refactoring        | Refactoring-friendly           | Needs to sync class names      |
+------------------------------------------------------------------------------------------------
+| Separation of Concerns     | Less separation (in code)      | Full separation from logic     |
+------------------------------------------------------------------------------------------------
+| Compilation Dependency     | Needs recompilation on change  | No recompilation needed        |
+------------------------------------------------------------------------------------------------
+| Suitable For               | Small to mid-size projects     | Large enterprise applications  |
+------------------------------------------------------------------------------------------------
+| Maintenance                | Harder to maintain in large    | Easier in large teams/projects |
+|                            | projects due to inline config  |                                |
+------------------------------------------------------------------------------------------------
+| Learning Curve             | Simpler for Java developers    | Requires understanding of XML  |
+------------------------------------------------------------------------------------------------
+| Tool Support               | Limited (inline)               | XML tools and editors support  |
+------------------------------------------------------------------------------------------------
+| Example                    | @Component                     | <bean id="..." class="..."/>   |
+|                            | @Autowired                     | <property name="..." ... />    |
+------------------------------------------------------------------------------------------------
+| Dynamic Config at Runtime  | Difficult                      | Easy                           |
+------------------------------------------------------------------------------------------------
+| Code Portability           | Tightly coupled                | Loosely coupled                |
+------------------------------------------------------------------------------------------------
+
+Conclusion:
+- Use **Annotations** when you want speed, simplicity, and proximity to the logic.
+- Use **XML** when you need configuration externalization, flexibility, and modular deployment.
+
+Connection Pool 
+---------------------
+
+------------------------------------------------------------------------------------------------
+| Feature                      | With Connection Pool         | Without Connection Pool        |
+------------------------------------------------------------------------------------------------
+| Definition                   | Uses a pool of pre-created   | Opens a new DB connection      |
+|                              | DB connections reused across | for each request manually      |
+|                              | requests                     |                                |
+------------------------------------------------------------------------------------------------
+| Performance                  | High - minimizes connection  | Slower - due to frequent open/ |
+|                              | creation overhead            | close operations               |
+------------------------------------------------------------------------------------------------
+| Resource Usage               | Efficient - reuses existing  | Inefficient - opens new        |
+|                              | connections                  | connections each time          |
+------------------------------------------------------------------------------------------------
+| Scalability                  | Can handle more concurrent   | Poor scalability under heavy   |
+|                              | users efficiently            | load                           |
+------------------------------------------------------------------------------------------------
+| Connection Management        | Automatic via pool manager   | Manual by developer            |
+------------------------------------------------------------------------------------------------
+| Typical Libraries Used       | Apache DBCP, HikariCP,       | None                           |
+|                              | C3P0, Tomcat JDBC pool       |                                |
+------------------------------------------------------------------------------------------------
+| Connection Lifetime          | Managed by pool (reused)     | Created and closed per request |
+------------------------------------------------------------------------------------------------
+| Error Handling               | Easier to centralize         | Harder to manage               |
+------------------------------------------------------------------------------------------------
+| Suitable For                 | Production & high-traffic    | Learning, very small apps      |
+|                              | applications                 |                                |
+------------------------------------------------------------------------------------------------
+| Example Usage                | DataSource + Connection Pool | DriverManager.getConnection()  |
+------------------------------------------------------------------------------------------------
+| Memory Usage                 | Controlled & optimized       | High memory footprint          |
+------------------------------------------------------------------------------------------------
+| Code Complexity              | Slightly more setup          | Simpler code                   |
+------------------------------------------------------------------------------------------------
+
+Conclusion:
+- Use **Connection Pool** for real-world, performance-sensitive, and scalable applications.
+- Avoid **Without Pooling** in production due to resource and performance limitations.
+
+
+Thread Pool
+---------------
+
+-------------------
+THREAD POOL 
+-------------------
+
+What is a Thread Pool?
+-------------------------
+A Thread Pool is a group of pre-instantiated reusable threads. Instead of creating a new thread every time, tasks are assigned to threads in the pool.
+
+It helps:
+- Improve performance
+- Reduce resource consumption
+- Provide better system stability under load
+
+------------------------------------------------------
+Why Use Thread Pool?
+-------------------------
+✔ Avoids overhead of thread creation
+✔ Reuses threads
+✔ Limits number of concurrent threads
+✔ Prevents resource exhaustion
+
+------------------------------------------------------
+Core Interfaces & Classes (java.util.concurrent)
+------------------------------------------------------
+🔸 Executor               - Basic interface
+🔸 ExecutorService        - Provides more control
+🔸 Executors              - Factory for creating pools
+🔸 ThreadPoolExecutor     - Main implementation
+🔸 Future<T>              - Result of asynchronous computation
+
+
+
+JDBC API DRIVER
+-------------------
+
+What is a JDBC Driver?
+--------------------------
+A JDBC Driver is a software component that enables Java applications to interact with databases using the JDBC API (Java Database Connectivity).
+
+There are **4 types of JDBC Drivers**, also known as **API Drivers**.
+
+Types of JDBC Drivers
+-------------------------
+
+Type-1: JDBC-ODBC Bridge Driver
+------------------------------------
+🔹 Translates JDBC calls into ODBC (Open Database Connectivity) calls.
+🔹 Requires ODBC driver installed on client machine.
+
+Pros:
+✔ Easy to use for testing
+✔ No need for vendor-specific driver
+
+Cons:
+✘ Platform dependent
+✘ Performance is poor
+✘ Deprecated in Java 8 and removed in Java 9+
+
+🔸 Example:
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection con = DriverManager.getConnection("jdbc:odbc:DSNName");
+
+Type-2: Native-API Driver
+------------------------------
+🔹 Converts JDBC calls into native database calls using C/C++ libraries.
+
+Pros:
+✔ Better performance than Type-1
+
+Cons:
+✘ Platform dependent
+✘ Requires native DB libraries on client
+
+🔸 Example:
+Oracle thin driver with native libraries.
+
+Type-3: Network Protocol Driver (Middleware)
+-------------------------------------------------
+🔹 Converts JDBC calls into a network protocol.
+🔹 Communicates with middleware server, which in turn talks to the DB.
+
+Pros:
+✔ No client-side DB libraries needed
+✔ Platform independent
+
+Cons:
+✘ Requires middleware setup
+
+Type-4: Thin Driver / Pure Java Driver
+-------------------------------------------
+🔹 Converts JDBC calls directly into database-specific protocol.
+🔹 Fully implemented in Java — no native code.
+
+Pros:
+✔ Platform independent
+✔ High performance
+✔ Most commonly used (e.g., MySQL, PostgreSQL)
+
+🔸 Example:
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection(
+  "jdbc:mysql://localhost:3306/db", "root", "password");
+
+JDBC Driver Summary Table
+----------------------------
+
+| Type  | Name               | Platform Independent | Performance | Client Library Required |
+|-------|--------------------|----------------------|-------------|--------------------------|
+| 1     | JDBC-ODBC Bridge   | ❌ No                | 🟠 Poor     | ✅ Yes                   |
+| 2     | Native API Driver  | ❌ No                | 🟡 Medium   | ✅ Yes                   |
+| 3     | Network Protocol   | ✅ Yes               | 🟡 Medium   | ❌ No                    |
+| 4     | Thin Driver        | ✅ Yes               | 🟢 Best     | ❌ No                    |
+
+
+Which Driver is Best?
+-------------------------
+➡ For modern applications, **Type-4 (Thin Driver)** is the most recommended.
+✔ Platform independent
+✔ No external library required
+✔ Actively supported
+
+Common JDBC Type-4 Driver Class Names
+----------------------------------------
+🔹 MySQL:       com.mysql.cj.jdbc.Driver
+🔹 Oracle:      oracle.jdbc.driver.OracleDriver
+🔹 PostgreSQL:  org.postgresql.Driver
+🔹 SQL Server:  com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+Conclusion
+--------------
+A JDBC driver acts as a bridge between Java apps and databases. Knowing the types helps you choose the best one for your application's needs.
+
+
+
+Example -1 ==> Demo
+--------------
+
+make a servlet and build a project 
+add the four jar file 
+file name: Demo
+jar file;
+E:\SM_VITA-DAC\MAIN_COURSE\Advance_JAVA\Class Notes\Day_2_Jakarta\Datasource_Example\How to create connection pool in java without server\HikariCP-5.1.0.jar
+E:\SM_VITA-DAC\MAIN_COURSE\Advance_JAVA\Class Notes\Day_2_Jakarta\Datasource_Example\How to create connection pool in java without server\mysql-connector-java-8.0.17.jar
+E:\SM_VITA-DAC\MAIN_COURSE\Advance_JAVA\Class Notes\Day_2_Jakarta\Datasource_Example\How to create connection pool in java without server\slf4j-api-2.0.13.jar
+E:\SM_VITA-DAC\MAIN_COURSE\Advance_JAVA\Class Notes\Day_2_Jakarta\Datasource_Example\How to create connection pool in java without server\slf4j-simple-2.0.13.jar
+
+
+Example -2 ==> first
+
+
+Example -3 ==> ProductAddView
+
+
+Maven is a toop used for 
+a) dependencies
+b) build
+c) documentation
+
+The main use of maven is instead of copying required jar file/s inside lib physically and making the project heavy. we can make out project use dependencies (reqd. jar file/s) from local repository (some folderon your system) that way out project remains light weight.
+
+local repository : c/users 
+
+remote repository: this is a customized reposirory made by programmer
+
+what is the sequence in which dependencies are searched by application?
+a) local reposirory: if dependency (jar file) is available, it is used.
+
+b) central repository: if dependency is not available in the local repository, it is searched inside central repository. If it is available, it is downloaded into local repository.
+
+c) remote repository: if a dependency is not available inside central repositoryand if the remote repository name is spcified in the pom.xml dependency will be searched in that particular remote repository and downloaded inside local repository.
