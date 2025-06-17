@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+E:\SM_VITA-DAC\MAIN_COURSE\Advance_JAVA\Programming_Codes\.metadata\.plugins\org.eclipse.jdt.core
+3861961647.index
+1865797976.index
+3896465594.index
