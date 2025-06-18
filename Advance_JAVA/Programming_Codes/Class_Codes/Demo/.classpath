@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/SM_VITA-DAC/MAIN_COURSE/Advance_JAVA/Class Notes/Day_2_Jakarta/Datasource_Example/How to create connection pool in java without server/HikariCP-5.1.0.jar"/>
+	<classpathentry kind="lib" path="E:/SM_VITA-DAC/MAIN_COURSE/Advance_JAVA/Class Notes/Day_2_Jakarta/Datasource_Example/How to create connection pool in java without server/mysql-connector-java-8.0.17.jar"/>
+	<classpathentry kind="lib" path="E:/SM_VITA-DAC/MAIN_COURSE/Advance_JAVA/Class Notes/Day_2_Jakarta/Datasource_Example/How to create connection pool in java without server/slf4j-api-2.0.13.jar"/>
+	<classpathentry kind="lib" path="E:/SM_VITA-DAC/MAIN_COURSE/Advance_JAVA/Class Notes/Day_2_Jakarta/Datasource_Example/How to create connection pool in java without server/slf4j-simple-2.0.13.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
