@@ -1,0 +1,1073 @@
+.NET
+---------
+
+DAY-7
+--------
+
+Binary Read Write
+----------------------
+    Writing Binary Data
+
+    To write binary data to a file, follow these steps:
+        Create an instance of BinaryWriter.
+        Write the desired data types to the file.
+        Close the writer.
+
+    using System;
+    using System.IO;
+
+    class Program
+    {
+        static void Main()
+        {
+            // Sample data to write
+            int number = 42;
+            float pi = 3.14f;
+            string message = "Hello, Binary World!";
+
+            // Open a file stream in write mode
+            using (FileStream fs = new FileStream("output.bin", FileMode.Create))
+            using (BinaryWriter writer = new BinaryWriter(fs))
+            {
+                // Write data to the file
+                writer.Write(number);
+                writer.Write(pi);
+                writer.Write(message);
+            }
+            Console.WriteLine("Binary data written to output.bin");
+        }
+    }
+
+    Reading Binary Data
+
+    To read binary data from a file, follow these steps:
+        Create an instance of BinaryReader.
+        Read the data types from the file.
+        Close the reader.
+
+    using System;
+    using System.IO;
+
+    class Program
+    {
+        static void Main()
+        {
+            // Open a file stream in read mode
+            using (FileStream fs = new FileStream("output.bin", FileMode.Open))
+            using (BinaryReader reader = new BinaryReader(fs))
+            {
+                // Read data from the file
+                int number = reader.ReadInt32();
+                float pi = reader.ReadSingle();
+                string message = reader.ReadString();
+
+                // Display the read data
+                Console.WriteLine("Number: " + number);
+                Console.WriteLine("Pi: " + pi);
+                Console.WriteLine("Message: " + message);
+            }
+        }
+    }
+
+    Explanation of the Code
+    
+        Writing Binary Data:
+            FileStream fs = new FileStream("output.bin", FileMode.Create): Creates a new file named output.bin for writing. If the file already exists, it will be overwritten.
+            BinaryWriter writer = new BinaryWriter(fs): Initializes a BinaryWriter to write to the file stream.
+            writer.Write(number), writer.Write(pi), writer.Write(message): Writes an integer, a float, and a string to the file in binary format.
+            The using statement ensures that the file stream and writer are properly disposed of after use.
+    
+        Reading Binary Data:
+            FileStream fs = new FileStream("output.bin", FileMode.Open): Opens the existing file output.bin for reading.
+            BinaryReader reader = new BinaryReader(fs): Initializes a BinaryReader to read from the file stream.
+            reader.ReadInt32(), reader.ReadSingle(), reader.ReadString(): Reads the integer, float, and string from the file in the same order they were written.
+            The read data is then displayed on the console.
+    
+        Important Considerations
+            Data Types: Ensure that you read the data in the same order and type as it was written. Mismatched types can lead to exceptions or incorrect data being read.
+            File Handling: Always use using statements to ensure that file streams are properly closed and resources are released.
+            Endianness: Be aware of the endianness of the data if you are working with binary files across different platforms. The default behavior of BinaryReader and BinaryWriter is to use the endianness of the system.
+        
+    
+StringBuilder
+------------------
+    Key Features of StringBuilder
+        Performance: StringBuilder is more efficient than using regular string concatenation (using the + operator) when you are performing multiple modifications to a string.
+        Dynamic Size: It automatically adjusts its size as needed, so you don't have to worry about the initial size.
+        Methods for Manipulation: It provides various methods for appending, inserting, removing, and replacing text.
+
+    using System;
+    using System.Text;
+
+    class Program
+    {
+        static void Main()
+        {
+            // Create a new StringBuilder instance
+            StringBuilder sb = new StringBuilder();
+
+            // Append strings
+            sb.Append("Hello");
+            sb.Append(" ");
+            sb.Append("World!");
+
+            // Display the current value
+            Console.WriteLine("Current String: " + sb.ToString());
+
+            // Insert a string at a specific index
+            sb.Insert(5, ",");
+            Console.WriteLine("After Insertion: " + sb.ToString());
+
+            // Replace a substring
+            sb.Replace("World", "C#");
+            Console.WriteLine("After Replacement: " + sb.ToString());
+
+            // Remove a substring
+            sb.Remove(5, 1); // Remove the comma
+            Console.WriteLine("After Removal: " + sb.ToString());
+
+            // Clear the StringBuilder
+            sb.Clear();
+            Console.WriteLine("After Clearing: " + sb.ToString());
+        }
+    }
+
+
+    Explanation of the Code
+        Creating a StringBuilder:
+            StringBuilder sb = new StringBuilder();: Initializes a new instance of StringBuilder.
+
+        Appending Strings:
+            sb.Append("Hello");: Appends the string "Hello" to the StringBuilder.
+            sb.Append(" ");: Appends a space.
+            sb.Append("World!");: Appends "World!".
+            Console.WriteLine("Current String: " + sb.ToString());: Displays the current value of the StringBuilder.
+
+        Inserting a String:
+            sb.Insert(5, ",");: Inserts a comma at index 5 (after "Hello").
+            Displays the updated string.
+
+        Replacing a Substring:
+            sb.Replace("World", "C#");: Replaces "World" with "C#".
+            Displays the updated string.
+
+        Removing a Substring:
+            sb.Remove(5, 1);: Removes the character at index 5 (the comma).
+            Displays the updated string.
+
+        Clearing the StringBuilder:
+            sb.Clear();: Clears all content from the StringBuilder.
+            Displays the result, which should be an empty string.
+
+
+
+Async Program 
+-----------------
+    In C#, asynchronous programming can be achieved using the async and await keywords, which simplify the process of working with asynchronous code. This allows developers to write code that is easier to read and maintain while still benefiting from non-blocking operations.
+
+    Example
+        using System;
+        using System.Net.Http;
+        using System.Threading.Tasks;
+
+        class Program
+        {
+            static async Task Main(string[] args)
+            {
+                string result = await FetchDataAsync();
+                Console.WriteLine(result); // Outputs: Data received
+            }
+
+            static async Task<string> FetchDataAsync()
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    await Task.Delay(2000); // Simulating a delay
+                    return "Data received";
+                }
+            }
+        }
+
+
+Static in  file handling 
+--------------------------
+    In C#, you can use static methods and properties to handle file operations. Static methods belong to the class itself rather than to any specific instance of the class. This can be useful for utility classes that perform file handling operations without needing to create an instance of the class.
+
+    Example 
+        using System;
+        using System.IO;
+
+        public static class FileHandler
+        {
+            // Method to write text to a file
+            public static void WriteToFile(string filePath, string content)
+            {
+                try
+                {
+                    // Write the content to the specified file
+                    File.WriteAllText(filePath, content);
+                    Console.WriteLine("Data written to file successfully.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred: {ex.Message}");
+                }
+            }
+
+            // Method to read text from a file
+            public static string ReadFromFile(string filePath)
+            {
+                try
+                {
+                    // Read the content from the specified file
+                    string content = File.ReadAllText(filePath);
+                    return content;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred: {ex.Message}");
+                    return null;
+                }
+            }
+        }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                string filePath = "example.txt";
+
+                // Writing to the file
+                FileHandler.WriteToFile(filePath, "Hello, World!");
+
+                // Reading from the file
+                string content = FileHandler.ReadFromFile(filePath);
+                Console.WriteLine("Content read from file:");
+                Console.WriteLine(content);
+            }
+        }
+
+    Usage
+        You can call the static methods directly using the class name without creating an instance of the FileHandler class.
+        This approach is useful for organizing file handling operations in a clean and reusable manner.
+
+Garbage collection
+---------------------
+    Garbage collection (GC) in C# is an automatic memory management feature that helps manage the allocation and release of memory in applications. The .NET runtime includes a garbage collector that automatically frees up memory that is no longer in use, helping to prevent memory leaks and optimize resource usage.
+
+Public and Private implementation of interface
+-------------------------------------------------
+    Explict interface implementations can be used to desambiguate class and interface methods that would otherwise conflict.
+    Explict interface can also be used to hide the details of an interface that the class developer considers private.
+
+    Key Concepts of Garbage Collection in C#
+
+        Automatic Memory Management: The garbage collector automatically handles memory allocation and deallocation, so developers do not need to manually free memory.
+
+        Generational GC: The garbage collector in .NET uses a generational approach, which categorizes objects into three generations:
+            Generation 0: Newly created objects. This generation is collected frequently.
+            Generation 1: Objects that have survived one garbage collection cycle. This generation is collected less frequently.
+            Generation 2: Long-lived objects that have survived multiple collections. This generation is collected the least frequently.
+
+        Mark and Sweep: The garbage collector uses a "mark and sweep" algorithm. It marks objects that are still in use and then sweeps through the heap to collect and free memory from unmarked objects.
+
+        Finalization: Objects can implement a finalizer (destructor) to perform cleanup operations before the object is reclaimed by the garbage collector. However, relying on finalizers can lead to performance issues, so they should be used sparingly.
+
+        Dispose Pattern: For unmanaged resources (like file handles, database connections, etc.), it's recommended to implement the IDisposable interface and provide a Dispose method to release resources explicitly.
+
+    Example
+        using System;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                CreateObjects();
+
+                // Force garbage collection (not recommended in production code)
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                Console.WriteLine("Garbage collection completed.");
+            }  
+            static void CreateObjects()
+            {
+                for (int i = 0; i < 10000; i++)
+                {
+                    // Creating objects that will be eligible for garbage collection
+                    var obj = new MyClass();
+                }
+            }
+        }
+        class MyClass
+        {
+            ~MyClass()
+            {
+                // Finalizer
+                Console.WriteLine("Finalizer called for MyClass instance.");
+            }
+        }
+
+
+    Best Practices
+        Avoid Finalizers: Use finalizers only when necessary. Prefer the IDisposable pattern for managing unmanaged resources.
+        Use using Statement: For classes that implement IDisposable, use the using statement to ensure resources are released promptly.
+        Minimize Object Creation: Reuse objects when possible to reduce the pressure on the garbage collector.
+        Monitor Memory Usage: Use profiling tools to monitor memory usage and identify potential memory leaks.
+
+
+
+Explict implementationof interface
+-------------------------------------
+    Key Points
+        Syntax: To explicitly implement an interface member, you prefix the member with the interface name followed by a dot.
+        Access: Explicitly implemented members are not accessible through the class instance; they can only be accessed through an instance of the interface.
+        Use Cases: This approach is often used to resolve naming conflicts or to provide different implementations for the same method in different interfaces.
+
+    Example
+        using System;
+
+        public interface IAnimal
+        {
+            void Speak();
+        }
+
+        public interface IMammal
+        {
+            void Speak();
+        }
+        public class Dog : IAnimal, IMammal
+        {
+            // Explicit implementation of IAnimal.Speak
+            void IAnimal.Speak()
+            {
+                Console.WriteLine("Dog says: Woof!");
+            }
+
+            // Explicit implementation of IMammal.Speak
+            void IMammal.Speak()
+            {
+                Console.WriteLine("Dog says: Bark!");
+            }
+
+            // A method that can be accessed directly
+            public void Fetch()
+            {
+                Console.WriteLine("Dog is fetching!");
+            }
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Dog dog = new Dog();
+
+                // Accessing the Fetch method directly
+                dog.Fetch(); // Outputs: Dog is fetching!
+
+                // Accessing the IAnimal.Speak method
+                IAnimal animal = dog;
+                animal.Speak(); // Outputs: Dog says: Woof!
+
+                // Accessing the IMammal.Speak method
+                IMammal mammal = dog;
+                mammal.Speak(); // Outputs: Dog says: Bark!
+            }
+        }
+
+    Benefits of Explicit Interface Implementation
+        Avoids Naming Conflicts: If the class has a method with the same name as an interface method, explicit implementation allows you to avoid conflicts.
+        Encapsulation: It allows you to hide the implementation details of the interface members from the class users, exposing only the necessary members.
+        Multiple Interfaces: It enables a class to implement multiple interfaces with the same method names but provide different behaviors.
+
+
+Predefined interface
+---------------------
+1. ICloneable
+    Purpose: This interface is used to create a clone (a copy) of an object.
+
+    Key Method:
+        object Clone();
+
+    Example
+        public class Person : ICloneable
+        {
+            public string Name { get; set; }
+
+            public object Clone()
+            {
+                return new Person { Name = this.Name };
+            }
+        }
+
+    // Usage
+        var original = new Person { Name = "Alice" };
+        var clone = (Person)original.Clone();
+        Console.WriteLine(clone.Name); // Outputs: Alice
+
+2. IComparable
+    Purpose: This interface is used to define a generalized comparison method for objects.
+
+    Key Method:
+        int CompareTo(object obj);
+
+    Example
+        public class Person : IComparable
+        {
+            public string Name { get; set; }
+
+            public int CompareTo(object obj)
+            {
+                return this.Name.CompareTo(((Person)obj).Name);
+            }
+        }
+
+    // Usage
+        var people = new List<Person>
+        {
+            new Person { Name = "Alice" },
+            new Person { Name = "Bob" }
+        };
+        people.Sort(); // Sorts based on Name
+
+3. IComparer
+    Purpose: This interface is used to define a method for comparing two objects of the same type.
+
+    Key Method:
+        int Compare(object x, object y);
+
+    Example
+        public class PersonComparer : IComparer
+        {
+            public int Compare(object x, object y)
+            {
+                return ((Person)x).Name.CompareTo(((Person)y).Name);
+            }
+        }
+
+    // Usage
+        var people = new List<Person>
+        {
+            new Person { Name = "Alice" },
+            new Person { Name = "Bob" }
+        };
+        people.Sort(new PersonComparer()); // Sorts using the comparer
+
+4. IConvertible
+    Purpose: This interface provides a way to convert an object to different types.
+
+    Key Method:
+        object ToType(Type conversionType, IFormatProvider provider);
+
+    Example
+        public class MyNumber : IConvertible
+        {
+            public int Value { get; set; }
+
+            public object ToType(Type conversionType, IFormatProvider provider)
+            {
+                if (conversionType == typeof(string))
+                    return Value.ToString();
+                return Convert.ChangeType(Value, conversionType);
+            }
+        }
+
+    // Usage
+        var number = new MyNumber { Value = 42 };
+        string strValue = (string)number.ToType(typeof(string), null);
+        Console.WriteLine(strValue); // Outputs: 42
+
+5. IEquatable
+    Purpose: This interface defines a method for determining equality between instances of a type.
+
+    Key Method:
+        bool Equals(T other);
+
+    Example
+        public class Person : IEquatable<Person>
+        {
+            public string Name { get; set; }
+
+            public bool Equals(Person other)
+            {
+                return this.Name == other.Name;
+            }
+        }
+
+    // Usage
+        var person1 = new Person { Name = "Alice" };
+        var person2 = new Person { Name = "Alice" };
+        bool areEqual = person1.Equals(person2); // true
+        Console.WriteLine(areEqual); // Outputs: True
+
+6. IDisposable    
+    Purpose: This interface provides a mechanism for releasing unmanaged resources.
+
+    Key Method:
+        void Dispose();
+
+    Example
+        public class Resource : IDisposable
+        {
+            public void Dispose()
+            {
+                // Release resources
+                Console.WriteLine("Resources released.");
+            }
+        }
+
+    // Usage
+        using (var resource = new Resource())
+        {
+            // Use resource
+        } // Automatically calls Dispose
+
+7. IEnumerable
+    Purpose: This interface allows an object to be enumerated (iterated over).
+
+    Key Method:
+        IEnumerator GetEnumerator();
+
+    Example
+        public class MyCollection : IEnumerable
+        {
+            private List<int> items = new List<int>();
+
+            public void Add(int item) => items.Add(item);
+
+            public IEnumerator GetEnumerator() => items.GetEnumerator();
+        }
+
+    // Usage
+        var collection = new MyCollection();
+        collection.Add(1);
+        collection.Add(2);
+        foreach (var item in collection)
+        {
+            Console.WriteLine(item); // Outputs: 1 2
+        }
+
+8. IFormattable
+    Purpose: This interface allows an object to be formatted as a string.
+
+    Key Method:
+        string ToString(string format, IFormatProvider formatProvider);
+
+    Example
+        public class MyNumber : IFormattable
+        {
+            public int Value { get; set; }
+
+            public string ToString(string format, IFormatProvider formatProvider)
+            {
+                return Value.ToString(format);
+            }
+        }
+
+    // Usage
+        var number = new MyNumber { Value = 42 };
+        string formatted = number.ToString("D", null); // Outputs: "42"
+        Console.WriteLine(formatted);
+
+
+Siimple Implementation and Interface reference
+-------------------------------------------------
+    Step 1: Define an Interface
+        Let's create a simple interface called IAnimal that has a method Speak.
+
+    public interface IAnimal
+    {    
+        void Speak();
+    }
+
+    Step 2: Implement the Interface in a Class
+        Now, we will create a class called Dog that implements the IAnimal interface.
+
+        public class Dog : IAnimal
+        {
+            public void Speak()
+            {
+                Console.WriteLine("Woof!");
+            }
+        }
+
+    Step 3: Use the Class
+        Finally, we will create an instance of the Dog class and call the Speak method.
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                IAnimal myDog = new Dog(); // Create an instance of Dog using the IAnimal interface
+                myDog.Speak(); // Call the Speak method
+            }
+        }
+
+    Complete Example
+
+        Here’s the complete code in one place:
+
+            using System;
+
+            public interface IAnimal
+            {
+                void Speak();
+            }
+
+            public class Dog : IAnimal
+            {
+                public void Speak()
+                {
+                   Console.WriteLine("Woof!");
+                }
+            }
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    IAnimal myDog = new Dog(); // Create an instance of Dog using the IAnimal interface
+                    myDog.Speak(); // Call the Speak method
+                }
+            }
+
+        Explanation
+            Interface Definition: The IAnimal interface defines a contract with a single method Speak. Any class that implements this interface must provide an implementation for this method.
+
+            Class Implementation: The Dog class implements the IAnimal interface and provides its own version of the Speak method, which outputs "Woof!" to the console.
+
+            Using the Class: In the Main method, we create an instance of Dog but reference it using the IAnimal interface. This allows us to call the Speak method defined in the interface.
+
+        Benefits of Using Interfaces
+            Abstraction: Interfaces allow you to define a contract that classes can implement, promoting a clear separation between the definition and implementation.
+            Flexibility: You can use different classes interchangeably as long as they implement the same interface.
+            Maintainability: Changes to the implementation of a class do not affect the code that uses the interface, as long as the interface contract is maintained.
+
+
+
+Four ways to to achieve Polymorphism
+--------------------------------------
+    1. Method Overloading
+        Definition: Method overloading allows multiple methods in the same class to have the same name but different parameters (different type, number, or both).
+
+    Example
+        public class MathOperations
+        {
+            // Method to add two integers
+            public int Add(int a, int b)
+            {
+                return a + b;
+            }
+
+            // Overloaded method to add three integers
+            public int Add(int a, int b, int c)
+            {
+                return a + b + c;
+            }
+
+            // Overloaded method to add two doubles
+            public double Add(double a, double b)
+            {
+                return a + b;
+            }
+        }
+
+    // Usage
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                MathOperations math = new MathOperations();
+                Console.WriteLine(math.Add(2, 3)); // Outputs: 5
+                Console.WriteLine(math.Add(2, 3, 4)); // Outputs: 9
+                Console.WriteLine(math.Add(2.5, 3.5)); // Outputs: 6.0
+            }
+        }
+
+    2. Method Overriding
+        Definition: Method overriding allows a derived class to provide a specific implementation of a method that is already defined in its base class. This is achieved using the virtual keyword in the base class and the override keyword in the derived class.
+    
+    Example
+        public class Animal
+        {
+            public virtual void Speak()
+            {
+                Console.WriteLine("Animal speaks");
+            }
+        }
+        
+        public class Dog : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("Woof!");
+            }
+        }
+
+    // Usage
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Animal myDog = new Dog();
+                myDog.Speak(); // Outputs: Woof!
+            }
+        }
+
+    3. Abstract Method Overriding
+        Definition: Abstract methods are declared in an abstract class and must be implemented by any non-abstract derived class. This enforces a contract for derived classes to provide specific implementations.
+        Interface
+
+        Example
+            public abstract class Shape
+            {
+                public abstract double Area(); // Abstract method
+            }
+
+            public class Circle : Shape
+            {
+                public double Radius { get; set; }
+
+                public Circle(double radius)
+                {
+                    Radius = radius;
+                }
+
+                public override double Area()
+                {
+                    return Math.PI * Radius * Radius; // Implementation of Area
+                }
+            }
+
+    // Usage
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Shape myCircle = new Circle(5);
+                Console.WriteLine(myCircle.Area()); // Outputs: 78.53981633974483
+            }
+        }
+
+    4. Interface Implementation
+        Definition: Interfaces define a contract that implementing classes must follow. Different classes can implement the same interface in different ways, allowing for polymorphic behavior.
+
+    Example
+        public interface IAnimal
+        {
+            void Speak();
+        }
+
+        public class Cat : IAnimal
+        {
+            public void Speak()
+            {
+                Console.WriteLine("Meow!");
+            }
+        }
+
+Generic
+-----------
+    Generics in C# are a powerful feature that allows you to define classes, interfaces, and methods with a placeholder for the data type. This enables you to create reusable code that can work with any data type while maintaining type safety. Generics help reduce code duplication and improve performance by allowing you to work with types in a more flexible way.
+    
+    Key Concepts of Generics
+        Type Parameters: Generics use type parameters, which are specified in angle brackets (<>). For example, T is a common convention for a type parameter.
+        Generic Classes: You can define a class that can operate on any data type.
+        Generic Methods: You can define methods that can take parameters of any data type.
+        Generic Interfaces: You can define interfaces that can work with any data type.
+        Constraints: You can impose constraints on the type parameters to restrict the types that can be used.
+
+    Example of Generics
+        1. Generic Class
+
+        Here’s an example of a generic class:
+
+            public class GenericBox<T>
+            {
+                private T _value;
+                public GenericBox(T value)
+                {
+                    _value = value;
+                }
+                public T GetValue()
+                {
+                    return _value;
+                }
+            }
+
+        // Usage        
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    GenericBox<int> intBox = new GenericBox<int>(123);
+                    Console.WriteLine(intBox.GetValue()); // Outputs: 123
+                    GenericBox<string> strBox = new GenericBox<string>("Hello");
+                    Console.WriteLine(strBox.GetValue()); // Outputs: Hello
+                }
+            }
+
+        2. Generic Method
+            You can also define a generic method within a non-generic class:
+
+            public class Utility
+            {    
+                public static T GetDefault<T>()
+                {            
+                    return default(T); // Returns the default value for the type T
+                }
+            }
+        // Usage    
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    int defaultInt = Utility.GetDefault<int>();
+                    Console.WriteLine(defaultInt); // Outputs: 0
+                    string defaultString = Utility.GetDefault<string>();
+                    Console.WriteLine(defaultString == null); // Outputs: True
+                }
+            }
+
+        3. Generic Interface
+            You can define a generic interface as well:
+
+            public interface IRepository<T>
+            {
+                void Add(T item);
+                T Get(int id);
+            }
+
+
+            public class InMemoryRepository<T> : IRepository<T>
+            {
+                private List<T> _items = new List<T>();
+                public void Add(T item)
+                {
+                    _items.Add(item);
+                }
+                public T Get(int id)
+                {
+                    return _items[id];
+                }
+            }
+
+        // Usage        
+            class Program
+            {        
+                static void Main(string[] args)
+                {            
+                    IRepository<string> stringRepo = new InMemoryRepository<string>();
+                    stringRepo.Add("Item 1");
+                    Console.WriteLine(stringRepo.Get(0)); // Outputs: Item 1
+                }
+            }
+
+    Constraints
+        You can impose constraints on type parameters to restrict the types that can be used. Here are some common constraints:
+
+            where T : class: T must be a reference type.
+            where T : struct: T must be a value type.
+            where T : new(): T must have a parameterless constructor.
+            where T : BaseClass: T must be or derive from BaseClass.
+            where T : IInterface: T must implement IInterface.
+
+    Example with Constraints
+        public class Factory<T> where T : new()
+        {
+            public T CreateInstance()
+            {
+                return new T(); // T must have a parameterless constructor
+            }
+        }
+
+    // Usage
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Factory<MyClass> factory = new Factory<MyClass>();
+                MyClass myClassInstance = factory.CreateInstance(); // Creates an instance of MyClass
+            }
+        }
+
+        public class MyClass
+        {
+            // Class definition
+        }
+
+        Benefits of Generics
+            Type Safety: Generics provide compile-time type checking, reducing runtime errors.
+            Code Reusability: You can write a single class or method that works with any data type.
+            Performance: Generics can improve performance by reducing boxing and unboxing for value types.
+
+        Generics are widely used in the .NET Framework, especially in collections (like List<T>, Dictionary<TKey, TValue>, etc.), and they are a fundamental part of modern C# programming.
+
+List Class 
+-----------
+    In C#, the List<T> class is a part of the System.Collections.Generic namespace and represents a strongly typed list of objects that can be accessed by index. It is a generic collection, meaning you can specify the type of elements it will hold, providing type safety and eliminating the need for boxing and unboxing when working with value types.
+    
+    Key Features of List<T>
+        Dynamic Size: Unlike arrays, List<T> can grow and shrink dynamically as elements are added or removed.
+        Type Safety: Since List<T> is generic, it ensures that all elements are of the specified type.
+        Performance: List<T> provides better performance than arrays for adding and removing elements due to its dynamic resizing capabilities.
+        Rich Set of Methods: It provides various methods for searching, sorting, and manipulating the list.
+
+    Commonly Used Methods
+        Add(T item): Adds an item to the end of the list.
+        AddRange(IEnumerable<T> collection): Adds the elements of the specified collection to the end of the list.
+        Insert(int index, T item): Inserts an item at the specified index.
+        Remove(T item): Removes the first occurrence of a specific object from the list.
+        RemoveAt(int index): Removes the element at the specified index.
+        Clear(): Removes all elements from the list.
+        Contains(T item): Determines whether the list contains a specific value.
+        IndexOf(T item): Returns the zero-based index of the first occurrence of a specific object in the list.
+        Sort(): Sorts the elements in the list.
+
+    Example of Using List<T>
+        Here’s a simple example demonstrating how to use the List<T> class in C#:
+
+            using System;
+            using System.Collections.Generic;
+
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Create a List of integers
+                    List<int> numbers = new List<int>();
+
+                    // Add elements to the list
+                    numbers.Add(10);
+                    numbers.Add(20);
+                    numbers.Add(30);
+
+                    // Display the elements in the list
+                    Console.WriteLine("Numbers in the list:");
+
+                    foreach (int number in numbers)
+                    {
+                        Console.WriteLine(number);
+                    }
+
+                    // Insert an element at index 1
+                    numbers.Insert(1, 15);
+                    Console.WriteLine("\nAfter inserting 15 at index 1:");
+                    foreach (int number in numbers)
+                    {
+                        Console.WriteLine(number);
+                    }
+
+                    // Remove an element
+                    numbers.Remove(20);
+                    Console.WriteLine("\nAfter removing 20:");
+                    foreach (int number in numbers)
+                    {
+                        Console.WriteLine(number);
+                    }
+
+                    // Sort the list
+                    numbers.Sort();
+                    Console.WriteLine("\nAfter sorting:");
+                    foreach (int number in numbers)
+                    {
+                        Console.WriteLine(number);
+                    }
+
+                    // Clear the list
+                    numbers.Clear();
+                    Console.WriteLine($"\nCount after clearing: {numbers.Count}"); // Outputs: 0
+                }
+            }
+
+    Explanation of the Example
+        Creating a List: We create a List<int> to hold integers.
+        Adding Elements: We use the Add method to add elements to the list.
+        Displaying Elements: We iterate through the list using a foreach loop to display the elements.
+        Inserting an Element: We insert the number 15 at index 1 using the Insert method.
+        Removing an Element: We remove the number 20 using the Remove method.
+        Sorting the List: We sort the list using the Sort method.
+        Clearing the List: We clear all elements from the list using the Clear method and display the count.
+
+Q) store all the emp in the list collection class and solve following ques:
+    display emp name ascending order
+    display emp whose name is raj
+    display all emp whose salary is greater than 8000
+
+Predicate
+----------------
+    Predicate is a delegate that represents a method that takes a single input parameter and returns a boolean value (true or false). It is commonly used to define conditions for filtering or searching collections, particularly with methods like List<T>. Find, List<T>.FindAll, and LINQ queries.
+    
+    Definition
+        The Predicate<T> delegate is defined in the System namespace as follows:
+
+    public delegate bool Predicate<in T>(T obj);
+
+    Key Features
+        Generic: The Predicate<T> delegate is generic, meaning you can specify the type of the input parameter.
+        Boolean Return Type: The method represented by the predicate must return a boolean value.
+        Commonly Used in Collections: Predicates are often used with collections to filter or search for elements based on specific criteria.
+
+    Example of Using Predicate
+        Here’s a simple example demonstrating how to use a Predicate<T> in C#:
+
+            using System;
+            using System.Collections.Generic;
+
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Create a list of integers
+                    List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+                    // Define a predicate to find even numbers
+                    Predicate<int> isEven = IsEven;
+
+                    // Use the FindAll method with the predicate
+                    List<int> evenNumbers = numbers.FindAll(isEven);
+
+                    // Display the even numbers
+                    Console.WriteLine("Even numbers:");
+                    foreach (int number in evenNumbers)
+                    {
+                        Console.WriteLine(number);
+                    }
+                }
+
+                // Method that matches the Predicate<int> delegate
+                static bool IsEven(int number)
+                {
+                    return number % 2 == 0;
+                }
+            }
+
+    Explanation of the Example
+
+        Creating a List: We create a list of integers from 1 to 10.
+        Defining a Predicate: We define a predicate isEven that points to the method IsEven, which checks if a number is even.
+        Using the Predicate: We use the FindAll method of the List<T> class, passing the predicate to find all even numbers in the list.
+        Displaying Results: We iterate through the resulting list of even numbers and print them.
+
+    Using Lambda Expressions with Predicate
+
+    You can also use lambda expressions to create predicates inline, which can make your code more concise:
+
+        using System;
+        using System.Collections.Generic;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                // Create a list of integers
+                List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                // Use a lambda expression as a predicate to find even numbers
+                List<int> evenNumbers = numbers.FindAll(n => n % 2 == 0);
+                // Display the even numbers
+                Console.WriteLine("Even numbers:");
+                foreach (int number in evenNumbers)
+                {
+                    Console.WriteLine(number);
+                }
+            }
+        }

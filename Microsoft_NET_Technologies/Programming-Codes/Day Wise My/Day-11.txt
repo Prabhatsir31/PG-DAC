@@ -1,0 +1,397 @@
+.NET
+--------
+
+DAY-11
+------------
+
+Thread
+----------
+    What is a Thread?
+        A thread is the smallest unit of execution in a program. A process (like your application) can have multiple threads running inside it.
+        Think of a thread like a worker in a company. While one worker (thread) is writing a report, another one can be sending an email — both working at the same time.
+
+    Why Use Threads?
+        Threads are used to:
+            Perform multiple tasks simultaneously (concurrently)
+            Keep your app responsive (like not freezing the UI while doing heavy work)
+            Handle tasks like downloading files, accessing databases, reading/writing files, etc., in the background.
+
+    Thread in C# - Basics
+        C# provides a Thread class inside the System.Threading namespace.
+        Example: Creating a Thread
+
+        using System;
+        using System.Threading;
+
+        class Program
+        {
+            static void MyWork()
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine("Thread: " + i);
+                    Thread.Sleep(1000); // pause for 1 second
+                }
+            }
+
+            static void Main()
+            {
+                Thread t1 = new Thread(MyWork); // Create thread
+                t1.Start();                     // Start thread
+
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine("Main: " + i);
+                    Thread.Sleep(500);
+                }
+            }
+        }
+
+    What this does:
+        t1 runs MyWork in a separate thread.
+        The main thread keeps running its own loop.
+        Both run concurrently.
+
+    Thread.Sleep()
+        This is used to pause the thread for some milliseconds.
+        Thread.Sleep(2000); // pauses for 2 seconds
+
+    Thread.Join()
+        Used to wait for a thread to finish before moving on.
+        t1.Join(); // Waits until thread t1 completes
+
+    Thread Priority
+        You can assign priority to threads:
+        t1.Priority = ThreadPriority.Highest;
+
+    But note: Thread priority is just a hint to the OS. It doesn’t guarantee execution order.
+    
+    Thread Safety
+        When multiple threads access shared data, race conditions or inconsistent data may occur.
+            🔒 Use lock to prevent this:
+                lock(someObject)
+                {
+                    // Only one thread can enter this block at a time
+                }
+
+Alternatives to Thread
+    In modern C#, you often use:
+        Task (Task Parallel Library) for simpler thread management
+        async/await for asynchronous programming
+        ThreadPool for reusing threads efficiently
+
+Summary
+|-----------------------------------------------------------------|
+|    Feature    |                    Description                  |
+|-----------------------------------------------------------------|
+|    Thread	    |          Represents a thread of execution       |
+|-----------------------------------------------------------------|
+|    Start()	|                Starts the thread                |
+|-----------------------------------------------------------------|
+|    Sleep(ms)  |         Pauses execution temporarily            |
+|-----------------------------------------------------------------|
+|    Join()	    |          Waits for a thread to finish           |
+|-----------------------------------------------------------------|
+|    IsAlive	|       Checks if thread is still running         |
+|-----------------------------------------------------------------|
+|    lock	    |     Ensures only one thread accesses a block    |
+|-----------------------------------------------------------------|
+
+
+Task
+------
+    Task is an object that represents an asynchronous operation. It is part of the System.Threading.Tasks namespace and is used to manage and execute operations that can run concurrently, allowing for more efficient use of resources and improved application responsiveness.
+
+    Key Characteristics of Task
+        Asynchronous Programming: Tasks enable developers to write asynchronous code, which allows methods to run in the background without blocking the main thread. This is particularly useful for I/O-bound operations, such as file access or network requests.
+        Task Class: The Task class provides a way to represent a single operation that can be run asynchronously. It can return a result, handle exceptions, and provide information about its execution state.
+        Integration with async/await: The Task class works seamlessly with the async and await keywords, making it easier to write asynchronous code that is both readable and maintainable. This allows developers to write code that looks synchronous while still being non-blocking.
+        State Management: A Task maintains information about its execution state, such as whether it is running, completed, faulted (due to an exception), or canceled. This allows developers to check the status of a task and handle results or exceptions appropriately.
+        Cancellation Support: Tasks can be canceled using a CancellationToken, allowing for more control over long-running operations.
+
+    Basic Usage of Task
+        Here’s a simple example of how to use a Task in C#:
+
+            using System;
+            using System.Threading.Tasks;
+
+            class Program
+            {
+                static async Task Main(string[] args)
+                {
+                    Console.WriteLine("Starting task...");
+                    await PerformTaskAsync();
+                    Console.WriteLine("Task completed.");
+                }
+
+                static async Task PerformTaskAsync()
+                {
+                    await Task.Run(() =>
+                    {
+                        // Simulate a long-running operation
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Console.WriteLine($"Working... {i + 1}");
+                            Task.Delay(1000).Wait(); // Simulate work by delaying
+                        }
+                    });
+                }
+            }
+
+    Explanation of the Example
+        async and await: The Main method is marked as async, allowing it to use the await keyword. This means that the program can perform asynchronous operations without blocking the main thread.
+        Task.Run: This method is used to run a task on a thread pool thread. It encapsulates the work to be done asynchronously.
+        Task.Delay: This simulates a delay, representing a long-running operation. In a real-world scenario, this could be a network call or file I/O.
+
+
+Why we need tasks
+---------------------
+
+Thread.Sleep()
+---------------
+    Thread.Sleep() is a method in C# that is used to pause the execution of the current thread for a specified amount of time. It is part of the System.Threading namespace and is often used in scenarios where you want to introduce a delay in the execution of a thread.
+
+    Syntax:
+        Thread.Sleep(int millisecondsTimeout);
+
+    Example:
+        using System;
+        using System.Threading;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Console.WriteLine("Task starting...");
+
+                // Pause the current thread for 3 seconds (3000 milliseconds)
+                Thread.Sleep(3000);
+
+                Console.WriteLine("Task resumed after 3 seconds.");
+            }
+        }
+
+    Key Points
+
+        Blocking Behavior: When you call Thread.Sleep(), it blocks the current thread for the specified duration. This means that no other code on that thread will execute during the sleep period. This can lead to unresponsive applications if used on the main UI thread.
+
+        Use Cases: Thread.Sleep() is often used in scenarios such as:
+            Simulating a delay in a loop (e.g., for polling).
+            Waiting for a resource to become available.
+            Introducing a delay for demonstration purposes.
+
+        Not Recommended for Asynchronous Code: In asynchronous programming, using Thread.Sleep() is generally discouraged because it blocks the thread. Instead, you should use Task.Delay() for non-blocking delays in asynchronous methods.
+
+    While Thread.Sleep() can be useful in certain scenarios, it is important to use it judiciously, especially in UI applications or when working with asynchronous code. For non-blocking delays, prefer using Task.Delay() to keep your applications responsive and efficient.
+
+Task.Delay()
+-----------------
+    Task.Delay() is an asynchronous method that creates a task that completes after a specified time delay. It is part of the System.Threading.Tasks namespace and is commonly used in asynchronous programming to introduce a non-blocking delay.
+
+    Syntax:
+        Task.Delay(int millisecondsDelay);
+        Task.Delay(TimeSpan delay);
+    
+    millisecondsDelay: The number of milliseconds to wait before the task completes.
+    delay: A TimeSpan object that specifies the duration to wait.
+
+    Example
+        using System;
+        using System.Threading.Tasks;
+
+        class Program
+        {
+            static async Task Main(string[] args)
+            {
+                Console.WriteLine("Task starting...");
+
+                // Asynchronously wait for 3 seconds
+                await Task.Delay(3000);
+
+                Console.WriteLine("Task resumed after 3 seconds.");
+            }
+        }
+
+    Key Points
+
+        Non-Blocking: Unlike Thread.Sleep(), which blocks the current thread, Task.Delay() does not block the thread. Instead, it allows other operations to continue running while waiting for the delay to complete.
+
+        Asynchronous Programming: Task.Delay() is designed to be used with the async and await keywords, making it ideal for scenarios where you want to introduce a delay without freezing the application, especially in UI applications.
+
+        Use Cases: Common use cases for Task.Delay() include:
+            Introducing a delay in asynchronous workflows.
+            Simulating network latency in testing scenarios.
+            Waiting for a resource to become available without blocking the main thread.
+
+
+Wait() and await()
+--------------------
+    Wait():  
+        Wait() is a synchronous method that blocks the calling thread until the task completes, potentially leading to deadlocks in certain contexts. In contrast, await is an asynchronous operator that allows the method to yield control back to the caller while waiting for the task to complete, enabling other operations to run concurrently.
+    await:
+        await is an asynchronous operator that allows the method to yield control back to the caller while waiting for the task to complete, enabling other operations to run concurrently.
+        await is used in conjunction with async methods to introduce asynchronous programming in C#.
+        await is used to pause the execution of the method until the awaited task is completed.
+
+
+Thread.await()
+----------------
+    Thread.await() is not a standard method in C#. Instead, the await keyword is used in conjunction with asynchronous methods to pause execution until the awaited task completes. This allows for non-blocking operations, making it suitable for UI applications where responsiveness is crucial.
+
+Task.Run()
+----------------
+    Task.Run() is a method that queues a specified work to run on the thread pool and returns a Task representing that work. It is commonly used to offload CPU-bound work to a background thread, allowing the main thread to remain responsive.
+
+Async method
+----------------
+    An async method is defined using the async keyword and typically contains one or more await expressions. This allows the method to perform asynchronous operations without blocking the calling thread. The return type of an async method is usually Task or Task<T>.
+
+Parallel.invoke()
+--------------------
+    Parallel.Invoke() is a method that executes multiple actions in parallel, utilizing multiple threads. It is part of the Task Parallel Library (TPL) and is useful for performing CPU-bound operations concurrently, improving performance by leveraging multiple processors.
+
+Exception Handling 
+----------------------
+    In C#, exception handling is a mechanism to manage runtime errors, allowing the program to continue executing or to fail gracefully. It primarily uses the try, catch, and finally blocks to handle exceptions, ensuring that errors are caught and managed effectively.
+
+    Key Concepts
+        try block: Contains code that may throw an exception.
+        catch block: Contains code that handles the exception if one occurs.
+        finally block: Contains code that runs regardless of whether an exception occurred, often used for cleanup.
+
+    Example Overview
+        Basic Exception Handling: You can wrap potentially error-prone code in a try block and handle exceptions in a catch block.
+
+        Multiple Catch Blocks: You can have multiple catch blocks to handle different types of exceptions.
+
+        Finally Block: Use a finally block for code that must execute after the try and catch blocks, such as closing file streams.
+
+        Throwing Exceptions: You can throw exceptions using the throw keyword, either built-in or custom exceptions.
+
+    Components of Exception Handling
+        try Block:
+            This block contains the code that might throw an exception. If an exception occurs, control is transferred to the corresponding catch block.
+
+        catch Block:
+            This block is executed if an exception is thrown in the try block. You can specify different catch blocks for different exception types.
+
+        finally Block:
+            This block is executed after the try and catch blocks, regardless of whether an exception was thrown. It is typically used for cleanup code, such as closing file handles or releasing resources.
+
+    Example
+        using System;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                try
+                {
+                    Console.WriteLine("Enter a number:");
+                    int number = Convert.ToInt32(Console.ReadLine());
+                    int result = 100 / number;
+                    Console.WriteLine($"Result: {result}");
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("Error: Cannot divide by zero.");
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Error: Invalid input format.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    Console.WriteLine("Execution completed.");
+                }
+            }
+        }
+
+    Throwing Exceptions
+
+        You can also throw exceptions manually using the throw keyword. This is useful for enforcing business rules or validating conditions.
+
+        public void ValidateAge(int age)
+        {
+            if (age < 0)
+            {
+                throw new ArgumentOutOfRangeException("Age cannot be negative.");
+            }
+        }    
+
+User define exception
+------------------------
+    User -defined exceptions in C# allow developers to create custom exception types that can be thrown and caught in their applications. This is useful for representing specific error conditions that are relevant to the application's domain, providing more meaningful error messages and better control over error handling.
+    Creating a User-Defined Exception
+
+    To create a user-defined exception, you typically follow these steps:
+
+        Inherit from the Exception Class: Create a new class that inherits from the System.Exception class or one of its derived classes.
+        Define Constructors: Implement constructors to initialize the exception with a message, an inner exception, or other relevant information.
+        Optionally Add Properties: You can add additional properties to provide more context about the exception.
+
+    Example of a User-Defined Exception
+        Here’s a complete example demonstrating how to create and use a user-defined exception in C#:
+    
+            using System;
+    
+            public class InvalidAgeException : Exception
+            {
+                // Constructor that takes a message
+                public InvalidAgeException(string message) : base(message) { }
+    
+                // Constructor that takes a message and an inner exception
+                public InvalidAgeException(string message, Exception innerException) 
+                    : base(message, innerException) { }
+            }
+    
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    try
+                    {
+                        SetAge(-5); // This will throw an InvalidAgeException
+                    }
+                    catch (InvalidAgeException ex)
+                    {
+                        Console.WriteLine($"Caught an exception: {ex.Message}");
+                    }
+                }
+    
+                static void SetAge(int age)
+                {
+                    if (age < 0)
+                    {
+                        throw new InvalidAgeException("Age cannot be negative.");
+                    }
+                    Console.WriteLine($"Age set to {age}");
+                }
+            }
+    
+        Explanation of the Example
+            User -Defined Exception Class:
+            The InvalidAgeException class inherits from Exception.
+            It has two constructors: one that takes a message and another that takes a message along with an inner exception.
+
+        Throwing the Exception:
+            In the SetAge method, if the provided age is negative, an InvalidAgeException is thrown with a relevant message.
+
+        Catching the Exception:
+            In the Main method, the SetAge method is called within a try block. If an InvalidAgeException is thrown, it is caught in the corresponding catch block, and the error message is displayed.
+
+        Benefits of User-Defined Exceptions
+            Clarity: Custom exceptions provide clarity about the specific error conditions that can occur in your application, making it easier to understand and maintain the code.
+            Granularity: You can create multiple custom exceptions for different error conditions, allowing for more granular error handling.
+            Contextual Information: User-defined exceptions can carry additional information relevant to the error, which can be useful for debugging and logging.
+
+        Best Practices for User-Defined Exceptions
+            Meaningful Names: Name your exceptions clearly to indicate the error condition they represent.
+            Inherit from Exception: Always inherit from the Exception class or one of its derived classes.
+            Provide Constructors: Implement constructors that allow for detailed error messages and inner exceptions.
+            Avoid Overusing: Use user-defined exceptions judiciously. Not every error condition requires a custom exception; use them for significant application-specific errors.
+            Document Your Exceptions: Provide documentation for your custom exceptions, explaining when they are thrown and how they should be handled.

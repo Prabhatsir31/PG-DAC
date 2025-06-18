@@ -1,0 +1,27 @@
+Q1) Complete mini app of polymorphism (Account App, HR App, School App)
+    Private var 
+    static 
+    public/ protector 
+    setter/ getter
+    ToString()
+    Auto-increment
+    basic Validation 
+    Concept of Child Class and base keyword  (abstract override)
+
+Q2) In memory crud with add, display, delete 
+    creating interface and perform add, delete and display 
+    linq : graterthan , lessthan, startwith, endwith
+
+Q3)  Make a logic program using predefined generic delegate 
+    factor of a number
+    reverse string 
+    print all even number
+    print all odd number
+    print all prime number
+    print all perfect number
+    print all armstrong number
+
+Q4) Palindrome string
+    Reverse String
+    Factorial of a number
+    

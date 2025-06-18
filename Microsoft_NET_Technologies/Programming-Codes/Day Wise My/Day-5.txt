@@ -1,0 +1,222 @@
+.NET 
+----------
+
+DAY-5
+------------
+
+Polymorphism Abstract
+---------------------
+    What is Polymorphism?
+        Polymorphism means "many forms". It allows you to call the same method on different objects and get different behaviors.
+
+    There are two types in C#:
+        Compile-time Polymorphism – Achieved via Method Overloading
+        Run-time Polymorphism – Achieved via Method Overriding (through virtual, override, and abstract)
+
+    What is Abstraction?
+        Abstraction means hiding internal implementation details and showing only the essential features. In C#, abstraction is achieved using:
+            Abstract classes
+            Interfaces
+
+    Abstract Class in Polymorphism
+    🔸 Abstract Class
+            An abstract class cannot be instantiated directly. It can contain both:
+            Abstract methods (no body – must be overridden)
+            Concrete methods (normal methods with implementation)
+
+    🔸 Abstract Method
+        An abstract method has no implementation in the base class and must be overridden in any non-abstract derived class.
+
+
+    Example
+        using System;
+
+        abstract class Animal
+        {
+            public abstract void MakeSound(); // abstract method
+            public void Eat() => Console.WriteLine("Animal is eating..."); // concrete method
+        }
+
+        class Dog : Animal
+        {
+            public override void MakeSound()
+            {
+                Console.WriteLine("Dog says: Woof!");
+            }
+        }
+
+        class Cat : Animal
+        {
+            public override void MakeSound()
+            {
+                Console.WriteLine("Cat says: Meow!");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                Animal a;
+
+                a = new Dog();
+                a.MakeSound();  // Output: Dog says: Woof!
+                a.Eat();        // Output: Animal is eating...
+
+                a = new Cat();
+                a.MakeSound();  // Output: Cat says: Meow!
+            }
+        }
+
+
+    💡 Key Points
+    Concept	                    Meaning
+    abstract	        Marks method/class to be overridden/extended
+    override	        Used in child class to provide specific behavior
+    new	                Hides base class implementation instead of overriding
+    Polymorphism	    Achieved when abstract or virtual method is overridden in subclasses
+
+
+    sealed method
+    ---------------
+        In C#, a sealed method is a method that cannot be overridden in any further derived class.
+        It is typically used when:
+        You want to stop method overriding in child classes.
+        You want to optimize performance by preventing further polymorphic behavior.
+        🔹 You can only seal a method that is marked override (i.e., already overriding a base class method).
+
+    Syntax
+        public sealed override void MethodName() 
+        {
+            // Method body
+        }
+
+    Example
+        using System;
+
+        class A
+        {
+            public virtual void Show()
+            {
+                Console.WriteLine("Class A Show");
+            }
+        }
+
+        class B : A
+        {
+            public sealed override void Show()  // cannot be overridden again
+            {
+                Console.WriteLine("Class B Show");
+            }
+        }
+
+        class C : B
+        {
+            // This will give compile-time error:
+            // public override void Show() => Console.WriteLine("Class C Show");
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                A obj = new B();
+                obj.Show(); // Output: Class B Show
+            }
+        }
+
+    🧠 Why use sealed?
+        Prevent misuse of overriding behavior
+        Improve performance
+        Secure implementation
+
+
+
+    boxing and unboxing
+    --------------------------
+        Boxing and Unboxing in C#
+        Boxing and unboxing are type conversion processes between value types (like int, float, bool) and reference types (object).
+
+    1. Boxing
+        Boxing is the process of converting a value type to a reference type (usually object).
+        ✅ Example:
+
+        int num = 123;        // value type
+        object obj = num;     // Boxing
+        Console.WriteLine(obj); // Output: 123
+
+        ✅ The int is stored in stack → boxed into an object (stored in heap)
+
+    2. Unboxing
+        Unboxing is the reverse process: converting the object (reference type) back to a value type.
+        ✅ Example:
+
+        object obj = 123;     // Boxing
+        int num = (int)obj;   // Unboxing
+        Console.WriteLine(num); // Output: 123
+
+        ⚠️ Requires explicit casting
+
+    Why Important?
+        Boxing/unboxing can affect performance because it involves heap allocation and copying.
+        It’s better to avoid frequent boxing/unboxing in performance-critical code.
+
+    📌 Key Points
+    Feature	                Boxing	                         Unboxing
+    Direction	        Value → Reference	            Reference → Value
+    Type	                Implicit	             Explicit (needs casting)
+    Performance	    Slower (heap allocation)	        Slower if frequent
+
+
+
+Delegate in C#
+------------
+    A delegate is a type-safe function pointer. It lets you store reference to a method and invoke it dynamically at runtime.
+
+    Why use Delegates?
+        Callback mechanism
+        Event handling (like button clicks)
+        Plugin architecture
+        Code flexibility and reusability
+
+    Declaration Syntax
+        delegate return_type DelegateName(parameter_list);
+
+    Example
+        using System;
+
+        delegate void MyDelegate(string message);  // Delegate declaration
+
+        class Program
+        {
+            static void PrintMessage(string msg)
+            {
+                Console.WriteLine("Message: " + msg);
+            }
+
+            static void Main()
+            {
+                MyDelegate del = new MyDelegate(PrintMessage); // Delegate instantiation
+                del("Hello from delegate!");  // Calling method via delegate
+            }
+        }
+
+
+    Multicast Delegates
+        You can attach multiple methods to a single delegate using +=.
+        del += AnotherMethod;
+
+    Built-in Delegates
+        C# provides predefined generic delegates:
+            Action – returns void
+            Func – returns a value
+            Predicate – returns bool
+
+    
+    Func<int, int> square = x => x * x;
+    Console.WriteLine(square(5)); // Output: 25
+
+    Use Cases
+        Events & GUI programming
+        Passing behavior to methods
+        LINQ & Lambda expressions

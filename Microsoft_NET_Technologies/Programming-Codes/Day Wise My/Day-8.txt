@@ -1,0 +1,475 @@
+.NET
+-------
+
+DAY-8
+--------
+
+Passing method definition in method call 
+-------------------------------------------
+    In C#, you can pass a method as a parameter to another method. This is often done using delegates, lambda expressions, or Func/Action types. This allows for more flexible and reusable code, as you can define behavior that can be executed within the context of another method.
+
+    Key Concepts
+        Delegates: A delegate is a type that represents references to methods with a specific parameter list and return type. You can define a delegate and then pass methods that match its signature.
+
+        Func and Action:
+            Func is a built-in delegate type that can represent methods that return a value. It can take up to 16 parameters.
+            Action is a built-in delegate type that represents methods that do not return a value. It can also take up to 16 parameters.
+
+    Example
+        using System;
+
+        class Program
+        {
+            // Define a delegate
+            public delegate int Operation(int x, int y);
+
+            static void Main(string[] args)
+            {
+                // Pass methods to the PerformOperation method
+                int result1 = PerformOperation(Add, 5, 3);
+                int result2 = PerformOperation(Subtract, 5, 3);
+
+                Console.WriteLine($"Addition Result: {result1}"); // Outputs: 8
+                Console.WriteLine($"Subtraction Result: {result2}"); // Outputs: 2
+            }        
+            // Method that takes a delegate as a parameter
+            static int PerformOperation(Operation op, int a, int b)
+            {
+                return op(a, b); // Call the passed method
+            }
+            // Methods that match the delegate signature
+            static int Add(int x, int y) => x + y;
+            static int Subtract(int x, int y) => x - y;
+        }
+
+    Using Func and Action
+        You can achieve the same functionality using Func:
+
+        using System;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                // Pass methods to the PerformOperation method using Func
+                int result1 = PerformOperation((x, y) => x + y, 5, 3);
+                int result2 = PerformOperation((x, y) => x - y, 5, 3);
+
+                Console.WriteLine($"Addition Result: {result1}"); // Outputs: 8
+                Console.WriteLine($"Subtraction Result: {result2}"); // Outputs: 2
+            }
+
+            // Method that takes a Func as a parameter
+            static int PerformOperation(Func<int, int, int> op, int a, int b)
+            {
+                return op(a, b); // Call the passed method
+            }
+        }
+
+Sorted List
+-------------
+    In C#, a SortedList is a collection that stores key-value pairs in a sorted order based on the keys. It is part of the System.Collections namespace and provides a way to maintain a sorted collection of items, allowing for efficient retrieval and manipulation of data.
+    
+    Key Features of SortedList
+        Sorted Order: The elements in a SortedList are automatically sorted by the keys. When you add a new key-value pair, the collection maintains the order.
+        Key-Value Pairs: Each entry in a SortedList consists of a key and a corresponding value. The keys must be unique.
+        Efficient Lookups: The SortedList provides fast lookups, additions, and deletions, with average time complexity of O(log n) for lookups and O(n) for insertions and deletions.
+        Index-Based Access: You can access elements by their index as well as by their key.
+
+    Commonly Used Properties and Methods    
+        Add(TKey key, TValue value): Adds a key-value pair to the SortedList.
+        Remove(TKey key): Removes the entry with the specified key.
+        ContainsKey(TKey key): Checks if the SortedList contains a specific key.
+        ContainsValue(TValue value): Checks if the SortedList contains a specific value.
+        Keys: Gets an array containing the keys in the SortedList.
+        Values: Gets an array containing the values in the SortedList.
+        Count: Gets the number of key-value pairs in the SortedList.
+
+    Example of Using SortedList
+        Here’s a simple example demonstrating how to use a SortedList in C#:
+
+            using System;
+            using System.Collections;
+
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Create a SortedList
+                    SortedList sortedList = new SortedList();
+
+                    // Add key-value pairs
+                    sortedList.Add("Banana", 1);
+                    sortedList.Add("Apple", 2);
+                    sortedList.Add("Orange", 3);
+                    sortedList.Add("Mango", 4);
+
+                    // Display the SortedList
+                    Console.WriteLine("SortedList contents:");
+                    foreach (DictionaryEntry entry in sortedList)
+                    {
+                        Console.WriteLine($"{entry.Key}: {entry.Value}");
+                    }
+
+                    // Accessing a value by key
+                    Console.WriteLine($"\nValue for 'Apple': {sortedList["Apple"]}"); // Outputs: 2
+
+                    // Remove a key-value pair
+                    sortedList.Remove("Banana");
+                    Console.WriteLine("\nAfter removing 'Banana':");
+                    foreach (DictionaryEntry entry in sortedList)
+                    {
+                        Console.WriteLine($"{entry.Key}: {entry.Value}");
+                    }
+
+                    // Check if a key exists
+                    Console.WriteLine($"\nContains 'Mango': {sortedList.ContainsKey("Mango")}"); // Outputs: True
+                    Console.WriteLine($"Contains 'Banana': {sortedList.ContainsKey("Banana")}"); // Outputs: False
+                }
+            }
+
+    Explanation of the Example
+        Creating a SortedList: We create an instance of SortedList.
+        Adding Key-Value Pairs: We add several fruit names as keys and their corresponding values.
+        Displaying the SortedList: We iterate through the SortedList using a foreach loop to display the contents. The output will be sorted by the keys.
+        Accessing Values: We access a value using its key.
+        Removing an Entry: We remove an entry by its key and display the updated contents.
+        Checking for Keys: We check if specific keys exist in the SortedList.
+
+Dictionary
+----------------
+    In C#, a Dictionary is a collection that stores key-value pairs, where each key is unique and is used to access its corresponding value. It is part of the System.Collections.Generic namespace and is implemented as a hash table, providing fast lookups, additions, and deletions.
+
+    Key Features of Dictionary
+        Key-Value Pairs: Each entry in a Dictionary consists of a key and a corresponding value. The keys must be unique.
+        Fast Lookups: The average time complexity for lookups, additions, and deletions is O(1), making it very efficient for accessing data.
+        Generic Type: Dictionary<TKey, TValue> is a generic collection, allowing you to specify the types of keys and values.
+        Dynamic Size: The size of a Dictionary can grow dynamically as you add more elements.
+
+    Commonly Used Properties and Methods
+        Add(TKey key, TValue value): Adds a key-value pair to the dictionary.
+        Remove(TKey key): Removes the entry with the specified key.
+        TryGetValue(TKey key, out TValue value): Tries to get the value associated with the specified key.
+        ContainsKey(TKey key): Checks if the dictionary contains a specific key.
+        Keys: Gets a collection containing the keys in the dictionary.
+        Values: Gets a collection containing the values in the dictionary.
+        Count: Gets the number of key-value pairs in the dictionary.
+
+    Example of Using Dictionary    
+        Here’s a simple example demonstrating how to use a Dictionary in C#:
+
+            using System;
+            using System.Collections.Generic;
+
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Create a Dictionary
+                    Dictionary<string, int> fruitQuantities = new Dictionary<string, int>();
+
+                    // Add key-value pairs
+                    fruitQuantities.Add("Apple", 10);
+                    fruitQuantities.Add("Banana", 20);
+                    fruitQuantities.Add("Orange", 15);
+
+                    // Display the Dictionary
+                    Console.WriteLine("Fruit Quantities:");
+                    foreach (var kvp in fruitQuantities)
+                    {
+                        Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+                    }
+
+                    // Accessing a value by key
+                    if (fruitQuantities.TryGetValue("Banana", out int bananaQuantity))
+                    {
+                        Console.WriteLine($"\nQuantity of Bananas: {bananaQuantity}"); // Outputs: 20
+                    }
+
+                    // Remove a key-value pair
+                    fruitQuantities.Remove("Apple");
+                    Console.WriteLine("\nAfter removing 'Apple':");
+                    foreach (var kvp in fruitQuantities)
+                    {
+                        Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+                    }
+
+                    // Check if a key exists
+                    Console.WriteLine($"\nContains 'Orange': {fruitQuantities.ContainsKey("Orange")}"); // Outputs: True
+                    Console.WriteLine($"Contains 'Apple': {fruitQuantities.ContainsKey("Apple")}"); // Outputs: False
+                }
+            }
+
+    Explanation of the Example
+        Creating a Dictionary: We create an instance of Dictionary<string, int> to store fruit names as keys and their quantities as values.
+        Adding Key-Value Pairs: We add several fruit names and their corresponding quantities.
+        Displaying the Dictionary: We iterate through the dictionary using a foreach loop to display the contents.
+        Accessing Values: We use TryGetValue to safely access the quantity of bananas.
+        Removing an Entry: We remove an entry by its key and display the updated contents.
+        Checking for Keys: We check if specific keys exist in the dictionary.
+
+Sorted Dictionary
+-------------------
+    In C#, a SortedDictionary is a collection that stores key-value pairs in sorted order based on the keys. It is part of the System.Collections.Generic namespace and is implemented as a balanced tree structure (specifically a red-black tree), which allows for efficient retrieval and manipulation of data while maintaining the order of the keys.
+
+    Key Features of SortedDictionary
+        Sorted Order: The elements in a SortedDictionary are automatically sorted by the keys. When you add a new key-value pair, the collection maintains the order.
+        Key-Value Pairs: Each entry in a SortedDictionary consists of a key and a corresponding value. The keys must be unique.
+        Efficient Lookups: The average time complexity for lookups, additions, and deletions is O(log n), making it efficient for accessing data.
+        Generic Type: SortedDictionary<TKey, TValue> is a generic collection, allowing you to specify the types of keys and values.
+        Dynamic Size: The size of a SortedDictionary can grow dynamically as you add more elements.
+
+    Commonly Used Properties and Methods
+        Add(TKey key, TValue value): Adds a key-value pair to the SortedDictionary.
+        Remove(TKey key): Removes the entry with the specified key.
+        TryGetValue(TKey key, out TValue value): Tries to get the value associated with the specified key.
+        ContainsKey(TKey key): Checks if the SortedDictionary contains a specific key.
+        Keys: Gets a collection containing the keys in the SortedDictionary.
+        Values: Gets a collection containing the values in the SortedDictionary.
+        Count: Gets the number of key-value pairs in the SortedDictionary.
+
+    Example of Using SortedDictionary
+        Here’s a simple example demonstrating how to use a SortedDictionary in C#:
+
+        using System;
+        using System.Collections.Generic;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                // Create a SortedDictionary
+                SortedDictionary<string, int> fruitQuantities = new SortedDictionary<string, int>();
+
+                // Add key-value pairs
+                fruitQuantities.Add("Banana", 20);
+                fruitQuantities.Add("Apple", 10);
+                fruitQuantities.Add("Orange", 15);
+                fruitQuantities.Add("Mango", 25);
+
+                // Display the SortedDictionary
+                Console.WriteLine("Fruit Quantities in Sorted Order:");
+                foreach (var kvp in fruitQuantities)
+                {
+                    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+                }
+
+                // Accessing a value by key
+                if (fruitQuantities.TryGetValue("Apple", out int appleQuantity))
+                {
+                    Console.WriteLine($"\nQuantity of Apples: {appleQuantity}"); // Outputs: 10
+                }
+
+                // Remove a key-value pair
+                fruitQuantities.Remove("Banana");
+                Console.WriteLine("\nAfter removing 'Banana':");
+                foreach (var kvp in fruitQuantities)
+                {
+                    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+                }
+
+                // Check if a key exists
+                Console.WriteLine($"\nContains 'Orange': {fruitQuantities.ContainsKey("Orange")}"); // Outputs: True
+                Console.WriteLine($"Contains 'Banana': {fruitQuantities.ContainsKey("Banana")}"); // Outputs: False
+            }
+        }
+
+    Explanation of the Example
+        Creating a SortedDictionary: We create an instance of SortedDictionary<string, int> to store fruit names as keys and their quantities as values.
+        Adding Key-Value Pairs: We add several fruit names and their corresponding quantities.
+        Displaying the SortedDictionary: We iterate through the SortedDictionary using a foreach loop to display the contents. The output will be sorted by the keys.
+        Accessing Values: We use TryGetValue to safely access the quantity of apples.
+        Removing an Entry: We remove an entry by its key and display the updated contents.
+        Checking for Keys: We check if specific keys exist in the SortedDictionary.
+
+
+
+KeyCollection
+----------------
+    KeyCollection is a class that represents a collection of keys in a Dictionary<TKey, TValue>. It allows you to iterate over the keys without exposing the underlying dictionary.
+
+    Remove Duplicate Values from Dictionary
+        To remove duplicate values from a dictionary, you can use a HashSet to track unique values. Here’s an example:
+
+    var dictionary = new Dictionary<string, int>
+    {
+        { "Apple", 1 },
+        { "Banana", 2 },
+        { "Orange", 1 } // Duplicate value
+    };
+
+    var uniqueValues = new HashSet<int>();
+    var result = new Dictionary<string, int>();
+
+    foreach (var kvp in dictionary)
+    {
+        if (uniqueValues.Add(kvp.Value)) // Adds the value if it's unique
+        {
+            result.Add(kvp.Key, kvp.Value);
+        }
+    }
+
+    HashSet
+        A HashSet is a collection that contains no duplicate elements and is not sorted. It is useful for storing unique items and provides fast lookups.
+
+    Set
+        A Set is a collection that represents a group of unique elements. In C#, HashSet<T> is commonly used to implement sets.
+
+    Sort
+        Sorting refers to arranging the elements of a ascending or descending order.
+
+
+    Sort Method
+
+        The Sort method is used to arrange the elements in a collection, such as an array or a list, in a specified order (ascending or descending). For example, you can sort a list of integers as follows:
+
+    var numbers = new List<int> { 5, 3, 8, 1, 2 };
+    numbers.Sort(); // Sorts in ascending order
+
+Anonymous Type
+----------------
+    An anonymous type is a feature in C# that allows you to create an object without explicitly defining a class. This is useful for encapsulating a set of read-only properties into a single object. For example:
+
+    var person = new { Name = "John", Age = 30 };
+
+Why Anonymous
+----------------
+    Anonymous types are convenient for scenarios where you need a simple data structure without the overhead of creating a full class. They are often used in LINQ queries to project data.
+
+    Rules of Anonymous
+        Anonymous types must have at least one property.
+        All properties must be read-only.
+        The type is created at compile time, and you cannot define methods or fields.
+
+    Extension Method
+        An extension method allows you to add new methods to existing types without modifying their source code. This is particularly useful for enhancing the functionality of classes from libraries. Here’s an example:
+
+    public static class StringExtensions
+    {
+        public static bool IsNullOrEmpty(this string str)
+        {
+            return string.IsNullOrEmpty(str);
+        }
+    }
+
+    CRUD using Collection and Interface
+        CRUD operations (Create, Read, Update, Delete) can be implemented using collections and interfaces in C#. For example, you can define an interface for a repository and implement it using a list:
+
+    public interface IRepository<T>
+    {
+        void Add(T item);
+        T Get(int id);
+        void Update(T item);
+        void Delete(int id);
+    }
+
+    public class InMemoryRepository<T> : IRepository<T>
+    {
+        private List<T> _items = new List<T>();
+        public void Add(T item) => _items.Add(item);
+        public T Get(int id) => _items[id];
+        public void Update(T item) { /* Update logic */ }
+        public void Delete(int id) => _items.RemoveAt(id);
+    }
+
+LINQ
+--------
+    LINQ (Language Integrated Query) is a powerful feature in C# that allows you to query collections in a concise and readable manner. You can use LINQ to filter, sort, and manipulate data from various sources.
+
+Print without LINQ and with LINQ
+------------------------------------
+    To print elements from a collection without LINQ:
+
+    var numbers = new List<int> { 1, 2, 3, 4, 5 };
+    foreach (var number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+
+        To print elements using LINQ:
+
+    var numbers = new List<int> { 1, 2, 3, 4, 5 };
+    numbers.ForEach(n => Console.WriteLine(n));
+
+
+Deferred Execution
+    Deferred execution means that the evaluation of a query is delayed until the query is actually iterated over. This is a key feature of LINQ, allowing for efficient data processing.
+
+First()
+    The First() method returns the first element of a sequence that satisfies a specified condition or the first element in a sequence if no condition is specified. If no elements are found, it throws an exception.
+
+FirstOrDefault()
+    The FirstOrDefault() method returns the first element of a sequence or a default value if no elements are found. This is useful to avoid exceptions when the sequence is empty.
+
+Single()
+    The Single() method returns the only element of a sequence that satisfies a specified condition, and it throws an exception if there is more than one matching element. It is used when you expect exactly one result.
+
+ADI
+    ADI (Application Dependency Injection) is a design pattern used to manage dependencies in applications, promoting loose coupling and enhancing testability.
+
+Types of DI
+    There are several types of Dependency Injection, including:
+
+Constructor Injection
+    Dependencies are provided through a class constructor.
+
+Getter and Setter Injection
+    Dependencies are set through public properties.
+
+Interface Injection
+    The dependency provides an injector method that will inject the dependency into any client that passes itself (the client) to the injector.
+    
+Service Locator Injection
+----------------------------
+    A service locator is used to retrieve dependencies, allowing for more dynamic resolution of services. ### Constructor Injection
+    In constructor injection, dependencies are provided to a class through its constructor. This ensures that the class is always in a valid state with its dependencies fully initialized. For example:
+
+    public class Service
+    {
+        private readonly IRepository _repository;
+        public Service(IRepository repository)
+        {
+            _repository = repository;
+        }
+    }
+
+Getter and Setter Injection
+-----------------------------
+    Getter and setter injection involves using properties to set dependencies. This allows for more flexibility, but it can lead to a situation where the class is in an invalid state if dependencies are not set before use.
+
+    public class Service
+    {
+        public IRepository Repository { get; set; }
+        public void DoSomething()
+        {
+            // Ensure Repository is set before use
+            if (Repository == null) throw new InvalidOperationException("Repository not set.");
+        }
+    }
+
+Interface Injection
+-------------------------
+    In interface injection, the dependency provides an injector method that will inject the dependency into any client that passes itself to the injector. This approach can be useful for decoupling the client from the concrete implementation of the dependency.
+
+    public interface IServiceInjector
+    {
+        void InjectService(Service service);
+    }
+    public class Service
+    {
+        public IRepository Repository { get; set; }
+    }
+
+Service Locator Injection
+-----------------------------
+    Service locator injection uses a service locator to retrieve dependencies. This pattern can simplify dependency management but may lead to hidden dependencies, making the code harder to understand and maintain.
+
+    public class Service
+    {
+        public void DoSomething()
+        {
+            var repository = ServiceLocator.GetRepository();
+            // Use repository
+        }
+    }
+

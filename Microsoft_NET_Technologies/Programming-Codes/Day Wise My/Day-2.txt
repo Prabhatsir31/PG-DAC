@@ -1,0 +1,90 @@
+.NET 
+-------------
+
+DAY-2
+---------------
+|----------------------------------------------------------------------------------------|
+|Static class	 |     Abstract class	|    Virtual method	    |    Sealed class		 |				
+|========================================================================================| 
+|Console	     |       Array	        |    GetHashCode	    |           String		 |
+|----------------|----------------------|-----------------------|------------------------|				
+|convert	     |     Value type	    |     ToString	        |    StringBuilder		 |
+|----------------|----------------------|-----------------------|------------------------|
+|Math 		     |      Equals	        |   Sqlconnection		|	Operating System     |
+|----------------|----------------------|-----------------------|------------------------|
+|			     |                      |  Operating System		|		Thread		     |
+|			     |                      |						|                        |
+
+
+
+
+TryParse 
+-------------
+    TryParse in C# is a safe way to convert strings into value types like int, float, double, DateTime, etc., without throwing exceptions when the conversion fails.
+
+Why use TryParse?
+    Avoids exceptions when the input is invalid.
+    Returns a bool: true if the conversion succeeded, false if it failed.
+    Stores the result in an out parameter.
+
+Syntax:
+    bool success = Type.TryParse(string input, out Type result);
+
+Namespacce to avoid name collision
+------------------------------------
+    Avoid the name collision
+    conflict logially grouping od the data
+
+    In C#, a namespace is used to organize code and avoid name collisions between classes, interfaces, methods, etc., especially when different libraries or projects define elements with the same name.
+
+What is a Namespace?
+    A namespace is like a container for your classes and other types, helping you group related code together and avoid name conflicts.
+
+namespace MyCompany.Project.Module
+{
+    class MyClass
+    {
+        public void Show() 
+        {
+            Console.WriteLine("Hello from MyClass");
+        }
+    }
+}
+
+
+Namespacce to logically grouping of data 
+------------------------------------------
+    Yes! In C#, a namespace is also used for logically grouping related classes, interfaces, enums, and other types — making your project easier to organize, read, and maintain.
+
+    What does it mean to logically group data?
+        Let’s say you’re working on a project like an E-Mart system. You might have different areas like:
+            User Management
+            Product Management
+            Orders
+            Payments
+
+    To keep things modular and clean, you’d use namespaces to group related components.
+
+Enum
+---------
+    Definition: An enum is a distinct value type that consists of a set of named constants called the enumerator list. Each enumerator in an enum is associated with an underlying integral value (by default, an integer).
+    Purpose: Enums are used to represent a collection of related constants in a type-safe manner. They improve code clarity by allowing developers to use meaningful names instead of arbitrary numbers.
+    Syntax: 
+    public enum EnumName
+    {
+        Value1,
+        Value2,
+        Value3
+    }
+
+    Type Safety: Enums provide type safety, meaning you cannot assign invalid values to an enum variable.
+    Readability: Using named constants makes the code more readable and self-documenting.
+    Maintainability: Enums centralize related constants, making it easier to manage and update them.
+
+    An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).
+    The enum values are implicitly static and implicitly final, so they cannot be changed once they are created.
+    The enum values are implicitly public, so they can be accessed from any class in the program.
+    
+
+
+

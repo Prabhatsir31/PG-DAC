@@ -1,0 +1,358 @@
+.NET
+----------
+
+DAY-9
+---------
+
+1. Using ADO.NET
+    Setup
+        First, ensure you have the necessary using directives:
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
+
+    Connection String
+    You will need a connection string to connect to your database:
+
+    string connectionString = "your_connection_string_here";
+
+    SELECT Query
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT * FROM Employees";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["Name"]}, {reader["Position"]}");
+            }
+        }
+
+    WHERE Clause
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT * FROM Employees WHERE Department = @Department";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Department", "Sales");
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["Name"]}, {reader["Position"]}");
+            }
+        }
+
+    ORDER BY Clause
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT * FROM Employees ORDER BY Name ASC";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["Name"]}, {reader["Position"]}");
+            }
+        }
+
+    GROUP BY Clause
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT Department, COUNT(*) AS EmployeeCount FROM Employees GROUP BY Department";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["Department"]}: {reader["EmployeeCount"]}");
+            }
+        }
+
+    JOIN Clause
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT e.Name, d.DepartmentName FROM Employees e JOIN Departments d ON e.DepartmentId = d.Id";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["Name"]}, {reader["DepartmentName"]}");
+            }
+        }
+
+    EXISTS Clause
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT * FROM Departments d WHERE EXISTS (SELECT 1 FROM Employees e WHERE e.DepartmentId = d.Id)";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["DepartmentName"]}");
+            }
+        }
+
+2. Using Entity Framework
+    If you are using Entity Framework, you can perform similar queries using LINQ.
+    Setup
+        Make sure you have the necessary using directives:
+    using System;
+    using System.Linq;
+    using YourNamespace.Models; // Replace with your actual namespace
+
+    SELECT Query
+        using (var context = new YourDbContext())
+        {
+            var employees = context.Employees.ToList();
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"{employee.Name}, {employee.Position}");
+            }
+        }
+    WHERE Clause
+        using (var context = new YourDbContext())
+        {
+            var employees = context.Employees.Where(e => e.Department == "Sales").ToList();
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"{employee.Name}, {employee.Position}");
+            }
+        }
+    ORDER BY Clause 
+        using (var context = new YourDbContext())
+        {
+            var employees = context.Employees.OrderBy(e => e.Name).ToList();
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"{employee.Name}, {employee.Position}");
+            }
+        }
+    GROUP BY Clause
+        using (var context = new YourDbContext())
+        {
+            var departmentCounts = context.Employees
+                .GroupBy(e => e.Department)
+                .Select(g => new { Department = g.Key, EmployeeCount = g.Count() })
+         .ToList();
+            foreach (var group in departmentCounts)
+            {
+                Console.WriteLine($"{group.Department}: {group.EmployeeCount}");
+            }
+        }
+    JOIN Clause
+        using (var context = new YourDbContext())
+        {
+            var query = from e in context.Employees
+                        join d in context.Departments on e.DepartmentId equals d.Id
+                        select new { e.Name, d.DepartmentName };
+            foreach (var result in query.ToList())
+            {
+                Console.WriteLine($"{result.Name}, {result.DepartmentName}");
+            }
+        }
+    EXISTS Clause
+        using (var context = new YourDbContext())
+        {
+            var departmentsWithEmployees = context.Departments
+                .Where(d => context.Employees.Any(e => e.DepartmentId == d.Id))
+                .ToList();
+            foreach (var department in departmentsWithEmployees)
+            {
+                Console.WriteLine($"{department.DepartmentName}");
+            }
+        }
+
+ADO.NET 
+---------
+    ADO.NET is a set of classes in the .NET Framework that provides access to data sources such as databases and XML files. It is a core component of the .NET Framework and is used for data access in applications. ADO.NET allows you to connect to a database, execute commands, and retrieve results.
+        Key Components of ADO.NET
+            Connection: Represents a connection to a data source (e.g., SQL Server, Oracle).
+            Command: Represents a SQL statement or stored procedure to execute against a data source.
+            DataReader: Provides a way to read a forward-only stream of data from a data source.
+            DataAdapter: Acts as a bridge between a DataSet and a data source for retrieving and saving data.
+            DataSet: An in-memory representation of data that can hold multiple tables and relationships.
+
+    Basic Steps to Use ADO.NET
+        Establish a Connection: Create a connection to the database using a connection string.
+        Create a Command: Create a command object to execute SQL queries or stored procedures.
+        Execute the Command: Execute the command and retrieve results using a DataReader or DataAdapter.
+        Process the Results: Read and process the results returned from the database.
+        Close the Connection: Always close the connection to free up resources.
+
+    Example of Using ADO.NET
+        Here’s a simple example demonstrating how to use ADO.NET to connect to a SQL Server database, execute a query, and read the results.
+        Setup
+        Make sure you have the necessary using directives:
+
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
+
+    Connection String
+        You will need a connection string to connect to your database. Here’s an example for SQL Server:
+
+    string connectionString = "Server=your_server;Database=your_database;User  Id=your_username;Password=your_password;";
+
+        Example Code
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    // Define the connection string
+                    string connectionString = "Server=your_server;Database=your_database;User  Id=your_username;Password=your_password;";
+
+                    // Create a connection to the database
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            // Open the connection
+                            connection.Open();
+                            Console.WriteLine("Connection opened successfully.");
+
+                            // Define a SQL query
+                            string query = "SELECT * FROM Employees";
+
+                            // Create a command object
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                // Execute the command and use a DataReader to read the results
+                                using (SqlDataReader reader = command.ExecuteReader())
+                                {
+                                    // Read the data
+                                    while (reader.Read())
+                                    {
+                                        // Access the data using column names or indices
+                                        Console.WriteLine($"Name: {reader["Name"]}, Position: {reader["Position"]}");
+                                    }
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            Console.WriteLine($"SQL Error: {ex.Message}");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error: {ex.Message}");
+                        }
+                        finally
+                        {
+                            // The connection will be closed automatically due to the using statement
+                            Console.WriteLine("Connection closed.");
+                        }
+                    }
+                }
+            }
+
+    Explanation of the Example
+        Connection String: The connection string specifies the server, database, and authentication details required to connect to the SQL Server database.
+        SqlConnection: A SqlConnection object is created to establish a connection to the database.
+        Open Connection: The connection is opened using the Open() method.
+        SqlCommand: A SqlCommand object is created with the SQL query and the connection.
+        SqlDataReader: The command is executed using ExecuteReader(), which returns a SqlDataReader to read the results.
+        Reading Data: The Read() method of the SqlDataReader is used to iterate through the results, and data is accessed using column names.
+        Error Handling: Exceptions are caught and handled to provide feedback in case of errors.
+        Automatic Resource Management: The using statement ensures that the connection and other resources are properly disposed of, even if an error occurs.
+
+connect to the db using ADO.NET
+----------------------------------
+    To connect to a database using ADO.NET in C#, you need to follow a series of steps that involve setting up a connection string, creating a connection object, and then opening that connection to perform database operations. Below, I'll provide a detailed guide along with a complete example for connecting to a SQL Server database using ADO.NET.
+    
+    Step-by-Step Guide to Connect to a Database Using ADO.NET
+
+    Install Necessary Packages: Ensure you have the necessary ADO.NET provider for your database. For SQL Server, you typically use System.Data.SqlClient, which is included in .NET Framework and .NET Core.
+    Create a Connection String: The connection string contains information about the database server, database name, and authentication details.
+    Create a SqlConnection Object: This object is used to establish a connection to the database.
+    Open the Connection: Use the Open() method to open the connection.
+    Execute Commands: You can execute SQL commands using SqlCommand.
+    Close the Connection: Always ensure that the connection is closed after operations are complete.
+
+    Example Code
+        Here’s a complete example demonstrating how to connect to a SQL Server database using ADO.NET:
+
+        using System;
+        using System.Data.SqlClient;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                // Define the connection string
+                string connectionString = "Server=your_server;Database=your_database;User  Id=your_username;Password=your_password;";
+
+                // Create a connection to the database
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        // Open the connection
+                        connection.Open();
+                        Console.WriteLine("Connection opened successfully.");
+
+                        // Define a SQL query
+                        string query = "SELECT * FROM Employees"; // Replace with your actual table name
+
+                        // Create a command object
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            // Execute the command and use a DataReader to read the results
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                // Read the data
+                                while (reader.Read())
+                                {
+                                    // Access the data using column names or indices
+                                    Console.WriteLine($"Name: {reader["Name"]}, Position: {reader["Position"]}");
+                                }
+                            }
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine($"SQL Error: {ex.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                    finally
+                    {
+                        // The connection will be closed automatically due to the using statement
+                        Console.WriteLine("Connection closed.");
+                    }
+                }
+            }
+        }
+
+    Explanation of the Code
+
+        Connection String:
+            Replace your_server, your_database, your_username, and your_password with your actual database server details.
+            The connection string specifies the server address, database name, and authentication method.
+
+        SqlConnection:
+            A SqlConnection object is created using the connection string. The using statement ensures that the connection is disposed of properly.
+
+        Open Connection:
+            The Open() method is called to establish the connection to the database.
+
+        SqlCommand:
+            A SqlCommand object is created with the SQL query and the connection object.
+
+        SqlDataReader:
+            The command is executed using ExecuteReader(), which returns a SqlDataReader to read the results.
+
+        Reading Data:
+            The Read() method of the SqlDataReader is used to iterate through the results, and data is accessed using column names.
+
+        Error Handling:
+            Exceptions are caught and handled to provide feedback in case of errors.
+
+        Automatic Resource Management:
+            The using statement ensures that the connection and other resources are properly disposed of, even if an error occurs.
+

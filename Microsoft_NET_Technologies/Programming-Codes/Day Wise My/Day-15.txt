@@ -1,0 +1,40 @@
+.NET 
+--------
+
+DAY-15 
+--------
+
+In MVCEmpDept project add 
+global exception 
+add cookies 
+make a login page 
+
+
+check box
+radio
+password
+dropdown
+
+file Uploaad
+
+Make a MVC of student data with two tables
+
+Download dependency
+Poco/entity
+DbContext
+Appsettings.json ===> conneectionString
+Configure in program.cs     ===> connect the line with builder
+Add Migration
+update-database
+IService
+Service class
+Controller
+Configure ==> Service
+Add View ==> Add , Create, Display, Crud
+Hyperlink  
+
+
+Login Page ===> take input store in cookie file 
+Your index page should open only if cookie has value
+
+

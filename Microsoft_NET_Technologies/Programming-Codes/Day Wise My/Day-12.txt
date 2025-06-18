@@ -1,0 +1,288 @@
+.NET
+----------
+
+DAY-12
+---------
+
+EF Core Code First Approach
+---------------------------------
+
+Diagram:
+    Domain & DBContext Classes ==> EF Core ==> Database 
+
+EF Core Database Approach
+---------------------------------
+
+Diagram: 
+    Database ==> EF Core ==> Domain & DBContext Classes
+
+EF Core Database Providers
+---------------------------------
+
+Diagram:
+    EF Core ==> Database Provider ==> Database
+
+
+
+Creating ORM 
+-------------------
+
+
+Create a Project ==> EntityORM
+
+install the packages 
+    Install-package Microsoft.EntityFrameworkCore
+    Install-package Microsoft.EntityFrameworkCore.SqlServer
+    Install-package Microsoft.EntityFrameworkCore.Tools
+
+
+create a db 
+        db name => name
+in terminal 
+        Add-Migration initialcreate 
+
+Models/Author.cs 
+------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EntityORM.Models
+{
+    public class Author
+    {
+        [Key]
+        public int AuthorId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public ICollection<Book> Books { get; set; }
+
+    }
+}
+
+Models/Book.cs 
+------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EntityORM.Models
+{
+    public class Book
+    {
+        [Key]
+        public int BookId { get; set; }
+        public string Title { get; set; }
+        public Author Author { get; set; }
+        public int AuthorId { get; set; }
+
+    }
+}
+
+connected to the db 
+
+Respository/SampleContext.cs 
+------------------------------
+using EntityORM.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace EntityORM.Repository
+{
+    internal class SampleContext : DbContext
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\ProjectModels;Initial Catalog=ADOcode;Integrated Security=True;")
+                    .LogTo(Console.WriteLine, LogLevel.Information)
+                    .EnableSensitiveDataLogging();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Author)
+                .WithMany(b => b.Books)
+                .HasForeignKey(b => b.AuthorId)
+                .OnDelete(DeleteBehavior.SetNull);
+        }
+
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
+
+
+    }
+}
+
+
+All the CRUD operation is there
+
+Service/ServiceBook.cs 
+-----------------------
+using EntityORM.Models;
+using EntityORM.Repository;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EntityORM.Service
+{
+    internal class ServiceBook
+    {
+       private readonly SampleContext db;
+        internal ServiceBook()
+        {
+            db = new SampleContext();
+        }
+        public void Addmany()
+        {
+            var author = new Author
+            {
+                FirstName = "William",
+                LastName = "Shakespeare",
+                Books = new List<Book> { new Book { Title = "Hamlet"},
+                                       new Book { Title = "Othello" },
+                                        new Book { Title = "MacBeth" }
+                             }
+            };
+            db.Add(author);
+            db.SaveChanges();
+        }
+        public void AddBook(Book obj)
+        {
+            db.Add(obj);
+            db.SaveChanges();
+        }
+        public void RemoveBook(int Id)
+        {
+            Book book = db.Books.FirstOrDefault(x => x.BookId == Id);
+            if (book != null)
+            {
+                db.Remove(book); // Book Deleted
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateBook(Book obj)
+        {
+            var existingBook = db.Books.Find(obj.BookId);
+            if (existingBook != null)
+            {
+                db.Entry(existingBook).State = EntityState.Detached;
+            }
+
+            //Detach the existing entity to avoid conflicts 
+            db.Update(obj);
+            //db.SaveChanges();
+        }
+
+        public IEnumerable<Book> Display()
+        {
+            return db.Books.Include((a) => a.Author).ToList<Book>();
+        }
+        public void Display(string title)
+        {
+            FormattableString sql = $"SELECT * FROM Books WHERE Title = {title}";
+            var book = db.Books.FromSql(sql).FirstOrDefault();
+            Console.Write(book.Title);
+
+            var books = db.Books.FromSql($"EXECUTE dbo.GetMostPopularBooks {title}").ToList();
+            foreach (var b in books)
+                Console.Write(b.Title);
+        }
+
+        public void DeleteAuth(int id)
+        {
+            var auth = new Author { AuthorId = id };
+            db.Remove(auth); // Book Deleted
+            db.SaveChanges();
+        }
+        
+    }
+}
+
+
+Create a procedure
+
+go to db ==> Programmability ==> right click on Stored Procedures ==> Add new Stored procedures and replace with this content
+
+CREATE PROCEDURE dbo.GetMostPopularBooks   
+@BookTitle NVARCHAR(255)
+AS
+BEGIN
+    SELECT *
+    FROM Books
+    WHERE Title = @BookTitle;
+END
+
+
+Main File
+
+Program.cs 
+----------------
+using EntityORM.Models;
+using EntityORM.Service;
+
+namespace EntityORM
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+            ServiceBook servicebook = new ServiceBook();
+            var book = new Book
+            {
+                Title = "let us C",
+                Author = new Author
+                {
+                    FirstName = "Yashavant",
+                    LastName = "Kanetkar"
+                }
+            };
+            //Add Author add book 
+              servicebook.AddBook(book);
+
+            //Add multiple record
+             // servicebook.Addmany();
+
+
+
+            var bookup = new Book
+            {
+                Title = "Test yout skill",
+                BookId = 4,
+                AuthorId = 2
+            };
+            servicebook.UpdateBook(bookup);
+
+            
+            //servicebook.RemoveBook(15);
+            //servicebook.DeleteAuth(3);
+
+            var d = servicebook.Display();
+            foreach (var item in d)
+            {
+                Console.WriteLine($"{item?.Title}, {item?.Author?.FirstName} {item?.Author?.LastName} {item?.BookId}");
+            }
+
+        }
+    }
+}

@@ -1,0 +1,113 @@
+.NET
+-------------
+
+DAY-17 
+-------
+
+.NET Core Composition
+--------------------------
+
+✅ Why Use Composition?
+
+    Promotes loose coupling
+
+    Improves testability
+
+    Follows SOLID principles (especially DIP and ISP)
+
+    Allows flexible runtime behavior
+
+🔧 Example: Composition in ASP.NET Core via DI
+Step 1: Define Interfaces
+
+public interface IMessageSender
+{
+    void Send(string message);
+}
+
+public interface INotifier
+{
+    void Notify(string message);
+}
+
+Step 2: Implement the Services
+
+public class EmailSender : IMessageSender
+{
+    public void Send(string message)
+    {
+        Console.WriteLine($"Email: {message}");
+    }
+}
+
+public class Notifier : INotifier
+{
+    private readonly IMessageSender _messageSender;
+
+    public Notifier(IMessageSender messageSender)
+    {
+        _messageSender = messageSender; // Composition
+    }
+
+    public void Notify(string message)
+    {
+        _messageSender.Send(message);
+    }
+}
+
+Step 3: Register in Program.cs or Startup.cs
+
+builder.Services.AddTransient<IMessageSender, EmailSender>();
+builder.Services.AddTransient<INotifier, Notifier>();
+
+Step 4: Use in Controller or Middleware
+
+public class HomeController : Controller
+{
+    private readonly INotifier _notifier;
+
+    public HomeController(INotifier notifier)
+    {
+        _notifier = notifier;
+    }
+
+    public IActionResult Index()
+    {
+        _notifier.Notify("Hello via Composition!");
+        return View();
+    }
+}
+
+🧠 Summary:
+
+    Composition means using instances (usually injected) to build up functionality.
+
+    In .NET Core, this is done cleanly with interfaces + DI container.
+
+    It's more maintainable and flexible than deep inheritance chains.
+
+
+JWT (Json Web Token )
+-------------------------
+
+    JWT consists of the fllowing three parts:
+        Header: encoded data of token type and the algorithm used to sign the data
+        Payload: encoded data of claim intended to share
+        Signature: created by signing(encoded header + encoded payload) using a secret key 
+
+Token Workflow
+---------------------
+
+    When a client (Postman, Angular, React, mobile app) talks to a REST API,
+    Token Authentication is used instead of login sessions.
+
+    The process works like this:
+    Step    	            Action
+    1	    Client sends username/password to API.
+    2	    API validates credentials.
+    3	    If valid → API generates a token (JWT).
+    4	    Client stores this token.
+    5	    For every future request, client sends token in the header.
+    6	    API verifies the token before processing the request.
+
+        Simple Words ==> NO Token  ==> No Access

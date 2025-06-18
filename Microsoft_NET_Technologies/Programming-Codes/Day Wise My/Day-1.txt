@@ -1,0 +1,292 @@
+.NET
+------------
+
+DAY-1
+-------------------------
+
+--History of C#
+
+developed by microsoft 
+based on java and c++, but has many additional extension
+java and c# are both being updated to keep up with each other 
+cross-development with VB, visual C++, F#, IronPython, and many other .NET language
+
+--Classification of C#
+
+Object Oriented
+Statically typed
+Strongly typed
+Compiled language
+Primarily imperative or procedural
+    linq adds some functional programming language capabilities
+structured (as opposite to monolithic)
+ISO and ECMA standardized
+-------------------------------------------------------------------------
+|.NET APIS for Store/UWP apps      |             Task-Based Async Model  |
+-------------------------------------------------------------------------
+|Parallel LINQ                     |            Task Parallel Library    |
+--------------------------------------------------------------------------
+|LINQ                              |             Entity Framework        |
+--------------------------------------------------------------------------
+|WPF        |        WCF           |  WF        |      card Space        |
+--------------------------------------------------------------------------
+|WinForms      |            ASP.NET          |        ADO.NET            |
+--------------------------------------------------------------------------
+|                Framework Class Library (FCL)                           |
+--------------------------------------------------------------------------
+|                Common Language Runtime (CLR)                           |
+--------------------------------------------------------------------------
+
+--The Common Libraries
+
+The common classes that are used in many programs
+    System.Console.WriteLine
+    XML, Networking, FileSystem, Crypto, containers 
+    Can inherit from many of these classes
+Many languages run on .NET framework 
+    C#, VB, F#, IronPython, and many other .NET language
+    even have Python (see IronPython)
+
+--IDE's and CLI implementation
+
+    Visual C# http://www.microsoft.com/express/2008/
+        in MSDNAA
+            must be version 2008: we need C# 3.0
+    Mono: http://www.go-mono.com 
+        Open Source for Linux: not quite at 2.0
+    Rotor: http://msdn.microsoft.com/net/sscli 
+        Shared Source for Windows (through 2.0)
+        Use to work on BSD / OS X, too
+    Portable.NET: http://www.dotgnu.org 
+        yet another open source implementation
+
+--CLR and JIT Compiling
+
+C# , like Java, is executed indirectly through an abstract computer architecture called the CLR.
+The CLR is a virtual machine that runs the code on the computer.
+The CLR is responsible for loading the code, checking for errors, and executing the code.
+The CLR is also responsible for memory management, which means it handles the allocation and deallocation of memory
+The CLR is also responsible for security, which means it checks the code for any potential security threats.
+The CLR is also responsible for garbage collection, which means it automatically frees up memory that is no longer needed.
+
+All .NET language compile to the same CIL (Common Intermediate Language)
+Each language actually uses only a subset of the CIL (Common Intermediate Language)
+The Least-common denominator is the Common Language Specification (CLS)
+So, if you want to use your C# components in VB you need to program to the CLS 
+
+--CLR v/s CLI 
+
+CLR is actually an implementation by Microsoft of the CLI (Common Language Infrastructure)
+CLI is the specification that defines the common language runtime and the common type system
+CLI is an open specification
+CLR is really a platform specific implementation
+
+--The CLR architecture
+
+CLR Architecture Overview
+
+    Execution Engine:
+        The execution engine is responsible for executing the Common Intermediate Language (CIL) code. It includes:
+            Just-In-Time (JIT) Compiler: Converts CIL to native machine code at runtime. The JIT compiler optimizes the code for performance.
+            Garbage Collector (GC): Manages memory allocation and deallocation. It automatically frees up memory that is no longer in use, helping to prevent memory leaks.
+            Code Manager: Manages the execution of the code, including loading and unloading assemblies.
+
+    Type System:
+        The CLR provides a unified type system that allows different .NET languages to interact with each other. All types in .NET derive from a common base class, System.Object, which ensures that objects from different languages can be used interchangeably.
+
+    Memory Management:
+        The CLR handles memory allocation and deallocation through the garbage collector. It automatically manages the lifecycle of objects, reclaiming memory that is no longer needed.
+
+    Security:
+        The CLR provides a security model that includes code access security (CAS) and role-based security. It ensures that applications have the necessary permissions to execute and access resources.
+
+    Exception Handling:
+        The CLR provides a structured exception handling model that allows developers to handle errors gracefully. It supports try-catch-finally blocks for managing exceptions.
+
+    Interoperability:
+        The CLR allows .NET applications to interact with other technologies and languages, such as COM (Component Object Model) and native Windows APIs. This is achieved through Platform Invocation Services (P/Invoke) and COM Interop.
+
+    Assembly and Metadata:
+        Assemblies are the building blocks of .NET applications. They contain compiled code (CIL), resources, and metadata. The CLR uses metadata to understand the types, members, and references in an assembly, enabling features like reflection and versioning.
+
+    Thread Management:
+        The CLR provides support for multithreading, allowing applications to perform multiple operations concurrently. It manages thread creation, synchronization, and scheduling.
+
+--CLI 
+
+CLI allows for cross-language development.
+Four components:
+Common Type System (CTS)
+Meta-data in a language agnostic fashion.
+Common Language Specification – behaviors that all languages need to follow.
+A Virtual Execution System (VES).
+
+--CTS
+
+A specification for how types are defined and how they behave
+CTS is a superset of the .NET Framework types
+CTS is a subset of the CLI types
+CTS is a specification that defines the common language runtime and the common type system
+A type can contain zero or more members:
+    field
+    Method
+    Property
+    Event
+We will go over these more throughout the quarter
+CTS also specific the rules for visibility and access to members of a type:
+    Private
+    Family
+    Family and Assembly
+    Public
+    Assembly
+Other rules
+    Object life-time 
+    Inheritance
+    Equality (through System.Object)
+
+--CLS
+
+A specification of language features 
+    how methods may be called 
+    when constructor are called
+    subset of the types in CTS which are allowed
+For Example
+    Code that takes UInt32 in a public method 
+    UInt32 is not in the CLS 
+Can mark classes as CLS-complaint
+    not marked is assumed to mean not complaint 
+
+--Data Types 
+|--------------------------------------------------------------------------------------------------------------|
+|Data Type    |       Size     |      Description                                                              |
+|==============================================================================================================|
+|int          |      4 bytes   |   Stores whole numbers from -2,147,483,648 to 2,147,483,647                   |
+|uint         |      4 bytes   |   Stores whole numbers from 0 to 4,294,967,                                   |
+|long         |      8 bytes   |   Stores whole numbers from -9,223,372,036,854                                |
+|float        |      4 bytes   |   Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits     |
+|double       |      8 bytes   |   Stores fractional numbers. Sufficient for storing 15 to 16 decimal          |
+|bool         |      1 bytes   |   Stores true or false values                                                 |
+|char         |      2 bytes   |   Stores single characters                                                    |
+|string       |      variable  |   Stores a sequence of characters                                             |
+|--------------------------------------------------------------------------------------------------------------|
+
+--Blittable types
+
+Most of these types are blittable, meaning their memory layout is consistent across language and hence, support Interoperability
+The types bool, char, object, and string are not and must be Marshaled when using these between languages
+Single dimensional arrays of blittable types are also blittable 
+
+--Assemblies 
+
+Code contained in files called "assemblies" 
+    code and metadata 
+    .exe or .dll as before
+    Executable needs a class with a "Main" method:
+        public static void Main(string[] args)
+    types 
+        local: local assembly, not accessible by others
+        shared: well-known location, can be GAC
+        string names: use crypto for signatures
+            then can add some versioning and trust 
+
+--First Program
+
+using System;
+namespace Test
+{
+    class ExampleClass 
+    { 
+        static void Main()
+        {
+            System.Console.WriteLine("Hello, world!");
+        } 
+    }
+}
+
+
+Using 
+    like import in java: bring in namespace
+
+namespace
+    disambiguation of names
+    like internet hierarchical names and C++ naming
+
+class 
+    like in C++ or Java
+    single inheritance up to object 
+
+static void Main()
+    Defines the entry point for an assembly
+    Four different overloads - taking string arguments and returning int'S
+Console.Write(Line)
+    Takes a formatted string: "Composite Format" 
+    Indexed elements: eg., {0}
+        can be used multiple times
+        only evaluated once 
+    {index [,alignment][:formatting]}
+
+--Questions
+-------------------
+
+What is CLR (Common Language Runtime)?
+
+✔ CLR is the engine of .NET that runs and manages your applications.
+✔ It takes your C# or VB.NET code, compiles it into machine code, and executes it.
+✔ Provides memory management, security, and exception handling.
+✔ Helps run code written in different .NET languages together.
+
+2. What is MSIL (Microsoft Intermediate Language)?
+
+✔ When you write C# or VB.NET code, it doesn’t directly become machine code.
+✔ Instead, it is first compiled into an intermediate language called MSIL (Microsoft Intermediate Language).
+✔ This makes .NET cross-platform, as MSIL can run on Windows, Linux, and macOS when compiled by the CLR.
+
+3. What is the use of JIT (Just-In-Time Compiler)?
+
+✔ JIT Compiler is part of CLR that converts MSIL into native machine code at runtime.
+✔ This allows .NET applications to be fast and optimized.
+✔ It only compiles the code when needed, reducing load time and improving performance.
+
+4. Who Reads Managed Code?
+
+✔ Managed Code is code that runs inside the CLR (like C# or VB.NET).
+✔ The CLR reads and executes Managed Code, taking care of security, memory, and performance.
+✔ Unlike unmanaged languages (like C++), .NET automatically cleans up memory (Garbage Collection).
+
+5. What is CLS (Common Language Specification)?
+
+✔ CLS ensures that all .NET languages can work together smoothly.
+✔ Defines a set of rules that all .NET languages must follow.
+✔ Example: If a C# class is CLS-compliant, it can be used in VB.NET and F#.
+
+6. What is CTS (Common Type System)?
+
+✔ CTS standardizes data types across all .NET languages.
+✔ Example:
+    In C#: int
+    In VB.NET: Integer
+
+Both are treated as System.Int32 by CTS
+✔ Ensures compatibility between different .NET languages.
+
+7. What Should I Use for a Desktop Application?
+
+✔  WinForms → For simple Windows applications.
+✔  WPF (Windows Presentation Foundation) → For modern, rich UI applications.
+✔  .NET MAUI → If you want to build for Windows, macOS, iOS, and Android in one codebase.
+
+8. What Should I Use for a Web Application?
+
+✔  ASP.NET Core MVC → For dynamic web applications.
+✔  ASP.NET Core Web API → For backend services & APIs.
+✔  Blazor → For web apps with C# instead of JavaScript.
+
+9. What is WCF (Windows Communication Foundation)?
+
+✔ WCF is a framework for building web services in .NET.
+✔ Used for communication between applications, services, and systems.
+✔ Supports multiple protocols like HTTP, TCP, and MSMQ.
+✔ Use WCF when:
+    You need secure SOAP-based web services.
+    You require communication between different platforms (Windows & non-Windows).
+    You need features like transaction support, message security, and queuing.

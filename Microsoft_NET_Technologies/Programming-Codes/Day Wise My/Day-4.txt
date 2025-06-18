@@ -1,0 +1,581 @@
+.NET 
+----------
+
+DAY-4
+------------
+
+out keyword in c#
+--------------------
+    The out keyword in C# is used to pass arguments to methods by reference, allowing the method to return multiple values.
+    void GetValues(out int x, out int y)
+    {
+        x = 10;
+        y = 20;
+    }
+    Must be assigned before method ends.
+    Caller does not need to initialize the variable.
+    Allows returning multiple values from a method.
+
+in keyword
+-----------
+    The in keyword in C# is used to pass arguments by reference, but in a read-only manner.
+    Improves performance for large value types (like structs) without allowing modification.
+    Ensures the method cannot change the passed argument.
+    syntax:
+        void PrintValue(in int number)
+        {
+            Console.WriteLine(number); // You can read
+            // number = 10; ❌ Not allowed – it's read-only
+        }
+
+Difference Between ref, out, and in:
+    |--------------------------------------------------------------------------------------------------------------------|
+    |    Keyword	|   Must Initialize Before Passing	|   Can Modify Inside Method	|       Usage Purpose            |
+    |--------------------------------------------------------------------------------------------------------------------|
+    |    ref	    |            ✅ Yes                 |           	✅ Yes	         |      Two-way communication     |
+    |--------------------------------------------------------------------------------------------------------------------|
+    |    out	    |            ❌ No	               |            ✅ Yes	         |     Output from the method     |
+    |--------------------------------------------------------------------------------------------------------------------|
+    |    in	        |            ✅ Yes	               |            ❌ No	         |  Read-only pass by reference   |
+    |--------------------------------------------------------------------------------------------------------------------|
+
+variable length of argument
+----------------------------------
+    C# allows you to pass a variable number of arguments to a method using the params keyword.
+    To pass a comma-separated list of arguments (or an array) of the same type to a method.
+    Syntax:
+        void PrintNames(params string[] names)
+        {
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+        }
+    Rules:
+    Only one params parameter is allowed per method.
+    It must be the last parameter in the method signature.
+    Can be empty (zero arguments).
+
+param keyword
+------------------
+    The **params** keyword in C# allows you to pass a variable number of arguments to a method. It simplifies the process of sending multiple parameters of the same type without manually creating an array.
+    Syntax:
+        returnType MethodName(params datatype[] parameterName)
+
+    Important Points:
+    Only one params parameter allowed per method.
+    It must be the last parameter.
+    It can take zero or more arguments.    
+
+Method returning array
+-------------------------
+    In C#, a method can return an array just like it can return a single value. You simply define the return type as an array using square brackets [].
+    Syntax:
+        returnType[] MethodName()
+         
+Default Argument
+------------------
+    In C#, you can specify a default value for a method parameter. This is useful when you
+    want to provide a default value for a parameter that is not always required.
+    In C#, default arguments allow you to assign default values to method parameters. This means that if the caller doesn’t provide a value for that parameter, the default value is used.
+    Syntax:
+        returnType MethodName(type param1 = defaultValue1, type param2 = defaultValue2)
+    Rules for Default Arguments:
+        Default parameters must be at the end of the parameter list.
+        You can have multiple default arguments.
+        Cannot use ref or out with default parameters.
+
+Named parameter
+------------------
+    Named parameters in C# allow you to specify arguments by name rather than just position when calling a method. This improves code readability and lets you skip certain parameters if they have default values.
+    Syntax:
+        MethodName(paramName: value);
+    Benefits:
+        Improved readability
+        No need to remember the order of parameters
+        Useful when used with default parameters
+
+Method overloading
+---------------------
+    Method overloading in C# allows you to define multiple methods with the same name but different parameters (type, number, or order). It helps increase flexibility and code readability.
+    Why use Method Overloading?
+        To perform similar actions in different ways.
+        To improve code clarity and reusability.
+
+    Rules of Overloading:
+        You can overload a method by changing:
+            Number of parameters
+            Type of parameters
+            Order of parameters
+            ❌ You cannot overload a method only by return type
+    
+    Notes:
+        Overloading works at compile-time (also called compile-time polymorphism).
+        Can be used in both regular methods and constructors.
+
+    public class Calculator
+    {
+        // Overload 1 - No parameters
+        public void Add()
+        {
+            Console.WriteLine("No values to add.");
+        }
+
+        // Overload 2 - Two integers
+        public void Add(int a, int b)
+        {
+            Console.WriteLine("Sum (int): " + (a + b));
+        }
+
+        // Overload 3 - Two floats
+        public void Add(float a, float b)
+        {
+            Console.WriteLine("Sum (float): " + (a + b));
+        }
+
+        // Overload 4 - Three integers
+        public void Add(int a, int b, int c)
+        {
+            Console.WriteLine("Sum (3 ints): " + (a + b + c));
+        }
+    }
+
+
+Polymorphism 
+---------------------
+    Polymorphism is one of the four pillars of Object-Oriented Programming (OOP) — it means "many forms". It allows objects to be treated as instances of their parent class while still behaving according to their actual type.
+    Types of Polymorphism in C#
+        Compile-time Polymorphism (Static Binding)
+        Run-time Polymorphism (Dynamic Binding)
+    1. Compile-Time Polymorphism
+        Achieved by:
+            Method Overloading
+            Operator Overloading
+
+    Example: Method Overloading
+        class Calculator
+        {
+            public int Add(int a, int b) => a + b;
+            public float Add(float a, float b) => a + b;
+        }
+            Compiler chooses the method based on arguments at compile time.
+
+    2. Run-Time Polymorphism
+        Achieved by:
+            Method Overriding using virtual and override keywords
+    Example:
+        class Animal
+        {
+            public virtual void Speak()
+            {
+                Console.WriteLine("Animal speaks");
+            }
+        }
+        class Dog : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("Dog barks");
+            }
+        }
+
+    Why Polymorphism?
+        Reduces code duplication
+        Supports extensibility
+        Promotes flexibility and reusability
+
+Inheritance 
+----------------
+    Inheritance is one of the core pillars of OOP (Object-Oriented Programming). It allows a class (child/derived class) to acquire the properties and behaviors (methods) of another class (parent/base class).
+    Syntax:
+    class BaseClass
+    {
+        public void ShowMessage()
+        {
+            Console.WriteLine("Hello from Base Class");
+        }
+    }
+
+    class DerivedClass : BaseClass
+    {
+        public void Display()
+        {
+            Console.WriteLine("Hello from Derived Class");
+        }
+    }
+    Usage:
+    DerivedClass obj = new DerivedClass();
+    obj.ShowMessage();  // Inherited method
+    obj.Display();      // Own method
+
+    Types of Inheritance in C#:
+
+    |-------------------------------------------------------------------------------------------------------|
+    |    Keyword	    |           Example                     |       Supported in C#?                    |       
+    |-------------------------------------------------------------------------------------------------------|
+    |    Single	        |   One base, one derived               |            ✅ Yes	                       |      
+    |-------------------------------------------------------------------------------------------------------|
+    |    Multilevel	    |   Base → Derived1 → Derived2	        |            ✅ Yes	                       |     
+    |-------------------------------------------------------------------------------------------------------|
+    |    Hierarchical   |	One base → multiple derived         |            ✅ Yes	                       |          
+    |--------------------------------------------------------------------------------------------------------|
+    |    Multiple	    |   Multiple base classes	            |            ❌ No (Use Interfaces instead)  |         
+    |--------------------------------------------------------------------------------------------------------|
+    |    Hybrid	        |   Combination of above	            |            ✅ Yes (through interfaces)	   |      
+    |------------------------------------------------------------------------------------------------------- |   
+
+    Why Use Inheritance?
+        Code reusability
+        Extensibility
+        Clear class hierarchy
+        Easier maintenance
+
+    Access Modifiers & Inheritance
+    |--------------------------|----------------------------------------------|
+    |    Modifier	           |   Accessible in Derived Class?               |
+    |--------------------------|----------------------------------------------|
+    |    public	               |       ✅ Yes                                 |
+    |--------------------------|----------------------------------------------|
+    |    protected	           |       ✅ Yes                                 |
+    |--------------------------|----------------------------------------------|
+    |    private	           |       ❌ No                                  |
+    |--------------------------|----------------------------------------------|
+    |    internal	           |       ✅ Yes (same assembly)                 |
+    |--------------------------|----------------------------------------------|
+    |    protected internal	   |       ✅ Yes (same assembly or derived)      |
+    |--------------------------------------------------------------------------|
+
+    Example:
+        class Vehicle
+        {
+            public void Start() => Console.WriteLine("Starting vehicle");
+        }
+
+        class Car : Vehicle
+        {
+            public void Drive() => Console.WriteLine("Driving car");
+        }
+
+
+Notes:
+    C# doesn't support multiple inheritance with classes, but it does with interfaces.
+    Use base keyword to access base class members:
+    base.Start();
+
+getter and setter
+-------------------
+    Getter and Setter are special methods used to access and update the value of a private field in a class. C# simplifies this with properties.
+    Syntax:
+    class Person
+    {
+        private string name;  // field
+
+        public string Name    // property
+        {
+            get { return name; }
+            set { name = value; }
+        }
+    }
+
+    Usage:
+        Person p = new Person();
+        p.Name = "John";        // setter
+        Console.WriteLine(p.Name); // getter
+
+    Auto-Implemented Properties:
+        When you don’t need custom logic inside getter or setter:
+        public class Student
+        {
+            public string Name { get; set; }
+        }
+
+    Read-Only Property:
+        public string Name { get; private set; }
+
+    Write-Only Property:
+        private string _password;
+        public string Password
+        {
+            set { _password = value; }  // only setter
+        }
+
+    Benefits of Using Properties:
+        Encapsulation (data hiding)
+        Input validation
+        Cleaner syntax than get/set methods
+        Access control (public get, private set)
+
+    get 
+    {
+        console.WriteLine(" ");
+        return salary;
+    }
+    set 
+    {
+        salary = value; // value is a keyword here 
+        Console.WriteLine(" ");
+    }
+ 
+
+Senario: to set the password
+write-only property could be used to set a password on a User object, Since passwords are usually stored in hashed form, there is (and should be) no way to retrieve 
+
+
+Inheritance and access modifier
+-------------------------------------
+    Key Points:
+        protected is commonly used in base class to allow access from child classes.
+        You cannot inherit private members, but they still exist in the memory layout.
+        Use public or protected to make base class members available to derived classes.
+
+Access Modifiers with Inheritance
+|--------------------------------------------------------------------------------------------------------------------------------|   
+|   Modifier            |	Accessible in Same Class	Accessible in Derived Class	              |  Accessible Outside Assembly |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   public	            |        ✅	                                ✅	                       |             ✅               |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   private	            |        ✅	                                ❌	                       |             ❌               |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   protected	        |        ✅	                                ✅	                       |             ❌               |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   internal	        |        ✅	                       ✅ (same assembly only)	           |     ❌ (outside assembly)    |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   protected internal	|        ✅	            ✅ (same or derived class in same assembly)	   |         ✅ (if derived)      |
+|--------------------------------------------------------------------------------------------------------------------------------|
+|   private protected	|        ✅	            ✅ (only within derived class in same assembly) |	               ❌         |
+|--------------------------------------------------------------------------------------------------------------------------------|   
+
+Access modifier and Assembly
+-------------------------------------
+    In C#, access modifiers define the visibility of classes, methods, and other members within or across assemblies.
+
+    An assembly is a compiled code library (DLL or EXE), which can be used in applications.
+
+    Explanation
+        public: Accessible anywhere.
+        private: Only within the class.
+        protected: In the class and derived classes (even across assemblies).
+        internal: Only within the same assembly.
+        protected internal: Accessible within same assembly and also in derived classes in other assemblies.
+        private protected: Accessible only in the same assembly and derived classes within that assembly.
+        Summary
+            Use internal for elements that should only be used within your library/assembly.
+            Use protected for inheritance-focused access.
+            Use public for global access.
+            Combine protected internal or private protected for fine-grained control.
+
+can i print object directly
+------------------------------
+    Yes, you can print an object directly in C#, but what gets printed depends on how the class implements the ToString() method.
+    Example 1: Default behavior
+
+    class Person { }
+    Person p = new Person();
+    Console.WriteLine(p);
+
+    Example 2: Override ToString()
+    class Person
+    {
+        public string Name { get; set; }
+        public override string ToString()
+        {
+            return $"Person Name: {Name}";
+        }
+    }
+
+    Person p = new Person { Name = "John" };
+    Console.WriteLine(p);
+
+    Summary
+        You can print an object directly using Console.WriteLine(object).
+        But for meaningful output, override ToString() in your class.
+
+static method and inheritance_method hiding
+-----------------------------------------------
+    Static Method and Inheritance in C#
+    📌 Key Points:
+        Static methods belong to the class and not to an instance.
+        They cannot be overridden.
+        But you can hide them using the new keyword.
+
+    Method Hiding in C#
+    📌 Key Points:
+        Achieved using the new keyword.
+        Hides base class method intentionally.
+        It’s not overriding — just shadowing.
+
+    Method Hiding vs Overriding
+        Feature	                    Overriding	            Hiding (new)
+        Keyword	                    override	                 new
+        Type of Method	        Instance method	            Static or instance
+        Run-time behavior	Yes (polymorphism)	         No (based on reference type)
+        Inheritance support	        Yes	                     Shadowing only
+
+     Important Notes:
+        You cannot override a static method.
+        You can hide a static method using new.
+
+static method and inheritance
+------------------------------------
+    Static Method and Inheritance in C#
+    📌 Key Concepts:
+        Static methods belong to the class, not to any specific object instance.
+        Static methods are not inherited in the traditional sense.
+        They can be hidden in a derived class using the new keyword.
+        Polymorphism (method overriding) does not apply to static methods.
+
+    Important Notes:
+        Feature	Behavior in Static Methods
+        Inheritance	Yes (accessible), but not overrideable
+        Overriding	❌ Not allowed
+        Method hiding with new	✅ Allowed
+        Polymorphism	❌ Not supported
+
+    Summary:
+        Static methods do not participate in polymorphism.
+        Use new to hide base class static methods.
+        They are accessed using the class name, not the object.
+
+string
+----------------
+    string in C#
+    📌 What is string?
+        string is a reference type in C# used to store sequences of characters.
+        It is an alias for System.String.
+        Immutable: Once a string is created, it cannot be modified.
+
+    Key Properties
+    Feature	                                    Description
+    Immutable                   	Any modification creates a new string object.
+    Concatenation               	Use +, +=, String.Concat(), or StringBuilder
+    Length	                        string.Length gives number of characters
+    Escape sequences	                Like \n, \t, \\ are supported
+    Verbatim strings	    @ symbol allows multi-line or path strings (e.g., @"C:\Users\Name")
+
+    Useful Methods
+    Method	            Description
+    ToUpper()	    Converts to uppercase
+    ToLower()	    Converts to lowercase
+    Substring()	    Extracts part of the string
+    Replace()	    Replaces characters or substrings
+    IndexOf()	    Finds position of character/string
+    Split()	        Breaks string into array
+    Trim()	        Removes leading/trailing spaces
+
+    Why strings are immutable?
+        Ensures thread safety
+        Supports string interning to save memory
+        Helps avoid bugs during reuse of string instances
+
+    Let me know if you want examples on:
+        StringBuilder
+        String comparison
+        String interpolation ($"Hello {name}")
+        etc.
+
+String with ==, equal, GetHashCode & ToString
+-----------------------------------------------
+    string in C# with ==, .Equals(), GetHashCode(), and ToString()
+
+    C# provides multiple ways to compare and work with strings. Let’s break them down:
+    ✅ == Operator
+        Compares the values of two strings, not references.
+        Overloaded in System.String to compare actual string content.
+
+    string a = "hello";
+    string b = "hello";
+    Console.WriteLine(a == b); // ✅ True
+
+    ✅ .Equals() Method
+        Also compares the content of strings.
+        Returns true if contents are same.
+
+    Console.WriteLine(a.Equals(b)); // ✅ True
+
+    You can also use:
+        Console.WriteLine(a.Equals(b, StringComparison.OrdinalIgnoreCase)); // Case-insensitive
+
+    ✅ GetHashCode()
+        Returns an integer hash code for the string.
+        Useful for hash-based collections like Dictionary, HashSet.
+
+    Console.WriteLine(a.GetHashCode()); // Same hash for same content
+        But note: Different strings can produce same hash due to collisions.
+    
+    ✅ ToString()
+
+        Already returns the string itself.
+
+    string x = "Prabhat";
+    Console.WriteLine(x.ToString()); // Output: Prabhat
+
+    It's useful when you're working with objects that override ToString().
+
+    object obj = "Sample";
+    Console.WriteLine(obj.ToString()); // Output: Sample
+
+    🧪 Full Example:
+
+    string str1 = "OpenAI";
+    string str2 = "OpenAI";
+    string str3 = new string("OpenAI".ToCharArray());
+
+    Console.WriteLine(str1 == str2);           // True
+    Console.WriteLine(str1 == str3);           // True
+    Console.WriteLine(str1.Equals(str3));      // True
+    Console.WriteLine(str1.GetHashCode());     // Same hash as str2 & str3
+    Console.WriteLine(str1.ToString());        // "OpenAI"
+
+    🧠 Summary:
+        Feature	Compares	                Case Sensitive  	    Notes
+        ==	                        Content	                    Yes	Preferred for string comparison
+        .Equals()	            Content	Yes (by default)	        Supports case-insensitive option
+        GetHashCode()	            Content → Hash	N/A	          Use in hashing operations
+        ToString()	            Converts object to string	    N/A	Returns the string itself
+
+    Let me know if you’d like to see this in a class context or with objects!
+
+String Interning in C#
+-------------------------------
+    String interning is a memory optimization technique used by the .NET CLR to store only one copy of each unique string literal in memory.
+    🔸 What is Interning?
+        When a string is interned, it is stored in the intern pool. If the same string value is created again, instead of allocating new memory, it reuses the one from the pool.
+
+    ✅ Benefits:
+        Saves memory
+        Speeds up comparison (reference-based instead of value-based)
+
+    🔸 How to Check If a String Is Interned
+
+    string s1 = "hello";
+    string s2 = "hello";
+    Console.WriteLine(object.ReferenceEquals(s1, s2)); // ✅ True (same reference)
+
+    Even though you wrote "hello" twice, only one copy exists in the intern pool.
+    🔸 Using String.IsInterned() Method
+
+    Returns the reference of interned string if it's present; otherwise returns null.
+
+    string s = new string("openai".ToCharArray()); // Not interned
+    string interned = string.IsInterned(s);
+    Console.WriteLine(interned == null ? "Not interned" : "Interned");
+
+    🔸 Using String.Intern() Method
+
+    You can manually intern a string:
+        string s1 = new string("chatgpt".ToCharArray()); // New object
+        string s2 = string.Intern(s1); // Interns it manually
+
+    Console.WriteLine(object.ReferenceEquals(s1, s2)); // False
+
+    After interning, any same value string uses the same reference.
+    🧠 Summary:
+    Method	                                Description
+    String.Intern(str)	        Forces string into intern pool
+    String.IsInterned(str)	    Checks if string is already interned
+    Interning Happens	        Automatically for string literals at compile-time
+
+    Would you like an example using classes or memory analysis with GetHashCode() too?
+
+
+

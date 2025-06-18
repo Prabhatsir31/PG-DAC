@@ -1,0 +1,224 @@
+.NET
+--------
+
+DAY-16 
+----------
+
+Rest API 
+--------------
+
+🌐 What is a REST API?
+
+REST stands for Representational State Transfer.
+A REST API is a way for applications to communicate with each other using the HTTP protocol, following a set of architectural rules.
+
+It is commonly used to create web services that let a client (like a browser or mobile app) interact with a server (where your data is stored).
+🧠 Core Concepts of REST
+1. Client-Server Architecture
+
+The client sends requests, and the server sends responses. They are independent – the client doesn’t need to know how the server works, and vice versa.
+2. Stateless
+
+Each API call must contain all the information needed. The server does not store any session between requests.
+3. Resources
+
+Data is treated as resources (like Students, Books, Products). Each resource is accessed via a unique URI.
+
+Example URIs:
+
+GET    /api/students          → Get all students
+GET    /api/students/1        → Get student with ID = 1
+POST   /api/students          → Add a new student
+PUT    /api/students/1        → Update student with ID = 1
+DELETE /api/students/1        → Delete student with ID = 1
+
+4. HTTP Methods (Verbs)
+Method	Action	Description
+GET	Read	Fetch a resource
+POST	Create	Add a new resource
+PUT	Update	Modify a resource
+DELETE	Remove	Delete a resource
+5. Standard Status Codes
+Code	Meaning
+200	OK – Request successful
+201	Created – New resource
+400	Bad Request – Invalid data
+404	Not Found – No such data
+500	Internal Server Error
+6. Data Format
+
+Most REST APIs use JSON (JavaScript Object Notation) to send and receive data.
+
+{
+  "id": 1,
+  "name": "Alice",
+  "course": "C#"
+}
+
+💻 REST API in C# ASP.NET Core (Example)
+✅ Model – Student.cs
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Course { get; set; }
+}
+
+✅ Controller – StudentController.cs
+
+[ApiController]
+[Route("api/[controller]")]
+public class StudentController : ControllerBase
+{
+    static List<Student> students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "John", Course = "Math" }
+    };
+
+    [HttpGet]
+    public IActionResult GetAll() => Ok(students);
+
+    [HttpGet("{id}")]
+    public IActionResult GetById(int id)
+    {
+        var student = students.FirstOrDefault(x => x.Id == id);
+        if (student == null) return NotFound();
+        return Ok(student);
+    }
+
+    [HttpPost]
+    public IActionResult Create(Student s)
+    {
+        s.Id = students.Count + 1;
+        students.Add(s);
+        return CreatedAtAction(nameof(GetById), new { id = s.Id }, s);
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Student updated)
+    {
+        var student = students.FirstOrDefault(x => x.Id == id);
+        if (student == null) return NotFound();
+
+        student.Name = updated.Name;
+        student.Course = updated.Course;
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        var student = students.FirstOrDefault(x => x.Id == id);
+        if (student == null) return NotFound();
+
+        students.Remove(student);
+        return NoContent();
+    }
+}
+
+🔧 Tools to Test REST APIs
+
+    ✅ Postman – API testing tool
+
+    ✅ Swagger – API documentation
+
+    ✅ Curl – command-line tool
+
+🧾 Benefits of REST API
+
+    🌍 Platform-independent
+
+    ⚡ Lightweight and fast
+
+    🔁 Easy to test and debug
+
+    📱 Works with mobile, web, and desktop apps
+
+    🛠 Easily scalable and maintainable
+
+🎓 Summary
+
+    REST is a style of web API design.
+
+    It uses HTTP methods (GET, POST, PUT, DELETE) to interact with data.
+
+    ASP.NET Core is perfect for building REST APIs using [ApiController].
+
+    REST APIs return JSON responses and follow a resource-based structure.
+
+    Comparison between MVC and REST API 
+    ---------------------------------------
+
+🔍 Comparison: MVC vs REST API
+Feature / Aspect	            ASP.NET MVC	ASP.NET Web API (REST API)
+Purpose	Build dynamic web applications with views (HTML/CSS/JS)	Expose data and services to clients using HTTP (JSON/XML)
+Return Type	Returns Views (Razor HTML Pages)	Returns Data (usually JSON)
+Use Case	Used for web applications (UI)	Used for mobile apps, web apps, SPA, third-party apps
+Controller Base Class	Controller	ControllerBase or ApiController
+Routing	Controller/Action pattern (e.g., /Home/Index)	Route("api/[controller]") (e.g., /api/products)
+Data Exchange Format	HTML, ViewModel	JSON (default), XML
+View Support	Yes (.cshtml)	No (API doesn’t return HTML views)
+Built-in Features	TempData, ViewBag, Razor views, Model Binding	Attribute Routing, Content Negotiation
+Best For	Full-stack web development (UI + backend logic)	Backend services and microservices
+Client Type	Browser (HTML pages rendered on server)	Any client (browser, mobile app, JS, Postman, etc.)
+State	Typically stateful (can store session, cookies)	Stateless (each request must have all necessary info)
+
+    🧠 Real-Life Analogy
+Context	ASP.NET MVC	REST API
+You’re building	A website for users to log in, view forms, and see HTML pages	A service for mobile apps or frontend apps to get/post data
+UI Included?	✅ Yes (e.g., login page, dashboard)	❌ No (just returns data to display elsewhere)
+Output Example	A web page	JSON response
+✅ Example
+
+MVC Controller:
+
+public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        return View(); // Returns an HTML page
+    }
+}
+
+Web API Controller:
+
+[ApiController]
+[Route("api/[controller]")]
+public class ProductController : ControllerBase
+{
+    [HttpGet]
+    public IActionResult GetProducts()
+    {
+        return Ok(productList); // Returns JSON data
+    }
+}
+
+🏁 When to Use What?
+If You Need...	Use
+Full web app with frontend UI	ASP.NET MVC
+Backend service for data access	REST API
+To build SPAs (React/Angular apps)	REST API
+To render Razor views with models	ASP.NET MVC
+
+
+
+Assignment
+------------------
+
+Type: int, double, bool, float, datetime, etc
+Min: min(number)
+Max: max(number)
+Range: range(10. 15)
+Alpha: alpha
+MinLength: minlength(5)
+MaxLength: maxlength(10)
+Length: length(10)
+Required: required
+Regex: regex(expression)
+
+
+
+Q1) MVC ==> create, get, Post in MVC 
+Q2) RESTAPI ==> GetbyId  ==> 404 Not Found and 200 success 
+

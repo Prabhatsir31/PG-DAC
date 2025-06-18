@@ -1,0 +1,755 @@
+.NET
+--------
+
+DAY-6 
+-----------
+
+Q1) Difference between virtual and abstract method
+    |--------------------------------------------------------------------------|
+    |            Virtual	           |                    Abstract           |
+    |--------------------------------------------------------------------------|
+    |    Has a base implementation	   |     No implementation in base class   |
+    |--------------------------------------------------------------------------|
+    |    Can be overridden	           |         Must be overridden            |
+    |--------------------------------------------------------------------------|
+    |    Optional to override	       |       Mandatory to override           |
+    |--------------------------------------------------------------------------|
+
+Q2) When to use sealed keyword for method
+    Use sealed to prevent further overriding of a method that is already overridden in a derived class.
+        public sealed override void Display() { }
+
+Q3) Difference between protected and protected internal
+                        protected	                                         protected internal
+    Accessible only within class and its derived classes	Accessible in same assembly or derived class in any assembly
+
+Q4) Difference between readonly and readonly property
+    readonly field: Can only be assigned during declaration or constructor.
+    readonly property: Only has a getter; value can't be modified externally.
+
+Q5) Why to throw exception in your application
+    To signal runtime errors (e.g., invalid input, database failure).
+    Helps in maintaining app integrity and better debugging.
+
+Q6) How to handle exceptions
+    Use try-catch-finally block:
+    try {
+        // Code that may throw
+    } catch (Exception ex) {
+        Console.WriteLine(ex.Message);
+    } finally {
+        // Cleanup code
+    }
+
+Q7) When you print object reference what happens
+    ToString() method is called.
+    If not overridden, prints the fully qualified type name.
+
+Q8) Which virtual methods observed in .NET API
+    Object.ToString()
+    Equals()
+    GetHashCode()
+    Stream.Read(), Stream.Write()
+    Control.OnPaint() (WinForms/WPF)
+
+Q9) Which classes are sealed and why
+    System.String, System.Math, System.DateTime
+    Sealed to prevent inheritance, for security, performance, or consistency.
+
+Q10) Which methods you can override
+    Only methods marked as virtual, abstract, or override in base class.
+
+Q11) How to achieve polymorphism
+    Compile-time (Static): Method Overloading
+    Runtime (Dynamic): Method Overriding via virtual + override
+
+Q12) Why Inheritance
+    Code reusability
+    Logical hierarchy
+    Centralized maintenance
+
+Q13) Have you needed inheritance in your project?
+    Yes, for example:
+    Created a base User class with Customer and Admin derived classes for shared behavior but role-specific logic.
+
+Q14) What is Indexer
+    Allows a class to be accessed like an array
+    public string this[int index] {
+        get { return data[index]; }
+        set { data[index] = value; }
+    }
+
+Q15) What is Operator Overloading
+    Customize behavior of operators (+, -, ==) for user-defined types:
+    public static Complex operator +(Complex c1, Complex c2)
+
+Q16) What is Delegate
+    Type-safe function pointer.
+    Used for callback methods, event handling.
+
+    delegate void Print(string msg);
+    Print p = Console.WriteLine;
+    p("Hello");
+
+
+Event
+-------
+    An event is a way for a class to notify other classes or objects when something happens.
+    It follows the publisher-subscriber model, where:
+        Publisher = raises the event.
+        Subscriber = listens to the event and responds when it's raised.
+
+    Real-life Example:
+        Imagine a bell at a school:
+            When it's rung (event is raised), students respond (event handler).
+            The bell is the publisher, and students are subscribers.
+
+    Key Components of Events in C#:
+        Delegate – Defines the method signature for event handlers.
+        Event – Declared using the event keyword and based on a delegate.
+        Event Handler (Subscriber) – A method that gets called when the event is raised.
+
+    Simple Syntax:
+        Step 1: Define a delegate
+            public delegate void Notify(); // No parameters, returns void
+
+    Step 2: Declare an event using the delegate
+        public class Process {
+            public event Notify ProcessCompleted;  // Event
+
+            public void StartProcess() {
+                Console.WriteLine("Process Started...");
+                Thread.Sleep(2000);  // Simulate work
+                Console.WriteLine("Process Completed!");
+
+                // Raise the event
+                if (ProcessCompleted != null)
+                    ProcessCompleted();  
+            }
+        }
+
+    Step 3: Create event handler (subscriber)
+        class Program {
+            static void Main() {
+                Process p = new Process();
+
+                // Subscribe to the event
+                p.ProcessCompleted += ShowMessage;
+
+                p.StartProcess();
+            }
+
+            static void ShowMessage() {
+                Console.WriteLine("Event Received: Process is complete.");
+            }
+        }
+
+    Built-in Delegate: EventHandler (Preferred for events)
+        Instead of creating your own delegate, use EventHandler:
+            public event EventHandler ProcessCompleted;
+        Or with custom event data:
+            public event EventHandler<MyEventArgs> ProcessCompleted;
+
+    Where MyEventArgs inherits from EventArgs.
+    ⚠️ Why Use Events?
+        Loose coupling between sender and receiver.
+        Extensible design (you can plug in new behaviors by subscribing to events).
+        Common in UI frameworks (e.g., Button.Click, MouseOver).
+
+    🧠 Notes:
+        Events can only be raised from within the class that declares them.
+        Events can have multiple subscribers (multicast).
+        Always check for null before raising: if (MyEvent != null) MyEvent();
+
+    📌 Summary Table
+    |-----------------------------------------------------------------------------------|
+    |    Concept	     |                   Description                                |
+    |-----------------------------------------------------------------------------------|
+    |    delegate	     |       Defines the event method signature                     |
+    |-----------------------------------------------------------------------------------|
+    |    event	         |       A variable of delegate type, used to raise events      |
+    |-----------------------------------------------------------------------------------|
+    |    +=	             |       Subscribe to event                                     |
+    |-----------------------------------------------------------------------------------|
+    |    -=	             |       Unsubscribe from event                                 |
+    |-----------------------------------------------------------------------------------|
+    |    EventHandler	 |       Built-in delegate for standard events                  |
+    |-----------------------------------------------------------------------------------|
+    |    EventArgs	     |       Base class to pass event data                          |
+    |-----------------------------------------------------------------------------------|
+
+    Some events pointing the method dedinition 
+
+    evt.SomeEvent += new MyEventHandler(handle);
+
+
+instance member
+----------------
+    Instance members are members of a class that belong to an object (instance) of that class. Each object gets its own copy of these members.
+    What can be instance members?
+        Fields (variables)
+        Properties
+        Methods
+        Events
+        Indexers
+        Constructors
+    class Person
+    {
+        // Instance field
+        public string name;
+
+        // Instance method
+        public void Greet()
+        {
+            Console.WriteLine("Hello, " + name);
+        }
+    }
+
+    Difference from Static Members:
+    Feature         	    Instance Member	                      Static Member
+    Belongs to	                Object	                             Class
+    Accessed via	    Object (e.g., obj.Method())	        Class name (e.g., Class.Method())
+    Memory Allocation   	Per object	                        Only once for the class
+
+
+Anonymous method
+--------------------
+    An anonymous method is a method without a name, defined using the delegate keyword. It’s mostly used for short inline methods, especially when working with delegates or events.
+    Syntax:
+
+    delegate(parameters)
+    {
+        // method body
+    };
+    When to Use:
+
+        When a method body is small.
+
+        When the method is used only once or temporarily.
+
+        In event handling or delegate passing.
+
+    Anonymous method is a method that is defined without a name. It is used to handle events. It
+    is a shorthand for a small method that is used only once.
+
+
+Q) print your name using delegate mathod
+
+    delegate void PrintNameDelegate(string name);
+    public class Program
+    {
+        public static void Main()
+        {
+            PrintNameDelegate printName = new PrintNameDelegate(PrintName);
+            printName("John");
+            }
+            public static void PrintName(string name)
+            {
+                Console.WriteLine(name);
+            }
+        }
+
+    Output: John
+
+    
+
+Q) using anonymous print ur name in c#
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace ConsoleApplication1
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Action action = () => Console.WriteLine("My Name is Suresh");
+                action();
+            }
+        }
+    }
+
+
+
+Q) Para argument to an anonymous method Write anon method which return factorial and sqare of the numbet.Use anonymous method and element to find the square of the number 
+
+    using system;
+    using system.collections.generic;
+    using system.linq;
+    using system.text;
+    using system.threading.tasks;
+    using System.Threading.Tasks;
+    namespace ConsoleApplication1
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Func<int, int> fact = delegate (int num)
+                {
+                    int result = 1;
+                    for (int i = 1; i <= num; i++)
+                    {
+                        result = result * i;
+                    }
+                    return result;
+                };
+                Func<int, int> square = delegate (int num)
+                {
+                    return num * num;
+                };
+            Console.WriteLine(fact(5));
+            Console.WriteLine(square(5));
+            }
+        }
+    }
+
+
+Lambda Operator
+-----------------------
+    In C#, the lambda operator => is used to define lambda expressions, which are anonymous methods (methods without a name) written in a concise way.
+
+    Syntax:
+        (parameters) => expression
+
+    Or with a block of code:
+        (parameters) => {
+            // statements
+            return value;
+        }
+
+    Example 1: Simple Expression
+        Func<int, int> square = x => x * x;
+        Console.WriteLine(sqare(5));
+
+Lambda and multicast
+----------------------
+    Lambda Expression
+        A lambda expression is a concise way to represent an anonymous method using the => syntax.
+    Syntax:
+        (parameters) => expression_or_block
+
+    Example:
+        Func<int, int> square = x => x * x;
+        Console.WriteLine(square(5));  // Output: 25
+
+    Multicast Delegate
+        A multicast delegate is a delegate that can hold references to more than one method. When invoked, it calls all methods in the invocation list in order.
+
+    Works only with void return type delegates.
+        Uses += to attach methods.
+
+    Example:
+
+        using System;
+
+        delegate void Notify();  // Must return void
+
+        class Program
+        {
+            static void Email()
+            {
+                Console.WriteLine("Email sent.");
+            }
+            static void SMS()
+            {
+                Console.WriteLine("SMS sent.");
+            }
+            static void Main()
+            {
+                Notify notify = () => Console.WriteLine("Push Notification sent.");
+                notify += Email;
+                notify += SMS;
+
+                notify();  // Output:
+                           // Push Notification sent.
+                           // Email sent.
+                           // SMS sent.
+            }
+        }
+
+    Combining Both
+        You can combine lambda expressions with multicast delegates:
+        Notify notify = () => Console.WriteLine("Logged to DB");
+        notify += () => Console.WriteLine("Alert sent to Admin");
+        notify += () => Console.WriteLine("Audit entry created");
+
+        notify();
+
+    Important Notes:
+        Multicast delegates ignore return values, only the last one is returned if not void.
+        Exception in one method can stop execution of the next — best practice: handle exceptions individually.
+
+Array
+---------
+    What is an Array?
+        An array in C# is a fixed-size collection of elements of the same type, stored in contiguous memory. Each element is accessed using an index.
+
+        Declaration and Initialization
+        1. Declaration Only:
+            int[] numbers;
+        2. Declaration with Size:
+            int[] numbers = new int[5]; // Initializes with default value 0
+        3. Declaration with Values:
+            int[] numbers = { 10, 20, 30, 40, 50 };
+
+        Accessing Array Elements
+            Console.WriteLine(numbers[0]); // Output: 10
+
+            numbers[2] = 100;
+            Console.WriteLine(numbers[2]); // Output: 100
+
+     Types of Arrays
+        1. Single-Dimensional Array
+            string[] names = new string[3] { "Alice", "Bob", "Charlie" };
+
+        2. Multi-Dimensional Array (Rectangular)
+            int[,] matrix = new int[2, 3] { { 1, 2, 3 }, { 4, 5, 6 } };
+            Console.WriteLine(matrix[1, 2]); // Output: 6
+
+        3. Jagged Array (Array of Arrays)
+            int[][] jagged = new int[2][];
+            jagged[0] = new int[] { 1, 2 };
+            jagged[1] = new int[] { 3, 4, 5 };
+            Console.WriteLine(jagged[1][2]); // Output: 5
+
+    Common Properties & Methods
+        |-------------------------------------------------------------------|
+        |   Property/Method	        |                Description            |
+        |-------------------------------------------------------------------|
+        |   Length	                |        Total number of elements       |
+        |-------------------------------------------------------------------|
+        |   Rank	                |          Number of dimensions         |
+        |-------------------------------------------------------------------|
+        |   GetLength(dim)	        |      Length of specified dimension    |
+        |-------------------------------------------------------------------|
+        |   IndexOf(array, val)     |        	Find index of value         |
+        |-------------------------------------------------------------------|
+        |   Sort(array)	            |                Sorts array            |
+        |-------------------------------------------------------------------|
+        |   Reverse(array)	        |              Reverses array           |
+        |-------------------------------------------------------------------|
+
+
+
+Q) Accept 5 element in an array and store all eve element at the beginning
+    Ex:
+    Input: 5,8,9,2,4
+    Output: 8,2,4,5,9 
+
+
+Q) accept 5 element in an array having same value print how many data are unique
+
+
+Array Methods
+----------------
+    1. Length
+        Returns the total number of elements in all dimensions.
+            int[] arr = { 1, 2, 3 };
+            Console.WriteLine(arr.Length); // Output: 3
+
+    2. Rank
+        Returns the number of dimensions (1D, 2D, etc.)
+            int[,] arr2D = new int[3, 4];
+            Console.WriteLine(arr2D.Rank); // Output: 2
+
+    3. GetLength(int dimension)
+        Returns the size of the specified dimension.
+            int[,] arr2D = new int[3, 4];
+            Console.WriteLine(arr2D.GetLength(0)); // Rows = 3
+            Console.WriteLine(arr2D.GetLength(1)); // Columns = 4
+
+    4. IndexOf(Array, value)
+        Returns the index of the first occurrence.
+            int[] arr = { 10, 20, 30 };
+            int index = Array.IndexOf(arr, 20); // Output: 1
+
+    5. LastIndexOf(Array, value)
+        Finds the last occurrence of a value.
+            int[] arr = { 10, 20, 30, 20 };
+            int index = Array.LastIndexOf(arr, 20); // Output: 3
+
+    6. Sort(Array)
+        Sorts the array in ascending order.
+            int[] arr = { 3, 1, 4 };
+            Array.Sort(arr); // arr = [1, 3, 4]
+
+    7. Reverse(Array)
+        Reverses the order of elements.
+            int[] arr = { 1, 2, 3 };
+            Array.Reverse(arr); // arr = [3, 2, 1]
+
+    8. Copy(sourceArray, destArray, length)
+        Copies elements from one array to another.
+            int[] src = { 1, 2, 3 };
+            int[] dest = new int[3];
+            Array.Copy(src, dest, 3);
+
+    9. Clear(Array, index, length)
+        Clears (sets to default) a range of elements.
+            int[] arr = { 1, 2, 3 };
+            Array.Clear(arr, 0, 2); // arr = [0, 0, 3]
+
+    10. Resize<T>(ref T[] array, int newSize)
+        Changes the size of the array.
+            int[] arr = { 1, 2, 3 };
+            Array.Resize(ref arr, 5); // New size = 5, last 2 elements = 0
+
+    11. Exists(array, Predicate)
+        Checks if any element satisfies a condition.
+            bool exists = Array.Exists(arr, x => x > 2); // true
+
+    12. Find(array, Predicate)
+        Returns the first match.
+            int result = Array.Find(arr, x => x > 2); // Output: 3 (if 3 exists)
+
+    13. FindAll(array, Predicate)
+        Returns all elements that match the condition.
+            int[] results = Array.FindAll(arr, x => x % 2 == 0); // Even numbers
+
+    14. TrueForAll(array, Predicate)
+        Returns true if all elements match the condition.
+            bool allEven = Array.TrueForAll(arr, x => x % 2 == 0);
+
+ 
+Partial Classes and Methods
+-----------------------------
+    A partial class allows a class to be split into multiple files. All the parts are combined into one class when the program is compiled.
+        Use Cases:
+            Useful in large projects.
+            Often used in auto-generated code (e.g., Windows Forms, Entity Framework).
+            Helps in collaboration among multiple developers.
+
+        A partial method is a method defined in a partial class that may or may not be implemented in another part of the class.
+        Rules:
+            Must return void.
+            Must be private (implicitly).
+            Must be declared inside a partial class.
+            No access modifier is allowed.
+            If not implemented, the compiler removes its declaration at compile time (no error).
+
+    Summary Table:
+    |-------------------|-------------------------------|-------------------------------------|
+    |    Feature	    |       Partial Class	        |           Partial Method            |
+    |-------------------|-------------------------------|-------------------------------------|
+    |    Purpose	    |   Split class across files	|          Split method logic         |
+    |-------------------|-------------------------------|-------------------------------------|
+    |    Return Type	|            Any	            |             Must be void            |
+    |-------------------|-------------------------------|-------------------------------------|
+    |    Modifiers	    |   Any access modifier	        |     No access modifier (private)    |
+    |-------------------|-------------------------------|-------------------------------------|
+    |    Compilation	|       All parts merged	    |      Removed if not implemented     |
+    |-------------------|-------------------------------|-------------------------------------|
+
+    Rules of Partial Class
+    ------------------------
+        1. A partial class can be defined in multiple files.
+        2. All partial classes must be in the same namespace.
+        3. All partial classes must have the same name.
+        4. A partial class can contain both public and private members.
+        5. A partial class can contain both static and instance members.
+        6. A partial class can contain both methods and properties.
+        7. A partial class can contain both events and indexers.
+        8. A partial class can contain both operators and constructors.
+        9. A partial class can contain both destructors and finalizers.
+        10. A partial class can contain both static and instance constructors.
+
+Dynamic and Object
+--------------------
+    Both dynamic and object can hold any type of data, but the way they behave at runtime and compile-time is very different.
+
+    object Type (Base of All Types)
+        Compile-time type checking is present.
+        Requires explicit casting to access members.
+        Best used when type isn’t known until runtime, but safety is still important.
+
+    object obj = "Hello";
+    Console.WriteLine(((string)obj).Length); // Need explicit cast
+
+
+    dynamic Type
+        No compile-time type checking.
+        All operations on dynamic are resolved at runtime.
+        If a member doesn’t exist → RuntimeBinderException.4
+
+        dynamic d = "Hello";
+    Console.WriteLine(d.Length); // No cast needed
+
+
+    Key Differences
+    |----------------------------|---------------------|-------------------------|
+    |    Feature	             |       object 	   |         dynamic         |
+    |----------------------------|---------------------|-------------------------|
+    |    Type Checking	         |    Compile-time	   |         Runtime         |
+    |----------------------------|---------------------|-------------------------|
+    |    Casting	Required	 |        Not          |         required        |
+    |----------------------------|---------------------|-------------------------|
+    |    IntelliSense Support    |      Limited	       |     Limited or none     |
+    |----------------------------|---------------------|-------------------------|
+    |    Performance	Faster	 |   Slightly slower   |     (runtime check)     |
+    |----------------------------|---------------------|-------------------------|
+    |    Error Detection	     |     Compile-time    |         Runtime         |
+    |----------------------------|---------------------|-------------------------|
+
+    Use Cases
+
+        Use object when:
+            You don’t know the type at compile-time but want type safety.
+
+        Use dynamic when:
+            Interacting with COM objects, Reflection, ExpandoObject, JSON, or external APIs where type info isn't available at compile time.
+
+
+
+?? and ??==
+---------------------
+    Let's break down the ?? (null-coalescing operator) and ??= (null-coalescing assignment operator) in C# — both are super useful when dealing with null values.
+
+    ?? - Null-Coalescing Operator
+
+        Returns the left-hand operand if it’s not null; otherwise, it returns the right-hand operand.
+
+    string name = null;
+    string result = name ?? "Guest";
+
+    Console.WriteLine(result); // Output: Guest
+
+    ✅ It's like saying:
+    “If name is null, use ‘Guest’ instead.”
+
+
+    ??= - Null-Coalescing Assignment Operator (C# 8.0+)
+
+        Assigns the right-hand value to the variable only if the variable is currently null.
+
+    string name = null;
+    name ??= "Guest";
+
+    Console.WriteLine(name); // Output: Guest
+
+    ✅ It's like saying:
+        “Assign ‘Guest’ to name only if name is currently null.”
+    🔄 Quick Comparison
+
+    |----------------|-------------------------------|----------------------------------|   
+    |   Operator	 |          Meaning	             |      Use Case Example            |
+    |----------------|-------------------------------|----------------------------------|
+    |   ??	         |   Returns fallback value	     |   var x = input ?? "default";    |
+    |----------------|-------------------------------|----------------------------------|
+    |   ??=	Assigns  |  fallback if value is null	 |     input ??= "default";         |
+    |----------------|-------------------------------|----------------------------------|
+
+File handling
+---------------
+    What is File Handling?
+        File handling in C# allows you to create, read, write, delete, and manipulate files and directories on disk. It’s part of the System.IO namespace.
+
+    Namespaces Involved
+        using System.IO;
+
+    Common Classes in File Handling
+    |-------------------|-------------------------------------------------------|
+    |    Class	        |               Description                             |
+    |-------------------|-------------------------------------------------------|
+    |    File	        |   Static helper class for file operations.            |
+    |-------------------|-------------------------------------------------------|
+    |    FileInfo	    |      Instance-based operations on files.              |
+    |-------------------|-------------------------------------------------------|
+    |    Directory	    |     Static helper class for directories.              |
+    |-------------------|-------------------------------------------------------|
+    |    DirectoryInfo	|     Instance-based directory operations.              |
+    |-------------------|-------------------------------------------------------|
+    |    StreamReader	|          For reading from files.                      |
+    |-------------------|-------------------------------------------------------|
+    |    StreamWriter	|            For writing to files.                      |
+    |-------------------|-------------------------------------------------------|
+    |    FileStream	    |    Low-level byte-level file operations.              |
+    |-------------------|-------------------------------------------------------|
+    
+    Basic Operations
+        ✅ Create a File
+            File.Create("test.txt").Close(); // Creates a file and closes the stream
+
+        ✅ Write Text to File
+            File.WriteAllText("test.txt", "Hello, C#!");
+
+        ✅ Append Text to Existing File
+            File.AppendAllText("test.txt", "\nNew line");
+
+        ✅ Read Text from File
+            string content = File.ReadAllText("test.txt");
+            Console.WriteLine(content);
+
+        Using StreamReader and StreamWriter
+            ✅ Writing
+                using (StreamWriter writer = new StreamWriter("file.txt"))
+                {
+                    writer.WriteLine("First line");
+                    writer.WriteLine("Second line");
+                }
+
+        ✅ Reading
+            using (StreamReader reader = new StreamReader("file.txt"))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+
+    Using FileStream (For Binary/File Operations)
+        ✅ Write with FileStream
+            using (FileStream fs = new FileStream("data.txt", FileMode.Create))
+            {
+                byte[] info = new UTF8Encoding(true).GetBytes("Hello Bytes!");
+                fs.Write(info, 0, info.Length);
+            }
+
+        ✅ Read with FileStream
+            using (FileStream fs = new FileStream("data.txt", FileMode.Open))
+            {
+                byte[] b = new byte[1024];
+                UTF8Encoding temp = new UTF8Encoding(true);
+                int readBytes = fs.Read(b, 0, b.Length);
+                Console.WriteLine(temp.GetString(b, 0, readBytes));
+            }
+
+    File & Directory Info
+        FileInfo fi = new FileInfo("test.txt");
+        Console.WriteLine(fi.FullName);
+        Console.WriteLine(fi.Length);
+        Console.WriteLine(fi.CreationTime);
+
+        DirectoryInfo di = new DirectoryInfo(@"C:\MyFolder");
+        foreach (var file in di.GetFiles())
+        {
+            Console.WriteLine(file.Name);
+        }
+
+        File/Directory Check & Delete
+            if (File.Exists("test.txt"))
+                File.Delete("test.txt");
+
+            if (Directory.Exists("MyFolder"))
+                Directory.Delete("MyFolder", true); // true = delete recursively
+
+        Exception Handling in File Operations
+            try
+            {
+                string data = File.ReadAllText("missing.txt");
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("File not found: " + ex.Message);
+            }
+
+    Best Practices
+        ✅ Use using statements to auto-close streams
+        ✅ Always handle exceptions (e.g., file not found, access denied)
+        ✅ Avoid hard-coded paths; use Path.Combine()
+        ✅ Validate input/output paths before reading or writing

@@ -1,0 +1,263 @@
+Here’s a one-line description for each of the commonly used keywords in C#:
+
+    abstract: Declares a class or method that cannot be instantiated or must be implemented by derived classes.
+
+    as: Performs a safe type conversion, returning null if the conversion fails.
+    
+    base: Refers to the base class of the current instance, allowing access to its members.
+    
+    bool: Represents a Boolean data type that can hold true or false values.
+    
+    break: Exits a loop or switch statement prematurely.
+    
+    byte: Represents an 8-bit unsigned integer data type.
+    
+    case: Defines a branch in a switch statement.
+    
+    catch: Handles exceptions thrown by try blocks.
+    
+    char: Represents a single 16-bit Unicode character.
+    
+    checked: Enables overflow checking for integral-type arithmetic operations.
+    
+    class: Declares a new class type.
+    
+    const: Declares a constant field or local variable that cannot be modified.
+    
+    continue: Skips the current iteration of a loop and proceeds to the next iteration.
+    
+    decimal: Represents a 128-bit precise decimal value, suitable for financial calculations.
+    
+    default: Specifies the default case in a switch statement or the default value of a type.
+    
+    delegate: Declares a type that represents references to methods with a specific parameter list and return type.
+    
+    do: Starts a do-while loop that executes at least once.
+    
+    double: Represents a double-precision 64-bit floating-point number.
+    
+    else: Specifies an alternative block of code to execute if the condition in an if statement is false.
+    
+    enum: Declares a set of named constants.
+    
+    event: Declares an event that can be triggered and handled.
+    
+    explicit: Defines a user-defined type conversion that requires a cast.
+    
+    extern: Declares a method that is implemented externally, typically in unmanaged code.
+    
+    false: Represents the Boolean value false.
+    
+    finally: Defines a block of code that executes after a try-catch block, regardless of whether an exception was thrown.
+    
+    fixed: Prevents the garbage collector from relocating a variable, typically used with pointers.
+    
+    float: Represents a single-precision 32-bit floating-point number.
+    
+    for: Initiates a for loop that iterates a specified number of times.
+    
+    foreach: Iterates over a collection or array.
+    
+    goto: Transfers control to a labeled statement within the same method.
+    
+    if: Executes a block of code if a specified condition is true.
+    
+    implicit: Defines a user-defined type conversion that does not require a cast.
+    
+    in: Specifies that a parameter is passed by reference but is read-only.
+    
+    int: Represents a 32-bit signed integer data type.
+    
+    interface: Declares a contract that classes or structs can implement.
+    
+    internal: Specifies that a member is accessible only within its own assembly.
+    
+    is: Checks if an object is compatible with a given type.
+    
+    lock: Acquires a mutual-exclusion lock for a specified object.
+        
+    long: Represents a 64-bit signed integer data type.
+    
+    namespace: Declares a scope that contains a set of related classes and other types.
+    
+    new: Creates instances of types or hides base class members.
+    
+    null: Represents a null reference, indicating that a variable does not point to any object.
+    
+    object: The base type from which all other types derive.
+    
+    operator: Declares a user-defined operator for a class or struct.
+    
+    out: Indicates that a parameter is passed by reference and must be assigned a value in the called method.
+    
+    override: Modifies a base class method in a derived class.
+    
+    params: Allows a method to accept a variable number of arguments.
+    
+    private: Restricts access to a member to the containing class only.
+    
+    protected: Allows access to a member from the containing class and derived classes.
+    
+    public: Makes a member accessible from any other code.
+    
+    readonly: Declares a field that can only be assigned during declaration or in a constructor.
+    
+    ref: Indicates that a parameter is passed by reference, allowing the method to modify its value.
+    
+    return: Exits a method and optionally returns a value.
+    
+    sbyte: Represents an 8-bit signed integer data type.
+    
+    sealed: Prevents a class from being inherited.
+    
+    ** short**: Represents a 16-bit signed integer data type.
+    
+    sizeof: Returns the size in bytes of a type.
+    
+    stackalloc: Allocates memory on the stack for an array.
+    
+    static: Declares a member that belongs to the type itself rather than to a specific object.
+    
+    string: Represents a sequence of characters.
+    
+    struct: Declares a value type that can encapsulate data and related functionality.
+    
+    switch: Executes one block of code among multiple options based on a variable's value.
+    
+    this: Refers to the current instance of a class or struct.
+    
+    throw: Raises an exception.
+    
+    true: Represents the Boolean value true.
+    
+    try: Defines a block of code to test for exceptions.
+    
+    typeof: Obtains the Type object for a type.
+    
+    uint: Represents a 32-bit unsigned integer data type.
+    
+    ulong: Represents a 64-bit unsigned integer data type.
+    
+    unchecked: Disables overflow checking for integral-type arithmetic operations.
+    
+    unsafe: Allows code that uses pointers and performs operations that are not type-safe.
+    
+    ushort: Represents a 16-bit unsigned integer data type.
+    
+    using: Declares a scope for which an object or resource will be used, ensuring proper disposal.
+    
+    virtual: Declares a method or property that can be overridden in a derived class.
+    
+    void: Specifies that a method does not return a value.
+    
+    volatile: Indicates that a field can be accessed by multiple threads and prevents compiler optimizations.
+    
+    while: Initiates a loop that continues as long as a specified condition is true.
+    
+    yield: Indicates that a method or property is an iterator, allowing it to return each element one at a time.
+    
+    async: Marks a method as asynchronous, allowing the use of the await keyword within it.
+    
+    await: Pauses the execution of an asynchronous method until the awaited task completes.
+    
+    dynamic: Declares a type that bypasses compile-time type checking, allowing for dynamic behavior.
+    
+    nameof: Returns the name of a variable, type, or member as a string.
+    
+    partial: Indicates that a class, struct, or interface can be defined in multiple files.
+    
+    readonly: Specifies that a field can only be assigned during declaration or in a constructor.
+    
+    async: Indicates that a method is asynchronous and can use the await keyword.
+    
+    await: Suspends the execution of an async method until the awaited task is complete.
+    
+    dynamic: Allows for dynamic typing, enabling operations on objects without compile-time type checking.
+    
+    nameof: Retrieves the name of a variable, type, or member as a string.
+    
+    partial: Allows a class, struct, or interface to be split across multiple files.
+    
+    using static: Imports static members of a type, allowing them to be accessed without qualification.
+    
+    default: Specifies the default value of a type or the default case in a switch statement.
+    
+    global: Refers to the global namespace, allowing access to types without specifying a namespace.
+    
+    in: Indicates that a parameter is passed by reference but is read-only.
+    
+    out: Indicates that a parameter is passed by reference and must be assigned a value in the called method.
+    
+    ref: Indicates that a parameter is passed by reference, allowing the method to modify its value.
+    
+    async: Marks a method as asynchronous, enabling the use of await within it.
+    
+    await: Pauses the execution of an async method until the awaited task completes.
+    
+    dynamic: Allows for dynamic typing, enabling operations on objects without compile-time type checking.
+    
+    nameof: Retrieves the name of a variable, type, or member as a string.
+    
+    partial: Allows a class, struct, or interface to be defined in multiple files.
+
+
+
+
+HTTP STatus Code
+--------------------
+
+Here’s a complete list of common HTTP status codes categorized for easy understanding:
+
+✅ 1xx — Informational Responses
+
+Code    	Meaning
+100	    Continue
+101	    Switching Protocols
+102	    Processing (WebDAV)
+103	    Early Hints
+
+✅ 2xx — Success
+Code    	Meaning
+200	    OK
+201	    Created
+202	    Accepted
+203	    Non-Authoritative Information
+204	    No Content
+205	    Reset Content
+206	    Partial Content
+
+⚠️ 3xx — Redirection
+Code    	Meaning
+300	    Multiple Choices
+301	    Moved Permanently
+302	    Found (Previously "Moved Temporarily")
+303	    See Other
+304	    Not Modified
+307	    Temporary Redirect
+308	    Permanent Redirect
+
+❌ 4xx — Client Errors
+Code    	Meaning
+400	    Bad Request
+401	    Unauthorized
+402	    Payment Required (rarely used)
+403	    Forbidden
+404	    Not Found
+405	    Method Not Allowed
+406	    Not Acceptable
+408	    Request Timeout
+409	    Conflict
+410	    Gone
+413	    Payload Too Large
+415	    Unsupported Media Type
+418	    I'm a teapot ☕ (Easter egg, not used in production)
+429	    Too Many Requests
+
+🔥 5xx — Server Errors
+Code    	Meaning
+500	    Internal Server Error
+501	    Not Implemented
+502	    Bad Gateway
+503	    Service Unavailable
+504	    Gateway Timeout
+505	    HTTP Version Not Supported

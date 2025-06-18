@@ -1,0 +1,487 @@
+.NET 
+----------
+
+DAY-3
+------------
+
+1. List of User-Defined Data Types in C#:
+    These are types created by the programmer:
+    class
+    struct
+    enum
+    interface
+    delegate
+
+2. Few Value Types in C#:
+    Value types store data directly in memory (stack):
+    int
+    float
+    double
+    bool
+    char
+    decimal
+    DateTime
+    enum
+    struct
+
+3. How to Convert String to Integer:
+    string str = "123";
+    int number = int.Parse(str);        // Throws exception if invalid
+    int safeNumber;
+    bool result = int.TryParse(str, out safeNumber);  // Safer option
+
+
+4. Few Utility Classes in C#:
+    Math – e.g. Math.Abs(), Math.Sqrt()
+    Console – for I/O
+    Convert – for type conversion
+    String – string manipulation
+    DateTime – date and time handling
+    Path, File, Directory – for file I/O
+
+
+5. Why enum?
+    Represents named constants for better code readability.
+    Replaces magic numbers.
+        enum Day { Sun, Mon, Tue }
+
+6. Why const?
+    Declares a constant value that cannot be changed.
+    Value must be assigned at declaration.
+        const float PI = 3.14f;
+
+ 7. What is a struct?
+    A value type similar to class but stored on the stack.
+    Useful for small data models.
+    Cannot inherit from other classes.
+
+
+8. var – Declare and Initialize in One Line:
+    var x = 10;     // Compiler infers type as int
+    Must be initialized at the time of declaration.
+
+9. Can I Modify Data Type After Declaring var?
+    ❌ No. Once declared with var, the type is fixed.
+    var x = 10;    // x is int
+    x = "Hello";   // ❌ Compile-time error
+
+10. dynamic Example:
+    dynamic a = "hello";
+    a = 5;    // ✅ Valid. Runtime-type checked
+
+11. Parent of enum:
+    System.Enum (abstract class)
+
+12. Parent of Primitive Types:
+    All value types (like int, float) derive from System.ValueType, which in turn derives from System.Object.
+    int → ValueType → Object
+
+13. Everything Derives from Object:
+    Yes, in C#, every type (value or reference) ultimately inherits from System.Object.
+
+14. DateTime is a Struct?
+    Yes, DateTime is a value type (struct).
+
+15. int a = new int(); Explanation:
+    Initializes a to the default value of int
+    int a = new int();  // a = 0
+
+16. Can Programmer Write No-Args Constructor in struct?
+    ❌ No. In .NET, you cannot define a parameterless constructor in a struct. The compiler provides a default one.
+
+17. Struct Constructor Must Initialize All Members?
+    Yes. If you define a custom constructor, it must initialize all fields.
+
+18. What Can Be Overridden in struct?
+    Structs can override:
+    ToString()
+    Equals()
+    GetHashCode()
+But they cannot inherit, so no base class methods (except from object) can be overridden.
+
+19. What is Method Hiding?
+    When a derived class defines a method with the same name as the base class method, it hides the base method.
+
+    Use new keyword:
+        class Base {
+            public void Show() => Console.WriteLine("Base");
+        }
+
+        class Derived : Base {
+            public new void Show() => Console.WriteLine("Derived");
+        }
+
+20.  Why Constructor?   
+    A constructor is a special method that runs automatically when an object of a class is created. It is used to:
+    Initialize data members (like setting default values).
+    Ensure the object starts in a valid state.
+    It has the same name as the class and no return type.
+    class Person {
+        public string Name;
+
+        // Constructor
+        public Person(string name) {
+            Name = name;
+        }
+    }
+
+    Person p = new Person("Ravi");
+
+21. var vs dynamic
+|-------------------------------------------------------------------------------------------------------|
+|   Feature	     |                   var	                   |                 dynamic                |
+|-------------------------------------------------------------------------------------------------------|
+|   Type check	 |          Done at compile time	           |         Done at runtime                |
+|-------------------------------------------------------------------------------------------------------|
+|   Type fixed?	 |            Yes, once assigned	           |     No, can change at runtime          |
+|-------------------------------------------------------------------------------------------------------|
+|   Performance	 |       Faster (because it’s statically typed)|	Slower (because of runtime checks)  |
+|-------------------------------------------------------------------------------------------------------|
+|   Usage	     |       When type is obvious or complex	   |     When type is unknown until runtime |
+|-------------------------------------------------------------------------------------------------------|
+
+
+1. List down all static class (Common ones in .NET)
+    Math
+    Console
+    Environment
+    Path, File, Directory (from System.IO)
+    DateTime (static members too, but class is struct)
+    Convert
+    GC
+
+2. List down all static methods in .NET framework (Few examples)
+    Console.WriteLine(), Console.ReadLine()
+    Math.Abs(), Math.Sqrt(), Math.Round()
+    Convert.ToInt32(), Convert.ToString()
+    Environment.Exit(), GC.Collect()
+
+3. Use of static method
+    Called without creating an object
+    Good for utility/helper logic (e.g., calculations, parsing)
+
+4. Use of constructor
+    Initializes object values
+    Runs automatically when object is created
+
+5. What is constructor overloading?
+    Creating multiple constructors in a class with different parameters
+    Provides flexibility during object creation
+    public class Student {
+        public Student() { }
+        public Student(string name) { }
+    }
+
+6. Use of method overloading
+    Same method name, different parameter types/count
+    Improves code readability & flexibility
+
+7. Use of inheritance
+    Reuse existing class functionality
+    Helps in hierarchical structure & code reusability
+        class Animal { }
+        class Dog : Animal { }
+
+8. What is data hiding / encapsulation?
+    Hiding internal state using private access modifier
+    Provide access via public methods/properties
+    Improves security & maintainability
+
+9. Various ways to achieve polymorphism
+    Method Overloading (Compile-time)
+    Method Overriding with virtual/override (Run-time)
+    Interfaces
+    Abstract classes
+
+10. Use of readonly keyword
+    Value can be assigned only once (at declaration or in constructor)
+    Used for instance-level constants
+
+11. What is readonly property?
+    Property with only getter, no setter
+    Value can’t be changed after creation (immutability)
+        public int Age { get; }
+
+12. What is write-only property?
+    Only setter, no getter
+    Can assign value but not retrieve
+    private string password;
+    public string Password { set { password = value; } }
+
+13. Why we need public getter/setter
+    Encapsulate fields
+    Add logic/validation
+    Control access
+
+14. List down readonly properties in framework
+    DateTime.Now.Year (getter only)
+    Guid.Empty
+    Console.BackgroundColor (get/set)
+    Environment.MachineName (getter only)
+
+15. Latest version of .NET Framework
+    As of now (April 2025):
+    .NET 8 is the latest official stable release
+    .NET 9 is in preview
+
+16. Difference between const, static, and readonly
+Keyword	Assigned When	Can Change?	Scope
+const	At compile time	❌ No	Class/Global
+readonly	Runtime (constructor)	❌ No	Per-instance
+static	Once per type (shared)	✅ Yes	Class-level
+
+17. Use of static constructor
+    Initializes static members of the class
+    Runs only once, when the class is accessed for the first time
+        static MyClass() {
+            // Static init code
+        }
+
+18. Can you create object of sealed class?
+    ✅ Yes, you can create an object of a sealed class
+    ❌ You cannot inherit from a sealed class.
+        sealed class A { }
+        A obj = new A(); // Valid
+
+19. What is value type data and reference type data
+    Value types: Store data directly. Stored in stack. (e.g., int, char, float, bool, struct)
+    Reference types: Store reference (address) to data. Stored in heap. (e.g., class, string, array, object)
+
+20. What is call by value and call by reference
+    Call by value: Copies actual value. Changes don't affect the original.
+    Call by reference: Passes reference. Changes affect the original variable.
+
+21. Difference between ref and out keyword
+    |---------------------------------------------------------------------------------------------------|
+    |    Feature	        |                    ref	            |                out                |
+    |---------------------------------------------------------------------------------------------------|
+    |    Initialization	    |    Must be initialized before passing	|    Can be uninitialized           |
+    |---------------------------------------------------------------------------------------------------|
+    |    Usage	            |                Read/write	            |    Must be assigned in method     |
+    |---------------------------------------------------------------------------------------------------|
+
+22. What is namespace
+    Used to logically group classes and avoid name conflicts.
+        namespace MyProject.Utilities { ... }
+
+23. List all access modifiers for top-level class, struct, and interface
+    Class: public, internal
+    Struct: public, internal
+    Interface: public, internal
+
+24. When to use inheritance and when to use interface
+    Inheritance: When classes share common base logic.
+    Interface: When multiple classes need to follow a contract or multiple inheritance is needed.
+
+25. List down all abstract classes in .NET Framework
+    Examples:
+        Stream
+        TextWriter
+        DbConnection
+        WebRequest
+        XmlReader
+
+26. Explain virtual and override keyword
+    virtual: Used in base class to allow overriding in derived class
+    override: Used in derived class to override virtual/abstract members
+
+27. Use of sealed keyword
+    Prevents a class from being inherited.
+    sealed class A { }
+
+28. Difference between class and struct
+    |-----------------------------------------------------------|
+    |   Feature	             |    Class	     |   Struct         |
+    |------------------------|---------------|------------------|
+    |   Type	             |  Reference	 |   Value          |
+    |-----------------------------------------------------------|
+    |   Inheritance	         |  Supported	 |   Not supported  |
+    |-----------------------------------------------------------|
+    |   Memory	             |      Heap	 |   Stack          |
+    |-----------------------------------------------------------|
+    |   Default Constructor	 |       Yes     |   No             |
+    |-----------------------------------------------------------|
+
+29. What is use of enum and list down enums in framework
+    Enum: Named set of constants
+    enum Days { Sun, Mon, Tue }
+        Common enums:
+        DayOfWeek
+        ConsoleColor
+        FileAccess
+        SeekOrigin
+
+30. Use of utility class
+    Provides helper methods
+    Example: Math, Convert, Path
+
+31. Use of new keyword
+    To hide base class members
+    To create objects
+    new MyClass();
+
+32. Use of using keyword
+    To import namespaces
+    To auto-dispose resources
+    using System.IO;
+    using (StreamReader sr = new StreamReader("file.txt")) { }
+
+33. How to call parent constructor
+    class Child : Parent {
+        public Child() : base() { }
+    }
+
+34. What is method hiding
+    Use new keyword to hide base class method
+    new void Show();
+
+35. Types of assembly
+    Private Assembly
+    Shared Assembly
+    Satellite Assembly
+    Dynamic Assembly
+
+36. Types of JIT (Just-In-Time Compiler)
+    Pre-JIT
+    Econo-JIT
+    Normal-JIT
+
+37. What is MSIL, CLR, CTS, GACUtil
+    MSIL: Microsoft Intermediate Language (compiled code)
+    CLR: Common Language Runtime (executes MSIL)
+    CTS: Common Type System (defines types)
+    GACUtil: Tool to manage assemblies in Global Assembly Cache (GAC)
+
+38. Use of tryparse()
+    Safely converts string to numeric type without exception
+    int.TryParse("123", out int result);
+
+39. Use of Convert class
+    Used to convert between data types
+        Convert.ToInt32("123");
+        Convert.ToBoolean("true");
+
+40. Difference between string and StringBuilder
+    Feature         	    string	                StringBuilder
+    Immutable	               Yes	                    No
+    Performance	    Slower for repeated ops	    Faster for multiple changes
+
+41. Can you create object of static class?
+    ❌ No, you cannot create an object of a static class.
+    Static classes are for static members only and cannot be instantiated.
+
+42. Difference between var, dynamic, and object
+    var: Implicitly typed variable at compile-time
+    dynamic: Runtime-bound type, bypasses compile-time checks
+    object: Base type of all types, requires explicit casting
+    var a = 10;             // Compile-time type
+    dynamic b = "Hello";    // Runtime type
+    object c = 20;          // Needs casting
+
+43. What is params keyword
+    To pass a variable number of arguments to a method
+    void Print(params int[] numbers)
+
+44. What is typecasting
+    Converting one type to another
+    double d = 9.5;
+    int i = (int)d;
+
+45. What is down casting
+    Casting base class reference to derived class
+    Animal a = new Dog();
+    Dog d = (Dog)a;
+
+46. Can we use sealed and virtual together?
+    ❌ No, sealed prevents override, virtual allows it – contradiction.
+
+47. All methods in C# are?
+    By default: Instance methods
+    Can be: static, virtual, abstract, override
+
+48. Which method you can override
+    Methods marked virtual, abstract, or override
+
+49. Can we mark methods in interface public?
+    ❌ No, interface methods are implicitly public and abstract
+
+50. Default access modifier for member of class
+    private by default
+
+51. What is is and as keyword
+    is: Type checking
+    as: Safe casting
+
+    if(obj is string)
+    string s = obj as string;
+
+52. What is IsIntern method does
+    Likely a typo. Correct method is IsInterned(string)
+    Returns reference to interned string or null
+
+53. What is intern method
+    Optimizes memory for duplicate string literals (string interning)
+
+54. Which methods are overridden in string class
+    Equals(), GetHashCode(), ToString(), CompareTo()
+
+55. Why we treat string as value type even though it is reference type
+    Strings are immutable – behavior similar to value types
+
+56. List down example of constructor overloading in framework
+    StringBuilder()
+    StringBuilder(string)
+    StringBuilder(string, int)
+
+57. Can we create object in static method
+    ✅ Yes
+
+    static void Main() {
+       MyClass obj = new MyClass();
+    }
+
+58. Why static is called class level variable
+    Shared among all instances, belongs to class not object
+
+59. Can we declare static variable in a method
+    ❌ No, static variables are not allowed inside methods
+
+60. What is auto implement property
+    Short syntax for properties
+    public int Age { get; set; }
+
+61. 4 Pillars of OOP
+    Inheritance
+    Polymorphism
+    Encapsulation
+    Abstraction
+
+62. Difference between instance variable and local variable
+    Instance: Declared in class
+    Local: Declared inside method
+
+63. When memory get allocated
+    Value types → Stack
+    Reference types → Heap
+
+64. How Equals() and == behave in string class and normal class
+    string: Both compare values
+    Class: == compares reference unless overloaded
+
+65. List down all predefined interface in framework
+    IDisposable, IEnumerable, IComparable, ICloneable, IEquatable<T>
+
+66. Which constructor is called by CLR
+    Default or parameterized depending on usage with new
+
+67. Who clears stack
+    Managed automatically by the runtime/CLR
+
+68. Who clears heap
+    Garbage Collector (GC)
+
+69. Can you create object of Array and ValueType class
+    Array ✅: int[] arr = new int[5];
+    ValueType ❌: Cannot create instance of abstract class ValueType
+
+    

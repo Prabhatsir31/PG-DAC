@@ -1,0 +1,51 @@
+.NET
+--------
+
+DAY-13 
+-----------
+
+Eager Loading 
+-------------------
+
+
+
+Make a MVC Project ==> MVC
+
+1. Models ==> Employee
+2. Services ==> IEmployeeRespository and SQLEmployeeRepository
+3. Repository ==> Appdbcontext : DbContext
+3. Controllers ==> EmployeeController
+
+
+
+Assignment
+-----------------
+Create a  form having with all validation
+
+id --- number 
+Name --- String min-3 , max-15 
+pass --- character min-8, max-15 all character all 
+phone -- limit upto to 10 digit [0-9] with country codes with their flags 
+Address --- text area 
+Email --- type email all validation which is applied in email
+DOB --- calender -- date 
+Upload --- photo img with standard size 
+Education -- Drop-down -> BE/BscIT/BCA/B-Com
+Gender --- radio button --> Male/Female/Other
+website -- input type url and link the github and linkedin profile 
+Hobbies --- drop-down --> music/Dance/sports 
+Submit Reset
+============================================================
+Page Resume -- Display Your Photo 
+
+Link to Your Github Account
+
+Link to  Linkedin Page 
+
+
+
+
+
+
+
+
