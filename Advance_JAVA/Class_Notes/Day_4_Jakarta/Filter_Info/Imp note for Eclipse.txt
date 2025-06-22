@@ -1,0 +1,15 @@
+right click on project
+new package
+mypack
+right click on mypack
+new
+filter
+filter name
+FirstFilter
+next
+u will see "URL pattern" of FirstFilter as /FirstFilter
+now click on "add" 
+select "MyServ" [ servlet ] 
+click on "request"
+it means u want to apply "FirstFilter" on "MyServ".
+click on "ok"

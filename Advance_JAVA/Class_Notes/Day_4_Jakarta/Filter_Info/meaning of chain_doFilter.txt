@@ -1,0 +1,18 @@
+public void doFilter(ServletRequest req,ServletResponse res,FilterChain chain)
+	{
+		try
+		{
+		// logic to be performed
+			chain.doFilter(req,res);
+		}
+
+when filter invokes "chain.doFilter(req,res)" it indicates web container that 
+	I have done my job
+	next component ( another filter/servlet/jsp) should be invoked.
+
+once filter indicates web container about that, container invokes next component ( another filter/servlet/jsp) inside Filter chain.
+
+
+
+
+

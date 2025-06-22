@@ -1,0 +1,1 @@
+when u make any changes in entity, drop the table and then run your application.

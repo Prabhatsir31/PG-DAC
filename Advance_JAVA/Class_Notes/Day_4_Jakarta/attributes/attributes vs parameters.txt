@@ -1,0 +1,77 @@
+parameters vs attributes
+
+a) parameters are strings , whereas attributes can be  java objects.
+b) parameters can be set in DD only (except request parameter which is set implicitly). attributes are set programmatically only.
+c) parameters are of
+	request, init or config and context
+
+attributes in servlet
+
+	there are 3 types of attributes  in servlet
+
+a) request
+b) session
+c) context
+
+request attributes can be accessible only till the request is available.
+
+session attributes are accessible till the session is alive.
+
+context attributes can be  accessible  to all the servlets/jsps of the context (e.g. myapp).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+select "project" menu from the menubar and click on "clean"
+clean the project you are working with.

@@ -1,0 +1,6 @@
+sometimes even after adding dependencies inside "pom.xml" , they are not applied to the application i.e. erros still remain.
+
+solution:  right click on the project name
+		maven
+			update project
+				force update

@@ -1,0 +1,9 @@
+hibernate.cfg.xml file will be inside "src/main/java" folder.
+
+Book.java  -  mypack
+
+BookServ.java - default package
+
+book.html   -  webapp 
+	make it welcome file
+

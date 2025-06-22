@@ -1,0 +1,4 @@
+By default servlet gets loaded only after the first request and not before that.
+
+When you create a web application ( web project ) sometimes you have a particular servlet which does some imp. task from the entire application point of view. So that servlet needs to be loaded even before any request comes. In such a case we have to make this servlet as "load on startup". 
+e.g.  in Spring Architecture "DispatcherServlet" ( in built servlet of Spring) needs to be loaded on startup as it does an imp. job for the entire application.

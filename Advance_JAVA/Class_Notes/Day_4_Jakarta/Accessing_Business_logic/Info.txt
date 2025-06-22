@@ -1,0 +1,15 @@
+
+
+if we need business logic inside servlet, can we write that business logic inside servlet?
+
+	yes. but that will have two drawbacks:
+
+	a) maintenance 
+	b) no reusability
+
+if we write business logic separately
+
+	it will have two advantages
+	
+	a) maintenance
+	b) reusability

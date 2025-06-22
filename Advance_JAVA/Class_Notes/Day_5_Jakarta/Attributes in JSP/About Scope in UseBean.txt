@@ -1,0 +1,29 @@
+<jsp:useBean id="ob1" class="beanpack.MyClass"/>
+
+scope - page/request/session/application
+
+scope of what?
+	scope of object of MyClass
+
+by default it is "page" , what do u mean by that?
+
+it means that 
+
+<jsp:useBean id="ob1" class="beanpack.MyClass"/>
+	is same as
+<%
+pageContext.setAttribute("ob1",new beanpack.MyClass());
+%>
+
+
+<jsp:useBean id="ob1" scope="session" class="beanpack.MyClass"/>
+
+	is same as
+
+<%
+session.setAttribute("ob1",new beanpack.MyClass());
+%>
+
+
+
+

@@ -1,0 +1,11 @@
+<jsp:useBean id="ob1" class="beanpack.MyClass"/>
+
+when container encounters above statement, it will search "MyClass.class" inside "beanpack".
+if found it will load the class.
+instantiate class using no-arg constructor and the instance will be referred by "ob1" reference.
+
+useBean has 3 attributes
+
+id
+class
+scope - page/request/session/application

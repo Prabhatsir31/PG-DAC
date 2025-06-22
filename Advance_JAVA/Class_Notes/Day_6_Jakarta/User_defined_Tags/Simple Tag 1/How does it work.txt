@@ -1,0 +1,22 @@
+<%@taglib prefix="abc" uri="/WEB-INF/hello.tld"%>
+
+
+<abc:first/>
+
+how does it work?
+
+when container encounters "<abc:first/>" tag for the first time,it will
+a) go to "hello.tld"
+b) check which java class is designed for this tag (TagCode1.class)
+c) it will load the class
+d) instantiate the class
+e) invoke "doTag()" method inside "TagCode1".
+
+
+when container encounters "<abc:first/>" tag for the subsequent time,
+
+a) instantiate the class
+b) invoke "doTag()" method inside "TagCode1".
+
+
+

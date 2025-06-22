@@ -1,0 +1,14 @@
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "id", nullable = false)
+	public int getId() {
+		return this.id;
+	}
+
+
+@Id attribute must be there on getter method and not on setter method.
+if u give it on setter method u get exception.
+
+@Id can be either with "getter" method or with variable declaration.
+
+other attributes e.g. @Columns can have on either getter or setter methods.

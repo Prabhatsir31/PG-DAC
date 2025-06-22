@@ -1,0 +1,1 @@
+Maven uses "archetype" plugins to create projects. 

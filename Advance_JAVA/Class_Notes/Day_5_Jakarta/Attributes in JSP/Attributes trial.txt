@@ -1,0 +1,107 @@
+
+
+
+		trial1.jsp
+
+	pageContext.setAttribute("module","java");
+
+
+	pageContext.getAttribute("module");
+
+
+
+	trial2.jsp
+
+	pageContext.getAttribute("module");
+
+
+first run "trial1.jsp", u will get the output.
+now run "trial2.jsp" , u will get "null".
+
+
+
+
+
+
+	trial3.jsp
+
+	request.setAttribute("uname","abc");
+
+
+	request.getAttribute("uname");
+
+
+	trial4.jsp
+
+	request.getAttribute("uname");
+
+
+first run "trial3.jsp", u will get the output.
+now run "trial4.jsp" , u will get "null".
+
+
+
+
+
+
+	trial5.jsp
+
+	request.setAttribute("user","admin");
+
+
+	<jsp:forward page="trial6.jsp"/>
+
+
+	trial6.jsp
+
+	request.getAttribute("user");
+
+
+	run "trial5.jsp", u will get the output.
+
+
+
+
+
+		trial7
+
+	session.setAttribute("course","dac");
+
+
+	session.getAttribute("course");
+
+
+		trial8
+
+
+	session.getAttribute("course");
+
+
+first run "trial7.jsp", u will get the output.
+now run "trial8.jsp", u will get the output.
+
+close the browser and open a new window.
+now run "trial8.jsp" , u will get "null".
+
+
+trial9.jsp
+
+
+	application.setAttribute("server","apache");
+
+	application.getAttribute("server");
+
+
+		trial10.jsp
+
+
+	application.getAttribute("server");
+
+first run "trial9.jsp" and then run "trial10.jsp", u will get the output.
+now close the browser.
+run "trial10.jsp" directly, still u will get the output.
+
+now close the server, and run "trial10.jsp", u will get null.
+
+
+
