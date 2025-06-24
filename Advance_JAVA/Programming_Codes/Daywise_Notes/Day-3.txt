@@ -1,0 +1,460 @@
+DAY-3
+============
+
+Advance Java 
+====================
+
+Factory Method
+------------------
+The Factory Method is a creational design pattern that provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created. This pattern promotes loose coupling by eliminating the need to bind application-specific classes into your code.
+
+Example:
+
+// Product Interface
+interface Product {
+    void use();
+}
+
+// Concrete Product A
+class ConcreteProductA implements Product {
+    public void use() {
+        System.out.println("Using Concrete Product A");
+    }
+}
+
+// Concrete Product B
+class ConcreteProductB implements Product {
+    public void use() {
+        System.out.println("Using Concrete Product B");
+    }
+}
+
+// Creator
+abstract class Creator {
+    public abstract Product factoryMethod();
+}
+
+// Concrete Creator A
+class ConcreteCreatorA extends Creator {
+    public Product factoryMethod() {
+        return new ConcreteProductA();
+    }
+}
+
+// Concrete Creator B
+class ConcreteCreatorB extends Creator {
+    public Product factoryMethod() {
+        return new ConcreteProductB();
+    }
+}
+
+// Client Code
+public class Client {
+    public static void main(String[] args) {
+        Creator creatorA = new ConcreteCreatorA();
+        Product productA = creatorA.factoryMethod();
+        productA.use();
+
+        Creator creatorB = new ConcreteCreatorB();
+        Product productB = creatorB.factoryMethod();
+        productB.use();
+    }
+}
+
+Facts:
+    Promotes loose coupling.
+    Allows for the introduction of new products without modifying existing code.
+    Useful in frameworks where the framework code needs to create objects.
+
+
+Abstract Method
+------------------
+An abstract method is a method that is declared without an implementation. Abstract methods can only be declared in abstract classes or interfaces. Subclasses must provide an implementation for these methods.
+
+Example:
+
+abstract class Animal {
+    abstract void makeSound(); // Abstract method
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+// Client Code
+public class Client {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.makeSound(); // Output: Bark
+
+        Animal cat = new Cat();
+        cat.makeSound(); // Output: Meow
+    }
+}
+
+Facts:
+    Enforces a contract for subclasses.
+    Promotes code reusability and polymorphism.
+    Can be used to define a common interface for different classes.
+
+
+String
+----------
+In Java, a String is an immutable sequence of characters. Once a String object is created, its value cannot be changed. Strings are widely used for text manipulation.4
+
+Example:
+String str1 = "Hello";
+String str2 = "World";
+String str3 = str1 + " " + str2; // Concatenation
+System.out.println(str3); // Output: Hello World
+
+Facts:
+    Strings are immutable; any modification creates a new String object.
+    String literals are stored in the String pool for memory efficiency.
+    Commonly used methods: length(), charAt(), substring(), etc.
+
+
+String Builder
+------------------
+StringBuilder is a mutable sequence of characters. Unlike String, StringBuilder allows for modification of its contents without creating new objects, making it more efficient for string manipulation.
+
+Example:
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World"); // Modifies the existing object
+System.out.println(sb.toString()); // Output: Hello World
+
+Facts:
+    StringBuilder is not synchronized, making it faster than StringBuffer.
+    Ideal for scenarios where a string is modified frequently.
+    Commonly used methods: append(), insert(), delete(), reverse(), etc
+
+Home Builder
+------------------
+The Builder pattern is a creational design pattern that allows for the step-by-step construction of complex objects. It separates the construction of a complex object from its representation.
+
+Example:
+class Home {
+    private String walls;
+    private String roof;
+    private String foundation;
+
+    public void setWalls(String walls) {
+        this.walls = walls;
+    }
+
+    public void setRoof(String roof) {
+        this.roof = roof;
+    }
+
+    public void setFoundation(String foundation) {
+        this.foundation = foundation;
+    }
+
+    @Override
+    public String toString() {
+        return "Home [walls=" + walls + ", roof=" + roof + ", foundation=" + foundation + "]";
+    }
+}
+
+class HomeBuilder {
+    private Home home;
+
+    public HomeBuilder() {
+        home = new Home();
+    }
+
+    public HomeBuilder buildWalls(String walls) {
+        home.setWalls(walls);
+        return this;
+    }
+
+    public HomeBuilder buildRoof(String roof) {
+        home.setRoof(roof);
+        return this;
+    }
+
+    public HomeBuilder buildFoundation(String foundation) {
+        home.setFoundation(foundation);
+        return this;
+    }
+
+    public Home build() {
+        return home;
+    }
+}
+
+// Client Code
+public class Client {
+    public static void main(String[] args) {
+        Home home = new HomeBuilder()
+                        .buildWalls("Brick")
+                        .buildRoof("Tile")
+                        .buildFoundation("Concrete")
+                        .build();
+        System.out.println(home);
+    }
+}
+
+Facts:
+    Promotes immutability and encapsulation.
+    Allows for complex object creation with a clear and readable API.
+    Useful for constructing objects with many optional parameters.
+
+
+Mutability
+------------------
+Mutability refers to the ability of an object to change its state or value after it has been created. In Java, some objects are mutable (e.g., arrays, StringBuilder) while others are immutable (e.g., String, Integer).
+
+Example: Mutable Object
+int[] numbers = {1, 2, 3};
+numbers[0] = 10; // The array can be modified
+
+
+Example: Immutable Object
+String str = "Hello";
+str = str + " World"; // A new String object is created
+
+Facts:
+    Mutable objects can lead to unintended side effects if shared across multiple references.
+    Immutable objects are inherently thread-safe and easier to reason about.
+    Choosing between mutable and immutable types depends on the use case.
+
+
+
+Prototype design pattern 
+-----------------------------
+The Prototype pattern is a creational design pattern that allows for the creation of new objects by copying an existing object, known as the prototype. This pattern is useful when the cost of creating a new instance of an object is more expensive than copying an existing instance.
+
+Example:
+interface Prototype {
+    Prototype clone();
+}
+
+class ConcretePrototype implements Prototype {
+    private String name;
+
+    public ConcretePrototype(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public Prototype clone() {
+        return new ConcretePrototype(this.name);
+    }
+
+    @Override
+    public String toString() {
+        return "ConcretePrototype [name=" + name + "]";
+    }
+}
+
+// Client Code
+public class Client {
+    public static void main(String[] args) {
+        ConcretePrototype prototype = new ConcretePrototype("Original");
+        ConcretePrototype clone = (ConcretePrototype) prototype.clone();
+        System.out.println(clone); // Output: ConcretePrototype [name=Original]
+    }
+}
+
+Facts:
+    Reduces the need for subclassing.
+    Useful for creating objects with similar states.
+    Can improve performance by avoiding the overhead of object creation.
+
+
+
+How do we write servlet in eclipse using tomcat 
+---------------------------------------------------
+    go to Eclipse
+        flie 
+            new     
+                dynamic web project 
+
+    myapp
+        src 
+            HelloServlet
+            
+            webapps
+                html
+
+                WEB-INF 
+                    web.xml
+
+                    lib
+                        jar
+
+
+JNDI (Java Naming and Directory Interface)
+-----------------------------------------------
+
+in order to be a naming service, a service must atleast Providethe ability to bind names to objects and to look up objects by name.
+
+in order to use JNDI we have to use the following classes:
+    Naming clas 
+        has "bind" mehod which takes two parameters name and object.
+    Context - interface 
+        Initial context an inplementation of context is used tp lookup the object
+
+
+    @Resource(lookup="java:/comp/env/mypool")
+        private DataSource ds;
+
+    vs 
+
+    Context ctx = new InitialContext();
+    DataSource ds = (DataSource)
+    ctx.lookuo = 
+
+
+String value = getServletConfig().getInitParameter("Book")
+    getServletConfig() is inherited from HttpServlet which returns ServletConfig's implementation which has a non static method "getInitParameter()"
+
+
+String value1 = getServletContext().getInitParameter("database")
+    getServletContext() is inherited from HttpServlet which returns ServletContext's implementation which has a non static method getInitParameter()
+
+
+public void init() 
+
+
+public void init(ServletConfig)
+
+when you run the servlet first time:
+    a) web container initantiates ServletConfig implementation
+    b) inside ServletConfig implementation container stores init parameters if any 
+    c) container invkes 
+           init (ServletConfig) method of HttpServlet by passing the ServletConfig implementation
+    d) init (ServletConfig) of HttpServlet calls init() of the same class (HttpServlet)
+
+
+redirect vs forward 
+    different requests 
+    slow 
+    client knows about the component which sends the response 
+response    
+    redirect can go beyond the web container 
+ 
+API: response.sendRedirect 
+
+
+forward 
+    same rewuest 
+    fast 
+    client is always under impression that first component has send the response
+    forward cannot go beyond the web container
+
+    API: RequestDispacher - forward
+
+
+
+a) we first run "redirecting Servlet
+b) Redirecting Servlet asks us to call "RedirectServlet" Servlet
+c) 
+
+
+ServletContext context=getServletContext();
+    we first get the refereence of current project
+
+ServletContext context1=context.getContext("/myapp1");
+
+    using the reference of current project, we get the reference of another project i.e., "pro2"
+
+RequestDispatcher rd=context1.getRequestDispatcher("/FirstServ");
+    since we are going to forward the request ti  "FirstServ" of "pro2", RequestDispacher has to created using the reference of "pro2"
+
+rd.forward(request,response);
+    forward to     
+
+
+
+Http is a stateless protocol.
+client requests a web resource (servlet/jsp).
+
+when client requests a web resource again or to another web resource, for container it is a different client altogether.
+i.e. container does not remember client after the response is given to client back.
+
+in a practical scenario mostly we have a requirement where container should remember client. e.g. shopping cart example. i.e. we have a requirement of making Http stateful.
+
+in java we can achieve it using:
+
+a) hidden fields -> 
+b) custom cookies ->  
+c) HttpSession -> 
+d) URLRewriting -> technique
+
+
+Cookies 
+    cookies cannot store java object
+
+HttpSession - interface from "http" package
+
+how to use HttpSession?
+-------------------------
+HttpSession session=request.getSession();
+	or
+HttpSession session=request.getSession(true);
+	
+	above statement will
+
+	a) create a new session if it doesn't exist
+		or
+	b) retrieve an existing session
+
+how to check whether session is new or existing ?
+
+	session.isNew()
+		returns
+			true - if it is new
+
+			false - otherwise
+
+
+how to store the state inside session?
+
+	session.setAttribute(String name,Object value);
+
+how to retrieve the state from session?
+
+	session.getAttribute(String name);
+
+
+how to retrieve existing session only?
+
+HttpSession session=request.getSession(false);
+	
+	above statement will retrieve existing session only. if session is not there it will return "null".
+
+
+Container will 
+
+    a) Create session object
+    b) store attributes
+    c) generate unique session Id \
+    d) create cookie 
+    e) store sesion id inside cookie
+    f) add cookie inside response 
+
+What happens when session is retrieved?
+
+HttpSession session=request.getSession(false);
+
+container will
+    a) retrieve cookie from request
+    b) retrieve session id from cookie.
+    c) try to match session id with the session object available on server.
+    	if it matches
+    		return session object
+    	else
+    		return null
+    
+
+

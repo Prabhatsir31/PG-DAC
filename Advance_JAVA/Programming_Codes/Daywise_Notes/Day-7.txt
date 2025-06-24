@@ -1,0 +1,364 @@
+DAY-7
+============
+
+Advance Java 
+====================
+
+Adapter Design Pattern 
+--------------------------
+The Adapter Design Pattern is a structural design pattern that allows objects with incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by converting the interface of a class into another interface that a client expects. This pattern is particularly useful when integrating new features into existing systems without modifying their code.
+
+Example:
+
+// Target Interface
+
+interface Target {
+    void request();
+}
+
+// Adaptee Class
+class Adaptee {
+    public void specificRequest() {
+        System.out.println("Specific request from Adaptee");
+    }
+}
+
+// Adapter Class
+class Adapter implements Target {
+    private Adaptee adaptee;
+
+    public Adapter(Adaptee adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    @Override
+    public void request() {
+        // Call the specific request of the Adaptee
+        adaptee.specificRequest();
+    }
+}
+
+// Client Code
+public class Client {
+    public static void main(String[] args) {
+        Adaptee adaptee = new Adaptee();
+        Target target = new Adapter(adaptee);
+        target.request(); // Output: Specific request from Adaptee
+    }
+}
+
+Facts:
+    Promotes code reusability by allowing existing classes to work with new interfaces.
+    Reduces the need for modifying existing code, adhering to the Open/Closed Principle.
+    Can be used to integrate third-party libraries or legacy code into a new system.
+
+Use Cases:
+    When you want to use an existing class but its interface does not match the one you need.
+    When you want to create a reusable class that cooperates with classes that do not have compatible interfaces.
+    When you want to create a wrapper around a class to provide a different interface.
+
+Types of Adapters:
+    Class Adapter: Uses inheritance to adapt one interface to another.
+    Object Adapter: Uses composition to adapt one interface to another.
+
+
+MVC in Advance Java
+---------------------
+MVC in Advanced Java
+--------------------------
+The Model-View-Controller (MVC) is a design pattern used for developing user interfaces that divides an application into three interconnected components. This separation helps manage complexity, promotes organized code, and enhances maintainability.
+
+Components of MVC:
+
+1. **Model**:
+   - Represents the data and the business logic of the application.
+   - Responsible for retrieving data from the database, processing it, and returning it to the controller.
+   - Notifies the view of any changes in the data.
+
+Example:
+   public class UserModel {
+       private String name;
+       private String email;
+
+       // Getters and Setters
+       public String getName() {
+           return name;
+       }
+
+       public void setName(String name) {
+           this.name = name;
+       }
+
+       public String getEmail() {
+           return email;
+       }
+
+       public void setEmail(String email) {
+           this.email = email;
+       }
+   }
+
+2. View:
+    Represents the user interface of the application.
+    Displays data from the model to the user and sends user commands to the controller.
+    Can be implemented using JSP, HTML, or any other front-end technology  
+
+Example:
+   <%-- user.jsp --%>
+   <html>
+   <body>
+       <h1>User Information</h1>
+       <p>Name: ${user.name}</p>
+       <p>Email: ${user.email}</p>
+   </body>
+   </html>
+
+3. Controller:
+
+    Acts as an intermediary between the model and the view.
+    Receives user input from the view, processes it (often involving the model), and returns the output display to the view.
+    Handles the application logic and user interactions.
+
+Example:
+   import javax.servlet.*;
+   import javax.servlet.http.*;
+   import java.io.IOException;
+   
+   public class UserController extends HttpServlet {
+       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+           UserModel user = new UserModel();
+           user.setName("John Doe");
+           user.setEmail("john.doe@example.com");
+   
+           request.setAttribute("user", user);
+           RequestDispatcher dispatcher = request.getRequestDispatcher("user.jsp");
+           dispatcher.forward(request, response);
+       }
+   }
+
+Benefits of MVC:
+    Separation of Concerns: Each component has a distinct responsibility, making the application easier to manage and scale.
+    Reusability: Models and views can be reused across different applications.
+    Testability: Each component can be tested independently, improving the overall quality of the application.
+    Maintainability: Changes in one component (e.g., the view) do not affect others (e.g., the model).
+
+Use Cases:
+    Web applications using frameworks like Spring MVC, JavaServer Faces (JSF), or Struts.
+    Desktop applications using JavaFX or Swing with MVC architecture.
+
+
+User Defined Tags
+------------------------
+User-defined tags allow developers to create custom tags in JSP (Java Server Pages) to encapsulate reusable functionality. These are used to enhance code readability and modularity.
+
+• User-defined tags are created using tag handler classes and TLD (Tag Library Descriptor) files.
+• They help in separating Java code from JSP pages.
+• Follow MVC architecture for clean structure.
+• Mainly used in JSP for custom logic like formatting, looping, or including dynamic content.
+
+Steps to create user-defined tags:
+
+1. Create a Tag Handler class by extending TagSupport or SimpleTagSupport.
+2. Override methods like doStartTag() or doTag().
+3. Create a TLD file to define tag name and handler class.
+4. Use the custom tag in JSP by declaring the taglib.
+
+Example:
+
+1. Tag Handler Class:
+
+package tags;
+import javax.servlet.jsp.tagext.TagSupport;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.JspException;
+import java.io.IOException;
+
+public class HelloTag extends TagSupport {
+    public int doStartTag() throws JspException {
+        try {
+            JspWriter out = pageContext.getOut();
+            out.println("<h2>Hello from User Defined Tag!</h2>");
+        } catch(IOException e) {
+            throw new JspException("Error: " + e.getMessage());
+        }
+        return SKIP_BODY;
+    }
+}
+
+
+2. TLD File (mytags.tld):
+
+```xml
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>2.0</jsp-version>
+  <short-name>MyTags</short-name>
+  <uri>/mytags</uri>
+  <tag>
+    <name>hello</name>
+    <tag-class>tags.HelloTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+</taglib>
+```
+
+3. JSP Page:
+
+```jsp
+<%@ taglib prefix="t" uri="/mytags" %>
+<html>
+<body>
+    <t:hello />
+</body>
+</html>
+```
+
+Hibernate Version - 6.2.1
+-------------------------------
+Hibernate is an ORM (Object Relational Mapping) tool for Java. It maps Java classes to database tables.
+
+• Hibernate 6.2.1 introduces many modern features, including Java 17+ support.
+• Enhanced Criteria Queries using JPA 3.1.
+• Improved multi-tenancy support.
+• Improved integration with Jakarta EE.
+• Replaces older javax.persistence with jakarta.persistence package.
+• Support for new SQL features and native query improvements.
+
+Benefits of using Hibernate:
+
+* Eliminates boilerplate JDBC code.
+* Transparent persistence.
+* Automatic table generation.
+* Lazy/eager fetching.
+* Caching support.
+
+Example Entity Class:
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "students")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
+    // Getters and Setters
+}
+
+
+Hibernate Configuration (hibernate.cfg.xml):
+
+```xml
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="Student"/>
+    </session-factory>
+</hibernate-configuration>
+```
+
+Session Code:
+
+```java
+SessionFactory factory = new Configuration().configure().buildSessionFactory();
+Session session = factory.openSession();
+
+Student s = new Student();
+s.setName("John");
+session.beginTransaction();
+session.save(s);
+session.getTransaction().commit();
+session.close();
+```
+
+Hibernate Entity Lifecycle
+----------------------------
+
+Hibernate entity goes through 3 major phases:
+
+1. Transient
+----------------
+• The object is in transient state when it is created using the `new` keyword.
+• It is not associated with any Hibernate session.
+• It does not represent any row in the database.
+• No persistence context tracks it.
+
+Example:
+    Student s1 = new Student();
+
+2. Persistent
+-----------------
+• The object becomes persistent when it is associated with a Hibernate session.
+• It represents a row in the database.
+• Any changes made to the object are automatically synchronized with the database (during flush or transaction commit).
+
+Example:
+    session.persist(s1); // Now s1 is persistent
+
+3. Detached
+-----------------
+• When the Hibernate session is closed or the object is explicitly removed from the session, it becomes detached.
+• It is no longer associated with any session.
+• It still holds the data, but Hibernate will not track any changes unless reattached.
+
+Example 1:
+    session.evict(s1); // s1 becomes detached
+
+Example 2:
+    session.close();   // all objects become detached
+
+
+
+Hibernate: Reattaching Detached Objects using merge() and update()
+------------------------------------------------------------------
+
+When an object is in the DETACHED state in Hibernate, it means:
+- The object was previously associated with a Hibernate Session.
+- But now the session is closed or the object has been explicitly removed using session.evict().
+- The object still holds data, but Hibernate no longer tracks changes made to it.
+
+To reattach the object and resume tracking changes, Hibernate provides two methods:
+
+1. session.update(object)
+--------------------------
+- Reattaches a detached object to the current session.
+- Hibernate will track future changes to this object.
+- Throws an exception if another instance of the same entity (with same ID) is already in the session.
+
+Example:
+--------
+Session session2 = factory.openSession();
+session2.beginTransaction();
+session2.update(s1); // s1 is now persistent again
+session2.getTransaction().commit();
+
+2. session.merge(object)
+-------------------------
+- Reattaches a detached object by copying its state into a new managed instance.
+- Returns the new persistent instance.
+- Safe even if the same entity is already in the session.
+
+Example:
+--------
+Session session2 = factory.openSession();
+session2.beginTransaction();
+Student attachedStudent = (Student) session2.merge(s1); // returns a persistent copy
+session2.getTransaction().commit();
+
+Summary
+----------
+| Method | Behavior                                              | Use When...                                          |
+|--------|-------------------------------------------------------|------------------------------------------------------|
+| update | Reattaches the detached object directly               | No other object with same ID is in session           |
+| merge  | Copies state and returns a managed instance (safe)    | To avoid session conflict or object duplication      |
+
