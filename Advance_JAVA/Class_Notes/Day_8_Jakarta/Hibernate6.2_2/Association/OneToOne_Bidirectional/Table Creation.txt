@@ -1,0 +1,15 @@
+mysql> select * from account;
++-------+---------+
+| accid | balance |
++-------+---------+
+|     1 |   20000 |
++-------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from company;
++-----+----------+-----------+-----------+
+| cid | location | name      | acc_accid |
++-----+----------+-----------+-----------+
+|   1 | mumbai   | capgemini |         1 |
++-----+----------+-----------+-----------+
+1 row in set (0.00 sec)

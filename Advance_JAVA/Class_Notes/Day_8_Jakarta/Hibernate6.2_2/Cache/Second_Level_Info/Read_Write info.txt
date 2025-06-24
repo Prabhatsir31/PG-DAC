@@ -1,0 +1,25 @@
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+
+
+inside "Main.java"
+
+
+Session session=HibernateUtil.getSessionFactory().openSession(); 
+			Product p=new Product();
+			p.setName("soap");
+			p.setPrice(100);
+			p.setQty(30);
+			Transaction trans=session.beginTransaction();
+			session.save(p);
+			trans.commit();
+			session.close();
+			    Session session1=HibernateUtil.getSessionFactory().openSession();   
+			    Product emp2=(Product)session1.load(Product.class,1);  
+			    System.out.println(emp2);
+			    trans=session1.beginTransaction();
+			    emp2.setName("dddd");
+			    trans.commit();
+
+
+on commit, it will update entity inside cache as well as database.
+

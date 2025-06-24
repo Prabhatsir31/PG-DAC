@@ -1,0 +1,3 @@
+org.hibernate.Query.setCacheable(true) .
+ 
+This call allows the query to look for existing cache results or add its results to the cache when it is executed.
