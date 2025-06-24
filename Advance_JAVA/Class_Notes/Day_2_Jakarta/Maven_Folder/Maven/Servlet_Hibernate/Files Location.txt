@@ -1,3 +1,0 @@
-hibernate.cfg.xml file will be inside "src" folder.
-
-HibernateUtil.java and Book.java in "mypack"

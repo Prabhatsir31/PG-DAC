@@ -1,5 +1,0 @@
-inside "webapp" tag of "web.xml" you need to write:
-
-<welcome-file-list>
-	<welcome-file>welcome.html</welcome-file>
-</welcome-file-list>

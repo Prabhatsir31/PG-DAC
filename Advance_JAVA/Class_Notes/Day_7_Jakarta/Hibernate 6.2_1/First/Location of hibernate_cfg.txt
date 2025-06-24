@@ -1,2 +1,0 @@
-hibernate.cfg should be inside "src".
-	

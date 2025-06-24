@@ -1,1 +1,0 @@
-An abstract factory gives us an interface for creating a "family of related products". 
