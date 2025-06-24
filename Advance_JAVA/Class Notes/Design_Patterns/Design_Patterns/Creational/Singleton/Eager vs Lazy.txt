@@ -1,0 +1,24 @@
+private static Singleton uniqueInstance;
+	private Singleton()
+	{
+	}
+	public static Singleton getSingleton()
+	{
+		If(uniqueInstance==null)
+		{
+			uniqueInstance=new Singleton();   // lazy manner
+		}
+		return uniqueInstance;
+	}
+
+
+		vs
+
+  private static Singleton uniqueInstance=new Singleton();   // eager manner
+	private Singleton()
+	{
+	}
+	public static Singleton getSingleton()
+	{
+		return uniqueInstance;
+	}

@@ -1,0 +1,96 @@
+how to use business logic in Servlet?
+
+new project
+
+	package
+		mypack
+			BeanClass
+
+				public String disp1()
+				{
+					return "hello from disp1";
+				}
+
+
+	servlet_1
+		doGet
+
+			instantiate BeanClass and invoke disp1
+
+	servlet_2
+		doGet
+
+			instantiate BeanClass and invoke disp1
+
+
+what if the pojo or java bean is designed by other developer ? how will u use that?
+
+
+file 
+	new 
+
+		java project
+
+			beanpack
+
+				SomeClass
+
+				public String disp2()
+				{
+					return "welcome disp2";
+				}
+
+right click on "beanpack"
+		export
+			jar
+
+				myjar.jar
+
+
+give location
+
+
+
+new web project
+	servlet
+
+		doGet
+
+			instantiate SomeClass and invoke disp2
+[ do not forget to copy "myjar.jar" inside "lib"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

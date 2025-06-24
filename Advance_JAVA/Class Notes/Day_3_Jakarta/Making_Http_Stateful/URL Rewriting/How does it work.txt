@@ -1,0 +1,34 @@
+Normally container stores session id inside cookie.
+
+when we use following statement:
+
+out.println("<a href=\"" +res.encodeURL("Second")+ "\">click Go to second servlet</a>");
+
+with this statement now container will not only add session id to the cookie but also append it at the end of your URL.
+
+now even if client does not accept cookie, session id will go to server along with URL. 
+ When the user clicks that "enhanced" link, the request goes to the container with that extra bit on the end ( http://localhost:8080/myapp2/Second;jsessionid=4721261C3AF63C8625475DD090A7CC5A ), and the Container simply strips off the extra part of the request URL ( jsessionid=4721261C3AF63C8625475DD090A7CC5A ) and uses to find the matching session.
+
+URL Rewriting is the way to ensure that session mechanism will always works irrespective of whether client browser accepts or rejects cookies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

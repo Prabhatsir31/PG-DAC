@@ -1,0 +1,27 @@
+Following two assignment should be done using "Database Connection Pool" concept.
+
+1) create a table "student" with
+	rollno,name,age,qualification
+
+	
+	create "student.html" to accept rollno,name,age and qualification from a user.
+
+	after submit, control should go to "StudentServ1" which will save above information inside "student" table.
+
+2) create a table "book" with
+		id,bookname,authorname,price
+
+	add 4 records.
+
+  write a Servlet "BookServ" which will retrieve all the records from "book" table and display.
+
+
+3) write a Servlet to read init parameter [ coder = Sachin ] and context parameter [ group=evengers ]
+
+4) write a servlet to read context parameter [ group=evengers ]
+
+
+
+
+
+

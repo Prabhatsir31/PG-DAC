@@ -1,0 +1,14 @@
+@JoinColumn(name = "sid", referencedColumnName="STUDENT_ID")
+
+above annotation will create additional column inside "Phone" table as "sid" which will store students id.
+
+here "STUDENT_ID" is the one which is mentioned inside Student entity as:
+
+@Column(name = "STUDENT_ID")
+public long getStudentId() {
+return this.studentId;
+}
+
+What if we don't use @JoinColumn annotation here ?
+	Hibernate will create one more table (student_phone) which is called as an association table.
+

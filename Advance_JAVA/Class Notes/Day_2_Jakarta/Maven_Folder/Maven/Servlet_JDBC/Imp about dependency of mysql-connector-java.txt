@@ -1,0 +1,23 @@
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+</dependency>
+
+here by default scope is "compile". u don't need it during runtime, because Web Container provides those classes.
+
+
+
+ <dependency>
+    <groupId>mysql</groupId> 
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.17</version>
+    <scope>runtime</scope>
+</dependency> 
+
+it is very imp to note that scope for "mysql-connector-java" is "runtime". if it is "compile" or "provided", it does not work. The reason being u can't expect Web container to provide this library automatically during runtime, u have to ensure that the library is available during runtime by specifying :
+
+<scope>runtime</scope>
+
+
+

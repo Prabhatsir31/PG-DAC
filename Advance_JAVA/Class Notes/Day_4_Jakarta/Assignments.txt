@@ -1,0 +1,26 @@
+1) user.html
+	accept user name
+   UserServ
+	should display the entered user name
+
+   UserFilter
+	should append "123" to the user name entered and it should be stored inside "user.txt". Moreover file should go on appending user names as and when we run "user.html"
+
+
+2) number1.html
+	accept a number
+   NumberServ1
+	will use "NumberPojo1" to get the square of the number entered by user and display it.
+
+"NumberPojo1" should be a part of "numpack1".
+
+In this assignment manually create "numpack1" inside a project and access it from "NumberServ1"
+
+3) number2.html
+	accept a number
+   NumberServ2
+	will use "NumberPojo2" to get the square of the number entered by user and display it.
+
+"NumberPojo2" should be a part of "numpack2".
+
+In this assignment create "numpack2" as a part of jar file and access it from "NumberServ2" ( do not create "numpack2" folder manually inside "classes" folder.

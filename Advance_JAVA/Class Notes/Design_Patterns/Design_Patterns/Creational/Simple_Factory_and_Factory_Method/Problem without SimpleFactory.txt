@@ -1,0 +1,72 @@
+	Application 1
+
+UIComponent component;
+If(“button”)
+{
+	component =new Button ();
+}
+else if(“textfield”)
+{
+	component =new TextField(20);
+}
+else if(“checkbox”)
+{
+	component=new Checkbox();
+}
+
+
+	Application 2
+
+UIComponent component;
+If(“button”)
+{
+	component =new Button ();
+}
+else if(“textfield”)
+{
+	component =new TextField(20);
+}
+else if(“checkbox”)
+{
+	component=new Checkbox();
+}
+
+
+	what will happen if tomorrow we need to replace "checkbox" with "dropdown" list?
+
+we need to replace it in every application. That gives us maintenance drawback.
+
+Solution:
+
+Creating a SimpleFactory to encapsulate the code that changes will make the design more flexible.
+Remove the code that creates an implementation of UIComponent- forms a factory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

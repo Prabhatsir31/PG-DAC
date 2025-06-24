@@ -1,0 +1,18 @@
+Normally when request goes to web component [servlet/jsp] , it processes the request.
+
+what if one web component [servlet/jsp] is not sufficient? i.e. if it is not able to process the request or it is able to process it partially?
+
+in this scenario we have to have another web component which will complete the job of processing the request.
+This can be achieved by redirect or forward.
+
+a) redirect
+	client request goes to "RedirectingServ". [first serv]
+	that servlet recommends client to go for another servlet i.e. "RedirectedServ". Based on this recommendation client issues a fresh request to "RedirectedServ" servlet which processes the request.
+
+
+b) forward
+
+	client request goes to "ForwardingServ". [first serv]
+	that servlet forwards the same request to "ForwardedServ" servlet which processes the request.
+
+

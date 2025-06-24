@@ -1,0 +1,6 @@
+When ORM is not there
+
+What is our expectation
+
+object persistence and retrieval ppt
+

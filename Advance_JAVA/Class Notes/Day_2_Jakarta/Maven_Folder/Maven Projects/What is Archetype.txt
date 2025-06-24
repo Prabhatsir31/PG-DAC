@@ -1,0 +1,1 @@
+Maven archetypes are project templates which can be generated for your by Maven. In other words, when you are starting a new project you can generate a template for that project with Maven. In Maven a template is called an archetype. Each Maven archetype thus corresponds to a project template that Maven can generate.

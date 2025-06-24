@@ -1,0 +1,76 @@
+/*
+Problem:
+By default, readResolve() returns the existing 
+singleton instance, ignoring the deserialized data 
+— so any fields (value) set in the serialized object 
+are lost.
+
+ Solution:
+ 
+We want:
+
+readResolve() to still return the singleton instance.
+
+But before returning, update its state (value) 
+from the deserialized object.
+
+*/
+/*
+ * 
+ * What actually happens when u deserialize the object:
+ * 
+1) JVM reads object from file and creates a new 
+temporary SingletonWithValue.
+
+2) Calls readResolve() on that temp object.
+
+3) In readResolve(), you manually copy the 
+fields (value) from the temp (this) to the 
+real singleton (INSTANCE).
+
+4) Then you return the real INSTANCE, so all 
+references point to the proper singleton.
+
+*/
+
+package core1;
+import java.io.*;
+
+class SingletonWithValue implements Serializable {
+    private static final long serialVersionUID = 1L;
+    public static final SingletonWithValue INSTANCE = new SingletonWithValue();
+    public int value = 42;
+
+    private SingletonWithValue() {}
+
+    // Called automatically during deserialization
+    private Object readResolve() throws ObjectStreamException {
+        // Copy deserialized value to the actual singleton instance
+        INSTANCE.value = this.value;
+        return INSTANCE;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) throws Exception {
+        SingletonWithValue s1 = SingletonWithValue.INSTANCE;
+        s1.value = 99;
+
+        // Serialize
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("c:\\temp\\preserve.ser"));
+        oos.writeObject(s1);
+        oos.close();
+
+        // Reset current instance's value
+        s1.value = 0;
+
+        // Deserialize
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("c:\\temp\\preserve.ser"));
+        SingletonWithValue s2 = (SingletonWithValue) ois.readObject();
+        ois.close();
+
+        System.out.println("s1 == s2: " + (s1 == s2)); // true
+        System.out.println("s2.value: " + s2.value);   // 99  Value preserved from file
+    }
+}
+

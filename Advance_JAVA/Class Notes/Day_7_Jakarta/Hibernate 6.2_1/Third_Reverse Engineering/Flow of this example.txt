@@ -1,0 +1,4 @@
+1) create table
+2) insert some records
+3) generate entity from the table
+( Reverse engineering )

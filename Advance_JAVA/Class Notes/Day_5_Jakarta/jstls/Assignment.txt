@@ -1,0 +1,47 @@
+<c:forEach var="xy" items="${myvect}">
+	${xy}
+</c:forEach>
+
+
+List mylist=(List)request.getAttribute("myvect");
+Iterator itr=mylist.iterator();
+while(itr.hasNext())
+{
+	S.o.p(itr.next());
+}
+
+	servlet
+
+      doGet
+
+Person p1=new Person();
+p1.setName("abc");
+p1.setAge(20);
+
+Person p2=new Person();
+p1.setName("Xyz");
+p1.setAge(25);
+
+List<Person>personlist=new ArrayList<Person>();
+personlist.add(p1);
+personlist.add(p2);
+request.attribute("mylist",personlist);
+forward to - Result.jsp which will access above list using "forEach". ( i.e. EL and JSTL )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+create database mydb;
+
+use mydb;
+
+
+create table dept(deptno int(3),dname varchar(30),loc varchar(30));
+
+insert into dept values(1,'acc','mumbai');
+
+insert into dept values(2,'mktg','delhi');
+
+insert into dept values(3,'trg','banglore');
+
+
+select * from dept;
+
+
+
+

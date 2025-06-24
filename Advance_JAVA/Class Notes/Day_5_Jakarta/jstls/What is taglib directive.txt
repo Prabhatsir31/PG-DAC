@@ -1,0 +1,12 @@
+
+
+			JSTL
+
+taglib directive is used to access tags ( in-built or user defined )
+
+taglib directive has got two attributes
+
+	uri  -  is a location/address where entire information about that tag is present.
+
+	prefix - it's like a namespace and is used to access the tag.
+

@@ -1,0 +1,29 @@
+create maven project
+
+generate "war"  using 
+
+right click on project 
+	run as
+		8 maven install
+
+make sure u get "target" folder inside your project folder and war file gets created.
+
+now 
+
+go to
+
+D:\MyEclipse\mywar
+
+and give following command
+
+mvn site
+
+wait for some time and make sure it gives
+
+Build Successful   message .
+
+Now go to 
+
+D:\MyEclipse\mywar\target   folder and make sure
+
+"site" folder is created.

@@ -1,0 +1,8 @@
+<body-content>empty</body-content>
+it means tag should not be having a body
+if you try to give body, exception will be raised
+
+
+JspContext getJspContext() method belongs to SimpleTagSupport
+
+JspContext is a parent class of PageContext

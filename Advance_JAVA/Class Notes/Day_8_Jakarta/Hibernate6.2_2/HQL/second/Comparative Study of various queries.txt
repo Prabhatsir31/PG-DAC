@@ -1,0 +1,12 @@
+
+
+
+Query<?> query=session.createQuery("from Person");
+List<Person> mylist1=(List<Person>) query.list();
+
+
+query=session.createQuery("select c.name from Person c");		List<String> mylist2=(List<String>) query.list();
+
+
+query=session.createQuery("select c.name,c.age from Person c");
+List<Object[]>mylist3=(List<Object[]>) query.list();

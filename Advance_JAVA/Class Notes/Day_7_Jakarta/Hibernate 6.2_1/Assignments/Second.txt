@@ -1,0 +1,23 @@
+create an Entity "Register" with
+	id int - primary key. other members are:
+
+	name,address,email-id,login,password fields [ all String ]
+	setters , getters and toString() methods.
+
+
+Home.jsp - welcome page
+	
+	hyperlink -  register
+
+
+on click of "register" link control should go to "Register.jsp" which will accept name,address,email-id,login,password from the user.
+on submit control should go to "RegisterServ" servlet.
+
+This servlet should have "doPost" method which will 
+a) instantiate and initialize Register entity with the help of user inputs in Register.jsp
+b) persist "Register" entity inside database using Hibernate.
+
+
+
+
+

@@ -1,0 +1,7 @@
+WARNING: Failed to retrieve JNDI naming context for container [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/vita2]] so no cleanup was performed for that container
+javax.naming.NamingException: No naming context bound to this class loader
+
+
+Solution:
+
+open server configuration by double-clicking on the server name. after that check the checkbox of "Publish module contexts to separate XML files".

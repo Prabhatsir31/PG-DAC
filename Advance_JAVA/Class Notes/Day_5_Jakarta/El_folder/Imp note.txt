@@ -1,0 +1,4 @@
+If EL doesn't give you the expected output, you have to write following line inside each and every JSP page.
+
+
+<%@page isELIgnored="false"%>

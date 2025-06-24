@@ -1,0 +1,24 @@
+	Load on startup
+
+what to load?
+	servlet
+
+what does that mean?
+	it means load servlet/s when application starts.
+
+so when exactly servlet gets loaded by default?
+
+	servlet gets loaded only when first request comes. Not before that.
+
+so load on startup means you would like a particular servlet/s to get loaded when application starts i.e. even before first request.
+
+why do you want that?
+
+It's because that servlet/s performs some very very imp task from the point of view of entire web application.That task needs to be performed even before first request comes.
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+Cookies are used to store information.
+
+They can store only textual information ( no java objects)
+
+Cookies can be rejected by client browser ( so that's the risk of using Cookies in order to store information)
+
+
+Cookies are always added inside response and retrieved from request.

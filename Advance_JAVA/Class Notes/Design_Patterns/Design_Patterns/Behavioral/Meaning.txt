@@ -1,0 +1,1 @@
+"Behavioral" refers to how objects interact and communicate with one another. These patterns are concerned with the assignment of responsibilities between objects and the way objects collaborate to fulfill a task.

@@ -1,0 +1,30 @@
+import java.sql.*;
+public class jdb5 
+{
+	public static void main(String args[])
+	{
+		try
+		{
+Class.forName("com.mysql.jdbc.Driver");
+String ss="jdbc:mysql://localhost:3306/mydb";
+Connection con=DriverManager.getConnection(ss,"root","root");
+PreparedStatement pst=con.prepareStatement("update dept set loc=?");
+pst.setString(1,"Borivali");
+boolean c=pst.execute();
+
+if(!c)
+{
+	int mod=pst.getUpdateCount();
+System.out.println("mod is\t"+mod);
+if(mod>0)
+{
+	System.out.println("Records are successfully added");
+}
+}
+}
+catch(Exception ee)
+{
+	System.out.println(ee);
+}
+}
+}						

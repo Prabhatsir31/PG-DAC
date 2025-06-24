@@ -1,0 +1,69 @@
+without Bridge pattern
+
+		Vehicle
+	Car			Bike
+
+Now you want to extend this class hierarchy to incorporate engine types e.g.
+
+			Vehicle
+		Car				Bike
+	PetrolCar  ElectricCar		 PetrolBike	ElectricBike
+
+This means whenever you add any new type of Vehicle, e.g. Bus, you will have following hierachy:
+
+
+			Vehicle
+	Car		     Bike			  Bus
+PetrolCar  ElectricCar	 PetrolBike ElectricBike  PetrolBus ElectricBus
+
+
+so here we can see that when you add new vehicle(we just added Bus) the hierarchy grows exponentially. Similarly if you add one more type of engine i.e. Diesel you can imagine what would happen to your hierarchy.
+
+The Bridge pattern attempts to solve this problem by switching from is-a  to has-a structure. What this means is that you extract one of the dimensions into a separate class hierarchy, so that the original classes will reference an object of the new hierarchy (has-a relationship). The main advantage of this is that both these hierarchies are totally decoupled and changes can be done in any hierarchy without affecting the other one.
+
+
+	Vehicle					Engine
+Car		Bike			 Petrol       Electric
+
+
+public class Engine
+{
+}
+public class Petrol extends Engine
+{
+}
+public class Electric extends Engine
+{
+}
+
+public class Vehicle    // abstraction hierarchy
+{
+	private Engine engine;    // implementation hierarchy
+	// getter and setters for Engine
+}
+
+public class Car extends Vehicle
+{
+}
+public class Bus extends Vehicle
+{
+}
+
+As you can see here is "Vehicle" hierarchy is a container hierarchy and "Engine" is a contained hierarchy. Vehicle hierarchy is also known as "Abstraction Hierarchy" and Engine hierarchy is also known as "Implementation Hierarchy". As stated above both these hierarchies are independent of each other and both can grow without affecting each other.
+
+How exactly client can interact with these hierarchies?
+	client will interact with "Vehicle" hierarchy (abstraction hierarchy) directly where as with "Engine" hierarchy (implementation hierarchy) indirectly. 
+
+Why it is called as "Bridge" Pattern?
+	because client can reach the "implementation hierarchy (Engine in our case)" with the help of "Engine reference" declared inside Vehicle class. i.e.
+	
+public class Vehicle
+{
+	private Engine engine;  // this is a bridge
+	// getter and setters for Engine
+}
+
+
+
+
+

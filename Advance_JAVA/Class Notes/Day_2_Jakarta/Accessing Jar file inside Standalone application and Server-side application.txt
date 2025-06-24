@@ -1,0 +1,5 @@
+
+
+in case of standalone applications when u need to access class or classes from a particular jar file, u have to set the classpath.
+
+in case of server side applicatios when u need to access class or classes from a particular jar file, classpath won't work, u have to copy that jar file inside "lib" folder of your application and restart the server.

@@ -1,0 +1,43 @@
+EL
+Expression Language
+	required to get the values from various attributes as well as parameters. it is null friendly that is if it encounters null, it will not throw NullPointerException.
+
+syntax
+
+${expression}
+
+EL provides various implicit objects 
+
+	pageScope- to read page attributes
+	requestScope - to read request attributes
+	sessionScope- to read session attributes
+	applicationScope- to read context attributes
+
+	param- to read request parameters
+	paramValues- to read request parameters returning more than one value
+
+	cookie- to read cookies
+
+	initParam- to read context parameters
+
+All the EL implicit objects are implicitly maps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

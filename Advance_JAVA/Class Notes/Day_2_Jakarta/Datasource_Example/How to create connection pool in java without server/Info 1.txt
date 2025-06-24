@@ -1,0 +1,22 @@
+To use HikariCP in a non-Maven (manual setup) Java project, you need to download the following JARs:
+
+✅ 1. HikariCP JAR
+Name: HikariCP-5.1.0.jar (or latest version)
+
+Download from:
+https://repo1.maven.org/maven2/com/zaxxer/HikariCP/5.1.0/
+
+✅ 2. SLF4J (Simple Logging Facade for Java) – Required for HikariCP logging
+HikariCP uses SLF4J for logging. Download both of the following:
+
+a. slf4j-api-2.0.13.jar
+https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/
+
+b. slf4j-simple-2.0.13.jar (provides basic logging output)
+https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/2.0.13/
+
+✅ 3. MySQL Connector/J JAR
+Name: mysql-connector-j-8.4.0.jar (or current version)
+
+Download from:
+https://repo1.maven.org/maven2/mysql/mysql-connector-j/8.4.0/

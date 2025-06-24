@@ -1,0 +1,42 @@
+1) create a table "Product" with
+pid,pname,price,qty
+enter 5/6 records.
+	
+write a FirstServ which will retrieve all the records.
+while retrieving records it will create ArrayList and store only productnames inside it.
+This ArrayList should be now stored inside "request" attribute.
+
+FirstServ will now forward to Shop.jsp which will display all the product names using checkbox. [ use jstl here ]
+
+after selecting products when user will enter submit button ("add to cart"), control will go to SecondServ.
+
+SecondServ will get all the selected products, store them in ArrayList. Store this ArrayList inside session attribute.
+
+write a Bill.jsp will 
+retrieve session and ArrayList from it.
+display all the selected products using EL and Jstl.
+
+
+
+2) 
+	define a class "Dept" inside "mypack"
+the class should have following members
+
+int deptno;
+String dname;
+String loc;
+
+with getter and setter methods
+
+jsp -> servlet 
+
+	in jsp u need to have
+
+	Search By loc:-  <textfield>
+
+		<submit>
+
+user will enter "location" and click on submit. Request will go to Servlet , which will search records from database where location is  the one entered by user. while traversing from resultset servlet will create objects of Dept and initialize it with database values i.e. deptno,dname and loc. Also servlet will add each and every object of Dept inside ArrayList. 
+Now store this ArrayList inside "request" attribute and forward it to the same jsp from where u have come inside servlet.
+
+jsp will display the arraylist using EL.

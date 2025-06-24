@@ -1,0 +1,76 @@
+		Request-Response Model
+browser sends a request and Web Server sends the response. i.e. it will return some static page to client. all clients can see the same page i.e. static content.
+
+Dynamic Content AKA Request-Process-Response Model
+
+when client sends the request, it will be processed by a software component (server side technology) inside Web Server and accordingly client will get the response. Here response is based on type of request. Hence every client will see different type of response. 
+
+
+	servlet/jsp 
+
+since these technologies can be written only in java, they get all the advantages of java language.
+
+
+	servlet/jsp    vs  CGI
+
+
+in CGI for each client request, a separate process is created.
+
+in servlet/jsp for each client request, a lightweight thread is created.
+
+
+	servlet API
+
+	javax.servlet   and  javax.servlet.http  packages are used.
+
+
+	Servlet is a parent interface from which GenericServlet is derived. From GenericServlet, HttpServlet is derived.
+
+	GenericServlet - to handle any request
+
+	HttpServlet  - to handle only http request.
+
+
+Nowadays mostly "HttpServlet" is used.
+if u want to create a servlet, u need to derive a class from "HttpServlet" class.
+
+servlet life cycle :- since servlet is going to run inside web container, it has life cycle. Following is the life cycle of servlet
+
+	public void init()
+		it is called only once.
+		it can be used to
+			create database connection 
+			lookup remote object or any ejb component.
+
+
+	public void service(HttpServletRequest,HttpServletResponse)
+
+		it is called whenever a new request comes to the servlet and then in turn it invokes either "doGet" or "doPost" methods depending upon the type of request.
+
+		get
+	public void doGet(HttpServletRequest,HttpServletResponse)
+
+		post
+	public void doPost(HttpServletRequest,HttpServletResponse)
+
+	public void destroy()
+		it is called only when
+			u shutdown the server
+			or
+			u undeploy the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

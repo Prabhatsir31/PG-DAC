@@ -1,0 +1,18 @@
+hibernate.cfg.xml  should be inside "src/main/resources"
+
+for Servlet
+
+inside "main"
+
+create a folder "java"
+
+right click on "java"
+	new Servlet
+
+
+for Entity class
+
+right click on "java" folder
+	new package "mypack"
+
+copy Entity class inside "mypack"

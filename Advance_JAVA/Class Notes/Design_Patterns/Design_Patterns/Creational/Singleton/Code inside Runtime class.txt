@@ -1,0 +1,19 @@
+/**
+ * Every Java application has a single instance of class
+ * <code>Runtime</code> that allows the application to interface with
+ * the environment in which the application is running. The current
+ * runtime can be obtained from the <code>getRuntime</code> method.
+ * <p>
+ * An application cannot create its own instance of this class.
+ *
+
+public class Runtime {
+    private static Runtime currentRuntime = new Runtime();
+
+public static Runtime getRuntime() {
+        return currentRuntime;
+    }
+
+    /** Don't let anyone else instantiate this class */
+    private Runtime() {}
+

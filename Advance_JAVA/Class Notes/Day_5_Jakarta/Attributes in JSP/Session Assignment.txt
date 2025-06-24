@@ -1,0 +1,12 @@
+create a servlet "MyServlet"
+	inside "doGet()" create ArrayList<String>
+
+	store your group member's names in this list.
+
+	add that list inside "session"
+	display a message "session has been created"
+
+now write a JSP "MyJsp.jsp"
+	inside this JSP, retrieve ArrayList from session and display.
+
+Instruction :- first run "MyServlet" and then "MyJsp.jsp"
