@@ -196,11 +196,11 @@ JDBC Driver Summary Table
 ----------------------------
 
 | Type  | Name               | Platform Independent | Performance | Client Library Required |
-|-------|--------------------|----------------------|-------------|--------------------------|
-| 1     | JDBC-ODBC Bridge   | ❌ No                | 🟠 Poor     | ✅ Yes                   |
-| 2     | Native API Driver  | ❌ No                | 🟡 Medium   | ✅ Yes                   |
-| 3     | Network Protocol   | ✅ Yes               | 🟡 Medium   | ❌ No                    |
-| 4     | Thin Driver        | ✅ Yes               | 🟢 Best     | ❌ No                    |
+|-------|--------------------|----------------------|-------------|-------------------------|
+| 1     | JDBC-ODBC Bridge   |    No                |     Poor    |    Yes                  |
+| 2     | Native API Driver  |    No                |     Medium  |    Yes                  |
+| 3     | Network Protocol   |    Yes               |     Medium  |    No                   |
+| 4     | Thin Driver        |    Yes               |     Best    |    No                   |
 
 
 Which Driver is Best?

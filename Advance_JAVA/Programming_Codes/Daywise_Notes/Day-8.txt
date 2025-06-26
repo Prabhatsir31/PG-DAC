@@ -1,0 +1,263 @@
+DAY-8
+============
+
+Advance Java 
+====================
+
+Creational Design Pattern
+------------------------------
+
+SQL vs HQL
+------------------------------
+
+| Feature                | SQL (Structured Query Language)                        | HQL (Hibernate Query Language)                             |
+|------------------------|--------------------------------------------------------|------------------------------------------------------------|
+| Definition             | Standard language for database querying.               | Object-oriented query language used in Hibernate.          |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Operates On            | Tables and columns.                                    | Java class names and properties (fields).                  |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Return Type            | Tabular data (ResultSet).                              | Java objects (entities).                                   |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Case Sensitivity       | Not case sensitive.                                    | Case sensitive for class and field names.                  |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Example                | SELECT * FROM dept;                                    | FROM Dept;                                                 |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Mapping                | Manual mapping using ResultSet.                        | Auto mapping to entity classes.                            |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Conversion             | No conversion, executes directly on DB.                | HQL is converted to SQL using Dialect internally.          |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Usage                  | JDBC, SQL clients, native DB tools.                    | Hibernate framework.                                       |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Flexibility            | Rigid structure, SQL syntax bound.                     | More flexible and aligns with OOP principles.              |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Data Handling          | Raw data (needs processing).                           | Ready-to-use POJO objects.                                 |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Portability            | DB-specific, may require changes for different DBs.    | More portable due to Hibernate Dialect abstraction.        |
+
+Code Comparison:
+---------------------------
+SQL Code:
+    ResultSet rs = pst.executeQuery("SELECT * FROM dept");
+    List<Person> mylist = new ArrayList<>();
+    while(rs.next()) {
+        mylist.add(new Person(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+    }
+    System.out.println(mylist);
+
+HQL Code:
+    List<Person> mylist = session.createQuery("FROM Dept", Person.class).list();
+    System.out.println(mylist);
+
+
+Native Query in SQL and HQL
+-----------------------------
+
+What is a Native Query?
+-----------------------------
+- A native query refers to executing raw SQL statements directly on the database.
+- It bypasses the abstraction provided by HQL and uses pure SQL syntax.
+- Used when you want full control over the SQL or when HQL doesn't support complex queries.
+
+------------------------------------------------------------
+| Feature                | SQL (JDBC Native)              | HQL (Hibernate Native Query)                      |
+|------------------------|--------------------------------|---------------------------------------------------|
+| Query Style            | SQL syntax                     | SQL syntax passed to Hibernate as native query   |
+| Target                 | Tables and columns             | Tables and columns                               |
+| Returns                | ResultSet (raw data)           | List of entities, arrays, or scalar values       |
+| Mapping                | Manual via ResultSet           | Can use entity class mapping                     |
+| Use Case               | General JDBC use               | Hibernate-based app needing raw SQL              |
+| Performance            | Depends on query complexity    | Hibernate still manages connection/transaction   |
+------------------------------------------------------------
+
+Native SQL Query in JDBC (Java):
+-------------------------------------
+
+Connection con = DriverManager.getConnection(url, user, pass);
+Statement st = con.createStatement();
+ResultSet rs = st.executeQuery("SELECT * FROM employee");
+
+while(rs.next()) {
+    System.out.println(rs.getInt(1) + " " + rs.getString(2));
+}
+
+Native SQL Query in Hibernate:
+----------------------------------
+String sql = "SELECT * FROM employee";
+List<Object[]> rows = session.createNativeQuery(sql).getResultList();
+
+for (Object[] row : rows) {
+    System.out.println("ID: " + row[0] + ", Name: " + row[1]);
+}
+
+Native Query with Entity Mapping in Hibernate:
+-------------------------------------------------
+String sql = "SELECT * FROM employee";
+List<Employee> list = session
+    .createNativeQuery(sql, Employee.class)
+    .getResultList();
+
+for (Employee emp : list) {
+    System.out.println(emp.getName());
+}
+
+Hibernate Header File Explanation
+-------------------------------------
+
+// Hibernate Core Imports
+--------------------------
+
+1. import org.hibernate.Session;
+   -> Used to get a session (a single-threaded unit of work) with the database.
+   -> You can perform operations like save(), update(), delete(), etc.
+
+2. import org.hibernate.SessionFactory;
+   -> Responsible for creating and managing multiple sessions.
+   -> It is a heavyweight object and should be created only once (usually at app startup).
+
+3. import org.hibernate.Transaction;
+   -> Manages transactions (begin, commit, rollback).
+   -> Ensures changes are either fully completed or not applied at all.
+
+4. import org.hibernate.cfg.Configuration;
+   -> Used to configure Hibernate and build SessionFactory.
+   -> Loads hibernate.cfg.xml configuration file.
+
+
+// JPA Annotations (Javax / Jakarta Persistence API)
+------------------------------------------------------
+
+5. import javax.persistence.*;
+   -> Contains standard annotations like @Entity, @Id, @Column used in entity classes.
+
+   ▪ @Entity       -> Declares the class as a database entity/table.
+   ▪ @Id           -> Specifies the primary key.
+   ▪ @Column       -> Maps a Java field to a specific column in the DB table.
+   ▪ @Table        -> (optional) Maps entity to a table name.
+   ▪ @GeneratedValue -> Specifies auto-increment/sequence for primary key.
+   ▪ @ManyToOne, @OneToMany -> Define relationships between tables.
+
+Purpose of using these Imports:
+--------------------------------------
+
+Establishes a connection between Java app and database via ORM.
+Allows CRUD operations on Java objects directly (no manual SQL).
+Reduces boilerplate code for DB interaction.
+Provides better transaction and session management.
+Makes Java class behave like a DB table via annotations.
+
+Note:
+Hibernate is the implementation of JPA (Java Persistence API).
+You use both Hibernate classes and JPA annotations together in most projects.
+
+
+Hibernate Header
+--------------------------------------------
+
+1. Required Hibernate Imports
+------------------------------
+These are typical imports required in your Java classes:
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import javax.persistence.*;          // For annotations like @Entity, @Id, @Column
+
+2. Hibernate Configuration File (hibernate.cfg.xml)
+-----------------------------------------------------
+This file should be in your `src/main/resources` folder:
+
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+
+    <!-- Database connection settings -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/your_db</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+
+    <!-- JDBC connection pool (optional) -->
+    <property name="connection.pool_size">5</property>
+
+    <!-- SQL dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!-- Show executed SQL in console -->
+    <property name="show_sql">true</property>
+
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <!-- Entity class mapping -->
+    <mapping class="com.example.model.Student"/>
+
+  </session-factory>
+</hibernate-configuration>
+
+
+3. Example Entity Class (Student.java)
+--------------------------------------------
+package com.example.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "student")
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
+    private int age;
+
+    // Getters and Setters
+}
+
+
+4. Session Factory Initialization
+--------------------------------------------
+SessionFactory factory = new Configuration()
+                           .configure("hibernate.cfg.xml")
+                           .buildSessionFactory();
+
+Session session = factory.openSession();
+Transaction tx = session.beginTransaction();
+
+session.save(new Student("Ravi", 22));
+
+tx.commit();
+session.close();
+
+
+select c.name from Person c 
+    we get list contains all names 
+
+from Person     
+    we get list contains all Person class objects
+
+select c.name, c.age from Person c 
+
+
+There are two ways we can ask for record from Hibernate 
+    1) using "get" or "load" (load is now deprecated) method of Session 
+    2) using query i.e., either HQL or SQL 
+
+get or load is used when u want single record based on pk 
+
+query is used when u want multiple records or a record/s based on some condition 
+
+
+In the first level cache "entire object is stored"
+
+in the second level cache information is stored in the following way:
+    Key                     value
+    pk                      set of other mwmber

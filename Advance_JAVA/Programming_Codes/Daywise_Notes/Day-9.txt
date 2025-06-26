@@ -1,0 +1,177 @@
+DAY-9
+============
+
+Advance Java 
+====================
+
+Decorator Design Pattern
+-----------------------------
+• A core Java structural design pattern.
+• Allows dynamic addition of responsibilities to objects.
+• Promotes code reusability and adherence to Open/Closed principle.
+
+Definition:
+    The decorator pattern attaches additional responsibilities to an object dynamically.
+    Decorators provide a flexible alternative to subclassing for extending functionality.
+
+Usage in JDK:
+    Many I/O classes in Java use the decorator pattern.
+
+Example:
+    FileOutputStream fos = new FileOutputStream("abc.txt");
+    DataOutputStream dos = new DataOutputStream(fos);
+
+    - Here, DataOutputStream enhances FileOutputStream by allowing primitive data writing.
+    - dos.writeInt(10); --> adds binary writing to basic file output.
+
+Benefits:
+✔ Flexible alternative to subclassing.
+✔ Enhances only specific instances.
+✔ Runtime behavior extension.
+
+
+FileOutputStream fos1 = new FileOutputStream("abc.txt");
+
+FileOutputStream fos2 = new FileOutputStream("xyz.txt");
+
+DataOutputStream dos1 = new DataOutputStream(fos1);
+
+FileOutputStream fos3 = new FileOutputStream("pqr.txt");
+
+FileOutputStream fos4 = new FileOutputStream("pqr.txt");
+
+ObjectOutputStream oos = new ObjectOutputStream(fos4);
+
+Facade Design Pattern
+-----------------------------
+• A structural design pattern that provides a simplified interface to a complex subsystem.
+• Reduces dependencies and coupling between client code and subsystems.
+
+Definition:
+    The Facade pattern hides system complexities and provides a simpler API to the client.
+
+Example:
+    public class HotelReception {
+        public void bookRoom() {
+            new RoomBooking().book();
+            new FoodOrder().placeOrder();
+        }
+    }
+
+    Client calls `reception.bookRoom();` without dealing with multiple subsystems.
+
+Usage:
+    Java RMI, JDBC drivers internally use Facade pattern.
+
+Benefits:
+✔ Simpler interface for clients.
+✔ Reduces code dependencies.
+✔ Improves maintainability.
+
+Front Controller Design Pattern
+---------------------------------
+• A behavioral pattern in web applications (MVC).
+• All requests go through a single handler (controller).
+• Controller decides which part of application to call.
+
+Example:
+    Spring MVC → DispatcherServlet acts as the front controller.
+    All incoming requests are routed through it.
+
+Benefits:
+✔ Centralized request handling.
+✔ Improved logging, security, session handling.
+✔ Clear separation of concerns.
+
+
+Query Cache (Hibernate)
+-----------------------------
+• Hibernate supports query caching in addition to 1st and 2nd level cache.
+• Used for improving performance by caching frequently used query results.
+
+Enable Cache:
+    Query query = session.createQuery("from Student");
+    query.setCacheable(true);
+
+Conditions:
+✔ Must enable 2nd level cache first.
+✔ Good for read-mostly scenarios.
+
+Set Cachacke Query
+    org.hibernate.Query.setCacheable(true)
+
+    This call allpw the query to look for existing cacbe resukts or add its resuts to the cache when it is execjf
+
+Lazy vs Eager Loading
+-----------------------------
+• These define how Hibernate loads related entities.
+
+1. Lazy Loading:
+    - Default in Hibernate.
+    - Child entities are fetched only when accessed.
+
+    Example:
+        Student s = session.get(Student.class, 1);
+        s.getPhones(); // Triggers DB query
+
+2. Eager Loading:
+    - Loads all related entities (parent + child) at once.
+
+    Example:
+        @OneToMany(fetch = FetchType.EAGER)
+
+Benefits:
+✔ Lazy loading → faster initial load, less memory.
+✔ Eager loading → avoids LazyInitializationException
+
+
+Thin Query
+------------------
+• Query that returns just the required amount of data (columns or rows).
+• Optimizes bandwidth and processing.
+
+Bad:
+    SELECT * FROM employee;
+
+Better (Thin):
+    SELECT name, salary FROM employee;
+
+
+N + 1 problem
+------------------
+• Common in ORM frameworks like Hibernate.
+• Happens when fetching a parent entity causes multiple queries for child entities.
+
+Example:
+    - Student has many Phone (OneToMany)
+    - 1 query for students + N queries for phones
+
+Solution:
+✔ Use Fetch Join (HQL): 
+    from Student s join fetch s.phones
+✔ Use @BatchSize or @Fetch(FetchMode.SUBSELECT)
+
+    eager fetch 
+        What us N what is 1 ? 
+    e.g., student has multiple phone number (one to many)
+            in case of eage=er fetch we ask for student from the database.
+            1 query for student and n queries for phone will be fired (fat query)
+    
+
+
+H-CQL (Hibernate Criteria Query Language)
+----------------------------------------------
+• An alternative to HQL with object-oriented style queries.
+• Useful when dynamic conditions or multiple filters exist.
+
+Example:
+    CriteriaBuilder cb = session.getCriteriaBuilder();
+    CriteriaQuery<Student> cq = cb.createQuery(Student.class);
+    Root<Student> root = cq.from(Student.class);
+    cq.select(root).where(cb.equal(root.get("name"), "John"));
+
+Benefits:
+✔ Type-safe, compile-time checked.
+✔ Object-oriented and readable.
+✔ No need to use string-based HQL.
+
