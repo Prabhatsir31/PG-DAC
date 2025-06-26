@@ -1,0 +1,15 @@
+@Component
+public class Author
+
+is similar to
+
+
+<bean id="author" class="mypack.Author"/>
+
+
+@Component(value="mybook")
+public class Book
+
+is same as
+
+<bean id="mybook" class="mypack.Book"/>

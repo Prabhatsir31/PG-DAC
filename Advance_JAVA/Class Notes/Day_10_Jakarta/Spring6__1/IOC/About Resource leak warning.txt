@@ -1,0 +1,12 @@
+Resource leak: 'context' is never closed - warning
+
+ApplicationContext context=new ClassPathXmlApplicationContext("student.xml");
+
+you need to invoke "close" on context but the method is not available with "ApplicationContext", hence you need to write:
+
+
+ApplicationContext context=new ClassPathXmlApplicationContext("student.xml");
+	// other statements
+
+
+context.close();

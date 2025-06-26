@@ -1,0 +1,5 @@
+ <context:component-scan base-package="mypack"/>
+
+	
+
+it means automatically scan all the classes of mypack where @Component annotation has been applied. i.e. treat those classes as beans.

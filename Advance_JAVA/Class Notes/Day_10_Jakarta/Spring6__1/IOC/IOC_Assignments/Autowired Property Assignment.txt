@@ -1,0 +1,39 @@
+This is the assignment of "Autoscanning"
+
+
+interface Weapon
+{
+	void attack();
+}
+class Gun implements Weapon
+{
+	public void attack(){S.o.p("Gun attack");}
+}
+class Sword implements Weapon
+{
+	public void attack(){S.o.p("Sword attack");}
+}
+class Missiles implements Weapon
+{
+	public void attack(){S.o.p("Missiles attack");}
+}
+class Soldier
+{
+	
+	private Weapon weapon;
+	
+	void perform()
+	{
+		weapon.attack();
+	}
+}
+
+public class MyApp
+{
+	public static void main(String args[])
+	{
+		// code here
+	}
+}
+
+using "Autowired" property inject a specific weapon to "private Weapon weapon" reference.

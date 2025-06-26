@@ -1,0 +1,7 @@
+After Context
+MyClass no-arg const
+prototype scope
+Creating another bean
+MyClass no-arg const
+prototype scope
+ob1 and ob2 are not ==

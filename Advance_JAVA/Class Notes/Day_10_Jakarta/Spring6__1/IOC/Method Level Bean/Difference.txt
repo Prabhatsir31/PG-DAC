@@ -1,0 +1,7 @@
+AnnotationConfigApplicationContext—
+
+Loads a Spring application context from one or more Java-based configuration classes.
+
+ClassPathXmlApplicationContext—
+
+Loads a context definition from one or more XML files located in the classpath, treating context-definition files as classpath resources.

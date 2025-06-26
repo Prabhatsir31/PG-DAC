@@ -1,0 +1,35 @@
+interface Weapon
+{
+	void attack();
+}
+class Gun implements Weapon
+{
+	public void attack(){......}
+}
+class Sword implements Weapon
+{
+	public void attack(){......}
+}
+class Missiles implements Weapon
+{
+	public void attack(){......}
+}
+class Soldier
+{
+	private Weapon weapon;
+	//parameterized constructor
+	void perform()
+	{
+		weapon.attack();
+	}
+}
+
+public class MyApp
+{
+	public static void main(String args[])
+	{
+		// code here
+	}
+}
+
+provide constructor injection inside spring bean configuration file.

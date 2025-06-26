@@ -1,0 +1,26 @@
+public class Book 
+{
+	private int id;
+	private String title;
+	private int cost;
+	private Set<Author> authors;
+
+	// getters and setters
+
+}
+
+public class Author
+{
+	private int id;
+	private String name;
+	private String address;
+
+	// getters and setters
+
+}
+
+
+Book has Authors [ one to many ]
+
+create one instance of Book and add atleast 3 authors inside it.
+now persist and retrieve Group only [ it should not retrieve authors -  poof - you should be able to see sql query for Book and not for Authors ]

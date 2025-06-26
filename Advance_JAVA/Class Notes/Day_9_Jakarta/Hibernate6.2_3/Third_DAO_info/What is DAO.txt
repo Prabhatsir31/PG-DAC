@@ -1,0 +1,12 @@
+			DAO
+		Data Access Object
+The DAO (Data Access Object) design pattern is typically considered a structural design pattern.
+
+Structural Patterns focus on how classes and objects are composed to form larger structures. These patterns deal with the composition of objects and relationships between them.
+
+The DAO pattern is used to separate the persistence logic (database interaction) from the business logic of the application. By doing this, it provides a structure where data access is decoupled from the core functionality of the application. 
+
+DAO decouples business layer from a particular persistence mechanism [ file,database etc]. So business layer can concentrate only on business logic.
+
+It organizes and structures the data access logic into a separate object, the DAO, which can be used to perform CRUD (Create, Read, Update, Delete) operations. This structure helps keep the business logic separate from the low-level database access code.
+

@@ -1,0 +1,7 @@
+if you don't say:
+
+context.refresh()
+
+you get:
+
+org.springframework.context.annotation.AnnotationConfigApplicationContext@5f4da5c3 has not been refreshed yet

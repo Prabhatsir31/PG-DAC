@@ -1,0 +1,7 @@
+ 	@Autowired
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+
+here @Autowired annotation tells IOC container to invoke setAuthor method by considering "byType" autowiring.

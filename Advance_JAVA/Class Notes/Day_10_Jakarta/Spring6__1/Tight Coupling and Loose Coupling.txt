@@ -1,0 +1,77 @@
+interface Weapon
+{
+	void attack();
+}
+class Gun implements Weapon
+{
+	public void attack(){......}
+}
+class Sword implements Weapon
+{
+	public void attack(){......}
+}
+class Missiles implements Weapon
+{
+	public void attack(){......}
+}
+class Soldier
+{
+	void perform()
+	{
+		Gun g=new Gun(); // tight coupling
+		g.attack();
+	}
+}
+
+public class MyApp
+{
+	public static void main(String args[])
+	{
+		Soldier s=new Soldier();
+		s.perform();
+	}
+}
+
+
+in the above code,Soldier class is tightly coupled with a specific Weapon say e.g. "Gun". What if he wants to use another Weapon? we need to change the code inside "perform" method. This is called as "Program to implementation" which gives you maintenance drawback. 	
+how do we make soldier use any weapon. i.e. how do we make Soldier loosely coupled with a specific weapon?
+
+
+ans:
+
+
+
+class Soldier
+{
+	void perform(Weapon ref) // loose coupling
+	{
+		ref.attack();
+	}
+}
+	
+
+public class MyApp
+{
+	public static void main(String args[])
+	{
+		Soldier s=new Soldier();
+		s.perform(new Gun());
+		or
+		s.perform(new Sword());
+	}
+}
+
+This is what we've been doing till now in order to achieve "Loose Coupling".
+So what is special about Spring's loose coupling?
+
+
+as you may have noticed in the above example even though tight coupling is not there inside "Soldier" class , it does exist inside "MyApp". i.e. somewhere u need to specify which specific type u want to use (Gun or Sword etc.)
+
+When we use Spring it has a powerful feature called as "Dependency Injection" which ensures that even "MyApp" would be loosely coupled with a specific implementation.
+
+
+
+
+
+
+
