@@ -1,0 +1,16 @@
+if you get some error like
+	lifecycle, ziputil 
+	org.apache.lifecycle  etc
+
+
+Solution:
+
+close the project
+
+go to .m2/repository
+
+from "org" folder
+
+remove "apache" folder entirely
+
+open the project again

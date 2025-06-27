@@ -1,0 +1,1 @@
+This example is without "hibernate.cfg.xml" file.

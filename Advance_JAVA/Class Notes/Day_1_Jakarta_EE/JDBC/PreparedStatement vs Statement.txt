@@ -1,0 +1,13 @@
+With "Statement", every time you execute a query, the database must parse, optimize, and compile the SQL query into an execution plan. This is an expensive operation, especially if you are executing the same query multiple times with different parameters.
+
+How does "PreparedStatement" work?
+
+Pre-Parsing and Pre-Optimization:
+
+When a "PreparedStatement" is created, the database parses the SQL query, optimizes it, and generates a query execution plan. This plan is cached by the database for efficient reuse.
+
+The query is "precompiled" in the sense that the structure is determined upfront, and the database is aware of how it will execute the query before it is run, even before any parameters are provided.
+
+No Need to Re-Parse:
+
+Once a query is prepared and compiled, the database doesn't need to re-parse and optimize the query each time it is executed with different parameters. The query execution plan is reused, and only the parameters are substituted.

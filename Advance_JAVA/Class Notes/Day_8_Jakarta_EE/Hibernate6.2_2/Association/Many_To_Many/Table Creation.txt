@@ -1,0 +1,27 @@
+mysql> select * from employee;
++-----+-------+
+| eid | ename |
++-----+-------+
+|   1 | Harry |
+|   2 | Javed |
++-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from project;
++-----+-------+
+| pid | pname |
++-----+-------+
+|   1 | Emart |
+|   2 | Etour |
++-----+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from employee_project;
++---------------+--------------+
+| employees_eid | projects_pid |
++---------------+--------------+
+|             1 |            1 |
+|             1 |            2 |
+|             2 |            2 |
++---------------+--------------+
+3 rows in set (0.00 sec)

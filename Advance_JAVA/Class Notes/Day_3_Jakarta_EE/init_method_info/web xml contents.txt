@@ -1,0 +1,64 @@
+	<context-param>
+		<param-name>database</param-name>
+		<param-value>MySql5</param-value>
+	</context-param>
+<servlet>
+	<servlet-name>InitTest1</servlet-name>
+	<servlet-class>InitTest1</servlet-class>
+	<init-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>InitTest1</servlet-name>
+	<url-pattern>/IT1</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>InitTest2</servlet-name>
+	<servlet-class>InitTest2</servlet-class>
+	<init-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>InitTest2</servlet-name>
+	<url-pattern>/IT2</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>InitTest3</servlet-name>
+	<servlet-class>InitTest3</servlet-class>
+	<init-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>InitTest3</servlet-name>
+	<url-pattern>/IT3</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>InitTest4</servlet-name>
+	<servlet-class>InitTest4</servlet-class>
+	<init-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>InitTest4</servlet-name>
+	<url-pattern>/IT4</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>InitTest5</servlet-name>
+	<servlet-class>InitTest5</servlet-class>
+	<init-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>InitTest5</servlet-name>
+	<url-pattern>/IT5</url-pattern>
+</servlet-mapping>

@@ -1,0 +1,13 @@
+
+
+redirect
+	can go beyond web container.
+	it is slower
+	client clearly knows who gives the final response.
+	different requests.
+
+forward
+	within the web container.
+	it is faster than redirect.
+	client is under impression that first servlet/jsp has sent the response.
+	same requests.

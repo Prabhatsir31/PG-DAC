@@ -1,0 +1,100 @@
+Hibernate: alter table Employee modify column salary  float(53) not null
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0
+
+[abc	accountant	25000.0, xyz	manager	35000.0, pqr	clerk	15000.0, lmn	Soft_Engineer	45000.0]
+
+find out only desig
+
+Hibernate: select e1_0.desig from Employee e1_0
+
+[accountant, manager, clerk, Soft_Engineer]
+
+how many records are there
+
+Hibernate: select count(e1_0.id) from Employee e1_0
+
+[4]
+
+Find out whose salary is 25000
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.salary=?
+
+[abc	accountant	25000.0]
+
+Find out whose salary is greater than 25000
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.salary>?
+
+[xyz	manager	35000.0, lmn	Soft_Engineer	45000.0]
+
+Find out where name contains p
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.name like ? escape ''
+
+[pqr	clerk	15000.0]
+
+salary in between 30000 and 50000
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.salary between ? and ?
+
+[xyz	manager	35000.0, lmn	Soft_Engineer	45000.0]
+
+Find out those employees where salary greater than 20000 and designation is manager
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.salary>? and e1_0.desig=?
+
+[xyz	manager	35000.0]
+
+Find out those employees where designation is accountant or clerk
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.desig=? or e1_0.desig=?
+
+[abc	accountant	25000.0, pqr	clerk	15000.0]
+
+Find out those employees where salary greater than 40000 or designation is  clerk
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 where e1_0.salary>? or e1_0.desig=?
+
+[pqr	clerk	15000.0, lmn	Soft_Engineer	45000.0]
+
+Find out  employees order by salary 
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 order by e1_0.salary
+
+[pqr	clerk	15000.0, abc	accountant	25000.0, xyz	manager	35000.0, lmn	Soft_Engineer	45000.0]
+
+Find out  employees in descending order by salary 
+
+Hibernate: select e1_0.id,e1_0.desig,e1_0.name,e1_0.salary from Employee e1_0 order by e1_0.salary desc
+
+[lmn	Soft_Engineer	45000.0, xyz	manager	35000.0, abc	accountant	25000.0, pqr	clerk	15000.0]
+
+Find out  average of  salary 
+
+Hibernate: select avg(e1_0.salary) from Employee e1_0
+
+[30000.0]
+
+Find out  minimum of  salary 
+
+Hibernate: select min(e1_0.salary) from Employee e1_0
+
+[15000.0]
+
+Find out  maximum of  salary 
+
+Hibernate: select max(e1_0.salary) from Employee e1_0
+
+[45000.0]
+
+Find out  sum of  salary 
+
+Hibernate: select sum(e1_0.salary) from Employee e1_0
+
+[120000.0]
+
+list those names where salary is 25000
+
+Hibernate: select e1_0.name from Employee e1_0 where e1_0.salary=?
+
+[abc]

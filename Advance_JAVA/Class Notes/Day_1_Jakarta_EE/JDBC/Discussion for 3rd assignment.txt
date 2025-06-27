@@ -1,0 +1,23 @@
+
+S.o.p(p1);
+
+PreparedStatement pst=con.prepareStatement("insert into product values ?,?,?,?");
+
+pst.setInt(1,p1.getPid());
+pst.setString(2,p1.getPname());
+
+.......
+
+pst.executeUpdate();
+
+p1=null;
+
+pst=con.prepareStatement("select * from product");
+
+ResultSet rs=pst.executeQuery();
+
+rs.next();
+
+Product p2=new Product(rs.getInt(1),rs.getString(2).....);
+
+S.o.p("Retrieved object is\t"+p2);

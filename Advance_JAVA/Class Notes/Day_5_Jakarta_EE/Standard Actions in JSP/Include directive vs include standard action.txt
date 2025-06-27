@@ -1,0 +1,155 @@
+
+		Forwarding.jsp
+
+<jsp:forward page="Forwarded.jsp"/>
+
+
+		
+
+		Forwarded.jsp
+
+Welcome to forwarded jsp page
+passing parameter to the forwarded page
+
+
+		Forwarding1.jsp
+
+<jsp:forward page="Forwarded1.jsp">
+	<jsp:param name="role" value="TL"/>
+</jsp:forward>
+
+
+
+		Forwarded1.jsp
+
+
+Inside forwarded1 jsp 
+<br>
+<%=request.getParameter("role")%>
+
+
+including the response of another jsp inside current jsp
+
+
+			Includer.jsp
+
+Inside main jsp page   <br>
+
+<jsp:include page="Included.jsp"/>
+
+Back to main jsp page
+
+
+
+	
+			Included.jsp
+
+<b><i><u>  Inside Included jsp page </b></i></u>
+<br>
+
+
+
+
+
+
+
+
+	different bet'n 
+		include directive and include standard action
+
+include directive is used to include the content of other page inside the current page at translation time (when jsp is converted to java).
+
+
+include standard action is used to include the response of other jsp inside the current jsp.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

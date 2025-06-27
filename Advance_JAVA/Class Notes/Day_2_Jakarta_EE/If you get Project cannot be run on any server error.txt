@@ -1,0 +1,13 @@
+While running servlet on tomcat, if you get an error:
+	The project cannot be run on any server,
+
+
+
+Go to project facet 
+	check java version  it should be 17
+
+web module version  it should be 5.0
+
+
+server
+	apache tomcat 10.1 should be selected.

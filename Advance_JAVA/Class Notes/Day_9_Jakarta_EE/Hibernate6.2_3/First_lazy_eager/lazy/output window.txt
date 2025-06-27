@@ -1,0 +1,29 @@
+Hibernate: create table PHONE (PHONE_ID bigint not null auto_increment, PHONE_NUMBER varchar(15) not null, PHONE_TYPE varchar(10) not null, sid bigint, primary key (PHONE_ID)) type=MyISAM
+
+Hibernate: create table STUDENT (STUDENT_ID bigint not null auto_increment, STUDENT_NAME varchar(100) not null, primary key (STUDENT_ID)) type=MyISAM
+
+Hibernate: alter table PHONE add constraint FKgslftw115272cmu693tsj5ssw foreign key (sid) references STUDENT (STUDENT_ID)
+
+Hibernate: insert into STUDENT (STUDENT_NAME) values (?)
+
+Hibernate: insert into PHONE (PHONE_NUMBER, PHONE_TYPE) values (?, ?)
+
+Hibernate: insert into PHONE (PHONE_NUMBER, PHONE_TYPE) values (?, ?)
+
+Hibernate: update PHONE set sid=? where PHONE_ID=?
+Hibernate: update PHONE set sid=? where PHONE_ID=?
+
+
+
+Hibernate: select student0_.STUDENT_ID as STUDENT_1_1_0_, student0_.STUDENT_NAME as STUDENT_2_1_0_ from STUDENT student0_ where student0_.STUDENT_ID=?
+
+1
+abc
+
+Let's invite children
+
+Hibernate: select studentpho0_.sid as sid4_0_0_, studentpho0_.PHONE_ID as PHONE_ID1_0_0_, studentpho0_.PHONE_ID as PHONE_ID1_0_1_, studentpho0_.PHONE_NUMBER as PHONE_NU2_0_1_, studentpho0_.PHONE_TYPE as PHONE_TY3_0_1_ from PHONE studentpho0_ where studentpho0_.sid=?
+
+[Phone [phoneType=resd, phoneNumber=2500727], Phone [phoneType=mobile, phoneNumber=9270682272]]
+
+done with student

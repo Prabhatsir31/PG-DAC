@@ -1,0 +1,16 @@
+1) create a table "student" with
+	rollno,name,age,qualification
+
+	
+	create "student.html" to accept rollno,name,age and qualification from a user.
+
+	after submit, control should go to "StudentServ1" which will save above information inside "student" table.
+
+2) create a table "book" with
+		id,bookname,authorname,price
+
+	add 4 records.
+
+  write a Servlet "BookServ" which will retrieve all the records from "book" table and display.
+
+

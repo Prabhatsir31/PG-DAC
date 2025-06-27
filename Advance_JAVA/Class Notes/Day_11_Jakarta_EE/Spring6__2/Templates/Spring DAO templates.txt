@@ -1,0 +1,7 @@
+ Spring DAO
+	supports some templates e.g.
+JdbcTemplate,HibernateTemplate etc.
+
+The main purpose of template is Boilerplate reduction.
+
+another point is all these templates hit database, in case if there is any SQLException(checked exception) they convert it into "DataAccessException" (unchecked exception) and throw it to the client application. Advantage here is client need not handle or declare "DataAccessException" as it is unchecked exception.

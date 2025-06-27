@@ -1,0 +1,1 @@
+create table customers(customerid int(5) primary key,customername varchar(30),address varchar(30));

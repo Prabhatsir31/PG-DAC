@@ -1,0 +1,33 @@
+Auto Scanning
+
+	<context:component-scan>
+		it informs Spring to automatically discover and detect the beans. i.e. beans in the Spring application can now be declared and wired without any <bean> tag.
+
+<context:component-scan> does everthing that <context:annotation-config> does, in addition, to auto-scanning.
+
+when u use <context:component-scan> u don't use "<bean>" tag in spring bean configuration file, but u must mention
+
+	@Component for each class , u want to treat it as a bean.
+
+i.e.
+
+@Component
+public class Book{}
+
+@Component
+public class Author{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

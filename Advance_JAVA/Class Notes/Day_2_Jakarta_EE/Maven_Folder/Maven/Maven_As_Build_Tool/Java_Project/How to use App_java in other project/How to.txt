@@ -1,0 +1,84 @@
+go to "d:\mvn\javaapp>"
+
+and say
+
+mvn install
+
+on successful completion of this command go and check inside
+
+C:\Users\admin\.m2\repository    folder
+
+u will get
+
+com
+	tigers
+		javaapp
+			1.0-SNAPSHOT
+				javaapp-1.0-SNAPSHOT.jar
+
+that is ur jar file "javaapp-1.0-SNAPSHOT.jar" is created in local repository.
+This also means that now u can use it in some other java application with the help of "pom.xml".
+
+now go to eclipse
+
+file
+new
+	java project
+
+core1
+
+new class
+MyApp
+
+
+
+package core1;
+
+public class MyApp
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("invoking App java");
+		App a1=new App();
+	}
+
+}
+
+
+
+now u will get error for "App"
+
+right click on project
+configure
+
+convert to maven project
+
+inside generated pom.xml file
+
+after
+
+</build>  tag
+
+add
+
+<dependencies>
+  <dependency>
+  <groupId>com.tigers</groupId>
+  <artifactId>javaapp</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <scope>provided</scope>
+  </dependency>
+  </dependencies>
+
+refresh the project
+
+now once again go to the statement "App a=new App()"
+
+
+u will get a suggestion "import com.tigers"
+click on that.
+
+Thats it....... so this is the way u can use App.java through local repository.
+
+			

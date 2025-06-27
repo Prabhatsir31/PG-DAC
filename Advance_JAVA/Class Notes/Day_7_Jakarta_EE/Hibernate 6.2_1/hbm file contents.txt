@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="mypack">
+ <class entity-name="Person" table="Person">
+<meta attribute="description">This class is used to save the info about users</meta>
+  <id column="id" name="id" type="int"/>
+
+  <property column="name" name="name" type="string"/>
+
+  <property column="age"  name="age" type="int"/>
+</class>
+</hibernate-mapping>

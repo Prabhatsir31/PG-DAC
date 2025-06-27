@@ -1,0 +1,58 @@
+File
+	new
+		maven project
+
+
+Do not select : create a simple project
+Select :- use default workspace location
+Do not select :  add project(s) to working set
+
+From the dialog box “New Maven Project”
+	Select :-  “org.apache.maven.archetypes”    maven-archetype-webapp	1.0
+
+Click “next”
+
+Group id:-  vita.com
+Artifact id:-  mywar2
+
+Click “finish”
+
+Observe that web project is ready.
+If u get compilation error “The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path”,
+Open “pom.xml” and add following dependency.
+
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+    <scope>provided</scope>
+</dependency>
+
+
+copy "hello.tld" inside "WEB-INF" folder.
+
+copy "UseSecond.jsp" inside "webapp"
+
+right click on "main"
+	new
+		folder
+			java
+
+right click on "java" 
+	new package
+		tagpack
+
+inside "tagpack" package copy "TagCode2.java"
+
+in order to compile "TagCode2.java" you will need following dependency:
+
+<dependency>
+    <groupId>javax.servlet.jsp</groupId>
+    <artifactId>javax.servlet.jsp-api</artifactId>
+    <version>2.3.1</version>
+    <scope>provided</scope>
+</dependency>
+
+set "UseSecond.jsp" as a welcome file.
+
+run the project.

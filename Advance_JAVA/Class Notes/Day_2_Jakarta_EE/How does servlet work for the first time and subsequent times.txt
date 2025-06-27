@@ -1,0 +1,34 @@
+@WebServlet("/FirstServ")
+public class FirstServ extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw=response.getWriter();
+		pw.println("Welcome to Servlet World");
+	}
+
+}
+
+
+how does above servlet work?
+
+When you run your servlet for the first time  [ FirstServ ]
+	a) web container (tomcat) loads "FirstServ" class
+	b) container instantiates "FirstServ",(using Reflection API) for this to happen your servlet class must have "public default constructor".
+
+	c) container invokes "init()" method.
+
+	d) container retrieves a thread from the thread pool.
+	e) container creates implementations of HttpServletRequest and HttpServletResponse interfaces.
+	f) now container invokes "service()" method by passing implementations of HttpServletRequest and HttpServletResponse.
+	g) service() checks what is the type of request, i.e. get or post. If it is "get" , service() method invokes "doGet()" , if it is "post", service() method invokes "doPost()".
+
+When you run servlet for the subsequent times:
+
+	d) container retrieves a thread from the thread pool.
+	e) container creates implementations of HttpServletRequest and HttpServletResponse interfaces.
+	f) now container invokes "service()" method by passing implementations of HttpServletRequest and HttpServletResponse.
+	g) service() checks what is the type of request, i.e. get or post. If it is "get" , service() method invokes "doGet()" , if it is "post", service() method invokes "doPost()".

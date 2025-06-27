@@ -1,0 +1,9 @@
+database connectivity in java
+
+JDBC - retrieve records , update records, add records,delete records
+
+
+
+ORM [ Object to Relational Mapping ] e.g. Hibernate
+
+-  we can persist and retrieve entire object/s into database.

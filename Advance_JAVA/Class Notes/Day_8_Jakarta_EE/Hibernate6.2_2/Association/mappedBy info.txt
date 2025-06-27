@@ -1,0 +1,47 @@
+MappedBy signals hibernate that the key for the relationship is on the other side.
+
+This means that although you link 2 tables together, only 1 of those tables has a foreign key constraint to the other one.
+
+@Entity
+public class Answer 
+{
+	@ManyToOne
+	private Question question;
+}
+
+@Entity
+public class Question 
+{
+@OneToMany(cascade=CascadeType.ALL,mappedBy="question")
+	private List<Answer> ans;
+}
+
+in the above example, inside Question class,
+
+@OneToMany(cascade=CascadeType.ALL,mappedBy="question")
+	private List<Answer> ans;
+
+tells hibernate that the key for the relationship is on the Answer table side.
+
+i.e.  tables will be created as follows:
+
+
+mysql> select * from question;
++-----+-----------------+
+| qid | quest           |
++-----+-----------------+
+|   1 | What is Cricket |
++-----+-----------------+
+1 row in set (0.00 sec)
+
+
+
+mysql> select * from answer;
++-------+------------------------------------+--------------+
+| ansid | reply                              | question_qid |
++-------+------------------------------------+--------------+
+|     1 | Cricket is one of the sports types |            1 |
+|     2 | Cricket is very interesting        |            1 |
+|     3 | Cricket is a religion in India     |            1 |
++-------+------------------------------------+--------------+
+3 rows in set (0.00 sec)

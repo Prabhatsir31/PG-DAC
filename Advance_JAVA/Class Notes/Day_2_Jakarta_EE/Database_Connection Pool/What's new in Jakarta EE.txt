@@ -1,0 +1,33 @@
+in Java EE , we used to use "Context" and "InitialContext" from javax.naming package for "javax.DataSource"
+
+	Context ctx=new InitialContext();
+	DataSource ds=ctx.lookup("java:/comp/env/mypool")
+
+		and then 
+	ds.getConnection()
+	ds.close()
+		etc.
+
+
+
+in Jakarta EE , we have to use "@Resource" from jjakarta.annotation package for "javax.DataSource"
+
+
+
+import jakarta.annotation.Resource;
+
+@Resource(lookup="java:/comp/env/mypool")
+	private DataSource ds;
+
+	and then 
+	ds.getConnection()
+	ds.close()
+		etc.
+
+
+
+<dependency>
+    <groupId>jakarta.annotation</groupId>
+    <artifactId>jakarta.annotation-api</artifactId>
+    <version>2.1.1</version>
+</dependency>

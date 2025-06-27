@@ -1,0 +1,1 @@
+executeUpdate() will return how many records updated. if commit is disabled, it will still show how many records updated but will not hit database.

@@ -1,0 +1,49 @@
+useBean standard action is used to invoke or access "POJO class" or "JavaBean" from a JSP.
+
+you can access "POJO class" or "JavaBean" from JSP using java code. 
+e.g.
+
+package pack1;
+public class MyClass
+{
+	public void disp()
+	{
+		//code
+	}
+}
+
+
+
+JSP code to invoke "disp"
+
+			Caller.jsp
+
+<%@page import="pack1.*"%>
+
+<%
+MyClass m1=new MyClass();
+
+m1.disp();
+%>
+
+
+
+Even though above code works without any problem, it is not recommended to use java code inside JSP ( JSP should contain only tags and not java code). So that's why we have to have some mechanism whereby without using Java we should be able to instantiate "POJO class" or "JavaBean" and invoke its method. This can be achieved with the help of "useBean" standard action.
+
+syntax for "useBean" standard action
+
+
+<jsp:useBean id="   "  scope="    "    class="      "/>
+
+here "class" means .class file of POJO ( has to be a part of package )
+
+"id" means a reference which refers to the object of java class (POJO).
+
+"scope" means scope of the above mentioned object.
+	"scope" attribute is optional.
+"scope" can be "page","request", "session" or "application".
+
+When we don't mention a scope it is by default "page".
+
+
+

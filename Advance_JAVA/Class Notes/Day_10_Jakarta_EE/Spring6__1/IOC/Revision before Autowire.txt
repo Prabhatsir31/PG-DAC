@@ -1,0 +1,32 @@
+IOC
+Inversion of Control aka DI  Dependency Injection
+
+classes which would like to work together are known as beans
+
+we need to configure beans and their wiring inside spring bean configuration file. 
+
+wiring means creating association between beans.
+
+IOC container
+	instantiates all the configured beans
+	injects beans with the specified dependency
+
+There are two types of injections
+	setter injection -  property - tag
+
+	constructor injection - constructor-arg    tag
+
+All beans are by default instantiated in "eager" manner. i.e. immediately after application instantiates IOC container 			( ClassPathXmlApplicationContext ). For this to happen , while instantiating IOC container we must pass Spring bean configuration file name.
+
+There are 5 types of bean scopes in spring
+singleton  
+	only one instance of bean per IOC container
+prototype
+	creates new instance every time we invoke "getBean"
+
+Following scopes are related to web application:
+
+request
+session
+global session
+

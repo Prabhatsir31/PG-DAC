@@ -1,0 +1,29 @@
+class Soldier
+{
+	Weapon ref;
+
+	Soldier(Weapon ref)
+	{
+		this.ref=ref;
+	}
+
+		or
+	void setRef(Weapon ref)
+	{
+		this.ref=ref;
+	}
+}
+
+main()
+{
+	Soldier s1=new Soldier(new Gun());  // constructor injection
+		or
+	Soldier s1=new Soldier();
+	s1.setRef(new Sword());     //  setter injection
+}
+
+
+
+
+
+

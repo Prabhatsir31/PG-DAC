@@ -1,0 +1,22 @@
+
+
+without connection pool
+
+	DriverManager.getConnection  [ create connection from the scratch ]
+
+	con.close   [ close that connection ]
+
+with connection pool
+
+	DataSource ds.... [ interface from javax.sql package ]
+
+	ds.getConnection  [ retrieve connection from the connection pool ]
+
+	con.close [ sends the connection back to the connection pool ]
+
+
+
+
+
+
+

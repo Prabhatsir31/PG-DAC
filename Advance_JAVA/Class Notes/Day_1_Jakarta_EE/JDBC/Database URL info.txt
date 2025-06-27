@@ -1,0 +1,13 @@
+
+
+jdbc:mysql://localhost:3306/mydb
+
+	jdbc  - main protocol
+
+	mysql -  sub protocol - depends on database
+
+	//localhost  - machine on which mysql database is running
+
+	3306  -  port no. for mysql
+
+	mydb -  it's a database which u use

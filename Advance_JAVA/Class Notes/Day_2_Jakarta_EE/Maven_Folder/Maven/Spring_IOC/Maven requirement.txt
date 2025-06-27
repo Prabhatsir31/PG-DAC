@@ -1,0 +1,46 @@
+commons-logging
+org.springframework.asm-3.1.1.RELEASE
+org.springframework.beans-3.1.1.RELEASE
+org.springframework.context.support-3.1.1.RELEASE
+org.springframework.context-3.1.1.RELEASE
+org.springframework.core-3.1.1.RELEASE
+org.springframework.expression-3.1.1.RELEASE
+
+
+<dependency>
+	<groupId>commons-logging</groupId>
+	<artifactId>commons-logging</artifactId>
+	<version>1.2</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-asm</artifactId>
+	<version>3.1.1.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-beans</artifactId>
+	<version>3.1.1.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context-support</artifactId>
+	<version>3.1.1.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>3.1.1.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-core</artifactId>
+	<version>3.1.1.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-expression</artifactId>
+	<version>3.1.1.RELEASE</version>
+</dependency>
+
+The import org.springframework cannot be resolved

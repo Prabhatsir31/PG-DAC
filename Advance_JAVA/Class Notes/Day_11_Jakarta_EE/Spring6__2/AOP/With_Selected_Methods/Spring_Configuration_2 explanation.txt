@@ -1,0 +1,40 @@
+
+<bean id="productPointcut" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="*" />
+</bean>
+
+	above tag means that
+
+		productPointcut  -  represents all the methods of target class ( because of "*" )
+
+
+<bean id="productAdvisor" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="productPointcut" />
+		<property name="advice" ref="beforeCall" />
+	</bean>
+
+
+	above tag means
+
+		advisor says that
+			productPointcut ( all the methods ) --   "before" advice
+		i.e.  "before" advice should be applied to all the methods of target class.
+		
+<!-- Proxy Implementation Class -->
+<bean id="p1" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <property name="target">
+        <ref bean="productImpl"/>       
+    </property>  
+  <property name="interceptorNames">
+  	<list>
+  		<value>productAdvisor</value>
+
+			inside proxy class "before" advice should be applied to all the methods of target class.
+  	</list>
+  </property>
+      <property name="proxyInterfaces">
+         <value>mypack.Product</value>      
+     </property>
+</bean>

@@ -1,0 +1,28 @@
+<jsp:useBean id="ob1" class="beanpack.MyClass1"/>
+
+<% ob1.setNum(200); %>
+
+	vs
+
+<jsp:setProperty name="ob1" property="num" value="200"/>
+
+	"name" attribute's value must same as "id" attribute's value.
+
+	setPropery and property="num" make web container to search for "setNum()" method inside "MyClass1". if found , it is invoked by passing 200 as a value.
+
+
+
+
+<%=ob1.getNum()%>
+
+	or
+
+<jsp:getProperty name="ob1" property="num"/>
+
+	getPropery and property="num" make web container to search for "getNum()" method inside "MyClass1". if found , it is invoked and the value gets printed.
+
+
+
+
+
+

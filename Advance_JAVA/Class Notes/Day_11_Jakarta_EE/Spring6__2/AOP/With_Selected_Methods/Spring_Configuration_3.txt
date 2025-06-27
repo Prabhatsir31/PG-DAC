@@ -1,0 +1,57 @@
+// it will apply "beforeCall" to all the methods and "afterCall" to only "multiply" method.
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+<!-- Advices -->
+<bean id="beforeCall" class="mypack.LogBeforeCall"/>
+<bean id="afterCall" class="mypack.LogAfterReturning"/>
+<bean id="aroundCall" class="mypack.LogAround"/>
+
+<!-- Implentation Class -->
+<bean id="productImpl" class="mypack.ProductImpl"/>
+<bean id="pointcut1" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="multiply" />
+</bean>
+<bean id="pointcut2" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="*" />
+</bean>
+<bean id="advisor1" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="pointcut1" />
+		<property name="advice" ref="afterCall"/>
+</bean>
+<bean id="advisor2" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="pointcut2" />
+		<property name="advice" ref="beforeCall"/>
+</bean>
+<!-- Proxy Implementation Class -->
+<bean id="p1" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <property name="target">
+        <ref bean="productImpl"/>       
+    </property>  
+  <property name="interceptorNames">
+  	<list>
+  		<value>advisor1</value>
+  		<value>advisor2</value>
+  	</list>
+  </property>
+      <property name="proxyInterfaces">
+         <value>mypack.Product</value>      
+     </property>
+</bean>
+
+</beans>
+
+
+
+
+
+
+

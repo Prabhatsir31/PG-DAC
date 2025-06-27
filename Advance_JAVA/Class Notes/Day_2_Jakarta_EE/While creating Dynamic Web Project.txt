@@ -1,0 +1,16 @@
+File
+	new 
+		dynamic web project
+			give some name
+
+dynamic web module version  5.0
+
+
+right click on the project
+	properties
+
+	project facet
+		java 17
+
+	server
+		Apache tomcat 10.1

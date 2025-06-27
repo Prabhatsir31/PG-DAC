@@ -1,0 +1,3 @@
+hibernate.dialect
+
+This property makes Hibernate generate the appropriate SQL for the chosen database.

@@ -1,0 +1,6 @@
+create table dept(deptno int(3) primary key auto_increment,dname varchar(20),loc varchar(30));
+
+
+mysql> insert into dept(dname,loc) values('Acc','Mumbai');
+
+mysql> insert into dept(dname,loc) values('Marketing','Delhi');

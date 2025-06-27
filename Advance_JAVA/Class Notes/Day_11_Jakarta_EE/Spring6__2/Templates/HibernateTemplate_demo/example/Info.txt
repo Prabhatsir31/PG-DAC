@@ -1,0 +1,13 @@
+@Transactional on EmployeeDAOImpl is required
+
+inside "applicationContext" following is required
+
+
+<context:component-scan base-package="mypack"/>
+<tx:annotation-driven/>
+
+
+   <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager"> 
+<property name="sessionFactory" ref="sessionFactory" /> 
+</bean> 
+

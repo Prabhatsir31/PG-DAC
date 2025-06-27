@@ -1,0 +1,35 @@
+Query query = session.createQuery("from Person as p where p.address=? and p.firstName=?");
+query.setInt(0, "goa");
+query.setString(1, "Joey");
+query.setCacheable(true);
+List l = query.list();
+
+
+
+
+| ["from Person as p where p.address=? and p.firstName=?", [ "goa" , "Joey"] ] -> [  2 ] ] |
+
+
+or
+
+Query q2=session3.createQuery("select k.name from Product k");
+      q2.setCacheable(true);
+
+how query cache will store the data in case of above query
+
+
+[select k.name from Product k]->[soap]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

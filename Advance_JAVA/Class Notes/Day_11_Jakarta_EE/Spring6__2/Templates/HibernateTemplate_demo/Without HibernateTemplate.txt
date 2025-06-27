@@ -1,0 +1,41 @@
+			HibernateUtil.java
+
+public class HibernateUtil {
+    private static final SessionFactory sessionFactory; 
+   static { 
+        try { 
+            sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory(); 
+        } catch (Throwable ex) { 
+            System.err.println("Initial SessionFactory creation failed." + ex); 
+            throw new ExceptionInInitializerError(ex); 
+        } 
+    } 
+  
+    public static SessionFactory getSessionFactory() { 
+        return sessionFactory; 
+    } 
+}
+
+
+
+			Main.java	
+
+
+Session session = HibernateUtil.getSessionFactory().openSession(); 
+        Transaction transaction = null; 
+        try { 
+            transaction = session.beginTransaction(); 
+            Product p=new Product();
+            p.setId(1);
+            p.setName("soap");
+            p.setQty(75);
+            p.setPrice(90);
+         //   Product p=new Product(1,"soap",75,90);
+            session.save(p);
+            transaction.commit(); 
+
+
+
+
+
+

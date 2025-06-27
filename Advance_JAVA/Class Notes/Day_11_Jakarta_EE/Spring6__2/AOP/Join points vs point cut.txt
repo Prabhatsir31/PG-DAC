@@ -1,0 +1,37 @@
+When you go out to a restaurant, you look at a menu and see several options to choose from. You can order one or more of any of the items on the menu. But until you actually order them, they are just "opportunities to dine". Once you place the order and the waiter brings it to your table, it's a meal.
+
+Join points are the options on the menu and pointcuts are the items you select. A joinpoint is an opportunity within code for you to apply an aspect...just an opportunity. Once you take that opportunity and select one or more joinpoints and apply an aspect to them, you've got a pointcut.
+
+
+
+To understand the difference between a join point and pointcut, think of pointcuts as specifying the weaving rules and join points as situations satisfying those rules.
+
+In below example,
+
+  @Pointcut("execution(* * getName()")  
+
+Pointcut defines rules saying, advice should be applied on getName() method present in any class in any package and joinpoints will be a list of all getName() method present in classes so that advice can be applied on these methods.
+
+(In case of Spring, Rule will be applied on managed beans only and advice can be applied to public methods only).
+
+
+
+Both pertain to the "where" of aspect-oriented programming.
+
+A join point is an individual place where you can execute code with AOP. E.g. "when a method throws an exception".
+
+A pointcut is a collection of join points. E.g. "when a method in class Foo throws an exception".
+
+ To understand the difference between a join point and pointcut, think of pointcuts as specifying the weaving rules and join points as situations satisfying those rules.
+In below example,
+  @Pointcut("execution(* * getName()") 
+Pointcut defines rules saying, advice should be applied on getName() method present in any class in any package and joinpoints will be a list of all getName() method present in classes so that advice can be applied on these methods.
+
+
+
+
+
+·  Join point: a point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.
+·  Advice: action taken by an aspect at a particular join point. Different types of advice include "around," "before" and "after" advice. (Advice types are discussed below.) Many AOP frameworks, including Spring, model an advice as an interceptor, maintaining a chain of interceptors around the join point.
+·  Pointcut: a predicate that matches join points. Advice is associated with a pointcut expression and runs at any join point matched by the pointcut (for example, the execution of a method with a certain name). The concept of join points as matched by pointcut expressions is central to AOP, and Spring uses the AspectJ pointcut expression language by default.
+

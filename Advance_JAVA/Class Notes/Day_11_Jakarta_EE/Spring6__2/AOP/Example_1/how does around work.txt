@@ -1,0 +1,33 @@
+Object invoke(MethodInvocation mi)
+
+here "mi" is a reference of MethodInvocation and it represents "target method" i.e. in our example "multiply"
+
+
+suppose client invokes multiply:
+
+multiply(0,0);
+	inside invoke method we have
+
+	if(num1==0 && num2==0)
+        {
+            throw new Exception("Cannot Multiply 0 with 0");
+        }
+
+so here control will not go inside "multiply()" method and exception will be thrown to the user application.
+
+
+multiply(3,4);
+
+	control goes inside invoke method. 
+	since values are not 0 ,0
+
+	Object result=mi.proceed();
+		because of "proceed" control will go to multiply method and result will be returned back to "invoke" method.
+	return result;
+		here invoke method returns result to user.
+
+
+
+
+
+

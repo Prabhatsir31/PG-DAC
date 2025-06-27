@@ -1,0 +1,70 @@
+1) 
+	generate an entity class "Dept" inside "mypack"
+using reverse engg technique.
+
+Data.jsp -> DataServlet 
+
+	in jsp u need to have
+
+	Search By loc:-  <textfield>
+
+		<submit>
+
+user will enter "location" and click on submit. Request will go to DataServlet , which will search records from database where location is  the one entered by user (using HQL). This will give a servlet List which will contain "Dept" objects for matching condition.
+
+servlet will store this List inside "request" attribute and forward it to the same jsp i.e. "Data.jsp" from where u have come inside servlet.
+
+Data.jsp will display the arraylist using EL and JSTL.
+
+
+2) create an entity "Student" with
+	int rollno   [ id ]
+	String name
+	String address
+
+create an interface
+
+		StudentDAO with method
+	void addStudent(Student)
+	
+
+create two implementations
+
+	StudentDAOFileImpl.java
+		which will persist given student inside file using serialization.
+
+	StudentDAODataImpl.java
+		which will persist given student inside database using hibernate.
+
+
+Add.jsp
+
+	Enter student name:
+	Enter student address
+		
+		Select persistence store: dropdown
+			with values
+
+				file 
+				database
+
+		submit
+
+on submit control should go to "AddServlet"
+
+AddServlet will have a reference to 
+
+	StudentDAO sdao;
+the idea here is that "sdao" can point to any implementation of "StudentDAO" and invoke "addStudent()" polymorphically.
+
+inside doPost() method 
+a) instantiate "Student" with the values provided by user.
+b) u will check the persistence store selected by user.
+if this is "file"
+	set the rollno.
+	servlet will instantiate "StudentDAOFileImpl" and invoke "addStudent()" method.
+
+if this is "data"
+	servlet will instantiate "StudentDAODataImpl" and invoke "addStudent()" method.
+
+

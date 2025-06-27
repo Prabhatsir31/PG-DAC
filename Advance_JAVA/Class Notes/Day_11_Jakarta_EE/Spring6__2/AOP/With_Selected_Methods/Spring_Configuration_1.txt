@@ -1,0 +1,44 @@
+// it will apply "beforeCall" only to "multiply" method.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+<!-- Advices -->
+<bean id="beforeCall" class="mypack.LogBeforeCall"/>
+<bean id="afterCall" class="mypack.LogAfterReturning"/>
+<bean id="aroundCall" class="mypack.LogAround"/>
+
+<!-- Implentation Class -->
+<bean id="productImpl" class="mypack.ProductImpl"/>
+<bean id="productPointcut" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="multiply" />
+</bean>
+<bean id="productAdvisor" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="productPointcut" />
+		<property name="advice" ref="beforeCall" />
+	</bean>
+<!-- Proxy Implementation Class -->
+<bean id="p1" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <property name="target">
+        <ref bean="productImpl"/>       
+    </property>  
+  <property name="interceptorNames">
+  	<list>
+  		<value>productAdvisor</value>
+  	</list>
+  </property>
+      <property name="proxyInterfaces">
+         <value>mypack.Product</value>      
+     </property>
+</bean>
+
+</beans>
+
+
+
+
+

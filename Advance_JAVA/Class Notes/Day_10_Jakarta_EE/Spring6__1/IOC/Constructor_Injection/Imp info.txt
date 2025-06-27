@@ -1,0 +1,19 @@
+what if there are 2 constructors
+
+public InjectConstructor(String message)
+    {
+        this.message=message;
+    }
+
+
+public InjectConstructor(int k)
+    {
+        
+    }
+
+by default <constructor-arg> will invoke constructor with "String"
+
+if u want to invoke constructor with int ,
+u need to say 
+
+<constructor-arg type="int" value="200"/>

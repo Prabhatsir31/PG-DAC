@@ -1,0 +1,24 @@
+public class Group 
+{
+	private int id;
+	private String name,technology;
+	private Set<Member> members;
+
+	// setters and getters , toString
+}
+
+public class Member
+{
+
+	private int id;
+	private String name;
+	private String address;
+
+	// setters and getters , toString
+}
+
+Group has Members [ one to many ]
+
+create one instance of Group and add atleast 4 members inside it.
+now persist and retrieve Group and display it.
+

@@ -1,0 +1,3 @@
+In case of byName autowiring mode, bean id and reference name must be same.
+
+It internally uses setter injection.

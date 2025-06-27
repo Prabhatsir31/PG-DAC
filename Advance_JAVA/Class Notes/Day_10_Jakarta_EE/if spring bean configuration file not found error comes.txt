@@ -1,0 +1,2 @@
+if spring bean configuration file not found error comes, then
+remove the file from "src" folder of your project and copy it again. Refresh the project and run.

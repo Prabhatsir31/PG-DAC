@@ -1,0 +1,6 @@
+
+
+Autoscanning
+
+we don't have to provide "bean" tags inside spring bean configuration file. 
+IOC container will automatically find out about beans based on @Component annotation which u need to apply on the class which u treat as a bean and instantiates it.

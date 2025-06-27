@@ -1,0 +1,1 @@
+It is not compulsory to use "@Column". it is required if want to give column name in database.

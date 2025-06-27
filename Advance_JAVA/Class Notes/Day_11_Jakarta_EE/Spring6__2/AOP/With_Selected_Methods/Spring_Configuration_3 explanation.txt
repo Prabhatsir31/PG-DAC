@@ -1,0 +1,53 @@
+<bean id="pointcut1" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="multiply" />
+</bean>
+
+		above tag means
+
+			pointcut1 -  represents - multiply
+
+<bean id="pointcut2" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="*" />
+</bean>
+
+		above tag means
+			pointcut2   -  represents  - all the methods
+
+
+<bean id="advisor1" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="pointcut1" />
+		<property name="advice" ref="afterCall"/>
+</bean>
+
+		above tag means
+			advisor1 -  "after" advice -   "pointcut1" ( multiply )
+
+<bean id="advisor2" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="pointcut2" />
+		<property name="advice" ref="beforeCall"/>
+</bean>
+
+		above tag means
+			advisor2 - "before"   - pointcut2 ( all the methods)
+
+
+<!-- Proxy Implementation Class -->
+<bean id="p1" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <property name="target">
+        <ref bean="productImpl"/>       
+    </property>  
+  <property name="interceptorNames">
+  	<list>
+  		<value>advisor1</value>
+  		<value>advisor2</value>
+		// inside proxy class "after" advice should be applied to "multiply" method and "before" should be applied to "all the methods"
+  	</list>
+  </property>
+      <property name="proxyInterfaces">
+         <value>mypack.Product</value>      
+     </property>
+</bean>

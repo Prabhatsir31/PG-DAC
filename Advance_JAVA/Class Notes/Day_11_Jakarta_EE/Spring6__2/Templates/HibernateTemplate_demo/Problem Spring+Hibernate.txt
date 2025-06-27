@@ -1,0 +1,1 @@
+There is some problem with Spring6 and Hibernate6 compatibility. Due to this , example does not work.

@@ -1,0 +1,3 @@
+public List<?> getDepartments(String location) {
+		return template.findByNamedParam("from Dept where loc=:str", "str", location);
+	}

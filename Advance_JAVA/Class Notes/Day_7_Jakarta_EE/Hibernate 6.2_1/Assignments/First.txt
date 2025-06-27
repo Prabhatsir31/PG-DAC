@@ -1,0 +1,7 @@
+create an Entity Student with
+	rollno int primary key
+	name 
+	age
+	address
+
+and using Hibernate persist it inside the database.

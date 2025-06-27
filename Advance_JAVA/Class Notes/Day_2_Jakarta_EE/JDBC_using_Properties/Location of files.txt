@@ -1,0 +1,1 @@
+SingletonCon.java and myproperty.properties  must be inside "mypack"

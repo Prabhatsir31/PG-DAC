@@ -1,0 +1,22 @@
+
+
+different scopes in jsp
+
+there are 4 scopes or attributes in jsp
+
+	page,request,session and application.
+
+scope/attribute    	object to represent
+
+page			pageContext
+request			request
+session			session
+application		application
+
+
+
+
+
+	
+
+		

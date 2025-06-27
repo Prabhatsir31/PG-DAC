@@ -1,0 +1,30 @@
+
+
+
+"from Employee e"
+
+
+"select c.name from Employee c"
+
+"select c.desig from Employee c where c.address='mumbai'"
+
+"select c.name,c.address from Employee c"
+
+
+
+
+				Query Cache
+
+Key								Value
+
+from Employee e						       [ 1,2,3 ]
+
+
+select c.name from Employee c					[ abc,xyz,pqr ]
+
+
+select c.desig from Employee c where c.address='mumbai'          [ abc , pqr ]
+
+
+select c.name,c.address from Employee c     		 [ { abc,mumbai} , {xyz,pune}, {pqr,mumbai} ]
+

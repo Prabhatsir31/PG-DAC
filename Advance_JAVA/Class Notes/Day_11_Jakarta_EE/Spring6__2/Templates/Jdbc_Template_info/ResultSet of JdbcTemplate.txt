@@ -1,0 +1,17 @@
+when JdbcTemplate returns "ResultSet", it already calls "next()" method on it.
+
+that's why when u use it inside your program
+
+
+	do
+	{
+	
+	}while(resultSet.next());
+
+here if you use
+
+	while(resultSet.next())
+	{
+
+	}
+	you won't be able to read first record.
