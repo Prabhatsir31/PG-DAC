@@ -1,4 +1,0 @@
-mvn install 
-
-is used to create dependency inside local repository so that it can be accessed in some other project.
-

@@ -1,3 +1,0 @@
-comp1 without maven       size    796 KB
-
-comp2 with maven           size  40.0 KB

@@ -1,8 +1,0 @@
-right click project
-	properties
-		deployment assembly
-
-			java build path entries
-				maven dependencies
-
-	
