@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border=10>
+<tr th:each="ref: ${mylist}">
+    <td th:text="${ref.bookName}" />
+    <td th:text="${ref.price}" />
+</tr>
+</table>
+</body>
+</html>
