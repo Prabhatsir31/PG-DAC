@@ -211,10 +211,53 @@ Example:
 let fruits = ["apple", "banana", "cherry"];
 
 Common Methods:
-- push(), pop()
-- shift(), unshift()
-- splice(), slice()
-- forEach(), map(), filter(), reduce()
+let fruits = ["apple", "banana", "cherry"];
+console.log("Initial:", fruits);    // Initial: ["apple", "banana", "cherry"]
+
+// push & pop
+fruits.push("mango");       // add to end
+console.log("After push:", fruits);     // After push: ["apple", "banana", "cherry", "mango"]
+
+fruits.pop();               // remove last
+console.log("After pop:", fruits);  // After pop: ["apple", "banana", "cherry"]
+
+// unshift & shift
+fruits.unshift("orange");   // add to start
+console.log("After unshift:", fruits);  // After unshift: ["orange", "apple", "banana", "cherry"]
+
+fruits.shift();             // remove first
+console.log("After shift:", fruits); // After shift: ["apple", "banana", "cherry"]
+
+// splice (insert/remove)
+fruits.splice(1, 0, "grape"); // insert "grape" at index 1
+console.log("After splice insert:", fruits);  // After splice insert: ["apple", "grape", "banana", "cherry"]
+
+fruits.splice(2, 1);         // remove 1 element at index 2
+console.log("After splice remove:", fruits);  // After splice remove: ["apple", "grape", "cherry"]
+
+// slice (non-destructive)
+let sliced = fruits.slice(0, 2);
+console.log("Sliced (0–2):", sliced); // Sliced (0–2): ["apple", "grape"]
+
+// forEach
+fruits.forEach((fruit, index) => {
+  console.log(`${index + 1}: ${fruit}`);
+}); // 1: apple
+    // 2: grape
+    // 3: cherry
+
+// map
+let upperFruits = fruits.map(fruit => fruit.toUpperCase());
+console.log("Uppercase:", upperFruits);     // Uppercase: ["APPLE", "GRAPE", "CHERRY"]
+
+// filter
+let shortFruits = fruits.filter(fruit => fruit.length <= 5);
+console.log("Short fruits (<=5 chars):", shortFruits);  // Short fruits: ["apple", "grape"]
+
+// reduce
+let totalLength = fruits.reduce((sum, fruit) => sum + fruit.length, 0);
+console.log("Total character length:", totalLength);    // Total character length: 17
+
 
 2. Objects
 -----------
@@ -347,6 +390,20 @@ $       - Matches the end of the string
 .        - Any character (except newline)
          Example: /./ matches 'a', '1', '@'
 
+Summary Table
+---------------------
+| Pattern | Meaning                   | Matches                        |
+| ------- | ------------------------- | ------------------------------ |
+| `\d`    | Digit                     | `0`–`9`                        |
+| `\D`    | Non-digit                 | `a`, `@`, ` `                  |
+| `\w`    | Word character            | `a`–`z`, `A`–`Z`, `0`–`9`, `_` |
+| `\W`    | Non-word character        | `@`, `#`, ` `, etc.            |
+| `\s`    | Whitespace                | space, tab, newline            |
+| `\S`    | Non-whitespace            | letters, numbers, symbols      |
+| `.`     | Any character except `\n` | `a`, `1`, `@`, etc.            |
+
+
+
 3. Anchors
 ----------
 
@@ -373,6 +430,15 @@ Greedy (default): matches as much as possible
     Example: /".+"/ matches everything between first and last quote
 Non-greedy: use ?
     Example: /".+?"/ matches shortest possible match
+
+Visual Comparison
+--------------------
+| Pattern    | Input            | Match Result                 |
+| ---------- | ---------------- | ---------------------------- |
+| `/.+/`     | `"Hi" and "Bye"` | `"Hi" and "Bye"` (greedy)    |
+| `/.+?/`    | `"Hi" and "Bye"` | `"Hi"` (non-greedy)          |
+| `/".+"/`   | `"Hi" and "Bye"` | `"Hi" and "Bye"` (greedy)    |
+| `/".+?"/g` | `"Hi" and "Bye"` | `["Hi", "Bye"]` (non-greedy) |
 
 6. Flags
 --------
@@ -427,7 +493,7 @@ Useful Tips:
 Easy to Medium Regex Questions
 ===============================
 
-1. ✅ Match a valid email address
+1. Match a valid email address
 ---------------------------------
 Regex: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$
 Example: "user.name@example.com"
@@ -442,7 +508,7 @@ Explanation:
 
 ---------------------------------------
 
-2. ✅ Match a phone number (Indian format)
+2. Match a phone number (Indian format)
 ------------------------------------------
 Regex: ^[6-9]\\d{9}$
 Example: "9876543210"
@@ -453,7 +519,7 @@ Explanation:
 
 ---------------------------------------
 
-3. ✅ Match a date in DD-MM-YYYY format
+3. Match a date in DD-MM-YYYY format
 ---------------------------------------
 Regex: ^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\\d{2}$
 Example: "05-08-1999"
@@ -465,7 +531,7 @@ Explanation:
 
 ---------------------------------------
 
-4. ✅ Match a 6-digit PIN code
+4. Match a 6-digit PIN code
 ------------------------------
 Regex: ^\\d{6}$
 Example: "110034"
@@ -475,7 +541,7 @@ Explanation:
 
 ---------------------------------------
 
-5. ✅ Match a string that starts with "Hello"
+5. Match a string that starts with "Hello"
 ---------------------------------------------
 Regex: ^Hello
 Example: "Hello World"
@@ -485,7 +551,7 @@ Explanation:
 
 ---------------------------------------
 
-6. ✅ Match a string that ends with "Bye"
+6. Match a string that ends with "Bye"
 -----------------------------------------
 Regex: Bye$
 Example: "Good Bye"
@@ -495,7 +561,7 @@ Explanation:
 
 ---------------------------------------
 
-7. ✅ Match a strong password (min 8 chars, at least 1 digit, 1 uppercase, 1 lowercase)
+7. Match a strong password (min 8 chars, at least 1 digit, 1 uppercase, 1 lowercase)
 -------------------------------------------------------------------------------------
 Regex: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$
 Example: "Hello123"
@@ -508,7 +574,7 @@ Explanation:
 
 ---------------------------------------
 
-8. ✅ Match all words in a sentence
+8. Match all words in a sentence
 -----------------------------------
 Regex: \\b\\w+\\b
 Example: "This is a test." → ["This", "is", "a", "test"]
