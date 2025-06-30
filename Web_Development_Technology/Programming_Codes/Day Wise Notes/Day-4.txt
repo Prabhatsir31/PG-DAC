@@ -57,31 +57,36 @@ JavaScript can access and manipulate these objects (elements, attributes, etc.)
 
 - element.setAttribute("attr", "value")
   Example:
+  let img = document.querySelector("img");
   img.setAttribute("src", "image.jpg");
 
 - element.getAttribute("attr")
   Example:
+  let img = document.querySelector("img");
   let value = img.getAttribute("src");
+  console.log(value);  // Outputs: "image.jpg"
 
 - element.removeAttribute("attr")
   Example:
+  let input = document.querySelector("input");
   input.removeAttribute("disabled");
-
 
 5. Modifying Styles
 ---------------------
 
 - element.style.property = "value"
   Example:
+  let title = document.querySelector("h1");
   title.style.color = "blue";
+
 
 6. Working with Classes
 -------------------------
 
-- element.classList.add("class")
-- element.classList.remove("class")
-- element.classList.toggle("class")
-- element.classList.contains("class")
+- element.classList.add("class")      // Adds the class
+- element.classList.remove("class")   // Removes the class 
+- element.classList.toggle("class")   // Adds if missing removes if present 
+- element.classList.contains("class")  // Checks if class exists(true/false)
 
 Example:
 button.classList.add("active");
@@ -193,14 +198,14 @@ now.getTimezoneOffset();// in minutes
 4. Set Date Components
 ----------------------
 
-let date = new Date();
+let reminder = new Date();
 
-date.setFullYear(2024);
-date.setMonth(11);          // December
-date.setDate(25);
-date.setHours(10);
-date.setMinutes(30);
-date.setSeconds(15);
+reminder.setFullYear(2024);
+reminder.setMonth(11);          // December
+reminder.setDate(25);
+reminder.setHours(10);
+reminder.setMinutes(30);
+reminder.setSeconds(15);
 
 5. Convert to Strings
 ---------------------
@@ -227,10 +232,25 @@ let days = diff / (1000 * 60 * 60 * 24); // 1 day
 --------------
 
 - Always use `new Date()` for creation.
+  new Date("2025-06-30");        // From string
+  new Date(2025, 5, 30);         // From components (month = June)
+  new Date(1751313270000);       // From timestamp
+
 - Month is 0-based (Jan = 0).
+  let date = new Date(2025, 0, 1); // January 1, 2025
+
 - Dates are stored as timestamps (ms since 1970 UTC).
+  let date = new Date("1970-01-01T00:00:00Z");
+  console.log(date.getTime()); // 0
+
 - Use toISOString() for backend compatibility.
+  let date = new Date();
+  console.log(date.toISOString()); // "2025-06-30T13:45:00.000Z"
+
 - Use Date.now() for current timestamp in ms.
+  let timestamp = Date.now();
+  console.log(timestamp); // e.g., 1751314589000
+
 
 8. Examples
 -----------
