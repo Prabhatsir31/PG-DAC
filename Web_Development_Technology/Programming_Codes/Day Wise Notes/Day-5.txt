@@ -9,6 +9,52 @@ JavaScript
    Example:
    function greet({name, age}) { console.log(name, age); }
 
+   Object Destructuring in Parameters
+      Syntax:
+         function myFunc({ key1, key2 }) {
+           // key1 and key2 are directly available
+         }
+      Example: 
+         function showUser({ name, age }) {
+           console.log(`Name: ${name}, Age: ${age}`);
+         }
+
+         showUser({ name: "Honey", age: 25 });
+         // Output: Name: Honey, Age: 25
+
+   Array Destructuring in Parameters
+      Syntax:
+         function myFunc([a, b]) {
+           // a and b are available directly
+         }
+      Example:
+         function sum([x, y]) {
+           return x + y;
+         }
+         console.log(sum([10, 20])); // Output: 30
+
+   Default Values in Destructuring
+      You can provide default values for missing properties.
+      Example:
+         function greet({ name = "Guest", msg = "Welcome" }) {
+           console.log(`${msg}, ${name}!`);
+         }
+
+         greet({ name: "Helo" });  // Output: Welcome, Helo!
+         greet({});                 // Output: Welcome, Guest!
+
+   Nested Object Destructuring
+      You can destructure nested objects inside the function parameters.
+      Example:
+         function print({ user: { name, age } }) {
+           console.log(`Name: ${name}, Age: ${age}`);
+         }
+
+         const data = { user: { name: "Anu", age: 22 } };
+         print(data);  // Output: Name: Anu, Age: 22
+
+
+
 2. Difference Between let and var:
    - let: block-scoped, no hoisting like var.
    - var: function-scoped, hoisted to the top of its scope.
