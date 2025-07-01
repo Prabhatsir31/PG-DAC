@@ -17,7 +17,7 @@ REACT JS ROADMAP UI GUIDE
 ---
 
 * Show as a step-by-step wizard interface.
-* Use cards or modals to guide each installation step.
+* Use cards or modals to guide e  ach installation step.
 
 3. React Basics
 
