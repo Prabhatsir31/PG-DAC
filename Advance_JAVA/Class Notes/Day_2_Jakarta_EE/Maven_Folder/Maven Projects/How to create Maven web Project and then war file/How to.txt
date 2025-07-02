@@ -1,0 +1,118 @@
+go to eclipse
+	JavaEE perspective
+
+
+File
+	new 
+		maven project
+
+
+
+do not select
+	Create a simple project
+
+select
+	Use default workspace location
+
+do not select
+	Add project(s) to working set
+
+next
+
+
+
+org.apache.maven.archetype
+maven-archetype-webapp   1.4
+
+
+group id -  com
+artifact id - myjar
+
+don't disturb other options
+
+click on "finish"
+
+in the console window
+infront of    Y    type  y
+
+make sure u get a message "build success". It means maven project is successfully created.
+
+
+add given dependencies inside generated "pom.xml"
+
+
+right click on "main"
+	create new folder
+		java
+
+right click on "java" folder
+		new servlet
+			OneServ with "doGet"
+
+right click on "java"
+	create new package "mypack"
+		inside "mypack" create "MyBean.java"
+
+
+right click on the project
+	run as
+		run on server
+
+now once your projects run successfully , let's go and create a war file which can be deployed on any server.
+
+
+for that,
+
+close the Eclipse tomcat server
+
+find out your workspace folder
+	C:\Users\Sriram\eclipse-workspace  - in my case
+
+go to 
+	"C:\Users\Sriram\eclipse-workspace\myjar\target" folder (in my case)
+you won't find any "war" file.
+
+now come back in Eclipse
+
+right click on the project name i.e. "myjar"
+
+	run as
+		maven install
+
+it will take some time but make sure you get "BUILD SUCCESS" message.
+
+now close your project.
+
+go to
+	"C:\Users\Sriram\eclipse-workspace\myjar\target" folder (in my case)
+
+you will find "myjar.war" file.
+
+now open command prompt and give following command
+	startup
+
+make sure tomcat server starts properly
+
+now go to "D:\apache-tomcat-10.1.8\webapps"
+	count how many folders are there
+		[ in my case 5 folders are there ]
+now copy "myjar.war" file from "C:\Users\Sriram\eclipse-workspace\myjar\target"  to "webapps"
+	wait for some seconds
+you will find one more folder by the name "myjar" automatically gets created inside "webapps" folder. This is called as "deploying your web application (myjar.war) on the server".
+
+now go to browser and type
+	http://localhost:8080/myjar
+
+make sure you get the output.
+
+
+also check inside
+	C:\Users\Sriram\.m2\repository
+
+you'll find a folder "com"
+inside "com"
+you will get "myjar" folder and inside it you will find
+	myjar.war file.
+
+
+	

@@ -1,0 +1,27 @@
+https://mocki.io/fake-json-api
+
+how to create Fake API
+
+If you want to create a simple API for testing purposes, simply enter a response body below and press Create API to get your custom API URL.
+
+
+{
+"player": "Rohit",
+"country":"India",
+"runs":10000
+}
+
+
+click on "Create API" button.
+
+on successful completion , it will give you following message:
+
+Success! Your API is available at 
+https://mocki.io/v1/341d3885-d0d7-429e-95fa-01e496a5f7ce
+
+now copy this API address and paste it into 
+
+template.getObject() method of your controller class.
+
+deploy and test your application in ARC or Postman.
+

@@ -1,0 +1,45 @@
+For JSON
+
+type the URL
+	http://localhost:8080/GetAllProds
+
+method - GET
+
+inside "Headers"
+
+key  -   Accept
+value -  application/JSON
+
+	click on "Send"
+
+make sure it displays the data.
+
+
+
+For XML
+
+This dependency is must or else you cannot get xml response.
+
+<dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-xml</artifactId>
+</dependency>
+
+go to Postman
+
+type the URL
+	http://localhost:8080/GetAllProds
+
+method - GET
+
+inside "Headers"
+
+key  -   Accept
+value -  application/XML
+
+	click on "Send"
+
+make sure it displays the data.
+
+	if you don't get the output , restart the server and then try.
+

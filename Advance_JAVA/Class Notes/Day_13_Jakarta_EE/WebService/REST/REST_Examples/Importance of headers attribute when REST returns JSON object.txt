@@ -1,0 +1,11 @@
+when we return json object from java e.g.
+
+	return new Gson().toJson(manager.getProducts());
+
+we must specify "headers" attribute in @GetMapping :
+
+@GetMapping(value ="api/products",headers = "Accept=application/json")
+
+if you don't specify then 
+	html which assumes the "Json response" will not be able to display the data properly.
+	

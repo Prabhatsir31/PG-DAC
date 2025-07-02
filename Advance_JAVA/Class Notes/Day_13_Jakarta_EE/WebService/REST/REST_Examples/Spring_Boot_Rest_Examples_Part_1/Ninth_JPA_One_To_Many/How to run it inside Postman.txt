@@ -1,0 +1,170 @@
+http://localhost:8080/api/course
+
+method      POST
+
+JSON
+
+
+{
+    "cname":"MSCIT",
+    "fees": 10000,
+    "batches":
+    [
+      {
+        "batchname":  "morning",
+        "batchtime": "9 am.",
+        "students":
+        [
+     			{
+      			"sname": "Sachin",
+      			"qualification": "BE"
+      		        },
+      		{
+      			"sname": "Rahul",
+      			"qualification": "ME"
+      		}
+         ] 
+      },
+      {
+        "batchname":"evening",
+        "batchtime":"5 pm.",
+        "students":
+       	[
+      		{
+		      	"sname": "Rohit",
+      			"qualification": "BE"
+      		},
+      		{
+      			"sname": "Virat",
+      			"qualification": "ME"
+      		}
+      	]
+       }
+    ]
+}
+
+
+click on send and make sure inside database you get following records:
+
+
+
+mysql> select * from course;
++-----+-------+-------+
+| cid | cname | fees  |
++-----+-------+-------+
+|   1 | MSCIT | 10000 |
++-----+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from batch;
++------+-----------+-----------+----------+
+| b_id | batchname | batchtime | courseid |
++------+-----------+-----------+----------+
+|    1 | evening   | 5 pm.     |        1 |
+|    2 | morning   | 9 am.     |        1 |
++------+-----------+-----------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from student;
++-----+---------------+--------+---------+
+| sid | qualification | sname  | batchid |
++-----+---------------+--------+---------+
+|   1 | ME            | Virat  |       1 |
+|   2 | BE            | Rohit  |       1 |
+|   3 | BE            | Sachin |       2 |
+|   4 | ME            | Rahul  |       2 |
++-----+---------------+--------+---------+
+4 rows in set (0.00 sec)
+
+
+
+let's add one more record
+
+http://localhost:8080/api/course
+
+POST
+
+body
+	JSON
+
+
+
+
+
+{
+    "cname":"Tally",
+    "fees": 4000,
+    "batches":
+    [
+      {
+        "batchname":  "morning",
+        "batchtime": "9 am.",
+        "students":
+        [
+     		{
+      			"sname": "Abc",
+      			"qualification": "Bcom"
+      		},
+      		{
+      			"sname": "Xyz",
+      			"qualification": "BA"
+      		}
+         ] 
+      },
+      {
+        "batchname":"evening",
+        "batchtime":"5 pm.",
+        "students":
+       	[
+      		{
+		      	"sname": "Pqr",
+      			"qualification": "Bcom"
+      		},
+      		{
+      			"sname": "AAA",
+      			"qualification": "BE"
+      		}
+      	]
+       },
+       {
+        "batchname":"evening",
+        "batchtime":"8 pm.",
+        "students":
+       	[
+      		{
+		      	"sname": "Rakesh",
+      			"qualification": "Bcom"
+      		},
+      		{
+      			"sname": "Rani",
+      			"qualification": "Bcom"
+      		}
+      	]
+       }
+    ]
+}
+
+
+click on "Send" and make sure records get inserted in "course", "batch" and "student" tables.
+
+
+// how to retrieve courses
+
+http://localhost:8080/api/course
+
+GET
+
+click on "send"
+
+// how to retrieve batches for a specific course
+
+
+http://localhost:8080/api/batches/mscit   
+
+
+// how to retrieve students for a specific course
+
+http://localhost:8080/api/students/tally
+
+  
+

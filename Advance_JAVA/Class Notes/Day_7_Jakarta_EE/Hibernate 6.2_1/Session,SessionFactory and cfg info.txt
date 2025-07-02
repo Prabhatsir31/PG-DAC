@@ -1,0 +1,14 @@
+hibernate.cfg.xml[ url,user,password, entity class/classes]
+
+	SessionFactory
+
+		Session [ save,load,query,update,delete etc]
+
+			Transaction [ commit/rollback ]
+
+
+Hibernate Session also 
+
+a) encapsulates database connection
+
+b) provides "First-Level cache"

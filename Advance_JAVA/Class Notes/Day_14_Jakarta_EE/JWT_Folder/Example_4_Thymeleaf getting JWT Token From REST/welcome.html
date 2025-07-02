@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>Your JWT Token is:</p>
+    <p th:text="${param.token}"></p> <!-- Get the token from the query parameter -->
+</body>
+</html>

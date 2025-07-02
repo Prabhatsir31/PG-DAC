@@ -1,0 +1,9 @@
+<filter>
+	<filter-name>SecondFilter</filter-name>
+	<filter-class>mypack.SecondFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>SecondFilter</filter-name>
+	<url-pattern>/LoginServ</url-pattern>
+	<url-pattern>/First</url-pattern>
+</filter-mapping>

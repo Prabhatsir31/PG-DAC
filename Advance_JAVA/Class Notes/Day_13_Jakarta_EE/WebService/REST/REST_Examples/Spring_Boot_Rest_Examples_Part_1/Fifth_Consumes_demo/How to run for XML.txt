@@ -1,0 +1,24 @@
+select "POST"
+
+	type following address
+
+http://localhost:8080/xml
+
+	in the "BODY" section 
+		select "XML"
+
+type following XML code inside the editor:
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+  <name>Anil</name>
+  <age>35</age>
+</student>
+
+
+go and check STS console. You will get the following output
+
+
+**Received XML request**
+ Name : Anil
+ Age  : 35

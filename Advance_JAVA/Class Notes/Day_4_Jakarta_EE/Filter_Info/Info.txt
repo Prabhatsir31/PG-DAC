@@ -1,0 +1,28 @@
+Filters are pluggable components i.e. they can be easily plugged in or out ( using DD ).
+The main advantage of filters is maintenance. ie.you don't have to make changes inside your servlet for every new requirement/s given by client.
+
+There are 2 types of filters:
+	request filters:- they are called before request goes to servlet.
+	response filters:- they are called after servlet execution but before response goes to client.
+
+
+how do you create filter:
+	derive a class from "Filter" interface and define 3 methods of it:
+
+public void init(FilterConfig)
+public void doFilter(ServletRequest,ServletResponse,FilterChain)
+public void destroy()
+
+here "doFilter()" is the method where u will write a logic for which filter has been created.
+
+FilterChain represents the filter chain i.e. number of filters to be invoked along with Servlet or JSP. 
+Imp:- The last component inside filter chain is always a servlet or jsp.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+what are java annotations
+types of annotations
+java custom annotations
+what is element type
+what is retention policy
+examples

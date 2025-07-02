@@ -1,0 +1,22 @@
+select "POST"
+
+	type follwing address
+
+http://localhost:8080/json1
+
+	in the "BODY" section 
+		select "JSON"
+
+type following JSON code inside the editor:
+
+
+{
+  "name": "Rohit",
+   "age": 20
+}
+
+go and check STS console. You will get the following output
+
+**Received JSON request**
+ Name : Rohit
+ Age  : 20

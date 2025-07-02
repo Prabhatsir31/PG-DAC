@@ -1,0 +1,16 @@
+SOLID  -  These are Design Principles
+
+S
+Single Responsibility Principle
+
+O
+Open and Close Principle
+
+L
+Liskov Substitution Principle  [ LSP ]
+
+I
+Interface segragation
+
+D
+Dependency Inversion Principle

@@ -1,0 +1,84 @@
+http://localhost:8080/dac/FirstServ
+
+
+whenever u make any changes in servlet source code
+
+	1) compile servlet class
+	2) save web.xml 
+	3) refresh the browser
+
+
+
+
+
+
+
+when u say
+
+http://localhost:8080/dac/FirstServ , for the first time,
+
+what exactly happens
+
+1) web container opens ur DD (web.xml)
+2) it searches the url-pattern by the name "/FirstServ"
+3) from url-pattern it finds out servlet-name .
+4) from servlet-name, it finds out servlet-class.
+5) once it gets the name of servlet-class, it tries to find out that .class file in "classes" folder of "dac"
+6)now it loads "FirstServ.class"
+7) instantiate "FirstServ" by invoking its "public no-arg constructor".
+8) it will invoke "init" method.
+9) thread is created or retrieved from thread pool.
+10) HttpServletRequest and HttpServletResponse are created.
+11) service() method is called.
+	service() method checks whether request is "get" or "post". if it is "get" service() method invokes "doGet()" and if it is "post" it invokes "doPost()"
+
+since we are running servlet directly it is "get" request , so service() method will call "doGet()" which we have overridden.
+
+	Imp. note:- when u refresh above link, i.e. for subsequent requests ( without makings changes in source code)
+
+		9)  10) and 11) steps will be performed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

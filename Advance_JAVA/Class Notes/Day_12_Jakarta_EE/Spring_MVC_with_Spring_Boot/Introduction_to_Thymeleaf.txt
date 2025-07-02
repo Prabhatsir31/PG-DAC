@@ -1,0 +1,34 @@
+Thymeleaf is a modern server-side Java template engine for both web and standalone environments, capable of processing HTML,XML,JavaScript,CSS and even plain text.
+The main goal of Thymeleaf is to provide an elegant , highly maintainable way of creating templates.
+Its expression language is more powerful than JSP's EL.
+Rendering of Thymeleaf happens on server side.
+It is mostly used to generate html views for web applications.
+
+
+Thymeleaf generates html dynamically.
+When we use Thymeleaf, we have to save the file by .html
+
+inside html page you will have
+	html + Thymeleaf expressions which is very imp and powerful
+
+who will execute Thymeleaf expression?
+	Thymeleaf engine will execute it.
+
+Thymeleaf expression can
+	access java code,object and spring beans
+
+
+Thymeleaf Engine
+	will parse Thymeleaf template.
+
+e.g. inside html we have
+
+<p th:text="${name}">
+
+Thymeleaf engine will replace "name" with its value which it will read from some java class. 
+
+For more information refer to "Thymeleaf.org"
+
+
+
+

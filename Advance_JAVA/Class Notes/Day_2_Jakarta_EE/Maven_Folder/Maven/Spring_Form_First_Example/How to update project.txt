@@ -1,0 +1,6 @@
+in case if u want to update project,
+
+right click on project
+
+maven
+	update project

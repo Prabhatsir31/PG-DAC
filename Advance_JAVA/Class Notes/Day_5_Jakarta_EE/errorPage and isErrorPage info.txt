@@ -1,0 +1,14 @@
+
+
+page directive's two more attributes are 
+
+errorPage and isErrorPage
+
+errorPage is used to inform web container about error page you are going to use for this jsp.
+
+isErrorPage is used to make jsp as error page.
+	isErrorPage is "false" by default. That is JSP page is not an error page by default.
+	in order to make JSP as an error page , inside it you have to say  isErrorPage="true"
+	"exception" implicit object can be accessed inside error jsp only.
+
+

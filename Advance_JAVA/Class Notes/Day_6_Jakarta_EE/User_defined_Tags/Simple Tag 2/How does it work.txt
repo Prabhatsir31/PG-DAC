@@ -1,0 +1,22 @@
+<%@taglib prefix="abc" uri="/WEB-INF/hello.tld"%>
+
+
+<abc:second code="p1" desc="Soap" price="50"/>
+
+how does it work?
+
+when container encounters "second" tag for the first time,it will
+a) go to "hello.tld"
+b) check which java class is designed for this tag (TagCode2.class)
+c) it will load the class
+d) instantiate the class
+e) call the setter methods of each of the attribute.
+f) invoke "doTag()" method inside "TagCode2" which invokes getter methods.
+
+
+
+when container encounters "second" tag for the subsequent time,it will
+
+a) instantiate the class
+b) call the setter methods of each of the attribute.
+c) invoke "doTag()" method inside "TagCode2" which invokes getter methods.

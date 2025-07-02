@@ -1,0 +1,11 @@
+	int no=rs.getInt("deptno");
+	String name=rs.getString("dname");
+	String add=rs.getString("loc");
+
+		above statements prove that programmer knows 3 things
+		a) how many columns are there
+		b) what are their names
+		c) what are their types.
+
+what if programmer does not know any of these? will he be able to display records?
+	yes, with the help of "ResultSetMetaData" interface which gives complete information about ResultSet such as no.of columns , their names , types etc.

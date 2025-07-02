@@ -1,0 +1,1 @@
+inside BookNewController, we have "beforeSubmit" and "afterSubmit" method , their name can be anything but they must return String or ModelAndView.

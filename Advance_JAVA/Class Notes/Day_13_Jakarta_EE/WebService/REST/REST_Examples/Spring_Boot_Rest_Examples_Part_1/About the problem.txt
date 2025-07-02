@@ -1,0 +1,12 @@
+While creating STS new Starter project
+	if you get the exception:
+
+SocketTimeoutException: Connect timed out in case of STS
+
+Solution is:
+
+You have to change the network setting in the STS.
+
+Select Window Tab -> Preferences -> General -> Network Connection and change the setting.
+
+Set Active Provider to DIRECT

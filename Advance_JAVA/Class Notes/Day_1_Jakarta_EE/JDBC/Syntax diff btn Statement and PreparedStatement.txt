@@ -1,0 +1,7 @@
+Statement st=con.createStatement();
+ResultSet rs=st.executeQuery("select * from dept");
+
+		vs 
+
+PreparedStatement pst=con.prepareStatement("select * from dept");
+ResultSet rs=pst.executeQuery();

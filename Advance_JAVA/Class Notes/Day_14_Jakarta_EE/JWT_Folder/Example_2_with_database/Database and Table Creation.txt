@@ -1,0 +1,14 @@
+mysql> create database jwt;
+
+mysql> use jwt;
+Database changed
+
+mysql> create table myuser(id int(2) primary key auto_increment,username varchar(20),password varchar(20));
+Query OK, 0 rows affected, 1 warning (0.66 sec)
+
+
+mysql> insert into myuser(username,password) values('scott','tiger');
+Query OK, 1 row affected (0.27 sec)
+
+mysql> insert into myuser(username,password) values('master','master123');
+Query OK, 1 row affected (0.23 sec)

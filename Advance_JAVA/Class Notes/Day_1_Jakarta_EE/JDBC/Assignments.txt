@@ -1,0 +1,40 @@
+1) create a table "Student"
+
+	rollno,name,age
+
+write a java program to accept rollno,name,age from user and insert a row.
+
+after inserting that row try to view using a query.
+
+
+2) create table "Employee"
+	empid,empname,desig
+
+	add 5 records manually.
+
+   Now write a java program to accept "designation" from user and retrieve employees with the given designation.
+
+
+3) Object Persistence inside database
+
+create a table "Product" with
+	pid number
+	qty number
+	cost decimal
+	pname varchar
+[ do not add any record ]
+
+define a class "Product" with
+	private int pid,qty;
+	private double cost;
+	private String pname;
+		setters,getters,parameterized constructor and toString()
+
+create 1 instance of above class , display it and then insert a row inside Product with the help of above instance.
+
+	now assign "null" to the above instance. That means your heap based object will be soon garbage collected , but you need not worry as you have saved the state of an object inside the database.
+
+	now fire a query to read that record and with the help of it initialize new object of "Product" and display it.
+
+
+	

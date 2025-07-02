@@ -1,0 +1,32 @@
+what is CORS?
+
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+e.g.
+
+CORS makes it possible for web applications hosted on one domain (like https://www.myapp.com) to interact with APIs hosted on another domain (like https://api.mywebsite.com), enabling the cross-origin resource sharing.
+
+It's used in REST controllers to allow client applications (from different domains) to communicate with a backend API, ensuring only authorized origins can access the resources.
+
+What is origin?
+
+	origin consists of "protocol" ,"domain" and "port"
+
+	e.g. http://myserver.com:8000
+
+here "http" - protocol
+     "myserver.com" -  domain name
+      8000 -  port
+
+
+By default browsers prevent Ajax request from different origin.
+
+CORS is a standard to relax the same origin policy.
+
+It selectively allows cross origin requests while rejecting others.
+
+how can we enable CORS?
+
+	apply following annotation on the RestController class
+
+	@CrossOrigin("http://localhost:4200")
+		here "http://localhost:4200" is assumed to be a different origin from where you would like to allow access to your Rest Service/s.

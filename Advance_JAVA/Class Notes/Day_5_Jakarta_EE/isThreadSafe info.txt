@@ -1,0 +1,10 @@
+
+one of the attributes of "page" directive is isThreadSafe. 
+
+It has by default value "true". That means your generated servlet is thread-safe.
+
+if you set the value of "isThreadSafe" to "false". it means your generated servlet is not thread-safe and that also means that web container will make your generated servlet implement "SingleThreadModel"
+
+What is SingleThreadModel interface?
+
+initially when programmer didn't want to make servlet accessible from multiple threads , he used to make his servlet implement "SingleThreadModel" ( it is a marker interface ). But now this interface has become obsolete.

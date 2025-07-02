@@ -1,0 +1,209 @@
+File
+	new
+		spring starter project
+
+	Basic_Auth
+
+java
+java 17
+maven
+
+
+spring boot version 3.0.8 snapshot
+
+following dependecies should be selected
+
+spring web
+spring boot devtools
+spring security
+
+
+create a package 
+	com.example.controllers
+
+create a class "HomeController"
+
+
+package com.example.controllers;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/home")
+public class HomeController 
+{
+	@GetMapping("/normal")
+	public ResponseEntity<String> normalUser()
+	{
+		return ResponseEntity.ok("Hello from normal user");
+	}
+	@GetMapping("/public")
+	public ResponseEntity<String> publicUser()
+	{
+		return ResponseEntity.ok("Hello from public user");
+	}
+	@GetMapping("/admin")
+	public ResponseEntity<String> adminUser()
+	{
+		return ResponseEntity.ok("Hello from admin user");
+	}
+	@GetMapping("/access-denied")
+	public ResponseEntity<String> accessDenied()
+	{
+		return ResponseEntity
+	            .status(403)
+	            .body("<h2 style='color:red;'>You do not have permission to access this page.</h2>");
+	}
+}
+
+
+create a package
+	com.example.config
+
+create a class "SecurityConfig.java"
+
+
+package com.example.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    // User definitions
+    @Bean
+    public UserDetailsService userDetailsService(@Autowired
+        	PasswordEncoder pe) {
+    	
+        UserDetails normalUser = User
+                .withUsername("scott")
+                .password(pe.encode("tiger"))
+                .roles("NORMAL")
+                .build();
+        System.out.println("Password for Normal user is\t" + passwordEncoder().encode("tiger"));
+
+        UserDetails publicUser = User
+                .withUsername("vita1")
+                .password(pe.encode("vita1"))
+                .roles("PUBLIC")
+                .build();
+
+        UserDetails adminUser = User
+                .withUsername("master")
+                .password(pe.encode("blaster"))
+                .roles("ADMIN")
+                .build();
+
+        return new InMemoryUserDetailsManager(normalUser, publicUser, adminUser);
+    }
+
+    // Route protection and login mechanism
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/home/public").hasRole("PUBLIC")
+                .requestMatchers("/home/normal").hasRole("NORMAL")
+                .requestMatchers("/home/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .exceptionHandling(ex -> ex
+                .accessDeniedPage("/home/access-denied")
+            )
+            .httpBasic(basic -> {});
+        return http.build();
+    }
+
+}
+
+
+
+
+
+inside "com.example.demo", your
+	BasicAuthApplication.java should be as follows:
+
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+@SpringBootApplication
+@ComponentScan(basePackages="com.example.*")
+public class BasicAuthApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BasicAuthApplication.class, args);
+	}
+
+}
+
+
+
+inside com.example.demo create following class:
+
+
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
+public class ContextPrinter {
+
+    @Autowired
+    private ApplicationContext context;
+
+    @PostConstruct
+    public void printContextInfo() {
+        System.out.println("IoC Container Class: " + context.getClass().getName());
+
+        String[] beanNames = context.getBeanDefinitionNames();
+        System.out.println("Total Beans: " + beanNames.length);
+        for(String name:beanNames)
+        {
+        	if(name.equalsIgnoreCase("securityfilterchain") || name.equalsIgnoreCase("userdetailsservice") || name.equalsIgnoreCase("PasswordEncoder"))
+        		System.out.println(name);
+        }
+    }
+}
+
+
+
+go to "BasicAuthApplication.java" and run main function
+
+make sure server gets started successfully.
+
+go to browser
+
+http://localhost:8080/home/normal
+
+make sure it gives u login screen
+
+	type scott as user and tiger as password. Makes sure u get the output.
+
+Try out other roles also like "public" or "admin".

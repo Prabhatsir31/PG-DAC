@@ -1,0 +1,7 @@
+ <dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.2.2</version>
+</dependency>
+
+if you don't use this dependency inside "pom.xml", you don't get the output inside ARC.

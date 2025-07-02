@@ -1,0 +1,7 @@
+The type org.springframework.http.HttpStatus cannot be resolved. It is indirectly referenced from required .class files
+
+Solution:
+
+close the project.
+go to "repository" folder and delete entire "org" folder
+open the project again

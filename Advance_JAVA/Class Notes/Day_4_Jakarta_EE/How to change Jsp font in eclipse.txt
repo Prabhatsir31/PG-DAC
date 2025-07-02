@@ -1,0 +1,1 @@
+Save the file and restart Eclipse. Go to Preferences > General > Appearance > Colors and Fonts, expand the "Basic" folder and select "Text Font" and change that to whatever size you like.

@@ -1,0 +1,20 @@
+1) Eureka Server -  Spring boot application
+
+2) ContactService or UserService in any sequence.
+
+
+3) now go and check "Eureka Server" Spring Boot application console:
+
+Registered instance UNKNOWN/LAPTOP-DM7E4AA9:9003 with status UP (replication=false)
+
+Registered instance UNKNOWN/LAPTOP-DM7E4AA9:9003 with status UP (replication=true)
+
+
+Registered instance UNKNOWN/LAPTOP-DM7E4AA9:9002 with status UP (replication=false)
+
+Registered instance UNKNOWN/LAPTOP-DM7E4AA9:9002 with status UP (replication=true)
+
+
+	That means both of our MicroServices [ContactService and UserService] have been registered.
+
+

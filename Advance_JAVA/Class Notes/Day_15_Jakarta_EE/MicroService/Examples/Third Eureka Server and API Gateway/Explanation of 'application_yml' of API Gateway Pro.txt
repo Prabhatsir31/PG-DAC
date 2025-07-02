@@ -1,0 +1,58 @@
+server:
+  port: 8999
+eureka:
+  instance:
+    hostname: localhost
+    
+spring:
+  application:
+    name: API-Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user_id
+          uri: lb://UserService
+          predicates:
+          - Path=/user/**
+        - id: contact_id
+          uri: lb://ContactService
+          predicates:
+          - Path=/contact/**
+
+
+
+	- id: user_id
+          uri: lb://UserService
+          predicates:
+          - Path=/user/**
+
+here "-id" can be any name
+uri must be name of the microservice shown in the "status" section on http://localhost:8761/   page  (UserService in this case)
+Path - /user/**
+	means that when user types
+http://localhost:8999/user/<anything>
+	invoke "UserServicePro" microservice
+
+so when we type
+	http://localhost:8999/user/101
+		it gives us details of the user which has an id 101 from "UserServicePro" microservice.
+
+
+
+
+	- id: contact_id
+          uri: lb://ContactService
+          predicates:
+          - Path=/contact/**
+
+here "-id" can be any name
+uri must be name of the microservice shown in the "status" section on http://localhost:8761/   page  (ContactService in this case)
+Path - /contact/**
+	means that when user types
+http://localhost:8999/contact/<anything>
+	invoke "ContactServicePro" microservice
+
+so when we type
+	http://localhost:8999/contact/101
+		it gives us details of the contact/s  which belong to user id 101 from "ContactServicePro" microservice.
+

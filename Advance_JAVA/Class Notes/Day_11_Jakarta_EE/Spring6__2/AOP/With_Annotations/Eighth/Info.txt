@@ -1,0 +1,5 @@
+Before advice for setter methods of "Sample" class only
+
+After advice for getter methods of all the classes.
+
+Around advice for toString methods of all the classes.

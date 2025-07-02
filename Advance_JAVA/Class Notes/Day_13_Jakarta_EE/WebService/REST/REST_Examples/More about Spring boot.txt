@@ -1,0 +1,26 @@
+Spring boot is a module of Spring from which we speed up the development.
+
+It provides an easier and faster way to set up, configure and run both simple and web-based applications.
+In spring boot we need to provide very less configuration but it doesn't mean we don't need to configure anything.
+
+Spring boot = Spring framework + embedded server - configuration
+
+That means when we use spring boot, we need less configuration as compare to that when we don't use spring boot.
+
+
+
+The main goal of Spring Boot is to quickly create Spring-based applications without requiring developers to write the same boilerplate configuration again and again.
+
+Advantages of Spring Boot
+
+1) it creates stand-alone spring applications which can be started using java -jar.
+		This jar file you need to just run. As soon as you run this jar file automatically server will get started and your application will be deployed on it.
+
+2) Embed Tomcat, Jetty or Undertow directly [ no need to deploy war files ]
+
+3) Convention over Configuration software design style. [ it means Spring boot says that if you follow these conventions then I will do configurations for you ]
+		It reduces efforts of the developers
+Opinionated Default - Automatically configure
+			This automatic configuration may work for us without doing anything or we may need to change it to some extent.
+
+

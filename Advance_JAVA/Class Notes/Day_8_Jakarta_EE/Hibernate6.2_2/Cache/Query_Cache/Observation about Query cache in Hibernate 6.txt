@@ -1,0 +1,1 @@
+It's been observed that in Hibernate 6 , Query cache does not use second level cache. It means that even without enabling second level cache, query cache can work.

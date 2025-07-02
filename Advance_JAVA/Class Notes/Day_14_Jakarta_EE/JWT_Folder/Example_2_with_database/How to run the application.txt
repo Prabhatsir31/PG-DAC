@@ -1,0 +1,39 @@
+first time you have to run the application in order to get the token
+
+http://localhost:8080/token
+
+	method - Post
+
+	body
+		raw type		JSON
+
+		{
+			"userName":"scott",
+			"password":"tiger"
+		}
+		or
+		{
+			"userName":"master",
+			"password":"master123"
+		}
+
+click on "send"
+
+make sure it gives you a token
+
+from the postman response window
+	click on "copy to clipboard" icon
+
+and paste this token on some notepad
+
+
+second time
+
+	http://localhost:8080/hello
+		method  Get
+	header
+		Authorization
+			value
+			Bearer<space>token which was generated in the last request
+
+make sure it works and gives you the output.

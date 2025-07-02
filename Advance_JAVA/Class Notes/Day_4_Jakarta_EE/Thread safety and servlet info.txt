@@ -1,0 +1,44 @@
+
+Thread safety and servlet
+
+
+
+service() or doGet() or doPost()-  are always called by threads.
+and
+all the threads share same instance of servlet class.
+
+you need to take care of avoiding race condition inside "service() or doGet() or doPost()" methods.
+
+how will you do that?
+
+synchronized service() or doGet() or doPost() is one of the ways.
+
+initially we had interface "SingleThreadModel" in JavaEE.
+whenever programmer wanted to make sure that servlet should be executed by one thread at a time, he used to say
+
+	public class MyServ implements SingleThreadModel
+
+SingleThreadModel is a marker interface which ensures that your servlet will be executed by one thread at a time.
+
+Nowadays idea of implementing SingleThreadModel has been deprecated.
+
+
+	but it's not recommended at all as it will definitely degrade the servlet performance.
+
+at the most u need 
+
+	service() or doGet() or doPost()
+	{
+		synchronized(this)
+		{
+			critical code
+		}
+	}
+
+
+try to avoid  member variables inside servlet.
+
+if at all you need access them inside synchronized block.
+
+you need not worry about request and response as they both are thread-safe because they both are local.
+

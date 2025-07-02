@@ -1,0 +1,11 @@
+getJspContext().getOut().print("This is a first simple tag");
+
+here Java (TagCode1) would like to write on jsp which has called it (UseFirst.jsp)
+
+so Java has to open outputstream on JSP.
+
+getJspContext() method gives Java the reference of JSP which has called it.
+
+on that reference Java invokes "getOut()" which gives Java, outputstream on JSP.
+
+and finally, on that outputstream Java can write using "print()" method.

@@ -1,0 +1,1 @@
+@Id can be either with "getter" method or with variable declaration.

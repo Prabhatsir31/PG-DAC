@@ -1,0 +1,1 @@
+@SpringBootApplication should be applied to that class which is going to start the server and deploy your web application.

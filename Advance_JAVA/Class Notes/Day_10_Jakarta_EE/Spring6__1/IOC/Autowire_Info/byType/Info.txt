@@ -1,0 +1,7 @@
+In case of byType autowiring mode, bean id and reference name may be different. But there must be only one bean of a type.
+
+It internally uses setter injection.
+
+It doesn't matter that you have different bean name than reference name.
+
+But, if you have multiple bean of one type, it will not work and throw exception.

@@ -1,0 +1,3 @@
+Front Controller Design Pattern is a structural design pattern.
+
+This design pattern means that all requests that come for a resource in an application will be handled by a single handler and then dispatched to the appropriate handler [specific controller which programmer writes] for that type of request.

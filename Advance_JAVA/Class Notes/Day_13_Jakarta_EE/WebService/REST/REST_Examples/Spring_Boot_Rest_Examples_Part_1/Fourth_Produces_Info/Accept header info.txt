@@ -1,0 +1,1 @@
+Accept header is used by HTTP clients to tell the server which type of content they expect/prefer as response.

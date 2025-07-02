@@ -1,0 +1,17 @@
+html to servlet interaction
+
+request from html goes to servlet and servlet processes it and sends the response
+
+request method can be mainly get or post.
+by default it is get.
+
+get request
+	limited amt. of data can be sent to the server
+	request parameters can be seen on the address bar
+	it is mainly used to get some information from the server.
+
+
+post request
+	no limit of data that can be sent to the server.
+	request parameters are not seen on the address bar.
+	it is mainly used to add some data on the server.

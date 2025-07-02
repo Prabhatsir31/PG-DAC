@@ -1,0 +1,88 @@
+start STS
+
+File
+	Spring starter project
+
+give a name to the project
+	e.g.  BootGradleJPA
+
+
+check the following options:
+
+
+Type   Gradle-Groovy
+
+Java version 17
+
+packaging    jar
+
+language     java
+
+Group     com.example
+
+Artifact	BootGradleJPA
+
+version		0.0.1-SNAPSHOT
+
+Package		com.example.demo
+
+	click on "next"
+
+
+new spring starter project dependencies
+
+spring boot version :  3.1.7   snapshot
+
+select:
+	Spring web
+	
+	Spring Boot Developer tools
+
+	MySQL Driver
+
+	Spring Data JPA
+
+next
+
+finish
+
+It will take some time to create the project [ depends on your internet connection ]
+
+once the project is created, notice "build.gradle" file gets created inside the project.
+
+
+copy "BootGradleApplication.java" to the "com.example.demo" package.
+
+create one more package "com.example.controllers"
+
+copy "MyController.java" inside "com.example.controllers" package.
+
+
+
+
+right click on "BootGradleApplication"
+	run as
+		java application
+
+if you get a message "editor does not contain main type"
+
+right click on "BootGradleApplication"
+	run as
+
+		run configuration
+
+project   -    Boot_Gradle
+
+main class    -    com.example.demo.BootGradleApplication
+
+apply
+
+run
+
+make sure server starts
+
+
+
+
+
+

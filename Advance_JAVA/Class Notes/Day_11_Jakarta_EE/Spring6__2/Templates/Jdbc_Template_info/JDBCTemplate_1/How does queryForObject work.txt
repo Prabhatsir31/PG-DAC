@@ -1,0 +1,19 @@
+
+
+1) we invoke "queryForObject()" of JdbcTemplate
+2) it accepts two arguments:
+	a) query
+	b) RowMapper implementation which has a method "mapRow()"
+3) mapRow() has an argument "ResultSet"
+
+
+Who invokes mapRow()? or how does queryForObject work?
+
+queryForObject fires the query with the database.
+it gets ResultSet.
+it invokes ResultSet's next() method.
+after ensuring that ResultSet is not empty, queryForObject invokes "mapRow()" by passing ResultSet.
+
+Then mapRow traverses that ResultSet and retrieves records.
+
+

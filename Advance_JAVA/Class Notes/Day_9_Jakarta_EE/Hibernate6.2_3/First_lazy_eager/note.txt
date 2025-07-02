@@ -1,0 +1,5 @@
+By default hibernate5 has got "Lazy Fetching Strategy".
+
+ie.
+	by default  
+		default-lazy="true"  in hibernate.

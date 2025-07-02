@@ -1,0 +1,153 @@
+file 
+	new
+		maven project
+
+
+or
+
+file
+	new
+		web project
+
+		right click on project
+			configure
+				convert to maven
+
+
+
+
+
+
+getServletContext().getInitParameter("database");
+
+getServletContext()
+	gives us ServletContext which is one per web app.
+it is used to read context parameter/s.
+in case of redirect
+a) requests are different i.e. one request to "RedirectingServ" and another to "RedirectedServ".
+b) since a fresh request needs to be passed to another web component , it is slow.
+c) client knows which web component has given the response.
+d) redirect can go beyond a server. i.e. u might redirect to say "www.gmail.com" etc.
+
+in case of forward
+
+a) request is same, it is just forwarded to another servlet/jsp.
+b) since request is just forwarded it is faster than redirect.
+c) client does not know which web component has given the response.
+d) forward cannot go beyond a server.
+
+
+
+
+
+ServletContext sc=getServletContext();
+			RequestDispatcher rd=sc.getRequestDispatcher("/ForwardedServ");
+
+		or
+
+
+			RequestDispatcher rd=request.getRequestDispatcher("ForwardedServ");
+
+
+RequestDispatcher created with "request" can be used within same "web application" i.e. project
+
+RequestDispatcher created with "ServletContext" can go beyond the "web application" i.e. project.
+when you write servlet, for defining one time activity we have 2 options:
+
+constructor and init(ServletConfig).
+
+so which is better?
+
+init , because inside constructor ServletConfig is not available.
+
+log.html accepts name and age from user. control is passed to "HiddenServ1" which collects those values stores them in "hidden fields" and pass it across "HiddenServ2" servlet.
+
+
+
+
+
+
+
+
+
+cookies are set inside "response" and retrieved from "request".
+
+drawback of custom cookies :
+
+a) cookies can store only textual data and not java objects.
+b) cookies can be disabled on client side.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+Spring Cloud Version
+
+2022.0.2    version should be used with Spring boot 3
+
+
+address where Spring cloud version compatibility with spring boot version is available:
+
+https://github.com/spring-cloud/spring-cloud-release/wiki

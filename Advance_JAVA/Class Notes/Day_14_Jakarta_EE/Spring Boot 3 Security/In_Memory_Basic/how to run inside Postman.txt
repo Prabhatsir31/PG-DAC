@@ -1,0 +1,19 @@
+go to Postman
+
+type
+
+http://localhost:8080/home/normal
+	GET
+
+Authorization
+	Basic Auth
+
+username		scott
+password		tiger
+
+
+similarly try for 
+
+http://localhost:8080/home/public
+	and
+http://localhost:8080/home/admin

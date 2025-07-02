@@ -1,0 +1,1 @@
+This is the example of "Reverse Engineering" i.e. first we create table and then based on that we create a java class (entity).

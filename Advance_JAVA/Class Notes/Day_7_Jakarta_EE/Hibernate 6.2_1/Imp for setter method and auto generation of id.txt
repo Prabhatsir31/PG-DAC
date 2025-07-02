@@ -1,0 +1,4 @@
+ 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+
+even after we mention this for auto generation of id , "setter" method of id is compulsory because hibernate will generate id and then assigned to the corresponding instance. 

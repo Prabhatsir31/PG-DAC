@@ -1,0 +1,6 @@
+java.io.InputStreamReader(InputStream) (returns a Reader)
+
+InputStreamReader reads bytes and decodes them into characters.
+
+Each invocation of one of an InputStreamReader's read() methods may cause one or more bytes to be read from the underlying byte-input stream.
+

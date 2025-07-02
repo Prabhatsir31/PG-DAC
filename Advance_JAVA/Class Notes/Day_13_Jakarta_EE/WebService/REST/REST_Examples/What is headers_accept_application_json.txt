@@ -1,0 +1,67 @@
+/*
+	 * You can receive the response in JSON or XML by setting the Accept header to
+	 * application/json or application/xml.
+	 */
+
+when you return Json object from java code by saying:
+	
+	return new Gson().toJson(manager.getProducts());  ,
+
+if you give "@GetMapping" in a following way:
+
+@GetMapping(value = "api/products")
+
+	output in ARC will be as follows:
+
+
+[{"proid":2,"proname":"Pen","category":"stationery","quantity":80,"price":40.0},{"proid":4,"proname":"T_shirts","category":"Clothes","quantity":150,"price":460.0},{"proid":5,"proname":"Jeans","category":"Clothes","quantity":50,"price":690.0},{"proid":6,"proname":"Sugar","category":"Grocery","quantity":150,"price":80.0},{"proid":7,"proname":"Rice","category":"grocery","quantity":90,"price":125.0}]
+
+
+
+if you give "@GetMapping" in a following way:
+	
+	@GetMapping(value = "api/products",headers = "Accept=application/json")
+
+	you will get output in a following way:
+
+
+[
+  {
+    "proid": 2,
+    "proname": "Pen",
+    "category": "stationery",
+    "quantity": 80,
+    "price": 40
+  },
+  {
+    "proid": 4,
+    "proname": "T_shirts",
+    "category": "Clothes",
+    "quantity": 150,
+    "price": 460
+  },
+  {
+    "proid": 5,
+    "proname": "Jeans",
+    "category": "Clothes",
+    "quantity": 50,
+    "price": 690
+  },
+  {
+    "proid": 6,
+    "proname": "Sugar",
+    "category": "Grocery",
+    "quantity": 150,
+    "price": 80
+  },
+  {
+    "proid": 7,
+    "proname": "Rice",
+    "category": "grocery",
+    "quantity": 90,
+    "price": 125
+  }
+]
+
+
+But when you return normal java object or string , "headers" attribute does not make any difference.

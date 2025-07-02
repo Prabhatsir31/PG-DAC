@@ -1,0 +1,1 @@
+"Creational" refers to the process of creating objects in software design. These patterns are concerned with the way objects are instantiated or created.

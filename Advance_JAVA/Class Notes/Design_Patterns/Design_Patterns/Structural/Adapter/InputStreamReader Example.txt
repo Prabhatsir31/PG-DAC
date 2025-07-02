@@ -1,0 +1,22 @@
+package core1;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class MyClass {
+
+	public static void main(String[] args) {
+		InputStreamReader ir=new InputStreamReader(System.in);
+		char arr[]=new char[100];
+		try {
+			ir.read(arr);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String str=new String(arr);
+		System.out.println(str);
+
+	}
+
+}

@@ -1,0 +1,136 @@
+
+public interface Room
+{
+  public String showRoom();
+  public void applyColors(Color c);
+   public void applyCurtains(Color c);
+}
+
+
+public class LivingRoom implements Room 
+{
+  @Override
+  public String showRoom() {
+    return "Living Room";
+  }
+  public void applyColors(Color c)
+  {
+	// code to applycolors
+  }
+  public void applyCurtains(Color c)
+  {
+	// code to applycurtains
+  }
+}
+
+public class BedRoom implements Room 
+{
+  @Override
+  public String showRoom() 
+  {
+    return "Bed Room";
+  }
+  public void applyColors(Color c)
+  {
+	// code to applycolors
+  }
+  public void applyCurtains(Color c)
+  {
+	// code to applycurtains
+  }
+}
+
+The following class is the decorator class. It is the core of the decorator design pattern. It contains an attribute for the type of Room interface. Instance is assigned dynamically at the creation of decorator using its constructor. Once assigned, that instance method will be invoked.
+
+RoomDecorator.java(Decorator): 
+abstract public class RoomDecorator
+{
+
+  protected Room ref;
+
+  public RoomDecorator (Room ref) 
+  {
+    this.ref=ref;
+  }
+  public void display()
+  {
+	ref.showRoom();
+  }
+
+ public abstract void decorate();
+}
+
+
+ColorDecorator.java(ConcreteDecorator): 
+
+public class ColorDecorator extends RoomDecorator
+ {
+Color c;
+  public ColorDecorator (Room ref,Color c) {
+    super(ref);
+    this.c=c;
+  }
+
+  public void decorate()
+  {
+	addColors();
+  }
+  private void addColors() {
+    ref.applyColors(c);
+  }
+}
+
+CurtainDecorator.java(ConcreteDecorator): 
+
+public class CurtainDecorator extends RoomDecorator
+ {
+Color c;
+  public CurtainDecorator (Room ref,Color c) {
+    super(ref);
+    this.c=c;
+  }
+
+  public void decorate()
+  {
+	addCurtains();
+  }
+  private void addCurtains() {
+    ref.applyCurtains(c);
+  }
+}
+
+
+DecoratorDesignPatternMain.java:
+ 
+public class DecoratorDesignPatternMain 
+{  
+
+ public static void main(String args[]) 
+{  
+  Room room1 = new LivingRoom();
+  ColorDecorator cd=new ColorDecorator(room1,pink);
+  cd.decorate();
+  cd.display();
+
+  CurtainDecorator cd1=new CurtainDecorator(room1,red);
+  cd1.decorate();
+  cd1.display();
+
+  Room room2 = new BedRoom();
+  ColorDecorator cd2=new ColorDecorator(room2,blue);
+  cd2.decorate();
+  cd2.display();
+
+  
+ }  
+}
+
+
+
+
+
+
+
+
+
+

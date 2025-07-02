@@ -1,0 +1,1 @@
+Gradle is an open-source build automation tool designed to automate the process of building, testing, and deploying software projects. It is like Maven. Gradle is highly flexible, powerful, and used primarily for Java, Groovy, Kotlin, and Android development, although it can be adapted for other programming languages as well.

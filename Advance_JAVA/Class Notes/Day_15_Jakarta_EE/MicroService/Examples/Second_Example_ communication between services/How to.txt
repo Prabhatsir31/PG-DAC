@@ -1,0 +1,156 @@
+Assuming "UserServicePro" which is created in the "First_Example" is running [ Spring boot application is running on 9002 port no. ].
+
+and also check it's workspace 
+	E:\MySTS\UserServicePro   [ in my case ]
+
+
+
+
+start "STS" on different workspace 
+	E:\STS_MicroService      [ in my case ]
+
+
+File 
+	new 
+		spring starter project
+			ContactServicePro
+
+java version 17
+maven
+Spring boot version 3.1.0
+
+
+choose dependencies:
+
+Spring Web
+Spring Boot DevTools
+
+next
+	finish
+
+make sure project gets created successfully.
+
+create packages
+	entities
+	controllers
+	services
+			
+
+copy "ContactController.java" inside "com.example.controllers"
+
+copy "Contact.java" inside "com.example.entities"
+
+copy "ContactService.java" and "ContactServiceImpl.java" inside "com.example.services"
+
+Spring Boot Application class will be created automatically inside "com.example.demo"
+	ContactServiceProApplication.java
+
+add following annotations on the spring boot application class:
+
+@ComponentScan("com.example.*")
+@EntityScan("com.example.*")
+
+
+
+copy "application.yml" inside "src/main/resources"
+	
+		server:
+  		 port: 9003
+
+
+run this application and make sure your controllers are working fine, i.e. they give you "Contact" details based on user id.
+
+e.g.
+
+go to postman and type
+
+http://localhost:9003/contact/102
+
+		GET
+
+make sure you get the following output:
+
+
+[
+    {
+        "cid": 3,
+        "email": "Saurav",
+        "contactName": "Saurav@gmail.com",
+        "id": 102
+    }
+]
+
+
+
+now go to "UserServicePro" project
+	open
+		UserServiceProApplication.java   and add following code :
+
+	@Bean
+	public RestTemplate getRestTemplate()
+	{
+		return new RestTemplate();
+	}
+
+now go to
+	UserController.java and add following line:
+
+		@Autowired
+		private RestTemplate template;
+
+also modify the existing "getUser()" method in the following way:
+
+	@GetMapping("/user/{userid}")
+	public User getUser(@PathVariable("userid") int userid)
+	{
+		User user=service.getUser(userid);
+		// RestTemplate helps you to invoke one service from another service
+		// the only drawback is here "localhost" is hardcoded
+		// so if there are thousands of services running on different
+		// servers it will become difficult to keep a track of 
+		// server names
+		List<?> contacts=template.getForObject("http://localhost:9003/contact/"+user.getId(), List.class);
+		user.setContacts(contacts);
+		return user;
+	}
+
+
+first run "ContactServiceProApplication"  Spring boot application or make sure it's running
+
+		[ it should be ready as "UserServicePro" is going to communicate with it ]
+
+then run
+	"UserServiceProApplication"  Spring boot application
+
+go to ARC
+	type
+
+http://localhost:9002/user/102
+
+	method    GET
+
+make sure this time not only User data but along with that its Contact details are also printed.
+
+i.e. output should be :
+
+
+{
+    "id": 102,
+    "name": "Pqr",
+    "phone": "9856684272",
+    "contacts": [
+        {
+            "cid": 3,
+            "email": "Saurav",
+            "contactName": "Saurav@gmail.com",
+            "id": 102
+        }
+    ]
+}
+
+
+
+
+
+
+

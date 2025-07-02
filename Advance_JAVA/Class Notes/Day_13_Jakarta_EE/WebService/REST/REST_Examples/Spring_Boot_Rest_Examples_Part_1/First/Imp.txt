@@ -1,0 +1,2 @@
+copy "HelloController.java" inside the same package where "FirstStsProApplication" is created.
+if you copy it in some other place, then application won't be able to find it.

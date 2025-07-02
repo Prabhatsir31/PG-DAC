@@ -1,0 +1,6 @@
+first there has to be a URL for generating token
+
+key is "Authorization" 
+
+value is "Bearer<some number+some characters"
+

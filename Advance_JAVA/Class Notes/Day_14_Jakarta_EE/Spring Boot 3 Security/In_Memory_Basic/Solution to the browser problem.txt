@@ -1,0 +1,22 @@
+when you run this application and go to Microsoft Edge and type
+
+http://localhost:8080/home/normal
+
+it will accept username and password which are configured in the application
+after entering proper username and password, it gives u the output. But then inside same window if you type
+
+http://localhost:8080/home/public
+or
+http://localhost:8080/home/admin
+
+it gives u the output without asking username and password which are configured for these roles. It is because browser caches username and password u first entered and uses the same for all the roles. 
+
+To solve this problem do the following :
+
+
+on the right side of "Microsoft Edge",
+
+Click the three horizantal dots in the top-right corner of the browser (menu).
+Select "New InPrivate Window".
+
+A new window will open with a dark background and the InPrivate Window logo, indicating that you are in InPrivate Window mode.

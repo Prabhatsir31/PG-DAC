@@ -1,0 +1,10 @@
+java.lang.ClassNotFoundException: net.bytebuddy.NamingStrategy$SuffixingRandom$BaseNameResolver
+
+
+
+
+Solution :
+close the project
+delete "net" folder from .m2/repository
+open the project
+

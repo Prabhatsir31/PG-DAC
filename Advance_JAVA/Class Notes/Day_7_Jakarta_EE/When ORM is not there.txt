@@ -1,0 +1,56 @@
+create a table
+	"product"
+id - number primary key
+name - varchar
+price - decimal
+qty- number
+[do not add any record]
+
+
+create a class in "mypack"
+
+Product
+
+	 
+		
+		public no-arg constructor
+
+		setter and getter methods
+
+		toString() - display all the members
+
+
+
+create a class ProductApp in "mypack"
+
+	main
+
+		instantiate Product	
+			invoke setter methods to initialize it.
+
+		using the above instance,insert a row in product table. use PreparedStatement.
+
+	[ you have persisted Product class instance somehow in database]
+
+		now fire a query in database to fetch a record.
+		create a new instance of Product class.[ do not invoke setters]
+
+		while retrieving each and every information from ResultSet, invoke setter methods of newly created Product class object.
+
+		now display the Product class object. 
+	[ you have retrieved Product class instance from database somehow]
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		

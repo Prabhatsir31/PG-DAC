@@ -1,0 +1,5 @@
+Answer
+Weaving is the process of applying aspects to a target object to create a new proxied object. The aspects are woven into the target object at the specified joinpoints. The weaving can take place at several points in the target class's lifetime: 
+* Compile time : Aspects are woven in when the target class is compiled. This requires a special compiler.
+ * Classload time : Aspects are woven at the time of loading of the target class into the JVM. It is done by ClassLoader that enhances that target class's bytecode before the class is introduced into the application. 
+* Runtime : aspects are also woven during the execution of the applicaion. 

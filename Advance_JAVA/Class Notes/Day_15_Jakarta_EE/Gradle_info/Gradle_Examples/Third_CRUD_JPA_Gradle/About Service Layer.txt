@@ -1,0 +1,7 @@
+A Spring Boot RESTful service is typically divided into three layers:  Repository, Service, and Controller. This layering helps to segregate the RESTful application responsibilities and enabling loose coupling between the objects.
+
+When you develop a layered RESTful application, you will also need to test the different layers.
+
+The flow of Spring RESTful services:
+
+REST Controller receives the request first then the it passes the request to the Service Layer. Now Service Layer will pass the request to the DAO layer or JPA layer for saving or retrieving the data.

@@ -1,0 +1,63 @@
+one of the applications in which Proxy design pattern used is "RMI".
+
+Remote Method Invocation
+
+	method existing on server invoked by client
+
+
+On Server side:
+
+1) developer will create remote interface which will be shared with client.
+
+public interface MyInterface extends Remote   // Remote interface
+{
+	String message();   // business method
+}
+
+2) developer will create implementation
+
+public class MyInterfaceImpl implements MyInterface   // server object
+{
+	public String message()   
+	{
+		return "hello";  // business logic
+	}
+}
+
+3) developer will create proxy of above implementation to be shared with client.
+
+4) developer will bind above implementation of proxy inside "RMIRegistry"
+
+
+public class MyInterfaceImpl_Stub implements MyInterface   // proxy object
+{
+	public String message()   
+	{
+		// networking logic which can go over the network and invoke the actual method
+	}
+}
+
+5) developer will share "MyInterface.class" and "MyInterfaceImpl_Stub" with client.
+
+
+
+On client side:
+
+1) lookup remote object inside RmiRegistry
+
+	MyInterface ref=lookup......
+
+	above statement will give client instance of "MyInterfaceImpl_Stub".
+since, MyInterfaceImpl_Stub implements "MyInterface", we store it inside "MyInterface" reference.
+
+2) invoke business method (remote method)
+	ref.disp();
+here when client side code tries to invoke "disp()" method, it will invoke "MyInterfaceImpl_Stub" disp() method which can go over the network and invoke actual method.
+when the method on server returns a value it does not come directly to client. It is passed to the stub and stub gives it to the client.
+
+
+
+
+
+
+	

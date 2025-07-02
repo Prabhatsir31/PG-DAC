@@ -1,0 +1,6 @@
+{"player":"Rohit","country":"India","runs":10000}
+
+this is the output you get on copying your created API address inside 
+template.getObject() method.
+
+This output is a string. If you want to get it in a JSON object form, you need to refer "JSON_Object_output" folder.

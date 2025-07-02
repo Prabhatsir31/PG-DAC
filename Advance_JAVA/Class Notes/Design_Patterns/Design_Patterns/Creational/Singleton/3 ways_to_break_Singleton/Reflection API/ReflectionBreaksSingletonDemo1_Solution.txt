@@ -1,0 +1,71 @@
+package core1;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
+class Singleton
+{
+	private static Singleton singleton=new Singleton();
+	private Singleton()
+	{
+		if(singleton!=null)
+		{
+			throw new RuntimeException("You can't break Singleton contract");
+		}
+	}
+	public static Singleton getSingleton()
+	{
+		return singleton;
+	}
+	public void disp1()
+	{
+		System.out.println("in disp1");
+	}
+	public void disp2()
+	{
+		System.out.println("in disp2");
+	}
+}
+
+public class ReflectionBreaksSingletonDemo1_Solution 
+{
+	public static void main(String[] args) 
+	{
+		// Singleton ref1=new Singleton(); not possible
+		Singleton ref1=Singleton.getSingleton();
+		ref1.disp1();
+		ref1.disp2();
+		Class c1=Singleton.class;
+		Constructor con=null;
+		try {
+			con=c1.getDeclaredConstructor(null);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		con.setAccessible(true);  // this is must
+		Singleton ref2=null;
+		try {
+			ref2=(Singleton) con.newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(ref1.hashCode());
+		if(ref2!=null)
+			System.out.println(ref2.hashCode());
+	}
+}

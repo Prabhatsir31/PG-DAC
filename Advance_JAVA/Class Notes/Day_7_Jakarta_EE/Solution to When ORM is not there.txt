@@ -1,0 +1,45 @@
+Product p1=new Product();
+p1.setId(1);
+p1.setName("Soap");
+p1.setPrice(100);
+p1.setQty(24);
+
+
+PreparedStatement pst=con.prepareStatement("insert into product values(?,?,?,?);
+pst.setInt(1,p1.getId());
+pst.setString(2,p1.getName());
+pst.setDouble(3,p1.getPrice());
+pst.setInt(4,p1.getQty());
+
+int k=pst.executeUpdate();
+
+
+pst=con.prepareStatement("select * from product");
+
+ResultSet rs=pst.executeQuery();
+Product ref=new Product();
+
+rs.next();
+
+ref.setId(rs.getInt(1));
+ref.setName(rs.getString(2));
+ref.setPrice(rs.getDouble(3));
+ref.setQty(rs.getInt(4));
+
+S.o.p(ref);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

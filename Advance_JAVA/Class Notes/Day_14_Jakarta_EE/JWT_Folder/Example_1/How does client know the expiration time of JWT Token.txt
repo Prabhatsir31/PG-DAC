@@ -1,0 +1,18 @@
+after calling api for /token
+
+you get JWT Token
+
+e.g.
+
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzY290dCIsImlhdCI6MTcwMDU3MjkwMiwiZXhwIjoxNzAwNTczNTAyfQ.S-kx1yw4LXqVYW_esRbc8LGQw7eqONvPwuOv_oc6NMk
+
+now copy this and paste it to 
+	jwt.io  "Encoded" section and observe 
+
+	PAYLOAD DATA
+		exp
+		you will find some big number, just place the mouse pointer on that and you will come to know the expiration time
+e.g.
+at 6:51  you got the JWT token and in the "exp" section when you place mouse pointer it shows:
+	19:01:42
+notice here "19:01" i.e. at 6:51 you got the token and expiry shows at 19:01 that means token is valid only for 10 minutes.	

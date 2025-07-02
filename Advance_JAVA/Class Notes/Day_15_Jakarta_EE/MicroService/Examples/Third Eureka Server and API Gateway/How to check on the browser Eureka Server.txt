@@ -1,0 +1,7 @@
+run spring boot application 
+	make sure you get following message on the console:
+		Started Eureka Server
+
+now go to browser and check the following URL
+
+http://localhost:8761/

@@ -1,0 +1,91 @@
+start STS
+
+File
+	Spring starter project
+
+give a name to the project
+	e.g.  FirstPro
+
+
+check the following options:
+
+
+Type   Gradle
+
+Java version 17
+
+packaging    jar
+
+language     java
+
+Group     com.example
+
+Artifact	Boot_Gradle
+
+version		0.0.1-SNAPSHOT
+
+Package		com.example.demo
+
+	click on "next"
+
+
+new spring starter project dependencies
+
+spring boot version :  3.1.0   [ by default selected ]
+
+select:
+	Spring Web
+	Spring Developer tools
+
+next
+
+finish
+
+It will take some time to create the project [ depends on your internet connection ]
+
+once the project is created, notice "build.gradle" file gets created inside the project.
+
+
+copy "BootGradleApplication.java" to the "com.example.demo" package.
+
+create one more package "com.example.controllers"
+
+copy "MyController.java" inside "com.example.controllers" package.
+
+
+
+
+right click on "BootGradleApplication"
+	run as
+		java application
+
+if you get a message "editor does not contain main type"
+
+right click on "BootGradleApplication"
+	run as
+
+		run configuration
+
+project   -    Boot_Gradle
+
+main class    -    com.example.demo.BootGradleApplication
+
+apply
+
+run
+
+make sure server starts
+
+now go to postman and type
+
+http://localhost:8080
+
+	select  "GET"
+
+click on "Send"
+
+	make sure you get the output.
+
+
+
+

@@ -1,0 +1,76 @@
+1) right click on JWT application
+
+	run as 
+		java application
+
+
+output:
+
+inside daoAuthenticationProvider method
+
+securityFilterChain method
+
+
+
+2) go to postman and type
+
+http://localhost:8080/token
+
+	method - Post
+
+	body
+		raw type		JSON
+
+		{
+			"username":"scott",
+			"password":"tiger"
+		}
+
+click on "send"
+
+
+output:
+
+
+inside doFilterInternal method
+before calling doFilter of JWTAuthenticationFilter
+MyUser default constructor
+MyUser set username method
+MyUser set password method
+inside token method
+MyUser [username=scott, password=tiger]
+inside findUser method
+inside loaduserbyname method
+inside generateToken method
+inside createToken method
+JWT eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzY290dCIsImlhdCI6MTczMzQ3MjI4NCwiZXhwIjoxNzMzNDcyODg0fQ.l7nuysHkDHiASCQf0rlnasazLk4d4OLofX4gAmlJQJM
+
+
+
+3)  for the subsequent request
+
+http://localhost:8080/hello
+		method  Get
+	header
+		Authorization
+			value
+			Bearer<space>token which was generated in the last request
+
+
+inside doFilterInternal method
+inside getUsernameFromToken method
+inside getClaimFromToken method
+inside getAllClaimsFromToken method
+
+	getUsernameFromToken: Calls getClaimFromToken to retrieve a specific claim (the username, which is the subject of the JWT).
+
+getClaimFromToken: A generic method that allows extraction of any claim from the JWT by calling getAllClaimsFromToken and applying a function to the claims (like Claims::getSubject, Claims::getExpiration, etc.).
+
+getAllClaimsFromToken: The low-level method that decodes the JWT and extracts all claims using the secret key for validation.
+
+Each method builds on the previous one to provide a flexible and reusable way of extracting information from a JWT.
+
+
+inside loaduserbyname method
+before calling doFilter of JWTAuthenticationFilter
+

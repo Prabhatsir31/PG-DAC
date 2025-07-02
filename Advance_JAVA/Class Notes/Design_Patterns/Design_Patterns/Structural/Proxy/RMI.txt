@@ -1,0 +1,22 @@
+		Remote Method Invocation
+it means method which is available on one JVM is invoked from another JVM.
+e.g.
+client can invoke the method/s which are available on server.
+
+how does it work?
+
+here client cannot invoke the method which is running on server. That's not possible.
+In order to make remote method invocation possible :
+
+a) server creates a proxy (stub) of its class. This proxy or stub has got exactly same method which is available in original class. But the difference is contents of original class method is business logic whereas contents of proxy class method is networking logic.
+
+b) server distributes this proxy to client.
+
+c) when client invokes the method, the method of proxy or stub gets invoked which invokes the actual method on the server.
+
+Similarly if server method returns any value it is not passed to client directly rather it is passed to client indirectly through proxy or stub.
+
+
+
+
+ 

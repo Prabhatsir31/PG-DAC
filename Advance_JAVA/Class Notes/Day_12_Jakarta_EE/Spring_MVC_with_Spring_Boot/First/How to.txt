@@ -1,0 +1,72 @@
+File
+	new
+		Spring starter project
+
+give a name to the project "MVC"
+
+make sure Type is "Maven" and "Java version is 17"
+
+next
+
+make sure spring boot version is "3.0.8 snapshot"
+
+new spring starter project dependencies
+
+	choose
+
+		Spring Web
+		Thymeleaf
+
+next
+	finish
+
+
+once the project gets created,
+
+copy "Book.java" and "BookNewController.java" in the same package where "DemoApplication.java" has been created.
+
+
+since we don't maintain "spring bean configuration file" inside spring boot, "View Resolver" settings we have to write inside "application.properties" file as follows:
+
+spring.mvc.view.prefix="/"
+spring.mvc.view.suffix=".html"   or ".jsp"
+
+html 
+	in case if our view is "thymeleaf"
+
+jsp
+	in case our view is "JSP"
+
+both ".html" or ".jsp" file needs to be there inside 
+	"src/main/resources/templates" folder.
+
+since we have "html(thymeleaf)" as a view, following entries should be there inside "application.properties" file:
+
+
+spring.mvc.view.prefix="/"
+spring.mvc.view.suffix=".html"
+
+
+save "application.properties" file.
+
+
+copy "success.html" and "bookNew.html" inside  "src/main/resources/templates"  folder.
+
+
+
+go to "@SpringBootApplication" java class
+	run as
+		java application
+
+make sure server starts successfully
+
+go to browser and type
+
+http://localhost:8080/book
+
+and make sure application works properly.
+
+
+
+
+

@@ -1,0 +1,16 @@
+Advantages of PreparedStatement:-
+
+Security: It protects against SQL injection attacks by ensuring that user inputs are treated as data, not as part of the SQL code.
+
+Performance:
+The query is precompiled, avoiding the overhead of parsing and optimizing the query on every execution.
+The query execution plan is cached by the DBMS, allowing reuse for subsequent executions.
+
+Reusability: You can execute the same query multiple times with different parameters without recompiling it each time.
+
+Better Connection Pooling: Prepared statements can be efficiently reused in connection pooling scenarios.
+
+In short, PreparedStatement is a powerful tool for both security and performance optimization. It helps prevent SQL injection by separating SQL logic from data and improves performance by precompiling SQL queries and reusing execution plans.
+
+
+

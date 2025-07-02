@@ -1,0 +1,1 @@
+Python REST api creates the Person object and sends to Java REST api which receives it and prints.

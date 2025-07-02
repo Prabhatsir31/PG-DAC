@@ -1,0 +1,1 @@
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [org.springframework.cloud.netflix.eureka.reactive.EurekaReactiveDiscoveryClientConfiguration]; nested exception is java.lang.ArrayStoreException: sun.reflect.annotation.TypeNotPresentExceptionProxy

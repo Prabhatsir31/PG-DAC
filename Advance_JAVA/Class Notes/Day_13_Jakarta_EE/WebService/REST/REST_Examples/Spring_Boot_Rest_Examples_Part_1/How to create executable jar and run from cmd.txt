@@ -1,0 +1,29 @@
+right click on the spring boot project inside STS
+	run as
+		maven build 6
+
+inside "Goals" option write
+	package
+
+select :  skip tests
+	
+		apply
+			run
+
+wait till you get
+	BUILD SUCCESS   message in the console.
+
+now go to
+
+	E:\MySTS\FirstSTSPro\target  folder and check.
+		you will get following jar file:
+		
+	FirstSTSPro-0.0.1-SNAPSHOT.jar
+
+open command prompt with "E:\MySTS\FirstSTSPro\target" folder
+and give following command:
+
+	java -jar FirstSTSPro-0.0.1-SNAPSHOT.jar
+
+make sure application runs successfully.
+	now go to ARC and test your CRUD operations.

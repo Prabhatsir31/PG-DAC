@@ -1,0 +1,38 @@
+<bean id="productPointcut" 
+                class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedName" value="multiply" />
+</bean>
+
+	Above tag means
+		
+		productPointcut			multiply
+
+
+<bean id="productAdvisor" 
+                 class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="productPointcut" />
+		<property name="advice" ref="beforeCall" />
+</bean>
+
+	Above tag means
+
+		productAdvisor      "before" advice - applied to "productPointcut (multiply)"
+	
+			That means "before" advice should be applied to "multiply" method.
+
+
+<bean id="p1" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <property name="target">
+        <ref bean="productImpl"/>       
+    </property>  
+  <property name="interceptorNames">
+  	<list>
+  		<value>productAdvisor</value>
+		// inside proxy class "before" should be applied to "multiply" method only.
+  	</list>
+  </property>
+      <property name="proxyInterfaces">
+         <value>mypack.Product</value>      
+     </property>
+</bean>
+

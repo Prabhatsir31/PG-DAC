@@ -1,0 +1,11 @@
+E:\MySTS
+	UserServicePro   [  one microservice ]
+
+E:\STS_Microservice
+	ContactServicePro [ another microservice ]
+
+E:\Eureka
+	EurekaPro	[ Eureka Server ]
+
+E:\API_Gateway
+	APIGatewayPro   [ API Gateway ]

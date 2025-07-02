@@ -1,0 +1,7 @@
+
+MyClass no-arg const
+After Context
+welcome
+Creating another bean
+welcome
+ob1 and ob2 are ==

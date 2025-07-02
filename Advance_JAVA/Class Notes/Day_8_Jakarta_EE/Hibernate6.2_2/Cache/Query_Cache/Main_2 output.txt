@@ -1,0 +1,23 @@
+Hibernate: create table Product (id integer not null auto_increment, name varchar(255), price float(53), qty integer, primary key (id)) engine=InnoDB
+
+Hibernate: insert into Product (name,price,qty) values (?,?,?)
+
+Hibernate: select p1_0.id,p1_0.name,p1_0.price,p1_0.qty from Product p1_0 where p1_0.id=?
+
+Product [id=1, name=soap, qty=30, price=100.0]
+
+Hibernate: select p1_0.id,p1_0.name,p1_0.price,p1_0.qty from Product p1_0 where p1_0.id=1
+
+[Product [id=1, name=soap, qty=30, price=100.0]]
+
+0
+
+0
+
+Product [id=1, name=soap, qty=30, price=100.0]
+
+[Product [id=1, name=soap, qty=30, price=100.0]]
+
+1
+
+1

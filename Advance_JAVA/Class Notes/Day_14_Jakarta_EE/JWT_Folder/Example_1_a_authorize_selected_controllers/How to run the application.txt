@@ -1,0 +1,42 @@
+first time you have to run the application in order to get the token
+
+http://localhost:8080/public/token
+
+	method - Post
+
+	body
+		raw type		JSON
+
+		{
+			"username":"scott",
+			"password":"tiger"
+		}
+
+click on "send"
+
+make sure it gives you a token
+
+from the postman response window
+	click on "copy to clipboard" icon
+
+and paste this token on some notepad
+
+
+second time
+
+	http://localhost:8080/hello
+		method  Get
+	header
+		Authorization
+			value
+			Bearer<space>token which was generated in the last request
+
+make sure it works and gives you the output.
+
+
+now try to invoke
+
+http://localhost:8080/public/welcome
+	here you don't have to provide JWT generated as we have allowed it to be called without JWT.
+
+	make sure you get the output of "public/welcome" 

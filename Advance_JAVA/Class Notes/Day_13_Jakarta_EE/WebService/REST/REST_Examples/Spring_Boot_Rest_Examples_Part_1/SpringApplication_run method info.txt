@@ -1,0 +1,1 @@
+SpringApplication's  "run()" method starts embedded Tomcat Server and deploys your web application on it.

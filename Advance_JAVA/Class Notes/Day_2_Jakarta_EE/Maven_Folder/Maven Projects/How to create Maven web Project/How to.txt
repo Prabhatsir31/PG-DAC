@@ -1,0 +1,59 @@
+go to eclipse
+	JavaEE perspective
+
+File
+	new 
+		maven project
+
+
+do not select
+	Create a simple project
+
+select
+	Use default workspace location
+
+do not select
+	Add project(s) to working set
+
+next
+
+
+
+
+org.apache.maven.archetype
+maven-archetype-webapp   1.4
+
+
+group id -  com
+artifact id - myjar
+
+don't disturb other options
+
+click on "finish"
+
+in the console window
+infront of    Y    type  y
+
+make sure u get a message "build success". It means maven project is successfully created.
+
+
+
+add given dependencies inside generated "pom.xml"
+
+
+right click on "main"
+	create new folder
+		java
+
+right click on "java" folder
+		new servlet
+			OneServ with "doGet"
+
+right click on "java"
+	create new package "mypack"
+		inside "mypack" create "MyBean.java"
+
+
+right click on the project
+	run as
+		run on server

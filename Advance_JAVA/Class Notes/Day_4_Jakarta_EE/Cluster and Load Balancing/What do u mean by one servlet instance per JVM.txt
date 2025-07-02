@@ -1,0 +1,7 @@
+In a distributed web application, each JVM (on each server or container) instantiates the servlet only once. This means there is one servlet instance per JVM.
+
+Multiple JVMs can exist in a distributed system, and each JVM will handle its own incoming requests using its own servlet instance.
+
+The servlet instance is not shared across JVMs; each server has its own copy of the servlet.
+
+When handling requests, load balancing ensures that requests are distributed across multiple servers, each with its own servlet instance.
