@@ -11,7 +11,6 @@ show tables status; // gives all the tables sub-tables
 
 IDB : innode data base 
 
-
 create table t_myisam(id int ) engine=myisam;
 
 show table status like 't_myisam' \G;
@@ -288,6 +287,3 @@ as
     else qtypurchased+ floor(amountleft/price) end,
     prodnum+1
     from (select *, row_number() over(order by price) rn from t_product) as t, cte where rn-prodnum+1 and amountleft>0) select max(qtypurchased) from cte;
-
-
-
