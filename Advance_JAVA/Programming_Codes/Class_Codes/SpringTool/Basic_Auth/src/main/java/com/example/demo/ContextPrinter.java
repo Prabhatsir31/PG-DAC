@@ -1,0 +1,27 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
+public class ContextPrinter {
+
+    @Autowired
+    private ApplicationContext context;
+
+    @PostConstruct
+    public void printContextInfo() {
+        System.out.println("IoC Container Class: " + context.getClass().getName());
+
+        String[] beanNames = context.getBeanDefinitionNames();
+        System.out.println("Total Beans: " + beanNames.length);
+        for(String name:beanNames)
+        {
+        	if(name.equalsIgnoreCase("securityfilterchain") || name.equalsIgnoreCase("userdetailsservice") || name.equalsIgnoreCase("PasswordEncoder"))
+        		System.out.println(name);
+        }
+    }
+}
