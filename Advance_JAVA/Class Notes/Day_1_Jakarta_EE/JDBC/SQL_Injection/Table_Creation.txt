@@ -1,3 +1,0 @@
-create table myaccount(uname varchar(20),password varchar(20));
-
-insert into myaccount values('admin1','tiger');

@@ -1,7 +1,0 @@
-Spring web
-	
-Spring Boot Developer tools
-
-MySQL Driver
-
-Spring Data JPA

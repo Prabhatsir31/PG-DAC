@@ -1,4 +1,0 @@
-  implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
-
-    implementation group: 'org.hibernate.orm' , name: 'hibernate-core',version: '6.2.3.Final'
-    implementation group:'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'

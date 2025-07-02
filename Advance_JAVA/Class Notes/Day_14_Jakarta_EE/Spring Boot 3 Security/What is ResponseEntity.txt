@@ -1,1 +1,0 @@
-ResponseEntity represents the whole HTTP response: status code, headers, and body.

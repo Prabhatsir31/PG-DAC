@@ -1,3 +1,0 @@
-copy "account.xml" inside "src\main\java".
-
-create "mypack" inside "src\main\java".

@@ -1,1 +1,0 @@
-Spring Security automatically shows a default login form when you enable .formLogin() , u don’t have to provide your own.

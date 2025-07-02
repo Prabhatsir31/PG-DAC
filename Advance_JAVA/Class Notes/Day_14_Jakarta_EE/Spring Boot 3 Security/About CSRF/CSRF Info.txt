@@ -1,1 +1,0 @@
-CSRF stands for Cross Site Request Forgery. Attacker tries to perform some action on behalf of user without his consent. For example, Attacker might prompt the user to fill some form and will perform some action on behalf of user once user submits the form.

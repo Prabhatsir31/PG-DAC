@@ -1,6 +1,0 @@
-in case of session, there are two things
-
-a) invalidate
-
-b) controlling inactive time interval
-

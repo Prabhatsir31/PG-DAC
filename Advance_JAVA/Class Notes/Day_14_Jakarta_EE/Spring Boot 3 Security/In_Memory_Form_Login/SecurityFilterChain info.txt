@@ -1,1 +1,0 @@
-In Spring Security, SecurityFilterChain is a key concept that represents a chain of filters responsible for processing incoming requests to enforce security policies. Understanding SecurityFilterChain is essential for configuring and customizing the security behavior of your Spring Security-enabled application.

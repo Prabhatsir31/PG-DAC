@@ -1,2 +1,0 @@
-Spring Security version 6 is used with Spring Boot 3
-

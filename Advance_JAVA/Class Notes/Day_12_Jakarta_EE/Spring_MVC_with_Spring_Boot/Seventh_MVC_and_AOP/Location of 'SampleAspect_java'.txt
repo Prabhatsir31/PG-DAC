@@ -1,1 +1,0 @@
-inside the same package where "Spring Boot Application" class is generated.

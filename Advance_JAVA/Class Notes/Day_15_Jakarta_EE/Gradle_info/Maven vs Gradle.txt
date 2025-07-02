@@ -1,3 +1,0 @@
-Maven is simple, structured, and widely adopted, but can be slow and less flexible for complex projects.
-
-Gradle is fast, flexible, and can handle complex build requirements, but has a steeper learning curve and is more complex for small projects.

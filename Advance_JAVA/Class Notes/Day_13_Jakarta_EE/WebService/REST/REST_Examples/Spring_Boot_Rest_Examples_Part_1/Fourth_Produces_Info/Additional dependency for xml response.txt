@@ -1,6 +1,0 @@
-This dependency is must or else you cannot get xml response.
-
-<dependency>
-    <groupId>com.fasterxml.jackson.dataformat</groupId>
-    <artifactId>jackson-dataformat-xml</artifactId>
-</dependency>
