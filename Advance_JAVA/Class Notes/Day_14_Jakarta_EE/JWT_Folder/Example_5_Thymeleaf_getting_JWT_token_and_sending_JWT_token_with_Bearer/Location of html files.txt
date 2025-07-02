@@ -1,0 +1,2 @@
+inside resources/templates
+		html files here

@@ -1,0 +1,7 @@
+UserService  	project in a defalt workspace
+		port no. 9001
+
+ContactService - project in a different workspace	
+		e:\\STSMicroService    folder
+
+		port no. 9003

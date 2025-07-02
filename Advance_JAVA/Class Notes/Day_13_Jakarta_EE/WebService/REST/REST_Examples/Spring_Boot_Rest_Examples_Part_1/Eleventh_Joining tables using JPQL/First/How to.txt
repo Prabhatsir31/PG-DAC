@@ -1,0 +1,66 @@
+File
+	new
+		Spring starter project
+
+	Stud_Add
+
+maven			jar
+17			java
+
+
+next
+
+dependencies
+
+Spring Web
+Spring Boot Dev Tools
+Spring Data JPA
+MySQL Driver
+
+next
+
+finish
+
+
+
+POST
+
+	http://localhost:8080/addStudent
+
+body       raw            JSON
+
+type
+
+
+{
+  "name":"sachin",
+  "age":25,
+  "address":
+  {
+    "cityname":"mumbai",
+    "statename":"Maharashtra"
+   }
+}
+
+          
+click on "send"
+
+make sure data goes inside "student" and "address" tables.
+
+
+
+GET
+	http://localhost:8080/getAllStudents
+
+click on "send"
+
+
+
+GET
+	http://localhost:8080/getNameState
+
+click on "send"
+
+
+
+

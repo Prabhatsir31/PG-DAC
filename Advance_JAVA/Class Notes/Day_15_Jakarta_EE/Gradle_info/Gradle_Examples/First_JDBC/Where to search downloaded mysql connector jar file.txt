@@ -1,0 +1,5 @@
+C:\Users\Sriram\.gradle\wrapper\dists\gradle-7.4.2-bin\48ivgl02cpt2ed3fh9dbalvx8\gradle-7.4.2\caches\modules-2\files-2.1\mysql\mysql-connector-java\8.0.29\16bfffda393ac4fe56f0985f1f035b37d3fc48f\mysql-connector-java-8.0.29.jar
+
+
+This is the local repository of Gradle.
+

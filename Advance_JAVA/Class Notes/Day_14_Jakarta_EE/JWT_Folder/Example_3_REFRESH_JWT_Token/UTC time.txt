@@ -1,0 +1,7 @@
+in case of refreshtoken expiry time check UTC time to match local time.
+
+go to google and type
+
+06:17 UTC time
+
+here 06:17 is just for example, this can be checked inside the database under the column head "expiry".

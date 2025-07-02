@@ -1,0 +1,5 @@
+Controller is the one which returns control to "View" i.e. JSP.
+That's why Controller's method can either return "ModelAndView" or "String".  Both ModelAndView and String consist of JSP name.
+
+
+RestController is the one which returns the response directly to the client in the form of JSON,Html,XML etc.

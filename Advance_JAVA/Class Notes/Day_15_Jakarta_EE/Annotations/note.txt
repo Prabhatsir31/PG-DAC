@@ -1,0 +1,1 @@
+annotations applied to class is not applied to its child class.

@@ -1,0 +1,37 @@
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+import core1.MyAnnotation;
+
+
+public class Demo 
+{
+	public static void main(String args[])
+	{
+		Trial d=new Trial();
+		MyAnnotation m=d.getClass().getAnnotation(MyAnnotation.class);
+		
+		Class c1=m.getClass();
+		
+		Method m1[]=c1.getDeclaredMethods();
+		for(int i=0;i<m1.length;i++)
+		{
+			System.out.println(m1[i].getName());
+		}
+		Constructor ct[]=c1.getDeclaredConstructors();
+		for(int i=0;i<ct.length;i++)
+		{
+			System.out.println(ct[i]);
+		}
+		System.out.println(m.getClass().getName());
+		System.out.println("value is: "+m.value());
+		
+
+		Sample s=new Sample();
+		m=s.getClass().getAnnotation(MyAnnotation.class);  
+		System.out.println("value is: "+m.value());
+	}
+}	
+
+
+	

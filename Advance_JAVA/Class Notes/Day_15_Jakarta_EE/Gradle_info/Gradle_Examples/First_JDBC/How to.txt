@@ -1,0 +1,116 @@
+File
+	new
+		project
+			Gradle
+				gradle project
+
+
+	next
+		next
+	project name
+		jdbcpro
+	do not select any other option
+
+	next
+	select : override workspace settings
+	
+	from "Gradle distribution",
+		select
+		  Local Installation directory
+
+		C:\Users\Sriram\.gradle\wrapper\dists\gradle-7.4.2-bin\48ivgl02cpt2ed3fh9dbalvx8\gradle-7.4.2
+
+		 Gradle user home
+
+C:\Users\Sriram\.gradle\wrapper\dists\gradle-7.4.2-bin\48ivgl02cpt2ed3fh9dbalvx8\gradle-7.4.2
+
+		Java home
+
+			C:\Program Files\Java\jdk-17
+
+	do not select any other options in this window
+
+	next
+
+	finish
+
+make sure project gets created successfully.
+
+go to the project
+	jdbcpro
+		lib
+			src/main/java
+				jdbcpro
+				   here you will find "Library.java"
+
+right click on "jdbcpro" package
+	new
+		class
+			
+			MyClass
+
+
+import java.sql.*;
+public class MyClass 
+{
+	public static void main(String args[])
+	{
+		String ss="jdbc:mysql://localhost:3306/bit";
+		try(Connection con=DriverManager.getConnection(ss,"root","root"))
+		{
+System.out.println("Implementation class is\t"+con.getClass()); 
+Statement st=con.createStatement();
+System.out.println("Implementation class is\t"+st.getClass()); 
+ResultSet rs=st.executeQuery("select * from dept");
+System.out.println("Implementation class is\t"+rs.getClass()); 
+while(rs.next())
+{
+	int no=rs.getInt("deptno");
+	String name=rs.getString("dname");
+	String add=rs.getString("loc");
+	System.out.println(no+"\t"+name+"\t"+add);
+}
+}
+catch(Exception ee)
+{
+	System.out.println(ee);
+}
+}
+}	
+
+
+					
+right click on "MyClass"
+	run as
+		Java application
+
+you will get following exception:
+	java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/bit
+
+inside 
+	jdbcpro
+		lib
+			you will get "build.gradle" file
+
+this is the file where we have to specify "mysql connector" dependency.
+
+open this file
+	inside "dependencies" , type the following
+
+implementation group: 'mysql',name: 'mysql-connector-java',version: '8.0.29'
+
+right click on "jdbcpro" project
+		Gradle
+			refresh Gradle project
+
+first time it will download the specified "mysql connector jar file" from the central repository and keep it inside local repository.
+
+now once again 
+	right click on "MyClass"
+	run as
+		Java application
+
+make sure you get the proper output. Also go and check your local repository of Gradle for "mysql connector" 8.0.29 jar file.
+
+
+

@@ -1,0 +1,8 @@
+Basic Authentication VS Form-based Authentication
+Unlike Form-Based Authentication, Basic Authentication DO NOT use cookies, hence there is no concept of a session or logging out a user, which means each request has to carry that header in order to be authenticated.
+
+Spring Boot by default supports Form-Based Authentication.
+
+Form-Based Authentication is mainly required in web-based applications.
+
+

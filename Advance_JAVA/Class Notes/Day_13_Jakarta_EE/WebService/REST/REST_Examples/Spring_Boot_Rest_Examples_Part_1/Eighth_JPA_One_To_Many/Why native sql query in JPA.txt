@@ -1,0 +1,1 @@
+Because we want to find out student based on phonenumber, we have to use nested sql query inside JPARepository.

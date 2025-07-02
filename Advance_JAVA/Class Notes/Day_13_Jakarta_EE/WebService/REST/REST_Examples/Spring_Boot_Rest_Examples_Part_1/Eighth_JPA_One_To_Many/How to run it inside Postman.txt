@@ -1,0 +1,49 @@
+open ARC
+
+type
+
+http://localhost:8080/api/addStudent
+
+
+Method:  POST
+
+body		
+	raw
+		JSON
+
+type
+
+
+
+{
+  "studentName":"Xyz",
+  "studentPhoneNumbers":
+  [
+    {
+      "phoneType":"res",
+      "phoneNumber":"6789453"
+    },
+    {
+      "phoneType":"mobile",
+      "phoneNumber":"983456978"
+    }
+  ]
+}
+
+
+
+click on send
+
+make sure data gets inserted inside "student" and "phone" tables.
+
+
+type
+
+http://localhost:8080/api/students
+
+method     GET
+
+click on "send"
+
+make sure data is retrieved successfully from the database.
+

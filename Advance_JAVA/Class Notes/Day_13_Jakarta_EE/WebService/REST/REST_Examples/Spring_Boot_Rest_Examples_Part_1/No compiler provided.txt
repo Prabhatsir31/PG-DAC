@@ -1,0 +1,11 @@
+In order to avoid "No compiler provided, perhaps u r running on JRE instead of JDK" Error:
+
+
+right click on project
+	make sure compiler is jdk 8
+
+right click on project
+	build path
+		JRE should be selected from 
+	c:\program files\java\jdk   folder
+

@@ -1,0 +1,2 @@
+Here we are making one service(running on one server on a particular port no) to call other service/s using (running on some other server on a different port no) with the help of "RestTemplate". So that means this is communication between different microservices with the help of "RestTemplate".
+

@@ -1,0 +1,88 @@
+[ Note:  if you face any problem of "timestamp", close the tab and open a new tab]
+
+Open "Postman" app
+
+select "POST"
+type
+http://localhost:8080/api/products
+
+
+Body
+	raw
+	
+		JSON
+
+
+
+{
+  "category":"stationery",
+  "price":150,
+  "proname":"Long Book",
+  "quantity":84
+}
+
+click on "send the request" button. Make sure you get 
+"200"  The response contains no body.
+
+go and check "MySQL" whether record has been added or not.
+
+
+
+select "GET"
+type
+http://localhost:8080/api/products
+	click on "send the request" button. make sure it displays all the records.
+
+add some more records.......
+
+
+select "GET"
+type
+http://localhost:8080/api/productsById/1
+
+click on "send the request" button. make sure it displays the record with id "1".
+
+select "GET"
+
+type
+http://localhost:8080/api/productsByCat/clothes
+
+click on "send the request" button. make sure it displays all the records belong to "clothes" category.
+
+
+select "PUT"
+type
+http://localhost:8080/api/products/2
+
+
+
+Body
+	raw
+		JSON
+
+
+{
+  "category":"clothes",
+  "price":970,
+  "proname":"Track Pant",
+  "quantity":35
+}
+
+click on "send the request" button. Make sure you get 
+"200"  The response contains no body.
+
+go and check "MySQL" whether record which has id "2" has been updated or not.
+
+
+select "DELETE"
+type
+
+http://localhost:8080/api/products/2
+
+click on "send the request" button. Make sure you get 
+"200"  The response contains no body.
+
+go and check "MySQL" whether record which has id "2" has been deleted or not.
+
+
+

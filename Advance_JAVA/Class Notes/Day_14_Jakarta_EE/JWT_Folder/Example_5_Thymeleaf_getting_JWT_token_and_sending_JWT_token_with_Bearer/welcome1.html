@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+
+    <!-- Display the JWT token in the page -->
+    <p>Your JWT Token: <span th:text="${param.token}"></span></p>
+<input type="hidden" id="jwtToken" th:value="${param.token}" />
+    <!-- Hyperlink with JWT Token as a query parameter (for illustration purposes) -->
+    <a href="/hello" id="nextPageLink">Go to Next Page</a>
+<br><br><br>
+<div id="messageContainer"></div>
+    <script>
+        // This code sends the JWT token as a Bearer token in the Authorization header via fetch API
+alert("inside script of welcome1")
+        // Prepare the JWT token from Thymeleaf
+        var jwtToken = document.getElementById('jwtToken').value;  // The token passed from the backend
+        // var jwtToken = /*[[${param.token}]]*/ 
+         alert("again inside   "+jwtToken)
+        // Send AJAX request to another page with Authorization header
+        document.getElementById('nextPageLink').addEventListener('click', function(e) {
+            e.preventDefault();  // Prevent default link behavior
+
+            // Use Fetch API to send the token in the Authorization header
+            fetch('/hello', {
+                method: 'GET',  // You can change this to POST if required
+                headers: {
+                    'Authorization': 'Bearer ' + jwtToken  // Add the JWT token with the Bearer prefix
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+	alert(data.message)
+                var messageContainer = document.getElementById('messageContainer');
+                messageContainer.innerHTML = "Server Response: " + data.message; 
+                //window.location.href = "/hello";  // Redirect the user after the request
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error occurred: ' + error.message);
+            });
+        });
+    </script>
+</body>
+</html>

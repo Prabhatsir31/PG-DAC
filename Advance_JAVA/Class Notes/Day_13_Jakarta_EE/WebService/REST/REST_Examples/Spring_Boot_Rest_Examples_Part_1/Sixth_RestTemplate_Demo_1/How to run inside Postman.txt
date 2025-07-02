@@ -1,0 +1,11 @@
+Go to Postman
+
+type the url
+
+http://localhost:8080/test
+
+method - GET
+
+click on "Send"
+
+make sure u get the output

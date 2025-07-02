@@ -1,0 +1,109 @@
+Go to    https://start.spring.io/
+
+	this is spring initializer's home page
+
+select
+	project		maven
+	language	java
+	spring boot version     2.7.8
+	
+	group 		com.example
+	artifact	demo
+
+	package		com.example.demo
+
+	packaging       jar
+
+	java version    8
+
+	on right side you will get a button "add dependencies"
+
+	click on that button
+
+	select "spring web"
+
+	click on "Generate" button from the bottom panel.
+
+		"demo.zip" will be downloaded.
+
+		unzip that folder anywhere.
+
+	start eclipse
+
+	File
+		import
+			existing maven project
+
+	select root directory:  C:\Users\Sriram\Downloads\demo\demo
+
+[ when you unzip "demo.zip", it gives you "demo" folder inside "demo" folder]
+
+as soon as you select "C:\Users\Sriram\Downloads\demo\demo", you will notice 
+	"pom.xml" option gets selected automatically.
+
+do not select "Add project to working set"
+
+
+[ internet must be on ]
+
+	click on "finish"
+
+make sure it creates "demo" project inside Eclipse.
+
+check the compiler
+	it has to be java8
+check the JRE
+	it has to be JRE8
+project facet
+	java		it has to be java8
+
+
+notice
+src
+   main
+     java
+	com
+	  example
+             demo
+		DemoApplication.java
+
+right click on "DemoApplication.java"
+	run as
+		Java Application
+make sure it runs and also starts Tomcat Server automatically.
+
+now you can add "RestController" inside it , so that it can be run on the browser also.
+
+right click on "com.example.demo"
+	new java class
+
+
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FirstController 
+{
+	@GetMapping("/hello")
+	public String sayHello()
+	{
+		return "welcome to spring boot with spring initializer";
+	}
+}
+
+
+stop the tomcat server
+
+right click on "DemoApplication.java"
+	run as
+		java application
+
+make sure Tomcat server starts successfully
+
+now go to the browser and type
+	http://localhost:8080/hello
+
+make sure you get the output
+	   

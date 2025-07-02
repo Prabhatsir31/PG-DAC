@@ -1,0 +1,22 @@
+safe and idempotent methods
+
+Safe methods
+	which do not change any state on the server. e.g. "GET" method
+
+Unsafe methods
+	which do change state on the server
+e.g. "POST","PUT" and "DELETE"
+
+
+Idempotent methods
+	first time they change the state on the server , but if you call them again and again they don't change anything on the server. e.g. "PUT" and "DELETE".
+
+Non-Idempotent methods
+	every time you call them they will change the state on the server. e.g. "POST"
+
+{
+	"name":"Sachin",
+	"age":48
+}
+
+with this JSON body if you click "POST" again and again , it will insert new record every time with the same data.

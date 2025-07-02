@@ -1,0 +1,32 @@
+copy "Employee.java" and "Main.java" inside "HiberGradle" package.
+
+inside 
+	HiberGradle
+		lib
+			you will get "build.gradle" file
+
+this is the file where we have to specify "mysql connector" dependency.
+
+open this file
+	inside "dependencies" , type the following
+
+  implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+
+    implementation group: 'org.hibernate.orm' , name: 'hibernate-core',version: '6.2.3.Final'
+
+    implementation group:'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
+
+
+right click on "HiberGradle" project
+		Gradle
+			refresh Gradle project
+
+first time it will download the specified dependencies (mysql, org.hibernate.orm and jakarta.persistence) from the central repository and keep it inside local repository.
+
+now 
+	right click on "Main"
+	run as
+		Java application
+
+make sure you get the proper output. Also go and check your local repository of Gradle for the jar files of above mentioned dependencies.
+

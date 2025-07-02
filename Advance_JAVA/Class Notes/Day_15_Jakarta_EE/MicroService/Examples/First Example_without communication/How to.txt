@@ -1,0 +1,68 @@
+start "STS" on a particular workspace 
+
+File 
+	new 
+		spring starter project
+			UserServicePro
+
+java version 17
+maven
+Spring boot version 3.1.0
+
+
+choose dependencies:
+
+Spring Web
+Spring Boot DevTools
+
+next
+	finish
+
+make sure project gets created successfully.
+
+create packages
+	entities
+	controllers
+	services
+
+copy  "UserController.java" inside "controllers" package
+
+copy "User.java" and "Contact.java" inside "entities" package
+
+copy "UserService.java" and "UserServiceImpl.java" inside "services" package
+
+
+Spring Boot Application class will be automatically created inside "com.example.demo" package
+
+add following annotations on the spring boot application class:
+
+@ComponentScan("com.example.*")
+@EntityScan("com.example.*")
+
+	UserServiceProApplication.java
+
+copy "application.yml" inside "src/main/resources"
+
+	
+		server:
+  		 port: 9002
+
+
+run this application 
+
+go to Postman and type
+
+http://localhost:9002/user/102
+	GET 
+
+and make sure your controllers are working fine, i.e. they give you "User" details without "Contacts".
+
+i.e. output should be
+
+
+{
+    "id": 102,
+    "name": "Pqr",
+    "phone": "9856684272",
+    "contacts": []
+}

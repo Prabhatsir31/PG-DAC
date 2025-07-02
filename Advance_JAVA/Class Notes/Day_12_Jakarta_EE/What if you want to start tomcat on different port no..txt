@@ -1,0 +1,9 @@
+If you want the tomcat server to start on a different port other than 8080,
+
+inside "application.properties" file you have to write:
+
+server.port=<some port number>
+
+e.g.
+
+server.port=9595

@@ -1,0 +1,3 @@
+In Spring Security, UserDetaisService plays a fundamental role in representing user-specific security information. It encapsulates essential details about a user, such as username, password (or password hash), authorities (roles) etc.
+
+When a user tries to authenticate (login) into a Spring Security-protected application, Spring Security needs to verify the user's credentials. The UserDetailsService interface is used to load user-specific data by username.

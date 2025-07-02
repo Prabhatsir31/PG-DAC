@@ -1,0 +1,148 @@
+File
+	new
+		Spring starter project
+
+give a name to the project "firstpro"
+
+make sure Type is "Maven" and "Java version is 17"
+
+next
+
+make sure spring boot version is "3.1"
+
+new spring starter project dependencies
+
+	choose
+
+		Spring Web
+		Thymeleaf
+	under "Developer tools"
+		Spring boot devtools   [ this ensures that server gets restarted automatically when u make changes (in java files) to your application]
+
+next
+	finish
+
+
+once the project gets created,
+
+you will get "@SpringBootApplication" java file
+
+the package in which you get "@SpringBootApplication" java class, copy following java files:
+
+
+		Book.java
+
+public class Book 
+{
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "["+bookName+"   "+price+"]";
+	}
+	private String bookName;
+	private long price;
+
+	public String getBookName() {
+		return bookName;
+	}
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+	public long getPrice() {
+		return price;
+	}
+	public void setPrice(long price) {
+		this.price = price;
+	}
+}
+
+
+			BookNewController.java
+
+package com.example.FirstPro;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+@Controller
+public class BookNewController
+{
+	@GetMapping("book")
+	public ModelAndView before()
+	{
+ 		Book mybook1=new Book();
+	    mybook1.setBookName("Java Black Book"); 
+	    mybook1.setPrice(900);
+	    Book mybook2=new Book();
+	    mybook2.setBookName("Understanding Pointers in C"); 
+	    mybook2.setPrice(400);
+	    Book mybook3=new Book();
+	    mybook3.setBookName("The complete JavaEE Guide"); 
+	    mybook3.setPrice(800);
+	    List<Book>booklist=new ArrayList<Book>();
+	    booklist.add(mybook1);
+	    booklist.add(mybook2);
+	    booklist.add(mybook3);
+	    return new ModelAndView("Final","mylist",booklist);
+	}
+}
+
+
+since we don't maintain "spring bean configuration file" inside spring boot, "View Resolver" settings we have to write inside "application.properties" file as follows:
+
+spring.mvc.view.prefix="/"
+spring.mvc.view.suffix=".html"   or ".jsp"
+
+html 
+	in case if our view is "thymeleaf"
+
+jsp
+	in case our view is "JSP"
+
+both ".html" or ".jsp" file needs to be there inside 
+	"src/main/resources/templates" folder.
+
+following is the example of "thymeleaf" as a view in this example
+
+
+		Final.html
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border=10>
+<tr th:each="ref: ${mylist}">
+    <td th:text="${ref.bookName}" />
+    <td th:text="${ref.price}" />
+</tr>
+</table>
+</body>
+</html>
+
+
+go to "@SpringBootApplication" java class
+	run as
+		java application
+
+make sure server starts successfully
+
+go to browser
+
+http://localhost:8080/book
+
+make sure you get the output as :
+
+
+Java Black Book			900
+Understanding Pointers in C	400
+The complete JavaEE Guide	800
+
+

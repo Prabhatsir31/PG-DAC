@@ -1,0 +1,92 @@
+start STS
+
+File
+	Spring starter project
+
+give a name to the project
+	e.g.  FirstPro
+
+
+check the following options:
+
+
+Type   Maven
+
+Java version 17
+
+packaging    jar
+
+language     java
+
+Group     com.example
+
+Artifact	FirstPro
+
+version		0.0.1-SNAPSHOT
+
+Package		com.example.demo
+
+	click on "next"
+
+
+new spring starter project dependencies
+
+spring boot version :  3.1.0   [ by default selected ]
+
+select:
+	Spring Web
+	Spring Developer tools
+
+next
+
+finish
+
+It will take some time to create the project [ depends on your internet connection ]
+
+
+copy "HelloController.java" to the "com.example.demo" package.
+
+
+right click on "FirstProApplication"
+	run as
+		java application
+
+if you get a message "editor does not contain main type"
+
+right click on "FirstProApplication"
+	run as
+
+		run configuration
+
+project   -    FirstPro
+
+main class    -    com.example.demo.FirstProApplication
+
+apply
+
+run
+
+make sure server starts
+
+now go to browser and type
+
+http://localhost:8080
+
+	make sure you get the output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

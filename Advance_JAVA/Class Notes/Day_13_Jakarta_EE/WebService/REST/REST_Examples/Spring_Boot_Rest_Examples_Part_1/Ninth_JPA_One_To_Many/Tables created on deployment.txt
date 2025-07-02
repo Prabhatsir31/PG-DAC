@@ -1,0 +1,31 @@
+mysql> desc course;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| cid   | int          | NO   | PRI | NULL    | auto_increment |
+| cname | varchar(255) | YES  |     | NULL    |                |
+| fees  | double       | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc batch;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| b_id      | int          | NO   | PRI | NULL    | auto_increment |
+| batchname | varchar(255) | YES  |     | NULL    |                |
+| batchtime | varchar(255) | YES  |     | NULL    |                |
+| courseid  | int          | YES  | MUL | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc student;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| sid           | int          | NO   | PRI | NULL    | auto_increment |
+| qualification | varchar(255) | YES  |     | NULL    |                |
+| sname         | varchar(255) | YES  |     | NULL    |                |
+| batchid       | int          | YES  | MUL | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)

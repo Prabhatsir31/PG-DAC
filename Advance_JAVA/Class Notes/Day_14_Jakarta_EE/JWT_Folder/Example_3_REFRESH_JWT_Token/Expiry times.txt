@@ -1,0 +1,3 @@
+JWT token  2 minutes
+
+Refresh token 10 minutes

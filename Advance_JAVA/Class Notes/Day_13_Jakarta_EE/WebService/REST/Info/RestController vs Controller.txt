@@ -1,0 +1,7 @@
+either use
+
+	@RestController
+
+		or
+
+	@Controller and @ResponseBody combination

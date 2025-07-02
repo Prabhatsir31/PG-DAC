@@ -1,0 +1,8 @@
+@Retention(RetentionPolicy.RUNTIME)  
+
+	it means the annotation should be available for reflection at runtime. 	
+
+@Target(ElementType.TYPE)
+
+	it means annotation can be applied to class, interface,or enum declaration.
+

@@ -1,0 +1,3 @@
+Load balancing is the process of distributing traffic among different instances of the same application. To create a fault-tolerant system, it's common to run multiple instances of each application. Thus, whenever one service needs to communicate with another, it needs to pick a particular instance to send its request.
+
+"@LoadBalanced" annotation allows you to use "logical identifiers" ( "CONTACTSERVICE" in our example) for the URLs you pass to the RestTemplate. These logical identifiers are typically the names of a services.

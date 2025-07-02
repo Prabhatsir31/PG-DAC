@@ -1,0 +1,3 @@
+compile 1.8
+
+JRE - workspace default

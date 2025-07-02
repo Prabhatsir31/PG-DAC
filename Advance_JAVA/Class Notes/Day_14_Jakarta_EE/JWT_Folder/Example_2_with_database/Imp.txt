@@ -1,0 +1,3 @@
+from spring-security 5.7 and spring boot 2.7 "WebSecurityConfigureAdapter" class has been deprecated.
+
+we are doing component-based configuration.

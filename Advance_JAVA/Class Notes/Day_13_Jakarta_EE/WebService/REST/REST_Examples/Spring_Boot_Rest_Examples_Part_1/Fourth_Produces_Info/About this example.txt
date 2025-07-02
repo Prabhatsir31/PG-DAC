@@ -1,0 +1,7 @@
+In this example
+
+REST controller produces json and xml responses and then client decides which response it needs by specifying
+
+Accept 			application/json   or application/xml
+
+inside ARC or Postman.

@@ -1,0 +1,15 @@
+Course
+		has multiple Batches
+			Batch
+				has multiple students
+
+
+Tasks:
+
+a) add course along with batch/s and student/s
+
+b) view all courses
+
+c) view batches for a specific course
+
+d) view students for a specific course

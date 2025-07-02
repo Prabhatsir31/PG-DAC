@@ -1,0 +1,98 @@
+http://localhost:8080/api/products
+	POST
+
+{
+  "name": "Body Oil",
+  "price": 400,
+  "qty": 120
+}
+
+like that add few more records
+
+
+
+http://localhost:8080/api/products
+	GET
+
+
+http://localhost:8080/api/productsById/2
+	GET
+
+
+http://localhost:8080/api/productByName/Pen
+	GET
+
+
+http://localhost:8080/api/productsByPrice/480
+	GET
+
+
+http://localhost:8080/api/productsByOrderPrice
+	GET
+
+
+http://localhost:8080/api/productsGreaterThan/250
+	GET
+
+
+http://localhost:8080/api/productsByNameLike/dy
+	GET
+
+output:
+	{
+    		"id": 1,
+    		"name": "Body Oil",
+    		"qty": 120,
+    		"price": 400
+  	}
+
+
+http://localhost:8080/api/productsByNameStartsWith/m
+	GET
+
+output:
+	{
+    		"id": 4,
+    		"name": "Mouse",
+    		"qty": 20,
+   		"price": 480
+  	}
+
+
+
+http://localhost:8080/api/findByPriceGreaterThanAndQtyLessThan/200,30
+	GET
+
+output:
+	{
+	    "id": 4,
+	    "name": "Mouse",
+	    "qty": 20,
+	    "price": 480
+	}
+
+
+http://localhost:8080/api/productsSumQuantity
+	GET
+
+
+
+
+http://localhost:8080/api/products/3
+	PUT
+
+{
+  "name": "Pen",
+  "price": 87,
+  "qty": 63
+}
+
+
+http://localhost:8080/api/products/4
+	DELETE
+
+
+http://localhost:8080/crud/delete/2
+	DELETE
+
+and so on....

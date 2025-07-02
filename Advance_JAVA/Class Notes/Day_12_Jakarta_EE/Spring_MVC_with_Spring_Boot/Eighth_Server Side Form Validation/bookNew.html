@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	.error
+	{
+		color:red;
+	}
+</style>
+</head>
+<body>
+<form th:action="@{/book}" th:object="${mybook}" method="post">
+
+ <div>
+    <label for="bookName">Name</label> <input type="text" th:field="*{bookName}" 
+      id="bookName" placeholder="Book Name">
+    <ul>
+        <li th:each="err : ${#fields.errors('bookName')}" th:text="${err}" class="error"/>
+    </ul>
+</div>
+
+ <div>
+    <label for="price">Name</label> <input type="text" th:field="*{price}" 
+      id="price" placeholder="Price">
+    <ul>
+        <li th:each="err : ${#fields.errors('price')}" th:text="${err}" class="error" />
+    </ul>
+</div>
+<input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

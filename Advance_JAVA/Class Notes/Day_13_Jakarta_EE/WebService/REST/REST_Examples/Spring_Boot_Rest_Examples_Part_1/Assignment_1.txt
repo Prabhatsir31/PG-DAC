@@ -1,0 +1,16 @@
+Entity
+
+
+Tour
+	id
+	type
+	location
+	cost
+	no_of_days
+
+Use REST API and JPARepository to 
+	add
+	view all
+	view Tour based on particular type
+
+

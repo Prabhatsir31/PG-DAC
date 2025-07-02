@@ -1,0 +1,8 @@
+Go to browser and type
+
+http://localhost:8080/api/Master/20
+
+
+here "api" is a request mapping for Rest Controller
+
+Master and 20 are name and age respectively.

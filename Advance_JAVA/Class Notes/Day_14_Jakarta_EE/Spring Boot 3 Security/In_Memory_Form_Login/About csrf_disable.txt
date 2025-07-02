@@ -1,0 +1,4 @@
+csrf.disable() is called to disable CSRF (Cross-Site Request Forgery) protection for your application. CSRF is a security feature in web applications that protects against attacks where unauthorized commands are transmitted from a user that the web application trusts. 
+
+
+csrf.disable(): This disables CSRF protection. It indicates that your application does not require CSRF protection, possibly because it doesn't use cookies for session management or has a different authentication strategy.

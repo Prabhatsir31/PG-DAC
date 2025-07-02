@@ -1,0 +1,1 @@
+@Inherited annotation marks the annotation to be inherited to subclasses

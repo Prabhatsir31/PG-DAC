@@ -1,0 +1,17 @@
+core MVC solves most of the problems u have faced in Model 1 architecture. i.e. high maintenance and no reusability. But when volume of application is large, i.e. u have so many forms,javabeans and view components (jsps), your controller will become overburdened.
+moreover if in future application workflow is changed,u will face the problem of maintenance in controller.
+
+Solution:
+	MVC-based Frameworks
+		struts,springMVC,JSF
+
+How these frameworks will solve your problem?
+
+	They will provide u a Controller and that Controller will work according to Application Workflow u have mentioned inside some xml configuration file or through annotation.
+
+
+
+
+
+
+
