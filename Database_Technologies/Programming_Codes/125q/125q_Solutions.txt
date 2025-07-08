@@ -859,3 +859,4 @@ Q124) Which salesperson(s) should be fired?
 Q125) What is the total income for the company?
 
         select sum(amt) as t_income from orders;
+
