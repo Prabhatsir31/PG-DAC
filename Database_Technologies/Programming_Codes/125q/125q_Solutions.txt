@@ -57,7 +57,7 @@ INSERT INTO Orders (ONUM, AMT, ODATE, CNUM, SNUM) VALUES
 
 Q1) List all the columns of the Salespeople table.
 
-        select * from orders;
+        select * from Salespeople;
 
 Q2) List all customers with a rating of 100.
 
