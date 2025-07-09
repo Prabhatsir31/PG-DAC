@@ -320,7 +320,7 @@ Q46) Write a query that produces all pairs of salespeople with themselves as wel
 
 Q47) Find all salespeople that are located in either Barcelona or London.
 
-        select from salespeople
+        select * from salespeople
         where city in ('Barcelona', 'London');
 
 Q48) Find all salespeople with only one customer.
