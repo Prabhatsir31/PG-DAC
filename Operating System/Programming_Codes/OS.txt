@@ -1,0 +1,521 @@
+chmod => change mode of file 
+------------	give right of file in 3 section
+		x: user		interview ques
+		x: group		interview ques
+		x: Public		interview ques
+-rwx-rwx-rwx
+	first three 		user
+	second three 	group
+	third three		public
+
+		0: no permission
+		1: execute only
+		2: write only
+		3: (2+1) (w + e)
+		4: read only
+		5: (4:r + 1:e) 
+		6: (2:w + 4:r)
+		7: (2:w + 4:r + 1:e)
+the conversion of the modes
+
+
+Arithmatic expression
+------------------------------------------
+Addition $(($a + $b))
+Substract $(($a - $b))
+Multiplication $(($a * $b))
+Division $(($a / $b))
+
+int x =100;
+strict type language
+	variable/identifier one must specify its type
+Dynamic casting
+	var=value data type of variable depends on value given to it
+
+
+Comparission operator
+---------------------------------------
+	[int 1 -eq int2]	equal to
+	[int 1 -ne int2]	not equal to
+	[int 1 -gt int2]	greater than
+	[int 1 -ge int2]	greater than equal to
+	[int 1 -lt int2]	less than
+	[int 1 -le int2]	less than equal to 
+
+Logical operator
+------------------------------
+	[ String1 -a String2 ]		and
+	[ String1 -o String2 ]		or
+	[ ! String1 ]		not
+
+Positional Parameter
+---------------------------------------
+	$0	name of the script
+	$#	hold the value
+	$*	list of all para
+	$@ 	accepts when enclosed in double quote
+	"$*"	expand to a single (eg., "$1 $2 $3")
+	"$@"	expand to seperate arguments (eg., "$1" "$2"  "$3")
+
+Conditoinal Statement
+--------------------------------------
+	if [ condition ]
+	then
+		command
+	fi
+
+if else 
+	if [ condition ]
+	then
+		command
+	else
+    		command
+	fi
+
+if else if
+	if [ condition ]
+ 	then
+    		command
+	elif [ condition ]
+	then
+		command
+	else
+		command
+	fi
+
+Program
+------------------
+	sequence: who, what, after what
+	branch: conditin to take
+	loop: interation to do
+
+Looping 
+------------------
+	for
+		for <var_name> in <list of items>
+		do	
+		     echo statement
+		done
+
+	while
+		while [condition]
+		do
+		     echo statement
+		     incre/decre
+		done
+
+	until
+		until [condition]
+		do
+		     echo statement
+		     incre/decre
+		done
+
+there are two types of loop
+	countdown	
+	counter
+
+automation	loop
+		while
+
+String 
+-----------
+	s= " "
+	echo $s
+	#{$var} --- return length	previous version
+	${#var} --- return length	latest version	(string length)
+	${var:start:end} --- extract substring	
+	${var^^} --- uppercase
+	${var,,} --- lowercase
+
+Switch Case
+---------------------
+
+menu driven program for
+1. tea
+2. coffee
+3. water
+user gives input and print what is selected
+
+syntax:
+
+	case variable in
+	    pattern1) command ;;
+	    pattern2) command ;;
+	    *) default_command ;;
+	esac
+
+
+diff b/w C and Java
+
+Objective Oriented Programming
+------------------------------------------------------
+	think input 	Input needed
+	perform process	what to do
+	get output	Objective
+
+Why industry uses OOPS 
+
+first u start thinking about output
+	then process
+	then input
+
+phrases
+	coder
+	programmer
+
+Common Kali Linux Commands & Phrases
+--------------------------------------------------------------------
+Phrase						Meaning
+-------------------------------------------------------------------------------------------------------------------------------------------------
+sudo apt update && sudo apt upgrade		Update & upgrade Kali packages
+ifconfig / ip a				Show network interfaces
+airmon-ng start wlan0			Enable monitor mode for WiFi hacking
+nmap -A <target>				Perform a deep scan on a target
+msfconsole				Start Metasploit Framework
+hashcat -m 0 -a 3 hash.txt			Crack passwords using Hashcat
+hydra -l admin -P passwords.txt <IP> ssh		Brute-force SSH login
+john --wordlist=rockyou.txt hashfile		Use John the Ripper for password cracking
+exploit					Execute an exploit in Metasploit
+
+
+
+						DAY - 2
+Linux Commands 
+---------------------------------
+	
+pwd 	tell the current directory
+ls 	list of all directory
+man	(manual) if you read anything in document form in detailed form 
+info	(information) if you need to in development phase  (complete detailed)
+whatis	tell me the one line info of some commands
+type	tell me the basic information
+
+--help 	if you need to study more about the command itself
+
+
+One Liner
+-------------------
+whatis: 		xxx 
+bit detail: 		--help	
+manual: man	xxx
+detailed: info	xxx
+
+
+For ls Commands
+-------------------------------------
+Q) Listing the files ===>			ls
+Q) Tell me the hidden files ===> 			ls -a
+Q) Give e the detailed listing ===> 		ls -l
+Q) Show inode number of files ===>		ls -i
+Q) See all the directory ===>			ls -d
+Q) See All files and folders ===>			ls -d */
+Q) See the date and time of the most recent file	ls -t
+Q) Sorts by file size ===>			ls -s
+Q) Display files with color coding ===> 		ls --color=auto
+Q) See the sorted on Size ===>			ls -S 
+Q) Give the file in Alphabet order ===>		ls -X
+Q) Tell me the only Specific file ===>		ls *.extension
+Q) Shows detailed timestamps ===>	 	ls --full-time
+
+Q) Sorting on size ===> 			ls -ls			
+Q) Date and time ===>			date
+
+
+Touch
+-----------------
+	touch ===> create a empty text file
+make mutliple empty file with using space ===> touch file.txt file1.txt file2.txt
+
+Rename a file ===>	mv is used to remane and move the file 
+---------------------		mv file.txt file_new.txt
+
+less/more
+-----------------
+	Explanation: Allows you to view a file one screen at a time.
+	Syntax (less): less [FILE]
+	Syntax (more): more [FILE]
+	Example (less):
+
+Find
+-----------
+	find ===> is used to find the file (date, extension)
+	it remove the case sensitive
+		find -iname <file_name>
+	find how much work you done in how much time
+		find -mtime <time with - or  + (hiphan)>
+	find how much work you done in how much days
+		 find -cmin <day with - or  + (hiphan)>
+
+Grep
+-----------
+	grep ===> is used to content of the file (regular expression)
+		grep "what_you_search" <file_name.extension>
+Q) grep with specific line number 
+	grep -n "seach_name" <file_name.extension>
+Q) grep with specific word which is case sensitive
+	grep -n -i "seach_name" <file_name.extension>
+Q) grep with specific word 
+	grep -n -w "seach_name" <file_name.extension>
+Q) grep with specific word in multiple files
+	grep -n -w "seach_name" <file_name.extension> <file_name.extension> <file_name.extension>
+Q) grep with number of count
+	grep -n -c "seach_name" <file_name.extension>
+Q) grep with only match word 
+	grep -n -o -w "seach_name[regular_expression]" <file_name.extension>
+Q) grep with only digit
+	grep -o "[0-9]" <file_name.extension> (gives in single digits)
+Q) grep with only match word 
+	grep -o"[regular_expression]\+" <file_name.extension>(gives the informatiion in one line)
+
+
+Head/Tail
+-----------------
+	head ===> print first 10 lines of the file
+Q) give only first three
+	head -n <number_of_line> file_name.extension
+	
+	tail ===> print last 10 lines of the file
+Q) give only first three
+	tail -n <number_of_line> file_name.extension
+
+
+Regular Expression
+--------------------------------
+
+	{} ===> indicate number of occurance of a preceding RE to match {n} {start,end} or {min,max}
+	() ===> enclose a group of REs ( exact match )
+	[] ===> content [a-z, A-Z] 
+	\  -> used to drop the special meaning 
+		\d ===> matches any decimal digit [0-9]
+			\d{specific digit}
+			\d{start-end} range of numbers
+			\d{min,max}
+		\D ===> matches any non-digit character
+		\s ===> matches any whitespace character
+		\S ===> matches any non-whitespace character
+		\w ===> matches any alphanumeric character, this is equivalent to the class 
+		[a-zA-Z0-9]
+		\W ===> matches any non-alphanumeric character
+
+
+cat > file_name.extension	===> modify
+cat >> file_name.extension 	===> append
+
+
+chown 	===> change owner
+--------------
+		chown [OPTIONS] NEW_OWNER[:NEW_GROUP] FILE
+			NEW_OWNER → The new owner of the file.
+			NEW_GROUP (optional) → The new group.
+			FILE → The file/directory whose ownership is changed.	
+
+Kill	===> kill the id which means terminate the process
+---------
+		kill [SIGNAL] PID
+			SIGNAL → Optional. Specifies how to terminate the process.
+			PID → The Process ID of the running program.
+
+ps 	===> Process ID 
+--------
+		ps [OPTIONS]
+			No options → Shows processes running in the current shell.
+			With options → Displays system-wide processes.
+
+top	===> This command displays a live, updating list of active system processes.
+------------
+
+Understanding the Output
+-------------------------------------------
+	Column				Description
+-----------------------------------------------------------------------------------------------------------
+	PID				Process ID
+	USER				Process owner
+	PR				Priority of the process
+	NI				Nice value (affects priority)
+	VIRT				Virtual memory used
+	RES				Physical memory used
+	SHR				Shared memory used
+	S				Process state (R = Running, S = Sleeping, Z = Zombie)
+	%CPU				CPU usage
+	%MEM				Memory usage
+	TIME+				Total CPU time used
+	COMMAND			The process name
+
+Common Keyboard Shortcuts in top
+----------------------------------------------------------
+	Key				Action
+--------------------------------------------------------------------------------------------------
+	q				Quit top
+	k				Kill a process (you need to enter the PID)
+	r				Change the priority (renice) of a process
+	M				Sort processes by memory usage
+	P				Sort processes by CPU usage
+	T				Sort processes by running time
+	1				Show CPU usage per core
+	f				Customize columns displayed
+	h				Show help menu
+
+htop	===> The htop command is an interactive and user-friendly alternative to the top command. It provides a colorful, real-time view of system resource usage and allows users to easily manage processes.
+----------
+
+Summary of htop Features
+---------------------------------------------
+	Command				Description
+-------------------------------------------------------------------------------------------------------
+	htop				Launch process viewer
+	htop -u username			Show processes of a specific user
+	htop -b -n 1 > file.txt			Save output to a file
+	F5				Show tree view
+	F9				Kill a process
+
+ncal	===> show the calender (Displays the current month's calendar in a compact, horizontal format.)
+---------
+Summary of ncal Options
+------------------------------------------
+	Command			Description
+-------------------------------------------------------------------------------------------
+	ncal			Show the current month's calendar in a compact format
+	ncal -y			Show the calendar for the entire year
+	ncal -m <month_number> <year>	Show the calendar for August 2025
+	ncal -b			Display the calendar in a boxed format (like cal)
+	ncal -w			Show week numbers
+	ncal -h			Highlight the current day
+	ncal -C			Display the calendar vertically
+
+tar 	===> The tar command (Tape Archive) is used to create, extract, compress, and manage archive files. It is commonly used for backups and transferring files.
+--------
+	tar [OPTIONS] archive_name.tar [files or directories]
+		archive_name.tar → Name of the archive file.
+		[files or directories] → Files/folders to be archived.
+	Create a Tar Archive (-cvf)
+		tar -cvf backup.tar myfolder/
+			Creates an archive (backup.tar) from myfolder/.
+		Options:
+			-c → Create a new archive.
+			-v → Verbose (show progress).
+			-f → Use an archive file.
+	
+sort 	===> sort the of text file
+--------
+
+cut 	===> The cut command is used to extract specific columns, fields, or characters from a file or text output. It is useful for text processing, log analysis, and data extraction.
+----------
+	cut [OPTIONS] [FILE]
+		-c → Extract specific characters.
+		-f → Extract specific fields (columns).
+		-d → Specify a delimiter (default is tab).		
+
+df	===> Displays disk space usage for all mounted filesystems.
+------
+
+alias	===>  Displays all currently defined aliases.
+----------
+		you can simplify your work
+
+ping	===> The ping command is used to test network connectivity between your system and another device (server, website, or IP address). It sends ICMP (Internet Control Message Protocol) Echo Request ---------		packets and waits for a response.
+		ping <site_name>	Check if a website is reachable
+
+ifconfig	===> Displays all active network interfaces and their configurations.
+---------------
+
+shutdown	===> Shuts down the system immediately.
+-----------------	sudo shutdown now
+
+reboot	===> Restarts the system immediately.
+--------------		sudo reboot
+
+at	===>
+-----		Explanation: Schedules a one-time task.
+			Syntax: at [TIME] [OPTION]
+			Example: $ crontab -e
+
+Isof	===>
+----------		lsof (List Open Files)
+			Explanation: Lists open files and processes.
+				Syntax: lsof [OPTION] [FILE]
+				Example: $ lsof /path/to/file
+
+useradd	===>	
+--------------		sudo useradd -c "name_of_the_user" -m -s /bin/bash name_of_the_user
+
+passwd	===>	to set the password of the user
+
+Q) what is command to change the passwd	===> 	passwd
+Q) what is the command to create the passwd	===> 	sudo passwd newuser
+
+sudo	===>
+------------		Upgrade the sudo
+			sudo apt upgrade
+		Update the sudo (refresh server data)
+			sudo apt update
+		Download any Package
+			sudo apt install <package_name>	
+
+Install	===> 	sudo apt install <package_name>
+Remove	===>	sudo apt remove <package_name>
+Search	===> 	sudo apt search <package_name>
+
+chown 	===>	(Change Owner)
+------------		Explanation: Changes the ownership of files or directories.
+			Syntax: chown [OPTIONS] [OWNER]:[GROUP] FILE
+			Example: sudo chown john: users file.txt
+
+
+				Operating System
+
+concepts
+	process management
+		5 state diagram
+		IPC (inter process communication) (shared memory / message passing)
+			why? 
+			shared work / collaborative work / for work handling and share resources.
+			synchronization? one at a time (mutual exclusion) 
+				semaphore - S
+	
+		reader writer problem
+			when the writer is write then reader cannot be read
+			when all the reader are dn then only writer allow to write			
+		DP problem
+
+Process Scheduling
+---------------------------------	
+	maximize throuput, efficiency, reduce, wait time, response time, turn-around time
+
+Memory Management
+-----------------------------------
+	secondary , primary, cache, register
+
+		Paging: page replacement algorithm, page swapping (virtual memory management) 
+		Deadlock
+			endless circular wait 
+				1) circular wait
+				2) preemption
+				3) mutual exclusion
+				4) hold-n-wait
+
+		how to solve Deadlock
+			restart
+			killing / preemption
+			user intervention
+			
+
+GPOS	===> General Perpose Operating System
+RTOS 	===> Real Time Operating System (high priority run first then low priority)
+
+
+Types OS	
+------------------
+
+(Ques in the interview)
+
+Types of Kernal
+-------------------------------
+
+Shell Scripting
+-----------------------------
+
+
+						
+
+
