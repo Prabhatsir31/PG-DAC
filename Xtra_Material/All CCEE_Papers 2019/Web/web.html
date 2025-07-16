@@ -1,0 +1,3875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0043)http://ccat.cdac.in/ccat_local/startExam#27 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta http-equiv="Cache-control" content="no-cache">
+<title>Examination Screen</title>
+<link rel="stylesheet" href="./web_files/ccat.css" type="text/css" media="screen,projection,print">
+<script src="./web_files/textContent.js.download"></script>
+
+
+
+
+<script src="./web_files/jquery.min.js.download"></script>
+<script type="text/javascript">
+  
+     $(document).ready(function() {
+   		var bodyheight_d = $(window).height();
+		$("#questionList").height(bodyheight_d/1.4);
+		$("#question").height(bodyheight_d/1.4);
+   
+       $(window).resize(function() {
+          var bodyheight = $(window).height();
+          $("#questionList").height(bodyheight/1.4);
+		  $("#question").height(bodyheight/1.4);
+       }); 
+    });
+     
+  	// Disable Backspace
+ 	$(document).keydown(function(e) {
+ 		if (e.which == 8) {
+ 			e.preventDefault();
+ 		}
+ 	});
+     
+  	//below function for IE
+    $(document).ready(function() {
+  		$('.questionDivStyle img').each(
+    		function() {
+         		if ($(this)[0].complete) {
+             		// track image is loaded
+           			//alert($(this)[0].src);
+         			document.getElementById("allImagesLoaded").value="Yes";
+             	  	//alert("yes");
+             	} else {
+         			document.getElementById("allImagesLoaded").value="no";
+         			//alert("no");
+         		}
+  			}
+    	)
+  	});
+       
+   	//below function for firefox as load does not get fired for cached images
+     
+     $(document).ready(function() {
+         $('.questionDivStyle img').load(
+         		 function(){
+         	
+         	 document.getElementById("allImagesLoaded").value="Yes";
+         	 
+         	}
+       	 )
+         });
+   //below added as above not working for cached images in IE9,10
+     $(window).load(function() {
+    	 document.getElementById("allImagesLoaded").value="Yes";
+    	// alert("here");
+    	});
+     
+
+function getResponseSheet()
+{
+	
+	$.ajax({
+		url : "getResponseSheetExamScreen",
+		type : "POST",
+		data: "examName="+'PGDAC'+"&paperCode="+'D5'+"&sessionId="+'7589'+"&hallTicketNumber="+'11190840420100',
+		dataType: "text",
+		success : function(response) {
+			
+			if(response=='1')
+			{
+				alert("Response sheet can only be downloaded after examination is completed and upon receiving instructions from invigilator");
+				//alert("Response sheet can be downloaded only after session has ended");
+				
+			}else
+			if(response=='2')
+				{
+					alert("Different paper uploaded,hence this session ended kindly relogin");
+					endExamOnThankYou();
+				}else
+					if(response=='3')
+					{
+						alert("Exception Occurred");
+					}
+				else
+					if(response=='4')
+					{
+						alert("Session ended. Paper has been submitted");
+						endCIExamOnThankYou();
+						//fetchPDF();
+					}
+		},error: function (jqXHR, textStatus, errorThrown){
+	 		   		
+	 		    	if (jqXHR.status === 0) {
+		                alert('Verify Network.');
+		            } else if (jqXHR.status == 404) {
+		                alert('Requested page not found. [404]');
+		            } else if (jqXHR.status == 500) {
+		                alert('Internal Server Error [500].');
+		            } 
+		            else if (exception === 'timeout') {
+		                alert('Time out error.');
+		            } else if (exception === 'abort') {
+		                alert('Ajax request aborted.');
+		            } else {
+		                alert('Uncaught Error.\n' + jqXHR.responseText);
+		            }
+	 		   	  }
+	});
+}
+function colorTd()
+{
+	var index=1;
+	
+
+	var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+	//var elementsTd = document.getElementById('questionListTable').getElementsByTagName('td');
+	for(var i = 0, length = elements.length; i < length; i++) {
+		//alert(elements[i].innerText);
+		if(document.all)
+		{
+			if( elements[i].innerText  == index)
+		      {
+		    		elements[i].bgColor  = "#C0C0C0";
+		    		break;
+		       //   elements[i].style.backgroundColor = "#C0C0C0";
+		       } 
+		} else{
+			if( elements[i].textContent  == index)
+		      {
+		    		elements[i].bgColor  = "#C0C0C0";
+		    		break;
+		      } 
+		}
+		
+	}
+	
+	
+	
+
+}
+
+//function to color Td
+function colorTdNew(index)
+{
+	
+	index=index+1;
+
+	var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+
+	for(var i = 0, length = elements.length; i < length; i++) {
+		//alert(elements[i].innerText);
+		if(document.all)
+		{
+			if( elements[i].innerText  == index)
+		      {
+		    		elements[i].bgColor  = "#C0C0C0";
+		    		break;
+		       //   elements[i].style.backgroundColor = "#C0C0C0";
+		       } 
+		} else{
+			if( elements[i].textContent  == index)
+		      {
+		    		elements[i].bgColor  = "#C0C0C0";
+		    		break;
+		      } 
+		}
+		
+	}
+	
+}
+
+function deColorTd()
+{
+	var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+	
+	for(var i = 0, length = elements.length; i < length; i++) {
+	
+		if(document.all)
+		{	
+			if(elements[i].bgColor  == "#c0c0c0" || elements[i].bgColor  == "#C0C0C0")		//#C0C0C0 was not working
+				{
+				
+				elements[i].bgColor  = "#ffffff";
+				break;
+				}
+			
+		} else{
+			
+			if(elements[i].bgColor  == "#C0C0C0" ||elements[i].bgColor  == "#c0c0c0")
+			{
+			elements[i].bgColor  = "#ffffff";
+			break;
+			}
+			
+		}
+		
+	}
+	
+}
+
+	
+	function confirmEndExam()
+	{
+		document.getElementById('messageString').value="";		//clear message string
+		if(isReqPending())
+			{
+				alert("Please Wait...");
+				return false;
+			}
+		else
+			{
+				var r=confirm("Are you sure you want to end the Section/Examination. Section/Examination once ended cannot be revisited?");
+				if (r==true)
+			  	{
+					document.getElementById('questionAnswered').value=document.getElementById('Answered').value;
+					document.getElementById('questionUnAnswered').value=document.getElementById('UnAnswered').value;
+					document.getElementById('questionMarked').value=document.getElementById('Review').value;
+					
+					setReqPending();
+			  	}
+				return r;
+			}
+	}
+	
+
+
+function setImageNew()
+{
+	//var numberOfAnsweredQuestion=0;
+	var quesNumberElement = document.getElementById('questionListTable').getElementsByTagName('td');
+	var elements = document.getElementById('questionListTable').getElementsByTagName('img');
+	var str;
+	
+	//alert('in set image');
+	
+	//for all answered questions set tick as image
+	
+	
+	
+
+	
+}
+
+
+
+//function to set options on restore
+function setAnswerForRestore()
+{
+		//user question choice mapping is <questionid,answer id> and each option table id is question id
+		
+		
+	
+	
+}
+
+
+function getSectionInstructions()
+{
+	//document.forms["getInstructions"].submit();
+	
+	
+	document.getElementById('questionAnsweredIns').value=document.getElementById('Answered').value;
+	document.getElementById('questionUnAnsweredIns').value=document.getElementById('UnAnswered').value;
+	document.getElementById('questionMarkedIns').value=document.getElementById('Review').value;
+	
+	
+	//document.getElementById('endExamForm').submit;
+
+	document.getElementById('getInstructions').submit();
+}
+
+function clearAnsweredImage(index)
+{
+	var isMarked=document.getElementById('isOptionMarked'+index).value;
+	//alert("ismarked"+isMarked);
+	if(isMarked=='N')
+		{
+				index=index+1;
+				//alert("In Color Td"+index);
+				var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+				var elementsImg = document.getElementById('questionListTable').getElementsByTagName('img');
+				
+				//var elementsTd = document.getElementById('questionListTable').getElementsByTagName('td');
+				for(var i = 0, length = elements.length; i < length; i++) {
+					//alert(elements[i].innerText);
+					if(document.all)
+					{
+						
+						if( elements[i].innerText  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="hidden";
+					    		break;
+					       //   elements[i].style.backgroundColor = "#C0C0C0";
+					       } 
+					} else{
+						
+						if( elements[i].textContent  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="hidden"; 
+					    		break;
+					      } 
+					}
+					
+				}
+	
+		}
+	else
+		{
+		index=index+1;
+		//alert("In Color Td marked"+index);
+		var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+		var elementsImg = document.getElementById('questionListTable').getElementsByTagName('img');
+		
+		//var elementsTd = document.getElementById('questionListTable').getElementsByTagName('td');
+		for(var i = 0, length = elements.length; i < length; i++) {
+			//alert(elements[i].innerText);
+			if(document.all)
+			{
+				
+				if( elements[i].innerText  == index)
+			      {
+					elementsImg[i].src='/ccat_local/resources/images/question.PNG';
+					elementsImg[i].style.visibility="visible";
+			    		break;
+			       //   elements[i].style.backgroundColor = "#C0C0C0";
+			       } 
+			} else{
+				
+				if( elements[i].textContent  == index)
+			      {
+					elementsImg[i].src='/ccat_local/resources/images/question.PNG';
+					elementsImg[i].style.visibility="visible"; 
+			    		break;
+			      } 
+			}
+			
+		}
+
+		
+		}
+	
+}
+
+function setMarkedImage(index)
+{
+	var isAnswered=document.getElementById('isOptionAnswered'+index).value;
+	var isMarked=document.getElementById('isOptionMarked'+index).value;
+	index=index+1;
+	
+	var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+	var elementsImg = document.getElementById('questionListTable').getElementsByTagName('img');
+	
+	//if question not marked for review set question image 
+	if(isMarked=='N')
+	{	
+		for(var i = 0, length = elements.length; i < length; i++) {
+			//alert(elements[i].innerText);
+			if(document.all)
+			{
+				
+				if( elements[i].innerText  == index)
+			      {
+					if(isAnswered!='N')// answered and user pressed mark  for review
+						{
+						elementsImg[i].src='/ccat_local/resources/images/tickQuestion.PNG';
+						elementsImg[i].style.visibility="visible";
+				    		break;
+						}
+					else
+						{
+						elementsImg[i].src='/ccat_local/resources/images/question.PNG';
+						elementsImg[i].style.visibility="visible";
+				    		break;
+						}
+					
+			       //   elements[i].style.backgroundColor = "#C0C0C0";
+			       } 
+			} else{
+				
+				if( elements[i].textContent  == index)
+			      {
+					if(isAnswered!='N')// answered and user pressed mark  for review
+					{
+					elementsImg[i].src='/ccat_local/resources/images/tickQuestion.PNG';
+					elementsImg[i].style.visibility="visible";
+			    		break;
+					}
+				else
+					{
+					elementsImg[i].src='/ccat_local/resources/images/question.PNG';
+					elementsImg[i].style.visibility="visible";
+			    		break;
+					}
+			      } 
+			}
+			
+		}
+		
+		incrementMarkedValue(index);
+	}
+	else	//question coming for unmark then if answered then set tick otherwise set question
+		{
+		//check if question is answered if yes then set tick as image
+			if(isAnswered!='N')
+				{
+				
+				for(var i = 0, length = elements.length; i < length; i++) {
+					//alert(elements[i].innerText);
+					if(document.all)
+					{
+						
+						if( elements[i].innerText  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="visible";
+					    		break;
+					       //   elements[i].style.backgroundColor = "#C0C0C0";
+					       } 
+					} else{
+						
+						if( elements[i].textContent  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="visible"; 
+					    		break;
+					      } 
+					}
+					
+				}
+				
+				}
+			else
+				{
+				for(var i = 0, length = elements.length; i < length; i++) {
+					//alert(elements[i].innerText);
+					if(document.all)
+					{
+						
+						if( elements[i].innerText  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="hidden";
+					    		break;
+					       //   elements[i].style.backgroundColor = "#C0C0C0";
+					       } 
+					} else{
+						
+						if( elements[i].textContent  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="hidden"; 
+					    		break;
+					      } 
+					}
+					
+					}
+				}
+			
+			decrementMarkedValue(index);
+		}
+	
+	//alert("In Color Td"+index);
+	
+}
+
+function setMarkedHidden(index)
+{
+	var isMarked=document.getElementById('isOptionMarked'+index).value;
+	if(isMarked=='N')
+		{
+		//alert('Y');
+		document.getElementById('isOptionMarked'+index).value='Y';
+		document.getElementById('butMarkedForReview'+index).value='UnMark';
+		
+		}
+	else
+		{
+		//alert('N');
+		document.getElementById('isOptionMarked'+index).value='N';
+		document.getElementById('butMarkedForReview'+index).value='Mark for Review';
+		}
+		
+}
+function setAnsweredImage(index)
+{
+	var isMarked=document.getElementById('isOptionMarked'+index).value;
+	//alert("ismarked"+isMarked);
+	if(isMarked=='N')
+		{
+				index=index+1;
+				//alert("In Color Td"+index);
+				var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+				var elementsImg = document.getElementById('questionListTable').getElementsByTagName('img');
+				
+				//var elementsTd = document.getElementById('questionListTable').getElementsByTagName('td');
+				for(var i = 0, length = elements.length; i < length; i++) {
+					//alert(elements[i].innerText);
+					if(document.all)
+					{
+						
+						if( elements[i].innerText  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="visible";
+					    		break;
+					       //   elements[i].style.backgroundColor = "#C0C0C0";
+					       } 
+					} else{
+						
+						if( elements[i].textContent  == index)
+					      {
+							elementsImg[i].src='/ccat_local/resources/images/tick.png';
+							elementsImg[i].style.visibility="visible"; 
+					    		break;
+					      } 
+					}
+					
+				}
+	
+		}
+	else
+	{
+			index=index+1;
+			
+			var elements=document.getElementById('questionListTable').getElementsByTagName('td');
+			var elementsImg = document.getElementById('questionListTable').getElementsByTagName('img');
+			
+			
+			for(var i = 0, length = elements.length; i < length; i++) {
+				//alert(elements[i].innerText);
+				if(document.all)
+				{
+					
+					if( elements[i].innerText  == index)
+				      {
+						elementsImg[i].src='/ccat_local/resources/images/tickQuestion.PNG';
+						elementsImg[i].style.visibility="visible";
+				    		break;
+				       //   elements[i].style.backgroundColor = "#C0C0C0";
+				       } 
+				} else{
+					
+					if( elements[i].textContent  == index)
+				      {
+						elementsImg[i].src='/ccat_local/resources/images/tickQuestion.PNG';
+						elementsImg[i].style.visibility="visible"; 
+				    		break;
+				      } 
+				}
+				
+			}
+
+	}
+	
+}
+
+//function to increment value
+function incrementAnsweredValue(currentIndex)
+{
+// 	var idTag="isOptionAnswered"+currentIndex;
+// 	Alert("idTag"+idTag);
+	var isAnswered=document.getElementById('isOptionAnswered'+currentIndex).value;
+//	alert("isAnswered"+isAnswered);
+    if(isAnswered=='N')
+    	{
+    	var value = parseInt(document.getElementById('Answered').value, 10);
+       // alert("value Bfr"+value);
+        value = isNaN(value) ? 0 : value;
+        value++;
+      //  alert("value Aftr"+value);
+        document.getElementById('Answered').value = value;
+        
+        //chk whether it works with IE
+        document.getElementById('answeredHeading').innerHTML ="Answered:"+value;
+        decrementUnAnsweredValue(currentIndex);
+    	}
+	
+}
+
+function decrementAnsweredValue(currentIndex)
+{
+
+	var isAnswered=document.getElementById('isOptionAnswered'+currentIndex).value;
+	//alert("isAnswered"+isAnswered);
+    if(isAnswered!='N')
+    	{
+    	var value = parseInt(document.getElementById('Answered').value, 10);
+      //  alert("value Bfr"+value);
+        value = isNaN(value) ? 0 : value;
+        if(value>0)
+        {
+        	value--;
+        }
+     //   alert("value Aftr"+value);
+        document.getElementById('Answered').value = value;
+        
+        //chk whether it works with IE
+        document.getElementById('answeredHeading').innerHTML ="Answered:"+value;
+        incrementUnAnsweredValue(currentIndex);
+    	}
+	
+}
+
+function incrementMarkedValue(currentIndex)
+{
+	var value = parseInt(document.getElementById('Review').value, 10);
+	value = isNaN(value) ? 0 : value;
+	value++;
+    	
+    
+   // alert("Marked value Aftr increment"+value);
+    document.getElementById('Review').value = value;
+    
+    //chk whether it works with IE
+    document.getElementById('reviewHeading').innerHTML ="For Review:"+value;
+}
+
+function decrementMarkedValue(currentIndex)
+{
+	var value = parseInt(document.getElementById('Review').value, 10);
+	value = isNaN(value) ? 0 : value;
+	if(value!=0)
+	{
+	value--;
+	
+	}
+    	
+    
+    //alert("Marked value Aftr decrement"+value);
+    document.getElementById('Review').value = value;
+    
+    //chk whether it works with IE
+    document.getElementById('reviewHeading').innerHTML ="For Review:"+value;
+}
+
+//function to decrement unanswered value
+function decrementUnAnsweredValue(currentIndex)
+{
+	var value = parseInt(document.getElementById('UnAnswered').value, 10);
+	value = isNaN(value) ? 0 : value;
+	if(value!=0)
+    	{
+		value--;
+    	
+    	}
+    //alert("UnAnswered value Aftr"+value);
+    document.getElementById('UnAnswered').value = value;
+    
+    //chk whether it works with IE
+    document.getElementById('unAnsweredHeading').innerHTML ="UnAnswered:"+value;
+}
+
+//function to increment answered value
+function incrementUnAnsweredValue(currentIndex)
+{
+	var value = parseInt(document.getElementById('UnAnswered').value, 10);
+	value = isNaN(value) ? 0 : value;
+	value++;
+    	
+    
+    //alert("UnAnswered value Aftr increment"+value);
+    document.getElementById('UnAnswered').value = value;
+    
+    //chk whether it works with IE
+    document.getElementById('unAnsweredHeading').innerHTML ="UnAnswered:"+value;
+}
+
+//function to set answered Field
+function setIsAnsweredHiddenField(currentIndex)
+{
+// 	var idTag="isOptionAnswered"+currentIndex;
+// 	Alert("idTag"+idTag);
+	var isAnswered=document.getElementById('isOptionAnswered'+currentIndex).value;
+	var elements = document.getElementsByName('option'+currentIndex);
+	var length=document.getElementsByName('option'+currentIndex).length;
+	for (i = 0; i <length; i++) {
+		if(elements[i].checked)
+			{
+			isAnswered=elements[i].value;
+			break;
+			}
+	}
+	document.getElementById('isOptionAnswered'+currentIndex).value=isAnswered;
+	//alert("isAnswered value now set to "+isAnswered);
+	
+}
+
+
+//function would judge whether response is to be cleared or reset to some previous value
+function resetOrClearAns(currentIndex)
+{
+	var elements = document.getElementsByName('option'+currentIndex);
+	var isAnswered=document.getElementById('isOptionAnswered'+currentIndex).value;
+	var length=document.getElementsByName('option'+currentIndex).length;
+	 if(isAnswered=='N')
+ 	{
+ 		//clear response
+ 		for (i = 0; i <length; i++) {
+		
+		if(elements[i].checked)
+			{
+			elements[i].checked=false;
+			break;
+			}
+		
+		}
+ 	}
+	 else
+		 {
+		 //reset
+		 	for (i = 0; i <length; i++) {		
+				if(elements[i].value==isAnswered)
+				{
+					elements[i].checked=true;
+					break;
+				}
+			}
+		 }
+	
+}
+
+
+//function to clear answer if user explicitly chooses to clear answer
+function clearAns(currentIndex)
+{
+	var isAnswered=document.getElementById('isOptionAnswered'+currentIndex).value;
+	 if(isAnswered=='N')
+	 	{
+		 alert("No response to clear");
+	 	}
+	 else
+		 {
+			var elements = document.getElementsByName('option'+currentIndex);
+			var length=document.getElementsByName('option'+currentIndex).length;
+			for (i = 0; i <length; i++) {
+				
+				if(elements[i].checked)
+					{
+					elements[i].checked=false;
+					decrementAnsweredValue(currentIndex);	//first decrement,increment then set value to N
+					document.getElementById('isOptionAnswered'+currentIndex).value="N";
+					//increment unanswered value
+					
+					break;
+					}
+				
+			}
+		 }
+
+}
+
+//ajax function for posting answer
+function postAnswer(answerId,questionId,currentIndex) {    
+	
+	if(!areImagesLoaded())
+	{
+	alert("Please Wait as images are being loaded ");
+	resetOrClearAns(currentIndex);
+	
+	}else
+{
+	if(isReqPending())
+	 	{
+	 		alert("Please Wait...");
+	 		resetOrClearAns(currentIndex);
+	 	}
+	 	else
+	 		{
+	 		//alert(answerId+questionId+currentIndex);
+	 		setReqPending();
+	 		$(".myTableQuestion :input").attr("disabled", "disabled");
+	 		
+	 		
+	 		var sessionId='7589';
+	 		var hallTicketNumber='11190840420100';
+	 		var paperCode='D5';
+	 		var examName='PGDAC';
+	 		
+	 		$.ajax({
+	 		   	 type: "POST",
+	 		   	 url: "submitAnswer",
+	 		   	 data: "examName="+examName+"&paperCode="+paperCode+"&sessionId="+sessionId+"&hallTicketNumber="+hallTicketNumber+"&questionId="+questionId+"&answerId="+answerId,
+	 		   	 dataType: "json",
+	 		   	success: function(response)
+	 		   	{	
+	 		   		   	
+ 	 		   		clearReqPending();
+ 	 		   	$(".myTableQuestion :input").removeAttr("disabled");
+ 	 		   	
+	 		   		//check if response is 1 then success if 0 then operation not successful if Error then print exception
+ 	 		   		if(response=='0')
+ 	 		   			{
+ 	 		   				alert("Answered Response could not be saved");
+	 		   				
+ 	 		   			}
+ 	 		   		else
+ 	 		   			if(response=='3')
+ 	 		   				{
+	 		   					alert("Exception Occured. Last operation Unsuccessful");
+ 	 		   				}
+ 	 		   			else
+		   					if(response=='2')
+		   					{
+		   						alert("Different paper uploaded,hence this session ended kindly relogin");
+		   						endExamOnThankYou();
+		   					}
+		   					else
+			   					if(response=='4')
+			   					{
+			   						alert("Session ended. Paper has been submitted");
+			   						endCIExamOnThankYou();
+			   					}
+	 		   				else if(response=='1')
+	 		   				{
+ 		   						setAnsweredImage(currentIndex);		//set image
+ 		   					deColorTd();
+ 		   					colorTdNew(currentIndex);
+ 		   					
+ 		   						incrementAnsweredValue(currentIndex);	//increment is answered value and inside it decrement unanswered is called
+ 		   						setIsAnsweredHiddenField(currentIndex);	//set hidden field with response 
+	 	 		   			
+	 		   			
+	 		   				}
+	 		   				else
+	 		   					{
+	 		   					//have to refresh
+	 		   					refreshSession(response);
+	 		   					}
+	 		   		//insert image on current index 
+	 		   		
+	 		   		//increase count of answered decrease count of unanswered
+	 		   		
+	 		   		//alert(response);
+	 		   	},
+	 		   	 error: function (jqXHR, textStatus, errorThrown){
+	 		   		clearReqPending();
+	 		   	$(".myTableQuestion :input").removeAttr("disabled");
+	 		   		resetOrClearAns(currentIndex);
+	 		   //	clearAns(currentIndex);
+		 		   	 	 if (jqXHR.status === 0) {
+		                alert('Not connected.\nVerify Network.');
+		            } else if (jqXHR.status == 404) {
+		                alert('Requested page not found. [404]');
+		            } else if (jqXHR.status == 500) {
+		                alert('Internal Server Error [500].');
+		            } else if (exception === 'parsererror') {
+		                alert('Requested JSON parse failed.');
+		            } else if (exception === 'timeout') {
+		                alert('Time out error.');
+		            } else if (exception === 'abort') {
+		                alert('Ajax request aborted.');
+		            } else {
+		                alert('Uncaught Error.\n' + jqXHR.responseText);
+		            }
+	 		   	  }
+	 		   	 });
+	 		}
+}
+
+}
+
+//ajax function for clearing answer
+function resetAnswer(questionId,currentIndex) {   
+	
+	if(!areImagesLoaded())
+		{
+		alert("Please Wait as images are being loaded ");
+		
+		}
+	else
+	{
+		
+	
+	if(isReqPending())
+	{
+		alert("Please Wait...");
+	}
+	else
+		{
+		setReqPending();
+		$(".myTableQuestion :input").attr("disabled", "disabled");
+		var sessionId='7589';
+		var hallTicketNumber='11190840420100';
+		var paperCode='D5';
+		var examName='PGDAC';
+		//alert("Clear Ans"+questionId+currentIndex);
+		$.ajax({
+		   	 type: "POST",
+		   	 url: "clearAnswer",
+		   	 data: "examName="+examName+"&paperCode="+paperCode+"&sessionId="+sessionId+"&hallTicketNumber="+hallTicketNumber+"&questionId="+questionId,
+		   	 dataType: "json",
+		   	success: function(response)
+		   	{	//alert("next successful"+response.currentQuestionIndex) ;
+		   		clearReqPending();
+		   		$(".myTableQuestion :input").removeAttr("disabled");
+		   		if(response=='0')
+		   			{
+		   				alert("Response could not be cleared");
+		   				
+		   			}
+		   		else
+		   			if(response=='3')
+		   				{
+		   					alert("Exception Occured. Last operation Unsuccessful");
+		   				}
+		   			else
+		   				if(response=='2')
+		   					{
+		   					alert("Different paper uploaded,hence this session ended kindly relogin");
+							endExamOnThankYou();
+		   					}
+		   				else
+		   					if(response=='4')
+		   					{
+		   						alert("Session ended. Paper has been submitted");
+		   						endCIExamOnThankYou();
+		   					}
+		   				else if(response=='1')
+		   					{
+		   					deColorTd();
+		   			   		colorTdNew(currentIndex);
+		   			   		clearAns(currentIndex);	//clear answer and decrement answered value		  
+		   			   		clearAnsweredImage(currentIndex);		//clear answered tick and if marked for review then set questionmark image
+		   			   	//setAnsweredImage(response.currentQuestionIndex);	   		
+		   					}
+		   				else
+		   					{
+		   					refreshSession(response);
+		   					}
+		   		
+		   	},
+		   	 error: function (jqXHR, textStatus, errorThrown){
+		   		clearReqPending();
+		   		$(".myTableQuestion :input").removeAttr("disabled");
+		   	 if (jqXHR.status === 0) {
+	                alert('Not connected.\nVerify Network.');
+	            } else if (jqXHR.status == 404) {
+	                alert('Requested page not found. [404]');
+	            } else if (jqXHR.status == 500) {
+	                alert('Internal Server Error [500].');
+	            } else if (exception === 'parsererror') {
+	                alert('Requested JSON parse failed.');
+	            } else if (exception === 'timeout') {
+	                alert('Time out error.');
+	            } else if (exception === 'abort') {
+	                alert('Ajax request aborted.');
+	            } else {
+	                alert('Uncaught Error.\n' + jqXHR.responseText);
+	            }
+		   	 
+		   	  }
+		   	 });
+		}
+	}
+}
+
+
+
+//ajax function for mark for review
+function markQuestionForReview(questionId,currentIndex)
+{
+	if(!areImagesLoaded())
+	{
+	alert("Please Wait as images are being loaded ");
+	
+	}else
+{
+	if(isReqPending())
+	{
+		alert("Please Wait...");
+	}
+	else
+		{
+		setReqPending();
+		$(".myTableQuestion :input").attr("disabled", "disabled");
+		var sessionId='7589';
+		 var hallTicketNumber='11190840420100';
+		 var paperCode='D5';
+		 var examName='PGDAC';
+		 $.ajax({
+	   	 type: "POST",
+	   	 url: "markQuestion",
+	   	data: "examName="+examName+"&paperCode="+paperCode+"&sessionId="+sessionId+"&hallTicketNumber="+hallTicketNumber+"&questionId="+questionId,
+	   	 dataType: "json",
+	   	success: function(response)
+	   	{	//alert("next successful"+response.currentQuestionIndex) ;
+	   		clearReqPending();
+	   		$(".myTableQuestion :input").removeAttr("disabled");
+	   		if(response=='0')
+   			{
+   				alert("Response could not be marked for review");
+   				
+   			}
+   		else
+   			if(response=='3')
+   				{
+   					alert("Exception Occured. Last operation Unsuccessful");
+   				}
+   			else
+   				if(response=='2')
+   					{
+   				
+					alert("Different paper uploaded,hence this session ended kindly relogin");
+					endExamOnThankYou();
+   						
+   					}
+   				else
+   					if(response=='4')
+   					{
+   						alert("Session ended. Paper has been submitted");
+   						endCIExamOnThankYou();
+   					}
+   				else if(response=='1')
+   					{
+   					setMarkedImage(currentIndex);
+   					setMarkedHidden(currentIndex);
+   			   		deColorTd();
+   			   		colorTdNew(currentIndex);
+   					}
+   				else
+   					{
+   					refreshSession(response);
+   					}
+	   		
+	   	},
+	   	 error: function (jqXHR, textStatus, errorThrown){
+	   		clearReqPending();
+	   		$(".myTableQuestion :input").removeAttr("disabled");
+	   		 if (jqXHR.status === 0) {
+	                alert('Not connected.\nVerify Network.');
+	            } else if (jqXHR.status == 404) {
+	                alert('Requested page not found. [404]');
+	            } else if (jqXHR.status == 500) {
+	                alert('Internal Server Error [500].');
+	            } else if (exception === 'parsererror') {
+	                alert('Requested JSON parse failed.');
+	            } else if (exception === 'timeout') {
+	                alert('Time out error.');
+	            } else if (exception === 'abort') {
+	                alert('Ajax request aborted.');
+	            } else {
+	                alert('Uncaught Error.\n' + jqXHR.responseText);
+	            }
+	   	  }
+	   	 });
+		 //data: "hallTicketNumber="+hallTicketNumber
+		
+		}
+}
+}
+
+function fetchPDF()
+{
+	document.fetchResponseSheetFormName.questionAnswered.value=document.getElementById('Answered').value;
+	document.fetchResponseSheetFormName.questionUnAnswered.value=document.getElementById('UnAnswered').value;
+	document.fetchResponseSheetFormName.questionMarked.value=document.getElementById('Review').value;
+	
+	document.getElementById('frmfetchResponseSheet').submit();
+	
+	
+}
+function endCIExamOnThankYou()
+{
+	document.endExamFormName.questionAnswered.value=document.getElementById('Answered').value;
+	document.endExamFormName.questionUnAnswered.value=document.getElementById('UnAnswered').value;
+	document.endExamFormName.questionMarked.value=document.getElementById('Review').value;
+	document.getElementById('messageString').value="Session ended. Paper has been submitted";
+	
+	document.getElementById('endExamForm').submit();
+	
+	
+}
+
+
+function endExamOnThankYou()
+{
+	document.endExamFormName.questionAnswered.value=document.getElementById('Answered').value;
+	document.endExamFormName.questionUnAnswered.value=document.getElementById('UnAnswered').value;
+	document.endExamFormName.questionMarked.value=document.getElementById('Review').value;
+	document.getElementById('messageString').value="Different paper uploaded,hence this session ended kindly relogin";
+	document.getElementById('endExamForm').submit();
+	
+	
+}
+
+function refreshSession(hallTicket)
+{
+	document.refreshForm.hallTicketNumber.value=hallTicket;
+	
+	document.getElementById('questionAnsweredRef').value=document.getElementById('Answered').value;
+	document.getElementById('questionUnAnsweredRef').value=document.getElementById('UnAnswered').value;
+	document.getElementById('questionMarkedRef').value=document.getElementById('Review').value;
+	
+	document.getElementById('refresh').submit();
+	
+}
+
+function setReqPending()
+{
+	
+	document.getElementById("requestPending").value="Yes";
+}
+function clearReqPending()
+{
+	document.getElementById("requestPending").value="no";
+}
+
+function isReqPending()
+{
+	if(document.getElementById("requestPending").value=="no")
+		return false;
+	else
+		return true;
+}
+
+function areImagesLoaded()
+{
+	if(document.getElementById("allImagesLoaded").value=="no")
+		{
+			
+			return false;
+		}
+	else
+		{
+		
+		return true;
+		}
+}
+
+function formSubmitAllowed()
+{
+	if(document.getElementById("requestPending").value=="no")
+		return true;
+	else
+		return false;
+}
+
+function formSubmitAllowedOnRefresh()
+{
+	if(document.getElementById("requestPending").value=="no")
+		{
+		document.getElementById('questionAnsweredRef').value=document.getElementById('Answered').value;
+		document.getElementById('questionUnAnsweredRef').value=document.getElementById('UnAnswered').value;
+		document.getElementById('questionMarkedRef').value=document.getElementById('Review').value;
+		return true;
+		}
+	else
+		return false;
+}
+
+</script>
+
+<style type="text/css">
+table.myTable {
+	border: inset 1px;
+	border-collapse: collapse;
+	border-color: #999;
+	font-family: Helvetica;
+	padding: 0px;
+}
+
+table.myTable td, table.myTable th {
+	border-left: solid 1px;
+	border-right: solid 1px;
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+	border-bottom-color: #999;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-left-color: #999
+}
+
+table.myTableQuestion {
+	border: inset 1px;
+	border-collapse: collapse;
+	border-color: #999;
+	font-family: Helvetica;
+	padding: 0px;
+}
+</style>
+</head>
+<body onload="setImageNew();colorTd();setAnswerForRestore()">
+	<div id="page" class="">
+		<div id="block2One">
+			<table width="100%" style="padding-right: 25px;">
+				<tbody><tr>
+					<!-- 					<td class="photo" rowspan="2" bgcolor="#FFFFFF"><img class="photo" -->
+					
+
+					<td align="left" style="width: 40%;"><h3>Ujwala G. Chavan</h3>&nbsp;
+						<h4>(11190840420100)</h4></td>
+					<td align="left" style="width: 40%;">
+						<h1>PGDAC</h1>
+					</td>
+					<td align="center" style="width: 15%">
+						<h4>Session Id:7589</h4>
+					</td>
+				</tr>
+
+				<tr>
+					<td align="left"><img src="./web_files/tick.png">
+						<h5 id="answeredHeading">Answered:34</h5>|
+						<h5 id="unAnsweredHeading">UnAnswered:6</h5> | <img src="./web_files/question.PNG">
+						<h5 id="reviewHeading">For Review:9</h5></td>
+					<td align="left"></td>
+					<td align="left"></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div id="borderDivBottom" style="width: 100% background-color:   white">
+			<hr>
+			<!-- 			<table width="100%" style="background-color: white"> -->
+			<!-- 				<tr> -->
+			<!-- 					<td align="center"><img -->
+			
+			<!-- 				</tr> -->
+			<!-- 			</table> -->
+		</div>
+
+		<div id="blockTwo" class="block2DivStyle">
+			<div id="questionList" class="questionListDivStyle" style="overflow-y: auto; height: 513.571px;">
+				<table class="myTable" width="100%" id="questionListTable">
+					
+					
+
+					
+						
+							
+						
+						
+					
+					
+					
+						<tbody><tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#0&#39;;deColorTd();colorTdNew(0)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#0" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(0)">1</a>
+
+									</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left">
+										<div onclick="location.href=&#39;#14&#39;;deColorTd(); colorTdNew(14)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#14" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(14)">15</a>
+											</font> <img src="./web_files/tick.png" style="visibility: hidden;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#28&#39;;deColorTd(); colorTdNew(28)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#28" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(28)">29</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left">
+								<div onclick="location.href=&#39;#1&#39;;deColorTd();colorTdNew(1)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#1" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(1)">2</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: hidden;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#15&#39;;deColorTd(); colorTdNew(15)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#15" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(15)">16</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#29&#39;;deColorTd(); colorTdNew(29)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#29" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(29)">30</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#2&#39;;deColorTd();colorTdNew(2)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#2" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(2)">3</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#16&#39;;deColorTd(); colorTdNew(16)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#16" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(16)">17</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#30&#39;;deColorTd(); colorTdNew(30)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#30" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(30)">31</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#3&#39;;deColorTd();colorTdNew(3)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#3" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(3)">4</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#17&#39;;deColorTd(); colorTdNew(17)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#17" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(17)">18</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#31&#39;;deColorTd(); colorTdNew(31)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#31" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(31)">32</a>
+
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#4&#39;;deColorTd();colorTdNew(4)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#4" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(4)">5</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#18&#39;;deColorTd(); colorTdNew(18)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#18" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(18)">19</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#32&#39;;deColorTd(); colorTdNew(32)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#32" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(32)">33</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: hidden;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#5&#39;;deColorTd();colorTdNew(5)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#5" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(5)">6</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#19&#39;;deColorTd(); colorTdNew(19)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#19" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(19)">20</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#33&#39;;deColorTd(); colorTdNew(33)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#33" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(33)">34</a>
+
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#6&#39;;deColorTd();colorTdNew(6)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#6" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(6)">7</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#20&#39;;deColorTd(); colorTdNew(20)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#20" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(20)">21</a>
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#34&#39;;deColorTd(); colorTdNew(34)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#34" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(34)">35</a>
+
+											</font> <img src="./web_files/question.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#7&#39;;deColorTd();colorTdNew(7)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#7" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(7)">8</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#21&#39;;deColorTd(); colorTdNew(21)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#21" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(21)">22</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#35&#39;;deColorTd(); colorTdNew(35)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#35" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(35)">36</a>
+
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#8&#39;;deColorTd();colorTdNew(8)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#8" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(8)">9</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left">
+										<div onclick="location.href=&#39;#22&#39;;deColorTd(); colorTdNew(22)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#22" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(22)">23</a>
+											</font> <img src="./web_files/tick.png" style="visibility: hidden;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#36&#39;;deColorTd(); colorTdNew(36)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#36" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(36)">37</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#9&#39;;deColorTd();colorTdNew(9)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#9" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(9)">10</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#23&#39;;deColorTd(); colorTdNew(23)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#23" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(23)">24</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#37&#39;;deColorTd(); colorTdNew(37)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#37" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(37)">38</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#10&#39;;deColorTd();colorTdNew(10)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#10" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(10)">11</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#24&#39;;deColorTd(); colorTdNew(24)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#24" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(24)">25</a>
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left">
+										<div onclick="location.href=&#39;#38&#39;;deColorTd(); colorTdNew(38)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#38" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(38)">39</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: hidden;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#11&#39;;deColorTd();colorTdNew(11)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#11" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(11)">12</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#25&#39;;deColorTd(); colorTdNew(25)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#25" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(25)">26</a>
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#39&#39;;deColorTd(); colorTdNew(39)">
+											<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#39" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(39)">40</a>
+
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#12&#39;;deColorTd();colorTdNew(12)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#12" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(12)">13</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#ffffff">
+										<div onclick="location.href=&#39;#26&#39;;deColorTd(); colorTdNew(26)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#26" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(26)">27</a>
+											</font> <img src="./web_files/tick.png" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+							
+						</tr>
+					
+						<tr>
+							<td align="left" bgcolor="#ffffff">
+								<div onclick="location.href=&#39;#13&#39;;deColorTd();colorTdNew(13)">
+									<font size="+1" color="#000000"> <a href="http://ccat.cdac.in/ccat_local/startExam#13" target="_self" style="color: black; text-decoration: none" onclick="javascript: deColorTd();colorTdNew(13)">14</a>
+
+									</font> <img src="./web_files/tick.png" style="visibility: visible;">
+								</div>
+							</td>
+
+							
+								
+									<td align="left" bgcolor="#C0C0C0">
+										<div onclick="location.href=&#39;#27&#39;;deColorTd(); colorTdNew(27)">
+											<font size="+1"> <a href="http://ccat.cdac.in/ccat_local/startExam#27" target="_self" style="color: black; text-decoration: none" onclick="javascript:deColorTd(); colorTdNew(27)">28</a>
+											</font> <img src="./web_files/tickQuestion.PNG" style="visibility: visible;">
+										</div>
+									</td>
+								
+							
+
+							
+								
+							
+						</tr>
+					
+				</tbody></table>
+			</div>
+			<div id="question" class="questionDivStyle" style="padding-left: 20px; overflow: auto scroll; height: 513.571px;">
+				<table class="myTableQuestion" id="questionDisplayTable" style="padding-left: 15px; width: 100%">
+
+					
+						<tbody><tr style="padding-bottom: 2cm;">
+							<td id="0"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_3_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_1" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option0" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_1&#39;,0)">A</td>
+											
+												<td><input type="radio" name="option0" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_1&#39;,0)">B</td>
+											
+												<td><input type="radio" name="option0" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_1&#39;,0)">C</td>
+											
+												<td><input type="radio" name="option0" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_1&#39;,0)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_1&#39;,0)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview0" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_1&#39;,0)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered0" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked0" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="1"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_4_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_2" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option1" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_2&#39;,1)">A</td>
+											
+												<td><input type="radio" name="option1" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_2&#39;,1)">B</td>
+											
+												<td><input type="radio" name="option1" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_2&#39;,1)">C</td>
+											
+												<td><input type="radio" name="option1" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_2&#39;,1)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_2&#39;,1)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview1" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_2&#39;,1)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered1" value="N"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked1" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="2"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_5_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_3" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option2" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_3&#39;,2)">A</td>
+											
+												<td><input type="radio" name="option2" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_3&#39;,2)">B</td>
+											
+												<td><input type="radio" name="option2" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_3&#39;,2)">C</td>
+											
+												<td><input type="radio" name="option2" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_3&#39;,2)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_3&#39;,2)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview2" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_3&#39;,2)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered2" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked2" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="3"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_6_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_4" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option3" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_4&#39;,3)">A</td>
+											
+												<td><input type="radio" name="option3" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_4&#39;,3)">B</td>
+											
+												<td><input type="radio" name="option3" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_4&#39;,3)">C</td>
+											
+												<td><input type="radio" name="option3" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_4&#39;,3)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_4&#39;,3)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview3" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_4&#39;,3)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered3" value="D"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked3" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="4"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_7_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_5" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option4" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_5&#39;,4)">A</td>
+											
+												<td><input type="radio" name="option4" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_5&#39;,4)">B</td>
+											
+												<td><input type="radio" name="option4" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_5&#39;,4)">C</td>
+											
+												<td><input type="radio" name="option4" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_5&#39;,4)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_5&#39;,4)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview4" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_5&#39;,4)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered4" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked4" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="5"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_8_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_6" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option5" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_6&#39;,5)">A</td>
+											
+												<td><input type="radio" name="option5" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_6&#39;,5)">B</td>
+											
+												<td><input type="radio" name="option5" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_6&#39;,5)">C</td>
+											
+												<td><input type="radio" name="option5" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_6&#39;,5)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_6&#39;,5)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview5" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_6&#39;,5)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered5" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked5" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="6"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_9_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_7" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option6" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_7&#39;,6)">A</td>
+											
+												<td><input type="radio" name="option6" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_7&#39;,6)">B</td>
+											
+												<td><input type="radio" name="option6" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_7&#39;,6)">C</td>
+											
+												<td><input type="radio" name="option6" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_7&#39;,6)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_7&#39;,6)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview6" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_7&#39;,6)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered6" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked6" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="7"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_10_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_8" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option7" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_8&#39;,7)">A</td>
+											
+												<td><input type="radio" name="option7" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_8&#39;,7)">B</td>
+											
+												<td><input type="radio" name="option7" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_8&#39;,7)">C</td>
+											
+												<td><input type="radio" name="option7" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_8&#39;,7)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_8&#39;,7)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview7" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_8&#39;,7)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered7" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked7" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="8"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_11_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_9" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option8" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_9&#39;,8)">A</td>
+											
+												<td><input type="radio" name="option8" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_9&#39;,8)">B</td>
+											
+												<td><input type="radio" name="option8" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_9&#39;,8)">C</td>
+											
+												<td><input type="radio" name="option8" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_9&#39;,8)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_9&#39;,8)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview8" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_9&#39;,8)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered8" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked8" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="9"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_12_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_10" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option9" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_10&#39;,9)">A</td>
+											
+												<td><input type="radio" name="option9" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_10&#39;,9)">B</td>
+											
+												<td><input type="radio" name="option9" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_10&#39;,9)">C</td>
+											
+												<td><input type="radio" name="option9" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_10&#39;,9)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_10&#39;,9)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview9" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_10&#39;,9)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered9" value="D"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked9" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="10"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_13_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_11" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option10" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_11&#39;,10)">A</td>
+											
+												<td><input type="radio" name="option10" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_11&#39;,10)">B</td>
+											
+												<td><input type="radio" name="option10" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_11&#39;,10)">C</td>
+											
+												<td><input type="radio" name="option10" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_11&#39;,10)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_11&#39;,10)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview10" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_11&#39;,10)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered10" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked10" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="11"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_14_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_12" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option11" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_12&#39;,11)">A</td>
+											
+												<td><input type="radio" name="option11" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_12&#39;,11)">B</td>
+											
+												<td><input type="radio" name="option11" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_12&#39;,11)">C</td>
+											
+												<td><input type="radio" name="option11" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_12&#39;,11)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_12&#39;,11)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview11" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_12&#39;,11)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered11" value="D"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked11" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="12"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_15_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_13" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option12" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_13&#39;,12)">A</td>
+											
+												<td><input type="radio" name="option12" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_13&#39;,12)">B</td>
+											
+												<td><input type="radio" name="option12" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_13&#39;,12)">C</td>
+											
+												<td><input type="radio" name="option12" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_13&#39;,12)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_13&#39;,12)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview12" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_13&#39;,12)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered12" value="D"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked12" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="13"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_16_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_14" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option13" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_14&#39;,13)">A</td>
+											
+												<td><input type="radio" name="option13" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_14&#39;,13)">B</td>
+											
+												<td><input type="radio" name="option13" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_14&#39;,13)">C</td>
+											
+												<td><input type="radio" name="option13" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_14&#39;,13)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_14&#39;,13)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview13" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_14&#39;,13)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered13" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked13" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="14"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_17_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_15" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option14" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_15&#39;,14)">A</td>
+											
+												<td><input type="radio" name="option14" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_15&#39;,14)">B</td>
+											
+												<td><input type="radio" name="option14" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_15&#39;,14)">C</td>
+											
+												<td><input type="radio" name="option14" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_15&#39;,14)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_15&#39;,14)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview14" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_15&#39;,14)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered14" value="N"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked14" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="15"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_18_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_16" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option15" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_16&#39;,15)">A</td>
+											
+												<td><input type="radio" name="option15" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_16&#39;,15)">B</td>
+											
+												<td><input type="radio" name="option15" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_16&#39;,15)">C</td>
+											
+												<td><input type="radio" name="option15" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_16&#39;,15)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_16&#39;,15)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview15" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_16&#39;,15)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered15" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked15" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="16"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_19_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_17" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option16" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_17&#39;,16)">A</td>
+											
+												<td><input type="radio" name="option16" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_17&#39;,16)">B</td>
+											
+												<td><input type="radio" name="option16" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_17&#39;,16)">C</td>
+											
+												<td><input type="radio" name="option16" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_17&#39;,16)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_17&#39;,16)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview16" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_17&#39;,16)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered16" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked16" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="17"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_20_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_18" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option17" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_18&#39;,17)">A</td>
+											
+												<td><input type="radio" name="option17" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_18&#39;,17)">B</td>
+											
+												<td><input type="radio" name="option17" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_18&#39;,17)">C</td>
+											
+												<td><input type="radio" name="option17" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_18&#39;,17)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_18&#39;,17)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview17" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_18&#39;,17)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered17" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked17" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="18"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_21_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_19" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option18" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_19&#39;,18)">A</td>
+											
+												<td><input type="radio" name="option18" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_19&#39;,18)">B</td>
+											
+												<td><input type="radio" name="option18" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_19&#39;,18)">C</td>
+											
+												<td><input type="radio" name="option18" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_19&#39;,18)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_19&#39;,18)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview18" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_19&#39;,18)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered18" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked18" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="19"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_22_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_20" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option19" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_20&#39;,19)">A</td>
+											
+												<td><input type="radio" name="option19" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_20&#39;,19)">B</td>
+											
+												<td><input type="radio" name="option19" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_20&#39;,19)">C</td>
+											
+												<td><input type="radio" name="option19" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_20&#39;,19)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_20&#39;,19)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview19" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_20&#39;,19)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered19" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked19" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="20"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_23_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_21" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option20" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_21&#39;,20)">A</td>
+											
+												<td><input type="radio" name="option20" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_21&#39;,20)">B</td>
+											
+												<td><input type="radio" name="option20" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_21&#39;,20)">C</td>
+											
+												<td><input type="radio" name="option20" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_21&#39;,20)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_21&#39;,20)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview20" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_21&#39;,20)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered20" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked20" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="21"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_24_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_22" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option21" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_22&#39;,21)">A</td>
+											
+												<td><input type="radio" name="option21" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_22&#39;,21)">B</td>
+											
+												<td><input type="radio" name="option21" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_22&#39;,21)">C</td>
+											
+												<td><input type="radio" name="option21" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_22&#39;,21)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_22&#39;,21)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview21" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_22&#39;,21)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered21" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked21" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="22"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_25_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_23" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option22" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_23&#39;,22)">A</td>
+											
+												<td><input type="radio" name="option22" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_23&#39;,22)">B</td>
+											
+												<td><input type="radio" name="option22" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_23&#39;,22)">C</td>
+											
+												<td><input type="radio" name="option22" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_23&#39;,22)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_23&#39;,22)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview22" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_23&#39;,22)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered22" value="N"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked22" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="23"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_26_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_24" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option23" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_24&#39;,23)">A</td>
+											
+												<td><input type="radio" name="option23" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_24&#39;,23)">B</td>
+											
+												<td><input type="radio" name="option23" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_24&#39;,23)">C</td>
+											
+												<td><input type="radio" name="option23" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_24&#39;,23)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_24&#39;,23)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview23" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_24&#39;,23)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered23" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked23" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="24"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_27_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_25" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option24" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_25&#39;,24)">A</td>
+											
+												<td><input type="radio" name="option24" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_25&#39;,24)">B</td>
+											
+												<td><input type="radio" name="option24" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_25&#39;,24)">C</td>
+											
+												<td><input type="radio" name="option24" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_25&#39;,24)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_25&#39;,24)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview24" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_25&#39;,24)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered24" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked24" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="25"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_28_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_26" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option25" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_26&#39;,25)">A</td>
+											
+												<td><input type="radio" name="option25" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_26&#39;,25)">B</td>
+											
+												<td><input type="radio" name="option25" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_26&#39;,25)">C</td>
+											
+												<td><input type="radio" name="option25" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_26&#39;,25)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_26&#39;,25)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview25" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_26&#39;,25)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered25" value="D"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked25" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="26"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_29_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_27" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option26" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_27&#39;,26)">A</td>
+											
+												<td><input type="radio" name="option26" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_27&#39;,26)">B</td>
+											
+												<td><input type="radio" name="option26" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_27&#39;,26)">C</td>
+											
+												<td><input type="radio" name="option26" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_27&#39;,26)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_27&#39;,26)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview26" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_27&#39;,26)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered26" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked26" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="27"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_30_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_28" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option27" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_28&#39;,27)">A</td>
+											
+												<td><input type="radio" name="option27" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_28&#39;,27)">B</td>
+											
+												<td><input type="radio" name="option27" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_28&#39;,27)">C</td>
+											
+												<td><input type="radio" name="option27" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_28&#39;,27)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_28&#39;,27)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview27" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_28&#39;,27)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered27" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked27" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="28"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_31_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_29" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option28" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_29&#39;,28)">A</td>
+											
+												<td><input type="radio" name="option28" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_29&#39;,28)">B</td>
+											
+												<td><input type="radio" name="option28" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_29&#39;,28)">C</td>
+											
+												<td><input type="radio" name="option28" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_29&#39;,28)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_29&#39;,28)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview28" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_29&#39;,28)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered28" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked28" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="29"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_32_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_30" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option29" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_30&#39;,29)">A</td>
+											
+												<td><input type="radio" name="option29" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_30&#39;,29)">B</td>
+											
+												<td><input type="radio" name="option29" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_30&#39;,29)">C</td>
+											
+												<td><input type="radio" name="option29" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_30&#39;,29)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_30&#39;,29)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview29" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_30&#39;,29)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered29" value="B"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked29" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="30"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_33_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_31" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option30" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_31&#39;,30)">A</td>
+											
+												<td><input type="radio" name="option30" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_31&#39;,30)">B</td>
+											
+												<td><input type="radio" name="option30" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_31&#39;,30)">C</td>
+											
+												<td><input type="radio" name="option30" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_31&#39;,30)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_31&#39;,30)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview30" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_31&#39;,30)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered30" value="D"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked30" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="31"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_34_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_32" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option31" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_32&#39;,31)">A</td>
+											
+												<td><input type="radio" name="option31" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_32&#39;,31)">B</td>
+											
+												<td><input type="radio" name="option31" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_32&#39;,31)">C</td>
+											
+												<td><input type="radio" name="option31" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_32&#39;,31)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_32&#39;,31)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview31" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_32&#39;,31)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered31" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked31" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="32"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_35_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_33" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option32" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_33&#39;,32)">A</td>
+											
+												<td><input type="radio" name="option32" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_33&#39;,32)">B</td>
+											
+												<td><input type="radio" name="option32" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_33&#39;,32)">C</td>
+											
+												<td><input type="radio" name="option32" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_33&#39;,32)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_33&#39;,32)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview32" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_33&#39;,32)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered32" value="N"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked32" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="33"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_36_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_34" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option33" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_34&#39;,33)">A</td>
+											
+												<td><input type="radio" name="option33" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_34&#39;,33)">B</td>
+											
+												<td><input type="radio" name="option33" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_34&#39;,33)">C</td>
+											
+												<td><input type="radio" name="option33" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_34&#39;,33)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_34&#39;,33)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview33" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_34&#39;,33)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered33" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked33" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="34"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_37_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_35" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option34" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_35&#39;,34)">A</td>
+											
+												<td><input type="radio" name="option34" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_35&#39;,34)">B</td>
+											
+												<td><input type="radio" name="option34" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_35&#39;,34)">C</td>
+											
+												<td><input type="radio" name="option34" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_35&#39;,34)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_35&#39;,34)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview34" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_35&#39;,34)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered34" value="N"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked34" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="35"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_38_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_36" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option35" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_36&#39;,35)">A</td>
+											
+												<td><input type="radio" name="option35" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_36&#39;,35)">B</td>
+											
+												<td><input type="radio" name="option35" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_36&#39;,35)">C</td>
+											
+												<td><input type="radio" name="option35" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_36&#39;,35)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_36&#39;,35)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview35" value="UnMark" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_36&#39;,35)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered35" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked35" value="Y"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="36"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_39_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_37" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option36" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_37&#39;,36)">A</td>
+											
+												<td><input type="radio" name="option36" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_37&#39;,36)">B</td>
+											
+												<td><input type="radio" name="option36" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_37&#39;,36)">C</td>
+											
+												<td><input type="radio" name="option36" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_37&#39;,36)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_37&#39;,36)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview36" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_37&#39;,36)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered36" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked36" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="37"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_40_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_38" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option37" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_38&#39;,37)">A</td>
+											
+												<td><input type="radio" name="option37" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_38&#39;,37)">B</td>
+											
+												<td><input type="radio" name="option37" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_38&#39;,37)">C</td>
+											
+												<td><input type="radio" name="option37" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_38&#39;,37)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_38&#39;,37)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview37" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_38&#39;,37)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered37" value="C"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked37" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="38"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_41_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_39" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option38" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_39&#39;,38)">A</td>
+											
+												<td><input type="radio" name="option38" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_39&#39;,38)">B</td>
+											
+												<td><input type="radio" name="option38" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_39&#39;,38)">C</td>
+											
+												<td><input type="radio" name="option38" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_39&#39;,38)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_39&#39;,38)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview38" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_39&#39;,38)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered38" value="N"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked38" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+						<tr style="padding-bottom: 2cm;">
+							<td id="39"> 
+							</td>
+						</tr>
+
+						
+
+						
+							<tr style="padding-bottom: 2cm;">
+								<td>  <img src="./web_files/I_42_d.jpg" alt="Question Image"></td>
+							</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						
+
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td> 
+									
+
+									<table id="PGDAC_D5_40" class="myTableQuestion">
+										<tbody><tr>
+											
+												<td><input type="radio" name="option39" value="A" style="vertical-align: top;" onclick="postAnswer(&#39;A&#39;,&#39;PGDAC_D5_40&#39;,39)">A</td>
+											
+												<td><input type="radio" name="option39" value="B" style="vertical-align: top;" onclick="postAnswer(&#39;B&#39;,&#39;PGDAC_D5_40&#39;,39)">B</td>
+											
+												<td><input type="radio" name="option39" value="C" style="vertical-align: top;" onclick="postAnswer(&#39;C&#39;,&#39;PGDAC_D5_40&#39;,39)">C</td>
+											
+												<td><input type="radio" name="option39" value="D" style="vertical-align: top;" onclick="postAnswer(&#39;D&#39;,&#39;PGDAC_D5_40&#39;,39)">D</td>
+											
+
+											<td>&nbsp;</td>
+											<td><input type="button" value="Clear Answer" style="vertical-align: top;" onclick="resetAnswer(&#39;PGDAC_D5_40&#39;,39)"></td>
+											<td>&nbsp;</td>
+											<td><input type="button" id="butMarkedForReview39" value="Mark For Review" style="vertical-align: top;" onclick="markQuestionForReview(&#39;PGDAC_D5_40&#39;,39)"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionAnswered" id="isOptionAnswered39" value="A"></td>
+											<td style="visibility: hidden"><input type="hidden" name="isOptionMarked" id="isOptionMarked39" value="N"></td>
+										</tr>
+									</tbody></table>
+								</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 1px solid #000;">&nbsp;</td>
+						</tr>
+					
+				</tbody></table>
+			</div>
+		</div>
+
+		<div id="blockMessageDivStyle" style="background-color: white; color: #ff0000">
+			<b> </b>
+		</div>
+
+		<!-- 		<div id="blockThree" class="block3DivStyle"> -->
+		<div id="bottom" class="clear btn_set">
+
+			<div id="line" style="padding-top: 0px;">
+				<hr>
+			</div>
+			<div id="navigationButtons" class="navigationDivStyle">
+				<table align="center" border="0" style="border-style: none;">
+					<tbody><tr>
+						<td valign="top" nowrap="nowrap"><a id="instruction" href="javascript:getSectionInstructions()" style="font-size: 16px;">Examination Instruction</a></td>
+						<td>&nbsp;&nbsp;</td>
+						
+						<td valign="top">
+							<form action="http://ccat.cdac.in/ccat_local/endExam" method="post" id="endExamForm" name="endExamFormName" style="visibility: hidden;">
+								<input type="hidden" name="hallTicketNumber" value="11190840420100">
+								<input type="hidden" name="questionAnswered" id="questionAnswered">
+								<input type="hidden" name="questionUnAnswered" id="questionUnAnswered">
+								<input type="hidden" name="questionMarked" id="questionMarked">
+								<input type="hidden" name="userName" id="userName" value="Ujwala G. Chavan">
+								<input type="hidden" name="sessionId" id="sessionId" value="7589">
+								<input type="hidden" name="paperCode" id="paperCode" value="D5">
+								<input type="hidden" name="messageString" id="messageString" value="">
+								<input type="hidden" name="examName" value="PGDAC">
+								<input name="endExam" type="submit" value="End Exam" onclick="javascript:return confirmEndExam()" style="background-color: white; border: #000000; border-style: solid; border-width: 1px;font-size:16px;background-image:url(&#39;/ccat_local/resources/images/button.jpg&#39;)">
+							</form>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+	</div>
+
+	<form id="getInstructions" action="http://ccat.cdac.in/ccat_local/insideInstruction" method="post" accept-charset="UTF-8">
+		<input type="hidden" name="hallTicketNumber" value="11190840420100">
+		<input type="hidden" name="sessionId" value="7589">
+		<input type="hidden" name="questionAnsweredIns" id="questionAnsweredIns">
+		<input type="hidden" name="questionUnAnsweredIns" id="questionUnAnsweredIns">
+		<input type="hidden" name="questionMarkedIns" id="questionMarkedIns">
+		<input type="hidden" name="userName" value="Ujwala G. Chavan">
+		<input type="hidden" name="examName" value="PGDAC">
+		<input type="hidden" name="paperCode" value="D5">
+	</form>
+
+	<form id="saveAnswerForm" action="http://ccat.cdac.in/ccat_local/submitAnswer" method="post">
+		<input type="hidden" name="hallTicketNumber" value="11190840420100">
+		<input type="hidden" name="questionId">
+		<input type="hidden" name="answerId" id="answerId">
+	</form>
+	<form id="clearAnswerForm" action="http://ccat.cdac.in/ccat_local/clearAnswer" method="post">
+		<input type="hidden" name="hallTicketNumber" value="11190840420100">
+		<input type="hidden" name="questionId">
+
+	</form>
+
+	<form action="http://ccat.cdac.in/ccat_local/refreshSession" method="post" id="refresh" name="refreshForm">
+		<input type="hidden" name="hallTicketNumber">
+		<input type="hidden" name="sessionId" value="7589">
+		<input type="hidden" name="questionAnswered" id="questionAnsweredRef">
+		<input type="hidden" name="questionUnAnswered" id="questionUnAnsweredRef">
+		<input type="hidden" name="questionMarked" id="questionMarkedRef">
+		<input type="hidden" name="examName" value="PGDAC">
+		<input type="hidden" name="userName" id="userName" value="Ujwala G. Chavan">
+	</form>
+
+	<form id="frmfetchResponseSheet" action="http://ccat.cdac.in/ccat_local/fetchResponseSheet" name="fetchResponseSheetFormName" method="post">
+		<input type="hidden" name="sessionId" value="7589">
+		<input type="hidden" name="hallTicketNumber" value="11190840420100">
+		<input type="hidden" name="userName" value="Ujwala G. Chavan">
+		<input type="hidden" name="examName" value="PGDAC">
+		<input type="hidden" name="questionAnswered">
+		<input type="hidden" name="questionUnAnswered">
+		<input type="hidden" name="questionMarked">
+	</form>
+
+	<input type="hidden" name="currentResponseId" id="currentResponseId" value="">
+	<input type="hidden" id="requestPending" value="no">
+	<input type="hidden" id="allImagesLoaded" value="Yes">
+	<input type="hidden" name="Answered" id="Answered" value="34">
+	<input type="hidden" name="UnAnswered" id="UnAnswered" value="6">
+	<input type="hidden" name="Review" id="Review" value="9">
+
+	<script>
+document.oncontextmenu = function() { return false; }
+document.ondragstart = function() { return false; }
+</script>
+
+
+
+</body></html>

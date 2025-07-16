@@ -1,0 +1,193 @@
+/*--- added by Neha to have a single style sheet ---*/
+
+/* specific to Divs in Instructions page */
+.examInstructionStyle {
+	float: left;
+	width: 100%;
+	display:inline;
+}
+
+.sectionInstructionsStyle {
+	float: left;
+	width: 100%;
+}
+
+.navigationDivStyle {
+	float: left;
+	width: 100%;
+	}
+
+.bottom {
+	overflow: hidden;
+}
+
+/* styles common to all pages */
+.block1DivStyle {
+	height: 15%;
+	width: 100%;
+
+ 	overflow:auto;
+
+}
+.block2DivStyle {
+	min-height:65%;
+	height: 74%;
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+}
+
+.block2DivStyleInstruction {
+	min-height:65%;
+	height: 74%;
+	width: 100%;
+	background-color: white;
+	overflow: auto;
+}
+
+.block3DivStyle {
+	
+	width: 100%;
+	background-color: white;
+	overflow: auto;
+	
+}
+.block3DivStyleInstruction {
+	
+	width: 100%;
+	background-color: white;
+	overflow: auto;
+	
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1.125em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+	background-color: #ffffff;
+}
+
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+#bottom{
+	position:relative;
+	/* margin-top:0px; */
+	/* bottom: 0px; */
+    width: 100%;
+/* 	height:10% */
+	}
+
+div.btn_set {
+font-size: 0.750em;
+/* margin: 0 auto !important; */
+text-align: center;
+}
+
+#line {
+	margin-top: 10px;
+}
+
+
+/* html,body {
+ 	height: 98%; 
+	min-height: 98%; 
+	background-color: #EDEDED; 
+	color: #404040;
+	
+} */
+label,h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	line-height: normal;
+	font-style: normal;
+	display: inline;
+}
+
+.scaleImg{
+        width:100%; 
+        height:100%;
+        display:block;
+}
+
+.shadow {
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 0px;
+	-webkit-box-shadow: #666 6px 6px 6px;
+	-moz-box-shadow: #666 6px 6px 6px;
+	box-shadow: #666 6px 6px 6px;
+ 	background-color: #FFFFFF;background: #FFFFFF;
+	height: 100%;
+	min-height:90%;	
+	width:100%;
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+/* 	overflow-y: auto; */
+/*	overflow: hidden; */
+	overflow: auto;
+/* 	style: margin-top: 2%; margin-left: 15%; margin-right: 15%; border: #666 ridge;height:100%;margin-bottom: 10%; */
+}
+
+.shadowForExamScreen {
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 0px;
+	-webkit-box-shadow: #666 6px 6px 6px;
+	-moz-box-shadow: #666 6px 6px 6px;
+	box-shadow: #666 6px 6px 6px;
+ 	background-color: #FFFFFF;background: #FFFFFF;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  overflow: auto;
+	
+/* 	style: margin-top: 2%; margin-left: 15%; margin-right: 15%; border: #666 ridge;height:100%;margin-bottom: 10%; */
+}
+
+/* Specific to Divs in examScreen page. */
+.studentDetailDiv {
+	float: left;
+	width: 30%;
+}
+
+.examDetailDivStyle {
+	float: left;
+	width: 40%;
+}
+
+.studentImageDivStyle {
+	float: left;
+	width: 30%;
+}
+
+.questionListDivStyle {
+	float: left;
+	width: 15%;
+}
+.questionDivStyle {
+	float: left;
+	width: 80%;
+	/* height: 95%; */
+	
+}
+
+.sectionDivStyle {
+	float: left;
+	width: 20%;
+}
+
+img.photo {
+	width: 80px;
+	height: 80px;
+	border: 1px solid grey;
+}
+
+/*---------------My code ends here---------------*/
+
+/*--- EndOfFile ---*/

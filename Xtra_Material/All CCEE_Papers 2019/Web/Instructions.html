@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0043)http://ccat.cdac.in/ccat_local/studentLogin -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta http-equiv="Cache-control" content="no-cache">
+<title>Instructions</title>
+<link rel="stylesheet" href="./Instructions_files/ccat.css" type="text/css" media="screen,projection,print">
+
+
+<script src="./Instructions_files/jquery.min.js.download"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).keydown(function(e) {
+			if (e.which == 8) {
+				e.preventDefault();
+			}
+		});
+	});
+
+	function validateForm() {
+
+		var examName = 'PGDAC';
+		var paperCode = 'D4';
+
+		var returnVal = false;
+
+		$
+				.ajax({
+					type : "POST",
+					async : false,
+					url : "checkPaperAvailable",
+					data : "examName=" + examName + "&paperCode=" + paperCode,
+					dataType : "text",
+
+					success : function(response) {
+						if (response == '0') {
+							alert('Paper has not been made available by CI. Kindly wait for instructions from the invigilator.');
+
+						} else if (response == '2') {
+							alert('Could not fetch availability of paper. Paper might have been ended.');
+
+						} else {
+							returnVal = true;
+						}
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						if (jqXHR.status === 0) {
+							alert('Not connected.\nVerify Network.');
+
+						} else if (jqXHR.status == 404) {
+							alert('Requested page not found. [404]');
+
+						} else if (jqXHR.status == 500) {
+							alert('Internal Server Error [500].');
+
+						} else if (exception === 'parsererror') {
+							alert('Requested JSON parse failed.');
+
+						} else if (exception === 'timeout') {
+							alert('Time out error.');
+
+						} else if (exception === 'abort') {
+							alert('Ajax request aborted.');
+
+						} else {
+							alert('Uncaught Error.\n' + jqXHR.responseText);
+						}
+						returnVal = false;
+					}
+				});
+		return returnVal;
+	}
+</script>
+
+</head>
+<body>
+	<div id="page" class="shadow">
+
+		<div id="block2One">
+
+
+			<table width="100%" style="padding-right: 25px;">
+				<tbody><tr>
+<!-- 					<td class="photo" rowspan="2" bgcolor="#FFFFFF"><img class="photo" -->
+
+
+					<td align="left" style="width: 40%;"><h3>Ujwala G. Chavan</h3>&nbsp;
+						<h4>(11190840420100)</h4></td>
+
+					<td align="left" style="width: 40%"><h1>PGDAC</h1></td>
+
+					<td align="center" style="width: 15%"></td>
+				</tr>
+
+				<tr>
+					<td>&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;</td>
+
+				</tr>
+
+
+
+
+			</tbody></table>
+		</div>
+
+
+		<div id="borderDivBottom" style="width: 100% background-color:     white">
+			<table width="100%" style="background-color: white">
+				<tbody><tr>
+					<td align="center"><img src="./Instructions_files/ccat016006.jpg"></td>
+				</tr>
+			</tbody></table>
+
+		</div>
+
+
+		<div id="blockTwo" class="block2DivStyleInstruction">
+			<div id="ExamInstructions" class="examInstructionStyle">
+				
+					
+						<table align="center" width="90%">
+
+							
+								<tbody><tr>
+									<td>  <img src="./Instructions_files/I_1_d.jpg" alt="Instruction"></td>
+								</tr>
+
+
+							
+								<tr>
+									<td>  <img src="./Instructions_files/I_2_d.jpg" alt="Instruction"></td>
+								</tr>
+
+
+							
+
+
+						</tbody></table>
+					
+					
+				
+			</div>
+		</div>
+		<div id="blockThree" class="block3DivStyleInstruction">
+			<div id="navigationButtons" class="navigationDivStyle">
+				<table width="100%" border="0" style="padding-right: 15px;">
+
+
+					<tbody><tr align="right">
+						<td width="50%"></td>
+						<td width="30%" align="right"></td>
+
+						<!-- 						</td> -->
+						<td align="center">
+							<form action="http://ccat.cdac.in/ccat_local/startExam" method="post">
+
+								<input name="Next" type="submit" value="Next" style="background-color: white; border: #000000; border-style: solid; border-width: 1px;" onclick="javascript:return validateForm();">
+								<input type="hidden" name="hallTicketNumber" value="11190840420100">
+								<input type="hidden" name="sessionId" value="7287">
+								<input type="hidden" name="paperCode" value="D4">
+								<input type="hidden" name="examName" value="PGDAC">
+							</form>
+						</td>
+					</tr>
+				</tbody></table>
+
+			</div>
+
+		</div>
+
+
+	</div>
+	<script>
+		document.oncontextmenu = function() {
+			return false;
+		}
+		document.ondragstart = function() {
+			return false;
+		}
+	</script>
+
+
+</body></html>
